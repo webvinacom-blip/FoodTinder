@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodTinder – Khám Phá Ẩm Thực Theo Cảm Xúc & Thời Tiết</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { coral:'#FF6542', rose:'#FF4757', peach:'#FFF5EE', cream:'#FAF4EE', dark:'#2F3542' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── Web-app global reset ── */
+    html, body { height: 100%; margin: 0; overflow: hidden; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #EAE4DC;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Top navbar ── */
+    #topbar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      height: 56px;
+      background: #fff;
+      border-bottom: 1px solid #E8E0D8;
+      padding: 0 20px;
+      flex-shrink: 0;
+      z-index: 50;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
+    #topbar .logo { display:flex; align-items:center; gap:10px; min-width:220px; }
+    #topbar .logo-icon {
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg,#FF4757,#FF9F43);
+      display:flex; align-items:center; justify-content:center;
+      font-size:18px; box-shadow:0 2px 8px rgba(255,71,87,.35);
+    }
+    #topbar .logo-text h1 { font-size:15px; font-weight:800; color:#1E1E1E; margin:0; line-height:1.2; }
+    #topbar .logo-text p  { font-size:11px; color:#8D7F72; margin:0; }
+
+    /* Tab pills in topbar */
+    #topbar .nav-pills {
+      display:flex; gap:4px; flex:1; justify-content:center;
+    }
+    #topbar .nav-pills button {
+      display:flex; align-items:center; gap:6px;
+      padding:7px 16px; border-radius:999px; border:none; cursor:pointer;
+      font-size:12px; font-weight:600; font-family:inherit;
+      background:transparent; color:#747D8C;
+      transition: all .2s;
+    }
+    #topbar .nav-pills button:hover { background:#F5EEE8; color:#2F3542; }
+    #topbar .nav-pills button.active {
+      background: linear-gradient(135deg,#FF4757,#FF9F43);
+      color:#fff;
+      box-shadow: 0 3px 10px rgba(255,71,87,.30);
+    }
+    #topbar .nav-pills button i { width:14px; height:14px; }
+
+    /* Right controls */
+    #topbar .topbar-right {
+      display:flex; align-items:center; gap:8px; min-width:220px; justify-content:flex-end;
+    }
+    #topbar .weather-chip {
+      display:flex; align-items:center; gap:6px;
+      background:#FFF5EE; border:1px solid #FFD8C2; border-radius:999px;
+      padding:5px 12px; cursor:pointer; font-size:11px; font-weight:700; color:#8D4D24;
+      transition: .2s;
+    }
+    #topbar .weather-chip:hover { background:#FFE8D6; }
+    #topbar .liked-btn {
+      position:relative; width:34px; height:34px; border-radius:50%;
+      background:#FFF5EE; border:1px solid #FFD8C2; display:flex;
+      align-items:center; justify-content:center; cursor:pointer; transition:.2s;
+    }
+    #topbar .liked-btn:hover { background:#FFE8D6; }
+
+    /* ── Main layout: sidebar + content ── */
+    #app-layout {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* Left sidebar */
+    #sidebar {
+      width: 300px;
+      background: #fff;
+      border-right: 1px solid #E8E0D8;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    #sidebar::-webkit-scrollbar { display:none; }
+
+    /* Sidebar sections */
+    .sidebar-section { padding: 16px; border-bottom: 1px solid #F2EBE4; }
+    .sidebar-section:last-child { border-bottom: none; }
+    .sidebar-section h4 {
+      font-size:10px; font-weight:800; color:#B0A49A;
+      text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px;
+    }
+
+    /* Content panel */
+    #content-panel {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #FAF4EE;
+    }
+
+    /* Tab views */
+    .tab-view { display:none; flex:1; min-height:0; overflow:hidden; flex-direction:column; }
+    .tab-view.active { display:flex; }
+    .tab-view.scroll-y { overflow-y:auto; }
+
+    /* Mood pills */
+    .mood-pill {
+      display:flex; flex-direction:column; align-items:center;
+      padding:10px 12px; border-radius:16px; border:1.5px solid #EDE5DC;
+      background:#fff; cursor:pointer; transition:all .2s; min-width:72px;
+      font-family:inherit;
+    }
+    .mood-pill:hover { border-color:#FF8FA3; background:#FFF5F7; }
+    .mood-pill.selected {
+      border-color:#FF4757; background:#FFF5F7;
+      box-shadow:0 0 0 3px rgba(255,71,87,.12);
+    }
+    .mood-pill .emoji { font-size:22px; margin-bottom:4px; }
+    .mood-pill .label { font-size:10px; font-weight:700; color:#5E5047; white-space:nowrap; }
+    .mood-pill.selected .label { color:#FF4757; }
+
+    /* Food cards */
+    .food-card {
+      background:#fff; border-radius:20px; border:1px solid #EDE5DC;
+      overflow:hidden; cursor:pointer; transition:all .2s;
+      box-shadow:0 1px 4px rgba(0,0,0,.04);
+    }
+    .food-card:hover { box-shadow:0 6px 20px rgba(0,0,0,.1); transform:translateY(-2px); }
+
+    /* Swipe card deck */
+    #swipe-deck-container {
+      position:relative;
+      width:100%; height:100%;
+    }
+    .tinder-card { position:absolute; inset:0; }
+
+    /* Map full-height */
+    #map-container { width:100%; height:100%; }
+
+    /* Reels full-height */
+    #reels-feed-container {
+      width:100%; height:100%;
+      overflow-y:auto;
+      scroll-snap-type:y mandatory;
+      scrollbar-width:none;
+    }
+    #reels-feed-container::-webkit-scrollbar { display:none; }
+    .reel-item {
+      width:100%; height:100%;
+      flex-shrink:0;
+      position:relative;
+      scroll-snap-align:start;
+      scroll-snap-stop:always;
+    }
+
+    /* Scrollbar hide utility */
+    .scrollbar-none { scrollbar-width:none; }
+    .scrollbar-none::-webkit-scrollbar { display:none; }
+
+    /* Bottom sheet (map) */
+    #map-bottom-sheet {
+      position:absolute; bottom:0; left:0; right:0;
+      background:#fff; border-radius:28px 28px 0 0;
+      border-top:1px solid #E8E0D8;
+      box-shadow:0 -4px 24px rgba(0,0,0,.1);
+      max-height:260px; overflow:hidden;
+      z-index:30;
+    }
+
+    /* Toast */
+    #app-toast {
+      position:fixed; top:20px; left:50%; transform:translateX(-50%);
+      z-index:999; pointer-events:none;
+      transition: opacity .3s, translate .3s;
+    }
+
+    /* Modal backdrop */
+    .modal-backdrop {
+      position:fixed; inset:0; z-index:200;
+      background:rgba(0,0,0,.55); backdrop-filter:blur(4px);
+      display:flex; align-items:flex-end; justify-content:center;
+    }
+    .modal-sheet {
+      width:100%; max-width:560px;
+      background:#fff; border-radius:28px 28px 0 0;
+      max-height:88vh; overflow-y:auto;
+      scrollbar-width:none;
+      transform:translateY(100%);
+      transition:transform .28s cubic-bezier(.16,1,.3,1);
+    }
+    .modal-sheet::-webkit-scrollbar { display:none; }
+
+    /* Waving hand */
+    @keyframes wave {
+      0%,100%{transform:rotate(0deg)}
+      20%{transform:rotate(14deg)}
+      40%{transform:rotate(-8deg)}
+      60%{transform:rotate(14deg)}
+      80%{transform:rotate(-4deg)}
+    }
+    .animate-wave { display:inline-block; transform-origin:70% 70%; animation:wave 2.2s infinite ease-in-out; }
+
+    /* Responsive: hide sidebar on small screens */
+    @media(max-width:768px) {
+      #sidebar { display:none; }
+      #topbar .nav-pills { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     TOP NAVIGATION BAR
+══════════════════════════════════════════ -->
+<div id="topbar">
+  <!-- Logo -->
+  <div class="logo">
+    <div class="logo-icon">🍲</div>
+    <div class="logo-text">
+      <h1>FoodTinder</h1>
+      <p>Ẩm thực theo cảm xúc & thời tiết</p>
+    </div>
+  </div>
+
+  <!-- Center nav pills -->
+  <div class="nav-pills">
+    <button class="active" onclick="switchTab('home')" id="pill-home">
+      <i data-lucide="home"></i> Khám phá
+    </button>
+    <button onclick="switchTab('swipe')" id="pill-swipe">
+      <i data-lucide="layers"></i> Quẹt món
+    </button>
+    <button onclick="switchTab('map')" id="pill-map">
+      <i data-lucide="map"></i> Bản đồ
+    </button>
+    <button onclick="switchTab('reels')" id="pill-reels">
+      <i data-lucide="play-square"></i> Video Reels
+    </button>
+    <button onclick="switchTab('chat')" id="pill-chat">
+      <i data-lucide="message-circle"></i> Tin nhắn
+    </button>
+    <button onclick="switchTab('liked')" id="pill-liked">
+      <i data-lucide="heart"></i> Đã thích
+      <span id="liked-badge" class="hidden ml-1 bg-rose-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+    </button>
+  </div>
+
+  <!-- Right: weather + liked shortcut -->
+  <div class="topbar-right">
+    <div class="weather-chip" onclick="window.app.openCityModal()">
+      <span id="topbar-weather-icon">🌧️</span>
+      <span id="topbar-weather-text">Quy Nhơn 24°C</span>
+      <i data-lucide="chevron-down" style="width:12px;height:12px;"></i>
+    </div>
+    <div class="liked-btn" onclick="switchTab('liked')" title="Đã thích">
+      <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN LAYOUT
+══════════════════════════════════════════ -->
+<div id="app-layout">
+
+  <!-- ── LEFT SIDEBAR ── -->
+  <aside id="sidebar">
+
+    <!-- User & Location -->
+    <div class="sidebar-section">
+      <div id="header-greeting"></div>
+      <div id="header-location" class="mt-2"></div>
+    </div>
+
+    <!-- Mood Selector -->
+    <div class="sidebar-section">
+      <h4>Tâm trạng hôm nay</h4>
+      <div id="mood-selector-container"></div>
+    </div>
+
+    <!-- Mini Map Widget -->
+    <div class="sidebar-section">
+      <h4>Gần bạn</h4>
+      <div id="mini-map-card"></div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="sidebar-section">
+      <h4>Thống kê của bạn</h4>
+      <div id="sidebar-stats" class="space-y-2 text-xs text-stone-600">
+        <div class="flex justify-between">
+          <span>Món đã thích</span>
+          <span id="stat-liked" class="font-bold text-rose-500">0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Lần quẹt hôm nay</span>
+          <span class="font-bold text-amber-500">0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Khoảng cách gần nhất</span>
+          <span class="font-bold text-emerald-600">700m</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── CONTENT PANEL ── -->
+  <div id="content-panel">
+
+    <!-- ══ VIEW: HOME ══ -->
+    <div id="view-home" class="tab-view active scroll-y">
+      <div class="p-6 max-w-5xl mx-auto w-full space-y-6 pb-8">
+
+        <!-- Welcome banner -->
+        <div class="rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 p-5 text-white flex items-center justify-between shadow-md">
+          <div>
+            <h2 class="text-xl font-extrabold leading-tight">Chào Bạn! <span class="animate-wave inline-block">👋</span></h2>
+            <p id="welcome-subtitle" class="text-sm text-rose-100 mt-1">Quy Nhơn đang mưa râm ran 24°C 🌧️ — ăn gì cho ấm?</p>
+          </div>
+          <button onclick="window.app.openCityModal()" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 rounded-xl px-4 py-2 text-xs font-bold transition">
+            📍 Đổi vị trí
+          </button>
+        </div>
+
+        <!-- Bento Grid -->
+        <div>
+          <h3 class="font-extrabold text-stone-900 mb-3 text-sm">Tổng quan hôm nay</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <!-- Weather bento -->
+            <div onclick="window.app.openCityModal()" class="bg-gradient-to-br from-sky-400 to-blue-500 text-white rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
+              <div class="text-3xl mb-1" id="bento-weather-icon">🌧️</div>
+              <div class="text-xl font-extrabold" id="bento-weather-temp">24°C</div>
+              <div class="text-xs text-sky-100 mt-0.5" id="bento-weather-city">Quy Nhơn</div>
+              <div class="text-[11px] text-sky-200 mt-0.5" id="bento-weather-cond">Mưa râm ran</div>
+            </div>
+            <!-- Mood bento -->
+            <div onclick="switchTab('chat')" class="bg-gradient-to-br from-rose-100 to-pink-100 border border-rose-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
+              <div class="text-3xl mb-1" id="bento-mood-emoji">💔</div>
+              <div class="text-sm font-extrabold text-stone-900" id="bento-mood-label">Hơi buồn rầu</div>
+              <div class="text-[11px] text-rose-500 mt-0.5 font-semibold">Gợi ý món vỗ về ✨</div>
+            </div>
+            <!-- Liked bento -->
+            <div onclick="switchTab('liked')" class="bg-gradient-to-br from-amber-50 to-orange-100 border border-amber-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
+              <div class="text-3xl mb-1">❤️</div>
+              <div class="text-xl font-extrabold text-stone-900" id="bento-liked-count">0</div>
+              <div class="text-[11px] text-amber-700 mt-0.5 font-semibold">Món đã thích</div>
+            </div>
+            <!-- Distance bento -->
+            <div onclick="switchTab('map')" class="bg-gradient-to-br from-emerald-50 to-teal-100 border border-emerald-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
+              <div class="text-3xl mb-1">📍</div>
+              <div class="text-xl font-extrabold text-stone-900">700m</div>
+              <div class="text-[11px] text-emerald-700 mt-0.5 font-semibold">Quán gần nhất</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured card + mood suggestion grid side-by-side -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Featured food card -->
+          <div>
+            <h3 class="font-extrabold text-stone-900 mb-3 text-sm flex items-center gap-2">
+              🔥 Gợi ý cho tâm trạng bạn
+            </h3>
+            <div id="featured-card-container"></div>
+          </div>
+
+          <!-- Recommended grid -->
+          <div>
+            <h3 class="font-extrabold text-stone-900 mb-3 text-sm flex items-center gap-2">
+              🗺️ Quán gần bạn nhất
+            </h3>
+            <div id="nearby-grid" class="grid grid-cols-2 gap-3"></div>
+          </div>
+        </div>
+
+        <!-- Full food listing -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-extrabold text-stone-900 text-sm">Tất cả món ăn phù hợp</h3>
+            <button onclick="switchTab('swipe')" class="text-xs font-bold text-rose-500 hover:underline">Quẹt thẻ 🃏</button>
+          </div>
+          <div id="food-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ VIEW: SWIPE ══ -->
+    <div id="view-swipe" class="tab-view">
+      <div class="flex-1 flex items-stretch min-h-0">
+        <!-- Card deck area -->
+        <div class="flex-1 flex flex-col items-center justify-center p-6 min-h-0">
+          <div class="w-full max-w-sm mb-4 text-center">
+            <h3 class="font-extrabold text-stone-900 text-base">Thẻ Vuốt Cảm Xúc 🃏</h3>
+            <p class="text-xs text-stone-400 mt-1">Vuốt phải để thích · Vuốt trái để bỏ qua</p>
+          </div>
+          <!-- Fixed-height deck -->
+          <div class="relative w-full max-w-sm" style="height:520px;">
+            <div id="swipe-deck-container" class="absolute inset-0"></div>
+          </div>
+          <!-- Buttons -->
+          <div class="flex items-center justify-center gap-5 mt-5">
+            <button onclick="window.swipeManager.undo()"
+              class="w-11 h-11 rounded-full bg-white border border-stone-200 shadow text-amber-500 flex items-center justify-center hover:scale-110 active:scale-95 transition">
+              <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+            </button>
+            <button onclick="window.swipeManager.swipeLeft(window.swipeManager.deck[window.swipeManager.currentIndex])"
+              class="w-16 h-16 rounded-full bg-white border border-stone-200 shadow-lg text-stone-400 hover:text-stone-700 flex items-center justify-center hover:scale-110 active:scale-95 transition">
+              <i data-lucide="x" class="w-8 h-8 stroke-[2.5]"></i>
+            </button>
+            <button onclick="window.swipeManager.swipeRight(window.swipeManager.deck[window.swipeManager.currentIndex])"
+              class="w-16 h-16 rounded-full bg-gradient-to-tr from-rose-500 to-rose-400 text-white shadow-xl shadow-rose-300/80 flex items-center justify-center hover:scale-110 active:scale-95 transition">
+              <i data-lucide="heart" class="w-8 h-8 fill-current"></i>
+            </button>
+            <button onclick="window.swipeManager.superLike(window.swipeManager.deck[window.swipeManager.currentIndex])"
+              class="w-11 h-11 rounded-full bg-white border border-stone-200 shadow text-sky-500 flex items-center justify-center hover:scale-110 active:scale-95 transition">
+              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: liked / skipped history panel -->
+        <aside class="w-64 border-l border-stone-200 bg-white flex flex-col shrink-0">
+          <div class="p-4 border-b border-stone-100">
+            <h4 class="font-extrabold text-xs text-stone-800">❤️ Món đã thích</h4>
+          </div>
+          <div id="swipe-liked-panel" class="flex-1 overflow-y-auto p-3 space-y-2 scrollbar-none text-xs text-stone-500 italic">
+            Chưa có món nào...
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ══ VIEW: MAP ══ -->
+    <div id="view-map" class="tab-view relative">
+      <div id="map-container" style="width:100%;height:100%;"></div>
+      <div id="map-bottom-sheet">
+        <div id="map-bottom-sheet-content"></div>
+      </div>
+    </div>
+
+    <!-- ══ VIEW: REELS ══ -->
+    <div id="view-reels" class="tab-view" style="background:#000;">
+      <div id="reels-feed-container"></div>
+    </div>
+
+    <!-- ══ VIEW: CHAT & MESSAGES (SPLIT LAYOUT: FRIENDS LIST ON LEFT, CHAT ON RIGHT) ══ -->
+    <div id="view-chat" class="tab-view flex-row bg-[#FAF4EE] overflow-hidden" style="flex-direction: row !important; height: 100%;">
+      
+      <!-- ── LEFT PANEL: DANH SÁCH BẠN BÈ & HỘP THƯ (340px) ── -->
+      <aside id="chat-friends-sidebar" class="w-80 md:w-84 bg-white border-r border-stone-200/90 flex flex-col shrink-0 min-h-0 h-full select-none">
+        
+        <!-- Header & Add Friend -->
+        <div class="p-3.5 border-b border-stone-200/80 flex items-center justify-between shrink-0 bg-stone-50/50">
+          <div>
+            <h3 class="font-extrabold text-sm text-stone-900 leading-tight">Tin nhắn & Bạn bè</h3>
+            <p class="text-[10px] text-stone-400 font-medium">Hẹn hò ăn uống cùng gu</p>
+          </div>
+          <button onclick="window.chatManager.openAddFriendModal()" 
+            class="px-2.5 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl text-xs font-bold shadow-xs hover:opacity-95 transition flex items-center gap-1">
+            <span>➕ Thêm bạn</span>
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="px-3 py-2 border-b border-stone-100 shrink-0">
+          <div class="relative">
+            <input type="text" id="friends-search-input"
+              placeholder="Tìm kiếm bạn bè, nhóm ăn uống..." 
+              oninput="window.chatManager.handleFriendsSearch(this.value)"
+              class="w-full bg-stone-100 text-xs px-3.5 py-2 pl-8 rounded-xl border border-stone-200 focus:outline-none focus:bg-white focus:border-rose-400 transition" />
+            <i data-lucide="search" class="w-3.5 h-3.5 text-stone-400 absolute left-2.5 top-2.5"></i>
+          </div>
+        </div>
+
+        <!-- Filter Sub-Tabs -->
+        <div class="px-3 py-1.5 border-b border-stone-100 flex items-center gap-1 overflow-x-auto scrollbar-none text-[11px] shrink-0">
+          <button onclick="window.chatManager.setFriendsFilter('all')" id="filter-all" 
+            class="filter-pill px-2.5 py-1 rounded-full whitespace-nowrap font-bold transition bg-stone-900 text-white">
+            Tất cả
+          </button>
+          <button onclick="window.chatManager.setFriendsFilter('my')" id="filter-my" 
+            class="filter-pill px-2.5 py-1 rounded-full whitespace-nowrap font-bold transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+            ❤️ Bạn bè (5)
+          </button>
+          <button onclick="window.chatManager.setFriendsFilter('groups')" id="filter-groups" 
+            class="filter-pill px-2.5 py-1 rounded-full whitespace-nowrap font-bold transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+            🍲 Nhóm
+          </button>
+          <button onclick="window.chatManager.setFriendsFilter('nearby')" id="filter-nearby" 
+            class="filter-pill px-2.5 py-1 rounded-full whitespace-nowrap font-bold transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+            📍 Quanh bạn (3)
+          </button>
+        </div>
+
+        <!-- Online Avatars Row -->
+        <div id="friends-online-row" class="px-3 py-2 border-b border-stone-100 flex items-center gap-2.5 overflow-x-auto scrollbar-none shrink-0 bg-stone-50/60">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Scrollable Conversation / Friend List -->
+        <div id="friends-sidebar-list" class="flex-1 overflow-y-auto p-2.5 space-y-3.5 scrollbar-none">
+          <!-- Rendered dynamically by ChatManager -->
+        </div>
+      </aside>
+
+      <!-- ── RIGHT PANEL: KHUNG CHAT CHÍNH (AI HOẶC BẠN BÈ) (FLEX-1) ── -->
+      <main id="chat-active-window" class="flex-1 flex flex-col min-h-0 h-full bg-[#FAF4EE] overflow-hidden">
+        <!-- Rendered dynamically by ChatManager: either AI chat or selected friend chat -->
+      </main>
+
+    </div>
+
+    <!-- ══ VIEW: LIKED ══ -->
+    <div id="view-liked" class="tab-view scroll-y">
+      <div class="p-6 max-w-4xl mx-auto w-full">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-extrabold text-lg text-stone-900">Món ăn đã thích ❤️</h3>
+          <span class="text-xs text-stone-400">Lưu để thưởng thức sau</span>
+        </div>
+        <div id="liked-list-container"></div>
+      </div>
+    </div>
+
+  </div><!-- end content-panel -->
+</div><!-- end app-layout -->
+
+
+<!-- ══════════════════════════════════════════
+     MODALS
+══════════════════════════════════════════ -->
+
+<!-- Food Detail Modal -->
+<div id="food-detail-modal" class="modal-backdrop hidden">
+  <div class="modal-sheet w-full max-w-lg">
+    <div id="food-detail-content"></div>
+  </div>
+</div>
+
+<!-- Comments Modal -->
+<div id="comments-modal" class="modal-backdrop hidden">
+  <div class="modal-sheet w-full max-w-md" style="height:65vh;">
+    <div class="p-4 border-b border-stone-200 flex items-center justify-between shrink-0">
+      <h4 class="font-extrabold text-sm text-stone-800" id="comments-food-title">Bình luận</h4>
+      <button onclick="window.reelsManager.closeComments()" class="p-1 rounded-full text-stone-400 hover:text-stone-700">✕</button>
+    </div>
+    <div id="comments-list" class="flex-1 overflow-y-auto p-4 space-y-3 scrollbar-none"></div>
+    <div class="p-3 bg-stone-50 border-t border-stone-200 flex items-center gap-2 shrink-0">
+      <input id="comment-input" type="text" placeholder="Viết bình luận..." class="flex-1 bg-white text-xs px-3.5 py-2 rounded-full border border-stone-200 focus:outline-none" onkeydown="if(event.key==='Enter'){window.reelsManager.addComment(this.value);this.value='';}" />
+      <button onclick="const inp=document.getElementById('comment-input');window.reelsManager.addComment(inp.value);inp.value='';" class="px-3.5 py-2 bg-rose-500 text-white rounded-full text-xs font-bold">Gửi</button>
+    </div>
+  </div>
+</div>
+
+<!-- City/Weather Modal -->
+<div id="city-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4">
+    <div class="flex items-center justify-between mb-3">
+      <h4 class="font-extrabold text-sm text-stone-900">Chọn vị trí & thời tiết</h4>
+      <button onclick="document.getElementById('city-modal').classList.add('hidden')" class="text-stone-400 hover:text-stone-700">✕</button>
+    </div>
+    <p class="text-xs text-stone-500 mb-3">Thay đổi để xem gợi ý ẩm thực phù hợp:</p>
+    <div id="city-list" class="space-y-2 max-h-72 overflow-y-auto scrollbar-none"></div>
+  </div>
+</div>
+
+<!-- Add Friend Modal -->
+<div id="add-friend-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4">
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-sm">➕</span>
+        <h4 class="font-extrabold text-sm text-stone-900">Thêm bạn bè mới</h4>
+      </div>
+      <button onclick="document.getElementById('add-friend-modal').classList.add('hidden')" class="text-stone-400 hover:text-stone-700">✕</button>
+    </div>
+    <p class="text-xs text-stone-500 mb-3">Tìm bạn bè theo tên, biệt danh hoặc số điện thoại để cùng set kèo ăn uống:</p>
+    <div class="space-y-3">
+      <div class="relative">
+        <input id="add-friend-input" type="text" placeholder="Nhập tên hoặc số điện thoại bạn bè..." 
+          class="w-full bg-stone-100 text-xs px-3.5 py-2.5 rounded-xl border border-stone-200 focus:outline-none focus:bg-white focus:border-rose-400" />
+      </div>
+      <button onclick="window.chatManager.submitAddFriend()" class="w-full py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-xs rounded-xl shadow-sm hover:opacity-95 transition">
+        Tìm & Kết bạn ngay 🤝
+      </button>
+
+      <div class="pt-2 border-t border-stone-100">
+        <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-2">Gợi ý kết bạn nhanh:</span>
+        <div id="suggested-friends-list" class="space-y-2 max-h-48 overflow-y-auto scrollbar-none"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Match Celebration Modal -->
+<div id="match-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="bg-white rounded-3xl p-7 text-center shadow-2xl border border-rose-200 w-full max-w-xs mx-4 relative overflow-hidden">
+    <div class="absolute -top-12 -right-12 w-32 h-32 bg-rose-400/15 rounded-full blur-2xl"></div>
+    <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-3xl shadow-lg shadow-rose-200 mb-3 mx-auto animate-bounce">❤️</div>
+    <span class="text-[10px] font-extrabold tracking-widest uppercase text-rose-500 bg-rose-50 px-2.5 py-0.5 rounded-full">It's a Food Match!</span>
+    <h3 class="font-extrabold text-lg text-stone-900 mt-2 leading-tight">Trúng Gu Ẩm Thực!</h3>
+    <p class="text-xs text-stone-500 mt-1 mb-4 leading-relaxed">Món này sinh ra là để dành cho bạn trong thời tiết hôm nay!</p>
+    <div class="w-24 h-24 rounded-2xl overflow-hidden border-2 border-rose-400 shadow-md mb-2 mx-auto">
+      <img id="match-food-img" src="" alt="Matched Food" class="w-full h-full object-cover" />
+    </div>
+    <h4 id="match-food-name" class="font-extrabold text-sm text-stone-900 mt-1"></h4>
+    <p id="match-food-restaurant" class="text-xs text-rose-500 font-semibold mb-5"></p>
+    <div class="space-y-2">
+      <button id="match-btn-map" class="w-full py-3 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200">🗺️ Chỉ đường đến quán</button>
+      <button onclick="window.app.closeMatchModal()" class="w-full py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-xs">🃏 Tiếp tục quẹt món</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="app-toast" style="opacity:0;translate:0 -8px;position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:999;pointer-events:none;transition:opacity .3s,translate .3s;">
+  <div class="bg-stone-900/90 backdrop-blur-md text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-stone-700">
+    <span class="text-rose-400">✨</span>
+    <span id="toast-msg">Thông báo</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════ -->
+<script src="js/data.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/swipe.js"></script>
+<script src="js/map.js"></script>
+<script src="js/reels.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+// ── Tab switcher for web-app layout ──
+function switchTab(tabName) {
+  // Hide all views
+  document.querySelectorAll('.tab-view').forEach(v => {
+    v.classList.remove('active');
+    v.style.display = 'none';
+  });
+  // Show target
+  const target = document.getElementById('view-' + tabName);
+  if (target) {
+    target.classList.add('active');
+    target.style.display = 'flex';
+  }
+
+  // Update top pill buttons
+  document.querySelectorAll('#topbar .nav-pills button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const activePill = document.getElementById('pill-' + tabName);
+  if (activePill) activePill.classList.add('active');
+
+  // Delegate to app-level logic for lazy inits
+  if (window.app) window.app.switchTab(tabName);
+  if (window.lucide) window.lucide.createIcons();
+}
+
+// Override app.switchTab so it doesn't fight our CSS
+document.addEventListener('DOMContentLoaded', () => {
+  // Apply initial display state
+  document.querySelectorAll('.tab-view').forEach(v => {
+    if (v.classList.contains('active')) {
+      v.style.display = 'flex';
+    } else {
+      v.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
