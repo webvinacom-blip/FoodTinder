@@ -1704,6 +1704,7 @@ class FoodApp {
 
     // Re-render Location & Taste recommendations
     if (window.tasteManager) {
+      window.tasteManager.resetRadius();
       window.tasteManager.renderLocationRecommendations();
     }
 

@@ -7,6 +7,21 @@ class TasteManager {
   constructor() {
     this.storageKey = 'foodtinder_user_taste_v1';
     this.profile = this.loadProfile();
+    this.currentRadius = 1; // Mặc định hiển thị các quán trong bán kính 1km
+    this.lastCityId = null;
+  }
+
+  loadMoreRadius() {
+    this.currentRadius = (this.currentRadius || 1) + 1;
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    this.renderLocationRecommendations();
+    if (window.app && window.app.showToast) {
+      window.app.showToast(`🔍 Đã mở rộng bán kính lên ≤ ${this.currentRadius}km!`);
+    }
+  }
+
+  resetRadius() {
+    this.currentRadius = 1;
   }
 
   loadProfile() {
@@ -179,55 +194,23 @@ class TasteManager {
     const container = document.getElementById('location-taste-recommendations');
     const titleCityEl = document.getElementById('taste-city-name');
     const summaryTextEl = document.getElementById('taste-summary-text');
-    const pillsContainer = document.getElementById('quick-city-pills');
     if (!container) return;
 
     const currentCity = APP_DATA.currentCity;
     const currentMoodId = APP_DATA.currentMoodId;
 
-    if (titleCityEl) {
-      titleCityEl.textContent = currentCity.name;
+    // Reset bán kính về 1km khi chuyển sang tỉnh/thành phố khác
+    const cityKey = currentCity.cityId || currentCity.name;
+    if (this.lastCityId !== cityKey) {
+      this.currentRadius = 1;
+      this.lastCityId = cityKey;
+    }
+    if (!this.currentRadius || this.currentRadius < 1) {
+      this.currentRadius = 1;
     }
 
-    // Render Quick City Pills
-    if (pillsContainer) {
-      const topCities = [
-        { id: "daklak_buonho", name: "TX. Buôn Hồ (Đắk Lắk)", icon: "☕" },
-        { id: "quynhon", name: "Bình Định (Nghĩa Bình cũ)", icon: "🌊" },
-        { id: "gialai", name: "Gia Lai (Bình Định cũ)", icon: "🌲" },
-        { id: "hanoi", name: "Hà Nội (Hà Tây cũ)", icon: "🏛️" },
-        { id: "hcm", name: "TP. Hồ Chí Minh (Sài Gòn cũ)", icon: "🏙️" },
-        { id: "danang", name: "Đà Nẵng (Quảng Nam - ĐN)", icon: "🌉" },
-        { id: "dalat", name: "Đà Lạt (Lâm Đồng)", icon: "🌲" },
-        { id: "nhatrang", name: "Khánh Hòa (Nha Trang)", icon: "🏖️" },
-        { id: "hue", name: "Huế (Bình Trị Thiên cũ)", icon: "🏰" },
-        { id: "cantho", name: "Cần Thơ (Hậu Giang cũ)", icon: "🌾" },
-        { id: "haiphong", name: "Hải Phòng (Kiến An cũ)", icon: "🦀" },
-        { id: "vungtau", name: "Vũng Tàu", icon: "🌊" },
-        { id: "sapa", name: "Sa Pa (Lào Cai)", icon: "🏔️" },
-        { id: "phuquoc", name: "Phú Quốc (Kiên Giang)", icon: "🏝️" },
-        { id: "camau", name: "Cà Mau (Minh Hải cũ)", icon: "🦀" }
-      ];
-
-      pillsContainer.innerHTML = topCities.map(c => {
-        const isActive = (currentCity.cityId === c.id) || (currentCity.name && currentCity.name.includes(c.id));
-        return `
-          <button onclick="window.tasteManager.quickSwitchCity('${c.id}')"
-            class="px-3 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 ${
-              isActive
-                ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white shadow-sm scale-105'
-                : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
-            }">
-            <span>${c.icon}</span>
-            <span>${c.name}</span>
-          </button>
-        `;
-      }).join('') + `
-        <button onclick="window.app.openCityModal()" 
-          class="px-3 py-1.5 rounded-full text-xs font-bold bg-rose-50 hover:bg-rose-100 text-rose-600 transition-all shrink-0 border border-rose-200 flex items-center gap-1 shadow-2xs">
-          <span>+ Tất cả Tỉnh/Huyện ▾</span>
-        </button>
-      `;
+    if (titleCityEl) {
+      titleCityEl.textContent = currentCity.name;
     }
 
     // Filter foods belonging to this city or district
@@ -292,8 +275,14 @@ class TasteManager {
       }
     }
 
+    // Filter foods within current radius (mặc định ban đầu 1km, mỗi lần bấm Xem thêm tăng +1km)
+    const inRadiusFoods = cityFoods.filter(f => {
+      const dist = typeof f.distance === 'number' ? f.distance : parseFloat(f.distance);
+      return !isNaN(dist) ? dist <= this.currentRadius : true;
+    });
+
     // Score & Rank each food
-    const rankedFoods = cityFoods.map(food => {
+    const rankedFoods = inRadiusFoods.map(food => {
       const matchScore = this.calculateMatchScore(food, currentMoodId);
       const matchReason = this.generateMatchReason(food);
       return {
@@ -304,11 +293,42 @@ class TasteManager {
     }).sort((a, b) => b.matchScore - a.matchScore);
 
     if (summaryTextEl) {
-      summaryTextEl.textContent = `Tìm thấy ${rankedFoods.length} quán ngon tại ${currentCity.name} — Sắp xếp ưu tiên theo độ chuẩn Gu của bạn (từ ${rankedFoods[0]?.matchScore || 98}% đến ${rankedFoods[rankedFoods.length - 1]?.matchScore || 70}%).`;
+      if (rankedFoods.length > 0) {
+        summaryTextEl.innerHTML = `
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1 font-black text-[#EE4D2D] bg-orange-50 px-2.5 py-0.5 rounded-lg border border-orange-200 text-xs shadow-2xs">
+              📍 Bán kính: ≤ ${this.currentRadius}km
+            </span>
+            <span class="text-xs text-stone-600 font-medium">
+              Tìm thấy <b>${rankedFoods.length} / ${cityFoods.length}</b> quán ngon tại <b>${currentCity.name}</b> — Sắp xếp theo độ chuẩn Gu (${rankedFoods[0]?.matchScore || 98}% → ${rankedFoods[rankedFoods.length - 1]?.matchScore || 70}%).
+            </span>
+          </div>
+        `;
+      } else {
+        summaryTextEl.innerHTML = `
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1 font-black text-stone-500 bg-stone-100 px-2.5 py-0.5 rounded-lg border border-stone-200 text-xs shadow-2xs">
+              📍 Bán kính: ≤ ${this.currentRadius}km
+            </span>
+            <span class="text-xs text-stone-500 font-medium">
+              Chưa có quán nào trong bán kính 1km tại ${currentCity.name}. Bấm <b>Xem thêm (+1km)</b> để mở rộng phạm vi!
+            </span>
+          </div>
+        `;
+      }
     }
 
     // Render cards
-    container.innerHTML = rankedFoods.map((food, idx) => {
+    if (rankedFoods.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full py-10 px-4 text-center bg-white rounded-2xl border border-dashed border-stone-300">
+          <span class="text-3xl">🔍</span>
+          <h4 class="font-bold text-stone-800 text-sm mt-2">Chưa tìm thấy quán nào trong bán kính ≤ ${this.currentRadius}km</h4>
+          <p class="text-xs text-stone-500 mt-1">Các quán ngon ở khu vực này cách xa hơn một chút. Bấm nút bên dưới để mở rộng bán kính thêm +1km nhé!</p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = rankedFoods.map((food, idx) => {
       const isTopMatch = idx === 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
       const isLiked = (window.app && window.app.likedFoods) ? window.app.likedFoods.some(f => f.id === food.id) : false;
@@ -447,7 +467,41 @@ class TasteManager {
           </div>
         </div>
       `;
-    }).join('');
+      }).join('');
+    }
+
+    // Render More button (+1km)
+    const moreContainer = document.getElementById('taste-load-more-container');
+    if (moreContainer) {
+      const hasMore = inRadiusFoods.length < cityFoods.length;
+      if (hasMore) {
+        moreContainer.innerHTML = `
+          <div class="p-3.5 bg-gradient-to-r from-amber-50/90 via-orange-50/80 to-rose-50/90 border border-amber-200/90 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+            <div class="flex items-center gap-2.5">
+              <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-[#EE4D2D] text-white flex items-center justify-center text-lg shrink-0 shadow-sm">📍</span>
+              <div>
+                <p class="text-xs font-bold text-stone-800">
+                  Đang xem <b>${rankedFoods.length} / ${cityFoods.length} quán</b> trong bán kính <b>≤ ${this.currentRadius}km</b>
+                </p>
+                <p class="text-[11px] text-stone-500">Mở rộng thêm +1km bán kính để khám phá thêm các quán ngon chuẩn Gu xa hơn.</p>
+              </div>
+            </div>
+            <button onclick="window.tasteManager.loadMoreRadius()"
+              class="w-full sm:w-auto px-5 py-2.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-xs font-black shadow-md shadow-orange-300/80 flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
+              <span>✨ Xem thêm (+1km)</span>
+              <span class="bg-black/20 text-white text-[10.5px] px-2 py-0.5 rounded-full font-bold">Lên ≤ ${this.currentRadius + 1}km</span>
+              <span class="text-xs">↓</span>
+            </button>
+          </div>
+        `;
+      } else {
+        moreContainer.innerHTML = `
+          <div class="p-3 bg-stone-50 border border-stone-200 rounded-2xl flex items-center justify-center gap-2 text-xs font-bold text-stone-500 shadow-2xs">
+            <span>🎉 Đã hiển thị toàn bộ ${cityFoods.length} quán ngon tại ${currentCity.name} (trong bán kính ≤ ${this.currentRadius}km).</span>
+          </div>
+        `;
+      }
+    }
   }
 
   // Quick switch from the pills row
