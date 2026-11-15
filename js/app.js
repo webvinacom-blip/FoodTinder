@@ -671,7 +671,7 @@ class FoodApp {
               data-will-return-btn="${food.id}"
               class="w-full py-1 px-2 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 hover:from-amber-100 hover:to-orange-100 text-amber-900 border border-amber-200/90'} rounded-lg flex items-center justify-center gap-1 text-[10.5px] font-bold transition active:scale-95 cursor-pointer"
               title="${isWillReturn ? 'Bạn đã chọn sẽ quay lại quán này! Bấm để bỏ chọn' : 'Đánh dấu bạn sẽ là khách quen quay lại quán này (' + willReturnCount + ' người đã chọn)'}">
-              <span class="text-xs">😋</span>
+              <span class="text-[16px] leading-none shrink-0 inline-block">😋</span>
               <span class="truncate whitespace-nowrap"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách sẽ quay lại</span>
             </button>
           </div>
@@ -1195,7 +1195,7 @@ class FoodApp {
             <span>❤️ Yêu Thích</span>
           </button>
           <button onclick="window.app.toggleWillReturn(${food.id})" data-will-return-btn="${food.id}" class="px-3 py-3 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 text-amber-900 border border-amber-200/90'} rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer" title="Đánh dấu bạn sẽ là khách quen quay lại quán">
-            <span class="text-sm">😋</span>
+            <span class="text-lg leading-none shrink-0 inline-block">😋</span>
             <span><span data-will-return-count="${food.id}">${willReturnCount}</span> khách quen</span>
           </button>
           <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="px-3.5 py-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-200 flex items-center justify-center gap-1.5 cursor-pointer">

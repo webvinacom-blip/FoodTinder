@@ -409,7 +409,7 @@ class TasteManager {
               data-will-return-btn="${food.id}"
               class="w-full py-1.5 px-2.5 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 hover:from-amber-100 hover:to-orange-100 text-amber-900 border border-amber-200/90'} rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold transition active:scale-95 cursor-pointer"
               title="${isWillReturn ? 'Bạn đã chọn sẽ quay lại quán này! Bấm để bỏ chọn' : 'Đánh dấu bạn sẽ là khách quen quay lại quán này (' + willReturnCount + ' người đã chọn)'}">
-              <span class="text-sm">😋</span>
+              <span class="text-[17px] leading-none shrink-0 inline-block">😋</span>
               <span class="text-[11px] font-extrabold whitespace-nowrap"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách sẽ quay lại</span>
             </button>
           </div>
