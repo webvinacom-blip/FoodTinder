@@ -676,35 +676,35 @@ class FoodApp {
             </button>
           </div>
 
-          <!-- Bottom Action Buttons: Thích (icon), Đặt ShopeeFood (icon+chữ), Bản đồ (icon) -->
+          <!-- Bottom Action Buttons: 1. Thích, 2. Bản đồ, 3. Đặt ShopeeFood -->
           <div class="mt-2 flex items-center gap-1.5">
-            <!-- 1. Yêu thích (Chỉ icon) -->
+            <!-- 1. Yêu thích (Trái tim màu trắng khi chưa thích, màu đỏ khi đã thích) -->
             <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
               data-like-btn="${food.id}"
-              class="w-8 h-7.5 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-lg flex items-center justify-center shrink-0 text-[10.5px] font-bold transition active:scale-95 cursor-pointer border border-rose-100"
+              class="w-8 h-7.5 ${isLiked ? 'bg-rose-50 hover:bg-rose-100 border-rose-200 text-red-500' : 'bg-white hover:bg-stone-50 border-stone-200 text-stone-400'} border rounded-lg flex items-center justify-center shrink-0 text-[10.5px] font-bold transition active:scale-95 cursor-pointer shadow-2xs"
               title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
-              <svg class="w-3.5 h-3.5 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 ${isLiked ? 'fill-red-500 text-red-500 stroke-red-500' : 'fill-white text-stone-300 stroke-stone-400'}" viewBox="0 0 24 24" fill="${isLiked ? '#ef4444' : 'white'}" stroke="${isLiked ? '#ef4444' : '#9ca3af'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
               </svg>
             </button>
 
-            <!-- 2. Đặt ShopeeFood -->
-            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 h-7.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-lg text-[10.5px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
-              title="Đặt món qua ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(14, 'rounded-xs shrink-0') : ''}
-              <span>ShopeeFood</span>
-            </button>
-
-            <!-- 3. Bản đồ (Chỉ icon) -->
+            <!-- 2. Bản đồ (Chỉ icon) -->
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="w-8 h-7.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-lg text-[10.5px] font-bold flex items-center justify-center shrink-0 cursor-pointer"
+              class="w-8 h-7.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-lg text-[10.5px] font-bold flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
               title="Xem vị trí trên bản đồ">
               <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                 <line x1="9" y1="3" x2="9" y2="18"></line>
                 <line x1="15" y1="6" x2="15" y2="21"></line>
               </svg>
+            </button>
+
+            <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+              class="flex-1 h-7.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-lg text-[10.5px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+              title="Đặt món qua ShopeeFood">
+              ${window.getShopeeIcon ? window.getShopeeIcon(14, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
           </div>
         </div>
@@ -849,23 +849,31 @@ class FoodApp {
     const nowLiked = this.likedFoods.some(f => f.id === foodId);
     document.querySelectorAll(`[data-like-btn="${foodId}"]`).forEach(btn => {
       if (nowLiked) {
-        btn.classList.add('bg-rose-500', 'text-white');
-        btn.classList.remove('bg-rose-50', 'text-rose-600', 'hover:bg-rose-100');
+        btn.classList.add('bg-rose-50', 'border-rose-200', 'text-red-500');
+        btn.classList.remove('bg-white', 'border-stone-200', 'text-stone-400', 'bg-rose-500', 'text-white', 'bg-rose-50', 'text-rose-600');
         const svg = btn.querySelector('svg');
         if (svg) {
-          svg.setAttribute('fill', 'currentColor');
-          svg.classList.add('fill-white', 'text-white');
-          svg.classList.remove('text-rose-500');
+          svg.setAttribute('fill', '#ef4444');
+          svg.setAttribute('stroke', '#ef4444');
+          svg.classList.add('fill-red-500', 'text-red-500', 'stroke-red-500');
+          svg.classList.remove('fill-white', 'text-stone-300', 'stroke-stone-400', 'text-white', 'text-rose-500');
         }
+        btn.title = 'Đã yêu thích (Bấm để bỏ)';
+        const label = btn.querySelector('.like-label');
+        if (label) label.textContent = 'Đã Thích';
       } else {
-        btn.classList.remove('bg-rose-500', 'text-white');
-        btn.classList.add('bg-rose-50', 'text-rose-600', 'hover:bg-rose-100');
+        btn.classList.remove('bg-rose-50', 'border-rose-200', 'text-red-500', 'bg-rose-500', 'text-white');
+        btn.classList.add('bg-white', 'border-stone-200', 'text-stone-400');
         const svg = btn.querySelector('svg');
         if (svg) {
-          svg.setAttribute('fill', 'none');
-          svg.classList.remove('fill-white', 'text-white');
-          svg.classList.add('text-rose-500');
+          svg.setAttribute('fill', 'white');
+          svg.setAttribute('stroke', '#9ca3af');
+          svg.classList.remove('fill-red-500', 'text-red-500', 'stroke-red-500', 'text-white', 'text-rose-500');
+          svg.classList.add('fill-white', 'text-stone-300', 'stroke-stone-400');
         }
+        btn.title = 'Yêu thích món này';
+        const label = btn.querySelector('.like-label');
+        if (label) label.textContent = 'Yêu Thích';
       }
     });
   }
@@ -1191,8 +1199,11 @@ class FoodApp {
         </div>
 
         <div class="flex gap-2 pt-2">
-          <button onclick="window.app.toggleLikedFood(${food.id})" class="flex-1 py-3 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 cursor-pointer">
-            <span>❤️ Yêu Thích</span>
+          <button onclick="window.app.toggleLikedFood(${food.id})" data-like-btn="${food.id}" class="flex-1 py-3 ${isLiked ? 'bg-rose-50 border-rose-200 text-red-500' : 'bg-white border-stone-200 text-stone-600'} border rounded-xl font-bold text-xs shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+            <svg class="w-4 h-4 ${isLiked ? 'fill-red-500 text-red-500 stroke-red-500' : 'fill-white text-stone-300 stroke-stone-400'}" viewBox="0 0 24 24" fill="${isLiked ? '#ef4444' : 'white'}" stroke="${isLiked ? '#ef4444' : '#9ca3af'}" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            <span class="like-label">${isLiked ? 'Đã Thích' : 'Yêu Thích'}</span>
           </button>
           <button onclick="window.app.toggleWillReturn(${food.id})" data-will-return-btn="${food.id}" class="px-3 py-3 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 text-amber-900 border border-amber-200/90'} rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer" title="Đánh dấu bạn sẽ là khách quen quay lại quán">
             <span class="text-sm">😋</span>
