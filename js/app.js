@@ -4,6 +4,7 @@ class FoodApp {
   constructor() {
     this.currentTab = 'home';
     this.likedFoods = [];
+    this.willReturnFoods = [];
     this.currentMood = APP_DATA.currentMoodId;
     this.isPhoneFrame = true;
   }
@@ -14,6 +15,14 @@ class FoodApp {
       const saved = localStorage.getItem('foodtinder_liked');
       if (saved) {
         this.likedFoods = JSON.parse(saved);
+      }
+    } catch (e) {}
+
+    // Load will_return from localStorage
+    try {
+      const savedReturn = localStorage.getItem('foodtinder_will_return');
+      if (savedReturn) {
+        this.willReturnFoods = JSON.parse(savedReturn);
       }
     } catch (e) {}
 
@@ -524,6 +533,9 @@ class FoodApp {
     const sorted = [...APP_DATA.foods].sort((a, b) => a.distance - b.distance).slice(0, 4);
     container.innerHTML = sorted.map(food => {
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const isLiked = this.likedFoods.some(f => f.id === food.id);
+    const isWillReturn = this.isFoodWillReturn(food.id);
+    const willReturnCount = this.getWillReturnCount(food.id);
       return `
       <div onclick="window.app.showFoodDetail(${food.id})" class="food-card ${status.isOpen ? '' : 'is-closed'} cursor-pointer">
         <div class="relative h-24 overflow-hidden bg-stone-100">
@@ -576,6 +588,13 @@ class FoodApp {
 
     container.innerHTML = foods.map(food => {
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const isLiked = this.likedFoods.some(f => f.id === food.id);
+    const isWillReturn = this.isFoodWillReturn(food.id);
+    const willReturnCount = this.getWillReturnCount(food.id);
+      const isLiked = this.likedFoods.some(f => f.id === food.id);
+      const isWillReturn = this.isFoodWillReturn(food.id);
+      const willReturnCount = this.getWillReturnCount(food.id);
+
       return `
       <div onclick="window.app.showFoodDetail(${food.id})" class="food-card ${status.isOpen ? '' : 'is-closed'} cursor-pointer">
         <div class="relative h-32 overflow-hidden bg-stone-100">
@@ -607,11 +626,11 @@ class FoodApp {
               ${food.tags.slice(0,1).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
               ${food.source ? `<span class="bg-black/60 text-white text-[8.5px] font-bold px-1.5 py-0.5 rounded-full inline-flex items-center gap-1">${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(10, 'inline-block') : '') + ' Shopee' : '🛵 Grab'}</span>` : ''}
             </div>
-            <!-- Quick Delivery Trigger Pill on Photo -->
+            <!-- Quick Shopee Delivery Icon on Photo -->
             <button onclick="event.stopPropagation(); window.app.openShopeeFoodDelivery(${food.id})" 
-              class="bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 transition-transform hover:scale-105 active:scale-95 cursor-pointer"
+              class="w-6 h-6 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-md flex items-center justify-center transition hover:scale-110 active:scale-95 cursor-pointer ml-auto"
               title="Đặt giao ngay trên ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(10, 'shrink-0') : ''}<span>Đặt ngay</span>
+              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(13, 'shrink-0') : ''}
             </button>
           </div>
           <span class="absolute top-2 right-2 bg-black/50 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full">⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}</span>
@@ -636,24 +655,49 @@ class FoodApp {
             <span class="text-[10px] font-bold text-rose-500">${food.priceRange.split(' - ')[0]}</span>
             <span class="text-[10px] text-stone-400">${food.distanceText.replace('Cách bạn ', '')}</span>
           </div>
-          <div class="mt-2 flex gap-1.5">
-            <button onclick="event.stopPropagation();window.app.addLikedFood(APP_DATA.foods.find(f=>f.id===${food.id}))"
-              class="flex-1 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg text-[10px] font-bold flex items-center justify-center gap-1 transition cursor-pointer">❤️ Thích</button>
+
+          <!-- Bottom Action Icons -->
+          <div class="mt-2 flex items-center gap-1.5">
+            <!-- 1. Yêu thích (Icon only) -->
+            <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
+              data-like-btn="${food.id}"
+              class="w-8 h-8 shrink-0 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl flex items-center justify-center transition active:scale-95 cursor-pointer border border-rose-100"
+              title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
+              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </button>
+
+            <!-- 2. Sẽ quay lại (Icon vòng xoay + số lượng) -->
+            <button onclick="event.stopPropagation();window.app.toggleWillReturn(${food.id})"
+              data-will-return-btn="${food.id}"
+              class="flex-1 h-8 ${isWillReturn ? 'bg-emerald-500 text-white shadow-xs' : 'bg-emerald-50/80 hover:bg-emerald-100/90 text-emerald-700 border border-emerald-200/80'} rounded-xl flex items-center justify-center gap-1 px-2 transition active:scale-95 cursor-pointer"
+              title="${isWillReturn ? 'Bạn đã chọn sẽ quay lại quán này (' + willReturnCount + ' người)' : 'Đánh dấu bạn sẽ quay lại quán này (' + willReturnCount + ' người đã chọn)'}">
+              <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M16 21h5v-5"/>
+              </svg>
+              <span data-will-return-count="${food.id}" class="text-[11px] font-extrabold leading-none">${willReturnCount}</span>
+            </button>
+
+            <!-- 3. Đặt Shopee (Icon only) -->
+            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+              class="w-8 h-8 shrink-0 bg-[#EE4D2D] hover:bg-[#D73211] text-white rounded-xl shadow-sm shadow-orange-300/80 flex items-center justify-center transition active:scale-95 cursor-pointer"
+              title="Đặt món qua ShopeeFood">
+              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(16, 'shrink-0') : ''}
+            </button>
+
+            <!-- 4. Bản đồ (Icon only) -->
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="px-2 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-lg text-[10px] font-bold flex items-center justify-center gap-1 transition shrink-0 cursor-pointer"
+              class="w-8 h-8 shrink-0 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl flex items-center justify-center transition active:scale-95 cursor-pointer"
               title="Xem vị trí trên bản đồ">
-              <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                 <line x1="9" y1="3" x2="9" y2="18"></line>
                 <line x1="15" y1="6" x2="15" y2="21"></line>
               </svg>
-              <span>Bản đồ</span>
-            </button>
-            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="px-2.5 py-1.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white shadow-xs rounded-lg text-[10px] font-extrabold flex items-center justify-center gap-1 transition shrink-0 active:scale-95 cursor-pointer"
-              title="Mở đặt hàng trên ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(12, 'shrink-0') : ''}
-              <span>Đặt Shopee</span>
             </button>
           </div>
         </div>
@@ -785,6 +829,94 @@ class FoodApp {
     }
   }
 
+  toggleLikedFood(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+    const isLiked = this.likedFoods.some(f => f.id === foodId);
+    if (isLiked) {
+      this.removeLikedFood(foodId);
+      this.showToast(`Đã bỏ thích "${food.name}".`);
+    } else {
+      this.addLikedFood(food);
+    }
+    const nowLiked = this.likedFoods.some(f => f.id === foodId);
+    document.querySelectorAll(`[data-like-btn="${foodId}"]`).forEach(btn => {
+      if (nowLiked) {
+        btn.classList.add('bg-rose-500', 'text-white');
+        btn.classList.remove('bg-rose-50', 'text-rose-600', 'hover:bg-rose-100');
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', 'currentColor');
+          svg.classList.add('fill-white', 'text-white');
+          svg.classList.remove('text-rose-500');
+        }
+      } else {
+        btn.classList.remove('bg-rose-500', 'text-white');
+        btn.classList.add('bg-rose-50', 'text-rose-600', 'hover:bg-rose-100');
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', 'none');
+          svg.classList.remove('fill-white', 'text-white');
+          svg.classList.add('text-rose-500');
+        }
+      }
+    });
+  }
+
+  // Chức năng: Sẽ quay lại quán (Revisit / Return to restaurant)
+  isFoodWillReturn(foodId) {
+    if (!this.willReturnFoods) this.willReturnFoods = [];
+    return this.willReturnFoods.includes(foodId);
+  }
+
+  getWillReturnCount(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return 96;
+    if (food.baseWillReturnCount === undefined) {
+      const baseRate = 0.76 + ((food.id * 17) % 18) * 0.01;
+      const base = Math.max(28, Math.floor((food.reviewCount || food.likesCount || 120) * baseRate));
+      food.baseWillReturnCount = base;
+    }
+    const userVote = this.isFoodWillReturn(foodId) ? 1 : 0;
+    return food.baseWillReturnCount + userVote;
+  }
+
+  toggleWillReturn(foodId) {
+    if (!this.willReturnFoods) this.willReturnFoods = [];
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    const dishName = food ? food.name : 'món này';
+    const restaurantName = food ? food.restaurant : 'quán';
+    const isNowVoted = !this.willReturnFoods.includes(foodId);
+
+    if (isNowVoted) {
+      this.willReturnFoods.push(foodId);
+      window.soundFX && window.soundFX.playPop();
+      this.showToast(`🔁 Bạn đã chọn "Sẽ quay lại" quán ${restaurantName}!`);
+    } else {
+      this.willReturnFoods = this.willReturnFoods.filter(id => id !== foodId);
+      this.showToast(`Đã bỏ chọn "Sẽ quay lại" quán ${restaurantName}.`);
+    }
+
+    try {
+      localStorage.setItem('foodtinder_will_return', JSON.stringify(this.willReturnFoods));
+    } catch (e) {}
+
+    const count = this.getWillReturnCount(foodId);
+    document.querySelectorAll(`[data-will-return-count="${foodId}"]`).forEach(el => {
+      el.textContent = count;
+    });
+    document.querySelectorAll(`[data-will-return-btn="${foodId}"]`).forEach(btn => {
+      if (isNowVoted) {
+        btn.classList.add('bg-emerald-500', 'text-white', 'shadow-xs');
+        btn.classList.remove('bg-emerald-50/80', 'text-emerald-700', 'hover:bg-emerald-100/90');
+      } else {
+        btn.classList.remove('bg-emerald-500', 'text-white', 'shadow-xs');
+        btn.classList.add('bg-emerald-50/80', 'text-emerald-700', 'hover:bg-emerald-100/90');
+      }
+      btn.title = isNowVoted ? `Bạn đã chọn sẽ quay lại quán này (${count} người)` : `Đánh dấu bạn sẽ quay lại quán này (${count} người đã chọn)`;
+    });
+  }
+
   updateLikedBadge() {
     const badge = document.getElementById('liked-badge');
     if (badge) {
@@ -850,6 +982,9 @@ class FoodApp {
       <div class="p-4 space-y-3">
         ${this.likedFoods.map(food => {
           const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const isLiked = this.likedFoods.some(f => f.id === food.id);
+    const isWillReturn = this.isFoodWillReturn(food.id);
+    const willReturnCount = this.getWillReturnCount(food.id);
           return `
           <div class="bg-white rounded-2xl border border-stone-200 p-3 shadow-xs flex items-center gap-3 hover:shadow-md transition ${status.isOpen ? '' : 'is-closed'}">
             <div class="relative w-20 h-20 shrink-0">
@@ -906,6 +1041,9 @@ class FoodApp {
     if (!modal || !content) return;
 
     const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const isLiked = this.likedFoods.some(f => f.id === food.id);
+    const isWillReturn = this.isFoodWillReturn(food.id);
+    const willReturnCount = this.getWillReturnCount(food.id);
 
     content.innerHTML = `
       <div class="relative w-full h-64 bg-stone-900">
@@ -1041,16 +1179,25 @@ class FoodApp {
           </button>
         </div>
 
-        <div class="flex gap-2.5 pt-2">
-          <button onclick="window.app.addLikedFood(APP_DATA.foods.find(f => f.id === ${food.id}))" class="flex-1 py-3 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 cursor-pointer">
-            <span>❤️ Lưu vào Yêu Thích</span>
+        <div class="flex gap-2 pt-2">
+          <button onclick="window.app.toggleLikedFood(${food.id})" class="flex-1 py-3 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 cursor-pointer">
+            <span>❤️ Yêu Thích</span>
           </button>
-          <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="px-4 py-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-200 flex items-center justify-center gap-1.5 cursor-pointer">
+          <button onclick="window.app.toggleWillReturn(${food.id})" data-will-return-btn="${food.id}" class="px-3 py-3 ${isWillReturn ? 'bg-emerald-500 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'} rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer" title="Đánh dấu bạn sẽ quay lại quán">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+              <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+              <path d="M16 21h5v-5"/>
+            </svg>
+            <span>Sẽ quay lại (<span data-will-return-count="${food.id}">${willReturnCount}</span>)</span>
+          </button>
+          <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="px-3.5 py-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-200 flex items-center justify-center gap-1.5 cursor-pointer">
             ${window.getShopeeBagSvg ? window.getShopeeBagSvg(14, 'shrink-0') : ''}
             <span>Đặt Shopee</span>
           </button>
-          <button onclick="window.app.openMapWithFood(${food.id})" class="px-4 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1.5">
-            <span>Bản đồ 📍</span>
+          <button onclick="window.app.openMapWithFood(${food.id})" class="px-3.5 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1">
+            <span>📍</span>
           </button>
         </div>
       </div>
@@ -1077,6 +1224,9 @@ class FoodApp {
     }
 
     const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const isLiked = this.likedFoods.some(f => f.id === food.id);
+    const isWillReturn = this.isFoodWillReturn(food.id);
+    const willReturnCount = this.getWillReturnCount(food.id);
     const promoCode = food.deliveryPromoCode || "SHOPEE25K";
     const deliveryUrl = food.deliveryUrl || `https://shopeefood.vn/binh-dinh/${food.restaurant ? encodeURIComponent(food.restaurant) : 'quan-an'}`;
     const searchUrl = food.deliverySearchUrl || `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(food.restaurant || food.name)}`;

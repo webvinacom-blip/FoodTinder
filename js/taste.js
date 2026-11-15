@@ -311,6 +311,10 @@ class TasteManager {
     container.innerHTML = rankedFoods.map((food, idx) => {
       const isTopMatch = idx === 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      const isLiked = (window.app && window.app.likedFoods) ? window.app.likedFoods.some(f => f.id === food.id) : false;
+      const isWillReturn = (window.app && window.app.isFoodWillReturn) ? window.app.isFoodWillReturn(food.id) : false;
+      const willReturnCount = (window.app && window.app.getWillReturnCount) ? window.app.getWillReturnCount(food.id) : 98;
+
       return `
         <div class="taste-card ${status.isOpen ? '' : 'is-closed'} bg-white rounded-2xl border ${isTopMatch ? 'border-rose-300 ring-2 ring-rose-100 shadow-md' : 'border-stone-200 shadow-xs'} overflow-hidden hover:shadow-lg transition-all flex flex-col justify-between group">
           <div>
@@ -335,16 +339,16 @@ class TasteManager {
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
 
-              <!-- Tags & Quick Shopee Order Pill in Image Bottom -->
-              <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1 flex-wrap">
+              <!-- Tags & Quick Shopee Order Icon on Image Bottom -->
+              <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1">
                 <div class="flex items-center gap-1 flex-wrap">
                   ${(food.tags || []).slice(0, 1).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
                 </div>
+                <!-- Clean Shopee Icon Only on Photo -->
                 <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-                  class="bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
-                  title="Đặt giao ngay qua ShopeeFood">
-                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(10, 'shrink-0') : ''}
-                  <span>Đặt Shopee</span>
+                  class="w-6 h-6 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-md flex items-center justify-center transition hover:scale-110 active:scale-95 cursor-pointer ml-auto"
+                  title="Đặt giao tận nơi trên ShopeeFood">
+                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(13, 'shrink-0') : ''}
                 </button>
               </div>
             </div>
@@ -387,27 +391,48 @@ class TasteManager {
             </div>
           </div>
 
-          <!-- Bottom Actions: Thích, Đặt Shopee (đặc trưng), Bản đồ -->
-          <div class="p-3.5 pt-0 flex items-center gap-1.5">
-            <button onclick="event.stopPropagation();window.app.addLikedFood(APP_DATA.foods.find(f=>f.id===${food.id}))"
-              class="flex-1 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 cursor-pointer">
-              <span>❤️ Thích</span>
+          <!-- Bottom Actions: Hiển thị dưới dạng Icon Only (Yêu thích, Sẽ quay lại + số lượng, Đặt Shopee, Bản đồ) -->
+          <div class="p-3 pt-0 flex items-center gap-1.5">
+            <!-- 1. Yêu thích (Icon only) -->
+            <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
+              data-like-btn="${food.id}"
+              class="w-8 h-8 shrink-0 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl flex items-center justify-center transition active:scale-95 cursor-pointer border border-rose-100"
+              title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
+              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
             </button>
+
+            <!-- 2. Sẽ quay lại (Icon vòng xoay + số lượng người đã chọn sẽ quay lại quán) -->
+            <button onclick="event.stopPropagation();window.app.toggleWillReturn(${food.id})"
+              data-will-return-btn="${food.id}"
+              class="flex-1 h-8 ${isWillReturn ? 'bg-emerald-500 text-white shadow-xs' : 'bg-emerald-50/80 hover:bg-emerald-100/90 text-emerald-700 border border-emerald-200/80'} rounded-xl flex items-center justify-center gap-1 px-2 transition active:scale-95 cursor-pointer"
+              title="${isWillReturn ? 'Bạn đã chọn sẽ quay lại quán này (' + willReturnCount + ' người)' : 'Đánh dấu bạn sẽ quay lại quán này (' + willReturnCount + ' người đã chọn)'}">
+              <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M16 21h5v-5"/>
+              </svg>
+              <span data-will-return-count="${food.id}" class="text-[11px] font-extrabold leading-none">${willReturnCount}</span>
+            </button>
+
+            <!-- 3. Đặt Shopee (Icon túi Shopee chữ S đặc trưng) -->
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 py-1.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/60 flex items-center justify-center gap-1 transition active:scale-95 cursor-pointer"
+              class="w-8 h-8 shrink-0 bg-[#EE4D2D] hover:bg-[#D73211] text-white rounded-xl shadow-sm shadow-orange-300/80 flex items-center justify-center transition active:scale-95 cursor-pointer"
               title="Đặt món qua ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(12, 'shrink-0') : ''}
-              <span>Đặt Shopee</span>
+              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(16, 'shrink-0') : ''}
             </button>
+
+            <!-- 4. Bản đồ (Icon only) -->
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 shrink-0 cursor-pointer"
+              class="w-8 h-8 shrink-0 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl flex items-center justify-center transition active:scale-95 cursor-pointer"
               title="Xem trên bản đồ">
-              <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                 <line x1="9" y1="3" x2="9" y2="18"></line>
                 <line x1="15" y1="6" x2="15" y2="21"></line>
               </svg>
-              <span>Bản đồ</span>
             </button>
           </div>
         </div>
