@@ -1382,13 +1382,53 @@ class FoodApp {
   }
 
   openMapWithFood(foodId) {
-    this.closeFoodDetail();
-    this.switchTab('map');
-    setTimeout(() => {
-      if (window.mapManager) {
-        window.mapManager.selectFood(foodId);
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    window.soundFX && window.soundFX.playPop();
+
+    // Prepare Google Maps directions URL
+    let destinationParam = '';
+    if (food.lat && food.lng) {
+      destinationParam = `${food.lat},${food.lng}`;
+    } else {
+      const restName = food.restaurant || food.name;
+      const addr = food.address || '';
+      const city = food.cityName || APP_DATA.currentCity?.name || 'Quy Nhơn';
+      destinationParam = encodeURIComponent(`${restName}, ${addr}, ${city}`);
+    }
+    const gmapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationParam}`;
+
+    const modal = document.getElementById('google-maps-modal');
+    if (!modal) {
+      if (confirm(`Bạn có muốn mở Google Maps để dẫn đường đến quán "${food.restaurant || food.name}" không?`)) {
+        window.open(gmapsUrl, '_blank');
       }
-    }, 300);
+      return;
+    }
+
+    const restEl = document.getElementById('gmaps-modal-restaurant');
+    const addrEl = document.getElementById('gmaps-modal-address');
+    const distEl = document.getElementById('gmaps-modal-distance');
+    const confirmBtn = document.getElementById('gmaps-modal-confirm-btn');
+
+    if (restEl) restEl.textContent = food.restaurant || food.name;
+    if (addrEl) addrEl.textContent = food.address ? `${food.address}, ${food.cityName || 'Quy Nhơn'}` : (food.cityName || 'TP. Quy Nhơn');
+    if (distEl) distEl.textContent = food.distanceText ? food.distanceText : (food.distance ? `Cách bạn ${food.distance}km` : 'Gần bạn');
+
+    if (confirmBtn) {
+      confirmBtn.onclick = () => {
+        this.closeGoogleMapsModal();
+        window.open(gmapsUrl, '_blank');
+      };
+    }
+
+    modal.classList.remove('hidden');
+  }
+
+  closeGoogleMapsModal() {
+    const modal = document.getElementById('google-maps-modal');
+    if (modal) modal.classList.add('hidden');
   }
 
   showMatchModal(food, isSuperLike = false) {

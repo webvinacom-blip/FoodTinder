@@ -340,9 +340,6 @@
     <button onclick="switchTab('swipe')" id="pill-swipe">
       <i data-lucide="layers"></i> Quẹt món
     </button>
-    <button onclick="switchTab('map')" id="pill-map">
-      <i data-lucide="map"></i> Bản đồ
-    </button>
     <button onclick="switchTab('reels')" id="pill-reels">
       <i data-lucide="play-square"></i> Video Reels
     </button>
@@ -393,12 +390,6 @@
     <!-- Mood Selector -->
     <div class="sidebar-section">
       <div id="mood-selector-container"></div>
-    </div>
-
-    <!-- Mini Map Widget -->
-    <div class="sidebar-section">
-      <h4>Gần bạn</h4>
-      <div id="mini-map-card"></div>
     </div>
 
     <!-- Quick Stats -->
@@ -469,7 +460,7 @@
               <div class="text-[11px] text-amber-700 mt-0.5 font-semibold">Món đã thích</div>
             </div>
             <!-- Distance bento -->
-            <div onclick="switchTab('map')" class="bg-gradient-to-br from-emerald-50 to-teal-100 border border-emerald-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-100 border border-emerald-200 rounded-2xl p-4 shadow-sm">
               <div class="text-3xl mb-1">📍</div>
               <div class="text-xl font-extrabold text-stone-900">700m</div>
               <div class="text-[11px] text-emerald-700 mt-0.5 font-semibold">Quán gần nhất</div>
@@ -852,6 +843,38 @@
         <span>Chỉ đường đến quán</span>
       </button>
       <button onclick="window.app.closeMatchModal()" class="w-full py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-xs cursor-pointer">🃏 Tiếp tục quẹt món</button>
+    </div>
+  </div>
+</div>
+
+<!-- Google Maps Confirmation Modal -->
+<div id="google-maps-modal" class="modal-backdrop hidden" style="align-items:center;" onclick="if(event.target === this) window.app.closeGoogleMapsModal()">
+  <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4 text-center relative overflow-hidden" onclick="event.stopPropagation()">
+    <button onclick="window.app.closeGoogleMapsModal()" class="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 font-bold text-xs flex items-center justify-center transition cursor-pointer" title="Đóng">✕</button>
+    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center text-2xl shadow-md shadow-emerald-200 mx-auto mb-3">
+      🗺️
+    </div>
+    <h4 class="font-extrabold text-base text-stone-900" id="gmaps-modal-title">Dẫn đường trên Google Maps?</h4>
+    <p class="text-xs text-stone-500 mt-1" id="gmaps-modal-desc">Bạn có muốn mở Google Maps để nhận chỉ đường trực tiếp đến quán ăn này không?</p>
+    
+    <div class="my-3.5 p-3 bg-stone-50 border border-stone-200/80 rounded-2xl text-left">
+      <div class="font-bold text-xs text-stone-900 truncate" id="gmaps-modal-restaurant">Tên quán</div>
+      <div class="text-[11px] text-stone-500 truncate mt-0.5" id="gmaps-modal-address">Địa chỉ</div>
+      <div class="text-[11px] font-semibold text-emerald-600 mt-1 flex items-center gap-1">
+        <span>📍</span>
+        <span id="gmaps-modal-distance">Khoảng cách</span>
+      </div>
+    </div>
+
+    <div class="flex gap-2">
+      <button onclick="window.app.closeGoogleMapsModal()"
+        class="flex-1 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-bold text-xs transition cursor-pointer">
+        Hủy
+      </button>
+      <button id="gmaps-modal-confirm-btn"
+        class="flex-1 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-extrabold text-xs shadow-md shadow-emerald-200 transition active:scale-95 cursor-pointer flex items-center justify-center gap-1.5">
+        <span>🧭 Chỉ đường</span>
+      </button>
     </div>
   </div>
 </div>
