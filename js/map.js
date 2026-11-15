@@ -246,8 +246,8 @@ class FoodMapManager {
                 <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
                   class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
                   title="Đặt giao tận nơi trên ShopeeFood">
-                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(10, 'shrink-0') : ''}
-                  <span>Đặt món</span>
+                  ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
+                  <span>ShopeeFood</span>
                 </button>
                 <button onclick="event.stopPropagation(); window.mapManager.drawRouteTo(APP_DATA.foods.find(f => f.id === ${food.id}))" 
                   class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold">

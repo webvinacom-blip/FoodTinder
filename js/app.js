@@ -402,8 +402,8 @@ class FoodApp {
 
             <button onclick="window.app.openShopeeFoodDelivery(${featuredFood.id})" 
               class="py-2.5 px-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-300 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(14, 'shrink-0') : ''}
-              <span>Đặt Shopee</span>
+              ${window.getShopeeIcon ? window.getShopeeIcon(16, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
 
             <button onclick="window.app.skipFeaturedFood()" 
@@ -563,9 +563,9 @@ class FoodApp {
           </div>
           <div class="mt-1.5 flex gap-1">
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="w-full py-1 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1 shadow-xs transition cursor-pointer">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(11, 'shrink-0') : ''}
-              <span>Đặt ShopeeFood</span>
+              class="w-full py-1 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
+              ${window.getShopeeIcon ? window.getShopeeIcon(13, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
           </div>
         </div>
@@ -626,11 +626,12 @@ class FoodApp {
               ${food.tags.slice(0,1).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
               ${food.source ? `<span class="bg-black/60 text-white text-[8.5px] font-bold px-1.5 py-0.5 rounded-full inline-flex items-center gap-1">${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(10, 'inline-block') : '') + ' Shopee' : '🛵 Grab'}</span>` : ''}
             </div>
-            <!-- Quick Shopee Delivery Icon on Photo -->
+            <!-- Quick ShopeeFood Delivery Pill on Photo -->
             <button onclick="event.stopPropagation(); window.app.openShopeeFoodDelivery(${food.id})" 
-              class="w-6 h-6 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-md flex items-center justify-center transition hover:scale-110 active:scale-95 cursor-pointer ml-auto"
+              class="inline-flex items-center gap-1 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
               title="Đặt giao ngay trên ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(13, 'shrink-0') : ''}
+              ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
           </div>
           <span class="absolute top-2 right-2 bg-black/50 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full">⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}</span>
@@ -682,11 +683,12 @@ class FoodApp {
               <span data-will-return-count="${food.id}" class="text-[11px] font-extrabold leading-none">${willReturnCount}</span>
             </button>
 
-            <!-- 3. Đặt Shopee (Icon only) -->
+            <!-- 3. Đặt ShopeeFood (Icon + chữ ShopeeFood bên cạnh) -->
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="w-8 h-8 shrink-0 bg-[#EE4D2D] hover:bg-[#D73211] text-white rounded-xl shadow-sm shadow-orange-300/80 flex items-center justify-center transition active:scale-95 cursor-pointer"
+              class="flex items-center justify-center gap-1.5 px-2.5 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[10.5px] font-black shadow-sm shadow-orange-300/80 transition active:scale-95 cursor-pointer shrink-0"
               title="Đặt món qua ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(16, 'shrink-0') : ''}
+              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
 
             <!-- 4. Bản đồ (Icon only) -->
@@ -1145,8 +1147,8 @@ class FoodApp {
         <div class="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/70 border border-orange-200/90 rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
-              <span class="w-8 h-8 rounded-xl bg-[#EE4D2D] text-white flex items-center justify-center shadow-xs">
-                ${window.getShopeeBagSvg ? window.getShopeeBagSvg(18, 'shrink-0') : '🛍️'}
+              <span class="w-8 h-8 rounded-xl bg-[#EE4D2D] text-white flex items-center justify-center shadow-xs overflow-hidden">
+                ${window.getShopeeIcon ? window.getShopeeIcon(32, 'w-full h-full object-cover') : '🛍️'}
               </span>
               <div>
                 <h5 class="font-extrabold text-xs text-stone-900 flex items-center gap-1.5">
@@ -1173,7 +1175,7 @@ class FoodApp {
           </div>
 
           <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="w-full py-3 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl font-black text-xs shadow-md shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
-            ${window.getShopeeBagSvg ? window.getShopeeBagSvg(16, 'shrink-0') : ''}
+            ${window.getShopeeIcon ? window.getShopeeIcon(18, 'rounded-xs shrink-0') : ''}
             <span>ĐẶT GIAO HÀNG TRÊN SHOPEEFOOD</span>
             <span class="text-xs">↗</span>
           </button>
@@ -1193,8 +1195,8 @@ class FoodApp {
             <span>Sẽ quay lại (<span data-will-return-count="${food.id}">${willReturnCount}</span>)</span>
           </button>
           <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="px-3.5 py-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-200 flex items-center justify-center gap-1.5 cursor-pointer">
-            ${window.getShopeeBagSvg ? window.getShopeeBagSvg(14, 'shrink-0') : ''}
-            <span>Đặt Shopee</span>
+            ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
+            <span>ShopeeFood</span>
           </button>
           <button onclick="window.app.openMapWithFood(${food.id})" class="px-3.5 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1">
             <span>📍</span>
@@ -1238,8 +1240,8 @@ class FoodApp {
           <div class="absolute -right-4 -bottom-6 text-7xl opacity-15 pointer-events-none">🛵</div>
           <div class="flex items-center justify-between relative z-10">
             <div class="flex items-center gap-2.5">
-              <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-xs">
-                ${window.getShopeeBagSvg ? window.getShopeeBagSvg(24, 'shrink-0') : '🛍️'}
+              <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-xs overflow-hidden">
+                ${window.getShopeeIcon ? window.getShopeeIcon(36, 'w-full h-full object-cover rounded-xl') : '🛍️'}
               </div>
               <div>
                 <div class="flex items-center gap-1.5">
@@ -1340,7 +1342,7 @@ class FoodApp {
         <div class="p-4 bg-white border-t border-stone-100 flex flex-col gap-2 shrink-0">
           <button onclick="window.app.redirectToShopeeFood('${deliveryUrl}', '${food.name.replace(/'/g, "\\'")}', '${food.restaurant.replace(/'/g, "\\'")}')" 
             class="w-full py-3.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-2xl font-black text-sm shadow-xl shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
-            ${window.getShopeeBagSvg ? window.getShopeeBagSvg(20, 'shrink-0') : ''}
+            ${window.getShopeeIcon ? window.getShopeeIcon(22, 'rounded-xs shrink-0') : ''}
             <span>MỞ QUÁN TRÊN SHOPEEFOOD ĐẶT HÀNG</span>
             <span>↗</span>
           </button>

@@ -339,16 +339,17 @@ class TasteManager {
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
 
-              <!-- Tags & Quick Shopee Order Icon on Image Bottom -->
+              <!-- Tags & Quick ShopeeFood Order Pill on Image Bottom -->
               <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1">
                 <div class="flex items-center gap-1 flex-wrap">
                   ${(food.tags || []).slice(0, 1).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
                 </div>
-                <!-- Clean Shopee Icon Only on Photo -->
+                <!-- ShopeeFood Delivery Pill on Photo -->
                 <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-                  class="w-6 h-6 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-md flex items-center justify-center transition hover:scale-110 active:scale-95 cursor-pointer ml-auto"
+                  class="inline-flex items-center gap-1 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
                   title="Đặt giao tận nơi trên ShopeeFood">
-                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(13, 'shrink-0') : ''}
+                  ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
+                  <span>ShopeeFood</span>
                 </button>
               </div>
             </div>
@@ -417,11 +418,12 @@ class TasteManager {
               <span data-will-return-count="${food.id}" class="text-[11px] font-extrabold leading-none">${willReturnCount}</span>
             </button>
 
-            <!-- 3. Đặt Shopee (Icon túi Shopee chữ S đặc trưng) -->
+            <!-- 3. Đặt ShopeeFood (Icon ShopeeFood + chữ ShopeeFood bên cạnh) -->
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="w-8 h-8 shrink-0 bg-[#EE4D2D] hover:bg-[#D73211] text-white rounded-xl shadow-sm shadow-orange-300/80 flex items-center justify-center transition active:scale-95 cursor-pointer"
+              class="flex items-center justify-center gap-1.5 px-2.5 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[10.5px] font-black shadow-sm shadow-orange-300/80 transition active:scale-95 cursor-pointer shrink-0"
               title="Đặt món qua ShopeeFood">
-              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(16, 'shrink-0') : ''}
+              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
+              <span>ShopeeFood</span>
             </button>
 
             <!-- 4. Bản đồ (Icon only) -->

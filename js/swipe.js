@@ -120,9 +120,9 @@ class TinderSwipeManager {
                     <span>${food.source || 'ShopeeFood'}</span>
                   </span>
                   <span class="text-[11px] text-stone-400 font-medium">${food.district || 'TP. Quy Nhơn'}</span>
-                  <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
-                    ${window.getShopeeBagSvg ? window.getShopeeBagSvg(11, 'shrink-0') : ''}
-                    <span>Đặt Shopee</span>
+                  <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
+                    ${window.getShopeeIcon ? window.getShopeeIcon(13, 'rounded-xs shrink-0') : ''}
+                    <span>ShopeeFood</span>
                   </button>
                 </div>
                 <h3 class="font-bold text-lg text-stone-900 leading-tight">${food.name}</h3>
