@@ -486,6 +486,11 @@
 
             <!-- Taste Profile & Location switch Buttons -->
             <div class="flex items-center gap-2 shrink-0">
+              <button id="taste-specialty-toggle-btn" onclick="window.tasteManager.toggleSpecialtyFilter()"
+                class="px-3.5 py-2 bg-white hover:bg-amber-50 text-stone-700 hover:text-amber-700 border border-stone-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer"
+                title="Lọc chỉ hiển thị các quán đặc sản địa phương">
+                <span>🍲 Lọc đặc sản</span>
+              </button>
               <button onclick="window.tasteManager.openTasteProfileModal()"
                 class="px-3.5 py-2 bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
                 <span>✨ Gu của bạn</span>
