@@ -115,10 +115,14 @@ class TinderSwipeManager {
             <div class="flex items-start justify-between gap-2">
               <div>
                 <div class="flex items-center gap-1.5 mb-1">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-100 text-orange-700' : 'bg-emerald-100 text-emerald-700'}">${food.source === 'ShopeeFood' ? '🛍️ ShopeeFood' : '🛵 GrabFood'}</span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
+                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(12, 'shrink-0') : '🛍️') : '🛵'}
+                    <span>${food.source || 'ShopeeFood'}</span>
+                  </span>
                   <span class="text-[11px] text-stone-400 font-medium">${food.district || 'TP. Quy Nhơn'}</span>
                   <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
-                    <span>🛵</span> Đặt Shopee
+                    ${window.getShopeeBagSvg ? window.getShopeeBagSvg(11, 'shrink-0') : ''}
+                    <span>Đặt Shopee</span>
                   </button>
                 </div>
                 <h3 class="font-bold text-lg text-stone-900 leading-tight">${food.name}</h3>

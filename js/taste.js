@@ -335,9 +335,17 @@ class TasteManager {
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
 
-              <!-- Tags in Image Bottom -->
-              <div class="absolute bottom-2 left-2 right-2 flex items-center gap-1 flex-wrap">
-                ${(food.tags || []).slice(0, 2).map(t => `<span class="bg-black/50 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
+              <!-- Tags & Quick Shopee Order Pill in Image Bottom -->
+              <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1 flex-wrap">
+                <div class="flex items-center gap-1 flex-wrap">
+                  ${(food.tags || []).slice(0, 1).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
+                </div>
+                <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+                  class="bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
+                  title="Đặt giao ngay qua ShopeeFood">
+                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(10, 'shrink-0') : ''}
+                  <span>Đặt Shopee</span>
+                </button>
               </div>
             </div>
 
@@ -345,7 +353,10 @@ class TasteManager {
             <div class="p-3.5 space-y-2">
               <div>
                 <div class="flex items-center justify-between gap-1 mb-0.5">
-                  <span class="text-[9px] px-1.5 py-0.2 rounded font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-100 text-orange-700' : 'bg-emerald-100 text-emerald-700'}">${food.source === 'ShopeeFood' ? '🛍️ ShopeeFood' : '🛵 GrabFood'}</span>
+                  <span class="inline-flex items-center gap-1 text-[9.5px] px-1.5 py-0.5 rounded-md font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
+                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(12, 'shrink-0') : '🛍️') : '🛵'}
+                    <span>${food.source || 'ShopeeFood'}</span>
+                  </span>
                   <span class="text-[9.5px] text-stone-400 truncate">${food.district || 'TP. Quy Nhơn'}</span>
                 </div>
                 <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
@@ -376,14 +387,20 @@ class TasteManager {
             </div>
           </div>
 
-          <!-- Bottom Actions -->
-          <div class="p-3.5 pt-0 flex gap-2">
+          <!-- Bottom Actions: Thích, Đặt Shopee (đặc trưng), Bản đồ -->
+          <div class="p-3.5 pt-0 flex items-center gap-1.5">
             <button onclick="event.stopPropagation();window.app.addLikedFood(APP_DATA.foods.find(f=>f.id===${food.id}))"
-              class="flex-1 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1">
+              class="flex-1 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 cursor-pointer">
               <span>❤️ Thích</span>
             </button>
+            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+              class="flex-1 py-1.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/60 flex items-center justify-center gap-1 transition active:scale-95 cursor-pointer"
+              title="Đặt món qua ShopeeFood">
+              ${window.getShopeeBagSvg ? window.getShopeeBagSvg(12, 'shrink-0') : ''}
+              <span>Đặt Shopee</span>
+            </button>
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 shrink-0"
+              class="px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 shrink-0 cursor-pointer"
               title="Xem trên bản đồ">
               <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>

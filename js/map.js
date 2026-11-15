@@ -244,9 +244,10 @@ class FoodMapManager {
               <span class="text-[11px] font-bold text-rose-600 truncate">${food.priceRange.split(' - ')[0]}</span>
               <div class="flex items-center gap-1 shrink-0">
                 <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
-                  class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-0.5"
+                  class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
                   title="Đặt giao tận nơi trên ShopeeFood">
-                  <span>🛵</span><span>Đặt món</span>
+                  ${window.getShopeeBagSvg ? window.getShopeeBagSvg(10, 'shrink-0') : ''}
+                  <span>Đặt món</span>
                 </button>
                 <button onclick="event.stopPropagation(); window.mapManager.drawRouteTo(APP_DATA.foods.find(f => f.id === ${food.id}))" 
                   class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold">
