@@ -125,9 +125,9 @@ class TinderSwipeManager {
                     <span>ShopeeFood</span>
                   </button>
                 </div>
-                <h3 class="font-bold text-lg text-stone-900 leading-tight">${food.name}</h3>
+                <h3 class="font-bold text-lg text-stone-900 leading-tight" title="${food.restaurant}">${food.restaurant}</h3>
                 <p class="text-xs text-stone-500 flex items-center gap-1 mt-0.5 flex-wrap">
-                  <span class="font-medium text-stone-700">${food.restaurant}</span> • ${food.priceRange}
+                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span> • ${food.priceRange}
                   • <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
                 </p>
               </div>

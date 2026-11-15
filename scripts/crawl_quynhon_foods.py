@@ -8,6 +8,25 @@ Sử dụng dữ liệu thực tế và hình ảnh chuẩn CDN ShopeeFood (down
 import json
 import os
 import random
+import math
+
+def calculate_distance_km(lat1, lon1, lat2, lon2):
+    if not lat1 or not lon1 or not lat2 or not lon2:
+        return 1.0
+    R = 6371.0
+    d_lat = math.radians(lat2 - lat1)
+    d_lon = math.radians(lon2 - lon1)
+    a = math.sin(d_lat / 2)**2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(d_lon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return R * c
+
+def format_distance_text(km):
+    if km < 1:
+        meters = max(100, round(km * 1000 / 50) * 50)
+        return f"Cách bạn {meters}m"
+    if km < 10:
+        return f"Cách bạn {km:.1f}km"
+    return f"Cách bạn {round(km)}km"
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_FILE = os.path.join(BASE_DIR, "scratch/shopeefood_crawled_full.json")
@@ -115,6 +134,141 @@ def categorize_and_name_dish(r):
 
     return "streetfood", f"Đặc Sản {name}", "35.000đ - 85.000đ", ["comfort", "chill", "budget"]
 
+
+# Danh sách đen và từ khóa nhận diện quán ăn đã đóng cửa vĩnh viễn
+PERMANENTLY_CLOSED_BLACKLIST = [
+    "vương khang",
+    "vuong khang"
+]
+
+PERMANENTLY_CLOSED_KEYWORDS = [
+    "đóng cửa vĩnh viễn",
+    "bị đóng vĩnh viễn",
+    "ngừng hoạt động",
+    "permanently closed",
+    "closed permanently",
+    "đã đóng cửa",
+    "nghỉ bán vĩnh viễn",
+    "không còn hoạt động",
+    "ngừng kinh doanh"
+]
+
+# Danh sách đen nhận diện quán ăn đã đóng cửa vĩnh viễn hoặc quán ảo/sang nhượng
+PERMANENTLY_CLOSED_BLACKLIST = [
+    "vương khang", "vuong khang",
+    "con bò cười bbq", "con bo cuoi bbq", "bò cười bbq",
+    "đất võ",
+    "chị ba trà", "chi ba tra",
+    "ăn vặt ngô mây", "an vat ngo may"
+]
+
+# Từ khóa địa chỉ tương đối / vỉa hè / không có số nhà vật lý chính thức trên Google Maps
+RELATIVE_ADDRESS_KEYWORDS = [
+    "đối diện", "doi dien",
+    "gần", "gan ",
+    "bên cạnh", "ben canh",
+    "sát bên", "sat ben",
+    "trước ", "truoc ",
+    "sau ",
+    "vỉa hè", "via he",
+    "đầu hẻm", "dau hem",
+    "đầu đường", "dau duong",
+    "cuối đường", "cuoi duong",
+    "ngã ba", "nga ba",
+    "ngã tư", "nga tu",
+    "ngã 3", "nga 3",
+    "ngã 4", "nga 4",
+    "quốc lộ 1d", "ql1d"
+]
+
+def clean_address(addr):
+    """Chuẩn hóa địa chỉ: loại bỏ 'Số', 'Số nhà' và số 0 ở đầu (05 -> 5)"""
+    if not addr:
+        return ""
+    import unicodedata
+    addr = unicodedata.normalize('NFC', addr)
+    addr = re.sub(r'^(số\s*nhà|số\s*:|số)\s*', '', addr, flags=re.IGNORECASE)
+    addr = re.sub(r'^0+([1-9]\d*)', r'\1', addr)
+    return addr.strip()
+
+def is_restaurant_permanently_closed(r):
+    text = f"{r.get('name', '')} {r.get('address', '')} {r.get('description', '')}".lower()
+    for b in PERMANENTLY_CLOSED_BLACKLIST:
+        if b in text:
+            return True
+    for kw in PERMANENTLY_CLOSED_KEYWORDS:
+        if kw in text:
+            return True
+    if r.get('is_closed') or r.get('is_permanently_closed') or r.get('operating_status') in ('closed', 'permanently_closed'):
+        return True
+    return False
+
+def is_vague_or_invalid_restaurant(r):
+    """
+    Bộ lọc tự động quét & loại bỏ các quán không rõ ràng sau khi cào từ ShopeeFood:
+    - Quán ảo, Shop Online giao hàng không có thực địa
+    - Quán có địa chỉ tương đối (Đối diện..., Gần..., Vỉa hè..., Ngã 3/4...) không tìm được trên Google Maps
+    - Quán ghi địa chỉ cộc lốc (chỉ có tên đường, không số nhà)
+    - Quán nằm ngoài ranh giới TP. Quy Nhơn (Phù Cát, Hoài Nhơn...)
+    - Quán bị lỗi tọa độ hoặc không có thực ngoài đời
+    """
+    name = r.get("name", "").strip()
+    raw_addr = r.get("address", "").strip()
+    name_l = name.lower()
+    addr = clean_address(raw_addr)
+    addr_l = addr.lower()
+    
+    if is_restaurant_permanently_closed(r):
+        return True, "Quán đã đóng cửa / quán ảo"
+    if "shop online" in name_l or "shop online" in addr_l:
+        return True, "Shop online không có cửa hàng thực tế"
+    if "đất võ" in name_l and "gà chỉ" in name_l:
+        return True, "Quán ảo không có biển hiệu ngoài đời (Gà Chỉ Đất Võ)"
+    if "ăn vặt ngô mây" in name_l or "an vat ngo may" in name_l:
+        return True, "Quán ảo không tồn tại trên Google Maps (Ăn Vặt Ngô Mây bị ghim sang tiệm bánh kem)"
+    if "chị ba trà" in name_l or "chi ba tra" in name_l:
+        return True, "Quán ảo không tồn tại trên Google Maps (Chị Ba Trà)"
+        
+    for kw in RELATIVE_ADDRESS_KEYWORDS:
+        if kw in addr_l:
+            return True, f"Địa chỉ tương đối/vỉa hè không thể tìm Maps ({kw}): \"{addr}\""
+            
+    if len(addr) < 4:
+        return True, "Địa chỉ quá ngắn / không hợp lệ"
+        
+    lat = r.get("lat")
+    lng = r.get("lng")
+    if not lat or not lng:
+        return True, "Thiếu tọa độ GPS"
+    try:
+        lat_f = float(lat)
+        lng_f = float(lng)
+    except Exception:
+        return True, "Tọa độ GPS không hợp lệ"
+        
+    if not (13.65 <= lat_f <= 13.92 and 109.15 <= lng_f <= 109.32):
+        return True, f"Tọa độ ngoài TP. Quy Nhơn ({lat_f:.4f}, {lng_f:.4f})"
+        
+    outside_districts = ["phù cát", "hoài nhơn", "phù mỹ", "an nhơn", "tây sơn", "vân canh", "vĩnh thạnh", "hoài ân"]
+    for d in outside_districts:
+        if d in addr_l or d in r.get("district", "").lower():
+            return True, f"Nằm ngoài TP. Quy Nhơn ({d})"
+            
+    parts = [clean_address(p) for p in addr.split(',')]
+    first_part = parts[0]
+    first_lower = first_part.lower()
+    
+    has_street_num = bool(re.search(r'^\d+', first_part)) or bool(re.search(r'^lô\s+\d+', first_lower))
+    if not has_street_num and len(parts) > 1:
+        has_street_num = bool(re.search(r'^\d+', parts[1])) or bool(re.search(r'^lô\s+\d+', parts[1].lower()))
+        
+    is_famous_poi = any(poi in name_l for poi in ['surf bar', 's.blue', 'hoàng thao', 'hướng dương', 'sáu cao', 'mộc viên'])
+    
+    if not (has_street_num or is_famous_poi):
+        return True, f"Địa chỉ mơ hồ không số nhà: \"{addr}\""
+        
+    return False, ""
+
 def generate_300_quynhon_foods():
     with open(RAW_FILE, "r", encoding="utf-8") as f:
         raw_restaurants = json.load(f)
@@ -123,6 +277,9 @@ def generate_300_quynhon_foods():
     used_names = set()
 
     for r in raw_restaurants:
+        is_bad, reason = is_vague_or_invalid_restaurant(r)
+        if is_bad:
+            continue
         r_name = r["name"].strip()
         if r_name in used_names:
             continue
@@ -166,10 +323,19 @@ def generate_300_quynhon_foods():
     final_300 = processed_items[:300]
     standard_foods = []
     
+    home_lat = 13.7820
+    home_lng = 109.2197
+
     for idx, item in enumerate(final_300, 1):
-        source = "ShopeeFood" if idx % 2 == 0 else "GrabFood"
-        source_icon = "🛍️" if source == "ShopeeFood" else "🛵"
-        dist = round(0.5 + (float((idx * 17) % 35) / 10.0), 1)
+        source = "ShopeeFood"
+        source_icon = "🛍️"
+        
+        item_lat = float(item['lat'])
+        item_lng = float(item['lng'])
+        real_km = calculate_distance_km(home_lat, home_lng, item_lat, item_lng)
+        dist = round(real_km, 1)
+        dist_text = format_distance_text(real_km)
+
         open_hour = 6 + (idx % 4)
         close_hour = 21 + (idx % 3)
         open_time = f"{open_hour:02d}:00 - {close_hour:02d}:30"
@@ -197,7 +363,7 @@ def generate_300_quynhon_foods():
             "address": item['address'],
             "district": item['district'],
             "distance": dist,
-            "distanceText": f"Cách bạn {dist}km",
+            "distanceText": dist_text,
             "priceRange": item['priceRange'],
             "rating": max(4.0, min(5.0, item['rating'])),
             "reviewCount": item['totalReviews'],
@@ -207,8 +373,10 @@ def generate_300_quynhon_foods():
             "category": item['category'],
             "source": source,
             "sourceIcon": source_icon,
-            "lat": item['lat'],
-            "lng": item['lng'],
+            "latitude": item_lat,
+            "longitude": item_lng,
+            "lat": item_lat,
+            "lng": item_lng,
             "moodIds": moods,
             "weather": ["sunny", "rainy", "hot"],
             "weatherNote": "Quy Nhơn 24°C 🌧️",
@@ -231,11 +399,11 @@ def generate_300_quynhon_foods():
 def save_food_data_json(foods):
     final_dataset = {
         "metadata": {
-            "title": "300 Quán Ăn Nổi Bật Tại Quy Nhơn từ ShopeeFood & GrabFood",
+            "title": "300 Quán Ăn Nổi Bật Tại Quy Nhơn từ ShopeeFood",
             "city": "Quy Nhơn, Bình Định",
             "totalCount": len(foods),
             "imageSource": "ShopeeFood CDN (down-vn.img.susercontent.com)",
-            "createdAt": "14/11/2026"
+            "createdAt": "15/11/2026"
         },
         "foods": foods
     }

@@ -299,6 +299,7 @@ class TasteManager {
 
     // Filter foods belonging to this city or district
     let cityFoods = APP_DATA.foods.filter(f => {
+      if (window.isFakeDummyFood && window.isFakeDummyFood(f)) return false;
       if (currentCity.cityId && f.cityId) {
         return f.cityId === currentCity.cityId;
       }
@@ -320,21 +321,72 @@ class TasteManager {
       );
       if (cityOpt && Array.isArray(cityOpt.specialties) && cityOpt.specialties.length > 0) {
         cityFoods = cityOpt.specialties.map((spec, sIdx) => {
+          let parsedRest = spec.rest || `Đặc Sản ${cityOpt.shortName || cityOpt.city}`;
+          let parsedAddr = cityOpt.address;
+          if (spec.rest && spec.rest.includes(' - ')) {
+            const parts = spec.rest.split(' - ');
+            parsedRest = parts[0].trim();
+            const branch = parts.slice(1).join(' - ').trim();
+            if (branch) {
+              parsedAddr = branch;
+              const cleanC = (cityOpt.shortName || cityOpt.city || '').split('(')[0].replace(/cũ/gi, '').trim();
+              if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {
+                parsedAddr += `, ${cleanC}`;
+              }
+            }
+          }
+
+          const foodId = 6000 + Math.abs(Math.round(cityOpt.lat * 100)) + sIdx;
+          const foodLat = (spec.latitude !== undefined && spec.latitude !== null) ? spec.latitude : (spec.lat || ((cityOpt.latitude || cityOpt.lat) + (sIdx * 0.003)));
+          const foodLng = (spec.longitude !== undefined && spec.longitude !== null) ? spec.longitude : (spec.lng || ((cityOpt.longitude || cityOpt.lng) + (sIdx * 0.003)));
+
+          // Tính khoảng cách thực tế từ vị trí người dùng (User Location)
+          const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+          const calcHaversine = (la1, lo1, la2, lo2) => {
+            if (!la1 || !lo1 || !la2 || !lo2) return 1.0;
+            const R = 6371;
+            const dLa = (la2 - la1) * Math.PI / 180;
+            const dLo = (lo2 - lo1) * Math.PI / 180;
+            const a = Math.sin(dLa/2)*Math.sin(dLa/2) + Math.cos(la1*Math.PI/180)*Math.cos(la2*Math.PI/180)*Math.sin(dLo/2)*Math.sin(dLo/2);
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+          };
+          const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm) || calcHaversine;
+          const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText) || (k => (k < 1 ? `Cách bạn ${Math.round(k*1000)}m` : `Cách bạn ${k.toFixed(1)}km`));
+          const realDistKm = calcDistFn(userLoc.lat, userLoc.lng, foodLat, foodLng);
+          const distText = formatDistFn(realDistKm);
+
+          const existingItem = APP_DATA.foods.find(f => f.id === foodId || (f.name === spec.name && f.cityId === cityOpt.cityId));
+          if (existingItem) {
+            existingItem.restaurant = parsedRest;
+            existingItem.address = parsedAddr;
+            existingItem.distance = Number(realDistKm.toFixed(1));
+            existingItem.distanceText = distText;
+            existingItem.latitude = foodLat;
+            existingItem.longitude = foodLng;
+            existingItem.lat = foodLat;
+            existingItem.lng = foodLng;
+            existingItem.cityId = cityOpt.cityId;
+            existingItem.cityName = cityOpt.city;
+            return existingItem;
+          }
+
           const foodItem = {
-            id: 6000 + Math.abs(Math.round(cityOpt.lat * 100)) + sIdx,
+            id: foodId,
             cityId: cityOpt.cityId,
             cityName: cityOpt.city,
             name: spec.name,
-            restaurant: spec.rest || `Đặc Sản ${cityOpt.shortName || cityOpt.city}`,
-            address: cityOpt.address,
-            distance: 0.6 + sIdx * 0.3,
-            distanceText: `Cách bạn ${(600 + sIdx * 300)}m`,
+            restaurant: parsedRest,
+            address: parsedAddr,
+            distance: Number(realDistKm.toFixed(1)),
+            distanceText: distText,
             weatherNote: `${cityOpt.condition} ${cityOpt.temp}`,
             priceRange: spec.price || "45.000đ - 85.000đ",
             rating: Number(window.formatRating ? window.formatRating(4.8 + (sIdx % 2) * 0.1) : (4.8 + (sIdx % 2) * 0.1).toFixed(1)),
             reviewCount: 1520 + sIdx * 340,
-            lat: cityOpt.lat + (sIdx * 0.003),
-            lng: cityOpt.lng + (sIdx * 0.003),
+            latitude: foodLat,
+            longitude: foodLng,
+            lat: foodLat,
+            lng: foodLng,
             category: spec.cat || "streetfood",
             moodIds: ["comfort", "chill", "craving", "energetic", "sad"],
             tags: spec.tags || ["#Đặc_sản", "#Nóng_hổi", "#Đậm_đà"],
@@ -349,9 +401,7 @@ class TasteManager {
             phone: "0912 345 678",
             desc: spec.reason || `Đặc sản trứ danh của ${cityOpt.city}, được thực khách gần xa đánh giá cao.`
           };
-          if (!APP_DATA.foods.some(f => f.id === foodItem.id)) {
-            APP_DATA.foods.push(foodItem);
-          }
+          APP_DATA.foods.push(foodItem);
           return foodItem;
         });
       } else {
@@ -383,11 +433,24 @@ class TasteManager {
       displayFoods = cityFoods.filter(f => this.isLocationSpecialty(f, currentCity));
     }
 
-    // Filter foods within current radius (mặc định ban đầu 1km, mỗi lần bấm Xem thêm tăng +1km)
-    const inRadiusFoods = displayFoods.filter(f => {
-      const dist = typeof f.distance === 'number' ? f.distance : parseFloat(f.distance);
-      return !isNaN(dist) ? dist <= this.currentRadius : true;
-    });
+    // Kiểm tra xem người dùng đang ở location hiện tại (nơi user đang ở) hay đã đổi sang tỉnh thành khác
+    const homeCityId = (window.APP_DATA && window.APP_DATA.homeCityId) ? window.APP_DATA.homeCityId : 'quynhon';
+    const isHomeLocation = (
+      currentCity.cityId === homeCityId || 
+      (currentCity.name && typeof currentCity.name === 'string' && currentCity.name.toLowerCase().includes('quy nhơn')) ||
+      (currentCity.cityId && typeof currentCity.cityId === 'string' && currentCity.cityId.toLowerCase().includes('quynhon'))
+    );
+
+    // Lọc theo bán kính:
+    // - Tại location user đang ở: hiển thị các quán trong bán kính =< 1km (mặc định ban đầu 1km, bấm Xem thêm tăng +1km)
+    // - Khi người dùng đổi tỉnh thành: hiển thị các quán theo Gu mà KHÔNG GIỚI HẠN km!
+    let inRadiusFoods = displayFoods;
+    if (isHomeLocation) {
+      inRadiusFoods = displayFoods.filter(f => {
+        const dist = typeof f.distance === 'number' ? f.distance : parseFloat(f.distance);
+        return !isNaN(dist) ? dist <= this.currentRadius : true;
+      });
+    }
 
     // Score & Rank each food
     const rankedFoods = inRadiusFoods.map(food => {
@@ -398,34 +461,39 @@ class TasteManager {
         matchScore,
         matchReason
       };
-    }).sort((a, b) => b.matchScore - a.matchScore);
+    }).sort((a, b) => (b.matchScore - a.matchScore) || ((Number(a.distance) || 0) - (Number(b.distance) || 0)));
 
     if (summaryTextEl) {
       const filterBadge = this.onlySpecialties 
-        ? `<span class="inline-flex items-center gap-1 font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-lg border border-amber-300 text-xs shadow-2xs">🍲 Đang lọc: Đặc sản địa phương</span>`
+        ? `<span class="inline-flex items-center gap-1 font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-lg border border-amber-300 text-xs shadow-2xs shrink-0">🍲 Đang lọc: Đặc sản</span>`
+        : '';
+
+      // Chỉ hiển thị bán kính khi ở location user đang ở (Quy Nhơn). Không hiển thị thông tin giới hạn khoảng cách khi đổi tỉnh thành.
+      const locationBadge = isHomeLocation
+        ? `<span class="inline-flex items-center gap-1 font-black text-[#EE4D2D] bg-orange-50 px-2 py-0.5 rounded-lg border border-orange-200 text-xs shadow-2xs shrink-0">
+             📍 Bán kính: ≤ ${this.currentRadius}km
+           </span>`
         : '';
 
       if (rankedFoods.length > 0) {
         summaryTextEl.innerHTML = `
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="inline-flex items-center gap-1 font-black text-[#EE4D2D] bg-orange-50 px-2.5 py-0.5 rounded-lg border border-orange-200 text-xs shadow-2xs">
-              📍 Bán kính: ≤ ${this.currentRadius}km
-            </span>
+          <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+            ${locationBadge}
             ${filterBadge}
-            <span class="text-xs text-stone-600 font-medium">
-              Tìm thấy <b>${rankedFoods.length} / ${displayFoods.length}</b> quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon tại <b>${currentCity.name}</b> — Sắp xếp theo độ chuẩn Gu (${rankedFoods[0]?.matchScore || 98}% → ${rankedFoods[rankedFoods.length - 1]?.matchScore || 70}%).
+            <span class="text-xs text-stone-600 font-medium whitespace-normal sm:whitespace-nowrap overflow-hidden text-ellipsis">
+              Tìm thấy <b>${rankedFoods.length}${isHomeLocation ? ` / ${displayFoods.length}` : ''}</b> quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon tại <b>${currentCity.name}</b> — Sắp xếp theo độ chuẩn Gu (${rankedFoods[0]?.matchScore || 98}% → ${rankedFoods[rankedFoods.length - 1]?.matchScore || 70}%).
             </span>
           </div>
         `;
       } else {
         summaryTextEl.innerHTML = `
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="inline-flex items-center gap-1 font-black text-stone-500 bg-stone-100 px-2.5 py-0.5 rounded-lg border border-stone-200 text-xs shadow-2xs">
-              📍 Bán kính: ≤ ${this.currentRadius}km
-            </span>
+          <div class="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+            ${locationBadge}
             ${filterBadge}
-            <span class="text-xs text-stone-500 font-medium">
-              Chưa tìm thấy quán ${this.onlySpecialties ? 'đặc sản ' : ''}nào trong bán kính ≤ ${this.currentRadius}km tại ${currentCity.name}. Bấm <b>Xem thêm (+1km)</b> để mở rộng phạm vi!
+            <span class="text-xs text-stone-500 font-medium whitespace-normal sm:whitespace-nowrap">
+              ${isHomeLocation
+                ? `Chưa tìm thấy quán ${this.onlySpecialties ? 'đặc sản ' : ''}nào trong bán kính ≤ ${this.currentRadius}km tại ${currentCity.name}. Bấm <b>Xem thêm (+1km)</b> để mở rộng phạm vi!`
+                : `Chưa tìm thấy quán ${this.onlySpecialties ? 'đặc sản ' : ''}nào phù hợp tại ${currentCity.name}.`}
             </span>
           </div>
         `;
@@ -437,8 +505,8 @@ class TasteManager {
       container.innerHTML = `
         <div class="col-span-full py-10 px-4 text-center bg-white rounded-2xl border border-dashed border-stone-300">
           <span class="text-3xl">🔍</span>
-          <h4 class="font-bold text-stone-800 text-sm mt-2">Chưa tìm thấy quán nào trong bán kính ≤ ${this.currentRadius}km</h4>
-          <p class="text-xs text-stone-500 mt-1">Các quán ngon ở khu vực này cách xa hơn một chút. Bấm nút bên dưới để mở rộng bán kính thêm +1km nhé!</p>
+          <h4 class="font-bold text-stone-800 text-sm mt-2">${isHomeLocation ? `Chưa tìm thấy quán nào trong bán kính ≤ ${this.currentRadius}km` : `Chưa tìm thấy quán phù hợp tại ${currentCity.name}`}</h4>
+          <p class="text-xs text-stone-500 mt-1">${isHomeLocation ? 'Các quán ngon ở khu vực này cách xa hơn một chút. Bấm nút bên dưới để mở rộng bán kính thêm +1km nhé!' : 'Thử chuyển sang tỉnh thành khác hoặc mở rộng tiêu chí tìm kiếm.'}</p>
         </div>
       `;
     } else {
@@ -477,11 +545,13 @@ class TasteManager {
             <!-- Content info -->
             <div class="p-3.5 space-y-2">
               <div>
-                <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
-                  ${food.name}
+                <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
+                  ${food.restaurant}
                 </h5>
                 <div class="flex items-center justify-between gap-1 mt-0.5">
-                  <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.restaurant}">${food.restaurant}</p>
+                  <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
+                    📍 ${food.address || food.district || 'TP. Quy Nhơn'}
+                  </p>
                   <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
                     class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
                     title="Xem quán trên bản đồ">
@@ -560,33 +630,38 @@ class TasteManager {
     // Render More button (+1km)
     const moreContainer = document.getElementById('taste-load-more-container');
     if (moreContainer) {
-      const hasMore = inRadiusFoods.length < displayFoods.length;
-      if (hasMore) {
-        moreContainer.innerHTML = `
-          <div class="p-3.5 bg-gradient-to-r from-amber-50/90 via-orange-50/80 to-rose-50/90 border border-amber-200/90 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-[#EE4D2D] text-white flex items-center justify-center text-lg shrink-0 shadow-sm">📍</span>
-              <div>
-                <p class="text-xs font-bold text-stone-800">
-                  Đang xem <b>${rankedFoods.length} / ${displayFoods.length} quán ${this.onlySpecialties ? 'đặc sản ' : ''}</b> trong bán kính <b>≤ ${this.currentRadius}km</b>
-                </p>
-                <p class="text-[11px] text-stone-500">Mở rộng thêm +1km bán kính để khám phá thêm các quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon chuẩn Gu xa hơn.</p>
-              </div>
-            </div>
-            <button onclick="window.tasteManager.loadMoreRadius()"
-              class="w-full sm:w-auto px-5 py-2.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-xs font-black shadow-md shadow-orange-300/80 flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
-              <span>✨ Xem thêm (+1km)</span>
-              <span class="bg-black/20 text-white text-[10.5px] px-2 py-0.5 rounded-full font-bold">Lên ≤ ${this.currentRadius + 1}km</span>
-              <span class="text-xs">↓</span>
-            </button>
-          </div>
-        `;
+      if (!isHomeLocation) {
+        // Người dùng đổi tỉnh thành khác: Ẩn nút và không hiển thị thông tin giới hạn khoảng cách
+        moreContainer.innerHTML = '';
       } else {
-        moreContainer.innerHTML = `
-          <div class="p-3 bg-stone-50 border border-stone-200 rounded-2xl flex items-center justify-center gap-2 text-xs font-bold text-stone-500 shadow-2xs">
-            <span>🎉 Đã hiển thị toàn bộ ${displayFoods.length} quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon tại ${currentCity.name} (trong bán kính ≤ ${this.currentRadius}km).</span>
-          </div>
-        `;
+        const hasMore = inRadiusFoods.length < displayFoods.length;
+        if (hasMore) {
+          moreContainer.innerHTML = `
+            <div class="p-3.5 bg-gradient-to-r from-amber-50/90 via-orange-50/80 to-rose-50/90 border border-amber-200/90 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+              <div class="flex items-center gap-2.5">
+                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-[#EE4D2D] text-white flex items-center justify-center text-lg shrink-0 shadow-sm">📍</span>
+                <div>
+                  <p class="text-xs font-bold text-stone-800">
+                    Đang xem <b>${rankedFoods.length} / ${displayFoods.length} quán ${this.onlySpecialties ? 'đặc sản ' : ''}</b> trong bán kính <b>≤ ${this.currentRadius}km</b>
+                  </p>
+                  <p class="text-[11px] text-stone-500">Mở rộng thêm +1km bán kính để khám phá thêm các quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon chuẩn Gu xa hơn.</p>
+                </div>
+              </div>
+              <button onclick="window.tasteManager.loadMoreRadius()"
+                class="w-full sm:w-auto px-5 py-2.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-xs font-black shadow-md shadow-orange-300/80 flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer shrink-0">
+                <span>✨ Xem thêm (+1km)</span>
+                <span class="bg-black/20 text-white text-[10.5px] px-2 py-0.5 rounded-full font-bold">Lên ≤ ${this.currentRadius + 1}km</span>
+                <span class="text-xs">↓</span>
+              </button>
+            </div>
+          `;
+        } else {
+          moreContainer.innerHTML = `
+            <div class="p-3 bg-stone-50 border border-stone-200 rounded-2xl flex items-center justify-center gap-2 text-xs font-bold text-stone-500 shadow-2xs">
+              <span>🎉 Đã hiển thị toàn bộ ${displayFoods.length} quán ${this.onlySpecialties ? 'đặc sản ' : ''}ngon tại ${currentCity.name} (trong bán kính ≤ ${this.currentRadius}km).</span>
+            </div>
+          `;
+        }
       }
     }
   }

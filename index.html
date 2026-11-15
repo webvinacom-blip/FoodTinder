@@ -468,40 +468,87 @@
           </div>
         </div>
 
-        <!-- ══ TASTE & LOCATION RECOMMENDATION SECTION ══ -->
-        <div class="bg-gradient-to-br from-amber-50/70 via-rose-50/40 to-white border border-rose-200/80 rounded-3xl p-5 shadow-sm space-y-4">
-          <!-- Section Header -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <!-- ══ GỢI Ý MÓN PHÙ HỢP TÂM TRẠNG & BỘ LỌC ĐA NĂNG ══ -->
+        <div class="space-y-3.5">
+          <!-- Header & Trigger Buttons -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div>
               <div class="flex items-center gap-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-rose-500 text-white shadow-xs">AI Gợi Ý Theo Vị Trí & Gu</span>
-                <span class="text-xs text-stone-500 font-medium">Học theo sở thích quẹt thẻ</span>
+                <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-2">
+                  <span>🔥 Gợi ý món phù hợp tâm trạng</span>
+                </h3>
+                <span id="active-filter-indicator" class="hidden text-[10.5px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
+                  <span>🎯 Đang lọc</span>
+                  <span id="active-filter-count" class="w-4 h-4 rounded-full bg-rose-600 text-white text-[9px] flex items-center justify-center font-black">1</span>
+                </span>
               </div>
-              <h3 class="font-black text-base sm:text-lg text-stone-900 mt-1 flex items-center flex-wrap gap-1.5">
-                <span>🎯 Gợi ý chuẩn Gu tại</span>
-                <span id="taste-city-name" class="text-rose-600 underline decoration-rose-300 decoration-wavy">Quy Nhơn</span>
-              </h3>
-              <p id="taste-summary-text" class="text-xs text-stone-500 mt-0.5">Sắp xếp các quán ngon được AI chấm điểm cao nhất dựa trên khẩu vị bạn đã quẹt thích.</p>
+              <p class="text-xs text-stone-500 mt-0.5" id="mood-filter-status-desc">
+                Tự động quét quán mở cửa theo thời tiết & giờ thực tế
+              </p>
             </div>
 
-            <!-- Taste Profile & Location switch Buttons -->
+            <!-- Filter Controls -->
             <div class="flex items-center gap-2 shrink-0">
-              <button id="taste-specialty-toggle-btn" onclick="window.tasteManager.toggleSpecialtyFilter()"
-                class="px-3.5 py-2 bg-white hover:bg-amber-50 text-stone-700 hover:text-amber-700 border border-stone-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer"
-                title="Lọc chỉ hiển thị các quán đặc sản địa phương">
-                <span>🍲 Lọc đặc sản</span>
+              <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden px-2.5 py-1.5 text-xs text-rose-600 hover:text-rose-700 hover:bg-rose-50 font-bold rounded-xl transition cursor-pointer">
+                ✕ Xóa lọc
               </button>
-              <button onclick="window.tasteManager.openTasteProfileModal()"
-                class="px-3.5 py-2 bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
-                <span>✨ Gu của bạn</span>
-                <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-              </button>
-              <button onclick="window.app.openCityModal()"
-                class="px-3.5 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
-                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Đổi Tỉnh/Thành</span>
+              <button onclick="window.app.openMoodFilterModal()" class="px-3.5 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-extrabold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
+                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                <span>Tùy chỉnh lọc</span>
+                <span id="filter-btn-count" class="hidden w-4 h-4 rounded-full bg-white text-rose-600 text-[10px] font-black flex items-center justify-center">0</span>
               </button>
             </div>
+          </div>
+
+          <!-- Quick Horizontal Category Chips Bar -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none" id="quick-category-chips">
+            <!-- Rendered by window.app -->
+          </div>
+
+          <!-- Recommendations Grid: 4 columns on desktop, 3 on tablet, 2 on mobile/tablet, 1 on small mobile -->
+          <div id="featured-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+            <!-- Cards rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- ══ TASTE & LOCATION RECOMMENDATION SECTION ══ -->
+        <div class="bg-gradient-to-br from-amber-50/70 via-rose-50/40 to-white border border-rose-200/80 rounded-3xl p-5 shadow-sm space-y-3">
+          <!-- Section Header -->
+          <div class="space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-rose-500 text-white shadow-xs">AI Gợi Ý Theo Vị Trí & Gu</span>
+                  <span class="text-xs text-stone-500 font-medium">Học theo sở thích quẹt thẻ</span>
+                </div>
+                <h3 class="font-black text-base sm:text-lg text-stone-900 mt-1 flex items-center flex-wrap gap-1.5">
+                  <span>🎯 Gợi ý chuẩn Gu tại</span>
+                  <span id="taste-city-name" class="text-rose-600 underline decoration-rose-300 decoration-wavy">Quy Nhơn</span>
+                </h3>
+              </div>
+
+              <!-- Taste Profile & Location switch Buttons -->
+              <div class="flex items-center gap-2 shrink-0">
+                <button id="taste-specialty-toggle-btn" onclick="window.tasteManager.toggleSpecialtyFilter()"
+                  class="px-3.5 py-2 bg-white hover:bg-amber-50 text-stone-700 hover:text-amber-700 border border-stone-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer"
+                  title="Lọc chỉ hiển thị các quán đặc sản địa phương">
+                  <span>🍲 Lọc đặc sản</span>
+                </button>
+                <button onclick="window.tasteManager.openTasteProfileModal()"
+                  class="px-3.5 py-2 bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
+                  <span>✨ Gu của bạn</span>
+                  <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                </button>
+                <button onclick="window.app.openCityModal()"
+                  class="px-3.5 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
+                  <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Đổi Tỉnh/Thành</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Full-width summary text (Hiển thị trọn vẹn trên 1 hàng, chỉ xuống dòng khi thu nhỏ màn hình) -->
+            <div id="taste-summary-text" class="text-xs text-stone-600 font-medium">Sắp xếp các quán ngon được AI chấm điểm cao nhất dựa trên khẩu vị bạn đã quẹt thích.</div>
           </div>
 
           <!-- Recommendations Grid -->
@@ -515,38 +562,6 @@
           </div>
         </div>
 
-        <!-- Featured card + mood suggestion grid side-by-side -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <!-- Featured food card -->
-          <div>
-            <h3 class="font-extrabold text-stone-900 mb-3 text-sm flex items-center gap-2">
-              🔥 Gợi ý cho tâm trạng bạn
-            </h3>
-            <div id="featured-card-container"></div>
-          </div>
-
-          <!-- Recommended grid -->
-          <div>
-            <h3 class="font-extrabold text-stone-900 mb-3 text-sm flex items-center gap-2">
-              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                <line x1="9" y1="3" x2="9" y2="18"></line>
-                <line x1="15" y1="6" x2="15" y2="21"></line>
-              </svg>
-              <span>Quán gần bạn nhất</span>
-            </h3>
-            <div id="nearby-grid" class="grid grid-cols-2 gap-3"></div>
-          </div>
-        </div>
-
-        <!-- Full food listing -->
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="font-extrabold text-stone-900 text-sm">Tất cả món ăn phù hợp</h3>
-            <button onclick="switchTab('swipe')" class="text-xs font-bold text-rose-500 hover:underline">Quẹt thẻ 🃏</button>
-          </div>
-          <div id="food-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-        </div>
 
       </div>
     </div>
@@ -760,6 +775,14 @@
       <span class="absolute left-2.5 top-2 text-stone-400 text-xs">📍</span>
     </div>
 
+    <!-- Quick GPS Detect Button -->
+    <button onclick="window.app.detectUserLocationAndWeather(); document.getElementById('city-modal').classList.add('hidden');" 
+      class="w-full mb-2 py-2 px-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-2 group cursor-pointer active:scale-[0.98] shrink-0">
+      <span class="text-sm">🎯</span>
+      <span>Lấy đúng vị trí GPS & thời tiết thực tế của bạn</span>
+      <span class="text-[9.5px] bg-white/20 px-1.5 py-0.5 rounded-full font-semibold">Tự động</span>
+    </button>
+
     <!-- Regional Quick Filter Chips -->
     <div class="flex items-center gap-1.5 overflow-x-auto pb-1 mb-2 shrink-0 scrollbar-none no-scrollbar" id="city-region-chips">
       <button data-region="all" onclick="window.app.filterCities('', 'all')" class="city-tab-chip px-2.5 py-1 rounded-full text-[11px] font-bold bg-stone-900 text-white shrink-0 transition">Tất cả (63)</button>
@@ -854,31 +877,198 @@
 
 <!-- Google Maps Confirmation Modal -->
 <div id="google-maps-modal" class="modal-backdrop hidden" style="align-items:center;" onclick="if(event.target === this) window.app.closeGoogleMapsModal()">
-  <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4 text-center relative overflow-hidden" onclick="event.stopPropagation()">
+  <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4 text-center relative overflow-hidden" onclick="event.stopPropagation()">
     <button onclick="window.app.closeGoogleMapsModal()" class="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 font-bold text-xs flex items-center justify-center transition cursor-pointer" title="Đóng">✕</button>
-    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center text-2xl shadow-md shadow-emerald-200 mx-auto mb-3">
+    
+    <div class="w-13 h-13 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center text-2xl shadow-md shadow-emerald-200 mx-auto mb-2.5">
       🗺️
     </div>
-    <h4 class="font-extrabold text-base text-stone-900" id="gmaps-modal-title">Dẫn đường trên Google Maps?</h4>
-    <p class="text-xs text-stone-500 mt-1" id="gmaps-modal-desc">Bạn có muốn mở Google Maps để nhận chỉ đường trực tiếp đến quán ăn này không?</p>
+    <h4 class="font-extrabold text-base text-stone-900" id="gmaps-modal-title">Vị trí & Chỉ đường</h4>
+    <p class="text-xs text-stone-500 mt-0.5" id="gmaps-modal-desc">Định vị chính xác quán ăn trên bản đồ</p>
     
-    <div class="my-3.5 p-3 bg-stone-50 border border-stone-200/80 rounded-2xl text-left">
-      <div class="font-bold text-xs text-stone-900 truncate" id="gmaps-modal-restaurant">Tên quán</div>
-      <div class="text-[11px] text-stone-500 truncate mt-0.5" id="gmaps-modal-address">Địa chỉ</div>
-      <div class="text-[11px] font-semibold text-emerald-600 mt-1 flex items-center gap-1">
-        <span>📍</span>
-        <span id="gmaps-modal-distance">Khoảng cách</span>
+    <!-- Info box -->
+    <div class="my-3 p-3.5 bg-stone-50 border border-stone-200/80 rounded-2xl text-left space-y-1.5">
+      <!-- Điểm xuất phát: Vị trí hiện tại -->
+      <div class="text-[11px] text-stone-600 flex items-center justify-between bg-emerald-50/80 border border-emerald-200/70 rounded-xl px-2.5 py-1.5">
+        <div class="flex items-center gap-1.5 truncate">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+          <span class="font-bold text-emerald-800 shrink-0">Điểm đi:</span>
+          <span id="gmaps-modal-origin-label" class="text-stone-700 truncate font-semibold">Vị trí hiện tại của bạn</span>
+        </div>
+        <span class="text-emerald-600 text-xs shrink-0">📍</span>
+      </div>
+
+      <!-- Đích đến: Tên quán & Địa chỉ -->
+      <div class="pt-0.5">
+        <div class="text-[10px] font-bold text-stone-400">Đích đến:</div>
+        <div class="font-black text-xs sm:text-sm text-stone-900 leading-snug" id="gmaps-modal-restaurant">Tên quán</div>
+        <div class="text-[11.5px] text-stone-600 flex items-start gap-1 pt-0.5">
+          <span class="shrink-0 text-stone-400">📍</span>
+          <span id="gmaps-modal-address" class="leading-relaxed">Địa chỉ</span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] pt-0.5">
+        <div class="font-bold text-emerald-600 flex items-center gap-1">
+          <span>🚗</span>
+          <span id="gmaps-modal-distance">Khoảng cách</span>
+        </div>
+        <div class="text-[10.5px] text-stone-400 font-mono flex items-center gap-1" id="gmaps-modal-coords-box">
+          <span>🎯</span>
+          <span id="gmaps-modal-coords"></span>
+        </div>
+      </div>
+      <div class="text-[10px] text-stone-500 bg-amber-50/80 border border-amber-200/60 rounded-xl p-2 mt-1 leading-snug flex items-start gap-1.5" id="gmaps-modal-note-box">
+        <span class="shrink-0 text-amber-500 text-xs" id="gmaps-modal-note-icon">💡</span>
+        <span id="gmaps-modal-note" class="font-medium">Chỉ đường Google Maps được tự động tối ưu theo từng quán.</span>
       </div>
     </div>
 
-    <div class="flex gap-2">
-      <button onclick="window.app.closeGoogleMapsModal()"
-        class="flex-1 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-bold text-xs transition cursor-pointer">
-        Hủy
-      </button>
+    <!-- Actions -->
+    <div class="space-y-2">
+      <!-- 1. Google Maps Navigation by Exact ShopeeFood Address (Primary) -->
       <button id="gmaps-modal-confirm-btn"
-        class="flex-1 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-extrabold text-xs shadow-md shadow-emerald-200 transition active:scale-95 cursor-pointer flex items-center justify-center gap-1.5">
-        <span>🧭 Chỉ đường</span>
+        class="w-full py-2.5 px-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-extrabold text-xs shadow-md shadow-emerald-200 transition active:scale-95 cursor-pointer flex flex-col items-center justify-center gap-0.5">
+        <div class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          <span>Dẫn đường từ vị trí hiện tại</span>
+        </div>
+        <span id="gmaps-modal-dest-hint" class="text-[10px] text-emerald-100 font-normal truncate max-w-[280px]">Vị trí của bạn ➔ Tên quán</span>
+      </button>
+
+      <!-- 2. Extra actions: GPS Coords Navigation + Pin on Maps + In-App Map -->
+      <div class="grid grid-cols-3 gap-1.5">
+        <button id="gmaps-modal-gps-btn"
+          class="py-2 px-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-bold text-[11px] transition cursor-pointer flex flex-col items-center justify-center gap-0.5" title="Dẫn đường theo tọa độ vệ tinh GPS">
+          <span>🎯 Dẫn GPS</span>
+        </button>
+
+        <button id="gmaps-modal-search-btn"
+          class="py-2 px-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-bold text-[11px] transition cursor-pointer flex flex-col items-center justify-center gap-0.5" title="Ghim và xem vị trí trên Google Maps">
+          <span>📍 Ghim Maps</span>
+        </button>
+
+        <button id="gmaps-modal-inapp-btn"
+          class="py-2 px-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200/80 rounded-xl font-bold text-[11px] transition cursor-pointer flex flex-col items-center justify-center gap-0.5" title="Xem vị trí ngay trên bản đồ FoodTinder">
+          <span>🗺️ Bản đồ App</span>
+        </button>
+      </div>
+
+      <!-- Close -->
+      <button onclick="window.app.closeGoogleMapsModal()"
+        class="w-full py-1 text-stone-400 hover:text-stone-600 text-[11px] font-semibold transition cursor-pointer">
+        Đóng
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL: BỘ LỌC TÙY CHỈNH TÂM TRẠNG & MÓN ĂN
+══════════════════════════════════════════ -->
+<div id="mood-filter-modal" class="modal-backdrop hidden" style="align-items:center;" onclick="if(event.target === this) window.app.closeMoodFilterModal()">
+  <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-stone-200 w-full max-w-lg mx-3 sm:mx-4 max-h-[90vh] flex flex-col overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between pb-3 border-b border-stone-100 shrink-0">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🎯</span>
+        <div>
+          <h4 class="font-black text-base text-stone-900">Bộ Lọc Món Ăn Theo Gu & Tâm Trạng</h4>
+          <p class="text-xs text-stone-400">Chọn 1 hoặc nhiều món, vị trí và tâm trạng mong muốn</p>
+        </div>
+      </div>
+      <button onclick="window.app.closeMoodFilterModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 flex items-center justify-center transition cursor-pointer text-sm font-bold">✕</button>
+    </div>
+
+    <!-- Scrollable content -->
+    <div class="flex-1 overflow-y-auto pr-1 py-3 space-y-4 text-xs overscroll-contain">
+      <!-- 1. Chọn / Sửa Tâm trạng -->
+      <div>
+        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
+          <span>💭 Tâm trạng của bạn</span>
+          <span class="text-[10.5px] text-rose-500 font-semibold">(Đổi cảm xúc)</span>
+        </label>
+        <div class="grid grid-cols-3 sm:grid-cols-4 gap-1.5" id="modal-mood-options"></div>
+      </div>
+
+      <!-- 2. Loại món & Nguyên liệu (Multi-select) -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label class="font-extrabold text-stone-800 text-xs flex items-center gap-1.5">
+            <span>🍲 Loại món & Nguyên liệu</span>
+            <span class="text-[10px] text-amber-600 font-semibold">(Chọn nhiều tùy ý)</span>
+          </label>
+          <button onclick="window.app.clearCategoryFilter()" class="text-[11px] text-stone-400 hover:text-stone-700 underline cursor-pointer">Chọn tất cả</button>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5" id="modal-category-options"></div>
+      </div>
+
+      <!-- 3. Bán kính quét & Vị trí -->
+      <div>
+        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
+          <span>📍 Bán kính quét quán ăn</span>
+          <span id="modal-radius-label" class="text-[11px] text-rose-600 font-bold">Tất cả (≤ 10km)</span>
+        </label>
+        <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5" id="modal-radius-options"></div>
+      </div>
+
+      <!-- 4. Khu vực / Phường tại Quy Nhơn -->
+      <div>
+        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
+          <span>🏙️ Khu vực tại TP. Quy Nhơn</span>
+        </label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5" id="modal-area-options"></div>
+      </div>
+
+      <!-- 5. Bộ lọc thông minh nâng cao -->
+      <div>
+        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
+          <span>✨ Tiêu chí bổ sung</span>
+        </label>
+        <div class="space-y-2">
+          <!-- Toggle: Đang mở cửa -->
+          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
+            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Chỉ hiển thị quán đang mở cửa</span>
+            </span>
+            <input type="checkbox" id="filter-open-only" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
+          </label>
+
+          <!-- Toggle: Có ShopeeFood -->
+          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
+            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
+              <span>🛵 Có đặt giao tận nơi (ShopeeFood)</span>
+            </span>
+            <input type="checkbox" id="filter-shopee-only" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
+          </label>
+
+          <!-- Toggle: Đánh giá cao -->
+          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
+            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
+              <span>⭐ Quán điểm cao (Từ 4.5 sao trở lên)</span>
+            </span>
+            <input type="checkbox" id="filter-high-rating" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. Khoảng giá -->
+      <div>
+        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
+          <span>💰 Mức giá mong muốn</span>
+        </label>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5" id="modal-price-options"></div>
+      </div>
+    </div>
+
+    <!-- Footer actions -->
+    <div class="pt-3 border-t border-stone-100 flex items-center gap-2 shrink-0">
+      <button onclick="window.app.resetMoodFilters()" class="py-2.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl transition cursor-pointer text-xs">
+        Đặt lại
+      </button>
+      <button onclick="window.app.applyMoodFilters()" class="flex-1 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold rounded-xl transition shadow-md shadow-rose-200 cursor-pointer text-xs flex items-center justify-center gap-1.5">
+        <span>Áp dụng bộ lọc</span>
       </button>
     </div>
   </div>
@@ -902,15 +1092,15 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
-<script src="js/data.js"></script>
-<script src="js/audio.js"></script>
-<script src="js/taste.js"></script>
-<script src="js/swipe.js"></script>
-<script src="js/map.js"></script>
-<script src="js/reels.js"></script>
-<script src="js/chat.js"></script>
-<script src="js/app.js"></script>
-<script src="js/crawler.js"></script>
+<script src="js/data.js?v=1794769000"></script>
+<script src="js/audio.js?v=1794769000"></script>
+<script src="js/taste.js?v=1794769000"></script>
+<script src="js/swipe.js?v=1794769000"></script>
+<script src="js/map.js?v=1794769000"></script>
+<script src="js/reels.js?v=1794769000"></script>
+<script src="js/chat.js?v=1794769000"></script>
+<script src="js/app.js?v=1794769000"></script>
+<script src="js/crawler.js?v=1794769000"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

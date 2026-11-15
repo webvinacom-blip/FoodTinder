@@ -67,16 +67,20 @@ class FoodMapManager {
     }
   }
 
-  renderMarkers(foods = APP_DATA.foods) {
+  renderMarkers(foods) {
     if (!this.map) return;
 
     // Clear existing restaurant markers
     this.markers.forEach(m => this.map.removeLayer(m));
     this.markers = [];
 
+    const currentCityId = APP_DATA.currentCity?.cityId || 'quynhon';
+    const cityFoods = foods || APP_DATA.foods.filter(f => (f.cityId || 'quynhon') === currentCityId);
+    const targetFoods = (cityFoods && cityFoods.length > 0) ? cityFoods : APP_DATA.foods;
+
     const filtered = this.currentCategory === 'all' 
-      ? foods 
-      : foods.filter(f => f.category === this.currentCategory);
+      ? targetFoods 
+      : targetFoods.filter(f => f.category === this.currentCategory);
 
     filtered.forEach(food => {
       const isSelected = this.activeFoodId === food.id;
@@ -119,10 +123,24 @@ class FoodMapManager {
 
     window.soundFX && window.soundFX.playPop();
 
+    // If food belongs to another province, switch map context smoothly
+    if (food.cityId && APP_DATA.currentCity && APP_DATA.currentCity.cityId !== food.cityId) {
+      const cityOpt = (APP_DATA.weatherOptions || []).find(w => w.cityId === food.cityId) ||
+                      (APP_DATA.districtOptions || []).find(d => d.cityId === food.cityId);
+      if (cityOpt) {
+        APP_DATA.currentCity.name = cityOpt.city;
+        APP_DATA.currentCity.cityId = cityOpt.cityId;
+        APP_DATA.currentCity.lat = cityOpt.lat;
+        APP_DATA.currentCity.lng = cityOpt.lng;
+        this.renderUserLocation();
+        this.renderBottomSheet();
+      }
+    }
+
     // Re-render markers to highlight
     this.renderMarkers();
 
-    if (zoomTo && this.map) {
+    if (zoomTo && this.map && food.lat && food.lng) {
       this.map.flyTo([food.lat, food.lng], 16, { duration: 0.8 });
     }
 
@@ -208,56 +226,62 @@ class FoodMapManager {
 
       <!-- Horizontal Cards Carousel matching Image 1 View 2 -->
       <div id="map-cards-scroll" class="flex gap-3 px-4 pb-4 overflow-x-auto scrollbar-none snap-x snap-mandatory">
-        ${APP_DATA.foods.map(food => {
-          const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
-          return `
-          <div id="sheet-food-${food.id}" onclick="window.mapManager.selectFood(${food.id})" 
-            class="snap-center shrink-0 w-44 bg-white border border-stone-200 rounded-2xl p-2.5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between ${status.isOpen ? '' : 'is-closed'}">
-            <div class="relative w-full h-24 rounded-xl overflow-hidden bg-stone-100 mb-2">
-              <img src="${food.image}" alt="${food.name}"
-                data-name="${food.name.replace(/"/g, '&quot;')}"
-                data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
-                data-category="${food.category || ''}"
-                onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-                class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
-              <!-- Status Chip -->
-              <span class="absolute top-1.5 left-1.5 ${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[8.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
-                <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500 animate-pulse'}"></span>
-                ${status.statusText}
-              </span>
-              <span class="absolute bottom-1.5 left-1.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-semibold px-1.5 py-0.5 rounded">
-                ${food.distanceText.replace('Cách bạn ', '')}
-              </span>
-            </div>
-            <div>
-              <div class="flex items-center text-amber-500 text-[11px] font-bold">
-                ★★★★★ <span class="text-stone-400 text-[10px] ml-1">(${window.formatRating ? window.formatRating(food.rating) : food.rating})</span>
+        ${(() => {
+          const currentCityId = APP_DATA.currentCity?.cityId || 'quynhon';
+          const cityFoods = APP_DATA.foods.filter(f => (f.cityId || 'quynhon') === currentCityId);
+          const targetFoods = (cityFoods && cityFoods.length > 0) ? cityFoods : APP_DATA.foods;
+          return targetFoods.map(food => {
+            const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+            return `
+            <div id="sheet-food-${food.id}" onclick="window.mapManager.selectFood(${food.id})" 
+              class="snap-center shrink-0 w-44 bg-white border border-stone-200 rounded-2xl p-2.5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between ${status.isOpen ? '' : 'is-closed'}">
+              <div class="relative w-full h-24 rounded-xl overflow-hidden bg-stone-100 mb-2">
+                <img src="${food.image}" alt="${food.name}"
+                  data-name="${food.name.replace(/"/g, '&quot;')}"
+                  data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+                  data-category="${food.category || ''}"
+                  onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
+                  class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
+                <!-- Status Chip -->
+                <span class="absolute top-1.5 left-1.5 ${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[8.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
+                  <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500 animate-pulse'}"></span>
+                  ${status.statusText}
+                </span>
+                <span class="absolute bottom-1.5 left-1.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-semibold px-1.5 py-0.5 rounded">
+                  ${food.distanceText.replace('Cách bạn ', '')}
+                </span>
               </div>
-              <h5 class="font-bold text-xs text-stone-800 truncate mt-0.5">${food.name}</h5>
-              <p class="text-[11px] text-stone-400 truncate">${food.restaurant}</p>
-              <!-- Operating hours -->
-              <p class="text-[10px] mt-1 ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-                🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
-              </p>
-            </div>
-            <div class="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between gap-1">
-              <span class="text-[11px] font-bold text-rose-600 truncate">${food.priceRange.split(' - ')[0]}</span>
-              <div class="flex items-center gap-1 shrink-0">
-                <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
-                  class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
-                  title="Đặt giao tận nơi trên ShopeeFood">
-                  ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
-                  <span>ShopeeFood</span>
-                </button>
-                <button onclick="event.stopPropagation(); window.mapManager.drawRouteTo(APP_DATA.foods.find(f => f.id === ${food.id}))" 
-                  class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold">
-                  Chỉ đường
-                </button>
+              <div>
+                <div class="flex items-center text-amber-500 text-[11px] font-bold">
+                  ★★★★★ <span class="text-stone-400 text-[10px] ml-1">(${window.formatRating ? window.formatRating(food.rating) : food.rating})</span>
+                </div>
+                <h5 class="font-bold text-xs text-stone-800 truncate mt-0.5">${food.restaurant || food.name}</h5>
+                <p class="text-[11px] text-stone-400 truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
+                <!-- Operating hours -->
+                <p class="text-[10px] mt-1 ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+                  🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+                </p>
+              </div>
+              <div class="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between gap-1">
+                <span class="text-[11px] font-bold text-rose-600 truncate">${food.priceRange.split(' - ')[0]}</span>
+                <div class="flex items-center gap-1 shrink-0">
+                  <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
+                    class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
+                    title="Đặt giao tận nơi trên ShopeeFood">
+                    ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
+                    <span>ShopeeFood</span>
+                  </button>
+                  <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" 
+                    class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold flex items-center gap-0.5"
+                    title="Chỉ đường trên Google Maps">
+                    <span>📍 Maps</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          `;
-        }).join('')}
+            `;
+          }).join('');
+        })()}
       </div>
     `;
 

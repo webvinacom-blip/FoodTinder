@@ -1,15 +1,420 @@
 // Main Application Controller (FoodTinder / FoodFinder)
 
+// ═══════════════════════════════════════════════════════════════════
+// FILTER METADATA & HELPER FUNCTIONS FOR MOOD & FOOD DISCOVERY
+// ═══════════════════════════════════════════════════════════════════
+
+const FILTER_CATEGORIES = [
+  { id: 'hotpot', label: '🍲 Lẩu các loại', short: '🍲 Lẩu', keywords: ['lẩu', 'hotpot'] },
+  { id: 'bbq', label: '🥩 Nướng BBQ & Xiên', short: '🥩 Nướng', keywords: ['nướng', 'bbq', 'xiên'] },
+  { id: 'vegetarian', label: '🥗 Đồ chay / Healthy', short: '🥗 Đồ chay', keywords: ['chay', 'vegan', 'thuần chay', 'quán chay', 'ẩm thực chay', 'cơm chay', 'lẩu chay', 'bún chay'] },
+  { id: 'chicken', label: '🍗 Món Gà', short: '🍗 Món Gà', keywords: ['gà', 'gà chỉ', 'cánh gà'] },
+  { id: 'beef', label: '🥩 Món Bò', short: '🥩 Món Bò', keywords: ['bò', 'bít tết', 'bò né'] },
+  { id: 'seafood', label: '🦐 Hải sản & Ốc', short: '🦐 Hải sản', keywords: ['hải sản', 'tôm', 'cua', 'ghẹ', 'mực', 'ốc', 'cá', 'hàu'] },
+  { id: 'noodles', label: '🍜 Bún / Phở / Mì', short: '🍜 Bún / Phở', keywords: ['bún', 'phở', 'mì', 'bánh canh', 'hủ tiếu', 'miến'] },
+  { id: 'rice', label: '🍚 Cơm niêu / Cơm gà', short: '🍚 Cơm', keywords: ['cơm', 'xôi', 'niêu'] },
+  { id: 'specialty', label: '🥞 Bánh đặc sản', short: '🥞 Bánh đặc sản', keywords: ['bánh hỏi', 'bánh xèo', 'bánh bèo', 'bánh căn', 'bánh cuốn', 'nem'] },
+  { id: 'drinks', label: '🧋 Trà sữa & Cafe', short: '🧋 Trà sữa / Cafe', keywords: ['trà', 'cà phê', 'cafe', 'nước ép', 'sinh tố', 'chè', 'kem'] },
+  { id: 'snack', label: '🍢 Ăn vặt đường phố', short: '🍢 Ăn vặt', keywords: ['bánh tráng', 'ăn vặt', 'chả ram', 'tàu hũ', 'khoai'] }
+];
+
+const FILTER_AREAS = [
+  { id: 'all', label: 'Toàn TP. Quy Nhơn', keywords: [] },
+  { id: 'center', label: 'Trung tâm (Ngô Mây, Nguyễn Huệ)', keywords: ['ngô mây', 'nguyễn huệ', 'tăng bạt hổ', 'lê lợi', 'trần phú', 'hai bà trưng'] },
+  { id: 'beach', label: 'Ven biển (Xuân Diệu, An Dương Vương)', keywords: ['xuân diệu', 'an dương vương', 'view biển', 'bờ biển', 'biển'] },
+  { id: 'gachi', label: 'Khu Gà Chỉ (Ghềnh Ráng / QL1D)', keywords: ['ghềnh ráng', 'phạm thị đào', 'ql1d', 'gà chỉ', 'bông hồng'] },
+  { id: 'dongda', label: 'Đống Đa & Trần Hưng Đạo', keywords: ['đống đa', 'trần hưng đạo', 'hải thượng lãn ông', 'bạch đằng'] },
+  { id: 'nhonly', label: 'Nhơn Lý / Eo Gió / Kỳ Co', keywords: ['nhơn lý', 'eo gió', 'kỳ co', 'flc'] }
+];
+
+const FILTER_RADII = [
+  { value: 0, label: 'Tất cả' },
+  { value: 1, label: '≤ 1 km' },
+  { value: 3, label: '≤ 3 km' },
+  { value: 5, label: '≤ 5 km' },
+  { value: 10, label: '≤ 10 km' }
+];
+
+const FILTER_PRICES = [
+  { id: 'all', label: 'Mọi mức giá' },
+  { id: 'cheap', label: 'Bình dân (< 40k)' },
+  { id: 'medium', label: 'Vừa túi (40k - 100k)' },
+  { id: 'high', label: 'Thư thả (> 100k)' }
+];
+
+function isFoodVegetarian(food) {
+  if (food.category === 'vegetarian') return true;
+  const text = `${food.name} ${food.restaurant || ''} ${(food.tags || []).join(' ')}`.toLowerCase();
+  return text.includes('chay') || text.includes('vegan') || text.includes('thuần chay');
+}
+
+function matchFoodCategory(food, catId) {
+  if (catId === 'vegetarian') return isFoodVegetarian(food);
+  const cat = FILTER_CATEGORIES.find(c => c.id === catId);
+  if (!cat) return false;
+  if (food.category === catId) return true;
+  const text = `${food.name} ${food.restaurant || ''} ${(food.tags || []).join(' ')}`.toLowerCase();
+  return cat.keywords.some(kw => text.includes(kw));
+}
+
+function matchCategories(food, selectedCategories) {
+  if (!selectedCategories || selectedCategories.length === 0) return true;
+  const hasVegetarian = selectedCategories.includes('vegetarian');
+  if (hasVegetarian) {
+    // Khi người dùng chọn Đồ chay: BẮT BUỘC món phải là đồ chay! Tuyệt đối không cho quán đồ mặn lọt vào.
+    if (!isFoodVegetarian(food)) return false;
+    const otherCats = selectedCategories.filter(c => c !== 'vegetarian');
+    if (otherCats.length > 0) {
+      return otherCats.some(catId => matchFoodCategory(food, catId));
+    }
+    return true;
+  }
+  return selectedCategories.some(catId => matchFoodCategory(food, catId));
+}
+
+function matchFoodArea(food, areaId) {
+  if (areaId === 'all') return true;
+  const area = FILTER_AREAS.find(a => a.id === areaId);
+  if (!area || !area.keywords.length) return true;
+  const text = `${food.address || ''} ${food.restaurant || ''} ${food.district || ''}`.toLowerCase();
+  return area.keywords.some(kw => text.includes(kw));
+}
+
+function matchFoodPrice(food, tierId) {
+  if (tierId === 'all') return true;
+  const pStr = food.priceRange || '';
+  const match = pStr.replace(/\./g, '').match(/(\d+)/);
+  const minPrice = match ? parseInt(match[1], 10) : 50000;
+  if (tierId === 'cheap') return minPrice < 40000;
+  if (tierId === 'medium') return minPrice >= 40000 && minPrice <= 100000;
+  if (tierId === 'high') return minPrice > 100000;
+  return true;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// LIVE USER LOCATION (GPS) & REAL-TIME WEATHER SERVICE
+// ═══════════════════════════════════════════════════════════════════
+
+/**
+ * Lấy đúng vị trí GPS thực tế và thời tiết trực tiếp của User
+ * 1. Định vị GPS qua navigator.geolocation (với fallback qua IP)
+ * 2. Reverse Geocoding lấy tên đường, phường/xã, quận/thành phố tiếng Việt chuẩn xác
+ * 3. Lấy thời tiết thời gian thực theo tọa độ từ Open-Meteo API
+ */
+async function getUserLocationAndWeather(opts = {}) {
+  // 1. Lấy tọa độ GPS từ trình duyệt
+  const getCoordinates = () => {
+    return new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        reject(new Error('Geolocation không được trình duyệt hỗ trợ.'));
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        (pos) => resolve({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          accuracy: pos.coords.accuracy
+        }),
+        (err) => reject(err),
+        {
+          enableHighAccuracy: true,
+          timeout: opts.timeout || 10000,
+          maximumAge: opts.maximumAge || 60000
+        }
+      );
+    });
+  };
+
+  // 2. Reverse Geocoding: Tọa độ -> Số nhà, Tên đường, Phường/Xã, Tỉnh/Thành phố chi tiết
+  const reverseGeocode = async (lat, lng) => {
+    // Ưu tiên 1: OpenStreetMap Nominatim zoom=18 & addressdetails=1 (Lấy địa chỉ chi tiết số nhà, tên đường, phường/xã)
+    try {
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=vi&addressdetails=1&zoom=18`);
+      if (res.ok) {
+        const d = await res.json();
+        const a = d.address || {};
+        const houseNum = a.house_number || '';
+        const road = a.road || a.pedestrian || a.street || a.path || '';
+        let ward = a.suburb || a.quarter || a.neighbourhood || a.city_district || a.subdistrict || '';
+        let city = a.city || a.town || a.county || 'Quy Nhơn';
+        if (city.toLowerCase().includes('quy nhơn') || city.toLowerCase().includes('bình định')) {
+          city = 'Quy Nhơn';
+        }
+
+        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã')) {
+          ward = `P. ${ward}`;
+        }
+
+        let streetPart = '';
+        if (houseNum && road) {
+          streetPart = `${houseNum} ${road}`;
+        } else if (road) {
+          streetPart = road;
+        }
+
+        let parts = [];
+        if (streetPart) parts.push(streetPart);
+        if (ward && ward !== streetPart) parts.push(ward);
+        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
+
+        if (parts.length > 0) {
+          return {
+            address: parts.join(', '),
+            cityName: city,
+            ward: ward,
+            road: streetPart
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('Nominatim reverse geocode error:', e);
+    }
+
+    // Dự phòng 2: BigDataCloud Reverse Geocoding (Lấy chi tiết tên đường + phường)
+    try {
+      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=vi`);
+      if (res.ok) {
+        const d = await res.json();
+        let street = '';
+        if (Array.isArray(d.localityInfo?.informative)) {
+          const stObj = d.localityInfo.informative.find(i => (i.description && (i.description.includes('street') || i.description.includes('road'))) || i.order >= 9);
+          street = stObj?.name || d.localityInfo.informative[0]?.name || '';
+        }
+        let ward = d.locality || '';
+        if (!ward && Array.isArray(d.localityInfo?.administrative)) {
+          const wardObj = d.localityInfo.administrative.find(a => a.order === 10 || a.adminLevel === 10);
+          if (wardObj) ward = wardObj.name;
+        }
+        let city = d.city || d.principalSubdivision || 'Quy Nhơn';
+        if (city.toLowerCase().includes('quy nhơn') || city.toLowerCase().includes('bình định')) {
+          city = 'Quy Nhơn';
+        }
+
+        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã')) {
+          ward = `P. ${ward}`;
+        }
+
+        let parts = [];
+        if (street) parts.push(street);
+        if (ward && ward !== street) parts.push(ward);
+        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
+
+        return {
+          address: parts.join(', ') || `${city}, Bình Định`,
+          cityName: city,
+          ward: ward,
+          road: street
+        };
+      }
+    } catch (e) {
+      console.warn('BigDataCloud reverse geocode error:', e);
+    }
+
+    // Dự phòng 3: Nếu đang ở Quy Nhơn, dò tìm điểm quán ăn gần nhất trong Database để làm mốc cụ thể
+    if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods) && APP_DATA.foods.length > 0) {
+      const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
+      if (calcDistFn) {
+        let closest = null;
+        let minDist = 999;
+        for (const f of APP_DATA.foods) {
+          if (f.lat && f.lng) {
+            const dist = calcDistFn(lat, lng, f.lat, f.lng);
+            if (dist < minDist) {
+              minDist = dist;
+              closest = f;
+            }
+          }
+        }
+        if (closest && minDist <= 0.4) {
+          return {
+            address: `Khu vực ${closest.address || closest.restaurant}`,
+            cityName: 'Quy Nhơn',
+            ward: closest.district || 'Quy Nhơn'
+          };
+        }
+      }
+    }
+
+    return {
+      address: 'Đường Nguyễn Huệ, P. Trần Phú, Quy Nhơn',
+      cityName: 'Quy Nhơn'
+    };
+  };
+
+  // 3. Lấy thời tiết thực tế từ Open-Meteo API
+  const fetchLiveWeather = async (lat, lng) => {
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true&timezone=auto`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const d = await res.json();
+        const cur = d.current_weather;
+        if (cur) {
+          const temp = Math.round(cur.temperature);
+          const code = cur.weathercode;
+          const wmoMap = {
+            0: { condition: 'Nắng ráo', icon: '☀️' },
+            1: { condition: 'Nắng nhẹ', icon: '🌤️' },
+            2: { condition: 'Nhiều mây', icon: '⛅' },
+            3: { condition: 'Trời u ám', icon: '☁️' },
+            45: { condition: 'Sương mù', icon: '🌫️' },
+            48: { condition: 'Sương lạnh đọng hạt', icon: '🌫️' },
+            51: { condition: 'Mưa phùn nhẹ', icon: '🌦️' },
+            53: { condition: 'Mưa phùn', icon: '🌦️' },
+            55: { condition: 'Mưa phùn dày', icon: '🌧️' },
+            61: { condition: 'Mưa râm ran', icon: '🌧️' },
+            63: { condition: 'Mưa rào vừa', icon: '🌧️' },
+            65: { condition: 'Mưa to xối xả', icon: '🌧️' },
+            80: { condition: 'Mưa rào thoáng qua', icon: '🌦️' },
+            81: { condition: 'Mưa rào nặng hạt', icon: '🌧️' },
+            82: { condition: 'Mưa như trút nước', icon: '⛈️' },
+            95: { condition: 'Dông sét', icon: '⚡' },
+            96: { condition: 'Dông lốc mưa đá', icon: '⛈️' },
+            99: { condition: 'Bão dông sấm sét', icon: '⛈️' }
+          };
+          const info = wmoMap[code] || { condition: 'Trời mát mẻ', icon: '⛅' };
+          return {
+            temp: `${temp}°C`,
+            condition: info.condition,
+            icon: info.icon,
+            note: `${info.condition} ${temp}°C ${info.icon}`
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('Open-Meteo weather error:', e);
+    }
+
+    return {
+      temp: '26°C',
+      condition: 'Mát mẻ',
+      icon: '⛅',
+      note: '26°C ⛅'
+    };
+  };
+
+  // 4. Dự phòng qua IP nếu trình duyệt chặn quyền GPS
+  const fallbackIp = async () => {
+    try {
+      const res = await fetch('https://ipwho.is/');
+      if (res.ok) {
+        const d = await res.json();
+        if (d && d.success) {
+          const lat = d.latitude || 13.7820;
+          const lng = d.longitude || 109.2197;
+          const city = d.city || 'Quy Nhơn';
+          const [geo, weather] = await Promise.all([
+            reverseGeocode(lat, lng),
+            fetchLiveWeather(lat, lng)
+          ]);
+          return {
+            lat,
+            lng,
+            address: geo.address || `${city}, ${d.region || 'Bình Định'}`,
+            cityName: geo.cityName || city,
+            weather
+          };
+        }
+      }
+    } catch (e) {}
+
+    const lat = 13.7820, lng = 109.2197;
+    const weather = await fetchLiveWeather(lat, lng);
+    return {
+      lat,
+      lng,
+      address: 'Đường Nguyễn Huệ, P. Trần Phú, Quy Nhơn',
+      cityName: 'Quy Nhơn',
+      weather
+    };
+  };
+
+  try {
+    const coords = await getCoordinates();
+    const [geo, weather] = await Promise.all([
+      reverseGeocode(coords.lat, coords.lng),
+      fetchLiveWeather(coords.lat, coords.lng)
+    ]);
+    return {
+      lat: coords.lat,
+      lng: coords.lng,
+      address: geo.address,
+      cityName: geo.cityName,
+      weather
+    };
+  } catch (err) {
+    return await fallbackIp();
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.getUserLocationAndWeather = getUserLocationAndWeather;
+}
+
+
 class FoodApp {
   constructor() {
     this.currentTab = 'home';
     this.likedFoods = [];
     this.willReturnFoods = [];
-    this.currentMood = APP_DATA.currentMoodId;
+    this.currentMood = (typeof APP_DATA !== 'undefined' && APP_DATA.currentMoodId) ? APP_DATA.currentMoodId : 'rainy_hotpot';
     this.isPhoneFrame = true;
+    this.moodFilter = {
+      moodId: this.currentMood,
+      selectedCategories: [],
+      maxRadius: 0,
+      selectedArea: 'all',
+      openOnly: false,
+      shopeeOnly: false,
+      highRatingOnly: false,
+      priceTier: 'all'
+    };
+  }
+
+  ensureMoodFilter() {
+    if (!this.moodFilter) {
+      this.moodFilter = {
+        moodId: this.currentMood || (typeof APP_DATA !== 'undefined' && APP_DATA.currentMoodId) || 'rainy_hotpot',
+        selectedCategories: [],
+        maxRadius: 0,
+        selectedArea: 'all',
+        openOnly: false,
+        shopeeOnly: false,
+        highRatingOnly: false,
+        priceTier: 'all'
+      };
+    }
+    if (!Array.isArray(this.moodFilter.selectedCategories)) {
+      this.moodFilter.selectedCategories = [];
+    }
+    return this.moodFilter;
+  }
+
+  // Compatibility aliases
+  applyMoodFilter() {
+    return this.applyMoodFilters();
+  }
+
+  resetMoodFilter() {
+    return this.resetMoodFilters();
+  }
+
+  toggleFilterCategory(catId) {
+    return this.modalToggleCategory(catId);
   }
 
   init() {
+    // Tự động khôi phục vị trí & thời tiết đã lưu từ phiên trước nếu còn mới (< 3 giờ)
+    try {
+      const savedLoc = localStorage.getItem('foodtinder_user_loc_weather');
+      if (savedLoc) {
+        const parsed = JSON.parse(savedLoc);
+        if (parsed && (Date.now() - (parsed.timestamp || 0) < 3 * 3600 * 1000)) {
+          this.applyUserLocationAndWeather(parsed, { skipRender: true });
+        }
+      }
+    } catch (e) {}
+
     // Load liked from localStorage if available
     try {
       const saved = localStorage.getItem('foodtinder_liked');
@@ -25,6 +430,31 @@ class FoodApp {
         this.willReturnFoods = JSON.parse(savedReturn);
       }
     } catch (e) {}
+
+    // Lọc ẩn: Xoá toàn bộ quán đã đóng cửa vĩnh viễn và quán ảo khỏi Database ngay khi khởi động
+    if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods)) {
+      APP_DATA.foods = APP_DATA.foods.filter(f => {
+        if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(f)) return false;
+        if (typeof window.isFakeDummyFood === 'function' && window.isFakeDummyFood(f)) return false;
+        return true;
+      });
+
+      // Áp dụng thuật toán tính khoảng cách thực tế (Haversine) cho toàn bộ quán ăn trong Database
+      const userLoc = APP_DATA.homeLocation || { lat: 13.7820, lng: 109.2197 };
+      const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
+      const formatDistFn = window.formatDistanceText || APP_DATA.formatDistanceText;
+      if (calcDistFn && formatDistFn) {
+        APP_DATA.foods.forEach(f => {
+          if (f.latitude === undefined && f.lat !== undefined) f.latitude = Number(f.lat);
+          if (f.longitude === undefined && f.lng !== undefined) f.longitude = Number(f.lng);
+          if (f.lat && f.lng) {
+            const realDist = calcDistFn(userLoc.lat, userLoc.lng, f.lat, f.lng);
+            f.distance = Number(realDist.toFixed(1));
+            f.distanceText = formatDistFn(realDist);
+          }
+        });
+      }
+    }
 
     // Initialize components
     this.renderHeader();
@@ -69,10 +499,134 @@ class FoodApp {
     if (window.lucide) {
       window.lucide.createIcons();
     }
+
+    // Tự động phát hiện vị trí & thời tiết thực tế của user (chạy ngầm không làm phiền)
+    setTimeout(() => {
+      this.detectUserLocationAndWeather({ silent: true });
+    }, 1200);
+  }
+
+  /**
+   * Kích hoạt lấy đúng vị trí GPS và thời tiết của user
+   */
+  async detectUserLocationAndWeather(options = {}) {
+    const isSilent = options.silent || false;
+    const addrLabel = document.getElementById('user-current-address-label');
+    const origText = addrLabel ? addrLabel.textContent : '';
+
+    if (!isSilent && addrLabel) {
+      addrLabel.textContent = 'Đang định vị GPS...';
+    }
+
+    try {
+      const result = await window.getUserLocationAndWeather(options);
+      if (result) {
+        this.applyUserLocationAndWeather(result);
+        if (!isSilent) {
+          window.soundFX && window.soundFX.playMatch();
+          this.showToast(`📍 Đã định vị: ${result.address} (${result.weather.note})`);
+        }
+        return result;
+      }
+    } catch (err) {
+      console.warn('detectUserLocationAndWeather error:', err);
+      if (!isSilent) {
+        if (addrLabel) addrLabel.textContent = origText;
+        this.showToast('Không thể lấy vị trí GPS. Hãy bật định vị trên trình duyệt!');
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Áp dụng dữ liệu vị trí và thời tiết vào hệ thống
+   */
+  applyUserLocationAndWeather(result, opts = {}) {
+    if (!result) return;
+    const { lat, lng, address, cityName, weather } = result;
+
+    let resolvedCityName = cityName || 'Quy Nhơn';
+    if (resolvedCityName.toLowerCase().includes('quy nhơn') || resolvedCityName.toLowerCase().includes('bình định')) {
+      resolvedCityName = 'Quy Nhơn';
+    }
+
+    APP_DATA.currentCity = {
+      cityId: 'quynhon',
+      name: resolvedCityName,
+      province: resolvedCityName === 'Quy Nhơn' ? 'Bình Định' : resolvedCityName,
+      address: address || 'Vị trí hiện tại',
+      lat: Number(lat),
+      lng: Number(lng),
+      weather: weather || {
+        temp: '26°C',
+        condition: 'Mát mẻ',
+        icon: '⛅',
+        note: '26°C ⛅'
+      }
+    };
+
+    APP_DATA.homeLocation = {
+      lat: Number(lat),
+      lng: Number(lng)
+    };
+
+    try {
+      localStorage.setItem('foodtinder_user_loc_weather', JSON.stringify({
+        lat, lng, address, cityName: resolvedCityName, weather, timestamp: Date.now()
+      }));
+    } catch (e) {}
+
+    // Cập nhật khoảng cách thực tế (Haversine) cho toàn bộ quán ăn theo GPS người dùng
+    const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm);
+    const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText);
+    if (calcDistFn && formatDistFn && Array.isArray(APP_DATA.foods)) {
+      APP_DATA.foods.forEach(f => {
+        const fLat = Number(f.lat !== undefined ? f.lat : f.latitude);
+        const fLng = Number(f.lng !== undefined ? f.lng : f.longitude);
+        if (!isNaN(fLat) && !isNaN(fLng)) {
+          const d = calcDistFn(lat, lng, fLat, fLng);
+          f.distance = Number(d.toFixed(1));
+          f.distanceText = formatDistFn(d);
+        }
+      });
+    }
+
+    if (!opts.skipRender) {
+      this.renderHeader();
+      this.renderBentoAndFeed();
+      this.renderFoodGrid();
+      this.updateBentoStats();
+      this.renderMiniMap();
+      this.renderNearbyGrid();
+
+      if (window.swipeManager) {
+        const moodFoods = this.getFoodsForCurrentMood();
+        window.swipeManager.loadCards(moodFoods.length > 0 ? moodFoods : (APP_DATA.foods || []));
+      }
+
+      if (window.tasteManager && typeof window.tasteManager.renderLocationRecommendations === 'function') {
+        window.tasteManager.renderLocationRecommendations();
+      }
+    }
   }
 
   getFoodsForCurrentMood() {
-    return APP_DATA.foods.filter(f => f.moodIds.includes(this.currentMood));
+    const curCityId = APP_DATA?.currentCity?.cityId;
+    const curCityName = APP_DATA?.currentCity?.name;
+    let pool = APP_DATA?.foods || [];
+    if (curCityId || curCityName) {
+      const cityPool = pool.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
+      if (cityPool.length > 0) pool = cityPool;
+    }
+    const matched = pool.filter(f => Array.isArray(f.moodIds) && f.moodIds.includes(this.currentMood));
+    const result = matched.length > 0 ? matched : pool;
+
+    // Sắp xếp ưu tiên tuyệt đối theo khoảng cách gần vị trí GPS hiện tại của user nhất (Gần -> Xa)
+    return [...result].sort((a, b) => {
+      const distA = (typeof a.distance === 'number') ? a.distance : 999;
+      const distB = (typeof b.distance === 'number') ? b.distance : 999;
+      return distA - distB;
+    });
   }
 
   renderHeader() {
@@ -95,11 +649,16 @@ class FoodApp {
     const locationEl = document.getElementById('header-location');
     if (locationEl) {
       locationEl.innerHTML = `
-        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-xl px-3 py-2 cursor-pointer transition" onclick="window.app.openCityModal()">
-          <span class="text-[10px] text-stone-400 block font-medium">Bạn đang ở:</span>
-          <span class="text-xs font-bold text-stone-800 flex items-center gap-1 mt-0.5">
-            <span class="truncate">${city.address}</span>
-            <span class="text-rose-500">📍</span>
+        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-xl px-3 py-2 cursor-pointer transition relative group" onclick="window.app.detectUserLocationAndWeather()" title="${city.address} (Bấm để lấy đúng GPS & thời tiết thực tế của bạn)">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] text-stone-400 block font-medium">Bạn đang ở:</span>
+            <span class="text-[9.5px] text-rose-500 font-bold opacity-0 group-hover:opacity-100 transition flex items-center gap-0.5">
+              <span>Định vị lại</span> 🔄
+            </span>
+          </div>
+          <span class="text-xs font-bold text-stone-800 flex items-center justify-between gap-1 mt-0.5">
+            <span class="truncate" id="user-current-address-label" title="${city.address}">${city.address}</span>
+            <span class="text-rose-500 shrink-0">📍</span>
           </span>
         </div>
       `;
@@ -327,193 +886,637 @@ class FoodApp {
     }
   }
 
+  // ═══════════════════════════════════════════════════════════════════
+  // QUICK CATEGORY CHIPS BAR & CUSTOM FILTER MODAL
+  // ═══════════════════════════════════════════════════════════════════
+
+  renderQuickCategoryChips() {
+    const container = document.getElementById('quick-category-chips');
+    if (!container) return;
+
+    if (!this.moodFilter) {
+      this.moodFilter = {
+        moodId: this.currentMood,
+        selectedCategories: [],
+        maxRadius: 0,
+        selectedArea: 'all',
+        openOnly: false,
+        shopeeOnly: false,
+        highRatingOnly: false,
+        priceTier: 'all'
+      };
+    }
+
+    const isAll = this.moodFilter.selectedCategories.length === 0;
+
+    let html = `
+      <button onclick="window.app.toggleQuickCategory('all')"
+        class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition shadow-xs shrink-0 cursor-pointer flex items-center gap-1 ${isAll ? 'bg-rose-500 text-white shadow-rose-200' : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200'}">
+        <span>✨ Tất cả</span>
+      </button>
+    `;
+
+    html += FILTER_CATEGORIES.map(cat => {
+      const isSelected = this.moodFilter.selectedCategories.includes(cat.id);
+      return `
+        <button onclick="window.app.toggleQuickCategory('${cat.id}')"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition shadow-xs shrink-0 cursor-pointer flex items-center gap-1 ${isSelected ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white shadow-rose-200 ring-2 ring-rose-200 font-extrabold' : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200'}">
+          <span>${cat.short}</span>
+          ${isSelected ? '<span class="text-[10px] font-black">✓</span>' : ''}
+        </button>
+      `;
+    }).join('');
+
+    container.innerHTML = html;
+  }
+
+  toggleQuickCategory(catId) {
+    window.soundFX && window.soundFX.playPop();
+    if (!this.moodFilter) {
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: false, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+    }
+    if (catId === 'all') {
+      this.moodFilter.selectedCategories = [];
+    } else {
+      // Bấm chip trên thanh lướt nhanh: chuyển ngay sang loại món đó (chạm lại lần nữa để bỏ chọn)
+      if (this.moodFilter.selectedCategories.length === 1 && this.moodFilter.selectedCategories[0] === catId) {
+        this.moodFilter.selectedCategories = [];
+      } else {
+        this.moodFilter.selectedCategories = [catId];
+      }
+    }
+    this.renderQuickCategoryChips();
+    this.renderBentoAndFeed();
+  }
+
+  getActiveFiltersCount() {
+    if (!this.moodFilter) return 0;
+    let count = 0;
+    if (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.length > 0) count += this.moodFilter.selectedCategories.length;
+    if (this.moodFilter.maxRadius > 0) count++;
+    if (this.moodFilter.selectedArea && this.moodFilter.selectedArea !== 'all') count++;
+    if (this.moodFilter.openOnly) count++;
+    if (this.moodFilter.shopeeOnly) count++;
+    if (this.moodFilter.highRatingOnly) count++;
+    if (this.moodFilter.priceTier && this.moodFilter.priceTier !== 'all') count++;
+    return count;
+  }
+
+  openMoodFilterModal() {
+    window.soundFX && window.soundFX.playPop();
+    if (!this.moodFilter) {
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: false, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+    }
+    this.tempMoodFilter = {
+      moodId: this.moodFilter.moodId || this.currentMood,
+      selectedCategories: [...(this.moodFilter.selectedCategories || [])],
+      maxRadius: this.moodFilter.maxRadius || 0,
+      selectedArea: this.moodFilter.selectedArea || 'all',
+      openOnly: Boolean(this.moodFilter.openOnly),
+      shopeeOnly: Boolean(this.moodFilter.shopeeOnly),
+      highRatingOnly: Boolean(this.moodFilter.highRatingOnly),
+      priceTier: this.moodFilter.priceTier || 'all'
+    };
+    this.renderMoodFilterModal();
+    const modal = document.getElementById('mood-filter-modal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  closeMoodFilterModal() {
+    const modal = document.getElementById('mood-filter-modal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  renderMoodFilterModal() {
+    if (!this.tempMoodFilter) return;
+
+    // 1. Moods grid
+    const moodContainer = document.getElementById('modal-mood-options');
+    if (moodContainer) {
+      moodContainer.innerHTML = APP_DATA.moods.map(m => {
+        const isSel = this.tempMoodFilter.moodId === m.id;
+        return `
+          <button type="button" onclick="window.app.modalSelectMood('${m.id}')"
+            class="p-2 rounded-xl text-left transition flex items-center gap-2 cursor-pointer border ${isSel ? 'bg-rose-50 border-rose-400 ring-2 ring-rose-200' : 'bg-white hover:bg-stone-50 border-stone-200'}">
+            <span class="text-lg">${m.emoji}</span>
+            <div class="truncate">
+              <div class="text-xs font-bold text-stone-800 leading-tight">${m.label}</div>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 2. Categories options
+    const catContainer = document.getElementById('modal-category-options');
+    if (catContainer) {
+      catContainer.innerHTML = FILTER_CATEGORIES.map(cat => {
+        const isSel = this.tempMoodFilter.selectedCategories.includes(cat.id);
+        return `
+          <button type="button" onclick="window.app.modalToggleCategory('${cat.id}')"
+            class="p-2 rounded-xl text-left transition flex items-center justify-between gap-1.5 cursor-pointer border ${isSel ? 'bg-gradient-to-r from-rose-50 to-amber-50 border-rose-400 ring-2 ring-rose-200 font-extrabold text-rose-800' : 'bg-white hover:bg-stone-50 border-stone-200 text-stone-700'}">
+            <span class="text-xs truncate">${cat.label}</span>
+            <span class="text-xs ${isSel ? 'text-rose-600 font-black' : 'text-stone-300'}">${isSel ? '✓' : '+'}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 3. Radius options
+    const radiusContainer = document.getElementById('modal-radius-options');
+    const radiusLabel = document.getElementById('modal-radius-label');
+    if (radiusContainer) {
+      radiusContainer.innerHTML = FILTER_RADII.map(r => {
+        const isSel = this.tempMoodFilter.maxRadius === r.value;
+        return `
+          <button type="button" onclick="window.app.modalSelectRadius(${r.value})"
+            class="py-2 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer text-center border ${isSel ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'}">
+            ${r.label}
+          </button>
+        `;
+      }).join('');
+      if (radiusLabel) {
+        const curR = FILTER_RADII.find(r => r.value === this.tempMoodFilter.maxRadius);
+        radiusLabel.textContent = curR ? curR.label : 'Tất cả';
+      }
+    }
+
+    // 4. Area options
+    const areaContainer = document.getElementById('modal-area-options');
+    if (areaContainer) {
+      areaContainer.innerHTML = FILTER_AREAS.map(a => {
+        const isSel = this.tempMoodFilter.selectedArea === a.id;
+        return `
+          <button type="button" onclick="window.app.modalSelectArea('${a.id}')"
+            class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer border truncate ${isSel ? 'bg-amber-500 text-white border-amber-500 shadow-sm' : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'}">
+            ${a.label}
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 5. Checkboxes
+    const openCheck = document.getElementById('filter-open-only');
+    if (openCheck) openCheck.checked = Boolean(this.tempMoodFilter.openOnly);
+
+    const shopeeCheck = document.getElementById('filter-shopee-only');
+    if (shopeeCheck) shopeeCheck.checked = Boolean(this.tempMoodFilter.shopeeOnly);
+
+    const ratingCheck = document.getElementById('filter-high-rating');
+    if (ratingCheck) ratingCheck.checked = Boolean(this.tempMoodFilter.highRatingOnly);
+
+    // 6. Price options
+    const priceContainer = document.getElementById('modal-price-options');
+    if (priceContainer) {
+      priceContainer.innerHTML = FILTER_PRICES.map(p => {
+        const isSel = this.tempMoodFilter.priceTier === p.id;
+        return `
+          <button type="button" onclick="window.app.modalSelectPrice('${p.id}')"
+            class="py-2 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer text-center border truncate ${isSel ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'}">
+            ${p.label}
+          </button>
+        `;
+      }).join('');
+    }
+
+    this.updateModalApplyCount();
+  }
+
+  modalSelectMood(moodId) {
+    this.tempMoodFilter.moodId = moodId;
+    this.renderMoodFilterModal();
+  }
+
+  modalToggleCategory(catId) {
+    const idx = this.tempMoodFilter.selectedCategories.indexOf(catId);
+    if (idx >= 0) {
+      this.tempMoodFilter.selectedCategories.splice(idx, 1);
+    } else {
+      this.tempMoodFilter.selectedCategories.push(catId);
+    }
+    this.renderMoodFilterModal();
+  }
+
+  clearCategoryFilter() {
+    this.tempMoodFilter.selectedCategories = [];
+    this.renderMoodFilterModal();
+  }
+
+  modalSelectRadius(r) {
+    this.tempMoodFilter.maxRadius = r;
+    this.renderMoodFilterModal();
+  }
+
+  modalSelectArea(areaId) {
+    this.tempMoodFilter.selectedArea = areaId;
+    this.renderMoodFilterModal();
+  }
+
+  modalSelectPrice(tierId) {
+    this.tempMoodFilter.priceTier = tierId;
+    this.renderMoodFilterModal();
+  }
+
+  syncModalCheckboxes() {
+    if (!this.tempMoodFilter) return;
+    const openCheck = document.getElementById('filter-open-only');
+    if (openCheck) this.tempMoodFilter.openOnly = openCheck.checked;
+
+    const shopeeCheck = document.getElementById('filter-shopee-only');
+    if (shopeeCheck) this.tempMoodFilter.shopeeOnly = shopeeCheck.checked;
+
+    const ratingCheck = document.getElementById('filter-high-rating');
+    if (ratingCheck) this.tempMoodFilter.highRatingOnly = ratingCheck.checked;
+  }
+
+  countMatchingFoods(filterState) {
+    const now = new Date();
+    return (APP_DATA.foods || []).filter(food => {
+      if (filterState.selectedCategories && filterState.selectedCategories.length > 0) {
+        if (!matchCategories(food, filterState.selectedCategories)) return false;
+      }
+      if (filterState.maxRadius && filterState.maxRadius > 0) {
+        if ((food.distance || 0) > filterState.maxRadius) return false;
+      }
+      if (filterState.selectedArea && !matchFoodArea(food, filterState.selectedArea)) {
+        return false;
+      }
+      if (filterState.openOnly) {
+        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
+        if (!st.isOpen) return false;
+      }
+      if (filterState.shopeeOnly) {
+        const hasShopee = Boolean(food.deliveryUrl || food.deliveryPlatform === 'ShopeeFood' || food.source === 'ShopeeFood');
+        if (!hasShopee) return false;
+      }
+      if (filterState.highRatingOnly) {
+        if ((food.rating || 0) < 4.5) return false;
+      }
+      if (filterState.priceTier && !matchFoodPrice(food, filterState.priceTier)) {
+        return false;
+      }
+      return true;
+    }).length;
+  }
+
+  updateModalApplyCount() {
+    this.syncModalCheckboxes();
+  }
+
+  applyMoodFilters() {
+    window.soundFX && window.soundFX.playPop();
+    this.syncModalCheckboxes();
+    this.moodFilter = {
+      moodId: this.tempMoodFilter.moodId,
+      selectedCategories: [...this.tempMoodFilter.selectedCategories],
+      maxRadius: this.tempMoodFilter.maxRadius,
+      selectedArea: this.tempMoodFilter.selectedArea,
+      openOnly: this.tempMoodFilter.openOnly,
+      shopeeOnly: this.tempMoodFilter.shopeeOnly,
+      highRatingOnly: this.tempMoodFilter.highRatingOnly,
+      priceTier: this.tempMoodFilter.priceTier
+    };
+
+    // If mood changed in modal, update app currentMood
+    if (this.moodFilter.moodId && this.moodFilter.moodId !== this.currentMood) {
+      this.currentMood = this.moodFilter.moodId;
+      APP_DATA.currentMoodId = this.moodFilter.moodId;
+      this.renderMoodSelector();
+      if (window.swipeManager) {
+        window.swipeManager.loadCards(this.getFoodsForCurrentMood());
+      }
+    }
+
+    this.closeMoodFilterModal();
+    this.renderQuickCategoryChips();
+    this.renderBentoAndFeed();
+    this.showToast('Đã áp dụng bộ lọc tùy chỉnh!');
+
+    // Kiểm tra Database: nếu location/khu vực chưa có quán thì cào ShopeeFood và lưu Database
+    if (this.moodFilter.selectedArea && this.moodFilter.selectedArea !== 'all') {
+      const cityObj = APP_DATA.currentCity || { cityId: 'quynhon', name: 'Quy Nhơn' };
+      if (window.crawlerManager && typeof window.crawlerManager.ensureLocationData === 'function') {
+        window.crawlerManager.ensureLocationData({
+          cityId: cityObj.cityId,
+          cityName: cityObj.name,
+          areaId: this.moodFilter.selectedArea,
+          lat: cityObj.lat,
+          lng: cityObj.lng
+        });
+      }
+    }
+  }
+
+  resetMoodFilters() {
+    window.soundFX && window.soundFX.playPop();
+    this.moodFilter = {
+      moodId: this.currentMood,
+      selectedCategories: [],
+      maxRadius: 0,
+      selectedArea: 'all',
+      openOnly: false,
+      shopeeOnly: false,
+      highRatingOnly: false,
+      priceTier: 'all'
+    };
+    this.renderQuickCategoryChips();
+    this.renderBentoAndFeed();
+    this.showToast('Đã đặt lại bộ lọc!');
+  }
+
   renderBentoAndFeed() {
-    const featuredFood = this.getFoodsForCurrentMood()[0] || APP_DATA.foods[0];
+    this.ensureMoodFilter();
     const container = document.getElementById('featured-card-container');
     if (!container) return;
 
-    const featuredStatus = window.getRestaurantStatus ? window.getRestaurantStatus(featuredFood.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    // Update active filter badge & indicator in UI
+    const activeCount = this.getActiveFiltersCount();
+    const indicatorEl = document.getElementById('active-filter-indicator');
+    const countBadgeEl = document.getElementById('active-filter-count');
+    const filterBtnCount = document.getElementById('filter-btn-count');
+    const resetBtn = document.getElementById('btn-reset-filters');
+    const descEl = document.getElementById('mood-filter-status-desc');
 
-    // Featured Food Card matching Image 2 ("Lẩu Thái Chua Cay - Quán cô Vy")
-    container.innerHTML = `
-      <div class="relative w-full rounded-[26px] bg-white border border-[#EFE5DB] shadow-md overflow-hidden transition-all hover:shadow-lg ${featuredStatus.isOpen ? '' : 'is-closed'}">
-        <!-- Side Tag Ribbon (Vertical text or Left badges matching Image 2) -->
-        <div class="absolute top-3 left-3 z-20 flex flex-col gap-1.5 pointer-events-none">
-          <span class="bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[10px] px-2.5 py-0.5 rounded-full shadow-sm tracking-wide">
-            #Xả_stress
-          </span>
-          <span class="bg-[#FFF4ED] text-[#E65100] font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-[#FFE0B2] shadow-sm">
-            #Ấm_áp
-          </span>
+    if (indicatorEl && countBadgeEl) {
+      if (activeCount > 0) {
+        indicatorEl.classList.remove('hidden');
+        countBadgeEl.textContent = activeCount;
+      } else {
+        indicatorEl.classList.add('hidden');
+      }
+    }
+    if (filterBtnCount) {
+      if (activeCount > 0) {
+        filterBtnCount.textContent = activeCount;
+        filterBtnCount.classList.remove('hidden');
+      } else {
+        filterBtnCount.classList.add('hidden');
+      }
+    }
+    if (resetBtn) {
+      if (activeCount > 0) {
+        resetBtn.classList.remove('hidden');
+      } else {
+        resetBtn.classList.add('hidden');
+      }
+    }
+
+    if (descEl) {
+      const selectedCats = this.moodFilter?.selectedCategories || [];
+      if (selectedCats.length > 0) {
+        const catNames = selectedCats.map(cId => {
+          const c = FILTER_CATEGORIES.find(x => x.id === cId);
+          return c ? c.short : cId;
+        }).join(', ');
+        descEl.textContent = `Đang lọc: ${catNames}`;
+      } else {
+        descEl.textContent = `Tự động quét quán mở cửa theo thời tiết & giờ thực tế`;
+      }
+    }
+
+    // Lọc ngầm: Tính toán bữa ăn theo giờ thực tế (meal slot)
+    const now = new Date();
+    const curHour = now.getHours();
+    let currentMealSlot = 'dinner';
+    if (curHour >= 6 && curHour < 10) currentMealSlot = 'breakfast';
+    else if (curHour >= 10 && curHour < 14) currentMealSlot = 'lunch';
+    else if (curHour >= 14 && curHour < 17) currentMealSlot = 'snack';
+    else if (curHour >= 17 && curHour < 21) currentMealSlot = 'dinner';
+    else currentMealSlot = 'latenight';
+
+    // Lọc ngầm: Điều kiện thời tiết thực tế
+    const weather = APP_DATA?.currentCity?.weather || { temp: '25°C', condition: 'Mát mẻ' };
+    const cond = String(weather?.condition || '').toLowerCase();
+    const tempNum = parseInt(weather?.temp, 10) || 25;
+    const iconStr = String(weather?.icon || '');
+    const isRain = cond.includes('mưa') || cond.includes('rain') || iconStr.includes('🌧️') || iconStr.includes('🌦️');
+    const isCold = tempNum < 22 || cond.includes('lạnh');
+    const isHot = tempNum >= 30 || cond.includes('nóng') || cond.includes('nắng');
+
+    // Mood context (Theo tâm trạng được chọn)
+    const activeMoodId = this.moodFilter?.moodId || this.currentMood;
+
+    // Lọc trước theo địa điểm/tỉnh thành nếu có
+    const curCityId = APP_DATA?.currentCity?.cityId;
+    const curCityName = APP_DATA?.currentCity?.name;
+    let baseFoods = APP_DATA?.foods || [];
+    if (curCityId || curCityName) {
+      const cityFoods = baseFoods.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
+      if (cityFoods.length > 0) {
+        baseFoods = cityFoods;
+      }
+    }
+
+    // Apply Filters (Lọc theo lựa chọn của người dùng)
+    let filteredFoods = baseFoods.filter(food => {
+      // 1. Loại món (Categories filter)
+      const selectedCats = this.moodFilter?.selectedCategories || [];
+      if (selectedCats.length > 0) {
+        if (!matchCategories(food, selectedCats)) return false;
+      }
+
+      // 2. Bán kính quét (Radius)
+      if (this.moodFilter?.maxRadius && this.moodFilter.maxRadius > 0) {
+        if ((food.distance || 0) > this.moodFilter.maxRadius) return false;
+      }
+
+      // 3. Khu vực (Area)
+      if (this.moodFilter?.selectedArea && !matchFoodArea(food, this.moodFilter.selectedArea)) {
+        return false;
+      }
+
+      // 4. Quán đang mở cửa
+      if (this.moodFilter?.openOnly) {
+        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
+        if (!st.isOpen) return false;
+      }
+
+      // 5. Có trên ShopeeFood
+      if (this.moodFilter?.shopeeOnly) {
+        const hasShopee = Boolean(food.deliveryUrl || food.deliveryPlatform === 'ShopeeFood' || food.source === 'ShopeeFood');
+        if (!hasShopee) return false;
+      }
+
+      // 6. Đánh giá cao
+      if (this.moodFilter?.highRatingOnly) {
+        if ((food.rating || 0) < 4.5) return false;
+      }
+
+      // 7. Khoảng giá
+      if (this.moodFilter?.priceTier && !matchFoodPrice(food, this.moodFilter.priceTier)) {
+        return false;
+      }
+
+      return true;
+    });
+
+    // Sắp xếp điểm số thông minh: Quán mở cửa -> Phù hợp tâm trạng -> Khung giờ -> Thời tiết -> Rating
+    const scoredFoods = filteredFoods.map(food => {
+      let score = 0;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
+      if (status.isOpen) score += 50;
+
+      // Match mood
+      if (Array.isArray(food.moodIds) && food.moodIds.includes(activeMoodId)) {
+        score += 30;
+      }
+
+      // Match meal slot ngầm
+      const nameCat = `${food.name} ${food.category || ''} ${(food.tags || []).join(' ')}`.toLowerCase();
+      if (currentMealSlot === 'breakfast' && (nameCat.includes('bún') || nameCat.includes('phở') || nameCat.includes('bánh mì') || nameCat.includes('xôi') || nameCat.includes('bánh hỏi') || nameCat.includes('cháo'))) {
+        score += 25;
+      } else if (currentMealSlot === 'lunch' && (nameCat.includes('cơm') || nameCat.includes('bún') || nameCat.includes('mì') || nameCat.includes('phở'))) {
+        score += 20;
+      } else if (currentMealSlot === 'snack' && (nameCat.includes('trà sữa') || nameCat.includes('ăn vặt') || nameCat.includes('bánh xèo') || nameCat.includes('chè') || nameCat.includes('kem') || nameCat.includes('cà phê'))) {
+        score += 25;
+      } else if (currentMealSlot === 'dinner' && (nameCat.includes('lẩu') || nameCat.includes('nướng') || nameCat.includes('hải sản') || nameCat.includes('cơm niêu') || nameCat.includes('bbq'))) {
+        score += 25;
+      } else if (currentMealSlot === 'latenight' && (nameCat.includes('cháo') || nameCat.includes('ốc') || nameCat.includes('lẩu') || nameCat.includes('nướng') || nameCat.includes('mì'))) {
+        score += 25;
+      }
+
+      // Match thời tiết ngầm
+      if (isRain && (nameCat.includes('lẩu') || nameCat.includes('cháo') || nameCat.includes('nướng') || nameCat.includes('súp') || nameCat.includes('nóng'))) {
+        score += 15;
+      }
+      if (isHot && (nameCat.includes('trà sữa') || nameCat.includes('kem') || nameCat.includes('chè') || nameCat.includes('nước ép') || nameCat.includes('sinh tố'))) {
+        score += 15;
+      }
+
+      // Ưu tiên khoảng cách gần vị trí hiện tại của user nhất:
+      const dist = (typeof food.distance === 'number') ? food.distance : 10;
+      // Điểm khoảng cách: quán càng gần điểm càng cao vượt trội (0km -> +60 điểm, 1km -> +54, 5km -> +30, 10km -> 0)
+      const proximityBonus = Math.max(0, (10 - dist) * 6);
+      score += proximityBonus;
+
+      score += (food.rating || 4.5) * 2;
+      return { food, score, status };
+    });
+
+    scoredFoods.sort((a, b) => (b.score - a.score) || ((a.food.distance || 0) - (b.food.distance || 0)));
+    const topFoods = scoredFoods.slice(0, 12);
+
+    if (topFoods.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full py-10 px-4 text-center bg-white rounded-3xl border border-stone-200 shadow-sm">
+          <div class="text-3xl mb-2">🔍</div>
+          <p class="font-extrabold text-sm text-stone-800">Không tìm thấy món ăn nào phù hợp với bộ lọc hiện tại</p>
+          <p class="text-xs text-stone-400 mt-1">Thử nới lỏng bán kính, đổi tiêu chí hoặc xóa bớt danh mục lọc.</p>
+          <button onclick="window.app.resetMoodFilters()" class="mt-3 px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-xl text-xs font-bold transition shadow-xs cursor-pointer">
+            ✕ Đặt lại bộ lọc
+          </button>
         </div>
+      `;
+      return;
+    }
 
-        <!-- Open / Close Status Badge top-right -->
-        <div class="absolute top-3 right-3 z-20">
-          ${featuredStatus.isOpen ? `
-            <span class="bg-emerald-600/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm border border-emerald-400/30">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-200"></span>
-              <span>Đang mở cửa</span>
-            </span>
-          ` : `
-            <span class="bg-stone-900/90 backdrop-blur-xs text-stone-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm border border-stone-600">
-              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-              <span>Đã đóng cửa</span>
-            </span>
-          `}
-        </div>
+    container.innerHTML = topFoods.map(({ food, status }) => {
+      const isLiked = this.likedFoods.includes(food.id);
+      return `
+        <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5">
+          <!-- Card Image & Status Badges -->
+          <div class="cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
+            <div class="relative w-full aspect-[4/3] bg-stone-100 overflow-hidden">
+              <img src="${food.image}"
+                   alt="${food.name}"
+                   loading="lazy"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=640&q=80'" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20 pointer-events-none"></div>
 
-        <!-- Food Image -->
-        <div class="relative w-full h-52 bg-stone-100 overflow-hidden cursor-pointer" onclick="window.app.showFoodDetail(${featuredFood.id})">
-          <img src="${featuredFood.image}" alt="${featuredFood.name}"
-            data-name="${featuredFood.name.replace(/"/g, '&quot;')}"
-            data-restaurant="${(featuredFood.restaurant || '').replace(/"/g, '&quot;')}"
-            data-category="${featuredFood.category || ''}"
-            onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${featuredFood.name.replace(/'/g, "\\'")}', '${(featuredFood.restaurant || '').replace(/'/g, "\\'")}', '${featuredFood.category || ''}')"
-            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105 ${featuredStatus.isOpen ? '' : 'is-closed-img'}" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-          
-          <!-- Image overlay info -->
-          <div class="absolute bottom-3 left-4 right-4 text-white">
-            <h3 class="font-extrabold text-lg text-white leading-tight drop-shadow-md">${featuredFood.name}</h3>
-            <p class="text-xs text-stone-200 mt-0.5 font-medium drop-shadow-sm flex items-center gap-1.5 flex-wrap">
-              <span>${featuredFood.restaurant} <span class="text-amber-300">(${featuredFood.distanceText})</span></span>
-              <span>•</span>
-              <span class="${featuredStatus.isOpen ? 'text-emerald-300' : 'text-stone-300'} font-semibold">🕒 ${featuredFood.openTime} (${featuredStatus.detailText})</span>
-            </p>
+              <!-- Top floating badges -->
+              <div class="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
+                <!-- Open / Closed Badge -->
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs flex items-center gap-1 backdrop-blur-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-800/90 text-stone-300'}">
+                  <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
+                  <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
+                </span>
+
+                <!-- Rating badge -->
+                <span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-stone-900/80 backdrop-blur-md text-amber-300 flex items-center gap-0.5 shadow-xs">
+                  <span>★</span>
+                  <span>${food.rating}</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-3 space-y-1.5">
+              <div>
+                <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
+                  ${food.restaurant}
+                </h5>
+                <div class="flex items-center justify-between gap-1 mt-0.5">
+                  <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
+                    📍 ${food.address || food.district || 'TP. Quy Nhơn'}
+                  </p>
+                  <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+                    class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
+                    title="Xem quán trên bản đồ">
+                    <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                      <line x1="9" y1="3" x2="9" y2="18"></line>
+                      <line x1="15" y1="6" x2="15" y2="21"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Operating Hours & Status -->
+              <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+                <span>🕒 ${food.openTime}</span>
+                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+              </div>
+
+              <div class="flex items-center justify-between text-[11px] pt-1">
+                <span class="font-bold text-rose-600">${food.priceRange.split(' - ')[0]}</span>
+                <span class="text-stone-400 flex items-center gap-0.5 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem vị trí quán trên bản đồ">
+                  <svg class="w-3 h-3 inline text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  ${food.distanceText.replace('Cách bạn ', '')}
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Action Row & Context Badge matching Image 2 -->
-        <div class="p-3.5 bg-white">
-          <!-- Emotion Context Badge -->
-          <div class="bg-[#FFF8F2] border border-[#FFEAD8] rounded-xl p-2.5 flex items-start gap-2 mb-3">
-            <span class="text-base leading-none">✨</span>
-            <p class="text-xs text-[#8D4D24] font-medium leading-relaxed">
-              ${featuredFood.recommendReason}
-            </p>
-          </div>
-
-          <!-- Action Buttons: "❤️ Yêu thích", "🛵 Đặt ShopeeFood", "✕ Bỏ qua", "Trợ lý 💬" -->
-          <div class="flex items-center gap-1.5">
-            <button onclick="window.app.addLikedFood(APP_DATA.foods.find(f => f.id === ${featuredFood.id}))" 
-              class="flex-1 py-2.5 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1 transition active:scale-95 cursor-pointer">
-              <span>❤️</span> <span>Thích</span>
+          <!-- Bottom Actions: 1. Thích, 2. Bản đồ, 3. Đặt ShopeeFood -->
+          <div class="p-3.5 pt-0 flex items-center gap-1.5">
+            <!-- 1. Yêu thích (Chỉ icon) -->
+            <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
+              data-like-btn="${food.id}"
+              class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
+              title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
+              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
             </button>
 
-            <button onclick="window.app.openShopeeFoodDelivery(${featuredFood.id})" 
-              class="py-2.5 px-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-300 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer">
-              ${window.getShopeeIcon ? window.getShopeeIcon(16, 'rounded-xs shrink-0') : ''}
+            <!-- 2. Bản đồ (Chỉ icon) -->
+            <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+              class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
+              title="Xem trên bản đồ">
+              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                <line x1="9" y1="3" x2="9" y2="18"></line>
+                <line x1="15" y1="6" x2="15" y2="21"></line>
+              </svg>
+            </button>
+
+            <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+              class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+              title="Đặt món qua ShopeeFood">
+              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
-
-            <button onclick="window.app.skipFeaturedFood()" 
-              class="py-2.5 px-2.5 bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-xl font-semibold text-xs transition active:scale-95 flex items-center justify-center gap-1">
-              <span>✕</span>
-            </button>
-
-            <button onclick="window.app.switchTab('chat')" 
-              class="py-2.5 px-2.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl font-semibold text-xs transition active:scale-95 flex items-center justify-center gap-1">
-              <span>💬</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Pagination Dots -->
-        <div class="flex justify-center gap-1.5 pb-2.5">
-          <span class="w-4 h-1.5 bg-[#FF6584] rounded-full"></span>
-          <span class="w-1.5 h-1.5 bg-stone-200 rounded-full"></span>
-          <span class="w-1.5 h-1.5 bg-stone-200 rounded-full"></span>
-        </div>
-      </div>
-    `;
-
-    // Bento Grid Section matching Image 1 View 5
-    const bentoContainer = document.getElementById('bento-grid-container');
-    if (bentoContainer) {
-      const moodObj = APP_DATA.moods.find(m => m.id === this.currentMood) || APP_DATA.moods[1];
-      const weather = APP_DATA.currentCity.weather;
-
-      bentoContainer.innerHTML = `
-        <div class="flex items-center justify-between mb-2 px-1">
-          <h4 class="font-extrabold text-stone-900 text-sm tracking-tight">Trang Chủ Bento</h4>
-          <span class="text-xs text-stone-400 font-medium">Cá nhân hóa theo ngày</span>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2.5 mb-3">
-          <!-- Widget 1: Weather (Light blue) -->
-          <div onclick="window.app.openCityModal()" class="bg-gradient-to-br from-sky-400 to-blue-500 text-white rounded-2xl p-3 shadow-sm cursor-pointer hover:opacity-95 transition flex flex-col justify-between h-24">
-            <div class="flex items-start justify-between">
-              <div>
-                <span class="text-[10px] font-semibold text-sky-100 uppercase tracking-wider">${APP_DATA.currentCity.name}</span>
-                <div class="text-xl font-extrabold">${weather.temp}</div>
-              </div>
-              <span class="text-3xl">${weather.icon}</span>
-            </div>
-            <p class="text-[11px] text-sky-100 font-medium truncate">${weather.condition}</p>
-          </div>
-
-          <!-- Widget 2: Mood (Peach / Rose) -->
-          <div onclick="window.app.switchTab('chat')" class="bg-gradient-to-br from-[#FFE3E3] to-[#FFD5CC] border border-[#FFCCD2] text-stone-800 rounded-2xl p-3 shadow-sm cursor-pointer hover:opacity-95 transition flex flex-col justify-between h-24">
-            <div class="flex items-start justify-between">
-              <div>
-                <span class="text-[10px] font-bold text-rose-500 uppercase tracking-wider">Tâm trạng</span>
-                <div class="text-sm font-extrabold text-stone-900 mt-0.5">${moodObj.label}</div>
-              </div>
-              <span class="text-2xl">${moodObj.emoji}</span>
-            </div>
-            <p class="text-[10px] text-rose-700 font-semibold truncate">Gợi ý món ăn vỗ về ✨</p>
-          </div>
-        </div>
-
-        <!-- Bento Grid "Gợi ý cho bạn" matching Image 1 View 5 -->
-        <div>
-          <div class="flex items-center justify-between mb-2 px-1">
-            <h5 class="font-bold text-xs text-stone-800">Gợi ý cho bạn</h5>
-            <span class="text-[11px] text-stone-400">Dựa trên cảm xúc</span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2.5">
-            ${APP_DATA.foods.slice(2, 4).map(f => {
-              const fStatus = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
-              return `
-              <div onclick="window.app.showFoodDetail(${f.id})" class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition cursor-pointer ${fStatus.isOpen ? '' : 'is-closed'}">
-                <div class="relative w-full h-24 bg-stone-100">
-                  <img src="${f.image}" alt="${f.name}"
-                    data-name="${f.name.replace(/"/g, '&quot;')}"
-                    data-restaurant="${(f.restaurant || '').replace(/"/g, '&quot;')}"
-                    data-category="${f.category || ''}"
-                    onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${f.name.replace(/'/g, "\\'")}', '${(f.restaurant || '').replace(/'/g, "\\'")}', '${f.category || ''}')"
-                    class="w-full h-full object-cover ${fStatus.isOpen ? '' : 'is-closed-img'}" />
-                  <span class="absolute top-1.5 left-1.5 ${fStatus.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[8.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
-                    <span class="w-1.5 h-1.5 rounded-full ${fStatus.isOpen ? 'bg-emerald-200' : 'bg-rose-500 animate-pulse'}"></span>
-                    ${fStatus.statusText}
-                  </span>
-                  <span class="absolute bottom-1.5 left-1.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-semibold px-1.5 py-0.5 rounded">
-                    📍 ${f.distanceText.replace('Cách bạn ', '')}
-                  </span>
-                </div>
-                <div class="p-2.5">
-                  <span class="bg-[#FFF4ED] text-[#E65100] text-[9px] font-bold px-2 py-0.5 rounded-full inline-block mb-1">
-                    ${f.tags[0]}
-                  </span>
-                  <h6 class="font-bold text-xs text-stone-800 truncate">${f.name}</h6>
-                  <p class="text-[10px] text-stone-400 truncate mt-0.5">${f.restaurant}</p>
-                </div>
-              </div>
-              `;
-            }).join('')}
           </div>
         </div>
       `;
-    }
+    }).join('');
 
     if (window.lucide) window.lucide.createIcons();
-
-    // Also render nearby grid and full food grid for web layout
-    this.renderNearbyGrid();
-    this.renderFoodGrid();
     this.updateBentoStats();
   }
+
 
   updateBentoStats() {
     const moodObj = APP_DATA.moods.find(m => m.id === this.currentMood) || APP_DATA.moods[1];
@@ -555,8 +1558,8 @@ class FoodApp {
           </span>
         </div>
         <div class="p-2.5">
-          <h6 class="font-bold text-xs text-stone-800 truncate">${food.name}</h6>
-          <p class="text-[10px] text-stone-500 truncate mt-0.5">${food.restaurant}</p>
+          <h6 class="font-bold text-xs text-stone-800 truncate" title="${food.restaurant}">${food.restaurant}</h6>
+          <p class="text-[10px] text-stone-500 truncate mt-0.5" title="${food.address || ''}">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
           <div class="flex items-center justify-between text-[10px] mt-1">
             <span class="font-bold text-rose-500">${food.priceRange.split(' - ')[0]}</span>
             <span class="${status.isOpen ? 'text-emerald-600 font-semibold' : 'text-stone-400'} text-[9px]">${status.detailText}</span>
@@ -583,7 +1586,7 @@ class FoodApp {
 
     const countBadge = document.getElementById('food-grid-count-badge');
     if (countBadge) {
-      countBadge.textContent = `${foods.length} quán Quy Nhơn`;
+      countBadge.textContent = `${foods.length} quán gần bạn`;
     }
 
     container.innerHTML = foods.map(food => {
@@ -621,9 +1624,13 @@ class FoodApp {
           <span class="absolute top-2 right-2 bg-black/50 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full">⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}</span>
         </div>
         <div class="p-3">
-          <h6 class="font-bold text-xs text-stone-900 truncate mb-0.5">${food.name}</h6>
+          <h6 class="font-bold text-xs text-stone-900 truncate mb-0.5 cursor-pointer hover:text-rose-600" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
+            ${food.restaurant}
+          </h6>
           <div class="flex items-center justify-between gap-1 mt-0.5">
-            <p class="text-[10px] text-stone-500 truncate flex-1" title="${food.address || ''}">${food.restaurant} • ${food.district || 'Quy Nhơn'}</p>
+            <p class="text-[10px] text-stone-500 truncate flex-1" title="${food.address || ''}">
+              📍 ${food.address || food.district || 'Quy Nhơn'}
+            </p>
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
               title="Xem vị trí quán trên bản đồ">
@@ -992,8 +1999,8 @@ class FoodApp {
               </span>
             </div>
             <div class="flex-1 min-w-0">
-              <h5 class="font-bold text-xs text-stone-900 truncate">${food.name}</h5>
-              <p class="text-[11px] text-stone-500 truncate mt-0.5">${food.restaurant}</p>
+              <h5 class="font-bold text-xs text-stone-900 truncate" title="${food.restaurant}">${food.restaurant}</h5>
+              <p class="text-[11px] text-stone-500 truncate mt-0.5" title="${food.address || ''}">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
               <p class="text-[10px] mt-1 ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-400'}">
                 🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
               </p>
@@ -1256,9 +2263,9 @@ class FoodApp {
             </div>
             <div class="flex-1 min-w-0 flex flex-col justify-between">
               <div>
-                <h4 class="font-black text-xs sm:text-sm text-stone-900 truncate">${food.name}</h4>
-                <p class="text-[11px] font-bold text-orange-600 truncate mt-0.5">🏪 ${food.restaurant}</p>
-                <p class="text-[10px] text-stone-400 truncate mt-0.5">📍 ${food.address} (${food.distanceText})</p>
+                <h4 class="font-black text-xs sm:text-sm text-stone-900 truncate">🏪 ${food.restaurant}</h4>
+                <p class="text-[11px] font-bold text-orange-600 truncate mt-0.5">🍽️ Món gợi ý: ${food.name}</p>
+                <p class="text-[10px] text-stone-500 truncate mt-0.5">📍 ${food.address} (${food.distanceText})</p>
               </div>
               <div class="flex items-center justify-between mt-1">
                 <span class="text-xs font-black text-rose-600">${food.priceRange.split(' - ')[0]}</span>
@@ -1384,22 +2391,112 @@ class FoodApp {
 
     window.soundFX && window.soundFX.playPop();
 
-    // Prepare Google Maps directions URL
-    let destinationParam = '';
-    if (food.lat && food.lng) {
-      destinationParam = `${food.lat},${food.lng}`;
-    } else {
-      const restName = food.restaurant || food.name;
-      const addr = food.address || '';
-      const city = food.cityName || APP_DATA.currentCity?.name || 'Quy Nhơn';
-      destinationParam = encodeURIComponent(`${restName}, ${addr}, ${city}`);
+    // 1. Tên quán gốc và địa chỉ gốc (Giữ nguyên tuyệt đối địa chỉ thực tế từ database)
+    let restName = (food.restaurant || food.name || '').trim();
+    let rawAddress = (food.address || '').trim();
+    // Bỏ số 0 vô nghĩa ở đầu số nhà (VD: "05 Phó Đức Chính" -> "5 Phó Đức Chính") để Google Maps nhận diện chính xác
+    rawAddress = rawAddress.replace(/^0+([1-9])/, '$1');
+
+    // 2. Xác định Tỉnh / Thành phố chính xác của quán ăn (tránh bị gán nhầm tỉnh hiện tại)
+    const cityOpt = (APP_DATA.weatherOptions || []).find(w => w.cityId === food.cityId) ||
+                    (APP_DATA.districtOptions || []).find(d => d.cityId === food.cityId) ||
+                    (APP_DATA.currentCity && APP_DATA.currentCity.cityId === food.cityId ? APP_DATA.currentCity : null) ||
+                    (APP_DATA.weatherOptions || []).find(w => (food.address && food.address.includes(w.shortName)) || (food.restaurant && food.restaurant.includes(w.shortName)));
+
+    const rawCityName = food.cityName || cityOpt?.shortName || cityOpt?.city || (food.cityId === 'quynhon' ? 'Quy Nhơn' : (APP_DATA.currentCity?.name)) || 'Quy Nhơn';
+    const cleanCityName = rawCityName.split('(')[0].replace(/cũ/gi, '').trim();
+
+    // Xác định đúng Tỉnh/Thành phố của quán
+    let cleanProvince = (cityOpt?.province || '').split('(')[0].trim();
+    if (!cleanProvince) {
+      const lowerCity = cleanCityName.toLowerCase();
+      if (lowerCity.includes('quy nhơn') || food.cityId === 'quynhon') cleanProvince = 'Bình Định';
+      else if (lowerCity.includes('hà nội') || food.cityId === 'hanoi') cleanProvince = 'Hà Nội';
+      else if (lowerCity.includes('hải phòng') || food.cityId === 'haiphong') cleanProvince = 'Hải Phòng';
+      else if (lowerCity.includes('đà nẵng') || food.cityId === 'danang') cleanProvince = 'Đà Nẵng';
+      else if (lowerCity.includes('hồ chí minh') || lowerCity.includes('sài gòn') || food.cityId === 'saigon') cleanProvince = 'TP. Hồ Chí Minh';
+      else if (lowerCity.includes('nha trang') || food.cityId === 'nhatrang') cleanProvince = 'Khánh Hòa';
+      else if (lowerCity.includes('đà lạt') || food.cityId === 'dalat') cleanProvince = 'Lâm Đồng';
+      else if (lowerCity.includes('huế') || food.cityId === 'hue') cleanProvince = 'Thừa Thiên Huế';
+      else cleanProvince = cleanCityName;
     }
-    const gmapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationParam}`;
+
+    // 3. Địa chỉ chuẩn xác gồm [Số nhà + Tên đường, Thành phố, Tỉnh]:
+    let fullAddress = rawAddress;
+    if (fullAddress && cleanCityName && !fullAddress.toLowerCase().includes(cleanCityName.toLowerCase())) {
+      fullAddress += `, ${cleanCityName}`;
+    }
+    if (cleanProvince && fullAddress && !fullAddress.toLowerCase().includes(cleanProvince.toLowerCase()) && cleanProvince.toLowerCase() !== cleanCityName.toLowerCase()) {
+      fullAddress += `, ${cleanProvince}`;
+    }
+
+    // 4. Lấy tọa độ latitude và longitude của quán:
+    const foodLat = (food.latitude !== undefined && food.latitude !== null) ? food.latitude : food.lat;
+    const foodLng = (food.longitude !== undefined && food.longitude !== null) ? food.longitude : food.lng;
+    const hasValidCoords = foodLat && foodLng && !isNaN(Number(foodLat)) && !isNaN(Number(foodLng));
+    const coordStr = hasValidCoords ? `${Number(foodLat).toFixed(6).replace(/\.?0+$/, '')},${Number(foodLng).toFixed(6).replace(/\.?0+$/, '')}` : '';
+
+    const cleanRestName = restName.replace(/["']/g, '').trim();
+    const cleanAddr = fullAddress.replace(/["']/g, '').trim();
+
+    // 1. Phân loại địa chỉ: Quán có số nhà rõ ràng vs Quán chưa rõ số nhà
+    // Địa chỉ rõ ràng: Bắt đầu bằng số nhà (14, 59B, 129/09, 66 - 68, 2A...) hoặc số Lô/Hẻm (Lô 5, Hẻm 48A...)
+    const hasSpecificNumber = /^([0-9]+[A-Za-z\/\-0-9]*|Lô\s+[0-9]+|Hẻm\s+[0-9]+)\s+/i.test(rawAddress);
+
+    // Công thức "Bao vây bằng chữ": (Tên quán + Địa chỉ + Tỉnh/Thành)
+    const fullTextQuery = `${cleanRestName}, ${cleanAddr}`.replace(/,+/g, ',').trim();
+
+    // 2. Xác định điểm xuất phát (Origin) - Vị trí hiện tại của người dùng:
+    const userLat = APP_DATA?.homeLocation?.lat || APP_DATA?.currentCity?.lat;
+    const userLng = APP_DATA?.homeLocation?.lng || APP_DATA?.currentCity?.lng;
+    const hasUserCoords = userLat && userLng && !isNaN(Number(userLat)) && !isNaN(Number(userLng));
+
+    // Nếu đã có tọa độ GPS -> truyền thẳng tọa độ &origin=lat,lng để Google Maps tự động định vị và vẽ đường từ chỗ bạn đứng
+    // Nếu chưa có tọa độ -> truyền &origin=Current+Location để kích hoạt chức năng vị trí hiện tại của Google Maps
+    const originStr = hasUserCoords
+      ? `${Number(userLat).toFixed(6).replace(/\.?0+$/, '')},${Number(userLng).toFixed(6).replace(/\.?0+$/, '')}`
+      : 'Current+Location';
+
+    const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
+
+    // 3. Phân luồng điều hướng:
+    // ƯU TIÊN 1 TUYỆT ĐỐI: Dùng tọa độ GPS chính xác từ ShopeeFood (nơi shipper nhận món)
+    // LÝ DO QUAN TRỌNG:
+    // Trên Google Maps, nhiều quán ăn không đăng ký theo tên quán online trên ShopeeFood (ví dụ: "Ăn Vặt Ngô Mây").
+    // Nếu truyền tên quán bằng chữ, AI tìm kiếm của Google Maps sẽ "đoán mò" và tự động nhảy cóc sang quán khác
+    // có tên gần giống (ví dụ quán "Ăn vặt quy nhơn" ở đường 31/3 cách đó 3.2km).
+    // Dẫn đường bằng TỌA ĐỘ GPS sẽ triệt tiêu 100% lỗi nhảy quán, đưa người dùng đến đúng 101 Ngô Mây (chỉ cách 150m)!
+    let primaryDirUrl = '';
+    let primaryDestHint = '';
+    let statusNoteText = '';
+
+    if (hasValidCoords) {
+      // Dẫn đường GPS chuẩn xác tuyệt đối đến đúng vị trí vật lý của quán
+      primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`;
+      primaryDestHint = `Từ vị trí của bạn ➔ ${cleanRestName}`;
+      statusNoteText = `🎯 Dẫn đường chính xác theo tọa độ GPS (${coordStr}) của ${cleanRestName} tại ${cleanAddr} — đảm bảo không bị Google Maps nhảy nhầm sang quán khác.`;
+    } else {
+      // Nếu quán chưa có tọa độ: Dẫn theo địa chỉ số nhà chuẩn xác (tránh kèm tên quán ảo để Google Maps không bắt nhầm POI)
+      const cleanAddressQuery = hasSpecificNumber ? cleanAddr : fullTextQuery;
+      primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddressQuery)}`;
+      primaryDestHint = `Từ vị trí của bạn ➔ ${cleanAddr}`;
+      statusNoteText = `🏠 Dẫn đường Google Maps từ vị trí hiện tại đến địa chỉ số nhà: ${cleanAddr}.`;
+    }
+
+    // 4. URL Tìm kiếm / Ghim vị trí trên Google Maps:
+    const gmapsSearchUrl = hasValidCoords
+      ? `https://www.google.com/maps/search/?api=1&query=${coordStr}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanAddr)}`;
+
+    // 5. URL Dẫn đường theo Tọa độ GPS vệ tinh:
+    const gmapsCoordsDirUrl = hasValidCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
+      : primaryDirUrl;
 
     const modal = document.getElementById('google-maps-modal');
     if (!modal) {
-      if (confirm(`Bạn có muốn mở Google Maps để dẫn đường đến quán "${food.restaurant || food.name}" không?`)) {
-        window.open(gmapsUrl, '_blank');
+      if (confirm(`Bạn có muốn mở Google Maps để dẫn đường từ vị trí hiện tại đến "${cleanRestName}" không?`)) {
+        window.open(primaryDirUrl, '_blank');
       }
       return;
     }
@@ -1407,16 +2504,70 @@ class FoodApp {
     const restEl = document.getElementById('gmaps-modal-restaurant');
     const addrEl = document.getElementById('gmaps-modal-address');
     const distEl = document.getElementById('gmaps-modal-distance');
+    const coordsEl = document.getElementById('gmaps-modal-coords');
+    const coordsBox = document.getElementById('gmaps-modal-coords-box');
+    const destHintEl = document.getElementById('gmaps-modal-dest-hint');
+    const noteEl = document.getElementById('gmaps-modal-note');
+    const originLabelEl = document.getElementById('gmaps-modal-origin-label');
     const confirmBtn = document.getElementById('gmaps-modal-confirm-btn');
+    const gpsBtn = document.getElementById('gmaps-modal-gps-btn');
+    const searchBtn = document.getElementById('gmaps-modal-search-btn');
+    const inAppBtn = document.getElementById('gmaps-modal-inapp-btn');
 
-    if (restEl) restEl.textContent = food.restaurant || food.name;
-    if (addrEl) addrEl.textContent = food.address ? `${food.address}, ${food.cityName || 'Quy Nhơn'}` : (food.cityName || 'TP. Quy Nhơn');
+    if (originLabelEl) {
+      originLabelEl.textContent = userAddrLabel;
+      originLabelEl.title = userAddrLabel;
+    }
+    if (restEl) restEl.textContent = restName;
+    if (addrEl) addrEl.textContent = fullAddress;
     if (distEl) distEl.textContent = food.distanceText ? food.distanceText : (food.distance ? `Cách bạn ${food.distance}km` : 'Gần bạn');
+    if (destHintEl) destHintEl.textContent = primaryDestHint;
+    if (noteEl) noteEl.textContent = statusNoteText;
+    if (coordsEl && coordStr) {
+      coordsEl.textContent = coordStr;
+      if (coordsBox) coordsBox.style.display = 'flex';
+    } else if (coordsBox) {
+      coordsBox.style.display = 'none';
+    }
 
+    // Nút 1: Chỉ đường chính từ vị trí hiện tại đến quán
     if (confirmBtn) {
       confirmBtn.onclick = () => {
         this.closeGoogleMapsModal();
-        window.open(gmapsUrl, '_blank');
+        this.showToast(`🧭 Đang mở chỉ đường từ vị trí của bạn đến: ${cleanRestName}...`);
+        window.open(primaryDirUrl, '_blank');
+      };
+    }
+
+    // Nút 2: Chỉ đường GPS từ vị trí hiện tại đến tọa độ vệ tinh GPS quán
+    if (gpsBtn) {
+      gpsBtn.onclick = () => {
+        this.closeGoogleMapsModal();
+        this.showToast(`🎯 Đang mở chỉ đường GPS từ vị trí của bạn đến: ${coordStr || cleanRestName}...`);
+        window.open(gmapsCoordsDirUrl, '_blank');
+      };
+    }
+
+    // Nút 3: Xem địa điểm, ghim vị trí trên Google Maps
+    if (searchBtn) {
+      searchBtn.onclick = () => {
+        this.closeGoogleMapsModal();
+        this.showToast(`📍 Đang ghim vị trí ${cleanRestName} trên Google Maps...`);
+        window.open(gmapsSearchUrl, '_blank');
+      };
+    }
+
+    // Nút 4: Xem ngay trên Bản đồ App FoodTinder
+    if (inAppBtn) {
+      inAppBtn.onclick = () => {
+        this.closeGoogleMapsModal();
+        this.switchTab('map');
+        if (window.mapManager) {
+          setTimeout(() => {
+            window.mapManager.initMap();
+            window.mapManager.selectFood(food.id, true);
+          }, 300);
+        }
       };
     }
 
@@ -1662,6 +2813,7 @@ class FoodApp {
   }
 
   selectCityAndWeather(city, address, temp, condition, icon, lat, lng, cityId) {
+    this.ensureMoodFilter();
     const matchedOpt = (APP_DATA.districtOptions || []).find(w => w.cityId === cityId || w.city === city) ||
                        APP_DATA.weatherOptions.find(w => w.cityId === cityId || w.city === city);
     const resolvedCityId = cityId || matchedOpt?.cityId || 'quynhon';
@@ -1677,27 +2829,76 @@ class FoodApp {
       weather: { temp, condition, icon }
     };
 
+    // Lọc bỏ toàn bộ quán ảo khỏi Database
+    if (typeof window.isFakeDummyFood === 'function' && Array.isArray(APP_DATA.foods)) {
+      APP_DATA.foods = APP_DATA.foods.filter(f => !window.isFakeDummyFood(f));
+    }
+
     // If selected location has signature specialties, register them into APP_DATA.foods
     if (matchedOpt && Array.isArray(matchedOpt.specialties) && matchedOpt.specialties.length > 0) {
       matchedOpt.specialties.forEach((spec, sIdx) => {
+        let parsedRest = spec.rest || `Đặc Sản ${matchedOpt?.shortName || city}`;
+        let parsedAddr = matchedOpt?.address || address;
+        if (spec.rest && spec.rest.includes(' - ')) {
+          const parts = spec.rest.split(' - ');
+          parsedRest = parts[0].trim();
+          const branch = parts.slice(1).join(' - ').trim();
+          if (branch) {
+            parsedAddr = branch;
+            const cleanC = (matchedOpt?.shortName || city || '').split('(')[0].replace(/cũ/gi, '').trim();
+            if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {
+              parsedAddr += `, ${cleanC}`;
+            }
+          }
+        }
+
         const foodId = 6000 + Math.abs(Math.round(lat * 100)) + sIdx;
-        const exists = APP_DATA.foods.some(f => f.id === foodId || (f.name === spec.name && f.cityId === resolvedCityId));
-        if (!exists) {
+        const foodLat = (spec.latitude !== undefined && spec.latitude !== null) ? spec.latitude : (spec.lat || (lat + (sIdx * 0.002)));
+        const foodLng = (spec.longitude !== undefined && spec.longitude !== null) ? spec.longitude : (spec.lng || (lng + (sIdx * 0.002)));
+
+        // Tính khoảng cách thực tế từ vị trí người dùng (User Location)
+        const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+        const calcHaversine = (la1, lo1, la2, lo2) => {
+          if (!la1 || !lo1 || !la2 || !lo2) return 1.0;
+          const R = 6371;
+          const dLa = (la2 - la1) * Math.PI / 180;
+          const dLo = (lo2 - lo1) * Math.PI / 180;
+          const a = Math.sin(dLa/2)*Math.sin(dLa/2) + Math.cos(la1*Math.PI/180)*Math.cos(la2*Math.PI/180)*Math.sin(dLo/2)*Math.sin(dLo/2);
+          return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        };
+        const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm) || calcHaversine;
+        const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText) || (k => (k < 1 ? `Cách bạn ${Math.round(k*1000)}m` : `Cách bạn ${k.toFixed(1)}km`));
+        const realDistKm = calcDistFn(userLoc.lat, userLoc.lng, foodLat, foodLng);
+        const distText = formatDistFn(realDistKm);
+
+        const existingFood = APP_DATA.foods.find(f => f.id === foodId || (f.name === spec.name && f.cityId === resolvedCityId));
+        if (existingFood) {
+          existingFood.restaurant = parsedRest;
+          existingFood.address = parsedAddr;
+          existingFood.distance = Number(realDistKm.toFixed(1));
+          existingFood.distanceText = distText;
+          existingFood.latitude = foodLat;
+          existingFood.longitude = foodLng;
+          existingFood.lat = foodLat;
+          existingFood.lng = foodLng;
+        } else {
           APP_DATA.foods.push({
             id: foodId,
             cityId: resolvedCityId,
             cityName: city,
             name: spec.name,
-            restaurant: spec.rest || `Đặc Sản ${matchedOpt.shortName || city}`,
-            address: address,
-            distance: 0.6 + sIdx * 0.3,
-            distanceText: `Cách bạn ${600 + sIdx * 300}m`,
+            restaurant: parsedRest,
+            address: parsedAddr,
+            distance: Number(realDistKm.toFixed(1)),
+            distanceText: distText,
             weatherNote: `${condition} ${temp}`,
             priceRange: spec.price || "45.000đ - 85.000đ",
             rating: Number(window.formatRating ? window.formatRating(4.8 + (sIdx % 2) * 0.1) : (4.8 + (sIdx % 2) * 0.1).toFixed(1)),
             reviewCount: 1620 + sIdx * 250,
-            lat: lat + (sIdx * 0.002),
-            lng: lng + (sIdx * 0.002),
+            latitude: foodLat,
+            longitude: foodLng,
+            lat: foodLat,
+            lng: foodLng,
             category: spec.cat || "streetfood",
             moodIds: ["comfort", "chill", "craving", "energetic", "sad"],
             tags: spec.tags || ["#Đặc_sản", "#Nóng_hổi", "#Đậm_đà"],
@@ -1723,6 +2924,17 @@ class FoodApp {
     this.renderFoodGrid();
     this.updateBentoStats();
 
+    // Kiểm tra Database: nếu có quán thì nạp ra hiển thị, nếu chưa có thì cào từ ShopeeFood
+    if (window.crawlerManager && typeof window.crawlerManager.ensureLocationData === 'function') {
+      window.crawlerManager.ensureLocationData({
+        cityId: resolvedCityId,
+        cityName: city,
+        address: address,
+        lat: lat,
+        lng: lng
+      });
+    }
+
     // Re-render Location & Taste recommendations
     if (window.tasteManager) {
       window.tasteManager.resetRadius();
@@ -1732,6 +2944,7 @@ class FoodApp {
     if (window.mapManager && window.mapManager.map) {
       window.mapManager.map.setView([lat, lng], 14);
       window.mapManager.renderUserLocation();
+      window.mapManager.renderMarkers();
       window.mapManager.renderBottomSheet();
     }
 
