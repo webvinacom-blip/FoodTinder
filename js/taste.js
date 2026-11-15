@@ -416,12 +416,12 @@ class TasteManager {
 
           <!-- Bottom Actions: 1. Thích (icon), 2. Bản đồ (icon), 3. Đặt ShopeeFood (icon+text) -->
           <div class="p-3.5 pt-0 flex items-center gap-1.5">
-            <!-- 1. Yêu thích (Trái tim màu trắng khi chưa thích, màu đỏ khi đã thích) -->
+            <!-- 1. Yêu thích (Chỉ icon) -->
             <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
               data-like-btn="${food.id}"
-              class="w-9 h-8 ${isLiked ? 'bg-rose-50 hover:bg-rose-100 border-rose-200 text-red-500' : 'bg-white hover:bg-stone-50 border-stone-200 text-stone-400'} border rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer shadow-2xs active:scale-95"
+              class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
               title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
-              <svg class="w-4 h-4 ${isLiked ? 'fill-red-500 text-red-500 stroke-red-500' : 'fill-white text-stone-300 stroke-stone-400'}" viewBox="0 0 24 24" fill="${isLiked ? '#ef4444' : 'white'}" stroke="${isLiked ? '#ef4444' : '#9ca3af'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
               </svg>
             </button>
