@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 FoodTinder - Đồng Bộ Dữ Liệu 300 Quán Ăn Lên Database Miễn Phí Firebase (Spark Plan)
-Dự án: youflix-shared
+Dự án: foodfinder-76596
 """
 
 import json
@@ -12,8 +12,8 @@ import urllib.request
 import urllib.error
 
 FOOD_DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "food-data.json")
-DEFAULT_PROJECT_ID = "youflix-shared"
-FIREBASE_API_KEY = "AIzaSyCFHM0yidEmIRU0DgSsYr721J1QfRFQR0M"
+DEFAULT_PROJECT_ID = "foodfinder-76596"
+FIREBASE_API_KEY = "AIzaSyAsGwepKeeIAYPGG0D2XIX7aaWlFzbeoJQ"
 
 def load_food_data():
     if not os.path.exists(FOOD_DATA_PATH):
@@ -24,7 +24,7 @@ def load_food_data():
 
 def sync_to_firebase(project_id=DEFAULT_PROJECT_ID):
     """
-    Đồng bộ dữ liệu lên Firebase Database của dự án youflix-shared.
+    Đồng bộ dữ liệu lên Firebase Database của dự án foodfinder-76596.
     """
     data = load_food_data()
     foods = data.get("foods", [])

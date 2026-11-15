@@ -3,13 +3,13 @@
 // saving to static food-data.json, and synchronizing with Firebase Database.
 
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyCFHM0yidEmIRU0DgSsYr721J1QfRFQR0M",
-  authDomain: "youflix-shared.firebaseapp.com",
-  projectId: "youflix-shared",
-  storageBucket: "youflix-shared.firebasestorage.app",
-  messagingSenderId: "309437656302",
-  appId: "1:309437656302:web:b6af3db65f5f06511c97ff",
-  measurementId: "G-T8VX1D7NZ7"
+  apiKey: "AIzaSyAsGwepKeeIAYPGG0D2XIX7aaWlFzbeoJQ",
+  authDomain: "foodfinder-76596.firebaseapp.com",
+  projectId: "foodfinder-76596",
+  storageBucket: "foodfinder-76596.firebasestorage.app",
+  messagingSenderId: "539125592216",
+  appId: "1:539125592216:web:24f4fcc19948ff8bfa20ed",
+  measurementId: "G-XMZ9TL4SVR"
 };
 
 class CrawlerManager {
@@ -27,7 +27,10 @@ class CrawlerManager {
       try {
         if (!firebase.apps || !firebase.apps.length) {
           this.firebaseApp = firebase.initializeApp(FIREBASE_CONFIG);
-          console.log('[Firebase] Initialized with youflix-shared');
+          if (typeof firebase.analytics === 'function') {
+            try { firebase.analytics(); } catch (ae) {}
+          }
+          console.log('[Firebase] Initialized with foodfinder-76596');
         } else {
           this.firebaseApp = firebase.app();
         }
@@ -230,18 +233,18 @@ class CrawlerManager {
                 </div>
                 <span class="text-[10px] bg-emerald-100 text-emerald-800 font-extrabold px-2.5 py-0.5 rounded-full flex items-center gap-1">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  youflix-shared
+                  foodfinder-76596
                 </span>
               </div>
 
               <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200 text-xs space-y-1.5">
                 <div class="flex justify-between items-center text-[11px]">
                   <span class="text-stone-500 font-medium">Project ID:</span>
-                  <span class="font-bold text-stone-800">youflix-shared</span>
+                  <span class="font-bold text-stone-800">foodfinder-76596</span>
                 </div>
                 <div class="flex justify-between items-center text-[11px]">
                   <span class="text-stone-500 font-medium">Auth Domain:</span>
-                  <span class="font-mono text-stone-600">youflix-shared.firebaseapp.com</span>
+                  <span class="font-mono text-stone-600">foodfinder-76596.firebaseapp.com</span>
                 </div>
                 <div class="flex justify-between items-center text-[11px]">
                   <span class="text-stone-500 font-medium">Collection / Path:</span>
@@ -413,7 +416,7 @@ class CrawlerManager {
 
     if (btn) {
       btn.disabled = true;
-      btn.innerHTML = `<span>⏳</span> Đang lưu lên Firebase youflix-shared...`;
+      btn.innerHTML = `<span>⏳</span> Đang lưu lên Firebase ${FIREBASE_CONFIG.projectId}...`;
     }
 
     try {
@@ -424,7 +427,7 @@ class CrawlerManager {
       const foods = this.crawledData ? this.crawledData.foods : (window.APP_DATA ? window.APP_DATA.foods : []);
       const payload = {
         metadata: {
-          project: "youflix-shared",
+          project: FIREBASE_CONFIG.projectId,
           title: "FoodTinder Quy Nhơn 300 Quán Nổi Bật",
           source: "ShopeeFood & GrabFood TP. Quy Nhơn",
           totalCount: foods.length,
@@ -462,10 +465,10 @@ class CrawlerManager {
         }
       }
 
-      // 3. REST API fallback to youflix-shared (Firestore REST API & Realtime DB)
+      // 3. REST API fallback to project (Firestore REST API & Realtime DB)
       if (!syncSuccess) {
         try {
-          const fsUrl = `https://firestore.googleapis.com/v1/projects/youflix-shared/databases/(default)/documents/foodtinder_quynhon/dataset_300?key=${FIREBASE_CONFIG.apiKey}`;
+          const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/dataset_300?key=${FIREBASE_CONFIG.apiKey}`;
           const fsDoc = {
             fields: {
               title: { stringValue: "FoodTinder Quy Nhơn 300 Quán Nổi Bật" },
@@ -481,7 +484,7 @@ class CrawlerManager {
           });
           if (fsResp.ok) {
             syncSuccess = true;
-            targetDesc = "Cloud Firestore REST API (youflix-shared)";
+            targetDesc = `Cloud Firestore REST API (${FIREBASE_CONFIG.projectId})`;
             console.log('[Firebase] Saved to Firestore REST API successfully!');
           }
         } catch (netErr) {
@@ -491,7 +494,7 @@ class CrawlerManager {
 
       if (!syncSuccess) {
         try {
-          const url = `https://youflix-shared-default-rtdb.firebaseio.com/quynhon_foods.json`;
+          const url = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/quynhon_foods.json`;
           const resp = await fetch(url, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -508,14 +511,14 @@ class CrawlerManager {
 
       // Lưu cache trạng thái đã sync
       localStorage.setItem('foodtinder_firebase_sync', JSON.stringify({
-        project: "youflix-shared",
+        project: FIREBASE_CONFIG.projectId,
         total: foods.length,
         syncedAt: new Date().toISOString(),
         target: targetDesc
       }));
 
       if (statusBox && statusMsg) {
-        statusMsg.textContent = `Đã lưu thành công ${foods.length} quán lên Firebase (youflix-shared)!`;
+        statusMsg.textContent = `Đã lưu thành công ${foods.length} quán lên Firebase (${FIREBASE_CONFIG.projectId})!`;
         statusBox.classList.remove('hidden');
       }
 
@@ -554,7 +557,7 @@ class CrawlerManager {
 
       // 1. Thử đọc từ Realtime DB
       try {
-        const url = `https://youflix-shared-default-rtdb.firebaseio.com/quynhon_foods.json`;
+        const url = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/quynhon_foods.json`;
         const resp = await fetch(url);
         if (resp.ok) {
           const json = await resp.json();
@@ -579,7 +582,7 @@ class CrawlerManager {
       // 3. Thử đọc từ Firestore REST API (Độ tin cậy 100%)
       if (!fetchedFoods) {
         try {
-          const fsUrl = `https://firestore.googleapis.com/v1/projects/youflix-shared/databases/(default)/documents/foodtinder_quynhon/dataset_300?key=${FIREBASE_CONFIG.apiKey}`;
+          const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/dataset_300?key=${FIREBASE_CONFIG.apiKey}`;
           const fsResp = await fetch(fsUrl);
           if (fsResp.ok) {
             const fsJson = await fsResp.json();
@@ -595,7 +598,7 @@ class CrawlerManager {
 
       if (fetchedFoods && fetchedFoods.length > 0) {
         this.applyFoodsToApp(fetchedFoods, true);
-        alert(`✅ Đã tải về thành công ${fetchedFoods.length} quán ăn từ Firebase Database (youflix-shared)!`);
+        alert(`✅ Đã tải về thành công ${fetchedFoods.length} quán ăn từ Firebase Database (${FIREBASE_CONFIG.projectId})!`);
       } else {
         alert(`Dữ liệu trên Firebase hiện đang được đồng bộ từ file tĩnh food-data.json.`);
       }
