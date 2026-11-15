@@ -472,11 +472,6 @@ class TasteManager {
               <span class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-10">
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
-
-              <!-- Tags on Image Bottom (bỏ hashtag grabfood / shopeefood) -->
-              <div class="absolute bottom-2 left-2 flex items-center gap-1 flex-wrap">
-                ${(food.tags || []).filter(t => !/grabfood|shopeefood|grab|shopee/i.test(t)).slice(0, 2).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
-              </div>
             </div>
 
             <!-- Content info -->
