@@ -359,31 +359,15 @@ class TasteManager {
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
 
-              <!-- Tags & Quick ShopeeFood Order Pill on Image Bottom -->
-              <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1">
-                <div class="flex items-center gap-1 flex-wrap">
-                  ${(food.tags || []).slice(0, 1).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
-                </div>
-                <!-- ShopeeFood Delivery Pill on Photo -->
-                <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-                  class="inline-flex items-center gap-1 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
-                  title="Đặt giao tận nơi trên ShopeeFood">
-                  ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
-                  <span>ShopeeFood</span>
-                </button>
+              <!-- Tags on Image Bottom -->
+              <div class="absolute bottom-2 left-2 flex items-center gap-1 flex-wrap">
+                ${(food.tags || []).slice(0, 2).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
               </div>
             </div>
 
             <!-- Content info -->
             <div class="p-3.5 space-y-2">
               <div>
-                <div class="flex items-center justify-between gap-1 mb-0.5">
-                  <span class="inline-flex items-center gap-1 text-[9.5px] px-1.5 py-0.5 rounded-md font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
-                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(12, 'shrink-0') : '🛍️') : '🛵'}
-                    <span>${food.source || 'ShopeeFood'}</span>
-                  </span>
-                  <span class="text-[9.5px] text-stone-400 truncate">${food.district || 'TP. Quy Nhơn'}</span>
-                </div>
                 <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
                   ${food.name}
                 </h5>

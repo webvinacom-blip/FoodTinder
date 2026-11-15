@@ -618,29 +618,13 @@ class FoodApp {
             `}
           </div>
 
-          <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-1 flex-wrap">
-            <div class="flex gap-1 flex-wrap">
-              ${food.tags.slice(0,1).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
-              ${food.source ? `<span class="bg-black/60 text-white text-[8.5px] font-bold px-1.5 py-0.5 rounded-full inline-flex items-center gap-1">${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(10, 'inline-block') : '') + ' Shopee' : '🛵 Grab'}</span>` : ''}
-            </div>
-            <!-- Quick ShopeeFood Delivery Pill on Photo -->
-            <button onclick="event.stopPropagation(); window.app.openShopeeFoodDelivery(${food.id})" 
-              class="inline-flex items-center gap-1 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-md transition-transform hover:scale-105 active:scale-95 cursor-pointer ml-auto"
-              title="Đặt giao ngay trên ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
-              <span>ShopeeFood</span>
-            </button>
+          <div class="absolute bottom-2 left-2 flex items-center gap-1 flex-wrap">
+            ${food.tags.slice(0, 2).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
           </div>
           <span class="absolute top-2 right-2 bg-black/50 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full">⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}</span>
         </div>
         <div class="p-3">
-          <div class="flex items-center justify-between gap-1 mb-0.5">
-            <h6 class="font-bold text-xs text-stone-900 truncate flex-1">${food.name}</h6>
-            <span class="shrink-0 text-[8.5px] font-extrabold px-1.5 py-0.5 rounded inline-flex items-center gap-1 ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
-              ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(11, 'shrink-0') : '') : ''}
-              ${food.source || 'ShopeeFood'}
-            </span>
-          </div>
+          <h6 class="font-bold text-xs text-stone-900 truncate mb-0.5">${food.name}</h6>
           <div class="flex items-center justify-between gap-1 mt-0.5">
             <p class="text-[10px] text-stone-500 truncate flex-1" title="${food.address || ''}">${food.restaurant} • ${food.district || 'Quy Nhơn'}</p>
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
