@@ -359,9 +359,9 @@ class TasteManager {
                 ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
               </span>
 
-              <!-- Tags on Image Bottom -->
+              <!-- Tags on Image Bottom (bỏ hashtag grabfood / shopeefood) -->
               <div class="absolute bottom-2 left-2 flex items-center gap-1 flex-wrap">
-                ${(food.tags || []).slice(0, 2).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
+                ${(food.tags || []).filter(t => !/grabfood|shopeefood|grab|shopee/i.test(t)).slice(0, 2).map(t => `<span class="bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">${t}</span>`).join('')}
               </div>
             </div>
 
@@ -389,12 +389,6 @@ class TasteManager {
               <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
                 <span>🕒 ${food.openTime}</span>
                 <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
-              </div>
-
-              <!-- Why this matches your taste -->
-              <div class="p-2 bg-rose-50/70 border border-rose-100 rounded-xl text-[10px] text-rose-800 font-medium leading-snug flex items-start gap-1.5">
-                <span class="text-rose-500 shrink-0">💡</span>
-                <span class="line-clamp-2">${food.matchReason}</span>
               </div>
 
               <div class="flex items-center justify-between text-[11px] pt-1">

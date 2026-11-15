@@ -619,7 +619,7 @@ class FoodApp {
           </div>
 
           <div class="absolute bottom-2 left-2 flex items-center gap-1 flex-wrap">
-            ${food.tags.slice(0, 2).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
+            ${(food.tags || []).filter(t => !/grabfood|shopeefood|grab|shopee/i.test(t)).slice(0, 2).map(t => '<span class="bg-rose-500/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">' + t + '</span>').join('')}
           </div>
           <span class="absolute top-2 right-2 bg-black/50 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full">⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}</span>
         </div>
