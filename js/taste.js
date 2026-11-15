@@ -370,14 +370,13 @@ class TasteManager {
                 <div class="flex items-center justify-between gap-1 mt-0.5">
                   <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.restaurant}">${food.restaurant}</p>
                   <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-                    class="inline-flex items-center gap-1 text-[9.5px] font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 px-1.5 py-0.5 rounded-md transition cursor-pointer shrink-0"
+                    class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
                     title="Xem quán trên bản đồ">
-                    <svg class="w-3 h-3 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                       <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                       <line x1="9" y1="3" x2="9" y2="18"></line>
                       <line x1="15" y1="6" x2="15" y2="21"></line>
                     </svg>
-                    <span>Bản đồ</span>
                   </button>
                 </div>
               </div>
@@ -404,49 +403,46 @@ class TasteManager {
             </div>
           </div>
 
-          <!-- Dòng riêng: Chức năng sẽ quay lại [😋↩ 142 khách quen] -->
+          <!-- Dòng riêng: Chức năng sẽ quay lại [😋 142 khách sẽ quay lại] -->
           <div class="px-3.5 pb-2">
             <button onclick="event.stopPropagation();window.app.toggleWillReturn(${food.id})"
               data-will-return-btn="${food.id}"
               class="w-full py-1.5 px-2.5 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 hover:from-amber-100 hover:to-orange-100 text-amber-900 border border-amber-200/90'} rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold transition active:scale-95 cursor-pointer"
               title="${isWillReturn ? 'Bạn đã chọn sẽ quay lại quán này! Bấm để bỏ chọn' : 'Đánh dấu bạn sẽ là khách quen quay lại quán này (' + willReturnCount + ' người đã chọn)'}">
               <span class="text-sm">😋</span>
-              <span class="text-xs font-black text-amber-600 ${isWillReturn ? 'text-white' : ''}">↩</span>
-              <span class="font-extrabold"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách quen sẽ quay lại</span>
+              <span class="text-[11px] font-extrabold whitespace-nowrap"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách sẽ quay lại</span>
             </button>
           </div>
 
-          <!-- Bottom Actions: Thích, Đặt ShopeeFood, Bản đồ -->
+          <!-- Bottom Actions: Thích (icon), Đặt ShopeeFood (icon+text), Bản đồ (icon) -->
           <div class="p-3.5 pt-0 flex items-center gap-1.5">
-            <!-- 1. Yêu thích -->
+            <!-- 1. Yêu thích (Chỉ icon) -->
             <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
               data-like-btn="${food.id}"
-              class="flex-1 py-1.5 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 cursor-pointer border border-rose-100"
+              class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100"
               title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
-              <svg class="w-3.5 h-3.5 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
               </svg>
-              <span>Thích</span>
             </button>
 
             <!-- 2. Đặt ShopeeFood -->
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 py-1.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+              class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đặt món qua ShopeeFood">
               ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
 
-            <!-- 3. Bản đồ -->
+            <!-- 3. Bản đồ (Chỉ icon) -->
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl text-[11px] font-bold transition flex items-center justify-center gap-1 shrink-0 cursor-pointer"
+              class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer"
               title="Xem trên bản đồ">
-              <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                 <line x1="9" y1="3" x2="9" y2="18"></line>
                 <line x1="15" y1="6" x2="15" y2="21"></line>
               </svg>
-              <span>Bản đồ</span>
             </button>
           </div>
         </div>
