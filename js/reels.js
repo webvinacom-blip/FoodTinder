@@ -29,6 +29,7 @@ class ReelsManager {
       itemEl.innerHTML = `
         <!-- Video / Animated Media -->
         <div class="relative w-full h-full flex items-center justify-center overflow-hidden">
+          ${food.videoUrl ? `
           <video 
             src="${food.videoUrl}" 
             poster="${food.image}"
@@ -38,9 +39,15 @@ class ReelsManager {
             ${this.muted ? 'muted' : ''}
             preload="metadata"
           ></video>
+          ` : ''}
 
           <!-- Fallback animated visual overlay if video takes a second -->
-          <img src="${food.image}" alt="${food.name}" class="reel-fallback-img absolute inset-0 w-full h-full object-cover -z-10 filter brightness-95" />
+          <img src="${food.image}" alt="${food.name}"
+            data-name="${food.name.replace(/"/g, '&quot;')}"
+            data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+            data-category="${food.category || ''}"
+            onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
+            class="reel-fallback-img absolute inset-0 w-full h-full object-cover -z-10 filter brightness-95" />
 
           <!-- Dark Gradient Overlays for readability -->
           <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/90 pointer-events-none"></div>
@@ -63,7 +70,12 @@ class ReelsManager {
           <!-- Restaurant Avatar with Follow '+' button -->
           <div class="relative mb-1">
             <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden shadow-lg bg-white">
-              <img src="${food.image}" alt="${food.restaurant}" class="w-full h-full object-cover" />
+              <img src="${food.image}" alt="${food.restaurant}"
+                data-name="${food.name.replace(/"/g, '&quot;')}"
+                data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+                data-category="${food.category || ''}"
+                onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
+                class="w-full h-full object-cover" />
             </div>
             <button onclick="window.reelsManager.toggleFollow(this)" class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-rose-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-md hover:scale-110 transition">
               +
@@ -94,9 +106,13 @@ class ReelsManager {
             <span class="text-white text-[11px] font-semibold mt-1 drop-shadow-md">Chia sẻ</span>
           </div>
 
-          <!-- Yellow Direction Button: "Chỉ đường 🗺️" (Matching Image 1 View 3) -->
+          <!-- Yellow Direction Button: "Chỉ đường" -->
           <button onclick="window.app.openMapWithFood(${food.id})" class="bg-[#F5B041] hover:bg-[#F39C12] text-stone-900 font-extrabold text-[11px] px-2.5 py-2 rounded-xl shadow-lg flex flex-col items-center gap-0.5 hover:scale-105 active:scale-95 transition border border-amber-200">
-            <i data-lucide="map" class="w-4 h-4"></i>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+              <line x1="9" y1="3" x2="9" y2="18"></line>
+              <line x1="15" y1="6" x2="15" y2="21"></line>
+            </svg>
             <span>Chỉ đường</span>
           </button>
         </div>

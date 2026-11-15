@@ -844,12 +844,17 @@ class FoodChatManager {
       <div onclick="window.app.showFoodDetail(${food.id})"
         class="food-suggestion-card bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer flex flex-col ${hidden ? 'hidden' : ''}">
         <div class="relative h-24 w-full overflow-hidden bg-stone-100">
-          <img src="${food.image}" alt="${food.name}" class="w-full h-full object-cover" />
+          <img src="${food.image}" alt="${food.name}"
+            data-name="${food.name.replace(/"/g, '&quot;')}"
+            data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+            data-category="${food.category || ''}"
+            onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
+            class="w-full h-full object-cover" />
           <span class="absolute bottom-1.5 left-1.5 bg-black/60 backdrop-blur-sm text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
             📍 ${food.distanceText.replace('Cách bạn ', '')}
           </span>
           <span class="absolute top-1.5 right-1.5 bg-black/50 text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
-            ⭐ ${food.rating}
+            ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating}
           </span>
         </div>
         <div class="p-2.5 flex flex-col flex-1 justify-between">

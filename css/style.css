@@ -20,8 +20,10 @@ body {
 }
 
 /* Hide scrollbars but keep smooth scroll */
-.scrollbar-none::-webkit-scrollbar { display: none; }
-.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
+.scrollbar-none,
+.no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
 
 /* Waving Hand Animation */
 @keyframes wave {
@@ -55,7 +57,10 @@ body {
 /* Leaflet */
 .leaflet-container { font-family: inherit !important; background-color: #e5e3df !important; }
 .custom-food-marker,
-.user-pulse-marker   { background: transparent !important; border: none !important; }
+.user-pulse-marker,
+.user-mini-marker,
+.food-mini-marker,
+.food-mini-pin       { background: transparent !important; border: none !important; }
 
 /* Modal sheet slide */
 .modal-sheet { transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -79,3 +84,52 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ── City List & Modal Mobile Fix ── */
+#city-list {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden !important;
+}
+
+#city-list::-webkit-scrollbar {
+  width: 5px;
+}
+#city-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#city-list::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 9999px;
+}
+#city-list::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Modal mobile adaptation */
+@media (max-width: 640px) {
+  #city-modal > div,
+  #taste-modal > div {
+    height: 82vh !important;
+    max-height: 85vh !important;
+  }
+}
+
+/* ── Closed Restaurant Styling (Grayscale) ── */
+.is-closed-img,
+.food-card.is-closed img,
+.taste-card.is-closed img,
+.food-card.is-closed .food-card-img {
+  filter: grayscale(100%) contrast(95%);
+  -webkit-filter: grayscale(100%) contrast(95%);
+  opacity: 0.88;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.food-card.is-closed:hover img,
+.taste-card.is-closed:hover img,
+.food-card.is-closed:hover .food-card-img {
+  opacity: 0.96;
+}
+

@@ -23,7 +23,7 @@
 
 4. **Video Reels Cuộn Dọc Kiểu TikTok:**
    - Xem video các món ăn bốc khói xì xèo, tự động cuộn hít toàn màn hình.
-   - Thả tim, bình luận và nút **"Chỉ đường 🗺️"** dẫn thẳng tới quán.
+   - Thả tim, bình luận và nút **"Chỉ đường / Bản đồ"** dẫn thẳng tới quán.
 
 5. **Tin Nhắn & Bạn Bè (Split Screen 2 Cột):**
    - **Cột bên trái:** Danh sách bạn bè cá nhân, nhóm ăn uống đông vui, người cùng gu ở gần, hàng avatar online và nút **➕ Thêm bạn**.
