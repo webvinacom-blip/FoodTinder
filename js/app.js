@@ -601,13 +601,13 @@ class FoodApp {
     if (matchedOpt && Array.isArray(matchedOpt.specialties) && matchedOpt.specialties.length > 0) {
       matchedOpt.specialties.forEach((spec, sIdx) => {
         let parsedRest = spec.name;
-        let parsedAddr = matchedOpt?.address || address || '';
+        let parsedAddr = spec.address || matchedOpt?.address || address || '';
         if (spec.rest) {
           if (/[-–—]/.test(spec.rest)) {
             const parts = spec.rest.split(/[-–—]/);
             parsedRest = parts[0].trim();
             const branch = parts.slice(1).join(' - ').trim();
-            if (branch) {
+            if (branch && !spec.address) {
               parsedAddr = branch;
               const cleanC = (matchedOpt?.shortName || matchedOpt?.city || resolvedCityName || '').split('(')[0].replace(/cũ/gi, '').trim();
               if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {
@@ -2956,12 +2956,12 @@ class FoodApp {
     if (matchedOpt && Array.isArray(matchedOpt.specialties) && matchedOpt.specialties.length > 0) {
       matchedOpt.specialties.forEach((spec, sIdx) => {
         let parsedRest = spec.rest || `Đặc Sản ${matchedOpt?.shortName || city}`;
-        let parsedAddr = matchedOpt?.address || address;
-        if (spec.rest && spec.rest.includes(' - ')) {
-          const parts = spec.rest.split(' - ');
+        let parsedAddr = spec.address || matchedOpt?.address || address;
+        if (spec.rest && /[-–—]/.test(spec.rest)) {
+          const parts = spec.rest.split(/[-–—]/);
           parsedRest = parts[0].trim();
           const branch = parts.slice(1).join(' - ').trim();
-          if (branch) {
+          if (branch && !spec.address) {
             parsedAddr = branch;
             const cleanC = (matchedOpt?.shortName || city || '').split('(')[0].replace(/cũ/gi, '').trim();
             if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {

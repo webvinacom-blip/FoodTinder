@@ -1873,7 +1873,8 @@ const APP_DATA = {
         ],
         "price": "189.000đ - 350.000đ",
         "img": "images/lau_thai_chua_cay.jpg",
-        "rest": "Lẩu Cô Vy - 124 Nguyễn Huệ, Quy Nhơn",
+        "rest": "Lẩu Cô Vy",
+        "address": "124 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn",
         "lat": 13.7745,
         "lng": 109.2312,
         "latitude": 13.7745,
@@ -1889,7 +1890,8 @@ const APP_DATA = {
         ],
         "price": "35.000đ - 60.000đ",
         "img": "images/banh_xeo_tom_nhay.jpg",
-        "rest": "Bánh Xèo Gia Vỹ 2 - 14 Diên Hồng, Quy Nhơn",
+        "rest": "Bánh Xèo Gia Vỹ 2",
+        "address": "14 Diên Hồng, TP. Quy Nhơn",
         "lat": 13.773073,
         "lng": 109.224855,
         "latitude": 13.773073,
@@ -3364,7 +3366,8 @@ const APP_DATA = {
     "specialties": [
       {
         "name": "Bánh Xèo Tôm Nhảy Giòn Rụm Gia Vỹ",
-        "rest": "Bánh Xèo Gia Vỹ 2 - 14 Diên Hồng, TP. Quy Nhơn",
+        "rest": "Bánh Xèo Gia Vỹ 2",
+        "address": "14 Diên Hồng, P. Lê Hồng Phong, TP. Quy Nhơn",
         "cat": "streetfood",
         "tags": [
           "#Bánh_xèo_tôm_nhảy",
@@ -4597,6 +4600,23310 @@ const APP_DATA = {
       "comfort",
       "chill",
       "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweqawpp83q310@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweqawpp83q310@resize_ss640x400"
+    ],
+    "description": "Quán Mộc Viên Restaurant - Món Việt tọa lạc tại 2 Lê Thanh Nghị, phục vụ món Cơm Niêu Mộc Viên Cá Kho Tộ & Canh Cua Rau Đay hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Niêu Mộc Viên Cá Kho Tộ & Canh Cua Rau Đay tại Mộc Viên Restaurant - Món Việt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3800274",
+    "menu": [
+      {
+        "name": "Cơm Niêu Mộc Viên Cá Kho Tộ & Canh Cua Rau Đay",
+        "price": "85.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mộc Viên Restaurant - Món Việt",
+        "price": "180.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/moc-vien-restaurant-mon-viet",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%99c%20Vi%C3%AAn%20Restaurant%20-%20M%C3%B3n%20Vi%E1%BB%87t",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 4,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sỹ - Hải Sản Tươi Sống",
+    "address": "35B Nguyễn Huệ, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.4,
+    "distanceText": "Cách bạn 2.4km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 24,
+    "likesCount": 92,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77205,
+    "longitude": 109.239333,
+    "lat": 13.77205,
+    "lng": 109.239333,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhxl7bsx8m37c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhxl7bsx8m37c@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sỹ - Hải Sản Tươi Sống tọa lạc tại 35B Nguyễn Huệ, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sỹ - Hải Sản Tươi Sống cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3800548",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sỹ - Hải Sản Tươi Sống",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-sy-hai-san-tuoi-song",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BB%B9%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 5,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+    "restaurant": "Jolly - Kem Ý Tự Chọn",
+    "address": "65 Lê Lợi, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "25.000đ - 50.000đ",
+    "rating": 4.5,
+    "reviewCount": 40,
+    "likesCount": 145,
+    "commentsCount": 8,
+    "openTime": "08:00 - 23:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772682,
+    "longitude": 109.231717,
+    "lat": 13.772682,
+    "lng": 109.231717,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9ozz76m7krcd@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9ozz76m7krcd@resize_ss640x400"
+    ],
+    "description": "Quán Jolly - Kem Ý Tự Chọn tọa lạc tại 65 Lê Lợi, P. Trần Hưng Đạo, phục vụ món Kem Ý Gelato Tự Chọn Trái Cây Tươi hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Kem Ý Gelato Tự Chọn Trái Cây Tươi tại Jolly - Kem Ý Tự Chọn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3800685",
+    "menu": [
+      {
+        "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Jolly - Kem Ý Tự Chọn - Lê Lợi",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/jolly-kem-y-tu-chon-le-loi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Jolly%20-%20Kem%20%C3%9D%20T%E1%BB%B1%20Ch%E1%BB%8Dn%20-%20L%C3%AA%20L%E1%BB%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 7,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Hồng Thanh",
+    "address": "22 Phan Bội Châu, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.4,
+    "reviewCount": 36,
+    "likesCount": 143,
+    "commentsCount": 7,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7738932,
+    "longitude": 109.2358765,
+    "lat": 13.7738932,
+    "lng": 109.2358765,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu19s93tzno9f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu19s93tzno9f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Hồng Thanh tọa lạc tại 22 Phan Bội Châu, P. Lê Lợi, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Hồng Thanh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3800959",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Hồng Thanh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-hong-thanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20H%E1%BB%93ng%20Thanh",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 8,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Anh Vũ",
+    "address": "14 Diên Hồng, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1000m",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.4,
+    "reviewCount": 36,
+    "likesCount": 148,
+    "commentsCount": 7,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773073,
+    "longitude": 109.220795,
+    "lat": 13.773073,
+    "lng": 109.220795,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi94fqpkmvv6f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi94fqpkmvv6f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Anh Vũ tọa lạc tại 14 Diên Hồng, P. Lê Hồng Phong, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Anh Vũ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801096",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Anh Vũ",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-anh-vu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Anh%20V%C5%A9",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 10,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Nam - Nhà Hàng Hải Sản",
+    "address": "2 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.3,
+    "distanceText": "Cách bạn 2.3km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 12,
+    "likesCount": 86,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.761441,
+    "longitude": 109.222803,
+    "lat": 13.761441,
+    "lng": 109.222803,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfbpuocjly336@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfbpuocjly336@resize_ss640x400"
+    ],
+    "description": "Quán Hải Nam - Nhà Hàng Hải Sản tọa lạc tại 2 Xuân Diệu, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Nam - Nhà Hàng Hải Sản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801370",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Nam - Nhà Hàng Hải Sản",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-nam-nha-hang-hai-san",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20Nam%20-%20Nh%C3%A0%20H%C3%A0ng%20H%E1%BA%A3i%20S%E1%BA%A3n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 11,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Ông Hùng - Bánh Xèo Tôm Nhảy",
+    "address": "24 Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.3,
+    "reviewCount": 21,
+    "likesCount": 118,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7681019,
+    "longitude": 109.2205423,
+    "lat": 13.7681019,
+    "lng": 109.2205423,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8xyvcxe863de@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8xyvcxe863de@resize_ss640x400"
+    ],
+    "description": "Quán Ông Hùng - Bánh Xèo Tôm Nhảy tọa lạc tại 24 Diên Hồng, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Ông Hùng - Bánh Xèo Tôm Nhảy cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801507",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ông Hùng - Bánh Xèo Tôm Nhảy",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ong-hung-banh-xeo-tom-nhay",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%94ng%20H%C3%B9ng%20-%20B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 12,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Phượng Tèo",
+    "address": "209 - 211 Nguyễn Huệ, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.3,
+    "reviewCount": 20,
+    "likesCount": 120,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7679855,
+    "longitude": 109.2281973,
+    "lat": 13.7679855,
+    "lng": 109.2281973,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstqj9icc3ic7e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstqj9icc3ic7e@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Phượng Tèo tọa lạc tại 209 - 211 Nguyễn Huệ, P. Trần Phú, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Phượng Tèo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801644",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá Phượng Tèo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-phuong-teo",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Ph%C6%B0%E1%BB%A3ng%20T%C3%A8o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 13,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hai Lộc Quán - Hải Sản Bình Dân",
+    "address": "42 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.3,
+    "distanceText": "Cách bạn 3.3km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 5,
+    "reviewCount": 4,
+    "likesCount": 77,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7710975812394,
+    "longitude": 109.2477025464177,
+    "lat": 13.7710975812394,
+    "lng": 109.2477025464177,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwb83a011exlb3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwb83a011exlb3@resize_ss640x400"
+    ],
+    "description": "Quán Hai Lộc Quán - Hải Sản Bình Dân tọa lạc tại 42 Xuân Diệu, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hai Lộc Quán - Hải Sản Bình Dân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801781",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hai Lộc Quán - Hải Sản Bình Dân",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-loc-quan-hai-san-binh-dan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hai%20L%E1%BB%99c%20Qu%C3%A1n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20B%C3%ACnh%20D%C3%A2n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "5.0 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 14,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Bèo & Bánh Xèo",
+    "address": "52 Hàn Mạc Tử, P. Ghềnh Ráng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.1,
+    "distanceText": "Cách bạn 4.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.8,
+    "reviewCount": 6,
+    "likesCount": 88,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.745718,
+    "longitude": 109.213348,
+    "lat": 13.745718,
+    "lng": 109.213348,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhvdhbsnxspd1@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhvdhbsnxspd1@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Bèo & Bánh Xèo tọa lạc tại 52 Hàn Mạc Tử, P. Ghềnh Ráng, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Bèo & Bánh Xèo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3801918",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Bèo & Bánh Xèo",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-beo-banh-xeo",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20%26%20B%C3%A1nh%20X%C3%A8o",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 15,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản Chín Mẫn",
+    "address": "6 Xuân Diệu, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.5,
+    "reviewCount": 9,
+    "likesCount": 102,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771968,
+    "longitude": 109.243835,
+    "lat": 13.771968,
+    "lng": 109.243835,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbmkfxl81jt81@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbmkfxl81jt81@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Chín Mẫn tọa lạc tại 6 Xuân Diệu, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản Chín Mẫn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802055",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Chín Mẫn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-chin-man",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20Ch%C3%ADn%20M%E1%BA%ABn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 16,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo - Bánh Khọt",
+    "address": "19 Hàn Thuyên, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.9,
+    "reviewCount": 3,
+    "likesCount": 89,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775704,
+    "longitude": 109.233318,
+    "lat": 13.775704,
+    "lng": 109.233318,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaip3bvtja34f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaip3bvtja34f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo - Bánh Khọt tọa lạc tại 19 Hàn Thuyên, P. Hải Cảng, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo - Bánh Khọt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802192",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo - Bánh Khọt",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-banh-khot",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20B%C3%A1nh%20Kh%E1%BB%8Dt",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 17,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản 7 Thơm",
+    "address": "5 Hồ Biểu Chánh, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1000m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.3,
+    "reviewCount": 11,
+    "likesCount": 118,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.790114,
+    "longitude": 109.216149,
+    "lat": 13.790114,
+    "lng": 109.216149,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh21vcg2wux0c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh21vcg2wux0c@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản 7 Thơm tọa lạc tại 5 Hồ Biểu Chánh, P. Đống Đa, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản 7 Thơm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802329",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản 7 Thơm",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-7-thom",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%207%20Th%C6%A1m",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 18,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cháo Ếch Singapore Cay Nồng Thố Đất",
+    "restaurant": "Cháo Ếch Singapore",
+    "address": "65 Hai Bà Trưng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "45.000đ - 75.000đ",
+    "rating": 4.8,
+    "reviewCount": 118,
+    "likesCount": 444,
+    "commentsCount": 23,
+    "openTime": "06:00 - 21:30",
+    "category": "comfort",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77204,
+    "longitude": 109.23189,
+    "lat": 13.77204,
+    "lng": 109.23189,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "late_night",
+      "spicy"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Comfort",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwghndz3qvob10@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwghndz3qvob10@resize_ss640x400"
+    ],
+    "description": "Quán Cháo Ếch Singapore tọa lạc tại 65 Hai Bà Trưng, phục vụ món Cháo Ếch Singapore Cay Nồng Thố Đất hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cháo Ếch Singapore Cay Nồng Thố Đất tại Cháo Ếch Singapore cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802466",
+    "menu": [
+      {
+        "name": "Cháo Ếch Singapore Cay Nồng Thố Đất",
+        "price": "45.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cháo Ếch Singapore - Hai Bà Trưng",
+        "price": "75.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-ech-singapore-hai-ba-trung",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20%E1%BA%BEch%20Singapore%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 19,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản Bin Bin - Hải Sản Online",
+    "address": "129/9 Nguyễn Huệ, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 4,
+    "likesCount": 107,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.768939,
+    "longitude": 109.230264,
+    "lat": 13.768939,
+    "lng": 109.230264,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgl338yvowr27@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgl338yvowr27@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Bin Bin - Hải Sản Online tọa lạc tại 129/9 Nguyễn Huệ, P. Lê Lợi, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản Bin Bin - Hải Sản Online cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802603",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Bin Bin - Hải Sản Online",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-bin-bin-hai-san-online",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20Bin%20Bin%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20Online",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 20,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản Hương Việt",
+    "address": "122 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 3,
+    "likesCount": 9,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.769312,
+    "longitude": 109.234051,
+    "lat": 13.769312,
+    "lng": 109.234051,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaqdxqv6dw921@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaqdxqv6dw921@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Hương Việt tọa lạc tại 122 Xuân Diệu, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản Hương Việt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802740",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Hương Việt",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-huong-viet",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20H%C6%B0%C6%A1ng%20Vi%E1%BB%87t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 21,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Riverside Restaurant",
+    "restaurant": "Riverside Restaurant",
+    "address": "1 Võ Nguyên Giáp",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 500m",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.9,
+    "reviewCount": 63,
+    "likesCount": 194,
+    "commentsCount": 12,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7864479988112,
+    "longitude": 109.2201270908117,
+    "lat": 13.7864479988112,
+    "lng": 109.2201270908117,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8jaqa6t32xaf@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8jaqa6t32xaf@resize_ss640x400"
+    ],
+    "description": "Quán Riverside Restaurant tọa lạc tại 1 Võ Nguyên Giáp, phục vụ món Đặc Sản Riverside Restaurant hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Riverside Restaurant tại Riverside Restaurant cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3802877",
+    "menu": [
+      {
+        "name": "Đặc Sản Riverside Restaurant",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Riverside Restaurant",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/riverside-restaurant",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Riverside%20Restaurant",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 22,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Tôm Nhảy - Phước Sơn",
+    "address": "122 Đống Đa, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 500m",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 5,
+    "reviewCount": 1,
+    "likesCount": 13,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7842437,
+    "longitude": 109.2236964,
+    "lat": 13.7842437,
+    "lng": 109.2236964,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvckud9v3k439@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvckud9v3k439@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Tôm Nhảy - Phước Sơn tọa lạc tại 122 Đống Đa, P. Thị Nại, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Tôm Nhảy - Phước Sơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803014",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Tôm Nhảy - Phước Sơn",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay-phuoc-son",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y%20-%20Ph%C6%B0%E1%BB%9Bc%20S%C6%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "5.0 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 24,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Mực",
+    "address": "70 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.6,
+    "distanceText": "Cách bạn 2.6km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 2,
+    "likesCount": 26,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7717726287533,
+    "longitude": 109.2417456954717,
+    "lat": 13.7717726287533,
+    "lng": 109.2417456954717,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9sgs23v17da0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9sgs23v17da0@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Mực tọa lạc tại 70 Xuân Diệu, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Mực cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803288",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Mực - Xuân Diệu",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-muc-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20M%E1%BB%B1c%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 26,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Nguyễn Thái Học",
+    "address": "167A Nguyễn Thái Học",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 33,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.769963,
+    "longitude": 109.218026,
+    "lat": 13.769963,
+    "lng": 109.218026,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfzgbgtunyzcc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfzgbgtunyzcc@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Nguyễn Thái Học tọa lạc tại 167A Nguyễn Thái Học, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Nguyễn Thái Học cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803562",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo - Nguyễn Thái Học",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 27,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Bồng Bềnh - Hải Sản Tươi Sống",
+    "address": "148 Hùng Vương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.4,
+    "reviewCount": 3,
+    "likesCount": 44,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.786783,
+    "longitude": 109.203352,
+    "lat": 13.786783,
+    "lng": 109.203352,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwav59wkv2l577@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwav59wkv2l577@resize_ss640x400"
+    ],
+    "description": "Quán Bồng Bềnh - Hải Sản Tươi Sống tọa lạc tại 148 Hùng Vương, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Bồng Bềnh - Hải Sản Tươi Sống cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803699",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bồng Bềnh - Hải Sản Tươi Sống",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bong-benh-hai-san-tuoi-song",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%93ng%20B%E1%BB%81nh%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 28,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo",
+    "address": "546 Nguyễn Thái Học, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.4,
+    "reviewCount": 2,
+    "likesCount": 46,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7590087,
+    "longitude": 109.211063,
+    "lat": 13.7590087,
+    "lng": 109.211063,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaqufxpq9y3d2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaqufxpq9y3d2@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo tọa lạc tại 546 Nguyễn Thái Học, P. Quang Trung, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803836",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 29,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Bình Dân",
+    "address": "1 Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 1,
+    "likesCount": 48,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773633,
+    "longitude": 109.236241,
+    "lat": 13.773633,
+    "lng": 109.236241,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdhzgx3fs2h3b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdhzgx3fs2h3b@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Bình Dân tọa lạc tại 1 Phan Bội Châu, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Bình Dân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3803973",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Bình Dân",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-binh-dan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20B%C3%ACnh%20D%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 30,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Sisters Tavern & Pizzeria",
+    "restaurant": "Sisters Tavern & Pizzeria",
+    "address": "81 Hai Bà Trưng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 38,
+    "likesCount": 164,
+    "commentsCount": 7,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772134,
+    "longitude": 109.230897,
+    "lat": 13.772134,
+    "lng": 109.230897,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwg47a1nesih5e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwg47a1nesih5e@resize_ss640x400"
+    ],
+    "description": "Quán Sisters Tavern & Pizzeria tọa lạc tại 81 Hai Bà Trưng, phục vụ món Đặc Sản Sisters Tavern & Pizzeria hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Sisters Tavern & Pizzeria tại Sisters Tavern & Pizzeria cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804110",
+    "menu": [
+      {
+        "name": "Đặc Sản Sisters Tavern & Pizzeria",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Sisters Tavern & Pizzeria",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/sisters-tavern-pizzeria",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sisters%20Tavern%20%26%20Pizzeria",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 31,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Trà Sữa Bobapop",
+    "address": "145 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 42,
+    "likesCount": 181,
+    "commentsCount": 8,
+    "openTime": "07:00 - 22:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775306,
+    "longitude": 109.232149,
+    "lat": 13.775306,
+    "lng": 109.232149,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6wvrzvyzf38@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6wvrzvyzf38@resize_ss640x400"
+    ],
+    "description": "Quán Trà Sữa Bobapop tọa lạc tại 145 Lê Lợi, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Trà Sữa Bobapop cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804247",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Trà Sữa Bobapop - Lê Lợi",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-bobapop-le-loi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Bobapop%20-%20L%C3%AA%20L%E1%BB%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 32,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Quán Thuỳ - Bún Rạm & Bún Chả Cá",
+    "address": "261 Tăng Bạt Hổ, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 34,
+    "likesCount": 162,
+    "commentsCount": 6,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7722456,
+    "longitude": 109.2253797,
+    "lat": 13.7722456,
+    "lng": 109.2253797,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstrle4joe5502@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstrle4joe5502@resize_ss640x400"
+    ],
+    "description": "Quán Quán Thuỳ - Bún Rạm & Bún Chả Cá tọa lạc tại 261 Tăng Bạt Hổ, P. Lý Thường Kiệt, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Quán Thuỳ - Bún Rạm & Bún Chả Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804384",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Thuỳ - Bún Rạm & Bún Chả Cá - Tăng Bạt Hổ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-thuy-bun-ram-bun-cha-ca-tang-bat-ho",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Thu%E1%BB%B3%20-%20B%C3%BAn%20R%E1%BA%A1m%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 33,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo 338",
+    "address": "338 Nguyễn Thái Học",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 68,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.766404,
+    "longitude": 109.215669,
+    "lat": 13.766404,
+    "lng": 109.215669,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6z0jjjv1503@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6z0jjjv1503@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo 338 tọa lạc tại 338 Nguyễn Thái Học, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo 338 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804521",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo - 338 Nguyễn Thái Học",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-338-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20338%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 34,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Giòn 69",
+    "address": "69 Trương Vĩnh Ký, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 73,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.788341,
+    "longitude": 109.201943,
+    "lat": 13.788341,
+    "lng": 109.201943,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8e9hfp1wwrba@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8e9hfp1wwrba@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Giòn 69 tọa lạc tại 69 Trương Vĩnh Ký, P. Nhơn Bình, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Giòn 69 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804658",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Giòn 69",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-gion-69",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Gi%C3%B2n%2069",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 35,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Mì Cay Naga Quy Nhơn",
+    "restaurant": "Mì Cay Naga Quy Nhơn",
+    "address": "51 Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.9,
+    "reviewCount": 23,
+    "likesCount": 144,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771024,
+    "longitude": 109.22892,
+    "lat": 13.771024,
+    "lng": 109.22892,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwesx7w4ob899d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwesx7w4ob899d@resize_ss640x400"
+    ],
+    "description": "Quán Mì Cay Naga Quy Nhơn tọa lạc tại 51 Lê Hồng Phong, phục vụ món Đặc Sản Mì Cay Naga Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Mì Cay Naga Quy Nhơn tại Mì Cay Naga Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804795",
+    "menu": [
+      {
+        "name": "Đặc Sản Mì Cay Naga Quy Nhơn",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Cay Naga Quy Nhơn",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-cay-naga-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Naga%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 36,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Marina Coffee",
+    "address": "5 Trần Quý Cáp",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.9,
+    "reviewCount": 21,
+    "likesCount": 143,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7741875,
+    "longitude": 109.2331553,
+    "lat": 13.7741875,
+    "lng": 109.2331553,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbhpiwo5o7v1f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbhpiwo5o7v1f@resize_ss640x400"
+    ],
+    "description": "Quán Marina Coffee tọa lạc tại 5 Trần Quý Cáp, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Marina Coffee cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3804932",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Marina Coffee",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/marina-coffee",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Marina%20Coffee",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 37,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Nhà 1989",
+    "address": "43 Mai Xuân Thưởng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1000m",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 22,
+    "likesCount": 151,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775643,
+    "longitude": 109.225928,
+    "lat": 13.775643,
+    "lng": 109.225928,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfemoj5yokb29@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfemoj5yokb29@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Nhà 1989 tọa lạc tại 43 Mai Xuân Thưởng, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Nhà 1989 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805069",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Nhà 1989",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-nha-1989",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Nh%C3%A0%201989",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 39,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Bobo Station - Trần Cao Vân",
+    "restaurant": "Bobo Station",
+    "address": "68 Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.9,
+    "reviewCount": 17,
+    "likesCount": 146,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774534,
+    "longitude": 109.230299,
+    "lat": 13.774534,
+    "lng": 109.230299,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9snbo6zpp58e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9snbo6zpp58e@resize_ss640x400"
+    ],
+    "description": "Quán Bobo Station tọa lạc tại 68 Trần Cao Vân, phục vụ món Đặc Sản Bobo Station hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Bobo Station tại Bobo Station cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805343",
+    "menu": [
+      {
+        "name": "Đặc Sản Bobo Station - Trần Cao Vân",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bobo Station - Trần Cao Vân",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bobo-station-tran-cao-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bobo%20Station%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 40,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Nem Chả Lợi - Nem Nướng Quy Nhơn",
+    "address": "113 Tăng Bạt Hổ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.7,
+    "reviewCount": 25,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773186,
+    "longitude": 109.230414,
+    "lat": 13.773186,
+    "lng": 109.230414,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lu7nt2pmrs4173@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lu7nt2pmrs4173@resize_ss640x400"
+    ],
+    "description": "Quán Nem Chả Lợi - Nem Nướng Quy Nhơn tọa lạc tại 113 Tăng Bạt Hổ, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Nem Chả Lợi - Nem Nướng Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805480",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nem Chả Lợi - Nem Nướng Quy Nhơn",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nem-cha-loi-nem-nuong-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20Ch%E1%BA%A3%20L%E1%BB%A3i%20-%20Nem%20N%C6%B0%E1%BB%9Bng%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 41,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Cô Xí",
+    "address": "40 Đào Duy Từ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.4,
+    "reviewCount": 44,
+    "likesCount": 137,
+    "commentsCount": 8,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.777714,
+    "longitude": 109.23033,
+    "lat": 13.777714,
+    "lng": 109.23033,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbf61ifu6e1e7@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbf61ifu6e1e7@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Cô Xí tọa lạc tại 40 Đào Duy Từ, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Cô Xí cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805617",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Cô Xí",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-co-xi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20C%C3%B4%20X%C3%AD",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 42,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Chè Nhớ Quy Nhơn Thập Cẩm Béo Ngậy",
+    "restaurant": "Sinh Tố Kim Đình - Bánh Bèo Nóng & Chè Đậu Xanh",
+    "address": "20 Nguyễn Huệ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.6,
+    "distanceText": "Cách bạn 2.6km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.8,
+    "reviewCount": 20,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772256,
+    "longitude": 109.241397,
+    "lat": 13.772256,
+    "lng": 109.241397,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhmy5a4vahl09@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhmy5a4vahl09@resize_ss640x400"
+    ],
+    "description": "Quán Sinh Tố Kim Đình - Bánh Bèo Nóng & Chè Đậu Xanh tọa lạc tại 20 Nguyễn Huệ, phục vụ món Chè Nhớ Quy Nhơn Thập Cẩm Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Chè Nhớ Quy Nhơn Thập Cẩm Béo Ngậy tại Sinh Tố Kim Đình - Bánh Bèo Nóng & Chè Đậu Xanh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805754",
+    "menu": [
+      {
+        "name": "Chè Nhớ Quy Nhơn Thập Cẩm Béo Ngậy",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Sinh Tố Kim Đình - Bánh Bèo Nóng & Chè Đậu Xanh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/sinh-to-kim-dinh-banh-beo-nong-che-dau-xanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20Kim%20%C4%90%C3%ACnh%20-%20B%C3%A1nh%20B%C3%A8o%20N%C3%B3ng%20%26%20Ch%C3%A8%20%C4%90%E1%BA%ADu%20Xanh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 43,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Cô Năm - Bánh Hỏi Lòng Heo",
+    "address": "41 Nguyễn Chánh",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 450m",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.8,
+    "reviewCount": 19,
+    "likesCount": 72,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7830887,
+    "longitude": 109.223902,
+    "lat": 13.7830887,
+    "lng": 109.223902,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8t4vebxz2x8e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8t4vebxz2x8e@resize_ss640x400"
+    ],
+    "description": "Quán Cô Năm - Bánh Hỏi Lòng Heo tọa lạc tại 41 Nguyễn Chánh, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Cô Năm - Bánh Hỏi Lòng Heo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3805891",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cô Năm - Bánh Hỏi Lòng Heo",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-nam-banh-hoi-long-heo",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20N%C4%83m%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20L%C3%B2ng%20Heo",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 44,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Chảo Ngọc Liên",
+    "address": "63/13 Thanh Niên",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.3,
+    "reviewCount": 1,
+    "likesCount": 23,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7600796,
+    "longitude": 109.2096217,
+    "lat": 13.7600796,
+    "lng": 109.2096217,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbsuridcwpb0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbsuridcwpb0@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Chảo Ngọc Liên tọa lạc tại 63/13 Thanh Niên, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Chảo Ngọc Liên cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806028",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Chảo Ngọc Liên - 63/13 Thanh Niên",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-chao-ngoc-lien-6313-thanh-nien",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Ch%E1%BA%A3o%20Ng%E1%BB%8Dc%20Li%C3%AAn%20-%2063/13%20Thanh%20Ni%C3%AAn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 45,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cà Phê Muối View Biển Ngắm Sóng",
+    "restaurant": "Santorino Cafe",
+    "address": "81 Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 48,
+    "likesCount": 169,
+    "commentsCount": 9,
+    "openTime": "06:00 - 21:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774424,
+    "longitude": 109.225557,
+    "lat": 13.774424,
+    "lng": 109.225557,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbg65a1las9dc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbg65a1las9dc@resize_ss640x400"
+    ],
+    "description": "Quán Santorino Cafe tọa lạc tại 81 Trần Phú, phục vụ món Cà Phê Muối View Biển Ngắm Sóng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cà Phê Muối View Biển Ngắm Sóng tại Santorino Cafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806165",
+    "menu": [
+      {
+        "name": "Cà Phê Muối View Biển Ngắm Sóng",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Santorino Cafe",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/santorino-cafe",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Santorino%20Cafe",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 46,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Hảo Hảo",
+    "address": "18 Ngọc Hân Công Chúa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 26,
+    "likesCount": 108,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7675365,
+    "longitude": 109.2287291999999,
+    "lat": 13.7675365,
+    "lng": 109.2287291999999,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf0hgaj0kbf50@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf0hgaj0kbf50@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Hảo Hảo tọa lạc tại 18 Ngọc Hân Công Chúa, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Hảo Hảo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806302",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Hảo Hảo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-hao-hao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20H%E1%BA%A3o%20H%E1%BA%A3o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 47,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "View Coffee",
+    "address": "417 - 419 Nguyễn Huệ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.7,
+    "reviewCount": 21,
+    "likesCount": 98,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764015,
+    "longitude": 109.223174,
+    "lat": 13.764015,
+    "lng": 109.223174,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwddmopz46or05@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwddmopz46or05@resize_ss640x400"
+    ],
+    "description": "Quán View Coffee tọa lạc tại 417 - 419 Nguyễn Huệ, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại View Coffee cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806439",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt View Coffee",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/view-coffee",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=View%20Coffee",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 48,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Mỹ Hạnh - Bún Tôm Rạm",
+    "address": "32 Ngô Đức Đệ, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.9,
+    "distanceText": "Cách bạn 2.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 25,
+    "likesCount": 115,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7569079,
+    "longitude": 109.2117565999999,
+    "lat": 13.7569079,
+    "lng": 109.2117565999999,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jenxo168r3b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jenxo168r3b@resize_ss640x400"
+    ],
+    "description": "Quán Mỹ Hạnh - Bún Tôm Rạm tọa lạc tại 32 Ngô Đức Đệ, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Mỹ Hạnh - Bún Tôm Rạm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806576",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mỹ Hạnh - Bún Tôm Rạm",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/my-hanh-bun-tom-ram",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=My%CC%83%20Ha%CC%A3nh%20-%20Bu%CC%81n%20T%C3%B4m%20R%E1%BA%A1m",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 49,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cà Phê Muối View Biển Ngắm Sóng",
+    "restaurant": "Green Cafe",
+    "address": "43 Lê Thánh Tôn",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 25,
+    "likesCount": 120,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772574,
+    "longitude": 109.235104,
+    "lat": 13.772574,
+    "lng": 109.235104,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgo74y81om1d7@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgo74y81om1d7@resize_ss640x400"
+    ],
+    "description": "Quán Green Cafe tọa lạc tại 43 Lê Thánh Tôn, phục vụ món Cà Phê Muối View Biển Ngắm Sóng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cà Phê Muối View Biển Ngắm Sóng tại Green Cafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806713",
+    "menu": [
+      {
+        "name": "Cà Phê Muối View Biển Ngắm Sóng",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Green Cafe",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/green-cafe",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Green%20Cafe",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 50,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Nhà Hàng Lộc Biển - Hải Sản Quy Nhơn",
+    "address": "48 Xuân Diệu, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.2,
+    "distanceText": "Cách bạn 3.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7712012,
+    "longitude": 109.2474539,
+    "lat": 13.7712012,
+    "lng": 109.2474539,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhmg3ook9l0f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhmg3ook9l0f@resize_ss640x400"
+    ],
+    "description": "Quán Nhà Hàng Lộc Biển - Hải Sản Quy Nhơn tọa lạc tại 48 Xuân Diệu, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Nhà Hàng Lộc Biển - Hải Sản Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806850",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nhà Hàng Lộc Biển - Hải Sản Quy Nhơn - 48 Xuân Diệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nha-hang-loc-bien-hai-san-quy-nhon-48-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20L%E1%BB%99c%20Bi%E1%BB%83n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%2048%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 51,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản Sốt",
+    "address": "318 Xuân Diệu, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7660288,
+    "longitude": 109.2274533,
+    "lat": 13.7660288,
+    "lng": 109.2274533,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbw03mils4f6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbw03mils4f6@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Sốt tọa lạc tại 318 Xuân Diệu, P. Trần Phú, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản Sốt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3806987",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Sốt",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-sot",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20S%E1%BB%91t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 52,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Mực Lá Nướng Sa Tế Muối Ớt Xanh",
+    "restaurant": "Mực Khổng Lồ Quy Nhơn - Hải Sản Tươi Sống",
+    "address": "166 Xuân Diệu, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7686091,
+    "longitude": 109.2314572,
+    "lat": 13.7686091,
+    "lng": 109.2314572,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtbxdcxee4g41d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtbxdcxee4g41d@resize_ss640x400"
+    ],
+    "description": "Quán Mực Khổng Lồ Quy Nhơn - Hải Sản Tươi Sống tọa lạc tại 166 Xuân Diệu, P. Trần Phú, phục vụ món Mực Lá Nướng Sa Tế Muối Ớt Xanh hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Mực Lá Nướng Sa Tế Muối Ớt Xanh tại Mực Khổng Lồ Quy Nhơn - Hải Sản Tươi Sống cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807124",
+    "menu": [
+      {
+        "name": "Mực Lá Nướng Sa Tế Muối Ớt Xanh",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mực Khổng Lồ Quy Nhơn - Hải Sản Tươi Sống",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/muc-khong-lo-quy-nhon-hai-san-tuoi-song",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%B1c%20Kh%E1%BB%95ng%20L%E1%BB%93%20Quy%20Nh%C6%A1n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 53,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Mộc Đức Hải Sản & Đồng Quê - Cơm Gà, Lẩu Bò",
+    "address": "533 Đào Tấn, P. Nhơn Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.7,
+    "distanceText": "Cách bạn 4.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.80581,
+    "longitude": 109.18408,
+    "lat": 13.80581,
+    "lng": 109.18408,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m0r2hwzoilm585@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m0r2hwzoilm585@resize_ss640x400"
+    ],
+    "description": "Quán Mộc Đức Hải Sản & Đồng Quê - Cơm Gà, Lẩu Bò tọa lạc tại 533 Đào Tấn, P. Nhơn Phú, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Mộc Đức Hải Sản & Đồng Quê - Cơm Gà, Lẩu Bò cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807261",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mộc Đức Hải Sản & Đồng Quê - Cơm Gà, Lẩu Bò - 533 Đào Tấn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/moc-duc-hai-san-dong-que-com-ga-lau-bo-533-dao-tan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%99c%20%C4%90%E1%BB%A9c%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20%C4%90%E1%BB%93ng%20Qu%C3%AA%20-%20C%C6%A1m%20G%C3%A0%2C%20L%E1%BA%A9u%20B%C3%B2%20-%20533%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 54,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Quán Chín Mẫn - Hải Sản",
+    "address": "86 Xuân Diệu, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.9,
+    "distanceText": "Cách bạn 2.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7717558,
+    "longitude": 109.2447368,
+    "lat": 13.7717558,
+    "lng": 109.2447368,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lylu7iw24qshbe@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lylu7iw24qshbe@resize_ss640x400"
+    ],
+    "description": "Quán Quán Chín Mẫn - Hải Sản tọa lạc tại 86 Xuân Diệu, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Quán Chín Mẫn - Hải Sản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807398",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Chín Mẫn - Hải Sản - Xuân Diệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-chin-man-hai-san-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Ch%C3%ADn%20M%E1%BA%ABn%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 55,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "QUÁN ANN FOODS - HẢI SẢN GIÁ GỐC",
+    "address": "22 Đặng Thành Tích, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7582555,
+    "longitude": 109.2158433,
+    "lat": 13.7582555,
+    "lng": 109.2158433,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mdy84m0fcydged@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mdy84m0fcydged@resize_ss640x400"
+    ],
+    "description": "Quán QUÁN ANN FOODS - HẢI SẢN GIÁ GỐC tọa lạc tại 22 Đặng Thành Tích, P. Nguyễn Văn Cừ, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại QUÁN ANN FOODS - HẢI SẢN GIÁ GỐC cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807535",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt QUÁN ANN FOODS - HẢI SẢN GIÁ GỐC - 22 ĐẶNG THÀNH TÍCH",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-ann-foods-hai-san-gia-goc-22-dang-thanh-tich",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20ANN%20FOODS%20-%20H%E1%BA%A2I%20S%E1%BA%A2N%20GI%C3%81%20G%E1%BB%90C%20-%2022%20%C4%90%E1%BA%B6NG%20TH%C3%80NH%20T%C3%8DCH",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 56,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Quán Hải Sản Cô Xí",
+    "address": "22 Đào Duy Từ, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.777389,
+    "longitude": 109.230134,
+    "lat": 13.777389,
+    "lng": 109.230134,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2jc45uda8xgc8@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2jc45uda8xgc8@resize_ss640x400"
+    ],
+    "description": "Quán Quán Hải Sản Cô Xí tọa lạc tại 22 Đào Duy Từ, P. Trần Hưng Đạo, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Quán Hải Sản Cô Xí cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807672",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Hải Sản Cô Xí - Đào Duy Từ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-hai-san-co-xi-dao-duy-tu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20H%E1%BA%A3i%20S%E1%BA%A3n%20C%C3%B4%20X%C3%AD%20-%20%C4%90%C3%A0o%20Duy%20T%E1%BB%AB",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 57,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Lẩu Bò AKING - Lẩu Bò, Lẩu Hải Sản & Lẩu Dê",
+    "address": "155 Bùi Xuân Phái, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7786365,
+    "longitude": 109.2301664,
+    "lat": 13.7786365,
+    "lng": 109.2301664,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhvebd5u3d9a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhvebd5u3d9a@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Bò AKING - Lẩu Bò, Lẩu Hải Sản & Lẩu Dê tọa lạc tại 155 Bùi Xuân Phái, P. Trần Hưng Đạo, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Lẩu Bò AKING - Lẩu Bò, Lẩu Hải Sản & Lẩu Dê cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807809",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Bò AKING - Lẩu Bò, Lẩu Hải Sản & Lẩu Dê",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-bo-aking-lau-bo-lau-hai-san-lau-de",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20AKING%20-%20L%E1%BA%A9u%20B%C3%B2%2C%20L%E1%BA%A9u%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20L%E1%BA%A9u%20D%C3%AA",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 58,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Quán Nào - Hải Sản Tươi Sống",
+    "address": "28 Trần Văn Ơn, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.9,
+    "distanceText": "Cách bạn 2.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7560414,
+    "longitude": 109.2150758,
+    "lat": 13.7560414,
+    "lng": 109.2150758,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvca2nf8pzt60@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvca2nf8pzt60@resize_ss640x400"
+    ],
+    "description": "Quán Quán Nào - Hải Sản Tươi Sống tọa lạc tại 28 Trần Văn Ơn, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Quán Nào - Hải Sản Tươi Sống cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3807946",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Nào - Hải Sản Tươi Sống - 28 Trần Văn Ơn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nao-hai-san-tuoi-song-28-tran-van-on",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%C3%A0o%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng%20-%2028%20Tr%E1%BA%A7n%20V%C4%83n%20%C6%A0n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 59,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Gà Ủ Muối Linh Nguyễn - Muối Chấm Gà & Muối Chấm Hải Sản",
+    "address": "511 Trần Hưng Đạo, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.8,
+    "distanceText": "Cách bạn 800m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7783953,
+    "longitude": 109.2262592,
+    "lat": 13.7783953,
+    "lng": 109.2262592,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mfqgb811byfde1@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mfqgb811byfde1@resize_ss640x400"
+    ],
+    "description": "Quán Gà Ủ Muối Linh Nguyễn - Muối Chấm Gà & Muối Chấm Hải Sản tọa lạc tại 511 Trần Hưng Đạo, P. Lê Hồng Phong, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Gà Ủ Muối Linh Nguyễn - Muối Chấm Gà & Muối Chấm Hải Sản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808083",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Gà Ủ Muối Linh Nguyễn - Muối Chấm Gà & Muối Chấm Hải Sản - 511 Trần Hưng Đạo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-u-muoi-linh-nguyen-muoi-cham-ga-muoi-cham-hai-san-511-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20%E1%BB%A6%20Mu%E1%BB%91i%20Linh%20Nguy%E1%BB%85n%20-%20Mu%E1%BB%91i%20Ch%E1%BA%A5m%20G%C3%A0%20%26%20Mu%E1%BB%91i%20Ch%E1%BA%A5m%20H%E1%BA%A3i%20S%E1%BA%A3n%20-%20511%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 60,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Hải Sản Quốc Trang",
+    "address": "20 Ngô Gia Tự",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.754487,
+    "longitude": 109.214175,
+    "lat": 13.754487,
+    "lng": 109.214175,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwevrro879ax9f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwevrro879ax9f@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Quốc Trang tọa lạc tại 20 Ngô Gia Tự, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Hải Sản Quốc Trang cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808220",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Quốc Trang",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-quoc-trang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20Qu%E1%BB%91c%20Trang",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 61,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hải Sản Vi Vu",
+    "address": "112 Xuân Diệu, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.5,
+    "distanceText": "Cách bạn 2.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771592,
+    "longitude": 109.24041,
+    "lat": 13.771592,
+    "lng": 109.24041,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgkfmqwpfixd0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgkfmqwpfixd0@resize_ss640x400"
+    ],
+    "description": "Quán Hải Sản Vi Vu tọa lạc tại 112 Xuân Diệu, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hải Sản Vi Vu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808357",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hải Sản Vi Vu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-vi-vu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20Vi%20Vu",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 62,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ốc, Ăn Vặt & Giải Khát Cô Vy",
+    "address": "127 Mai Hắc Đế, P. Ghềnh Ráng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.9,
+    "distanceText": "Cách bạn 3.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.74801,
+    "longitude": 109.20939,
+    "lat": 13.74801,
+    "lng": 109.20939,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mjw8ctr1y4g122@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mjw8ctr1y4g122@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ốc, Ăn Vặt & Giải Khát Cô Vy tọa lạc tại 127 Mai Hắc Đế, P. Ghềnh Ráng, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ốc, Ăn Vặt & Giải Khát Cô Vy cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808494",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ốc, Ăn Vặt & Giải Khát Cô Vy - 127 Mai Hắc Đế",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-oc-an-vat-giai-khat-co-vy-127-mai-hac-de",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%2C%20%C4%82n%20V%E1%BA%B7t%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t%20C%C3%B4%20Vy%20-%20127%20Mai%20H%E1%BA%AFc%20%C4%90%E1%BA%BF",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 63,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Giòn A Tốt - Bánh Xèo Hoài Nhơn",
+    "address": "957 Trần Hưng Đạo, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.4,
+    "distanceText": "Cách bạn 400m",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.783671,
+    "longitude": 109.216324,
+    "lat": 13.783671,
+    "lng": 109.216324,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mojmz7iyw5xrc0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mojmz7iyw5xrc0@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Giòn A Tốt - Bánh Xèo Hoài Nhơn tọa lạc tại 957 Trần Hưng Đạo, P. Đống Đa, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Giòn A Tốt - Bánh Xèo Hoài Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808631",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Giòn A Tốt - Bánh Xèo Hoài Nhơn - 957 Trần Hưng Đạo",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-gion-a-tot-banh-xeo-hoai-nhon-957-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Gi%C3%B2n%20A%20T%E1%BB%91t%20-%20B%C3%A1nh%20X%C3%A8o%20Ho%C3%A0i%20Nh%C6%A1n%20-%20957%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 64,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "BÁNH XÈO QUY NHƠN",
+    "address": "66 Trần Cao Vân, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7727929,
+    "longitude": 109.2301606,
+    "lat": 13.7727929,
+    "lng": 109.2301606,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-m05batxrg99p83@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-m05batxrg99p83@resize_ss640x400"
+    ],
+    "description": "Quán BÁNH XÈO QUY NHƠN tọa lạc tại 66 Trần Cao Vân, P. Lê Lợi, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại BÁNH XÈO QUY NHƠN cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808768",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt BÁNH XÈO QUY NHƠN - Trần Cao Vân",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-quy-nhon-tran-cao-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%81NH%20X%C3%88O%20QUY%20NH%C6%A0N%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 65,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Căn Cá Ngừ, Bánh Xèo & Bún Cá Ngừ - Cô Phượng",
+    "address": "16 Lê Lợi Nối Dài",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7709053,
+    "longitude": 109.2316893,
+    "lat": 13.7709053,
+    "lng": 109.2316893,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mgixe6f0lu6h9e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mgixe6f0lu6h9e@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Căn Cá Ngừ, Bánh Xèo & Bún Cá Ngừ - Cô Phượng tọa lạc tại 16 Lê Lợi Nối Dài, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Căn Cá Ngừ, Bánh Xèo & Bún Cá Ngừ - Cô Phượng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3808905",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Căn Cá Ngừ, Bánh Xèo & Bún Cá Ngừ - Cô Phượng - 16 Lê Lợi Nối Dài",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-can-ca-ngu-banh-xeo-bun-ca-ngu-co-phuong-16-le-loi-noi-dai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20C%C4%83n%20C%C3%A1%20Ng%E1%BB%AB%2C%20B%C3%A1nh%20X%C3%A8o%20%26%20B%C3%BAn%20C%C3%A1%20Ng%E1%BB%AB%20-%20C%C3%B4%20Ph%C6%B0%E1%BB%A3ng%20-%2016%20L%C3%AA%20L%E1%BB%A3i%20N%E1%BB%91i%20D%C3%A0i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 66,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Khoai Mì Nướng Tam Quan & Bánh Xèo Tôm Bình Định",
+    "address": "162 Nguyễn Thái Học, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7724786,
+    "longitude": 109.2183533,
+    "lat": 13.7724786,
+    "lng": 109.2183533,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lxw9ovialf4r83@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lxw9ovialf4r83@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Khoai Mì Nướng Tam Quan & Bánh Xèo Tôm Bình Định tọa lạc tại 162 Nguyễn Thái Học, P. Ngô Mây, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Khoai Mì Nướng Tam Quan & Bánh Xèo Tôm Bình Định cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809042",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Khoai Mì Nướng Tam Quan & Bánh Xèo Tôm Bình Định",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-khoai-mi-nuong-tam-quan-banh-xeo-tom-binh-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Khoai%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Tam%20Quan%20%26%20B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 67,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Cô Trang",
+    "address": "28/6 Trần Bình Trọng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7718,
+    "longitude": 109.235802,
+    "lat": 13.7718,
+    "lng": 109.235802,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvdaps0uwm15f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvdaps0uwm15f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Cô Trang tọa lạc tại 28/6 Trần Bình Trọng, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Cô Trang cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809179",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Cô Trang",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-co-trang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20C%C3%B4%20Trang",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 68,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Thái Hoà - Trần Đăng Phong",
+    "address": "8 Trần Đăng Phong, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.758069,
+    "longitude": 109.215483,
+    "lat": 13.758069,
+    "lng": 109.215483,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcwuy8txuh55@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcwuy8txuh55@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Thái Hoà - Trần Đăng Phong tọa lạc tại 8 Trần Đăng Phong, P. Nguyễn Văn Cừ, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Thái Hoà - Trần Đăng Phong cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809316",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Thái Hoà - Trần Đăng Phong",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-thai-hoa-tran-dang-phong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Th%C3%A1i%20Ho%C3%A0%20-%20Tr%E1%BA%A7n%20%C4%90%C4%83ng%20Phong",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 69,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Quán Cô Phượng - Bánh Xèo & Nước Giải Khát",
+    "address": "31 Phan Bội Châu, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7736302,
+    "longitude": 109.2353054,
+    "lat": 13.7736302,
+    "lng": 109.2353054,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mv8gsrfp1f5uea@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mv8gsrfp1f5uea@resize_ss640x400"
+    ],
+    "description": "Quán Quán Cô Phượng - Bánh Xèo & Nước Giải Khát tọa lạc tại 31 Phan Bội Châu, P. Trần Hưng Đạo, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Quán Cô Phượng - Bánh Xèo & Nước Giải Khát cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809453",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Cô Phượng - Bánh Xèo & Nước Giải Khát",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-co-phuong-banh-xeo-nuoc-giai-khat",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20Ph%C6%B0%E1%BB%A3ng%20-%20B%C3%A1nh%20X%C3%A8o%20%26%20N%C6%B0%E1%BB%9Bc%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 70,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Cô Sửu",
+    "address": "152 Đào Tấn, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.4,
+    "distanceText": "Cách bạn 3.4km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7933611,
+    "longitude": 109.19088,
+    "lat": 13.7933611,
+    "lng": 109.19088,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtbuhx00htl51e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtbuhx00htl51e@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Cô Sửu tọa lạc tại 152 Đào Tấn, P. Nhơn Bình, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Cô Sửu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809590",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Cô Sửu - 152 Đào Tấn",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-co-suu-152-dao-tan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20C%C3%B4%20S%E1%BB%ADu%20-%20152%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 71,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Tôm Nhảy Anh Tú",
+    "address": "105 Đống Đa, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 450m",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.783905,
+    "longitude": 109.2235996,
+    "lat": 13.783905,
+    "lng": 109.2235996,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m48neznv4dzjdc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m48neznv4dzjdc@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Tôm Nhảy Anh Tú tọa lạc tại 105 Đống Đa, P. Thị Nại, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Tôm Nhảy Anh Tú cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809727",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Tôm Nhảy Anh Tú",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay-anh-tu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y%20Anh%20T%C3%BA",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 72,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Vỏ, Bánh Bèo, Bánh Tai Vạc",
+    "address": "579B Nguyễn Thái Học, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.758757,
+    "longitude": 109.2108739,
+    "lat": 13.758757,
+    "lng": 109.2108739,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcigrr4j4423@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcigrr4j4423@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Vỏ, Bánh Bèo, Bánh Tai Vạc tọa lạc tại 579B Nguyễn Thái Học, P. Nguyễn Văn Cừ, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Vỏ, Bánh Bèo, Bánh Tai Vạc cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3809864",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Vỏ, Bánh Bèo, Bánh Tai Vạc - 579B Nguyễn Thái Học",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-vo-banh-beo-banh-tai-vac-579b-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20V%E1%BB%8F%2C%20B%C3%A1nh%20B%C3%A8o%2C%20B%C3%A1nh%20Tai%20V%E1%BA%A1c%20-%20579B%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 73,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo HƯƠNG QUÊ",
+    "address": "1522 Hùng Vương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 7.2,
+    "distanceText": "Cách bạn 7.2km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7938538,
+    "longitude": 109.1544342,
+    "lat": 13.7938538,
+    "lng": 109.1544342,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqx4gfqryb5t7a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqx4gfqryb5t7a@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo HƯƠNG QUÊ tọa lạc tại 1522 Hùng Vương, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo HƯƠNG QUÊ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810001",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo HƯƠNG QUÊ - 1522 Hùng Vương",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-huong-que-1522-hung-vuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20H%C6%AF%C6%A0NG%20QU%C3%8A%20-%201522%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 74,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Vỏ Cô Liễu",
+    "address": "1 Huỳnh Tấn Phát",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.790153,
+    "longitude": 109.212988,
+    "lat": 13.790153,
+    "lng": 109.212988,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mt3gq26o4vex02@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mt3gq26o4vex02@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Vỏ Cô Liễu tọa lạc tại 1, Huỳnh Tấn Phát, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Vỏ Cô Liễu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810138",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Vỏ Cô Liễu",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-vo-co-lieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20V%E1%BB%8F%20C%C3%B4%20Li%E1%BB%85u",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 75,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo & Bánh Căn",
+    "address": "46 Nguyễn Công Trứ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773733,
+    "longitude": 109.225066,
+    "lat": 13.773733,
+    "lng": 109.225066,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvu9uogcex07@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvu9uogcex07@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo & Bánh Căn tọa lạc tại 46 Nguyễn Công Trứ, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo & Bánh Căn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810275",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo & Bánh Căn",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-banh-can",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20%26%20B%C3%A1nh%20C%C4%83n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 76,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Sáng",
+    "address": "11A Nguyễn Tự Như",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.778622,
+    "longitude": 109.236711,
+    "lat": 13.778622,
+    "lng": 109.236711,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwazddxzay1n21@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwazddxzay1n21@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Sáng tọa lạc tại 11A Nguyễn Tự Như, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Sáng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810412",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Sáng",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-sang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20S%C3%A1ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 77,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo Chảo",
+    "address": "164 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.776223,
+    "longitude": 109.23248,
+    "lat": 13.776223,
+    "lng": 109.23248,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2p3m37umz30@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2p3m37umz30@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo Chảo tọa lạc tại 164 Lê Lợi, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo Chảo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810549",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo Chảo",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-chao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Ch%E1%BA%A3o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 78,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Canh, Bánh Bèo & Bánh Xèo - Cô Tuyết",
+    "address": "429 Hoàng Văn Thụ, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7722096,
+    "longitude": 109.2177683,
+    "lat": 13.7722096,
+    "lng": 109.2177683,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mlkr07hx6y9w88@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mlkr07hx6y9w88@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Canh, Bánh Bèo & Bánh Xèo - Cô Tuyết tọa lạc tại 429 Hoàng Văn Thụ, P. Quang Trung, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Canh, Bánh Bèo & Bánh Xèo - Cô Tuyết cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810686",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Canh, Bánh Bèo & Bánh Xèo - Cô Tuyết",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-canh-banh-beo-banh-xeo-co-tuyet",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%2C%20B%C3%A1nh%20B%C3%A8o%20%26%20B%C3%A1nh%20X%C3%A8o%20-%20C%C3%B4%20Tuy%E1%BA%BFt",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 79,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Bánh Xèo - Duy Tân",
+    "address": "2 Duy Tân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.776928,
+    "longitude": 109.231396,
+    "lat": 13.776928,
+    "lng": 109.231396,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbuo9r782qh28@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbuo9r782qh28@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Xèo - Duy Tân tọa lạc tại 2 Duy Tân, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Bánh Xèo - Duy Tân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810823",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Xèo - Duy Tân",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-duy-tan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20Duy%20T%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 80,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Tiệm Ăn 174 - Cơm Tấm, Bánh Xèo & Bánh Khọt",
+    "address": "174 Thanh Niên, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.765299,
+    "longitude": 109.214284,
+    "lat": 13.765299,
+    "lng": 109.214284,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-m05pc59slj0v6c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-m05pc59slj0v6c@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Ăn 174 - Cơm Tấm, Bánh Xèo & Bánh Khọt tọa lạc tại 174 Thanh Niên, P. Ngô Mây, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Tiệm Ăn 174 - Cơm Tấm, Bánh Xèo & Bánh Khọt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3810960",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Ăn 174 - Cơm Tấm, Bánh Xèo & Bánh Khọt",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-an-174-com-tam-banh-xeo-banh-khot",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20174%20-%20C%C6%A1m%20T%E1%BA%A5m%2C%20B%C3%A1nh%20X%C3%A8o%20%26%20B%C3%A1nh%20Kh%E1%BB%8Dt",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 81,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Tâm Food - Vườn Ẩm Thực, Đặc Sản & Hải Sản",
+    "address": "32 Hải Thượng Lãn Ông, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.765758,
+    "longitude": 109.226471,
+    "lat": 13.765758,
+    "lng": 109.226471,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcanar0ybo68@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcanar0ybo68@resize_ss640x400"
+    ],
+    "description": "Quán Tâm Food - Vườn Ẩm Thực, Đặc Sản & Hải Sản tọa lạc tại 32 Hải Thượng Lãn Ông, P. Trần Phú, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Tâm Food - Vườn Ẩm Thực, Đặc Sản & Hải Sản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811097",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tâm Food - Vườn Ẩm Thực, Đặc Sản & Hải Sản",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tam-food-vuon-am-thuc-dac-san-hai-san",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%A2m%20Food%20-%20V%C6%B0%E1%BB%9Dn%20%E1%BA%A8m%20Th%E1%BB%B1c%2C%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20%26%20H%E1%BA%A3i%20S%E1%BA%A3n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 82,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "QUÁN ĐÊM - Các Loại Hải Sản",
+    "address": "62 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.2,
+    "distanceText": "Cách bạn 3.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771432,
+    "longitude": 109.2469029,
+    "lat": 13.771432,
+    "lng": 109.2469029,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgvhl1fwtzt63@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgvhl1fwtzt63@resize_ss640x400"
+    ],
+    "description": "Quán QUÁN ĐÊM - Các Loại Hải Sản tọa lạc tại 62 Xuân Diệu, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại QUÁN ĐÊM - Các Loại Hải Sản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811234",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt QUÁN ĐÊM - Các Loại Hải Sản - Xuân Diệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-dem-cac-loai-hai-san-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20%C4%90%C3%8AM%20-%20C%C3%A1c%20Lo%E1%BA%A1i%20H%E1%BA%A3i%20S%E1%BA%A3n%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 83,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Rio Restaurant - Hải Sản Tươi Sống",
+    "address": "2B Trần Độc",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.765443,
+    "longitude": 109.225384,
+    "lat": 13.765443,
+    "lng": 109.225384,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwba7d5t2taz44@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwba7d5t2taz44@resize_ss640x400"
+    ],
+    "description": "Quán Rio Restaurant - Hải Sản Tươi Sống tọa lạc tại 2B Trần Độc, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Rio Restaurant - Hải Sản Tươi Sống cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811371",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Rio Restaurant - Hải Sản Tươi Sống",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/rio-restaurant-hai-san-tuoi-song",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rio%20Restaurant%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 84,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Chu’s Coffee & Fruit",
+    "address": "184 Cần Vương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.3,
+    "distanceText": "Cách bạn 3.3km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.9,
+    "reviewCount": 13,
+    "likesCount": 59,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.753454,
+    "longitude": 109.210377,
+    "lat": 13.753454,
+    "lng": 109.210377,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8f0ywl31zv95@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8f0ywl31zv95@resize_ss640x400"
+    ],
+    "description": "Quán Chu’s Coffee & Fruit tọa lạc tại 184 Cần Vương, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Chu’s Coffee & Fruit cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811508",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Chu’s Coffee & Fruit",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chus-coffee-fruit",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chu%E2%80%99s%20Coffee%20%26%20Fruit",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 85,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+    "restaurant": "Nam Sushi - Ẩm Thực Nhật Bản",
+    "address": "334A Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "90.000đ - 280.000đ",
+    "rating": 4.3,
+    "reviewCount": 39,
+    "likesCount": 142,
+    "commentsCount": 7,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.767189,
+    "longitude": 109.220039,
+    "lat": 13.767189,
+    "lng": 109.220039,
+    "moodIds": [
+      "chill",
+      "celebrate",
+      "date",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh4ezu9g2qh24@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh4ezu9g2qh24@resize_ss640x400"
+    ],
+    "description": "Quán Nam Sushi - Ẩm Thực Nhật Bản tọa lạc tại 334A Diên Hồng, phục vụ món Combo Sashimi Cá Hồi & Sushi Thập Cẩm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Combo Sashimi Cá Hồi & Sushi Thập Cẩm tại Nam Sushi - Ẩm Thực Nhật Bản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811645",
+    "menu": [
+      {
+        "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+        "price": "90.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nam Sushi - Ẩm Thực Nhật Bản",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nam-sushi-am-thuc-nhat-ban",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nam%20Sushi%20-%20%E1%BA%A8m%20Th%E1%BB%B1c%20Nh%E1%BA%ADt%20B%E1%BA%A3n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 86,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị",
+    "restaurant": "Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị",
+    "address": "489 An Dương Vương, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.6,
+    "reviewCount": 22,
+    "likesCount": 96,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.75671,
+    "longitude": 109.218632,
+    "lat": 13.75671,
+    "lng": 109.218632,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhhagbhvzkp72@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhhagbhvzkp72@resize_ss640x400"
+    ],
+    "description": "Quán Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị tọa lạc tại 489 An Dương Vương, P. Nguyễn Văn Cừ, phục vụ món Đặc Sản Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị tại Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811782",
+    "menu": [
+      {
+        "name": "Đặc Sản Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nhà Hàng Hải Âu - Tiệc Cưới & Hội Nghị",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nha-hang-hai-au-tiec-cuoi-hoi-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20H%E1%BA%A3i%20%C3%82u%20-%20Ti%E1%BB%87c%20C%C6%B0%E1%BB%9Bi%20%26%20H%E1%BB%99i%20Ngh%E1%BB%8B",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 87,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Tàu Hoa Hoa - Seafood Restaurant",
+    "restaurant": "Tàu Hoa Hoa - Seafood Restaurant",
+    "address": "3/8 Phan Chu Trinh",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.3,
+    "distanceText": "Cách bạn 2.3km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 18,
+    "likesCount": 89,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.777911,
+    "longitude": 109.240818,
+    "lat": 13.777911,
+    "lng": 109.240818,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwcddelngt7d32@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwcddelngt7d32@resize_ss640x400"
+    ],
+    "description": "Quán Tàu Hoa Hoa - Seafood Restaurant tọa lạc tại 3/8 Phan Chu Trinh, phục vụ món Đặc Sản Tàu Hoa Hoa - Seafood Restaurant hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Tàu Hoa Hoa - Seafood Restaurant tại Tàu Hoa Hoa - Seafood Restaurant cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3811919",
+    "menu": [
+      {
+        "name": "Đặc Sản Tàu Hoa Hoa - Seafood Restaurant",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tàu Hoa Hoa - Seafood Restaurant",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tau-hoa-hoa-seafood-restaurant",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%A0u%20Hoa%20Hoa%20-%20Seafood%20Restaurant",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 88,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Trà Sữa Pozaa Tea",
+    "address": "44 Ngô Mây, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.9,
+    "reviewCount": 12,
+    "likesCount": 76,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.762367,
+    "longitude": 109.218589,
+    "lat": 13.762367,
+    "lng": 109.218589,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbq04btojizba@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbq04btojizba@resize_ss640x400"
+    ],
+    "description": "Quán Trà Sữa Pozaa Tea tọa lạc tại 44 Ngô Mây, P. Lý Thường Kiệt, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Trà Sữa Pozaa Tea cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812056",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Trà Sữa Pozaa Tea - Ngô Mây",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-pozaa-tea-ngo-may",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Pozaa%20Tea%20-%20Ng%C3%B4%20M%C3%A2y",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 89,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Face Quán - Các Món Ăn Vặt",
+    "address": "29 Nguyễn Nhạc, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 14,
+    "likesCount": 87,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763085,
+    "longitude": 109.2183552,
+    "lat": 13.763085,
+    "lng": 109.2183552,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdg0i048xy310@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdg0i048xy310@resize_ss640x400"
+    ],
+    "description": "Quán Face Quán - Các Món Ăn Vặt tọa lạc tại 29 Nguyễn Nhạc, P. Ngô Mây, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Face Quán - Các Món Ăn Vặt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812193",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Face Quán - Các Món Ăn Vặt",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/face-quan-cac-mon-an-vat",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Face%20Qu%C3%A1n%20-%20C%C3%A1c%20M%C3%B3n%20%C4%82n%20V%E1%BA%B7t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 90,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản C.ine - Seafood Restaurant",
+    "restaurant": "C.ine - Seafood Restaurant",
+    "address": "92 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 14,
+    "likesCount": 92,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7688231,
+    "longitude": 109.2319883,
+    "lat": 13.7688231,
+    "lng": 109.2319883,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgoi3sg8vkrde@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgoi3sg8vkrde@resize_ss640x400"
+    ],
+    "description": "Quán C.ine - Seafood Restaurant tọa lạc tại 92 Xuân Diệu, phục vụ món Đặc Sản C.ine - Seafood Restaurant hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản C.ine - Seafood Restaurant tại C.ine - Seafood Restaurant cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812330",
+    "menu": [
+      {
+        "name": "Đặc Sản C.ine - Seafood Restaurant",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt C.ine - Seafood Restaurant",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/cine-seafood-restaurant",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C.ine%20-%20Seafood%20Restaurant",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 91,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+    "restaurant": "Kem Pop - Kem Gelato & Yogurt",
+    "address": "316 Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 900m",
+    "priceRange": "25.000đ - 50.000đ",
+    "rating": 4.4,
+    "reviewCount": 29,
+    "likesCount": 142,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.777452,
+    "longitude": 109.226657,
+    "lat": 13.777452,
+    "lng": 109.226657,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaidvdf1hp569@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaidvdf1hp569@resize_ss640x400"
+    ],
+    "description": "Quán Kem Pop - Kem Gelato & Yogurt tọa lạc tại 316 Phan Bội Châu, phục vụ món Kem Ý Gelato Tự Chọn Trái Cây Tươi hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Kem Ý Gelato Tự Chọn Trái Cây Tươi tại Kem Pop - Kem Gelato & Yogurt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812467",
+    "menu": [
+      {
+        "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Kem Pop - Kem Gelato & Yogurt",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/kem-pop-kem-gelato-yogurt",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Pop%20-%20Kem%20Gelato%20%26%20Yogurt",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 92,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến",
+    "restaurant": "Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến",
+    "address": "5 An Dương Vương, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3,
+    "distanceText": "Cách bạn 3.0km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 13,
+    "likesCount": 99,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7547,
+    "longitude": 109.217105,
+    "lat": 13.7547,
+    "lng": 109.217105,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh1os8fgfkrd3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh1os8fgfkrd3@resize_ss640x400"
+    ],
+    "description": "Quán Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến tọa lạc tại 5 An Dương Vương, P. Nguyễn Văn Cừ, phục vụ món Đặc Sản Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến tại Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812604",
+    "menu": [
+      {
+        "name": "Đặc Sản Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Trung Tâm Hội Nghị - Tiệc Cưới Hoàng Yến",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/trung-tam-hoi-nghi-tiec-cuoi-hoang-yen",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trung%20T%C3%A2m%20H%E1%BB%99i%20Ngh%E1%BB%8B%20-%20Ti%E1%BB%87c%20C%C6%B0%E1%BB%9Bi%20Ho%C3%A0ng%20Y%E1%BA%BFn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 93,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cà Phê Muối View Biển Ngắm Sóng",
+    "restaurant": "YQ Cafe",
+    "address": "18 Trần Văn Ơn, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3,
+    "distanceText": "Cách bạn 3.0km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 34,
+    "likesCount": 167,
+    "commentsCount": 6,
+    "openTime": "06:00 - 21:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.755627,
+    "longitude": 109.216066,
+    "lat": 13.755627,
+    "lng": 109.216066,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwer4q50cwd54b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwer4q50cwd54b@resize_ss640x400"
+    ],
+    "description": "Quán YQ Cafe tọa lạc tại 18 Trần Văn Ơn, P. Nguyễn Văn Cừ, phục vụ món Cà Phê Muối View Biển Ngắm Sóng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cà Phê Muối View Biển Ngắm Sóng tại YQ Cafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812741",
+    "menu": [
+      {
+        "name": "Cà Phê Muối View Biển Ngắm Sóng",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt YQ Cafe",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/yq-cafe",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=YQ%20Cafe",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 94,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cà Phê Muối View Biển Ngắm Sóng",
+    "restaurant": "Chất Cafe",
+    "address": "5 Nguyễn Lương Bằng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1.0km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.4,
+    "reviewCount": 27,
+    "likesCount": 151,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773502,
+    "longitude": 109.223148,
+    "lat": 13.773502,
+    "lng": 109.223148,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwavd2kq3gt734@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwavd2kq3gt734@resize_ss640x400"
+    ],
+    "description": "Quán Chất Cafe tọa lạc tại 5 Nguyễn Lương Bằng, phục vụ món Cà Phê Muối View Biển Ngắm Sóng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cà Phê Muối View Biển Ngắm Sóng tại Chất Cafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3812878",
+    "menu": [
+      {
+        "name": "Cà Phê Muối View Biển Ngắm Sóng",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Chất Cafe - Since 2016",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chat-cafe-since-2016",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A5t%20Cafe%20-%20Since%202016",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 95,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Tiệm Bánh Tinh Hoa",
+    "restaurant": "Tiệm Bánh Tinh Hoa",
+    "address": "105 Trần Cao Vân, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 15,
+    "likesCount": 120,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7722647,
+    "longitude": 109.230476,
+    "lat": 13.7722647,
+    "lng": 109.230476,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoevm12lllb3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoevm12lllb3@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Bánh Tinh Hoa tọa lạc tại 105 Trần Cao Vân, P. Lê Lợi, phục vụ món Đặc Sản Tiệm Bánh Tinh Hoa hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Tiệm Bánh Tinh Hoa tại Tiệm Bánh Tinh Hoa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813015",
+    "menu": [
+      {
+        "name": "Đặc Sản Tiệm Bánh Tinh Hoa",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Bánh Tinh Hoa",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-tinh-hoa",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20Tinh%20Hoa",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 96,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bánh Canh Hẹ & Bún Mắt Cá",
+    "address": "169A Lê Lợi, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 15,
+    "likesCount": 125,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.776293,
+    "longitude": 109.232385,
+    "lat": 13.776293,
+    "lng": 109.232385,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu48eu2hrq1f5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu48eu2hrq1f5@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Canh Hẹ & Bún Mắt Cá tọa lạc tại 169A Lê Lợi, P. Hải Cảng, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bánh Canh Hẹ & Bún Mắt Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813152",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Canh Hẹ & Bún Mắt Cá - 169A Lê Lợi",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-canh-he-bun-mat-ca-169a-le-loi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20H%E1%BA%B9%20%26%20B%C3%BAn%20M%E1%BA%AFt%20C%C3%A1%20-%20169A%20L%C3%AA%20L%E1%BB%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 97,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Like Kafe",
+    "restaurant": "Like Kafe",
+    "address": "15 Trường Chinh",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.5,
+    "reviewCount": 20,
+    "likesCount": 145,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77175,
+    "longitude": 109.224597,
+    "lat": 13.77175,
+    "lng": 109.224597,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdb8hekelsr5b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdb8hekelsr5b@resize_ss640x400"
+    ],
+    "description": "Quán Like Kafe tọa lạc tại 15 Trường Chinh, phục vụ món Đặc Sản Like Kafe hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Like Kafe tại Like Kafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813289",
+    "menu": [
+      {
+        "name": "Đặc Sản Like Kafe",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Like Kafe",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/like-kafe",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Like%20Kafe",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 98,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Bún Bò Hẻm",
+    "restaurant": "Bún Bò Hẻm",
+    "address": "158 Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.6,
+    "reviewCount": 16,
+    "likesCount": 138,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.76864,
+    "longitude": 109.220489,
+    "lat": 13.76864,
+    "lng": 109.220489,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvw3eikesb32@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvw3eikesb32@resize_ss640x400"
+    ],
+    "description": "Quán Bún Bò Hẻm tọa lạc tại 158 Diên Hồng, phục vụ món Đặc Sản Bún Bò Hẻm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Bún Bò Hẻm tại Bún Bò Hẻm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813426",
+    "menu": [
+      {
+        "name": "Đặc Sản Bún Bò Hẻm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Bò Hẻm",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hem",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20H%E1%BA%BBm",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 99,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Búp Station - Coffee & Milktea",
+    "address": "37B Ngô Mây, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.5,
+    "reviewCount": 18,
+    "likesCount": 149,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763348,
+    "longitude": 109.216545,
+    "lat": 13.763348,
+    "lng": 109.216545,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaygvh4c63f95@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaygvh4c63f95@resize_ss640x400"
+    ],
+    "description": "Quán Búp Station - Coffee & Milktea tọa lạc tại 37B Ngô Mây, P. Nguyễn Văn Cừ, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Búp Station - Coffee & Milktea cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813563",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Búp Station - Coffee & Milktea",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bup-station-coffee-milktea",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAp%20Station%20-%20Coffee%20%26%20Milktea",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 100,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Tấm Sườn Bì Chả Trứng Ốp La",
+    "restaurant": "Cơm Tấm 173",
+    "address": "173 Nguyễn Huệ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 12,
+    "likesCount": 36,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.768477,
+    "longitude": 109.229078,
+    "lat": 13.768477,
+    "lng": 109.229078,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstzjoafus3o3d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstzjoafus3o3d@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Tấm 173 tọa lạc tại 173 Nguyễn Huệ, phục vụ món Cơm Tấm Sườn Bì Chả Trứng Ốp La hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Tấm Sườn Bì Chả Trứng Ốp La tại Cơm Tấm 173 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813700",
+    "menu": [
+      {
+        "name": "Cơm Tấm Sườn Bì Chả Trứng Ốp La",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Tấm 173",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-tam-173",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20173",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 101,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Heekcaa Quy Nhơn",
+    "restaurant": "Heekcaa Quy Nhơn",
+    "address": "66 Trần Phú, TP Quy Nhơn",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.5,
+    "reviewCount": 17,
+    "likesCount": 56,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774215,
+    "longitude": 109.225739,
+    "lat": 13.774215,
+    "lng": 109.225739,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwarhj5zac4984@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwarhj5zac4984@resize_ss640x400"
+    ],
+    "description": "Quán Heekcaa Quy Nhơn tọa lạc tại 66 Trần Phú, TP Quy Nhơn, phục vụ món Đặc Sản Heekcaa Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Heekcaa Quy Nhơn tại Heekcaa Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813837",
+    "menu": [
+      {
+        "name": "Đặc Sản Heekcaa Quy Nhơn",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Heekcaa Quy Nhơn",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/heekcaa-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Heekcaa%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 102,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Combo Gà Rán Giòn Rụm & Khoai Tây Lắc",
+    "restaurant": "Gà Rán KFC - Quy Nhơn",
+    "address": "7 Lê Duẩn",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1.0km",
+    "priceRange": "65.000đ - 120.000đ",
+    "rating": 4.3,
+    "reviewCount": 25,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773079,
+    "longitude": 109.221887,
+    "lat": 13.773079,
+    "lng": 109.221887,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe15pzntxp540@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe15pzntxp540@resize_ss640x400"
+    ],
+    "description": "Quán Gà Rán KFC - Quy Nhơn tọa lạc tại 7 Lê Duẩn, phục vụ món Combo Gà Rán Giòn Rụm & Khoai Tây Lắc hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Combo Gà Rán Giòn Rụm & Khoai Tây Lắc tại Gà Rán KFC - Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3813974",
+    "menu": [
+      {
+        "name": "Combo Gà Rán Giòn Rụm & Khoai Tây Lắc",
+        "price": "65.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Gà Rán KFC - Quy Nhơn",
+        "price": "120.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfc-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFC%20-%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 103,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cà Phê Muối View Biển Ngắm Sóng",
+    "restaurant": "TP66 Cafe",
+    "address": "66 Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.5,
+    "reviewCount": 16,
+    "likesCount": 63,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773982,
+    "longitude": 109.225753,
+    "lat": 13.773982,
+    "lng": 109.225753,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfvi0pkfbvf45@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfvi0pkfbvf45@resize_ss640x400"
+    ],
+    "description": "Quán TP66 Cafe tọa lạc tại 66 Trần Phú, phục vụ món Cà Phê Muối View Biển Ngắm Sóng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cà Phê Muối View Biển Ngắm Sóng tại TP66 Cafe cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814111",
+    "menu": [
+      {
+        "name": "Cà Phê Muối View Biển Ngắm Sóng",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt TP66 Cafe",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tp66-cafe",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TP66%20Cafe",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 104,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Phá Lấu Ông Hiệu",
+    "restaurant": "Phá Lấu Ông Hiệu",
+    "address": "172 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.5,
+    "reviewCount": 16,
+    "likesCount": 68,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775779,
+    "longitude": 109.231684,
+    "lat": 13.775779,
+    "lng": 109.231684,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi9d8jvzy6x34@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi9d8jvzy6x34@resize_ss640x400"
+    ],
+    "description": "Quán Phá Lấu Ông Hiệu tọa lạc tại 172 Trần Hưng Đạo, phục vụ món Đặc Sản Phá Lấu Ông Hiệu hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Phá Lấu Ông Hiệu tại Phá Lấu Ông Hiệu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814248",
+    "menu": [
+      {
+        "name": "Đặc Sản Phá Lấu Ông Hiệu",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Phá Lấu Ông Hiệu",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pha-lau-ong-hieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20%C3%94ng%20Hi%E1%BB%87u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 105,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+    "restaurant": "Bò Né Phạm Gia",
+    "address": "10 Trường Chinh",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.4,
+    "reviewCount": 19,
+    "likesCount": 82,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771927,
+    "longitude": 109.223972,
+    "lat": 13.771927,
+    "lng": 109.223972,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaktywxsmhnce@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaktywxsmhnce@resize_ss640x400"
+    ],
+    "description": "Quán Bò Né Phạm Gia tọa lạc tại 10 Trường Chinh, phục vụ món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn tại Bò Né Phạm Gia cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814385",
+    "menu": [
+      {
+        "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bò Né Phạm Gia - Trường Chinh",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bo-ne-pham-gia-truong-chinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20Ph%E1%BA%A1m%20Gia%20-%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 106,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Mậu",
+    "address": "177 - 179 Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.3,
+    "reviewCount": 21,
+    "likesCount": 93,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775904,
+    "longitude": 109.229119,
+    "lat": 13.775904,
+    "lng": 109.229119,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jtmm7qj8931@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jtmm7qj8931@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Mậu tọa lạc tại 177 - 179 Phan Bội Châu, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Mậu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814522",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Mậu",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-mau",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20M%E1%BA%ADu",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 107,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "BBQ Garden",
+    "address": "290 Xuân Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 5,
+    "reviewCount": 5,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764945,
+    "longitude": 109.226608,
+    "lat": 13.764945,
+    "lng": 109.226608,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9syof8u0ntfa@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9syof8u0ntfa@resize_ss640x400"
+    ],
+    "description": "Quán BBQ Garden tọa lạc tại 290 Xuân Diệu, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại BBQ Garden cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814659",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt BBQ Garden",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bbq-garden",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=BBQ%20Garden",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "5.0 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 108,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Pizza Hải Sản Phô Mai Đút Lò",
+    "restaurant": "H-P Pizza",
+    "address": "139B Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "95.000đ - 195.000đ",
+    "rating": 4.5,
+    "reviewCount": 14,
+    "likesCount": 82,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775025,
+    "longitude": 109.230796,
+    "lat": 13.775025,
+    "lng": 109.230796,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdabi35v00pf6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdabi35v00pf6@resize_ss640x400"
+    ],
+    "description": "Quán H-P Pizza tọa lạc tại 139B Phan Bội Châu, phục vụ món Pizza Hải Sản Phô Mai Đút Lò hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Pizza Hải Sản Phô Mai Đút Lò tại H-P Pizza cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814796",
+    "menu": [
+      {
+        "name": "Pizza Hải Sản Phô Mai Đút Lò",
+        "price": "95.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt H-P Pizza",
+        "price": "195.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/h-p-pizza",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H-P%20Pizza",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 109,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Phú Thịnh",
+    "address": "12 Chương Dương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.3,
+    "distanceText": "Cách bạn 3.3km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.9,
+    "reviewCount": 6,
+    "likesCount": 63,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.752698,
+    "longitude": 109.214149,
+    "lat": 13.752698,
+    "lng": 109.214149,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw96gf12tqs9c9@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw96gf12tqs9c9@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Phú Thịnh tọa lạc tại 12 Chương Dương, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Phú Thịnh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3814933",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá Phú Thịnh",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-phu-thinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Ph%C3%BA%20Th%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 110,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "The Palace Tea",
+    "address": "132 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 20,
+    "likesCount": 110,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "cafe",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7751,
+    "longitude": 109.2321,
+    "lat": 13.7751,
+    "lng": 109.2321,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Cafe",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2ke0re9cre3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2ke0re9cre3@resize_ss640x400"
+    ],
+    "description": "Quán The Palace Tea tọa lạc tại 132 Lê Lợi, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại The Palace Tea cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815070",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt The Palace Tea",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/the-palace-tea",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=The%20Palace%20Tea",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 111,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Hàn Quốc Restaurant",
+    "address": "49 Hoàng Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 7,
+    "likesCount": 76,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.769283,
+    "longitude": 109.22351,
+    "lat": 13.769283,
+    "lng": 109.22351,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwet6gbq76cb49@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwet6gbq76cb49@resize_ss640x400"
+    ],
+    "description": "Quán Hàn Quốc Restaurant tọa lạc tại 49 Hoàng Diệu, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Hàn Quốc Restaurant cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815207",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hàn Quốc Restaurant",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/han-quoc-restaurant",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0n%20Qu%E1%BB%91c%20Restaurant",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 112,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Pizza Hải Sản Phô Mai Đút Lò",
+    "restaurant": "Monza Pizza Quy Nhơn",
+    "address": "44 Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "95.000đ - 195.000đ",
+    "rating": 4.9,
+    "reviewCount": 5,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7623377245288,
+    "longitude": 109.2185637303653,
+    "lat": 13.7623377245288,
+    "lng": 109.2185637303653,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8klnpawbtnbe@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8klnpawbtnbe@resize_ss640x400"
+    ],
+    "description": "Quán Monza Pizza Quy Nhơn tọa lạc tại 44 Ngô Mây, phục vụ món Pizza Hải Sản Phô Mai Đút Lò hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Pizza Hải Sản Phô Mai Đút Lò tại Monza Pizza Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815344",
+    "menu": [
+      {
+        "name": "Pizza Hải Sản Phô Mai Đút Lò",
+        "price": "95.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Monza Pizza Quy Nhơn",
+        "price": "195.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/monza-pizza-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Monza%20Pizza%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 113,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Puppy Tea - Trà Sữa & Ăn Vặt",
+    "address": "3 Trần Thị Kỷ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 15,
+    "likesCount": 110,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7684032332517,
+    "longitude": 109.220188781619,
+    "lat": 13.7684032332517,
+    "lng": 109.220188781619,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8svuxmu2fv83@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8svuxmu2fv83@resize_ss640x400"
+    ],
+    "description": "Quán Puppy Tea - Trà Sữa & Ăn Vặt tọa lạc tại 3 Trần Thị Kỷ, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Puppy Tea - Trà Sữa & Ăn Vặt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815481",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Puppy Tea - Trà Sữa & Ăn Vặt",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/puppy-tea-tra-sua-an-vat",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Puppy%20Tea%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 114,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Trưa Tự Chọn 54",
+    "address": "54 Mai Xuân Thưởng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1.0km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 5,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775931,
+    "longitude": 109.226616,
+    "lat": 13.775931,
+    "lng": 109.226616,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8j9f57pl23c2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8j9f57pl23c2@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Trưa Tự Chọn 54 tọa lạc tại 54 Mai Xuân Thưởng, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Trưa Tự Chọn 54 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815618",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Trưa Tự Chọn 54",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-trua-tu-chon-54",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Tr%C6%B0a%20T%E1%BB%B1%20Ch%E1%BB%8Dn%2054",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 115,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Chay Tâm Thiện",
+    "address": "114 Tăng Bạt Hổ, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 6,
+    "likesCount": 93,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7732484,
+    "longitude": 109.2299044,
+    "lat": 13.7732484,
+    "lng": 109.2299044,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdt19h742qj7a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdt19h742qj7a@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Chay Tâm Thiện tọa lạc tại 114 Tăng Bạt Hổ, P. Trần Hưng Đạo, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Chay Tâm Thiện cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815755",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Chay Tâm Thiện",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-tam-thien",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20T%C3%A2m%20Thi%E1%BB%87n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 116,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi - Cháo Lòng - Cháo Lươn Anh Thư",
+    "address": "144 Nguyễn Huệ, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.8,
+    "reviewCount": 4,
+    "likesCount": 92,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764421,
+    "longitude": 109.223418,
+    "lat": 13.764421,
+    "lng": 109.223418,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbn98ngu57f1f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbn98ngu57f1f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi - Cháo Lòng - Cháo Lươn Anh Thư tọa lạc tại 144 Nguyễn Huệ, P. Trần Phú, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi - Cháo Lòng - Cháo Lươn Anh Thư cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3815892",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi - Cháo Lòng - Cháo Lươn Anh Thư",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-chao-luon-anh-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20-%20Ch%C3%A1o%20L%C3%B2ng%20-%20Ch%C3%A1o%20L%C6%B0%C6%A1n%20Anh%20Th%C6%B0",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 117,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá 05",
+    "address": "5 Phó Đức Chính",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.8,
+    "distanceText": "Cách bạn 800m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.9,
+    "reviewCount": 3,
+    "likesCount": 94,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775986,
+    "longitude": 109.223431,
+    "lat": 13.775986,
+    "lng": 109.223431,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwazbceowxqxc8@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwazbceowxqxc8@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá 05 tọa lạc tại 5 Phó Đức Chính, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá 05 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816029",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá 05",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-05",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%2005",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 118,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+    "restaurant": "Bánh Bèo Diên Hồng",
+    "address": "318 Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.9,
+    "reviewCount": 3,
+    "likesCount": 99,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763427,
+    "longitude": 109.220185,
+    "lat": 13.763427,
+    "lng": 109.220185,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwcdlt26rxsr64@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwcdlt26rxsr64@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Bèo Diên Hồng tọa lạc tại 318 Diên Hồng, phục vụ món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo tại Bánh Bèo Diên Hồng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816166",
+    "menu": [
+      {
+        "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Bèo - Diên Hồng",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-beo-dien-hong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 119,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Ẩm Thực Đậu - Bún Đậu Mắm Tôm",
+    "address": "24 Nguyễn Lữ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.5,
+    "reviewCount": 6,
+    "likesCount": 113,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7639012,
+    "longitude": 109.2179268,
+    "lat": 13.7639012,
+    "lng": 109.2179268,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu7wliqqf2cee@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu7wliqqf2cee@resize_ss640x400"
+    ],
+    "description": "Quán Ẩm Thực Đậu - Bún Đậu Mắm Tôm tọa lạc tại 24 Nguyễn Lữ, P. Ngô Mây, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Ẩm Thực Đậu - Bún Đậu Mắm Tôm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816303",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ẩm Thực Đậu - Bún Đậu Mắm Tôm - 24 Nguyễn Lữ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/am-thuc-dau-bun-dau-mam-tom-24-nguyen-lu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20%C4%90%E1%BA%ADu%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%2024%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 120,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+    "restaurant": "NamSushi - Ẩm Thực Nhật Bản",
+    "address": "334A Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "90.000đ - 280.000đ",
+    "rating": 4.9,
+    "reviewCount": 2,
+    "likesCount": 6,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.762029,
+    "longitude": 109.220463,
+    "lat": 13.762029,
+    "lng": 109.220463,
+    "moodIds": [
+      "chill",
+      "celebrate",
+      "date",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaikjk1ispl53@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaikjk1ispl53@resize_ss640x400"
+    ],
+    "description": "Quán NamSushi - Ẩm Thực Nhật Bản tọa lạc tại 334A Diên Hồng, phục vụ món Combo Sashimi Cá Hồi & Sushi Thập Cẩm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Combo Sashimi Cá Hồi & Sushi Thập Cẩm tại NamSushi - Ẩm Thực Nhật Bản cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816440",
+    "menu": [
+      {
+        "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+        "price": "90.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt NamSushi - Ẩm Thực Nhật Bản",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/namsushi-am-thuc-nhat-ban",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=NamSushi%20-%20%E1%BA%A8m%20Th%E1%BB%B1c%20Nh%E1%BA%ADt%20B%E1%BA%A3n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 121,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Bếp Nhà 1989 - Cơm Ngon",
+    "address": "159 Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.5,
+    "reviewCount": 5,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775666,
+    "longitude": 109.229531,
+    "lat": 13.775666,
+    "lng": 109.229531,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw98mux0bxllb3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw98mux0bxllb3@resize_ss640x400"
+    ],
+    "description": "Quán Bếp Nhà 1989 - Cơm Ngon tọa lạc tại 159 Phan Bội Châu, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Bếp Nhà 1989 - Cơm Ngon cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816577",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bếp Nhà 1989 - Cơm Ngon",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bep-nha-1989-com-ngon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%201989%20-%20C%C6%A1m%20Ngon",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 122,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+    "restaurant": "Bánh Bèo - Bánh Lọc",
+    "address": "79 Vũ Bảo, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.8,
+    "reviewCount": 2,
+    "likesCount": 16,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.765231,
+    "longitude": 109.219913,
+    "lat": 13.765231,
+    "lng": 109.219913,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh9pxaqz10b94@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh9pxaqz10b94@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Bèo - Bánh Lọc tọa lạc tại 79 Vũ Bảo, P. Ngô Mây, phục vụ món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo tại Bánh Bèo - Bánh Lọc cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816714",
+    "menu": [
+      {
+        "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Bèo - Bánh Lọc",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-beo-banh-loc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20B%C3%A1nh%20L%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 123,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Chay & Mì Quảng",
+    "address": "82 Nguyễn Huệ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 2,
+    "likesCount": 21,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7688457805744,
+    "longitude": 109.2295771837234,
+    "lat": 13.7688457805744,
+    "lng": 109.2295771837234,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa64hvtcfdn55@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa64hvtcfdn55@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Chay & Mì Quảng tọa lạc tại 82 Nguyễn Huệ, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Chay & Mì Quảng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816851",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Chay & Mì Quảng",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-mi-quang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20%26%20M%C3%AC%20Qu%E1%BA%A3ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 124,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Phá Lấu Ông Hiệu - Nguyễn Công Trứ",
+    "address": "16 Nguyễn Công Trứ, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 5,
+    "reviewCount": 1,
+    "likesCount": 23,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7742634,
+    "longitude": 109.2260498,
+    "lat": 13.7742634,
+    "lng": 109.2260498,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcl78n10p00c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcl78n10p00c@resize_ss640x400"
+    ],
+    "description": "Quán Phá Lấu Ông Hiệu - Nguyễn Công Trứ tọa lạc tại 16 Nguyễn Công Trứ, P. Lê Hồng Phong, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Phá Lấu Ông Hiệu - Nguyễn Công Trứ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3816988",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Phá Lấu Ông Hiệu - Nguyễn Công Trứ",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pha-lau-ong-hieu-nguyen-cong-tru",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20%C3%94ng%20Hi%E1%BB%87u%20-%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "5.0 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 125,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+    "restaurant": "Bò Né 3 Ngon - Bò Quanh Lửa Hồng - Nguyễn Tư",
+    "address": "32 Nguyễn Tư",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.5,
+    "reviewCount": 4,
+    "likesCount": 37,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.766377078743,
+    "longitude": 109.2206638678908,
+    "lat": 13.766377078743,
+    "lng": 109.2206638678908,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgzk31e1xi319@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgzk31e1xi319@resize_ss640x400"
+    ],
+    "description": "Quán Bò Né 3 Ngon - Bò Quanh Lửa Hồng - Nguyễn Tư tọa lạc tại 32 Nguyễn Tư, phục vụ món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn tại Bò Né 3 Ngon - Bò Quanh Lửa Hồng - Nguyễn Tư cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817125",
+    "menu": [
+      {
+        "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bò Né 3 Ngon - Bò Quanh Lửa Hồng - Nguyễn Tư",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bo-ne-3-ngon-bo-quanh-lua-hong-nguyen-tu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%203%20Ngon%20-%20B%C3%B2%20Quanh%20L%E1%BB%ADa%20H%E1%BB%93ng%20-%20Nguy%E1%BB%85n%20T%C6%B0",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 126,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Gà Tuyết Nhung",
+    "address": "320A Nguyễn Thái Học",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.4,
+    "reviewCount": 5,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.767073,
+    "longitude": 109.216204,
+    "lat": 13.767073,
+    "lng": 109.216204,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu14oy61byc4a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsu14oy61byc4a@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Gà Tuyết Nhung tọa lạc tại 320A Nguyễn Thái Học, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Gà Tuyết Nhung cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817262",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Gà Tuyết Nhung - Nguyễn Thái Học",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-ga-tuyet-nhung-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Tuy%E1%BA%BFt%20Nhung%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 127,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Cô Hạnh",
+    "address": "126 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 2,
+    "likesCount": 41,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774121,
+    "longitude": 109.2381736,
+    "lat": 13.774121,
+    "lng": 109.2381736,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8jct2pbi6z7a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8jct2pbi6z7a@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Cô Hạnh tọa lạc tại 126 Trần Hưng Đạo, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Cô Hạnh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817399",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá Cô Hạnh",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-co-hanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20C%C3%B4%20H%E1%BA%A1nh",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 128,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Vân - Bún Cá - Riêu & Sứa",
+    "address": "336 Diên Hồng, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 2,
+    "likesCount": 46,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7618014,
+    "longitude": 109.2205487999999,
+    "lat": 13.7618014,
+    "lng": 109.2205487999999,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaw692kxu5556@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaw692kxu5556@resize_ss640x400"
+    ],
+    "description": "Quán Vân - Bún Cá - Riêu & Sứa tọa lạc tại 336 Diên Hồng, P. Lý Thường Kiệt, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Vân - Bún Cá - Riêu & Sứa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817536",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Vân - Bún Cá - Riêu & Sứa",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/van-bun-ca-rieu-sua",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20-%20B%C3%BAn%20C%C3%A1%20-%20Ri%C3%AAu%20%26%20S%E1%BB%A9a",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 129,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+    "restaurant": "An Thái Cà Phê Kem - Online",
+    "address": "9 Phạm Phú Thứ, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.9,
+    "distanceText": "Cách bạn 2.9km",
+    "priceRange": "25.000đ - 50.000đ",
+    "rating": 4.9,
+    "reviewCount": 1,
+    "likesCount": 48,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772397,
+    "longitude": 109.2444717,
+    "lat": 13.772397,
+    "lng": 109.2444717,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbwzmgj6op98@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbwzmgj6op98@resize_ss640x400"
+    ],
+    "description": "Quán An Thái Cà Phê Kem - Online tọa lạc tại 9 Phạm Phú Thứ, P. Hải Cảng, phục vụ món Kem Ý Gelato Tự Chọn Trái Cây Tươi hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Kem Ý Gelato Tự Chọn Trái Cây Tươi tại An Thái Cà Phê Kem - Online cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817673",
+    "menu": [
+      {
+        "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt An Thái Cà Phê Kem - Online",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-thai-ca-phe-kem-online",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=An%20Th%C3%A1i%20C%C3%A0%20Ph%C3%AA%20Kem%20-%20Online",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 130,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+    "restaurant": "Ăn Vặt Đà Lạt",
+    "address": "59B Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 900m",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.9,
+    "reviewCount": 1,
+    "likesCount": 53,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.776605,
+    "longitude": 109.225662,
+    "lat": 13.776605,
+    "lng": 109.225662,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbp5j9iye3f00@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbp5j9iye3f00@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Đà Lạt tọa lạc tại 59B Lý Thường Kiệt, phục vụ món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn tại Ăn Vặt Đà Lạt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817810",
+    "menu": [
+      {
+        "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Đà Lạt",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-da-lat",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20%C4%90%C3%A0%20L%E1%BA%A1t",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 131,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Điểm Tâm Sáng",
+    "restaurant": "Điểm Tâm Sáng",
+    "address": "20 Nguyễn Lữ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.9,
+    "reviewCount": 1,
+    "likesCount": 58,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763647,
+    "longitude": 109.217604,
+    "lat": 13.763647,
+    "lng": 109.217604,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9sn0uwtdjv0c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9sn0uwtdjv0c@resize_ss640x400"
+    ],
+    "description": "Quán Điểm Tâm Sáng tọa lạc tại 20 Nguyễn Lữ, phục vụ món Đặc Sản Điểm Tâm Sáng hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Điểm Tâm Sáng tại Điểm Tâm Sáng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3817947",
+    "menu": [
+      {
+        "name": "Đặc Sản Điểm Tâm Sáng",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Điểm Tâm Sáng",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 132,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Bánh Canh Sâm",
+    "restaurant": "Bánh Canh Sâm",
+    "address": "33 Phan Bội Châu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.9,
+    "reviewCount": 1,
+    "likesCount": 63,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773866,
+    "longitude": 109.234614,
+    "lat": 13.773866,
+    "lng": 109.234614,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9c62y1z2sbdc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9c62y1z2sbdc@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Canh Sâm tọa lạc tại 33 Phan Bội Châu, phục vụ món Đặc Sản Bánh Canh Sâm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Bánh Canh Sâm tại Bánh Canh Sâm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818084",
+    "menu": [
+      {
+        "name": "Đặc Sản Bánh Canh Sâm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Canh Sâm",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-canh-sam",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20S%C3%A2m",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.9 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 133,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Gỏi - Chả Ram & Nem Nướng - Phan Đình Phùng",
+    "address": "47A1 Phan Đình Phùng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 950m",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.4,
+    "reviewCount": 4,
+    "likesCount": 77,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7792758476064,
+    "longitude": 109.2278954386711,
+    "lat": 13.7792758476064,
+    "lng": 109.2278954386711,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgzzystcl3t4b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgzzystcl3t4b@resize_ss640x400"
+    ],
+    "description": "Quán Gỏi - Chả Ram & Nem Nướng - Phan Đình Phùng tọa lạc tại 47A1 Phan Đình Phùng, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Gỏi - Chả Ram & Nem Nướng - Phan Đình Phùng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818221",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Gỏi - Chả Ram & Nem Nướng - Phan Đình Phùng",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/goi-cha-ram-nem-nuong-phan-dinh-phung",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BB%8Fi%20-%20Ch%E1%BA%A3%20Ram%20%26%20Nem%20N%C6%B0%E1%BB%9Bng%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 134,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Thanh Ngân",
+    "address": "43 - 44 Nguyễn Thị Định",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.3,
+    "reviewCount": 5,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.757784,
+    "longitude": 109.214199,
+    "lat": 13.757784,
+    "lng": 109.214199,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwagn8u28tln22@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwagn8u28tln22@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Thanh Ngân tọa lạc tại 43 - 44 Nguyễn Thị Định, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Thanh Ngân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818358",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá Thanh Ngân",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-thanh-ngan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Thanh%20Ng%C3%A2n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 135,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Kichi Kichi Lẩu Băng Chuyền",
+    "address": "27 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 2,
+    "likesCount": 81,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.75825,
+    "longitude": 109.214399,
+    "lat": 13.75825,
+    "lng": 109.214399,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9hmfityuah01@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9hmfityuah01@resize_ss640x400"
+    ],
+    "description": "Quán Kichi Kichi Lẩu Băng Chuyền tọa lạc tại 27 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Kichi Kichi Lẩu Băng Chuyền cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818495",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Kichi Kichi Lẩu Băng Chuyền - Nguyễn Thị Định",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/kichi-kichi-lau-bang-chuyen-nguyen-thi-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kichi%20Kichi%20L%E1%BA%A9u%20B%C4%83ng%20Chuy%E1%BB%81n%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 136,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh",
+    "restaurant": "Quán Chay Sáu Thu",
+    "address": "79 Hai Bà Trưng, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "30.000đ - 70.000đ",
+    "rating": 4.6,
+    "reviewCount": 2,
+    "likesCount": 86,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "healthy",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7723853,
+    "longitude": 109.231501,
+    "lat": 13.7723853,
+    "lng": 109.231501,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Healthy",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwde058i0ct50c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwde058i0ct50c@resize_ss640x400"
+    ],
+    "description": "Quán Quán Chay Sáu Thu tọa lạc tại 79 Hai Bà Trưng, P. Lê Lợi, phục vụ món Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh tại Quán Chay Sáu Thu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818632",
+    "menu": [
+      {
+        "name": "Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Chay Sáu Thu",
+        "price": "70.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-chay-sau-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Chay%20S%C3%A1u%20Thu",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 137,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Cơm & Nhậu Tiến Nguyễn",
+    "address": "138/1 Hàm Nghi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 88,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7684697,
+    "longitude": 109.2187412,
+    "lat": 13.7684697,
+    "lng": 109.2187412,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m7nho842vvar6a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m7nho842vvar6a@resize_ss640x400"
+    ],
+    "description": "Quán Cơm & Nhậu Tiến Nguyễn tọa lạc tại 138/1 Hàm Nghi, P. Ngô Mây, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Cơm & Nhậu Tiến Nguyễn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818769",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm & Nhậu Tiến Nguyễn - Hàm Nghi",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-nhau-tien-nguyen-ham-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20%26%20Nh%E1%BA%ADu%20Ti%E1%BA%BFn%20Nguy%E1%BB%85n%20-%20H%C3%A0m%20Nghi",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 138,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bánh Hỏi - Cháo Lòng & Bún Chả Cá",
+    "address": "42C Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 93,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771625,
+    "longitude": 109.231685,
+    "lat": 13.771625,
+    "lng": 109.231685,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh2lqv506hnb5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh2lqv506hnb5@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi - Cháo Lòng & Bún Chả Cá tọa lạc tại 42C Lê Lợi, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bánh Hỏi - Cháo Lòng & Bún Chả Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3818906",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi - Cháo Lòng & Bún Chả Cá",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-bun-cha-ca",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20-%20Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 139,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Mộc Châu - Bún Riêu & Bánh Hỏi Cháo Lòng",
+    "address": "30 Chương Dương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.3,
+    "distanceText": "Cách bạn 3.3km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 98,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.753029,
+    "longitude": 109.213674,
+    "lat": 13.753029,
+    "lng": 109.213674,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jqq6akpuj2a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9jqq6akpuj2a@resize_ss640x400"
+    ],
+    "description": "Quán Mộc Châu - Bún Riêu & Bánh Hỏi Cháo Lòng tọa lạc tại 30 Chương Dương, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Mộc Châu - Bún Riêu & Bánh Hỏi Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819043",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mộc Châu - Bún Riêu & Bánh Hỏi Cháo Lòng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/moc-chau-bun-rieu-banh-hoi-chao-long",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%99c%20Ch%C3%A2u%20-%20B%C3%BAn%20Ri%C3%AAu%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 140,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+    "restaurant": "Bún Bò Huế - Bò Né A Quỳnh",
+    "address": "81/60 Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 3,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.762857,
+    "longitude": 109.21517,
+    "lat": 13.762857,
+    "lng": 109.21517,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstxsfqnb5qc90@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lstxsfqnb5qc90@resize_ss640x400"
+    ],
+    "description": "Quán Bún Bò Huế - Bò Né A Quỳnh tọa lạc tại 81/60 Ngô Mây, phục vụ món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn tại Bún Bò Huế - Bò Né A Quỳnh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819180",
+    "menu": [
+      {
+        "name": "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Bò Huế - Bò Né A Quỳnh",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-bo-ne-a-quynh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20-%20B%C3%B2%20N%C3%A9%20A%20Qu%E1%BB%B3nh",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 141,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Điểm Tâm Sáng - Bún",
+    "restaurant": "Điểm Tâm Sáng - Bún",
+    "address": "195 Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.8,
+    "reviewCount": 1,
+    "likesCount": 8,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.776492,
+    "longitude": 109.231118,
+    "lat": 13.776492,
+    "lng": 109.231118,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwap9gkvkau18b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwap9gkvkau18b@resize_ss640x400"
+    ],
+    "description": "Quán Điểm Tâm Sáng - Bún tọa lạc tại 195 Trần Cao Vân, phục vụ món Đặc Sản Điểm Tâm Sáng - Bún hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Điểm Tâm Sáng - Bún tại Điểm Tâm Sáng - Bún cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819317",
+    "menu": [
+      {
+        "name": "Đặc Sản Điểm Tâm Sáng - Bún",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Điểm Tâm Sáng - Bún",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-bun",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%BAn",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.8 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 142,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Quán Ăn Đêm - Bánh Canh & Bánh Khọt",
+    "restaurant": "Quán Ăn Đêm - Bánh Canh & Bánh Khọt",
+    "address": "3 Ngô Văn Sở",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.3,
+    "reviewCount": 4,
+    "likesCount": 22,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764596,
+    "longitude": 109.224196,
+    "lat": 13.764596,
+    "lng": 109.224196,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdhzb5txw4b9e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdhzb5txw4b9e@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ăn Đêm - Bánh Canh & Bánh Khọt tọa lạc tại 3 Ngô Văn Sở, phục vụ món Đặc Sản Quán Ăn Đêm - Bánh Canh & Bánh Khọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Quán Ăn Đêm - Bánh Canh & Bánh Khọt tại Quán Ăn Đêm - Bánh Canh & Bánh Khọt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819454",
+    "menu": [
+      {
+        "name": "Đặc Sản Quán Ăn Đêm - Bánh Canh & Bánh Khọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ăn Đêm - Bánh Canh & Bánh Khọt",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-an-dem-banh-canh-banh-khot",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%82n%20%C4%90%C3%AAm%20-%20B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Kh%E1%BB%8Dt",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 143,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+    "restaurant": "Sushi Haru - Quy Nhơn",
+    "address": "150 Ỷ Lan",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 850m",
+    "priceRange": "90.000đ - 280.000đ",
+    "rating": 4.3,
+    "reviewCount": 4,
+    "likesCount": 27,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.782131,
+    "longitude": 109.227693,
+    "lat": 13.782131,
+    "lng": 109.227693,
+    "moodIds": [
+      "chill",
+      "celebrate",
+      "date",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwb8xfj8hq6xbf@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwb8xfj8hq6xbf@resize_ss640x400"
+    ],
+    "description": "Quán Sushi Haru - Quy Nhơn tọa lạc tại 150 Ỷ Lan, phục vụ món Combo Sashimi Cá Hồi & Sushi Thập Cẩm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Combo Sashimi Cá Hồi & Sushi Thập Cẩm tại Sushi Haru - Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819591",
+    "menu": [
+      {
+        "name": "Combo Sashimi Cá Hồi & Sushi Thập Cẩm",
+        "price": "90.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Sushi Haru - Quy Nhơn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/sushi-haru-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sushi%20Haru%20-%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 144,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Tấm Sườn Bì Chả Trứng Ốp La",
+    "restaurant": "Điểm Tâm Sáng - Cơm Tấm",
+    "address": "90B Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.5,
+    "reviewCount": 2,
+    "likesCount": 26,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774365,
+    "longitude": 109.230209,
+    "lat": 13.774365,
+    "lng": 109.230209,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwak9yoprftn94@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwak9yoprftn94@resize_ss640x400"
+    ],
+    "description": "Quán Điểm Tâm Sáng - Cơm Tấm tọa lạc tại 90B Trần Cao Vân, phục vụ món Cơm Tấm Sườn Bì Chả Trứng Ốp La hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Tấm Sườn Bì Chả Trứng Ốp La tại Điểm Tâm Sáng - Cơm Tấm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819728",
+    "menu": [
+      {
+        "name": "Cơm Tấm Sườn Bì Chả Trứng Ốp La",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Điểm Tâm Sáng - Cơm Tấm",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-com-tam",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20C%C6%A1m%20T%E1%BA%A5m",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 145,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Biển Mai",
+    "address": "21 Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.7,
+    "reviewCount": 1,
+    "likesCount": 28,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7701307,
+    "longitude": 109.2309377999999,
+    "lat": 13.7701307,
+    "lng": 109.2309377999999,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgkkjjdzs9l8b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgkkjjdzs9l8b@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Biển Mai tọa lạc tại 21 Trần Cao Vân, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Biển Mai cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3819865",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Biển Mai",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-bien-mai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Bi%E1%BB%83n%20Mai",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 146,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng",
+    "address": "862 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.4,
+    "distanceText": "Cách bạn 450m",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.7,
+    "reviewCount": 1,
+    "likesCount": 33,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.780134,
+    "longitude": 109.223193,
+    "lat": 13.780134,
+    "lng": 109.223193,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfbl0xqtvbvd7@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfbl0xqtvbvd7@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng tọa lạc tại 862 Trần Hưng Đạo, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820002",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 147,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh",
+    "restaurant": "Bún Chay & Bánh Cuốn Chay",
+    "address": "40 Nguyễn Lữ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "30.000đ - 70.000đ",
+    "rating": 4.7,
+    "reviewCount": 1,
+    "likesCount": 38,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "healthy",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764198,
+    "longitude": 109.218114,
+    "lat": 13.764198,
+    "lng": 109.218114,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Healthy",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi6pkujej15ed@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi6pkujej15ed@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chay & Bánh Cuốn Chay tọa lạc tại 40 Nguyễn Lữ, P. Ngô Mây, phục vụ món Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh tại Bún Chay & Bánh Cuốn Chay cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820139",
+    "menu": [
+      {
+        "name": "Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chay & Bánh Cuốn Chay",
+        "price": "70.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-chay-banh-cuon-chay",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Chay%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20Chay",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 148,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Chay Thanh Tâm",
+    "address": "13 Hai Bà Trưng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.7,
+    "reviewCount": 1,
+    "likesCount": 43,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771909,
+    "longitude": 109.23457,
+    "lat": 13.771909,
+    "lng": 109.23457,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa5xrdo6j89fa@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa5xrdo6j89fa@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Chay Thanh Tâm tọa lạc tại 13 Hai Bà Trưng, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Chay Thanh Tâm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820276",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Chay Thanh Tâm",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-thanh-tam",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20Thanh%20T%C3%A2m",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 149,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+    "restaurant": "Ăn Vặt Nyna",
+    "address": "18 Nguyễn Tất Thành",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1000m",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.7,
+    "reviewCount": 1,
+    "likesCount": 48,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773437,
+    "longitude": 109.222259,
+    "lat": 13.773437,
+    "lng": 109.222259,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf95fh5hyop3d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf95fh5hyop3d@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Nyna tọa lạc tại 18 Nguyễn Tất Thành, phục vụ món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn tại Ăn Vặt Nyna cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820413",
+    "menu": [
+      {
+        "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Nyna",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-nyna",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Nyna",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.7 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 150,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Pizza Hải Sản Phô Mai Đút Lò",
+    "restaurant": "Buratino Pizza",
+    "address": "98 Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "95.000đ - 195.000đ",
+    "rating": 4.3,
+    "reviewCount": 3,
+    "likesCount": 59,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763218,
+    "longitude": 109.217052,
+    "lat": 13.763218,
+    "lng": 109.217052,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwer1g511azd17@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwer1g511azd17@resize_ss640x400"
+    ],
+    "description": "Quán Buratino Pizza tọa lạc tại 98 Ngô Mây, phục vụ món Pizza Hải Sản Phô Mai Đút Lò hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Pizza Hải Sản Phô Mai Đút Lò tại Buratino Pizza cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820550",
+    "menu": [
+      {
+        "name": "Pizza Hải Sản Phô Mai Đút Lò",
+        "price": "95.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Buratino Pizza",
+        "price": "195.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/buratino-pizza",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Buratino%20Pizza",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 151,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+    "restaurant": "Bánh Bèo - Trần Thị Kỷ",
+    "address": "31 - 35 Trần Thị Kỷ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.4,
+    "reviewCount": 2,
+    "likesCount": 61,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.768376,
+    "longitude": 109.221207,
+    "lat": 13.768376,
+    "lng": 109.221207,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwajyu2y8dsrc6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwajyu2y8dsrc6@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Bèo - Trần Thị Kỷ tọa lạc tại 31 - 35 Trần Thị Kỷ, phục vụ món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo tại Bánh Bèo - Trần Thị Kỷ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820687",
+    "menu": [
+      {
+        "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Bèo - Trần Thị Kỷ",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-beo-tran-thi-ky",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 152,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Phố - BBQ - Hot Pot & Beer",
+    "address": "147 Nguyễn Tất Thành",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.3,
+    "distanceText": "Cách bạn 350m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.4,
+    "reviewCount": 2,
+    "likesCount": 66,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77945,
+    "longitude": 109.221176,
+    "lat": 13.77945,
+    "lng": 109.221176,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw7jqijojtuj79@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw7jqijojtuj79@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Phố - BBQ - Hot Pot & Beer tọa lạc tại 147 Nguyễn Tất Thành, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Phố - BBQ - Hot Pot & Beer cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820824",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Phố - BBQ - Hot Pot & Beer",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-pho-bbq-hot-pot-beer",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Ph%E1%BB%91%20-%20BBQ%20-%20Hot%20Pot%20%26%20Beer",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 153,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Óc Heo & Xí Quách",
+    "address": "6 Phạm Ngũ Lão",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 1,
+    "likesCount": 68,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772036,
+    "longitude": 109.219792,
+    "lat": 13.772036,
+    "lng": 109.219792,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi3qizn3i6za3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi3qizn3i6za3@resize_ss640x400"
+    ],
+    "description": "Quán Óc Heo & Xí Quách tọa lạc tại 6 Phạm Ngũ Lão, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Óc Heo & Xí Quách cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3820961",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Óc Heo & Xí Quách",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-heo-xi-quach",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%93c%20Heo%20%26%20X%C3%AD%20Qu%C3%A1ch",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 154,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng - Hàn Mặc Tử",
+    "address": "32 Hàn Mặc Tử",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4,
+    "distanceText": "Cách bạn 4.0km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 1,
+    "likesCount": 73,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.746718,
+    "longitude": 109.213691,
+    "lat": 13.746718,
+    "lng": 109.213691,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwapck42dyhn1f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwapck42dyhn1f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng - Hàn Mặc Tử tọa lạc tại 32 Hàn Mặc Tử, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng - Hàn Mặc Tử cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821098",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Hàn Mặc Tử",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-han-mac-tu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20H%C3%A0n%20M%E1%BA%B7c%20T%E1%BB%AD",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 155,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Chay Hiển Nam",
+    "address": "30A Trần Thị Kỷ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.6,
+    "reviewCount": 1,
+    "likesCount": 78,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.768776,
+    "longitude": 109.2195,
+    "lat": 13.768776,
+    "lng": 109.2195,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe6fb5abcntc2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe6fb5abcntc2@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Chay Hiển Nam tọa lạc tại 30A Trần Thị Kỷ, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Chay Hiển Nam cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821235",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Chay Hiển Nam",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-hien-nam",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20Hi%E1%BB%83n%20Nam",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 156,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Đặc Sản Quán Đêm - Nhậu Bình Dân",
+    "restaurant": "Quán Đêm - Nhậu Bình Dân",
+    "address": "139A Phan Bội Châu, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 85.000đ",
+    "rating": 4.6,
+    "reviewCount": 1,
+    "likesCount": 83,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775161,
+    "longitude": 109.230507,
+    "lat": 13.775161,
+    "lng": 109.230507,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8y5vuxxhwbd9@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8y5vuxxhwbd9@resize_ss640x400"
+    ],
+    "description": "Quán Quán Đêm - Nhậu Bình Dân tọa lạc tại 139A Phan Bội Châu, P. Trần Hưng Đạo, phục vụ món Đặc Sản Quán Đêm - Nhậu Bình Dân hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Đặc Sản Quán Đêm - Nhậu Bình Dân tại Quán Đêm - Nhậu Bình Dân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821372",
+    "menu": [
+      {
+        "name": "Đặc Sản Quán Đêm - Nhậu Bình Dân",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Đêm - Nhậu Bình Dân",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-dem-nhau-binh-dan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%90%C3%AAm%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 157,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Cô Truyền",
+    "address": "343 Nguyễn Thị Minh Khai, P.Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 2,
+    "likesCount": 91,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7591586,
+    "longitude": 109.2122637,
+    "lat": 13.7591586,
+    "lng": 109.2122637,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcqjs99fpga5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcqjs99fpga5@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Cô Truyền tọa lạc tại 343 Nguyễn Thị Minh Khai, P.Nguyễn Văn Cừ, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Cô Truyền cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821509",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Cô Truyền",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-truyen",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20C%C3%B4%20Truy%E1%BB%81n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 158,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Nem Nướng - Chả Nướng",
+    "address": "7 Hải Thượng Lãn Ông, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.3,
+    "reviewCount": 2,
+    "likesCount": 96,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.766232,
+    "longitude": 109.226147,
+    "lat": 13.766232,
+    "lng": 109.226147,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdtlz5bu4m3fc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdtlz5bu4m3fc@resize_ss640x400"
+    ],
+    "description": "Quán Nem Nướng - Chả Nướng tọa lạc tại 7 Hải Thượng Lãn Ông, P. Trần Phú, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Nem Nướng - Chả Nướng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821646",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nem Nướng - Chả Nướng",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nem-nuong-cha-nuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20N%C6%B0%E1%BB%9Bng%20-%20Ch%E1%BA%A3%20N%C6%B0%E1%BB%9Bng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 159,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Sam BBQ",
+    "address": "88 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.3,
+    "reviewCount": 2,
+    "likesCount": 101,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772205,
+    "longitude": 109.231742,
+    "lat": 13.772205,
+    "lng": 109.231742,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9s9qqf9w4b91@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9s9qqf9w4b91@resize_ss640x400"
+    ],
+    "description": "Quán Sam BBQ tọa lạc tại 88 Lê Lợi, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Sam BBQ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821783",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Sam BBQ",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/sam-bbq",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sam%20BBQ",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 160,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+    "restaurant": "Ốc Um & Kem Flan",
+    "address": "322 Nguyễn Thái Học, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "25.000đ - 50.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 3,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.767022,
+    "longitude": 109.216104,
+    "lat": 13.767022,
+    "lng": 109.216104,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoz15pbm5722@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoz15pbm5722@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Um & Kem Flan tọa lạc tại 322 Nguyễn Thái Học, P. Ngô Mây, phục vụ món Kem Ý Gelato Tự Chọn Trái Cây Tươi hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Kem Ý Gelato Tự Chọn Trái Cây Tươi tại Ốc Um & Kem Flan cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3821920",
+    "menu": [
+      {
+        "name": "Kem Ý Gelato Tự Chọn Trái Cây Tươi",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Um & Kem Flan",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-um-kem-flan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Um%20%26%20Kem%20Flan",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 161,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Nguyễn Huệ",
+    "address": "325 Nguyễn Huệ, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 8,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.766515,
+    "longitude": 109.226187,
+    "lat": 13.766515,
+    "lng": 109.226187,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgktzq466l51a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgktzq466l51a@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Nguyễn Huệ tọa lạc tại 325 Nguyễn Huệ, P. Trần Phú, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Nguyễn Huệ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822057",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá - Nguyễn Huệ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-nguyen-hue",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 162,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Gà Tre Đồng Quê - Tây Sơn Quán",
+    "address": "214 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 13,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7915237,
+    "longitude": 109.2133988,
+    "lat": 13.7915237,
+    "lng": 109.2133988,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl28yer2pdtf9@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl28yer2pdtf9@resize_ss640x400"
+    ],
+    "description": "Quán Gà Tre Đồng Quê - Tây Sơn Quán tọa lạc tại 214 Lê Thanh Nghị (Khu Nội Bộ), P. Đống Đa, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Gà Tre Đồng Quê - Tây Sơn Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822194",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Gà Tre Đồng Quê - Tây Sơn Quán",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-tre-dong-que-tay-son-quan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20Tre%20%C4%90%E1%BB%93ng%20Qu%C3%AA%20-%20T%C3%A2y%20S%C6%A1n%20Qu%C3%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 163,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Tiệm Trà Sữa Nhà Bông - Bánh Tráng Trộn, Chả Cá & Ăn Vặt Các Loại",
+    "address": "91 Lê Công Miên",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.8,
+    "distanceText": "Cách bạn 4.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 18,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.739465,
+    "longitude": 109.21032,
+    "lat": 13.739465,
+    "lng": 109.21032,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mt6wbbpjncw7e4@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mt6wbbpjncw7e4@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Trà Sữa Nhà Bông - Bánh Tráng Trộn, Chả Cá & Ăn Vặt Các Loại tọa lạc tại 91, Lê Công Miên, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Tiệm Trà Sữa Nhà Bông - Bánh Tráng Trộn, Chả Cá & Ăn Vặt Các Loại cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822331",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Trà Sữa Nhà Bông - Bánh Tráng Trộn, Chả Cá & Ăn Vặt Các Loại",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-sua-nha-bong-banh-trang-tron-cha-ca-an-vat-cac-loai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20S%E1%BB%AFa%20Nh%C3%A0%20B%C3%B4ng%20-%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%2C%20Ch%E1%BA%A3%20C%C3%A1%20%26%20%C4%82n%20V%E1%BA%B7t%20C%C3%A1c%20Lo%E1%BA%A1i",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 164,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+    "restaurant": "Ăn Vặt & Trà Sữa",
+    "address": "24 Trần Quốc Toản",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.6,
+    "distanceText": "Cách bạn 650m",
+    "priceRange": "25.000đ - 55.000đ",
+    "rating": 4.5,
+    "reviewCount": 1,
+    "likesCount": 23,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "boba",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.786367,
+    "longitude": 109.215863,
+    "lat": 13.786367,
+    "lng": 109.215863,
+    "moodIds": [
+      "budget",
+      "chill",
+      "date",
+      "comfort",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Boba",
+      "#ShopeeFood",
+      "#View_biển"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvtqocsdzvaf@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbvtqocsdzvaf@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt & Trà Sữa tọa lạc tại 24 Trần Quốc Toản, phục vụ món Trà Sữa Nướng Trân Châu Đường Đen hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Trà Sữa Nướng Trân Châu Đường Đen tại Ăn Vặt & Trà Sữa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822468",
+    "menu": [
+      {
+        "name": "Trà Sữa Nướng Trân Châu Đường Đen",
+        "price": "25.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt & Trà Sữa",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-tra-sua",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.5 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 165,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Quán Bún Chị Hoa",
+    "address": "89 Nguyễn Huệ, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.4,
+    "reviewCount": 1,
+    "likesCount": 28,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7693250675799,
+    "longitude": 109.2313460866164,
+    "lat": 13.7693250675799,
+    "lng": 109.2313460866164,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf8o6rttn1589@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf8o6rttn1589@resize_ss640x400"
+    ],
+    "description": "Quán Quán Bún Chị Hoa tọa lạc tại 89 Nguyễn Huệ, P. Trần Phú, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Quán Bún Chị Hoa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822605",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Bún Chị Hoa - Nguyễn Huệ",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-bun-chi-hoa-nguyen-hue",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20B%C3%BAn%20Ch%E1%BB%8B%20Hoa%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 166,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+    "restaurant": "Cơm Chay An Lạc",
+    "address": "6 Nguyễn Lữ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "40.000đ - 85.000đ",
+    "rating": 4.4,
+    "reviewCount": 1,
+    "likesCount": 33,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "rice",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763719,
+    "longitude": 109.217694,
+    "lat": 13.763719,
+    "lng": 109.217694,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Rice",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6o9orz8wpe7@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6o9orz8wpe7@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Chay An Lạc tọa lạc tại 6 Nguyễn Lữ, phục vụ món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn tại Cơm Chay An Lạc cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822742",
+    "menu": [
+      {
+        "name": "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn",
+        "price": "40.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Chay An Lạc",
+        "price": "85.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-an-lac",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20An%20L%E1%BA%A1c",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.4 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 167,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng - Hoàng Hoa Thám",
+    "address": "90 Hoàng Hoa Thám",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 500m",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.3,
+    "reviewCount": 1,
+    "likesCount": 38,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.781439,
+    "longitude": 109.224217,
+    "lat": 13.781439,
+    "lng": 109.224217,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoosf8ykt7bc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoosf8ykt7bc@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng - Hoàng Hoa Thám tọa lạc tại 90 Hoàng Hoa Thám, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng - Hoàng Hoa Thám cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3822879",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Hoàng Hoa Thám",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-hoang-hoa-tham",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Ho%C3%A0ng%20Hoa%20Th%C3%A1m",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 168,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+    "restaurant": "Bánh Bèo & Bánh Lọc Bình Dân",
+    "address": "129 Hoàng Quốc Việt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.6,
+    "distanceText": "Cách bạn 600m",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.3,
+    "reviewCount": 1,
+    "likesCount": 43,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.781631,
+    "longitude": 109.225318,
+    "lat": 13.781631,
+    "lng": 109.225318,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweopi5pc89n2f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweopi5pc89n2f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Bèo & Bánh Lọc Bình Dân tọa lạc tại 129 Hoàng Quốc Việt, phục vụ món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo tại Bánh Bèo & Bánh Lọc Bình Dân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823016",
+    "menu": [
+      {
+        "name": "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Bèo & Bánh Lọc Bình Dân",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-beo-banh-loc-binh-dan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20%26%20B%C3%A1nh%20L%E1%BB%8Dc%20B%C3%ACnh%20D%C3%A2n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 169,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+    "restaurant": "Ăn Vặt Siu Siu",
+    "address": "2 Trần Quang Diệu, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 900m",
+    "priceRange": "20.000đ - 50.000đ",
+    "rating": 4.3,
+    "reviewCount": 1,
+    "likesCount": 48,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.775509,
+    "longitude": 109.224401,
+    "lat": 13.775509,
+    "lng": 109.224401,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2mlfr6guzbe@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2mlfr6guzbe@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Siu Siu tọa lạc tại 2 Trần Quang Diệu, P. Lý Thường Kiệt, phục vụ món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn tại Ăn Vặt Siu Siu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823153",
+    "menu": [
+      {
+        "name": "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn",
+        "price": "20.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Siu Siu",
+        "price": "50.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-siu-siu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Siu%20Siu",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.3 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 170,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy & Chả Ram Tôm Đất Gia Vỹ",
+    "restaurant": "Bánh Xèo Tôm Nhảy Gia Vỹ",
+    "address": "14 Diên Hồng, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.8,
+    "reviewCount": 1850,
+    "likesCount": 1240,
+    "commentsCount": 182,
+    "openTime": "06:30 - 22:00",
+    "category": "specialty",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.773073,
+    "longitude": 109.224855,
+    "lat": 13.773073,
+    "lng": 109.224855,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Đặc_sản_Quy_Nhơn",
+      "#Bánh_xèo_tôm_nhảy",
+      "#Gia_Vỹ",
+      "#ShopeeFood"
+    ],
+    "sideRibbon": [
+      "#top1_đặc_sản",
+      "#chuẩn_vị"
+    ],
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+    ],
+    "description": "Bánh Xèo Tôm Nhảy Gia Vỹ nức tiếng xứ Nẫu tại 14 Diên Hồng. Bánh xèo tôm nhảy giòn tan, nước chấm chua ngọt ăn kèm rau mầm thanh mát chuẩn vị Quy Nhơn.",
+    "recommendReason": "Thương hiệu bánh xèo tôm nhảy số 1 Quy Nhơn, tôm nhảy tươi tanh tách, vỏ bánh vàng giòn rụm!",
+    "hotline": "0256 3823290",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Đặc Biệt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Bánh Xèo Bò & Mực Giòn",
+        "price": "40.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Chả Ram Tôm Đất Bình Định (Dĩa 10 cuốn)",
+        "price": "50.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay-gia-vy-dien-hong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y%20Gia%20V%E1%BB%B9",
+    "deliveryTime": "15 - 25 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.8 ⭐ (1.500+ đã bán)"
+  },
+  {
+    "id": 171,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Tê",
+    "address": "248 Xuân Diệu, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7673884,
+    "longitude": 109.2294808,
+    "lat": 13.7673884,
+    "lng": 109.2294808,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mecdl8978jk0dd@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mecdl8978jk0dd@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Tê tọa lạc tại 248 Xuân Diệu, P. Trần Phú, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Tê cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823427",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Tê - 248 Xuân Diệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-te-248-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20T%C3%AA%20-%20248%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 172,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Quán Hẻm 97 - Lẩu Nướng & Cơm Gia Đình",
+    "address": "168 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7577766,
+    "longitude": 109.2138665,
+    "lat": 13.7577766,
+    "lng": 109.2138665,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mdpmgavz0pindf@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mdpmgavz0pindf@resize_ss640x400"
+    ],
+    "description": "Quán Quán Hẻm 97 - Lẩu Nướng & Cơm Gia Đình tọa lạc tại 168 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Quán Hẻm 97 - Lẩu Nướng & Cơm Gia Đình cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823564",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Hẻm 97 - Lẩu Nướng & Cơm Gia Đình - 168 Nguyễn Thị Định",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-hem-97-lau-nuong-com-gia-dinh-168-nguyen-thi-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20H%E1%BA%BBm%2097%20-%20L%E1%BA%A9u%20N%C6%B0%E1%BB%9Bng%20%26%20C%C6%A1m%20Gia%20%C4%90%C3%ACnh%20-%20168%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 173,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Quán 3 Vương",
+    "address": "76 Phan Thúc Trực, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7940125,
+    "longitude": 109.2090085,
+    "lat": 13.7940125,
+    "lng": 109.2090085,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg61i3i1mqdrc5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg61i3i1mqdrc5@resize_ss640x400"
+    ],
+    "description": "Quán Quán 3 Vương tọa lạc tại 76 Phan Thúc Trực, P. Nhơn Bình, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Quán 3 Vương cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823701",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán 3 Vương - 76 Phan Thúc Trực",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-3-vuong-76-phan-thuc-truc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%203%20V%C6%B0%C6%A1ng%20-%2076%20Phan%20Th%C3%BAc%20Tr%E1%BB%B1c",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 174,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Ẩm Thực Bình Định",
+    "address": "17 Ngô Văn Sở, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7642727,
+    "longitude": 109.2244702,
+    "lat": 13.7642727,
+    "lng": 109.2244702,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mu264lvvljb725@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mu264lvvljb725@resize_ss640x400"
+    ],
+    "description": "Quán Ẩm Thực Bình Định tọa lạc tại 17 Ngô Văn Sở, P. Trần Phú, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Ẩm Thực Bình Định cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823838",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ẩm Thực Bình Định - 17 Ngô Văn Sở",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/am-thuc-binh-dinh-17-ngo-van-so",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%20-%2017%20Ng%C3%B4%20V%C4%83n%20S%E1%BB%9F",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 175,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Linh Linh Ông 9 - Cơm Tấm, Bún & Mì Cay",
+    "address": "3 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.769069,
+    "longitude": 109.231401,
+    "lat": 13.769069,
+    "lng": 109.231401,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mnm7bqxk1ber54@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mnm7bqxk1ber54@resize_ss640x400"
+    ],
+    "description": "Quán Linh Linh Ông 9 - Cơm Tấm, Bún & Mì Cay tọa lạc tại 3, Lê Lợi, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Linh Linh Ông 9 - Cơm Tấm, Bún & Mì Cay cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3823975",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Linh Linh Ông 9 - Cơm Tấm, Bún & Mì Cay",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/linh-linh-ong-9-com-tam-bun-mi-cay",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Linh%20Linh%20%C3%94ng%209%20-%20C%C6%A1m%20T%E1%BA%A5m%2C%20B%C3%BAn%20%26%20M%C3%AC%20Cay",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 176,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hami Thaifood",
+    "address": "6 Nguyễn Trung Tín, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3,
+    "distanceText": "Cách bạn 3.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.755709,
+    "longitude": 109.2138451,
+    "lat": 13.755709,
+    "lng": 109.2138451,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvdiwdtqljt66@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvdiwdtqljt66@resize_ss640x400"
+    ],
+    "description": "Quán Hami Thaifood tọa lạc tại 6 Nguyễn Trung Tín, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hami Thaifood cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824112",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hami Thaifood - 06 Nguyễn Trung Tín",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hami-thaifood-06-nguyen-trung-tin",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hami%20Thaifood%20-%2006%20Nguy%E1%BB%85n%20Trung%20T%C3%ADn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 177,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Liêm Kaa Quán",
+    "address": "413 Hoàng Văn Thụ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7718215,
+    "longitude": 109.2174268,
+    "lat": 13.7718215,
+    "lng": 109.2174268,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m11e746uiobj93@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m11e746uiobj93@resize_ss640x400"
+    ],
+    "description": "Quán Liêm Kaa Quán tọa lạc tại 413 Hoàng Văn Thụ, P. Ngô Mây, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Liêm Kaa Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824249",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Liêm Kaa Quán - Hoàng Văn Thụ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/liem-kaa-quan-hoang-van-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Li%C3%AAm%20Kaa%20Qu%C3%A1n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 178,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "GenZ Quy Nhơn - Ăn Nhậu, Lẩu & Nướng",
+    "address": "37 Nguyễn Huệ, P. Hải Cảng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.4,
+    "distanceText": "Cách bạn 2.4km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772017,
+    "longitude": 109.2398803,
+    "lat": 13.772017,
+    "lng": 109.2398803,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mgai4ocm8ft619@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mgai4ocm8ft619@resize_ss640x400"
+    ],
+    "description": "Quán GenZ Quy Nhơn - Ăn Nhậu, Lẩu & Nướng tọa lạc tại 37 Nguyễn Huệ, P. Hải Cảng, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại GenZ Quy Nhơn - Ăn Nhậu, Lẩu & Nướng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824386",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt GenZ Quy Nhơn - Ăn Nhậu, Lẩu & Nướng - 37 Nguyễn Huệ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/genz-quy-nhon-an-nhau-lau-nuong-37-nguyen-hue",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=GenZ%20Quy%20Nh%C6%A1n%20-%20%C4%82n%20Nh%E1%BA%ADu%2C%20L%E1%BA%A9u%20%26%20N%C6%B0%E1%BB%9Bng%20-%2037%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 179,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Mì Cay Sasin Quy Nhơn",
+    "address": "244 - 246 Lê Hồng Phong, P.Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7745331,
+    "longitude": 109.2274192,
+    "lat": 13.7745331,
+    "lng": 109.2274192,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lz4c6pptt26l46@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lz4c6pptt26l46@resize_ss640x400"
+    ],
+    "description": "Quán Mì Cay Sasin Quy Nhơn tọa lạc tại 244 - 246 Lê Hồng Phong, P.Trần Hưng Đạo, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Mì Cay Sasin Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824523",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Cay Sasin Quy Nhơn - Lê Hồng Phong",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sasin-quy-nhon-le-hong-phong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Sasin%20Quy%20Nh%C6%A1n%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 180,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Hannam Korean Food",
+    "address": "138 Ngô Mây, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7643519,
+    "longitude": 109.215697,
+    "lat": 13.7643519,
+    "lng": 109.215697,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mhn6zrqirif6a5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mhn6zrqirif6a5@resize_ss640x400"
+    ],
+    "description": "Quán Hannam Korean Food tọa lạc tại 138 Ngô Mây, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Hannam Korean Food cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824660",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hannam Korean Food - 138 Ngô Mây",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hannam-korean-food-138-ngo-may",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hannam%20Korean%20Food%20-%20138%20Ng%C3%B4%20M%C3%A2y",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 181,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Thoa",
+    "address": "2 Bà Triệu, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7715242,
+    "longitude": 109.227921,
+    "lat": 13.7715242,
+    "lng": 109.227921,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mqbhto7hpdzh82@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mqbhto7hpdzh82@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Thoa tọa lạc tại 2 Bà Triệu, P. Trần Phú, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Thoa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824797",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Thoa - 02 Bà Triệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-thoa-02-ba-trieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Thoa%20-%2002%20B%C3%A0%20Tri%E1%BB%87u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 182,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Thuý Kiều",
+    "address": "5D Tăng Bạt Hổ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7728169,
+    "longitude": 109.2370773,
+    "lat": 13.7728169,
+    "lng": 109.2370773,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m3ncaxupyfgcea@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m3ncaxupyfgcea@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Thuý Kiều tọa lạc tại 5D Tăng Bạt Hổ, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Thuý Kiều cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3824934",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Thuý Kiều - 5D Tăng Bạt Hổ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-thuy-kieu-5d-tang-bat-ho",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Thu%C3%BD%20Ki%E1%BB%81u%20-%205D%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 183,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Quyên - Võ Thị Yến",
+    "address": "96 Võ Thị Yến, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7543266,
+    "longitude": 109.2136731,
+    "lat": 13.7543266,
+    "lng": 109.2136731,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m3k5201sv9cxef@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m3k5201sv9cxef@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Quyên - Võ Thị Yến tọa lạc tại 96 Võ Thị Yến, P. Nguyễn Văn Cừ, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Quyên - Võ Thị Yến cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825071",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Quyên - Võ Thị Yến",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-quyen-vo-thi-yen",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Quy%C3%AAn%20-%20V%C3%B5%20Th%E1%BB%8B%20Y%E1%BA%BFn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 184,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Bụp",
+    "address": "36 Lê Văn Thủ, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.4,
+    "distanceText": "Cách bạn 3.4km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7958881,
+    "longitude": 109.1917545,
+    "lat": 13.7958881,
+    "lng": 109.1917545,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mamayuamwwd3c0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mamayuamwwd3c0@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Bụp tọa lạc tại 36 Lê Văn Thủ, P. Nhơn Bình, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Bụp cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825208",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Bụp - 36 Lê Văn Thủ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-bup-36-le-van-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20B%E1%BB%A5p%20-%2036%20L%C3%AA%20V%C4%83n%20Th%E1%BB%A7",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 185,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ốc Nón",
+    "address": "35 Lý Thái Tổ, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7592693,
+    "longitude": 109.2091719,
+    "lat": 13.7592693,
+    "lng": 109.2091719,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mvb41o4m2n7r0f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mvb41o4m2n7r0f@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ốc Nón tọa lạc tại 35 Lý Thái Tổ, P. Quang Trung, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ốc Nón cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825345",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ốc Nón - 35 Lý Thái Tổ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-oc-non-35-ly-thai-to",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%20N%C3%B3n%20-%2035%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 186,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Mẹt Quy Nhơn",
+    "address": "316 Xuân Diệu, P.Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7660375,
+    "longitude": 109.2275382,
+    "lat": 13.7660375,
+    "lng": 109.2275382,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvccrqx5hhgd8@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvccrqx5hhgd8@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Mẹt Quy Nhơn tọa lạc tại 316 Xuân Diệu, P.Trần Phú, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Mẹt Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825482",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Mẹt Quy Nhơn - Xuân Diệu",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-met-quy-nhon-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20M%E1%BA%B9t%20Quy%20Nh%C6%A1n%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 187,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Biển Hai Lan",
+    "address": "165 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 900m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7891529,
+    "longitude": 109.2162073,
+    "lat": 13.7891529,
+    "lng": 109.2162073,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m35x77cgv1laa3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m35x77cgv1laa3@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Biển Hai Lan tọa lạc tại 165 Lê Thanh Nghị, P. Đống Đa, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Biển Hai Lan cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825619",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Biển Hai Lan - Lê Thanh Nghị",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-bien-hai-lan-le-thanh-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Bi%E1%BB%83n%20Hai%20Lan%20-%20L%C3%AA%20Thanh%20Ngh%E1%BB%8B",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 188,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ốc Cô Út",
+    "address": "78 Võ Thị Yến, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7546859,
+    "longitude": 109.2141207,
+    "lat": 13.7546859,
+    "lng": 109.2141207,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvby38wjr8937@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvby38wjr8937@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ốc Cô Út tọa lạc tại 78 Võ Thị Yến, P. Nguyễn Văn Cừ, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ốc Cô Út cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825756",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ốc Cô Út",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-oc-co-ut",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qua%CC%81n%20%E1%BB%90c%20C%C3%B4%20U%CC%81t",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 189,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Đợi Tý 2 - Phan Bá Vành",
+    "address": "12 Phan Bá Vành, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7891354,
+    "longitude": 109.2028654,
+    "lat": 13.7891354,
+    "lng": 109.2028654,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mghh6dxn9zpm4d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mghh6dxn9zpm4d@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Đợi Tý 2 - Phan Bá Vành tọa lạc tại 12 Phan Bá Vành, P. Nhơn Bình, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Đợi Tý 2 - Phan Bá Vành cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3825893",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Đợi Tý 2 - Phan Bá Vành",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-doi-ty-2-phan-ba-vanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20%C4%90%E1%BB%A3i%20T%C3%BD%202%20-%20Phan%20B%C3%A1%20V%C3%A0nh",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 190,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Đồng Giá - Võ Mười",
+    "address": "66 Võ Mười, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7674909,
+    "longitude": 109.2188022,
+    "lat": 13.7674909,
+    "lng": 109.2188022,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc6elmiqhlf6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc6elmiqhlf6@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Đồng Giá - Võ Mười tọa lạc tại 66 Võ Mười, P. Ngô Mây, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Đồng Giá - Võ Mười cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826030",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Đồng Giá - Võ Mười",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-dong-gia-vo-muoi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20%C4%90%E1%BB%93ng%20Gi%C3%A1%20-%20V%C3%B5%20M%C6%B0%E1%BB%9Di",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 191,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ốc Chang Chang",
+    "address": "73 Trần Bình Trọng, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7738282,
+    "longitude": 109.236536,
+    "lat": 13.7738282,
+    "lng": 109.236536,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mso72fwkeq6h0a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mso72fwkeq6h0a@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ốc Chang Chang tọa lạc tại 73 Trần Bình Trọng, P. Lê Lợi, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ốc Chang Chang cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826167",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ốc Chang Chang - 73 Trần Bình Trọng",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-oc-chang-chang-73-tran-binh-trong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%20Chang%20Chang%20-%2073%20Tr%E1%BA%A7n%20B%C3%ACnh%20Tr%E1%BB%8Dng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 192,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Bún Ốc Rêu Cá",
+    "address": "55 Trần Phú, P.Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7743227,
+    "longitude": 109.2256317,
+    "lat": 13.7743227,
+    "lng": 109.2256317,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcjdraup3td0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcjdraup3td0@resize_ss640x400"
+    ],
+    "description": "Quán Bún Ốc Rêu Cá tọa lạc tại 55 Trần Phú, P.Lê Hồng Phong, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Bún Ốc Rêu Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826304",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Ốc Rêu Cá - 55 Trần Phú",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-oc-reu-ca-55-tran-phu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%E1%BB%90c%20R%C3%AAu%20C%C3%A1%20-%2055%20Tr%E1%BA%A7n%20Ph%C3%BA",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 193,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Bún Riêu Ốc Cá",
+    "address": "147D Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77444,
+    "longitude": 109.2358,
+    "lat": 13.77444,
+    "lng": 109.2358,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcdpk5o7fda6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcdpk5o7fda6@resize_ss640x400"
+    ],
+    "description": "Quán Bún Riêu Ốc Cá tọa lạc tại 147D Trần Hưng Đạo, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Bún Riêu Ốc Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826441",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Riêu Ốc Cá - Trần Hưng Đạo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-rieu-oc-ca-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ri%C3%AAu%20%E1%BB%90c%20C%C3%A1%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 194,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ốc Cô Thỏ",
+    "address": "93 Chế Lan Viên, P. Ghềnh Ráng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.2,
+    "distanceText": "Cách bạn 4.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.745318,
+    "longitude": 109.209595,
+    "lat": 13.745318,
+    "lng": 109.209595,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m91mj7ko2p3bf6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m91mj7ko2p3bf6@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ốc Cô Thỏ tọa lạc tại 93 Chế Lan Viên, P. Ghềnh Ráng, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ốc Cô Thỏ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826578",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ốc Cô Thỏ",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-oc-co-tho",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%20C%C3%B4%20Th%E1%BB%8F",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 195,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Phở & Cơm Gà - ỐC VIỆT CHILL",
+    "address": "8 Trần Đăng Phong, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7582719,
+    "longitude": 109.2155061,
+    "lat": 13.7582719,
+    "lng": 109.2155061,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mnpyqywxe9dvd6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mnpyqywxe9dvd6@resize_ss640x400"
+    ],
+    "description": "Quán Quán Phở & Cơm Gà - ỐC VIỆT CHILL tọa lạc tại 8 Trần Đăng Phong, P. Nhơn Bình, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Phở & Cơm Gà - ỐC VIỆT CHILL cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826715",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Phở & Cơm Gà - ỐC VIỆT CHILL",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-pho-com-ga-oc-viet-chill",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Ph%E1%BB%9F%20%26%20C%C6%A1m%20G%C3%A0%20-%20%E1%BB%90C%20VI%E1%BB%86T%20CHILL",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 196,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Má Heo Nướng, Óc Heo & Món Bình Dân - Bốn Thu Quán",
+    "address": "91 Sư Đoàn 3 Sao Vàng, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7925467,
+    "longitude": 109.2067676,
+    "lat": 13.7925467,
+    "lng": 109.2067676,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mln3a7pptybzf9@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mln3a7pptybzf9@resize_ss640x400"
+    ],
+    "description": "Quán Má Heo Nướng, Óc Heo & Món Bình Dân - Bốn Thu Quán tọa lạc tại 91 Sư Đoàn 3 Sao Vàng, P. Nhơn Bình, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Má Heo Nướng, Óc Heo & Món Bình Dân - Bốn Thu Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826852",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Má Heo Nướng, Óc Heo & Món Bình Dân - Bốn Thu Quán - 91 Sư Đoàn 3 Sao Vàng",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ma-heo-nuong-oc-heo-mon-binh-dan-bon-thu-quan-91-su-doan-3-sao-vang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%A1%20Heo%20N%C6%B0%E1%BB%9Bng%2C%20%C3%93c%20Heo%20%26%20M%C3%B3n%20B%C3%ACnh%20D%C3%A2n%20-%20B%E1%BB%91n%20Thu%20Qu%C3%A1n%20-%2091%20S%C6%B0%20%C4%90o%C3%A0n%203%20Sao%20V%C3%A0ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 197,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Bếp Nhà Sam - Ốc, Cafe & Ăn Vặt",
+    "address": "26 Ngô Văn Sở",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764268,
+    "longitude": 109.224512,
+    "lat": 13.764268,
+    "lng": 109.224512,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m48emqs1ir4f08@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m48emqs1ir4f08@resize_ss640x400"
+    ],
+    "description": "Quán Bếp Nhà Sam - Ốc, Cafe & Ăn Vặt tọa lạc tại 26, Ngô Văn Sở, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Bếp Nhà Sam - Ốc, Cafe & Ăn Vặt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3826989",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bếp Nhà Sam - Ốc, Cafe & Ăn Vặt",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bep-nha-sam-oc-cafe-an-vat",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20Sam%20-%20%E1%BB%90c%2C%20Cafe%20%26%20%C4%82n%20V%E1%BA%B7t",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 199,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Um",
+    "address": "2 Nguyễn Trãi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.769938,
+    "longitude": 109.228187,
+    "lat": 13.769938,
+    "lng": 109.228187,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgs9gfppvq3bc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgs9gfppvq3bc@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Um tọa lạc tại 2 Nguyễn Trãi, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Um cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827263",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Um",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-um",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Um",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 200,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Ken",
+    "address": "38 Nguyễn Hoàng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.7,
+    "distanceText": "Cách bạn 700m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.787716,
+    "longitude": 109.217439,
+    "lat": 13.787716,
+    "lng": 109.217439,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa7hitikp23b1@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa7hitikp23b1@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Ken tọa lạc tại 38 Nguyễn Hoàng, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Ken cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827400",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Ken",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-ken",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Ken",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 201,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ăn Vặt Luna - Bánh Tráng Trộn, Trà Tắc & Sữa Hạt Dinh Dưỡng",
+    "address": "12/14 Võ Văn Dũng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.76935,
+    "longitude": 109.216101,
+    "lat": 13.76935,
+    "lng": 109.216101,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtnh9yd7gr294a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtnh9yd7gr294a@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Luna - Bánh Tráng Trộn, Trà Tắc & Sữa Hạt Dinh Dưỡng tọa lạc tại 12/14, Võ Văn Dũng, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ăn Vặt Luna - Bánh Tráng Trộn, Trà Tắc & Sữa Hạt Dinh Dưỡng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827537",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Luna - Bánh Tráng Trộn, Trà Tắc & Sữa Hạt Dinh Dưỡng",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-luna-banh-trang-tron-tra-tac-sua-hat-dinh-duong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Luna%20-%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%2C%20Tr%C3%A0%20T%E1%BA%AFc%20%26%20S%E1%BB%AFa%20H%E1%BA%A1t%20Dinh%20D%C6%B0%E1%BB%A1ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 202,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Bà Mai",
+    "address": "18 Hoa Lư",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.791778,
+    "longitude": 109.201485,
+    "lat": 13.791778,
+    "lng": 109.201485,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9h6e191vixff@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9h6e191vixff@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Bà Mai tọa lạc tại 18 Hoa Lư, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Bà Mai cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827674",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Bà Mai",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-ba-mai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20B%C3%A0%20Mai",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 203,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Quán Ghẹ 23 - Võ Đình Tú",
+    "address": "23 Võ Đình Tú, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.8,
+    "distanceText": "Cách bạn 850m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.779998,
+    "longitude": 109.2271721,
+    "lat": 13.779998,
+    "lng": 109.2271721,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcixoidosk7c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcixoidosk7c@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ghẹ 23 - Võ Đình Tú tọa lạc tại 23 Võ Đình Tú, P. Thị Nại, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Quán Ghẹ 23 - Võ Đình Tú cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827811",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ghẹ 23 - Võ Đình Tú",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-ghe-23-vo-dinh-tu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Gh%E1%BA%B9%2023%20-%20V%C3%B5%20%C4%90%C3%ACnh%20T%C3%BA",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 204,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Ốc Văn",
+    "address": "57 Vũ Bảo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.766263,
+    "longitude": 109.218353,
+    "lat": 13.766263,
+    "lng": 109.218353,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfw6qailae3da@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfw6qailae3da@resize_ss640x400"
+    ],
+    "description": "Quán Ốc Văn tọa lạc tại 57 Vũ Bảo, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Ốc Văn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3827948",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ốc Văn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/oc-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20V%C4%83n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 205,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Lẩu Ốc",
+    "address": "147 Chương Dương",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.3,
+    "distanceText": "Cách bạn 3.3km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7543828,
+    "longitude": 109.2096274,
+    "lat": 13.7543828,
+    "lng": 109.2096274,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgrrb45rwez90@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgrrb45rwez90@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Ốc tọa lạc tại 147 Chương Dương, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Lẩu Ốc cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828085",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Ốc",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-oc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20%E1%BB%90c",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 206,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+    "restaurant": "Quán Cô Ba TB - Đặc Sản Quảng Ngãi",
+    "address": "81/4 Trần Thị Kỷ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 65.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "streetfood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.770009,
+    "longitude": 109.216911,
+    "lat": 13.770009,
+    "lng": 109.216911,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "craving",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Streetfood",
+      "#ShopeeFood",
+      "#Đặc_sản_Quy_Nhơn"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mognz39n6txoaf@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mognz39n6txoaf@resize_ss640x400"
+    ],
+    "description": "Quán Quán Cô Ba TB - Đặc Sản Quảng Ngãi tọa lạc tại 81/4 Trần Thị Kỷ, P. Ngô Mây, phục vụ món Bánh Xèo Tôm Nhảy Giòn Rụm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Xèo Tôm Nhảy Giòn Rụm tại Quán Cô Ba TB - Đặc Sản Quảng Ngãi cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828222",
+    "menu": [
+      {
+        "name": "Bánh Xèo Tôm Nhảy Giòn Rụm",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Cô Ba TB - Đặc Sản Quảng Ngãi",
+        "price": "65.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-co-ba-tb-dac-san-quang-ngai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20Ba%20TB%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Qu%E1%BA%A3ng%20Ng%C3%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 207,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Anh Thư",
+    "address": "11A/7 Ngọc Hân Công Chúa, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7675792,
+    "longitude": 109.2290876,
+    "lat": 13.7675792,
+    "lng": 109.2290876,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-muuoi64tabyc86@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-muuoi64tabyc86@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Anh Thư tọa lạc tại 11A/7 Ngọc Hân Công Chúa, P. Trần Phú, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Anh Thư cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828359",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá Anh Thư",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-anh-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Anh%20Th%C6%B0",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 208,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Châu Loan - Bún Bò Huế & Bún Chả Cá",
+    "address": "147 Trần Cao Vân, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7744011,
+    "longitude": 109.2302636,
+    "lat": 13.7744011,
+    "lng": 109.2302636,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc78dqweqh1e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc78dqweqh1e@resize_ss640x400"
+    ],
+    "description": "Quán Châu Loan - Bún Bò Huế & Bún Chả Cá tọa lạc tại 147 Trần Cao Vân, P. Trần Hưng Đạo, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Châu Loan - Bún Bò Huế & Bún Chả Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828496",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Châu Loan - Bún Bò Huế & Bún Chả Cá",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chau-loan-bun-bo-hue-bun-cha-ca",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2u%20Loan%20-%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 210,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Quán 55A - Bún Chả Cá, Chả Cuốn",
+    "address": "55A Trần Phú, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774244,
+    "longitude": 109.225683,
+    "lat": 13.774244,
+    "lng": 109.225683,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi3ielqyvo957@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwi3ielqyvo957@resize_ss640x400"
+    ],
+    "description": "Quán Quán 55A - Bún Chả Cá, Chả Cuốn tọa lạc tại 55A Trần Phú, P. Lý Thường Kiệt, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Quán 55A - Bún Chả Cá, Chả Cuốn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828770",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán 55A - Bún Chả Cá, Chả Cuốn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-55a-bun-cha-ca-cha-cuon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%2055A%20-%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%2C%20Ch%E1%BA%A3%20Cu%E1%BB%91n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 211,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Chả Cá Nguyễn Thái Học",
+    "address": "544 Nguyễn Thái Học",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3,
+    "distanceText": "Cách bạn 3.0km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.75673,
+    "longitude": 109.209305,
+    "lat": 13.75673,
+    "lng": 109.209305,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaa0obwfx7fa0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaa0obwfx7fa0@resize_ss640x400"
+    ],
+    "description": "Quán Bún Chả Cá Nguyễn Thái Học tọa lạc tại 544 Nguyễn Thái Học, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Chả Cá Nguyễn Thái Học cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3828907",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Chả Cá - Nguyễn Thái Học",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 212,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Cơm Tấm Sườn Bà Bông",
+    "address": "2A Nguyễn Văn Trỗi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7624034,
+    "longitude": 109.2190052,
+    "lat": 13.7624034,
+    "lng": 109.2190052,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mteoj3ehk8aw49@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mteoj3ehk8aw49@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Tấm Sườn Bà Bông tọa lạc tại 2A Nguyễn Văn Trỗi, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Cơm Tấm Sườn Bà Bông cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829044",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Tấm Sườn Bà Bông - 02A Nguyễn Văn Trỗi",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-tam-suon-ba-bong-02a-nguyen-van-troi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20S%C6%B0%E1%BB%9Dn%20B%C3%A0%20B%C3%B4ng%20-%2002A%20Nguy%E1%BB%85n%20V%C4%83n%20Tr%E1%BB%97i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 213,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "ÚT HẠNH - Bún Riêu, Chả Cá & Thập Cẩm",
+    "address": "54 Nguyễn Tất Thành",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.6,
+    "distanceText": "Cách bạn 600m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7775138,
+    "longitude": 109.2223878,
+    "lat": 13.7775138,
+    "lng": 109.2223878,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg4tnvzw83k868@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg4tnvzw83k868@resize_ss640x400"
+    ],
+    "description": "Quán ÚT HẠNH - Bún Riêu, Chả Cá & Thập Cẩm tọa lạc tại 54 Nguyễn Tất Thành, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại ÚT HẠNH - Bún Riêu, Chả Cá & Thập Cẩm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829181",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt ÚT HẠNH - Bún Riêu, Chả Cá & Thập Cẩm - 54 Nguyễn Tất Thành",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ut-hanh-bun-rieu-cha-ca-thap-cam-54-nguyen-tat-thanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%9AT%20H%E1%BA%A0NH%20-%20B%C3%BAn%20Ri%C3%AAu%2C%20Ch%E1%BA%A3%20C%C3%A1%20%26%20Th%E1%BA%ADp%20C%E1%BA%A9m%20-%2054%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 214,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bếp Xuyên Đêm Quy Nhơn",
+    "address": "201 Ngô Mây, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7662991,
+    "longitude": 109.212032,
+    "lat": 13.7662991,
+    "lng": 109.212032,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-modskrivmvil22@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-modskrivmvil22@resize_ss640x400"
+    ],
+    "description": "Quán Bếp Xuyên Đêm Quy Nhơn tọa lạc tại 201 Ngô Mây, P. Quang Trung, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bếp Xuyên Đêm Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829318",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bếp Xuyên Đêm Quy Nhơn - 201 Ngô Mây",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bep-xuyen-dem-quy-nhon-201-ngo-may",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Xuy%C3%AAn%20%C4%90%C3%AAm%20Quy%20Nh%C6%A1n%20-%20201%20Ng%C3%B4%20M%C3%A2y",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 215,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Cá Cô Hạnh",
+    "address": "126 Trần Hưng Đạo, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7750397,
+    "longitude": 109.2341209,
+    "lat": 13.7750397,
+    "lng": 109.2341209,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcua3mquv881@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcua3mquv881@resize_ss640x400"
+    ],
+    "description": "Quán Bún Cá Cô Hạnh tọa lạc tại 126 Trần Hưng Đạo, P. Lê Lợi, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Cá Cô Hạnh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829455",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Cá Cô Hạnh - Trần Hưng Đạo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-ca-co-hanh-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20C%C3%B4%20H%E1%BA%A1nh%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 216,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Phở Cô Nữ",
+    "address": "43 Bạch Đằng, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7752539,
+    "longitude": 109.2373277,
+    "lat": 13.7752539,
+    "lng": 109.2373277,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mq2p4fe7f28f4a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mq2p4fe7f28f4a@resize_ss640x400"
+    ],
+    "description": "Quán Bún Phở Cô Nữ tọa lạc tại 43 Bạch Đằng, P. Thị Nại, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Phở Cô Nữ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829592",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Phở Cô Nữ - 43 Bạch Đằng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-pho-co-nu-43-bach-dang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20C%C3%B4%20N%E1%BB%AF%20-%2043%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 217,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Mì Quảng Tân Hoàng Gia",
+    "address": "39 Võ Lai, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764618,
+    "longitude": 109.2180462,
+    "lat": 13.764618,
+    "lng": 109.2180462,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msap2oukpkhzcb@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msap2oukpkhzcb@resize_ss640x400"
+    ],
+    "description": "Quán Mì Quảng Tân Hoàng Gia tọa lạc tại 39 Võ Lai, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Mì Quảng Tân Hoàng Gia cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829729",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Quảng Tân Hoàng Gia",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-quang-tan-hoang-gia",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20T%C3%A2n%20Ho%C3%A0ng%20Gia",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 218,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Ăn Vặt Chị Yến - Bún Thịt Nướng, Hủ Tiếu & Bánh Canh",
+    "address": "43 Nguyễn Nhạc",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7639788,
+    "longitude": 109.2187292,
+    "lat": 13.7639788,
+    "lng": 109.2187292,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mluu9t5xpatce1@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mluu9t5xpatce1@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Chị Yến - Bún Thịt Nướng, Hủ Tiếu & Bánh Canh tọa lạc tại 43 Nguyễn Nhạc, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Ăn Vặt Chị Yến - Bún Thịt Nướng, Hủ Tiếu & Bánh Canh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3829866",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Chị Yến - Bún Thịt Nướng, Hủ Tiếu & Bánh Canh - 43 Nguyễn Nhạc",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-chi-yen-bun-thit-nuong-hu-tieu-banh-canh-43-nguyen-nhac",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Ch%E1%BB%8B%20Y%E1%BA%BFn%20-%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%2C%20H%E1%BB%A7%20Ti%E1%BA%BFu%20%26%20B%C3%A1nh%20Canh%20-%2043%20Nguy%E1%BB%85n%20Nh%E1%BA%A1c",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 219,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Quán Cô Hồng - Bánh Canh Tôm, Bún Riêu & Bún Chả Cá",
+    "address": "295 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7914214,
+    "longitude": 109.2124637,
+    "lat": 13.7914214,
+    "lng": 109.2124637,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2tgxe1za7006a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2tgxe1za7006a@resize_ss640x400"
+    ],
+    "description": "Quán Quán Cô Hồng - Bánh Canh Tôm, Bún Riêu & Bún Chả Cá tọa lạc tại 295 Lê Thanh Nghị, P. Đống Đa, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Quán Cô Hồng - Bánh Canh Tôm, Bún Riêu & Bún Chả Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830003",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Cô Hồng - Bánh Canh Tôm, Bún Riêu & Bún Chả Cá",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-co-hong-banh-canh-tom-bun-rieu-bun-cha-ca",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20H%E1%BB%93ng%20-%20B%C3%A1nh%20Canh%20T%C3%B4m%2C%20B%C3%BAn%20Ri%C3%AAu%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 220,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Quậy Xứ Nẫu",
+    "address": "144 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.758446,
+    "longitude": 109.214598,
+    "lat": 13.758446,
+    "lng": 109.214598,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcstuz6ys96e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvcstuz6ys96e@resize_ss640x400"
+    ],
+    "description": "Quán Bún Quậy Xứ Nẫu tọa lạc tại 144 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Quậy Xứ Nẫu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830140",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Quậy Xứ Nẫu - Nguyễn Thị Định",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-quay-xu-nau-nguyen-thi-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Qu%E1%BA%ADy%20X%E1%BB%A9%20N%E1%BA%ABu%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 221,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+    "restaurant": "Bún Riêu Cua Đồng - Riêu Cua Ba Chỉ & Chả Cá",
+    "address": "47 Hàm Nghi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.767047,
+    "longitude": 109.217842,
+    "lat": 13.767047,
+    "lng": 109.217842,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqv9gyrgyfppe3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqv9gyrgyfppe3@resize_ss640x400"
+    ],
+    "description": "Quán Bún Riêu Cua Đồng - Riêu Cua Ba Chỉ & Chả Cá tọa lạc tại 47 Hàm Nghi, P. Ngô Mây, phục vụ món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn tại Bún Riêu Cua Đồng - Riêu Cua Ba Chỉ & Chả Cá cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830277",
+    "menu": [
+      {
+        "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Riêu Cua Đồng - Riêu Cua Ba Chỉ & Chả Cá - 47 Hàm Nghi",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-rieu-cua-dong-rieu-cua-ba-chi-cha-ca-47-ham-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ri%C3%AAu%20Cua%20%C4%90%E1%BB%93ng%20-%20Ri%C3%AAu%20Cua%20Ba%20Ch%E1%BB%89%20%26%20Ch%E1%BA%A3%20C%C3%A1%20-%2047%20H%C3%A0m%20Nghi",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 222,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Tiệm Ăn Bà Hảo",
+    "address": "97 Huỳnh Văn Thống, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.4,
+    "distanceText": "Cách bạn 3.4km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7959807,
+    "longitude": 109.191575,
+    "lat": 13.7959807,
+    "lng": 109.191575,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtnhhhbem8skc0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mtnhhhbem8skc0@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Ăn Bà Hảo tọa lạc tại 97 Huỳnh Văn Thống, P. Nhơn Bình, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Tiệm Ăn Bà Hảo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830414",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Ăn Bà Hảo - 97 Huỳnh Văn Thống",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-an-ba-hao-97-huynh-van-thong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20B%C3%A0%20H%E1%BA%A3o%20-%2097%20Hu%E1%BB%B3nh%20V%C4%83n%20Th%E1%BB%91ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 223,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Đặc Sản Quy Nhơn - Nhuận Khôi Quán",
+    "address": "3 Ngô Văn Sở",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7639366,
+    "longitude": 109.2247526,
+    "lat": 13.7639366,
+    "lng": 109.2247526,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mpg9u9cfm7swca@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mpg9u9cfm7swca@resize_ss640x400"
+    ],
+    "description": "Quán Đặc Sản Quy Nhơn - Nhuận Khôi Quán tọa lạc tại 3 Ngô Văn Sở, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Đặc Sản Quy Nhơn - Nhuận Khôi Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830551",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Đặc Sản Quy Nhơn - Nhuận Khôi Quán",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/dac-san-quy-nhon-nhuan-khoi-quan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%20Nhu%E1%BA%ADn%20Kh%C3%B4i%20Qu%C3%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 224,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bánh Hỏi & Cháo Lòng 77",
+    "address": "1C Lê Lợi, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7688492,
+    "longitude": 109.2315969,
+    "lat": 13.7688492,
+    "lng": 109.2315969,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mthvagdnuj9m6e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mthvagdnuj9m6e@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi & Cháo Lòng 77 tọa lạc tại 1C Lê Lợi, P. Lê Lợi, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bánh Hỏi & Cháo Lòng 77 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830688",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi & Cháo Lòng 77 - 01C Lê Lợi",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-77-01c-le-loi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%2077%20-%2001C%20L%C3%AA%20L%E1%BB%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 225,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Cá Hồ Thị",
+    "address": "279 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7757424,
+    "longitude": 109.2311198,
+    "lat": 13.7757424,
+    "lng": 109.2311198,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsuaczmo3oux3a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsuaczmo3oux3a@resize_ss640x400"
+    ],
+    "description": "Quán Bún Cá Hồ Thị tọa lạc tại 279 Trần Hưng Đạo, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Cá Hồ Thị cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830825",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Cá Hồ Thị",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-ca-ho-thi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20H%E1%BB%93%20Th%E1%BB%8B",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 226,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Quán Ngân - Bún",
+    "address": "593 Trần Hưng Đạo, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.6,
+    "distanceText": "Cách bạn 600m",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7794161,
+    "longitude": 109.2244299,
+    "lat": 13.7794161,
+    "lng": 109.2244299,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lvjbcww75rvobd@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lvjbcww75rvobd@resize_ss640x400"
+    ],
+    "description": "Quán Quán Ngân - Bún tọa lạc tại 593 Trần Hưng Đạo, P. Lê Hồng Phong, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Quán Ngân - Bún cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3830962",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Ngân - Bún - Trần Hưng Đạo",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-ngan-bun-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Ng%C3%A2n%20-%20B%C3%BAn%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 227,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Tiệm Ăn 241 - Cơm Tấm & Cơm Món",
+    "address": "241 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7920734,
+    "longitude": 109.2123774,
+    "lat": 13.7920734,
+    "lng": 109.2123774,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc1tsvn6op7d@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc1tsvn6op7d@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Ăn 241 - Cơm Tấm & Cơm Món tọa lạc tại 241 Lê Thanh Nghị, P. Đống Đa, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Tiệm Ăn 241 - Cơm Tấm & Cơm Món cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831099",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Ăn 241 - Cơm Tấm & Cơm Món",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-an-241-com-tam-com-mon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20241%20-%20C%C6%A1m%20T%E1%BA%A5m%20%26%20C%C6%A1m%20M%C3%B3n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 228,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Cá Toàn Hà",
+    "address": "41 - 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.757183,
+    "longitude": 109.2140706,
+    "lat": 13.757183,
+    "lng": 109.2140706,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-mdgz6uv295m937@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-mdgz6uv295m937@resize_ss640x400"
+    ],
+    "description": "Quán Bún Cá Toàn Hà tọa lạc tại 41 - 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Cá Toàn Hà cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831236",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Cá Toàn Hà - Nguyễn Thị Định",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-ca-toan-ha-nguyen-thi-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20To%C3%A0n%20H%C3%A0%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 229,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bún Cá - Riêu & Sứa - Hà Huy Tập",
+    "address": "9 Hà Huy Tập, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7705994,
+    "longitude": 109.2265908,
+    "lat": 13.7705994,
+    "lng": 109.2265908,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc5fldpjno4a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc5fldpjno4a@resize_ss640x400"
+    ],
+    "description": "Quán Bún Cá - Riêu & Sứa - Hà Huy Tập tọa lạc tại 9 Hà Huy Tập, P. Trần Phú, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Cá - Riêu & Sứa - Hà Huy Tập cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831373",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Cá - Riêu & Sứa - Hà Huy Tập",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-ca-rieu-sua-ha-huy-tap",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20-%20Ri%C3%AAu%20%26%20S%E1%BB%A9a%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 230,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Văn Hùng",
+    "address": "146 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7755504,
+    "longitude": 109.2325196,
+    "lat": 13.7755504,
+    "lng": 109.2325196,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbxo52nl3t7f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbxo52nl3t7f@resize_ss640x400"
+    ],
+    "description": "Quán Bún Văn Hùng tọa lạc tại 146 Trần Hưng Đạo, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Văn Hùng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831510",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Văn Hùng - Trần Hưng Đạo",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-van-hung-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20V%C4%83n%20H%C3%B9ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 231,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Bánh Canh Hẹ, Bún Riêu Cá & Mì Quảng",
+    "address": "83 Vũ Bảo, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7658933,
+    "longitude": 109.2190062,
+    "lat": 13.7658933,
+    "lng": 109.2190062,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mexvvdwe77k6aa@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mexvvdwe77k6aa@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Canh Hẹ, Bún Riêu Cá & Mì Quảng tọa lạc tại 83 Vũ Bảo, P. Ngô Mây, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bánh Canh Hẹ, Bún Riêu Cá & Mì Quảng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831647",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Canh Hẹ, Bún Riêu Cá & Mì Quảng - 83 Vũ Bảo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-canh-he-bun-rieu-ca-mi-quang-83-vu-bao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20H%E1%BA%B9%2C%20B%C3%BAn%20Ri%C3%AAu%20C%C3%A1%20%26%20M%C3%AC%20Qu%E1%BA%A3ng%20-%2083%20V%C5%A9%20B%E1%BA%A3o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 232,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "QUÁN BÚN CÔ TÂM - Bún Bò",
+    "address": "20 Trường Chinh, P. Lý Thường Kiệt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7719048,
+    "longitude": 109.2238497,
+    "lat": 13.7719048,
+    "lng": 109.2238497,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhlbhg4dcpd3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhlbhg4dcpd3@resize_ss640x400"
+    ],
+    "description": "Quán QUÁN BÚN CÔ TÂM - Bún Bò tọa lạc tại 20 Trường Chinh, P. Lý Thường Kiệt, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại QUÁN BÚN CÔ TÂM - Bún Bò cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831784",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt QUÁN BÚN CÔ TÂM - Bún Bò - Trường Chinh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-bun-co-tam-bun-bo-truong-chinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20B%C3%9AN%20C%C3%94%20T%C3%82M%20-%20B%C3%BAn%20B%C3%B2%20-%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 233,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "RUTO - Bún Riêu, Trà Sữa, Trứng Nướng",
+    "address": "143 Ngô Mây, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7654399,
+    "longitude": 109.2133282,
+    "lat": 13.7654399,
+    "lng": 109.2133282,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m6ly62k7jw3c6a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m6ly62k7jw3c6a@resize_ss640x400"
+    ],
+    "description": "Quán RUTO - Bún Riêu, Trà Sữa, Trứng Nướng tọa lạc tại 143 Ngô Mây, P. Nguyễn Văn Cừ, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại RUTO - Bún Riêu, Trà Sữa, Trứng Nướng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3831921",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt RUTO - Bún Riêu, Trà Sữa, Trứng Nướng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ruto-bun-rieu-tra-sua-trung-nuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=RUTO%20-%20B%C3%BAn%20Ri%C3%AAu%2C%20Tr%C3%A0%20S%E1%BB%AFa%2C%20Tr%E1%BB%A9ng%20N%C6%B0%E1%BB%9Bng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 234,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Cô Han - Bún Đậu Mắm Tôm, Mì Cay & Trà Sữa",
+    "address": "8 Trần Đăng Phong, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7580302,
+    "longitude": 109.2154833,
+    "lat": 13.7580302,
+    "lng": 109.2154833,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mthvggn2ibcxb0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mthvggn2ibcxb0@resize_ss640x400"
+    ],
+    "description": "Quán Cô Han - Bún Đậu Mắm Tôm, Mì Cay & Trà Sữa tọa lạc tại 8 Trần Đăng Phong, P. Nguyễn Văn Cừ, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Cô Han - Bún Đậu Mắm Tôm, Mì Cay & Trà Sữa cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832058",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cô Han - Bún Đậu Mắm Tôm, Mì Cay & Trà Sữa",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-han-bun-dau-mam-tom-mi-cay-tra-sua",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Han%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%2C%20M%C3%AC%20Cay%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 235,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "KEN Đồ Ăn Heatlhy - Đồ Hấp, Bún , Cơm, Sữa Hạt",
+    "address": "158 Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7760771,
+    "longitude": 109.2324446,
+    "lat": 13.7760771,
+    "lng": 109.2324446,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-moigqxrlfeh8c3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-moigqxrlfeh8c3@resize_ss640x400"
+    ],
+    "description": "Quán KEN Đồ Ăn Heatlhy - Đồ Hấp, Bún , Cơm, Sữa Hạt tọa lạc tại 158 Lê Lợi, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại KEN Đồ Ăn Heatlhy - Đồ Hấp, Bún , Cơm, Sữa Hạt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832195",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt KEN Đồ Ăn Heatlhy - Đồ Hấp, Bún , Cơm, Sữa Hạt- 158 Lê Lợi",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ken-do-an-heatlhy-do-hap-bun-com-sua-hat-158-le-loi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KEN%20%C4%90%E1%BB%93%20%C4%82n%20Heatlhy%20-%20%C4%90%E1%BB%93%20H%E1%BA%A5p%2C%20B%C3%BAn%20%2C%20C%C6%A1m%2C%20S%E1%BB%AFa%20H%E1%BA%A1t-%20158%20L%C3%AA%20L%E1%BB%A3i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 236,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+    "restaurant": "QUÁN GÌ CŨNG CÓ - Sứa Mắm Nhĩ, Bún Cua Thối & Nước Ép",
+    "address": "548 Nguyễn Thái Học, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7588112,
+    "longitude": 109.210644,
+    "lat": 13.7588112,
+    "lng": 109.210644,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lxjm9uvoz0t50e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lxjm9uvoz0t50e@resize_ss640x400"
+    ],
+    "description": "Quán QUÁN GÌ CŨNG CÓ - Sứa Mắm Nhĩ, Bún Cua Thối & Nước Ép tọa lạc tại 548 Nguyễn Thái Học, P. Nguyễn Văn Cừ, phục vụ món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn tại QUÁN GÌ CŨNG CÓ - Sứa Mắm Nhĩ, Bún Cua Thối & Nước Ép cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832332",
+    "menu": [
+      {
+        "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt QUÁN GÌ CŨNG CÓ - Sứa Mắm Nhĩ, Bún Cua Thối & Nước Ép - Nguyễn Thái Học",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-gi-cung-co-sua-mam-nhi-bun-cua-thoi-nuoc-ep-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20G%C3%8C%20C%C5%A8NG%20C%C3%93%20-%20S%E1%BB%A9a%20M%E1%BA%AFm%20Nh%C4%A9%2C%20B%C3%BAn%20Cua%20Th%C3%B4%CC%81i%20%26%20N%C6%B0%C6%A1%CC%81c%20E%CC%81p%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 237,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Đậu 36 Phố Cổ Hà Nội - Quy Nhơn",
+    "address": "70 Ngô Mây, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.762882,
+    "longitude": 109.217758,
+    "lat": 13.762882,
+    "lng": 109.217758,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m6wk1xw76q0odc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m6wk1xw76q0odc@resize_ss640x400"
+    ],
+    "description": "Quán Bún Đậu 36 Phố Cổ Hà Nội - Quy Nhơn tọa lạc tại 70 Ngô Mây, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Đậu 36 Phố Cổ Hà Nội - Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832469",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Đậu 36 Phố Cổ Hà Nội - Quy Nhơn",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-dau-36-pho-co-ha-noi-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%2036%20Ph%E1%BB%91%20C%E1%BB%95%20H%C3%A0%20N%E1%BB%99i%20-%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 238,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Cơm Gà 89",
+    "address": "89 Vũ Bảo, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7657625,
+    "longitude": 109.2191085,
+    "lat": 13.7657625,
+    "lng": 109.2191085,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mr1mt3jaxurka9@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mr1mt3jaxurka9@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Gà 89 tọa lạc tại 89 Vũ Bảo, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Cơm Gà 89 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832606",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Gà 89 - Vũ Bảo",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-ga-89-vu-bao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%2089%20-%20V%C5%A9%20B%E1%BA%A3o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 239,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Bò Huế 6 Lùn",
+    "address": "16 Phan Đình Phùng, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 950m",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.777635,
+    "longitude": 109.227226,
+    "lat": 13.777635,
+    "lng": 109.227226,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mv14eytv0f7r33@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mv14eytv0f7r33@resize_ss640x400"
+    ],
+    "description": "Quán Bún Bò Huế 6 Lùn tọa lạc tại 16 Phan Đình Phùng, P. Trần Hưng Đạo, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Bò Huế 6 Lùn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832743",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Bò Huế 6 Lùn",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-6-lun",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%206%20L%C3%B9n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 240,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+    "restaurant": "Bún Tôm - Bún Rạm Đầm Trúc",
+    "address": "3 Mai Xuân Thưởng, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7778584,
+    "longitude": 109.2285681,
+    "lat": 13.7778584,
+    "lng": 109.2285681,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbyp6kg6ft99@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbyp6kg6ft99@resize_ss640x400"
+    ],
+    "description": "Quán Bún Tôm - Bún Rạm Đầm Trúc tọa lạc tại 3 Mai Xuân Thưởng, P. Trần Hưng Đạo, phục vụ món Hải Sản Tươi Sống Sốt Me Trứng Muối hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Hải Sản Tươi Sống Sốt Me Trứng Muối tại Bún Tôm - Bún Rạm Đầm Trúc cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3832880",
+    "menu": [
+      {
+        "name": "Hải Sản Tươi Sống Sốt Me Trứng Muối",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Tôm - Bún Rạm Đầm Trúc - 03 Mai Xuân Thưởng",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-tom-bun-ram-dam-truc-03-mai-xuan-thuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20-%20B%C3%BAn%20R%E1%BA%A1m%20%C4%90%E1%BA%A7m%20Tr%C3%BAc%20-%2003%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 241,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Cơm Sườn Núp Hẻm - Cơm Tấm, Bún & Bò Kho",
+    "address": "237/8 Hoàng Văn Thụ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7679398,
+    "longitude": 109.2134342,
+    "lat": 13.7679398,
+    "lng": 109.2134342,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjvis9wmxurn37@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjvis9wmxurn37@resize_ss640x400"
+    ],
+    "description": "Quán Cơm Sườn Núp Hẻm - Cơm Tấm, Bún & Bò Kho tọa lạc tại 237/8 Hoàng Văn Thụ, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Cơm Sườn Núp Hẻm - Cơm Tấm, Bún & Bò Kho cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833017",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cơm Sườn Núp Hẻm - Cơm Tấm, Bún & Bò Kho - 237/8 Hoàng Văn Thụ",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-suon-nup-hem-com-tam-bun-bo-kho-2378-hoang-van-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20S%C6%B0%E1%BB%9Dn%20N%C3%BAp%20H%E1%BA%BBm%20-%20C%C6%A1m%20T%E1%BA%A5m%2C%20B%C3%BAn%20%26%20B%C3%B2%20Kho%20-%20237/8%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 242,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Đậu Gia Hân - Chợ Dinh",
+    "address": "26 Nguyễn Diêu, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.6,
+    "distanceText": "Cách bạn 3.6km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7950475,
+    "longitude": 109.1888468,
+    "lat": 13.7950475,
+    "lng": 109.1888468,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mviaym5bi9kzf3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mviaym5bi9kzf3@resize_ss640x400"
+    ],
+    "description": "Quán Bún Đậu Gia Hân - Chợ Dinh tọa lạc tại 26 Nguyễn Diêu, P. Nhơn Bình, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Đậu Gia Hân - Chợ Dinh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833154",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Đậu Gia Hân - Chợ Dinh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-dau-gia-han-cho-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20Gia%20H%C3%A2n%20-%20Ch%E1%BB%A3%20Dinh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 243,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "BÚN BÒ & SÂM MÁT AN VI",
+    "address": "101A Hai Bà Trưng, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771767,
+    "longitude": 109.2295108,
+    "lat": 13.771767,
+    "lng": 109.2295108,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqmwu95drh1p7a@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mqmwu95drh1p7a@resize_ss640x400"
+    ],
+    "description": "Quán BÚN BÒ & SÂM MÁT AN VI tọa lạc tại 101A Hai Bà Trưng, P. Thị Nại, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại BÚN BÒ & SÂM MÁT AN VI cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833291",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt BÚN BÒ & SÂM MÁT AN VI - 101A Hai Bà Trưng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-sam-mat-an-vi-101a-hai-ba-trung",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20B%C3%92%20%26%20S%C3%82M%20M%C3%81T%20AN%20VI%20-%20101A%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 244,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Mì Quảng 32 - Mì Quảng, Lagu Bánh Mì & Bánh Cuốn",
+    "address": "32 Trường Chinh, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7719173,
+    "longitude": 109.2234854,
+    "lat": 13.7719173,
+    "lng": 109.2234854,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m6uurzj2ht4147@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m6uurzj2ht4147@resize_ss640x400"
+    ],
+    "description": "Quán Mì Quảng 32 - Mì Quảng, Lagu Bánh Mì & Bánh Cuốn tọa lạc tại 32 Trường Chinh, P. Trần Phú, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Mì Quảng 32 - Mì Quảng, Lagu Bánh Mì & Bánh Cuốn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833428",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Quảng 32 - Mì Quảng, Lagu Bánh Mì & Bánh Cuốn - 32 Trường Chinh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-quang-32-mi-quang-lagu-banh-mi-banh-cuon-32-truong-chinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%2032%20-%20M%C3%AC%20Qu%E1%BA%A3ng%2C%20Lagu%20B%C3%A1nh%20M%C3%AC%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20-%2032%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 245,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "BÚN MĂNG GÀ, MĂNG VỊT & GIÒ HEO - Tô Hiến Thành",
+    "address": "76/21 Tô Hiến Thành, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.4,
+    "distanceText": "Cách bạn 2.4km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7625492,
+    "longitude": 109.2107836,
+    "lat": 13.7625492,
+    "lng": 109.2107836,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msw7s55lpptw79@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msw7s55lpptw79@resize_ss640x400"
+    ],
+    "description": "Quán BÚN MĂNG GÀ, MĂNG VỊT & GIÒ HEO - Tô Hiến Thành tọa lạc tại 76/21 Tô Hiến Thành, P. Quang Trung, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại BÚN MĂNG GÀ, MĂNG VỊT & GIÒ HEO - Tô Hiến Thành cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833565",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt BÚN MĂNG GÀ, MĂNG VỊT & GIÒ HEO - Tô Hiến Thành",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-mang-ga-mang-vit-gio-heo-to-hien-thanh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20M%C4%82NG%20G%C3%80%2C%20M%C4%82NG%20V%E1%BB%8AT%20%26%20GI%C3%92%20HEO%20-%20T%C3%B4%20Hi%E1%BA%BFn%20Th%C3%A0nh",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 246,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Mì Quảng Phú Chiêm",
+    "address": "46 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7572448,
+    "longitude": 109.2140706,
+    "lat": 13.7572448,
+    "lng": 109.2140706,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-modx2heovh1da3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-modx2heovh1da3@resize_ss640x400"
+    ],
+    "description": "Quán Mì Quảng Phú Chiêm tọa lạc tại 46 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Mì Quảng Phú Chiêm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833702",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Quảng Phú Chiêm - Lô 46 Nguyễn Thị Định",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-quang-phu-chiem-lo-46-nguyen-thi-dinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20Ph%C3%BA%20Chi%C3%AAm%20-%20L%C3%B4%2046%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 247,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Bò Huế A Hoài",
+    "address": "260 Đào Tấn, P. Nhơn Bình",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.7,
+    "distanceText": "Cách bạn 3.7km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7961161,
+    "longitude": 109.1886269,
+    "lat": 13.7961161,
+    "lng": 109.1886269,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mu1yapsb8jk433@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mu1yapsb8jk433@resize_ss640x400"
+    ],
+    "description": "Quán Bún Bò Huế A Hoài tọa lạc tại 260 Đào Tấn, P. Nhơn Bình, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Bò Huế A Hoài cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833839",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Bò Huế A Hoài - 260 Đào Tấn",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-a-hoai-260-dao-tan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20A%20Ho%C3%A0i%20-%20260%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 248,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+    "restaurant": "Bún Bò Huế O Thơm",
+    "address": "61B Nguyễn Thái Học, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1.0km",
+    "priceRange": "35.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7728911,
+    "longitude": 109.2198903,
+    "lat": 13.7728911,
+    "lng": 109.2198903,
+    "moodIds": [
+      "healthy",
+      "comfort",
+      "budget",
+      "chill",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msfa33ibq6tgbe@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-msfa33ibq6tgbe@resize_ss640x400"
+    ],
+    "description": "Quán Bún Bò Huế O Thơm tọa lạc tại 61B Nguyễn Thái Học, P. Ngô Mây, phục vụ món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt tại Bún Bò Huế O Thơm cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3833976",
+    "menu": [
+      {
+        "name": "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt",
+        "price": "35.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Bò Huế O Thơm - 61B Nguyễn Thái Học",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-o-thom-61b-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20O%20Th%C6%A1m%20-%2061B%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 249,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Bình Minh",
+    "address": "426 Hoàng Văn Thụ, P.Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7713665,
+    "longitude": 109.2173407,
+    "lat": 13.7713665,
+    "lng": 109.2173407,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lz8skve3pky53f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lz8skve3pky53f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Bình Minh tọa lạc tại 426 Hoàng Văn Thụ, P.Ngô Mây, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Bình Minh cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834113",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Bình Minh",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-binh-minh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20B%C3%ACnh%20Minh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 250,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng 280",
+    "address": "280 Diên Hồng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7645396,
+    "longitude": 109.2198934,
+    "lat": 13.7645396,
+    "lng": 109.2198934,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m4bnfa71lu3k54@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m4bnfa71lu3k54@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng 280 tọa lạc tại 280 Diên Hồng, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng 280 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834250",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - 280 Diên Hồng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-280-dien-hong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20280%20Di%C3%AAn%20H%E1%BB%93ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 251,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Tư Hạnh - Bánh Hỏi Cháo Lòng",
+    "address": "165 Cần Vương, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7551311,
+    "longitude": 109.2116213,
+    "lat": 13.7551311,
+    "lng": 109.2116213,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhohod0jpg52@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhohod0jpg52@resize_ss640x400"
+    ],
+    "description": "Quán Tư Hạnh - Bánh Hỏi Cháo Lòng tọa lạc tại 165 Cần Vương, P. Nguyễn Văn Cừ, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Tư Hạnh - Bánh Hỏi Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834387",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tư Hạnh - Bánh Hỏi Cháo Lòng - 165 Cần Vương",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tu-hanh-banh-hoi-chao-long-165-can-vuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C6%B0%20H%E1%BA%A1nh%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20165%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 252,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Cô Tuyết - Chế Lan Viên",
+    "address": "96 Chế Lan Viên, P. Ghềnh Ráng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.3,
+    "distanceText": "Cách bạn 4.3km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7448536,
+    "longitude": 109.2096182,
+    "lat": 13.7448536,
+    "lng": 109.2096182,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m1nk6hvozt1b1e@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m1nk6hvozt1b1e@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Cô Tuyết - Chế Lan Viên tọa lạc tại 96 Chế Lan Viên, P. Ghềnh Ráng, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Cô Tuyết - Chế Lan Viên cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834524",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Cô Tuyết - Chế Lan Viên",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-tuyet-che-lan-vien",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20C%C3%B4%20Tuy%E1%BA%BFt%20-%20Ch%E1%BA%BF%20Lan%20Vi%C3%AAn",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 253,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Tư Lý",
+    "address": "122 Trần Cao Vân, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7753928,
+    "longitude": 109.2308068,
+    "lat": 13.7753928,
+    "lng": 109.2308068,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvchsmqg8ex67@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvchsmqg8ex67@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Tư Lý tọa lạc tại 122 Trần Cao Vân, P. Trần Hưng Đạo, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Tư Lý cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834661",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Tư Lý - Trần Cao Vân",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tu-ly-tran-cao-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20T%C6%B0%20L%C3%BD%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 254,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Thuỳ Châu",
+    "address": "167 Cần Vương, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.755102,
+    "longitude": 109.2115901,
+    "lat": 13.755102,
+    "lng": 109.2115901,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbs2ezurb8f4@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbs2ezurb8f4@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Thuỳ Châu tọa lạc tại 167 Cần Vương, P. Nguyễn Văn Cừ, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Thuỳ Châu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834798",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng Thuỳ Châu - Cần Vương",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thuy-chau-can-vuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20Thu%E1%BB%B3%20Ch%C3%A2u%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 255,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Nước Ép Hương - Bánh Hỏi & Cháo Lòng",
+    "address": "359C Nguyễn Thái Học, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763675,
+    "longitude": 109.214102,
+    "lat": 13.763675,
+    "lng": 109.214102,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mow7fn9vev4de4@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mow7fn9vev4de4@resize_ss640x400"
+    ],
+    "description": "Quán Nước Ép Hương - Bánh Hỏi & Cháo Lòng tọa lạc tại 359C Nguyễn Thái Học, P. Nguyễn Văn Cừ, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Nước Ép Hương - Bánh Hỏi & Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3834935",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nước Ép Hương - Bánh Hỏi & Cháo Lòng - 359C Nguyễn Thái Học",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nuoc-ep-huong-banh-hoi-chao-long-359c-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20%C3%89p%20H%C6%B0%C6%A1ng%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%20-%20359C%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 256,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Bánh Hỏi Cháo Lòng - Hoàng Quốc Việt",
+    "address": "90 Hoàng Quốc Việt",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.8,
+    "distanceText": "Cách bạn 800m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.780673,
+    "longitude": 109.226956,
+    "lat": 13.780673,
+    "lng": 109.226956,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaindf0f849bc@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaindf0f849bc@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng - Hoàng Quốc Việt tọa lạc tại 90 Hoàng Quốc Việt, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Bánh Hỏi Cháo Lòng - Hoàng Quốc Việt cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835072",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Hoàng Quốc Việt",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-hoang-quoc-viet",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Ho%C3%A0ng%20Qu%E1%BB%91c%20Vi%E1%BB%87t",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 257,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Trần Hưng Đạo",
+    "address": "858 Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.2,
+    "distanceText": "Cách bạn 200m",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.781413,
+    "longitude": 109.221619,
+    "lat": 13.781413,
+    "lng": 109.221619,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf04d7wc2575f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwf04d7wc2575f@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Trần Hưng Đạo tọa lạc tại 858 Trần Hưng Đạo, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Trần Hưng Đạo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835209",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Trần Hưng Đạo",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-hung-dao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 258,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng - Cô Hai",
+    "address": "295 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.791312,
+    "longitude": 109.212583,
+    "lat": 13.791312,
+    "lng": 109.212583,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbv2ojf6bo4c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbv2ojf6bo4c@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng - Cô Hai tọa lạc tại 295 Lê Thanh Nghị, P. Đống Đa, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng - Cô Hai cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835346",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Cô Hai",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-hai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20C%C3%B4%20Hai",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 259,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi Cháo Lòng Lê Hồng Phong",
+    "address": "172 Lê Hồng Phong, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772767,
+    "longitude": 109.228216,
+    "lat": 13.772767,
+    "lng": 109.228216,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe7id92ge6z89@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe7id92ge6z89@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng Lê Hồng Phong tọa lạc tại 172 Lê Hồng Phong, P. Trần Phú, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi Cháo Lòng Lê Hồng Phong cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835483",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Lê Hồng Phong",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-le-hong-phong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 260,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+    "restaurant": "Bánh Hỏi Cháo Lòng - Đô Đốc Bảo",
+    "address": "52 Đô Đốc Bảo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.765495,
+    "longitude": 109.222862,
+    "lat": 13.765495,
+    "lng": 109.222862,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwd3gy3us89l74@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwd3gy3us89l74@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi Cháo Lòng - Đô Đốc Bảo tọa lạc tại 52 Đô Đốc Bảo, phục vụ món Ốc Hương Xào Trứng Muối Béo Ngậy hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Ốc Hương Xào Trứng Muối Béo Ngậy tại Bánh Hỏi Cháo Lòng - Đô Đốc Bảo cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835620",
+    "menu": [
+      {
+        "name": "Ốc Hương Xào Trứng Muối Béo Ngậy",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi Cháo Lòng - Đô Đốc Bảo",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-do-doc-bao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 261,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Hoàng Kim Quán - Bánh Hỏi Cháo Lòng",
+    "address": "74 Tôn Đức Thắng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 1.0km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.77411,
+    "longitude": 109.224218,
+    "lat": 13.77411,
+    "lng": 109.224218,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa7ckixg4bdef@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa7ckixg4bdef@resize_ss640x400"
+    ],
+    "description": "Quán Hoàng Kim Quán - Bánh Hỏi Cháo Lòng tọa lạc tại 74 Tôn Đức Thắng, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Hoàng Kim Quán - Bánh Hỏi Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835757",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Hoàng Kim Quán - Bánh Hỏi Cháo Lòng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hoang-kim-quan-banh-hoi-chao-long",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Kim%20Qu%C3%A1n%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 262,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Cuốn & Bún Thịt Nướng Cô Toàn",
+    "address": "15 Trần Văn Ơn, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.9,
+    "distanceText": "Cách bạn 2.9km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7558416,
+    "longitude": 109.2156392,
+    "lat": 13.7558416,
+    "lng": 109.2156392,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mfdfzdjy8b2h36@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mfdfzdjy8b2h36@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Cuốn & Bún Thịt Nướng Cô Toàn tọa lạc tại 15 Trần Văn Ơn, P. Nguyễn Văn Cừ, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Cuốn & Bún Thịt Nướng Cô Toàn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3835894",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Cuốn & Bún Thịt Nướng Cô Toàn - 15 Trần Văn Ơn",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-bun-thit-nuong-co-toan-15-tran-van-on",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20%26%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20C%C3%B4%20To%C3%A0n%20-%2015%20Tr%E1%BA%A7n%20V%C4%83n%20%C6%A0n",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 263,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Cô Tâm - Bánh Hỏi & Cháo Lòng",
+    "address": "18 Hàm Nghi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.764629,
+    "longitude": 109.216507,
+    "lat": 13.764629,
+    "lng": 109.216507,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgupa4myqxl43@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgupa4myqxl43@resize_ss640x400"
+    ],
+    "description": "Quán Cô Tâm - Bánh Hỏi & Cháo Lòng tọa lạc tại 18 Hàm Nghi, P. Ngô Mây, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Cô Tâm - Bánh Hỏi & Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836031",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cô Tâm - Bánh Hỏi & Cháo Lòng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-tam-banh-hoi-chao-long",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20T%C3%A2m%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 264,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Bánh Hỏi & Cháo Lòng",
+    "address": "171 Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.774825,
+    "longitude": 109.230468,
+    "lat": 13.774825,
+    "lng": 109.230468,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic",
+      "budget"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwalu3lue1nff3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwalu3lue1nff3@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Hỏi & Cháo Lòng tọa lạc tại 171 Trần Cao Vân, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Bánh Hỏi & Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836168",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Hỏi & Cháo Lòng - Trần Cao Vân",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-cao-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 265,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+    "restaurant": "Quán Nẫu - Bánh Hỏi & Cháo Lòng",
+    "address": "70 Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "30.000đ - 55.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "noodles",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.770295,
+    "longitude": 109.229114,
+    "lat": 13.770295,
+    "lng": 109.229114,
+    "moodIds": [
+      "comfort",
+      "budget",
+      "chill",
+      "energetic"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Noodles",
+      "#ShopeeFood",
+      "#Nóng_hổi"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhxfagibbvdea@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhxfagibbvdea@resize_ss640x400"
+    ],
+    "description": "Quán Quán Nẫu - Bánh Hỏi & Cháo Lòng tọa lạc tại 70 Lê Hồng Phong, phục vụ món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà tại Quán Nẫu - Bánh Hỏi & Cháo Lòng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836305",
+    "menu": [
+      {
+        "name": "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà",
+        "price": "30.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Nẫu - Bánh Hỏi & Cháo Lòng",
+        "price": "55.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nau-banh-hoi-chao-long",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%E1%BA%ABu%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 266,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Gà Lá É Cay Nồng Ớt Xiêm",
+    "restaurant": "Lẩu Gà Lá É - Tây Sơn Quán",
+    "address": "214 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7913358,
+    "longitude": 109.2134174,
+    "lat": 13.7913358,
+    "lng": 109.2134174,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl9ww4izbpgf2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl9ww4izbpgf2@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Gà Lá É - Tây Sơn Quán tọa lạc tại 214 Lê Thanh Nghị, P. Đống Đa, phục vụ món Lẩu Gà Lá É Cay Nồng Ớt Xiêm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Gà Lá É Cay Nồng Ớt Xiêm tại Lẩu Gà Lá É - Tây Sơn Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836442",
+    "menu": [
+      {
+        "name": "Lẩu Gà Lá É Cay Nồng Ớt Xiêm",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Gà Lá É - Tây Sơn Quán",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-ga-la-e-tay-son-quan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20G%C3%A0%20L%C3%A1%20%C3%89%20-%20T%C3%A2y%20S%C6%A1n%20Qu%C3%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 267,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+    "restaurant": "Lẩu Thái Tomyum, Lẩu Bò Tứ Xuyên & Nướng - Tây Sơn Quán",
+    "address": "214 Lê Thanh Nghị, P. Đống Đa",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7913883,
+    "longitude": 109.2134417,
+    "lat": 13.7913883,
+    "lng": 109.2134417,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl2brnrmayu41@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mjl2brnrmayu41@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Thái Tomyum, Lẩu Bò Tứ Xuyên & Nướng - Tây Sơn Quán tọa lạc tại 214 Lê Thanh Nghị, P. Đống Đa, phục vụ món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị tại Lẩu Thái Tomyum, Lẩu Bò Tứ Xuyên & Nướng - Tây Sơn Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836579",
+    "menu": [
+      {
+        "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Thái Tomyum, Lẩu Bò Tứ Xuyên & Nướng - Tây Sơn Quán",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-thai-tomyum-lau-bo-tu-xuyen-nuong-tay-son-quan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Th%C3%A1i%20Tomyum%2C%20L%E1%BA%A9u%20B%C3%B2%20T%E1%BB%A9%20Xuy%C3%AAn%20%26%20N%C6%B0%E1%BB%9Bng%20-%20T%C3%A2y%20S%C6%A1n%20Qu%C3%A1n",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 268,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Lẩu Chay Thiện Duyên - Lẩu Chay",
+    "address": "8 Võ Mười, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7684563,
+    "longitude": 109.2171985,
+    "lat": 13.7684563,
+    "lng": 109.2171985,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-ly23ctxptyvt05@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7r98o-ly23ctxptyvt05@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Chay Thiện Duyên - Lẩu Chay tọa lạc tại 8 Võ Mười, P. Ngô Mây, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Lẩu Chay Thiện Duyên - Lẩu Chay cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836716",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Chay Thiện Duyên - Lẩu Chay",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-chay-thien-duyen-lau-chay",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Chay%20Thi%E1%BB%87n%20Duy%C3%AAn%20-%20L%E1%BA%A9u%20Chay",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 269,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Gà Lá É Cay Nồng Ớt Xiêm",
+    "restaurant": "Lẩu Gà Lá É Tao Ngộ Quán",
+    "address": "86 Bình Hà, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.2,
+    "distanceText": "Cách bạn 1.2km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7817108,
+    "longitude": 109.2306955,
+    "lat": 13.7817108,
+    "lng": 109.2306955,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mhhmyenqesxxc5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mhhmyenqesxxc5@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Gà Lá É Tao Ngộ Quán tọa lạc tại 86 Bình Hà, P. Thị Nại, phục vụ món Lẩu Gà Lá É Cay Nồng Ớt Xiêm hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Gà Lá É Cay Nồng Ớt Xiêm tại Lẩu Gà Lá É Tao Ngộ Quán cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836853",
+    "menu": [
+      {
+        "name": "Lẩu Gà Lá É Cay Nồng Ớt Xiêm",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Gà Lá É Tao Ngộ Quán - 86 Bình Hà",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-ga-la-e-tao-ngo-quan-86-binh-ha",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20G%C3%A0%20L%C3%A1%20%C3%89%20Tao%20Ng%E1%BB%99%20Qu%C3%A1n%20-%2086%20B%C3%ACnh%20H%C3%A0",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 270,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+    "restaurant": "PHỞ VŨ SÀI GÒN - Phở Bò, Bún Bò Huế & Lẩu Bò",
+    "address": "1 Ngọc Hân Công Chúa, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7679715,
+    "longitude": 109.2286657,
+    "lat": 13.7679715,
+    "lng": 109.2286657,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhive11cxw03@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvhive11cxw03@resize_ss640x400"
+    ],
+    "description": "Quán PHỞ VŨ SÀI GÒN - Phở Bò, Bún Bò Huế & Lẩu Bò tọa lạc tại 1 Ngọc Hân Công Chúa, P. Trần Phú, phục vụ món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị tại PHỞ VŨ SÀI GÒN - Phở Bò, Bún Bò Huế & Lẩu Bò cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3836990",
+    "menu": [
+      {
+        "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt PHỞ VŨ SÀI GÒN - Phở Bò, Bún Bò Huế & Lẩu Bò - 01 Ngọc Hân Công Chúa",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pho-vu-sai-gon-pho-bo-bun-bo-hue-lau-bo-01-ngoc-han-cong-chua",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=PH%E1%BB%9E%20V%C5%A8%20S%C3%80I%20G%C3%92N%20-%20Ph%E1%BB%9F%20B%C3%B2%2C%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20%26%20L%E1%BA%A9u%20B%C3%B2%20-%2001%20Ng%E1%BB%8Dc%20H%C3%A2n%20C%C3%B4ng%20Ch%C3%BAa",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 271,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Mì Cay Và Lẩu Sanu Quy Nhơn - Hùng Vương",
+    "address": "1290 Hùng Vương, P. Trần Quang Diệu",
+    "district": "Tp. Qui Nhơn",
+    "distance": 6.5,
+    "distanceText": "Cách bạn 6.5km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.794512,
+    "longitude": 109.160672,
+    "lat": 13.794512,
+    "lng": 109.160672,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc2saj66dg02@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc2saj66dg02@resize_ss640x400"
+    ],
+    "description": "Quán Mì Cay Và Lẩu Sanu Quy Nhơn - Hùng Vương tọa lạc tại 1290 Hùng Vương, P. Trần Quang Diệu, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Mì Cay Và Lẩu Sanu Quy Nhơn - Hùng Vương cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837127",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Mì Cay Và Lẩu Sanu Quy Nhơn - Hùng Vương",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-cay-va-lau-sanu-quy-nhon-hung-vuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20V%C3%A0%20L%E1%BA%A9u%20Sanu%20Quy%20Nh%C6%A1n%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 272,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Lẩu Ly & Tokbokki",
+    "address": "22C Phan Bội Châu, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7736893,
+    "longitude": 109.2358631,
+    "lat": 13.7736893,
+    "lng": 109.2358631,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m9tzfu7dcapw02@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m9tzfu7dcapw02@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Ly & Tokbokki tọa lạc tại 22C Phan Bội Châu, P. Lê Lợi, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Lẩu Ly & Tokbokki cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837264",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Ly & Tokbokki - 22C Phan Bội Châu",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-ly-tokbokki-22c-phan-boi-chau",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Ly%20%26%20Tokbokki%20-%2022C%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 273,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Phá Lấu Ông Hoàng - Mỳ Trộn Indomie",
+    "address": "169 Nguyễn Thái Học, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7699742,
+    "longitude": 109.2180128,
+    "lat": 13.7699742,
+    "lng": 109.2180128,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m8h9tfnkkdwu1c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m8h9tfnkkdwu1c@resize_ss640x400"
+    ],
+    "description": "Quán Phá Lấu Ông Hoàng - Mỳ Trộn Indomie tọa lạc tại 169 Nguyễn Thái Học, P. Ngô Mây, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Phá Lấu Ông Hoàng - Mỳ Trộn Indomie cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837401",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Phá Lấu Ông Hoàng - Mỳ Trộn Indomie - Nguyễn Thái Học",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pha-lau-ong-hoang-my-tron-indomie-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20%C3%94ng%20Ho%C3%A0ng%20-%20M%E1%BB%B3%20Tr%E1%BB%99n%20Indomie%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 274,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+    "restaurant": "Lẩu Bò Hiền Hoà",
+    "address": "275 Bạch Đằng, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.3,
+    "distanceText": "Cách bạn 1.3km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7778476,
+    "longitude": 109.2306837,
+    "lat": 13.7778476,
+    "lng": 109.2306837,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-muuof1mupn9g44@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-muuof1mupn9g44@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Bò Hiền Hoà tọa lạc tại 275 Bạch Đằng, P. Trần Hưng Đạo, phục vụ món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Bò Ba Toa Quán Gỗ Đậm Vị tại Lẩu Bò Hiền Hoà cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837538",
+    "menu": [
+      {
+        "name": "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Bò Hiền Hoà - 275 Bạch Đằng",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-bo-hien-hoa-275-bach-dang",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20Hi%E1%BB%81n%20Ho%C3%A0%20-%20275%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 275,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Lẫu Mắm Pà Má",
+    "address": "70 Nam Cao, P. Ghềnh Ráng",
+    "district": "Tp. Qui Nhơn",
+    "distance": 4.6,
+    "distanceText": "Cách bạn 4.6km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.741952,
+    "longitude": 109.2091803,
+    "lat": 13.741952,
+    "lng": 109.2091803,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lwe7c749hcd765@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lwe7c749hcd765@resize_ss640x400"
+    ],
+    "description": "Quán Lẫu Mắm Pà Má tọa lạc tại 70 Nam Cao, P. Ghềnh Ráng, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Lẫu Mắm Pà Má cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837675",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẫu Mắm Pà Má",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-mam-pa-ma",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%ABu%20M%E1%BA%AFm%20P%C3%A0%20M%C3%A1",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 276,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Phá Lấu Oshi",
+    "address": "43 Nguyễn Nhạc, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7639519,
+    "longitude": 109.2187817,
+    "lat": 13.7639519,
+    "lng": 109.2187817,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mr1mmo4uj286b0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-81ztc-mr1mmo4uj286b0@resize_ss640x400"
+    ],
+    "description": "Quán Phá Lấu Oshi tọa lạc tại 43 Nguyễn Nhạc, P. Ngô Mây, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Phá Lấu Oshi cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837812",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Phá Lấu Oshi - 43 Nguyễn Nhạc",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pha-lau-oshi-43-nguyen-nhac",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20Oshi%20-%2043%20Nguy%E1%BB%85n%20Nh%E1%BA%A1c",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 277,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Lẩu Gà 97",
+    "address": "97 Phó Đức Chính, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.6,
+    "distanceText": "Cách bạn 550m",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7778387,
+    "longitude": 109.2224868,
+    "lat": 13.7778387,
+    "lng": 109.2224868,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m1wq9z3zvsczd1@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m1wq9z3zvsczd1@resize_ss640x400"
+    ],
+    "description": "Quán Lẩu Gà 97 tọa lạc tại 97 Phó Đức Chính, P. Lê Hồng Phong, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Lẩu Gà 97 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3837949",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Lẩu Gà 97 - Phó Đức Chính",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/lau-ga-97-pho-duc-chinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20G%C3%A0%2097%20-%20Ph%C3%B3%20%C4%90%E1%BB%A9c%20Ch%C3%ADnh",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 278,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+    "restaurant": "Cá Lóc Cô Sáu - Phan Đình Phùng",
+    "address": "22A Phan Đình Phùng, P. Trần Hưng Đạo",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1,
+    "distanceText": "Cách bạn 950m",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7777904,
+    "longitude": 109.227504,
+    "lat": 13.7777904,
+    "lng": 109.227504,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mdfykyo72y3z46@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mdfykyo72y3z46@resize_ss640x400"
+    ],
+    "description": "Quán Cá Lóc Cô Sáu - Phan Đình Phùng tọa lạc tại 22A Phan Đình Phùng, P. Trần Hưng Đạo, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Cá Lóc Cô Sáu - Phan Đình Phùng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838086",
+    "menu": [
+      {
+        "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Cá Lóc Cô Sáu - Phan Đình Phùng",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ca-loc-co-sau-phan-dinh-phung",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A1%20L%C3%B3c%20C%C3%B4%20S%C3%A1u%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 279,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "GreenMart",
+    "address": "69 Trần Cao Vân",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.771285,
+    "longitude": 109.230522,
+    "lat": 13.771285,
+    "lng": 109.230522,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-miaypef2wd1k69@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-miaypef2wd1k69@resize_ss640x400"
+    ],
+    "description": "Quán GreenMart tọa lạc tại 69, Trần Cao Vân, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại GreenMart cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838223",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt GreenMart - 69 Trần Cao Vân",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/greenmart-69-tran-cao-van",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=GreenMart%20-%2069%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 280,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Đặc Khu Nhậu",
+    "address": "13 - 14 Bùi Hữu Nghĩa, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.8,
+    "distanceText": "Cách bạn 2.8km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7572512,
+    "longitude": 109.2149139,
+    "lat": 13.7572512,
+    "lng": 109.2149139,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m9a2rwni1qh0e0@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m9a2rwni1qh0e0@resize_ss640x400"
+    ],
+    "description": "Quán Đặc Khu Nhậu tọa lạc tại 13 - 14 Bùi Hữu Nghĩa, P. Nguyễn Văn Cừ, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Đặc Khu Nhậu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838360",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Đặc Khu Nhậu - Bùi Hữu Nghĩa",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/dac-khu-nhau-bui-huu-nghia",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%B7c%20Khu%20Nh%E1%BA%ADu%20-%20B%C3%B9i%20H%E1%BB%AFu%20Ngh%C4%A9a",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 281,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Ẩm Thực Chay Pháp Luân",
+    "address": "10 Hàm Nghi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 5,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7642617,
+    "longitude": 109.2164048,
+    "lat": 13.7642617,
+    "lng": 109.2164048,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mdwsy9bp8nwk16@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mdwsy9bp8nwk16@resize_ss640x400"
+    ],
+    "description": "Quán Ẩm Thực Chay Pháp Luân tọa lạc tại 10 Hàm Nghi, P. Ngô Mây, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Ẩm Thực Chay Pháp Luân cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838497",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ẩm Thực Chay Pháp Luân - Hàm Nghi",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-phap-luan-ham-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20Chay%20Ph%C3%A1p%20Lu%C3%A2n%20-%20H%C3%A0m%20Nghi",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 282,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Nẫu Cuốn",
+    "address": "84 - 86 - 88 Đống Đa, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.5,
+    "distanceText": "Cách bạn 450m",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 10,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7845925,
+    "longitude": 109.2229716,
+    "lat": 13.7845925,
+    "lng": 109.2229716,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mhvo07rqgqh46c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mhvo07rqgqh46c@resize_ss640x400"
+    ],
+    "description": "Quán Nẫu Cuốn tọa lạc tại 84 - 86 - 88 Đống Đa, P. Thị Nại, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Nẫu Cuốn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838634",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nẫu Cuốn - 84 86 88 Đống Đa",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nau-cuon-84-86-88-dong-da",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%ABu%20Cu%E1%BB%91n%20-%2084%2086%2088%20%C4%90%E1%BB%91ng%20%C4%90a",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 283,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "DÊ KHÔNG TÊN",
+    "address": "52 Bình Hà, P. Thị Nại",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.4,
+    "distanceText": "Cách bạn 1.4km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 15,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.781348,
+    "longitude": 109.2325038,
+    "lat": 13.781348,
+    "lng": 109.2325038,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mauv0ibr170h90@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-mauv0ibr170h90@resize_ss640x400"
+    ],
+    "description": "Quán DÊ KHÔNG TÊN tọa lạc tại 52 Bình Hà, P. Thị Nại, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại DÊ KHÔNG TÊN cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838771",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt DÊ KHÔNG TÊN - 52 Bình Hà",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/de-khong-ten-52-binh-ha",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=D%C3%8A%20KH%C3%94NG%20T%C3%8AN%20-%2052%20B%C3%ACnh%20H%C3%A0",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 284,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "XÓM TIÊU QUÁN",
+    "address": "71 Xuân Thuỷ, P. Quang Trung",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.7,
+    "distanceText": "Cách bạn 2.7km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 20,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7629459,
+    "longitude": 109.2048047,
+    "lat": 13.7629459,
+    "lng": 109.2048047,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg1ntkb1qfwv55@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg1ntkb1qfwv55@resize_ss640x400"
+    ],
+    "description": "Quán XÓM TIÊU QUÁN tọa lạc tại 71 Xuân Thuỷ, P. Quang Trung, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại XÓM TIÊU QUÁN cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3838908",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt XÓM TIÊU QUÁN - 71 Xuân Thuỷ",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/xom-tieu-quan-71-xuan-thuy",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%93M%20TI%C3%8AU%20QU%C3%81N%20-%2071%20Xu%C3%A2n%20Thu%E1%BB%B7",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 285,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "ẨM THỰC CHAY MINH AN VEGAN",
+    "address": "28 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.2,
+    "distanceText": "Cách bạn 2.2km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 25,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7623578,
+    "longitude": 109.2167193,
+    "lat": 13.7623578,
+    "lng": 109.2167193,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-maw8kska09g7ab@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-maw8kska09g7ab@resize_ss640x400"
+    ],
+    "description": "Quán ẨM THỰC CHAY MINH AN VEGAN tọa lạc tại 28 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại ẨM THỰC CHAY MINH AN VEGAN cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839045",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt ẨM THỰC CHAY MINH AN VEGAN",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-minh-an-vegan",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8M%20TH%E1%BB%B0C%20CHAY%20MINH%20AN%20VEGAN",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 286,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Út Đen - Lẩu Mang Về - Ngô Đức Đệ",
+    "address": "8 Ngô Đức Đệ, KV 4",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3,
+    "distanceText": "Cách bạn 3.0km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 30,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.756186,
+    "longitude": 109.211311,
+    "lat": 13.756186,
+    "lng": 109.211311,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mu28eh5halfl9f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mu28eh5halfl9f@resize_ss640x400"
+    ],
+    "description": "Quán Út Đen - Lẩu Mang Về - Ngô Đức Đệ tọa lạc tại 8 Ngô Đức Đệ, KV 4, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Út Đen - Lẩu Mang Về - Ngô Đức Đệ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839182",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Út Đen - Lẩu Mang Về - Ngô Đức Đệ",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ut-den-lau-mang-ve-ngo-duc-de",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%9At%20%C4%90en%20-%20L%E1%BA%A9u%20Mang%20V%E1%BB%81%20-%20Ng%C3%B4%20%C4%90%E1%BB%A9c%20%C4%90%E1%BB%87",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 287,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Ếch Xanh Quy Nhơn",
+    "address": "3 Trương Văn Của, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 3.1,
+    "distanceText": "Cách bạn 3.1km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 35,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.754667,
+    "longitude": 109.213843,
+    "lat": 13.754667,
+    "lng": 109.213843,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m514iilmtmxj3f@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m514iilmtmxj3f@resize_ss640x400"
+    ],
+    "description": "Quán Ếch Xanh Quy Nhơn tọa lạc tại 3 Trương Văn Của, P. Nguyễn Văn Cừ, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Ếch Xanh Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839319",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ếch Xanh Quy Nhơn - Lô 03 Trương Văn Của",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ech-xanh-quy-nhon-lo-03-truong-van-cua",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%BEch%20Xanh%20Quy%20Nh%C6%A1n%20-%20L%C3%B4%2003%20Tr%C6%B0%C6%A1ng%20V%C4%83n%20C%E1%BB%A7a",
+    "deliveryTime": "30 - 45 phút",
+    "deliveryFee": "22.000đ (Áp mã Freeship)",
+    "deliveryFeeVal": 22000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 288,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+    "restaurant": "Gánh Cua Mợ Út - Bánh Canh Cua, Lẩu Cua & Cơm Cua",
+    "address": "55 Biên Cương, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "60.000đ - 280.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 40,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "seafood",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7658982,
+    "longitude": 109.217883,
+    "lat": 13.7658982,
+    "lng": 109.217883,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "spicy",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Seafood",
+      "#ShopeeFood",
+      "#Hải_sản_tươi_sống"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m8yfeql1nlv21c@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m8yfeql1nlv21c@resize_ss640x400"
+    ],
+    "description": "Quán Gánh Cua Mợ Út - Bánh Canh Cua, Lẩu Cua & Cơm Cua tọa lạc tại 55 Biên Cương, P. Ngô Mây, phục vụ món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn tại Gánh Cua Mợ Út - Bánh Canh Cua, Lẩu Cua & Cơm Cua cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839456",
+    "menu": [
+      {
+        "name": "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn",
+        "price": "60.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Gánh Cua Mợ Út - Bánh Canh Cua, Lẩu Cua & Cơm Cua - 55 Biên Cương, Quy Nhơn",
+        "price": "280.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ganh-cua-mo-ut-banh-canh-cua-lau-cua-com-cua-55-bien-cuong-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ga%CC%81nh%20Cua%20M%C6%A1%CC%A3%20U%CC%81t%20-%20Ba%CC%81nh%20Canh%20Cua%2C%20L%C3%A2%CC%89u%20Cua%20%26%20C%C6%A1m%20Cua%20-%2055%20Bi%C3%AAn%20C%C6%B0%C6%A1ng%2C%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 289,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+    "restaurant": "Pepa’s Kitchen",
+    "address": "245 Nguyễn Thị Minh Khai, P. Nguyễn Văn Cừ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.1,
+    "distanceText": "Cách bạn 2.1km",
+    "priceRange": "150.000đ - 350.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 45,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "hotpot",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763539,
+    "longitude": 109.2148242,
+    "lat": 13.763539,
+    "lng": 109.2148242,
+    "moodIds": [
+      "comfort",
+      "chill",
+      "craving",
+      "celebrate",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Hotpot",
+      "#ShopeeFood",
+      "#Ấm_áp"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mdzvxbn7p81ya2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mdzvxbn7p81ya2@resize_ss640x400"
+    ],
+    "description": "Quán Pepa’s Kitchen tọa lạc tại 245 Nguyễn Thị Minh Khai, P. Nguyễn Văn Cừ, phục vụ món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Lẩu Hải Sản Nấm Chua Cay Khổng Lồ tại Pepa’s Kitchen cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839593",
+    "menu": [
+      {
+        "name": "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ",
+        "price": "150.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Pepa’s Kitchen - 245 Nguyễn Thị Minh Khai",
+        "price": "350.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pepas-kitchen-245-nguyen-thi-minh-khai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pepa%E2%80%99s%20Kitchen%20-%20245%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 290,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Quán Nướng 40",
+    "address": "19 Phạm Ngũ Lão, P. Lê Hồng Phong",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.1,
+    "distanceText": "Cách bạn 1.1km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 50,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.772499,
+    "longitude": 109.2187684,
+    "lat": 13.772499,
+    "lng": 109.2187684,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2twt8qn77rad4@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ras8-m2twt8qn77rad4@resize_ss640x400"
+    ],
+    "description": "Quán Quán Nướng 40 tọa lạc tại 19 Phạm Ngũ Lão, P. Lê Hồng Phong, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Quán Nướng 40 cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839730",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Nướng 40 - 19 Phạm Ngũ Lão",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nuong-40-19-pham-ngu-lao",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%C6%B0%E1%BB%9Bng%2040%20-%2019%20Ph%E1%BA%A1m%20Ng%C5%A9%20L%C3%A3o",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 291,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Quán Nướng Happy",
+    "address": "290 Xuân Diệu, P. Trần Phú",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.9,
+    "distanceText": "Cách bạn 1.9km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 55,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7666926,
+    "longitude": 109.2281082,
+    "lat": 13.7666926,
+    "lng": 109.2281082,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbwodmzlaxf3@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbwodmzlaxf3@resize_ss640x400"
+    ],
+    "description": "Quán Quán Nướng Happy tọa lạc tại 290 Xuân Diệu, P. Trần Phú, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Quán Nướng Happy cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3839867",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Quán Nướng Happy - Xuân Diệu",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nuong-happy-xuan-dieu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%C6%B0%E1%BB%9Bng%20Happy%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 292,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "QUÁN NƯỚNG 2H",
+    "address": "122/2 Hoàng Văn Thụ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2.3,
+    "distanceText": "Cách bạn 2.3km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 60,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7635948,
+    "longitude": 109.21001,
+    "lat": 13.7635948,
+    "lng": 109.21001,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lxv75jcrrye3e6@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lxv75jcrrye3e6@resize_ss640x400"
+    ],
+    "description": "Quán QUÁN NƯỚNG 2H tọa lạc tại 122/2, Hoàng Văn Thụ, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại QUÁN NƯỚNG 2H cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840004",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt QUÁN NƯỚNG 2H - Hẻm 122/2 Hoàng Văn Thụ",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nuong-2h-hem-1222-hoang-van-thu",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20N%C6%AF%E1%BB%9ANG%202H%20-%20H%E1%BA%BBm%20122/2%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 293,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Tiệm Bé Bòn - Bánh Tráng Nướng - Trần Thị Kỷ",
+    "address": "23 Trần Thị Kỷ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 65,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7689281,
+    "longitude": 109.2191302,
+    "lat": 13.7689281,
+    "lng": 109.2191302,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mn7hu6tn4dfn36@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-81ztc-mn7hu6tn4dfn36@resize_ss640x400"
+    ],
+    "description": "Quán Tiệm Bé Bòn - Bánh Tráng Nướng - Trần Thị Kỷ tọa lạc tại 23 Trần Thị Kỷ, P. Ngô Mây, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Tiệm Bé Bòn - Bánh Tráng Nướng - Trần Thị Kỷ cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840141",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Tiệm Bé Bòn - Bánh Tráng Nướng - Trần Thị Kỷ",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tiem-be-bon-banh-trang-nuong-tran-thi-ky",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A9%20B%C3%B2n%20-%20B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 294,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Gà Chỉ Quy Nhơn Nướng Muối Ớt Mật Ong",
+    "restaurant": "Ăn Vặt Sáu Lượng - Bánh Tráng Nướng, Trứng Nướng & Chân Gà Sốt Thái",
+    "address": "24 Nguyễn Lữ, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 2,
+    "distanceText": "Cách bạn 2.0km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 70,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.763796,
+    "longitude": 109.217918,
+    "lat": 13.763796,
+    "lng": 109.217918,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m6nf70vcrxr505@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-7ra0g-m6nf70vcrxr505@resize_ss640x400"
+    ],
+    "description": "Quán Ăn Vặt Sáu Lượng - Bánh Tráng Nướng, Trứng Nướng & Chân Gà Sốt Thái tọa lạc tại 24 Nguyễn Lữ, P. Ngô Mây, phục vụ món Gà Chỉ Quy Nhơn Nướng Muối Ớt Mật Ong hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Gà Chỉ Quy Nhơn Nướng Muối Ớt Mật Ong tại Ăn Vặt Sáu Lượng - Bánh Tráng Nướng, Trứng Nướng & Chân Gà Sốt Thái cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840278",
+    "menu": [
+      {
+        "name": "Gà Chỉ Quy Nhơn Nướng Muối Ớt Mật Ong",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Ăn Vặt Sáu Lượng - Bánh Tráng Nướng, Trứng Nướng & Chân Gà Sốt Thái",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/an-vat-sau-luong-banh-trang-nuong-trung-nuong-chan-ga-sot-thai",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20S%C3%A1u%20L%C6%B0%E1%BB%A3ng%20-%20B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%2C%20Tr%E1%BB%A9ng%20N%C6%B0%E1%BB%9Bng%20%26%20Ch%C3%A2n%20G%C3%A0%20S%E1%BB%91t%20Th%C3%A1i",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 295,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Bánh Tráng Nướng, Tráng Trộn & Trà Trái Cây",
+    "address": "65B Hàm Nghi, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.6,
+    "distanceText": "Cách bạn 1.6km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 75,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7679936,
+    "longitude": 109.2183282,
+    "lat": 13.7679936,
+    "lng": 109.2183282,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg24ivz7t6a45b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-820l4-mg24ivz7t6a45b@resize_ss640x400"
+    ],
+    "description": "Quán Bánh Tráng Nướng, Tráng Trộn & Trà Trái Cây tọa lạc tại 65B Hàm Nghi, P. Ngô Mây, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Bánh Tráng Nướng, Tráng Trộn & Trà Trái Cây cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840415",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bánh Tráng Nướng, Tráng Trộn & Trà Trái Cây - 65B Hàm Nghi",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-trang-nuong-trang-tron-tra-trai-cay-65b-ham-nghi",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%2C%20Tr%C3%A1ng%20Tr%E1%BB%99n%20%26%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%2065B%20H%C3%A0m%20Nghi",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 296,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Bún Thịt Nướng & Nem Chả Hoà - Quy Nhơn",
+    "address": "66A Trần Cao Vân, P. Lê Lợi",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.5,
+    "distanceText": "Cách bạn 1.5km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 80,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7727397,
+    "longitude": 109.230168,
+    "lat": 13.7727397,
+    "lng": 109.230168,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m7kvpwm5264j31@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7ra0g-m7kvpwm5264j31@resize_ss640x400"
+    ],
+    "description": "Quán Bún Thịt Nướng & Nem Chả Hoà - Quy Nhơn tọa lạc tại 66A Trần Cao Vân, P. Lê Lợi, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Bún Thịt Nướng & Nem Chả Hoà - Quy Nhơn cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840552",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Bún Thịt Nướng & Nem Chả Hoà - Quy Nhơn",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-thit-nuong-nem-cha-hoa-quy-nhon",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20%26%20Nem%20Ch%E1%BA%A3%20Ho%C3%A0%20-%20Quy%20Nh%C6%A1n",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 297,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Nem Nướng Nha Trang The House",
+    "address": "332/3/2 Nguyễn Thái Học, P. Ngô Mây",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 85,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7666802,
+    "longitude": 109.2154528,
+    "lat": 13.7666802,
+    "lng": 109.2154528,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134259-820l4-mgn6ahx0bnk8f2@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134259-820l4-mgn6ahx0bnk8f2@resize_ss640x400"
+    ],
+    "description": "Quán Nem Nướng Nha Trang The House tọa lạc tại 332/3/2 Nguyễn Thái Học, P. Ngô Mây, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Nem Nướng Nha Trang The House cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840689",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Nem Nướng Nha Trang The House - Nguyễn Thái Học",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nem-nuong-nha-trang-the-house-nguyen-thai-hoc",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20N%C6%B0%E1%BB%9Bng%20Nha%20Trang%20The%20House%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 298,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "BÚN THỊT NƯỚNG 7 TĨNH",
+    "address": "78 Đô Đốc Bảo, Quy Nhơn",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.8,
+    "distanceText": "Cách bạn 1.8km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 90,
+    "commentsCount": 5,
+    "openTime": "07:00 - 22:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7659053,
+    "longitude": 109.2228558,
+    "lat": 13.7659053,
+    "lng": 109.2228558,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lzk2inmbl5lt21@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lzk2inmbl5lt21@resize_ss640x400"
+    ],
+    "description": "Quán BÚN THỊT NƯỚNG 7 TĨNH tọa lạc tại 78 Đô Đốc Bảo, Quy Nhơn, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại BÚN THỊT NƯỚNG 7 TĨNH cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840826",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt BÚN THỊT NƯỚNG 7 TĨNH",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-thit-nuong-7-tinh",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20TH%E1%BB%8AT%20N%C6%AF%E1%BB%9ANG%207%20T%C4%A8NH",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryPromoCode": "SHOPEE25K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 299,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Vịt Nướng Lu",
+    "address": "96 Nguyễn Thái Học, Quy Nhơn",
+    "district": "Tp. Qui Nhơn",
+    "distance": 0.9,
+    "distanceText": "Cách bạn 850m",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 95,
+    "commentsCount": 5,
+    "openTime": "08:00 - 23:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7743688,
+    "longitude": 109.2207248,
+    "lat": 13.7743688,
+    "lng": 109.2207248,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "budget",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbz7th6duh3b@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvbz7th6duh3b@resize_ss640x400"
+    ],
+    "description": "Quán Vịt Nướng Lu tọa lạc tại 96 Nguyễn Thái Học, Quy Nhơn, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Vịt Nướng Lu cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3840963",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Vịt Nướng Lu - Lê Hồng Phong",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/vit-nuong-lu-le-hong-phong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20Lu%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+    "deliveryTime": "15 - 20 phút",
+    "deliveryFee": "Freeship đơn từ 50k",
+    "deliveryFeeVal": 0,
+    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryPromoCode": "SHOPEE30K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  },
+  {
+    "id": 300,
+    "cityId": "quynhon",
+    "cityName": "Quy Nhơn",
+    "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+    "restaurant": "Má Heo Nướng",
+    "address": "57 - 59 Đặng Văn Ngữ",
+    "district": "Tp. Qui Nhơn",
+    "distance": 1.7,
+    "distanceText": "Cách bạn 1.7km",
+    "priceRange": "80.000đ - 220.000đ",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "likesCount": 0,
+    "commentsCount": 5,
+    "openTime": "06:00 - 21:30",
+    "category": "bbq",
+    "source": "ShopeeFood",
+    "sourceIcon": "🛍️",
+    "latitude": 13.7784301,
+    "longitude": 109.2353242,
+    "lat": 13.7784301,
+    "lng": 109.2353242,
+    "moodIds": [
+      "late_night",
+      "chill",
+      "energetic",
+      "celebrate",
+      "comfort",
+      "craving",
+      "celebrate",
+      "late_night"
+    ],
+    "weather": [
+      "sunny",
+      "rainy",
+      "hot"
+    ],
+    "weatherNote": "Quy Nhơn 24°C 🌧️",
+    "tags": [
+      "#Bbq",
+      "#ShopeeFood",
+      "#Xì_xèo"
+    ],
+    "sideRibbon": [
+      "#hot",
+      "#chuẩn_vị"
+    ],
+    "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc0mdd7744a5@resize_ss640x400",
+    "gallery": [
+      "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lsvc0mdd7744a5@resize_ss640x400"
+    ],
+    "description": "Quán Má Heo Nướng tọa lạc tại 57 - 59 Đặng Văn Ngữ, phục vụ món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "recommendReason": "Món Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện tại Má Heo Nướng cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
+    "hotline": "0256 3841100",
+    "menu": [
+      {
+        "name": "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện",
+        "price": "80.000đ",
+        "highlight": true
+      },
+      {
+        "name": "Phần đặc biệt Má Heo Nướng",
+        "price": "220.000đ",
+        "highlight": false
+      },
+      {
+        "name": "Trà đá / Nước suối",
+        "price": "10.000đ",
+        "highlight": false
+      }
+    ],
+    "deliveryPlatform": "ShopeeFood",
+    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ma-heo-nuong",
+    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%A1%20Heo%20N%C6%B0%E1%BB%9Bng",
+    "deliveryTime": "20 - 30 phút",
+    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
+    "deliveryFeeVal": 16000,
+    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryPromoCode": "SHOPEE20K",
+    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+  }
+]
     ],
     "weather": [
       "sunny",
@@ -22055,7 +45362,7 @@ const APP_DATA = {
     "cityName": "Quy Nhơn",
     "name": "Cá Tà Ma Nướng Than Hoa Muối Ớt",
     "restaurant": "Bún Cá Toàn Hà - Nguyễn Thị Định",
-    "address": "Lô 41, 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
+    "address": "Lô 41 - 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ",
     "district": "Tp. Qui Nhơn",
     "distance": 2.8,
     "distanceText": "Cách bạn 2.8km",
@@ -22101,7 +45408,7 @@ const APP_DATA = {
     "gallery": [
       "https://down-vn.img.susercontent.com/vn-11134513-7ras8-mdgz6uv295m937@resize_ss640x400"
     ],
-    "description": "Quán Bún Cá Toàn Hà - Nguyễn Thị Định tọa lạc tại Lô 41, 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
+    "description": "Quán Bún Cá Toàn Hà - Nguyễn Thị Định tọa lạc tại Lô 41 - 42 Nguyễn Thị Định, P. Nguyễn Văn Cừ, phục vụ món Cá Tà Ma Nướng Than Hoa Muối Ớt hương vị đặc trưng biển Quy Nhơn. Hình ảnh thực tế từ nền tảng ShopeeFood.",
     "recommendReason": "Món Cá Tà Ma Nướng Than Hoa Muối Ớt tại Bún Cá Toàn Hà - Nguyễn Thị Định cực chuẩn vị đặc sản Quy Nhơn, nguyên liệu tươi rói mỗi ngày!",
     "hotline": "0256 3831236",
     "menu": [

@@ -322,12 +322,12 @@ class TasteManager {
       if (cityOpt && Array.isArray(cityOpt.specialties) && cityOpt.specialties.length > 0) {
         cityFoods = cityOpt.specialties.map((spec, sIdx) => {
           let parsedRest = spec.rest || `Đặc Sản ${cityOpt.shortName || cityOpt.city}`;
-          let parsedAddr = cityOpt.address;
+          let parsedAddr = spec.address || cityOpt.address;
           if (spec.rest && /[-–—]/.test(spec.rest)) {
             const parts = spec.rest.split(/[-–—]/);
             parsedRest = parts[0].trim();
             const branch = parts.slice(1).join(' - ').trim();
-            if (branch) {
+            if (branch && !spec.address) {
               parsedAddr = branch;
               const cleanC = (cityOpt.shortName || cityOpt.city || '').split('(')[0].replace(/cũ/gi, '').trim();
               if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {
