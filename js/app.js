@@ -2208,40 +2208,7 @@ class FoodApp {
           </div>
         `}
 
-        ${foodDesc ? `
-          <div>
-            <h4 class="font-bold text-xs text-stone-800 uppercase tracking-wider mb-1.5">Giới thiệu món ăn</h4>
-            <p class="text-xs text-stone-600 leading-relaxed">${foodDesc}</p>
-          </div>
-        ` : ''}
-
-        <div class="bg-stone-50 rounded-2xl p-3.5 border border-stone-100 space-y-2 text-xs">
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Trạng thái:</span>
-            <span class="font-bold ${status.isOpen ? 'text-emerald-600' : 'text-rose-500'} flex items-center gap-1">
-              <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-emerald-500' : 'bg-rose-500'}"></span>
-              ${status.statusText} (${status.detailText})
-            </span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Giờ mở cửa:</span>
-            <span class="font-semibold text-stone-700">${food.openTime || '07:00 - 22:00'}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Giá tham khảo:</span>
-            <span class="font-bold text-rose-600">${food.priceRange || '35.000đ - 65.000đ'}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Địa chỉ:</span>
-            <span class="font-semibold text-stone-700 truncate max-w-[200px]" title="${food.address || ''}">${food.address || 'Đang cập nhật'}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Hotline quán:</span>
-            <span class="font-semibold text-blue-600">${food.phone ? `<a href="tel:${food.phone}" class="hover:underline">${food.phone}</a>` : 'Đang cập nhật'}</span>
-          </div>
-        </div>
-
-        <!-- ShopeeFood Delivery Section -->
+        <!-- ShopeeFood Delivery Section (Đặt trước phần Giới thiệu món ăn) -->
         <div class="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/70 border border-orange-200/90 rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
@@ -2277,6 +2244,39 @@ class FoodApp {
             <span>ĐẶT GIAO HÀNG TRÊN SHOPEEFOOD</span>
             <span class="text-xs">↗</span>
           </button>
+        </div>
+
+        ${foodDesc ? `
+          <div>
+            <h4 class="font-bold text-xs text-stone-800 uppercase tracking-wider mb-1.5">Giới thiệu món ăn</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">${foodDesc}</p>
+          </div>
+        ` : ''}
+
+        <div class="bg-stone-50 rounded-2xl p-3.5 border border-stone-100 space-y-2 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">Trạng thái:</span>
+            <span class="font-bold ${status.isOpen ? 'text-emerald-600' : 'text-rose-500'} flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full ${status.isOpen ? 'bg-emerald-500' : 'bg-rose-500'}"></span>
+              ${status.statusText} (${status.detailText})
+            </span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">Giờ mở cửa:</span>
+            <span class="font-semibold text-stone-700">${food.openTime || '07:00 - 22:00'}</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">Giá tham khảo:</span>
+            <span class="font-bold text-rose-600">${food.priceRange || '35.000đ - 65.000đ'}</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">Địa chỉ:</span>
+            <span class="font-semibold text-stone-700 truncate max-w-[200px]" title="${food.address || ''}">${food.address || 'Đang cập nhật'}</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-stone-400">Hotline quán:</span>
+            <span class="font-semibold text-blue-600">${food.phone ? `<a href="tel:${food.phone}" class="hover:underline">${food.phone}</a>` : 'Đang cập nhật'}</span>
+          </div>
         </div>
 
         <div class="flex gap-2 pt-2">
