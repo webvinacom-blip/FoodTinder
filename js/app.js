@@ -600,23 +600,55 @@ class FoodApp {
     // If matched location has specialties, ensure they are registered in APP_DATA.foods
     if (matchedOpt && Array.isArray(matchedOpt.specialties) && matchedOpt.specialties.length > 0) {
       matchedOpt.specialties.forEach((spec, sIdx) => {
+        let parsedRest = spec.name;
+        let parsedAddr = matchedOpt?.address || address || '';
+        if (spec.rest) {
+          if (/[-–—]/.test(spec.rest)) {
+            const parts = spec.rest.split(/[-–—]/);
+            parsedRest = parts[0].trim();
+            const branch = parts.slice(1).join(' - ').trim();
+            if (branch) {
+              parsedAddr = branch;
+              const cleanC = (matchedOpt?.shortName || matchedOpt?.city || resolvedCityName || '').split('(')[0].replace(/cũ/gi, '').trim();
+              if (cleanC && !parsedAddr.toLowerCase().includes(cleanC.toLowerCase())) {
+                parsedAddr += `, ${cleanC}`;
+              }
+            }
+          } else {
+            parsedRest = spec.rest.trim();
+          }
+        }
+
         const foodId = 6000 + Math.abs(Math.round(lat * 100)) + sIdx;
-        if (!APP_DATA.foods.some(f => f.id === foodId)) {
+        const foodLat = (spec.latitude !== undefined && spec.latitude !== null) ? spec.latitude : (spec.lat || (lat + (sIdx * 0.002)));
+        const foodLng = (spec.longitude !== undefined && spec.longitude !== null) ? spec.longitude : (spec.lng || (lng + (sIdx * 0.002)));
+
+        const existingFood = APP_DATA.foods.find(f => f.id === foodId || (f.name === spec.name && f.cityId === matchedOpt.cityId));
+        if (existingFood) {
+          existingFood.restaurant = parsedRest;
+          existingFood.address = parsedAddr;
+          existingFood.lat = foodLat;
+          existingFood.lng = foodLng;
+          existingFood.latitude = foodLat;
+          existingFood.longitude = foodLng;
+        } else {
           APP_DATA.foods.push({
             id: foodId,
             cityId: matchedOpt.cityId,
             cityName: matchedOpt.shortName || matchedOpt.city,
             name: spec.name,
-            restaurant: spec.rest || `Đặc Sản ${matchedOpt.shortName || matchedOpt.city}`,
-            address: matchedOpt.address || address,
+            restaurant: parsedRest,
+            address: parsedAddr,
             distance: 0.5 + sIdx * 0.3,
             distanceText: `Cách bạn ${(500 + sIdx * 300)}m`,
             weatherNote: `${weather.condition} ${weather.temp}`,
             priceRange: spec.price || "45.000đ - 85.000đ",
             rating: 4.8,
             reviewCount: 320,
-            lat: lat + (sIdx * 0.002),
-            lng: lng + (sIdx * 0.002),
+            lat: foodLat,
+            lng: foodLng,
+            latitude: foodLat,
+            longitude: foodLng,
             category: spec.cat || "streetfood",
             moodIds: ["comfort", "chill", "craving", "energetic", "sad"],
             tags: spec.tags || ["#Đặc_sản", "#Nóng_hổi", "#Đậm_đà"],
@@ -2466,6 +2498,18 @@ class FoodApp {
     // 1. Tên quán gốc và địa chỉ gốc (Giữ nguyên tuyệt đối địa chỉ thực tế từ database)
     let restName = (food.restaurant || food.name || '').trim();
     let rawAddress = (food.address || '').trim();
+
+    // Tách tên quán nếu bị dính kèm địa chỉ (VD: "Bánh Xèo Gia Vỹ 2 - 14 Diên Hồng, TP. Quy Nhơn")
+    if (/[-–—]/.test(restName)) {
+      const parts = restName.split(/[-–—]/);
+      const pureName = parts[0].trim();
+      const addrFromRest = parts.slice(1).join(' - ').trim();
+      if (pureName) restName = pureName;
+      if (addrFromRest && (!rawAddress || rawAddress.includes('Nguyễn Huệ') || !/^[0-9]+/.test(rawAddress))) {
+        rawAddress = addrFromRest;
+      }
+    }
+
     // Bỏ số 0 vô nghĩa ở đầu số nhà (VD: "05 Phó Đức Chính" -> "5 Phó Đức Chính") để Google Maps nhận diện chính xác
     rawAddress = rawAddress.replace(/^0+([1-9])/, '$1');
 
@@ -2511,56 +2555,43 @@ class FoodApp {
     const cleanRestName = restName.replace(/["']/g, '').trim();
     const cleanAddr = fullAddress.replace(/["']/g, '').trim();
 
-    // 1. Phân loại địa chỉ: Quán có số nhà rõ ràng vs Quán chưa rõ số nhà
-    // Địa chỉ rõ ràng: Bắt đầu bằng số nhà (14, 59B, 129/09, 66 - 68, 2A...) hoặc số Lô/Hẻm (Lô 5, Hẻm 48A...)
-    const hasSpecificNumber = /^([0-9]+[A-Za-z\/\-0-9]*|Lô\s+[0-9]+|Hẻm\s+[0-9]+)\s+/i.test(rawAddress);
-
-    // Công thức "Bao vây bằng chữ": (Tên quán + Địa chỉ + Tỉnh/Thành)
-    const fullTextQuery = `${cleanRestName}, ${cleanAddr}`.replace(/,+/g, ',').trim();
-
     // 2. Xác định điểm xuất phát (Origin) - Vị trí hiện tại của người dùng:
     const userLat = APP_DATA?.homeLocation?.lat || APP_DATA?.currentCity?.lat;
     const userLng = APP_DATA?.homeLocation?.lng || APP_DATA?.currentCity?.lng;
     const hasUserCoords = userLat && userLng && !isNaN(Number(userLat)) && !isNaN(Number(userLng));
 
-    // Nếu đã có tọa độ GPS -> truyền thẳng tọa độ &origin=lat,lng để Google Maps tự động định vị và vẽ đường từ chỗ bạn đứng
-    // Nếu chưa có tọa độ -> truyền &origin=Current+Location để kích hoạt chức năng vị trí hiện tại của Google Maps
     const originStr = hasUserCoords
       ? `${Number(userLat).toFixed(6).replace(/\.?0+$/, '')},${Number(userLng).toFixed(6).replace(/\.?0+$/, '')}`
       : 'Current+Location';
 
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
-    // 3. Phân luồng điều hướng:
-    // ƯU TIÊN 1 TUYỆT ĐỐI: Dùng tọa độ GPS chính xác từ ShopeeFood (nơi shipper nhận món)
-    // LÝ DO QUAN TRỌNG:
-    // Trên Google Maps, nhiều quán ăn không đăng ký theo tên quán online trên ShopeeFood (ví dụ: "Ăn Vặt Ngô Mây").
-    // Nếu truyền tên quán bằng chữ, AI tìm kiếm của Google Maps sẽ "đoán mò" và tự động nhảy cóc sang quán khác
-    // có tên gần giống (ví dụ quán "Ăn vặt quy nhơn" ở đường 31/3 cách đó 3.2km).
-    // Dẫn đường bằng TỌA ĐỘ GPS sẽ triệt tiêu 100% lỗi nhảy quán, đưa người dùng đến đúng 101 Ngô Mây (chỉ cách 150m)!
-    let primaryDirUrl = '';
-    let primaryDestHint = '';
-    let statusNoteText = '';
-
-    if (hasValidCoords) {
-      // Dẫn đường GPS chuẩn xác tuyệt đối đến đúng vị trí vật lý của quán
-      primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`;
-      primaryDestHint = `Từ vị trí của bạn ➔ ${cleanRestName}`;
-      statusNoteText = `🎯 Dẫn đường chính xác theo tọa độ GPS (${coordStr}) của ${cleanRestName} tại ${cleanAddr} — đảm bảo không bị Google Maps nhảy nhầm sang quán khác.`;
-    } else {
-      // Nếu quán chưa có tọa độ: Dẫn theo địa chỉ số nhà chuẩn xác (tránh kèm tên quán ảo để Google Maps không bắt nhầm POI)
-      const cleanAddressQuery = hasSpecificNumber ? cleanAddr : fullTextQuery;
-      primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddressQuery)}`;
-      primaryDestHint = `Từ vị trí của bạn ➔ ${cleanAddr}`;
-      statusNoteText = `🏠 Dẫn đường Google Maps từ vị trí hiện tại đến địa chỉ số nhà: ${cleanAddr}.`;
+    // 3. Xây dựng điểm đến tối ưu nhất cho Google Maps:
+    // Kết hợp [Tên Quán] + [Địa chỉ có số nhà, tên đường] + [Thành phố, Tỉnh]
+    // Ví dụ: "Bánh Xèo Gia Vỹ 2, 14 Diên Hồng, TP. Quy Nhơn, Bình Định"
+    // Cú pháp này giúp Google Maps mở đúng POI Doanh nghiệp, dẫn thẳng tới quán và hiển thị đầy đủ thông tin quán.
+    let destQuery = cleanRestName;
+    if (cleanAddr && !cleanRestName.toLowerCase().includes(cleanAddr.toLowerCase())) {
+      destQuery += `, ${cleanAddr}`;
+    } else if (cleanAddr) {
+      destQuery = cleanAddr;
+    }
+    if (cleanCityName && !destQuery.toLowerCase().includes(cleanCityName.toLowerCase())) {
+      destQuery += `, ${cleanCityName}`;
+    }
+    if (cleanProvince && !destQuery.toLowerCase().includes(cleanProvince.toLowerCase())) {
+      destQuery += `, ${cleanProvince}`;
     }
 
-    // 4. URL Tìm kiếm / Ghim vị trí trên Google Maps:
-    const gmapsSearchUrl = hasValidCoords
-      ? `https://www.google.com/maps/search/?api=1&query=${coordStr}`
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanAddr)}`;
+    // URL dẫn đường chính thức trên Google Maps
+    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(destQuery)}`;
+    const primaryDestHint = `Từ vị trí của bạn ➔ ${cleanRestName}`;
+    const statusNoteText = `🎯 Dẫn đường Google Maps trực tiếp đến ${cleanRestName} tại ${cleanAddr}.`;
 
-    // 5. URL Dẫn đường theo Tọa độ GPS vệ tinh:
+    // URL Tìm kiếm / Ghim vị trí trên Google Maps:
+    const gmapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destQuery)}`;
+
+    // URL Dẫn đường theo Tọa độ GPS vệ tinh:
     const gmapsCoordsDirUrl = hasValidCoords
       ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
       : primaryDirUrl;

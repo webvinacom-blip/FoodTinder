@@ -1885,10 +1885,10 @@ const APP_DATA = {
         "price": "35.000đ - 60.000đ",
         "img": "images/banh_xeo_tom_nhay.jpg",
         "rest": "Bánh Xèo Gia Vỹ 2 - 14 Diên Hồng, Quy Nhơn",
-        "lat": 13.772,
-        "lng": 109.2285,
-        "latitude": 13.772,
-        "longitude": 109.2285
+        "lat": 13.773073,
+        "lng": 109.224855,
+        "latitude": 13.773073,
+        "longitude": 109.224855
       }
     ]
   },
@@ -3369,10 +3369,10 @@ const APP_DATA = {
         "price": "35.000đ - 60.000đ",
         "img": "images/banh_xeo_tom_nhay.jpg",
         "reason": "Tôm đất còn nhảy tanh tách đúc trên chảo gang giòn rụm cuốn bánh tráng rau mầm.",
-        "lat": 13.772,
-        "lng": 109.2285,
-        "latitude": 13.772,
-        "longitude": 109.2285
+        "lat": 13.773073,
+        "lng": 109.224855,
+        "latitude": 13.773073,
+        "longitude": 109.224855
       }
     ]
   },
@@ -18063,10 +18063,10 @@ const APP_DATA = {
     "category": "specialty",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
-    "latitude": 13.77197,
-    "longitude": 109.22915,
-    "lat": 13.77197,
-    "lng": 109.22915,
+    "latitude": 13.773073,
+    "longitude": 109.224855,
+    "lat": 13.773073,
+    "lng": 109.224855,
     "moodIds": [
       "comfort",
       "budget",

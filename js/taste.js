@@ -323,8 +323,8 @@ class TasteManager {
         cityFoods = cityOpt.specialties.map((spec, sIdx) => {
           let parsedRest = spec.rest || `Đặc Sản ${cityOpt.shortName || cityOpt.city}`;
           let parsedAddr = cityOpt.address;
-          if (spec.rest && spec.rest.includes(' - ')) {
-            const parts = spec.rest.split(' - ');
+          if (spec.rest && /[-–—]/.test(spec.rest)) {
+            const parts = spec.rest.split(/[-–—]/);
             parsedRest = parts[0].trim();
             const branch = parts.slice(1).join(' - ').trim();
             if (branch) {
