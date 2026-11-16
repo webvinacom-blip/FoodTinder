@@ -2559,7 +2559,22 @@ class FoodApp {
     const cleanRestName = restName.replace(/["']/g, '').trim();
     const cleanAddr = fullAddress.replace(/["']/g, '').trim();
 
-    // 2. Xác định điểm xuất phát (Origin) - Vị trí hiện tại của người dùng:
+    // 5. Trích xuất tên đường/số nhà ngắn gọn (bỏ chữ "Lô", "Số", bỏ phần phường/xã để tạo query chuẩn xác nhất):
+    const streetPart = (rawAddress.split(',')[0] || '').trim();
+    const cleanStreet = streetPart.replace(/^(?:Lô|Số|Khu\s+vực|Đường)\s+/i, '').trim();
+
+    // Tạo query điểm đến chuẩn Google Maps: [Tên quán], [Số nhà/Đường], [Thành phố]
+    // Giúp Google Maps nhận diện đích đến là quán ăn chính xác (hiển thị thẻ thông tin quán, hình ảnh, đánh giá)
+    // thay vì tự động reverse-geocode thành số nhà ngẫu nhiên
+    let destTitleQuery = cleanRestName;
+    if (cleanStreet && !cleanRestName.toLowerCase().includes(cleanStreet.toLowerCase())) {
+      destTitleQuery += `, ${cleanStreet}`;
+    }
+    if (cleanCityName && !destTitleQuery.toLowerCase().includes(cleanCityName.toLowerCase())) {
+      destTitleQuery += `, ${cleanCityName}`;
+    }
+
+    // 6. Xác định điểm xuất phát (Origin) - Vị trí hiện tại của người dùng:
     const userLat = APP_DATA?.homeLocation?.lat || APP_DATA?.currentCity?.lat;
     const userLng = APP_DATA?.homeLocation?.lng || APP_DATA?.currentCity?.lng;
     const hasUserCoords = userLat && userLng && !isNaN(Number(userLat)) && !isNaN(Number(userLng));
@@ -2570,26 +2585,21 @@ class FoodApp {
 
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
-    // 3. Xây dựng URL Google Maps chuẩn xác:
-    // Truyền điểm xuất phát (origin) là tọa độ vị trí hiện tại của User trên app (${originStr}),
-    // và điểm đến (destination) là tọa độ GPS chính xác của quán ăn (${coordStr}).
-    // Giúp Google Maps ghim đúng vị trí xuất phát của user và vẽ lộ trình chuẩn xác đến quán.
-    const primaryDirUrl = hasValidCoords && hasUserCoords
-      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
-      : (hasValidCoords
-        ? `https://www.google.com/maps/dir/?api=1&destination=${coordStr}`
-        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`);
+    // 7. Xây dựng URL Google Maps chuẩn xác:
+    // Dẫn đường từ vị trí của User (origin) đến quán ăn bằng tên quán + địa chỉ (destination).
+    // Giúp Google Maps nhận diện rõ tên quán ăn, ảnh đại diện, đánh giá và vẽ lộ trình từ vị trí hiện tại.
+    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(destTitleQuery)}`;
 
     const primaryDestHint = `Từ ${userAddrLabel} ➔ ${cleanRestName}`;
     const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${cleanRestName} (${cleanAddr}).`;
 
-    // URL Tìm kiếm / Ghim vị trí trên Google Maps:
-    const gmapsSearchUrl = hasValidCoords
-      ? `https://www.google.com/maps/search/?api=1&query=${coordStr}`
-      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`;
+    // URL Tìm kiếm / Xem thẻ thông tin quán trên Google Maps:
+    const gmapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destTitleQuery)}`;
 
-    // URL Dẫn đường từ vị trí GPS:
-    const gmapsCoordsDirUrl = primaryDirUrl;
+    // URL Dẫn đường theo tọa độ vệ tinh GPS (phòng trường hợp người dùng muốn đi đúng tọa độ số):
+    const gmapsCoordsDirUrl = hasValidCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
+      : primaryDirUrl;
 
     const modal = document.getElementById('google-maps-modal');
     if (!modal) {
@@ -2646,11 +2656,11 @@ class FoodApp {
       };
     }
 
-    // Nút 3: Xem địa điểm, ghim vị trí trên Google Maps
+    // Nút 3: Xem địa điểm, hồ sơ thông tin quán trên Google Maps
     if (searchBtn) {
       searchBtn.onclick = () => {
         this.closeGoogleMapsModal();
-        this.showToast(`📍 Đang ghim vị trí ${cleanRestName} trên Google Maps...`);
+        this.showToast(`📍 Đang mở thông tin ${cleanRestName} trên Google Maps...`);
         window.open(gmapsSearchUrl, '_blank');
       };
     }
