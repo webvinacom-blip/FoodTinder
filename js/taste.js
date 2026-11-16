@@ -341,7 +341,7 @@ class TasteManager {
           const foodLng = (spec.longitude !== undefined && spec.longitude !== null) ? spec.longitude : (spec.lng || ((cityOpt.longitude || cityOpt.lng) + (sIdx * 0.003)));
 
           // Tính khoảng cách thực tế từ vị trí người dùng (User Location)
-          const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+          const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7735, lng: 109.2365 };
           const calcHaversine = (la1, lo1, la2, lo2) => {
             if (!la1 || !lo1 || !la2 || !lo2) return 1.0;
             const R = 6371;

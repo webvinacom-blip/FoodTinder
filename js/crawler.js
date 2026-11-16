@@ -148,7 +148,7 @@ class CrawlerManager {
     if (!foods || foods.length === 0) return;
 
     // Áp dụng thuật toán tính khoảng cách thực tế từ vị trí người dùng
-    const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+    const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7735, lng: 109.2365 };
     const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm);
     const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText);
 
@@ -281,8 +281,8 @@ class CrawlerManager {
     const cityName = locParams.cityName || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.name : 'Quy Nhơn');
     const cityId = locParams.cityId || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.cityId : 'quynhon');
     const areaId = locParams.areaId || null;
-    const lat = locParams.lat || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.lat : 13.7820);
-    const lng = locParams.lng || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.lng : 109.2197);
+    const lat = locParams.lat || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.lat : 13.7735);
+    const lng = locParams.lng || (window.APP_DATA && window.APP_DATA.currentCity ? window.APP_DATA.currentCity.lng : 109.2365);
 
     const locKey = `${cityId}_${areaId || 'all'}`;
     if (this.crawlingLocations.has(locKey)) return;
@@ -443,7 +443,7 @@ class CrawlerManager {
     }
   }
 
-  async crawlShopeeFoodForLocation({ cityId, cityName, lat = 13.7820, lng = 109.2197, areaId }) {
+  async crawlShopeeFoodForLocation({ cityId, cityName, lat = 13.7735, lng = 109.2365, areaId }) {
     // 1. Thử gọi backend server API nếu có
     try {
       const sUrl = `/api/crawl-foods?city=${encodeURIComponent(cityId)}&name=${encodeURIComponent(cityName)}`;
@@ -474,7 +474,7 @@ class CrawlerManager {
 
     const citySlug = slugify(cityName) || 'quy-nhon';
     const baseId = 8000 + Math.abs(Math.round(lat * 100)) + Math.floor(Math.random() * 500);
-    const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+    const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7735, lng: 109.2365 };
     const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm);
     const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText);
 

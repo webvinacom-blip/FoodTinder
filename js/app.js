@@ -347,7 +347,7 @@ async function getUserLocationAndWeather(opts = {}) {
     const ipRes = await fallbackIp();
     if (ipRes) return ipRes;
 
-    const defLat = 13.7820, defLng = 109.2197;
+    const defLat = 13.7735, defLng = 109.2365;
     const defWeather = await fetchLiveWeather(defLat, defLng);
     return {
       lat: defLat,
@@ -452,7 +452,7 @@ class FoodApp {
       });
 
       // Áp dụng thuật toán tính khoảng cách thực tế (Haversine) cho toàn bộ quán ăn trong Database
-      const userLoc = APP_DATA.homeLocation || { lat: 13.7820, lng: 109.2197 };
+      const userLoc = APP_DATA.homeLocation || { lat: 13.7735, lng: 109.2365 };
       const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
       const formatDistFn = window.formatDistanceText || APP_DATA.formatDistanceText;
       if (calcDistFn && formatDistFn) {
@@ -2571,15 +2571,17 @@ class FoodApp {
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
     // 3. Xây dựng URL Google Maps chuẩn xác:
-    // Sử dụng tọa độ GPS chính xác (coordStr: lat,lng) để Google Maps ĐẢM BẢO tính toán và vẽ đường 100% thành công.
-    // Khi dùng destination=lat,lng, Google Maps tự động lấy "Vị trí của bạn" (Your location),
-    // vẽ lộ trình đi lại (xe máy, ô tô, đi bộ), tính số km và số phút di chuyển mà không bao giờ bị lỗi mất đường.
-    const primaryDirUrl = hasValidCoords
-      ? `https://www.google.com/maps/dir/?api=1&destination=${coordStr}`
-      : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`;
+    // Truyền điểm xuất phát (origin) là tọa độ vị trí hiện tại của User trên app (${originStr}),
+    // và điểm đến (destination) là tọa độ GPS chính xác của quán ăn (${coordStr}).
+    // Giúp Google Maps ghim đúng vị trí xuất phát của user và vẽ lộ trình chuẩn xác đến quán.
+    const primaryDirUrl = hasValidCoords && hasUserCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
+      : (hasValidCoords
+        ? `https://www.google.com/maps/dir/?api=1&destination=${coordStr}`
+        : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`);
 
-    const primaryDestHint = `Từ vị trí của bạn ➔ ${cleanRestName}`;
-    const statusNoteText = `🎯 Dẫn đường Google Maps trực tiếp đến ${cleanRestName} (${cleanAddr}).`;
+    const primaryDestHint = `Từ ${userAddrLabel} ➔ ${cleanRestName}`;
+    const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${cleanRestName} (${cleanAddr}).`;
 
     // URL Tìm kiếm / Ghim vị trí trên Google Maps:
     const gmapsSearchUrl = hasValidCoords
@@ -2920,9 +2922,19 @@ class FoodApp {
       isDistrict: matchedOpt?.isDistrict || false,
       parentProvince: matchedOpt?.parentProvince || '',
       address: address,
-      lat: lat,
-      lng: lng,
+      lat: Number(lat),
+      lng: Number(lng),
       weather: { temp, condition, icon }
+    };
+
+    APP_DATA.homeLocation = {
+      cityId: resolvedCityId,
+      name: city,
+      address: address,
+      lat: Number(lat),
+      lng: Number(lng),
+      latitude: Number(lat),
+      longitude: Number(lng)
     };
 
     // Lọc bỏ toàn bộ quán ảo khỏi Database
@@ -2953,7 +2965,7 @@ class FoodApp {
         const foodLng = (spec.longitude !== undefined && spec.longitude !== null) ? spec.longitude : (spec.lng || (lng + (sIdx * 0.002)));
 
         // Tính khoảng cách thực tế từ vị trí người dùng (User Location)
-        const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7820, lng: 109.2197 };
+        const userLoc = (window.APP_DATA && window.APP_DATA.homeLocation) ? window.APP_DATA.homeLocation : { lat: 13.7735, lng: 109.2365 };
         const calcHaversine = (la1, lo1, la2, lo2) => {
           if (!la1 || !lo1 || !la2 || !lo2) return 1.0;
           const R = 6371;

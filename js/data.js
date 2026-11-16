@@ -552,10 +552,10 @@ const APP_DATA = {
     cityId: "quynhon",
     name: "Quy Nhơn",
     province: "Bình Định",
-    lat: 13.7820,
-    lng: 109.2197,
-    latitude: 13.7820,
-    longitude: 109.2197
+    lat: 13.7735,
+    lng: 109.2365,
+    latitude: 13.7735,
+    longitude: 109.2365
   },
   homeCityId: "quynhon",
   formatRating: formatRating,
@@ -566,8 +566,8 @@ const APP_DATA = {
     name: "Quy Nhơn",
     province: "Bình Định",
     address: "Đang xác định vị trí...",
-    lat: 13.7820,
-    lng: 109.2197,
+    lat: 13.7735,
+    lng: 109.2365,
     weather: {
       temp: "24°C",
       condition: "Mưa râm ran",
@@ -1854,8 +1854,8 @@ const APP_DATA = {
     "temp": "24°C",
     "condition": "Mưa râm ran mát lạnh",
     "icon": "🌧️",
-    "lat": 13.782,
-    "lng": 109.2197,
+    "lat": 13.7735,
+    "lng": 109.2365,
     "signature": "Bánh xèo tôm nhảy, bún sứa chả cá, lẩu thái chua cay",
     "specialties": [
       {
@@ -3352,8 +3352,8 @@ const APP_DATA = {
     "temp": "24°C",
     "condition": "Mưa râm ran mát lạnh",
     "icon": "🌧️",
-    "lat": 13.782,
-    "lng": 109.2197,
+    "lat": 13.7735,
+    "lng": 109.2365,
     "isDistrict": true,
     "signature": "Bánh xèo tôm nhảy Gia Vỹ, bún sứa chả cá, lẩu thái tomyum Cô Vy",
     "specialties": [
