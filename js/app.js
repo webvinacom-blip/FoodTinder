@@ -2570,35 +2570,24 @@ class FoodApp {
 
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
-    // 3. Xây dựng điểm đến tối ưu nhất cho Google Maps:
-    // Kết hợp [Tên Quán] + [Địa chỉ có số nhà, tên đường] + [Thành phố, Tỉnh]
-    // Ví dụ: "Bánh Xèo Gia Vỹ 2, 14 Diên Hồng, TP. Quy Nhơn, Bình Định"
-    // Cú pháp này giúp Google Maps mở đúng POI Doanh nghiệp, dẫn thẳng tới quán và hiển thị đầy đủ thông tin quán.
-    let destQuery = cleanRestName;
-    if (cleanAddr && !cleanRestName.toLowerCase().includes(cleanAddr.toLowerCase())) {
-      destQuery += `, ${cleanAddr}`;
-    } else if (cleanAddr) {
-      destQuery = cleanAddr;
-    }
-    if (cleanCityName && !destQuery.toLowerCase().includes(cleanCityName.toLowerCase())) {
-      destQuery += `, ${cleanCityName}`;
-    }
-    if (cleanProvince && !destQuery.toLowerCase().includes(cleanProvince.toLowerCase())) {
-      destQuery += `, ${cleanProvince}`;
-    }
+    // 3. Xây dựng URL Google Maps chuẩn xác:
+    // Sử dụng tọa độ GPS chính xác (coordStr: lat,lng) để Google Maps ĐẢM BẢO tính toán và vẽ đường 100% thành công.
+    // Khi dùng destination=lat,lng, Google Maps tự động lấy "Vị trí của bạn" (Your location),
+    // vẽ lộ trình đi lại (xe máy, ô tô, đi bộ), tính số km và số phút di chuyển mà không bao giờ bị lỗi mất đường.
+    const primaryDirUrl = hasValidCoords
+      ? `https://www.google.com/maps/dir/?api=1&destination=${coordStr}`
+      : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`;
 
-    // URL dẫn đường chính thức trên Google Maps
-    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(destQuery)}`;
     const primaryDestHint = `Từ vị trí của bạn ➔ ${cleanRestName}`;
-    const statusNoteText = `🎯 Dẫn đường Google Maps trực tiếp đến ${cleanRestName} tại ${cleanAddr}.`;
+    const statusNoteText = `🎯 Dẫn đường Google Maps trực tiếp đến ${cleanRestName} (${cleanAddr}).`;
 
     // URL Tìm kiếm / Ghim vị trí trên Google Maps:
-    const gmapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destQuery)}`;
+    const gmapsSearchUrl = hasValidCoords
+      ? `https://www.google.com/maps/search/?api=1&query=${coordStr}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanRestName + ', ' + cleanCityName)}`;
 
-    // URL Dẫn đường theo Tọa độ GPS vệ tinh:
-    const gmapsCoordsDirUrl = hasValidCoords
-      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
-      : primaryDirUrl;
+    // URL Dẫn đường từ vị trí GPS:
+    const gmapsCoordsDirUrl = primaryDirUrl;
 
     const modal = document.getElementById('google-maps-modal');
     if (!modal) {
