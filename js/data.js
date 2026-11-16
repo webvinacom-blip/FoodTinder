@@ -565,7 +565,7 @@ const APP_DATA = {
     cityId: "quynhon",
     name: "Quy Nhơn",
     province: "Bình Định",
-    address: "Nguyễn Huệ, Quy Nhơn",
+    address: "Đang xác định vị trí...",
     lat: 13.7820,
     lng: 109.2197,
     weather: {

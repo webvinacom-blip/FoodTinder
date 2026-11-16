@@ -102,115 +102,98 @@ function matchFoodPrice(food, tierId) {
  * 3. Lấy thời tiết thời gian thực theo tọa độ từ Open-Meteo API
  */
 async function getUserLocationAndWeather(opts = {}) {
-  // 1. Lấy tọa độ GPS từ trình duyệt
-  const getCoordinates = () => {
-    return new Promise((resolve, reject) => {
-      if (!navigator.geolocation) {
-        reject(new Error('Geolocation không được trình duyệt hỗ trợ.'));
-        return;
-      }
-      navigator.geolocation.getCurrentPosition(
-        (pos) => resolve({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-          accuracy: pos.coords.accuracy
-        }),
-        (err) => reject(err),
-        {
-          enableHighAccuracy: true,
-          timeout: opts.timeout || 10000,
-          maximumAge: opts.maximumAge || 60000
-        }
-      );
-    });
-  };
-
-  // 2. Reverse Geocoding: Tọa độ -> Số nhà, Tên đường, Phường/Xã, Tỉnh/Thành phố chi tiết
+  // 1. Reverse Geocoding: Tọa độ -> Tên đường, Phường/Xã, Quận/Huyện, Tỉnh/Thành phố chi tiết
   const reverseGeocode = async (lat, lng) => {
-    // Ưu tiên 1: OpenStreetMap Nominatim zoom=18 & addressdetails=1 (Lấy địa chỉ chi tiết số nhà, tên đường, phường/xã)
+    // Ưu tiên 1: BigDataCloud Reverse Geocoding (Rất nhanh, miễn phí, hỗ trợ tiếng Việt chi tiết, không bị chặn CORS)
     try {
-      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=vi&addressdetails=1&zoom=18`);
+      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=vi`);
+      if (res.ok) {
+        const d = await res.json();
+        let road = '';
+        if (Array.isArray(d.localityInfo?.informative)) {
+          const roadObj = d.localityInfo.informative.find(i => 
+            (i.description && (i.description.includes('street') || i.description.includes('road') || i.description.includes('đường') || i.description.includes('phố'))) || 
+            (i.name && (i.name.toLowerCase().startsWith('đường') || i.name.toLowerCase().startsWith('phố') || i.name.toLowerCase().startsWith('ngõ') || i.name.toLowerCase().startsWith('hẻm')))
+          );
+          if (roadObj) road = roadObj.name;
+        }
+
+        let ward = d.locality || '';
+        let district = '';
+        if (Array.isArray(d.localityInfo?.administrative)) {
+          const wardObj = d.localityInfo.administrative.find(a => a.order >= 12 || a.adminLevel >= 6 || (a.description && a.description.includes('phường')));
+          if (wardObj && (!ward || ward.length < 3)) ward = wardObj.name;
+          const distObj = d.localityInfo.administrative.find(a => (a.order === 10 || a.adminLevel === 5 || (a.description && (a.description.includes('quận') || a.description.includes('huyện') || a.description.includes('thị xã')))));
+          if (distObj) district = distObj.name;
+        }
+        if (!district && Array.isArray(d.localityInfo?.informative)) {
+          const distObj = d.localityInfo.informative.find(i => i.order >= 11 || (i.description && (i.description.includes('quận') || i.description.includes('huyện'))));
+          if (distObj) district = distObj.name;
+        }
+
+        let city = d.city || d.principalSubdivision || '';
+        if (!city && Array.isArray(d.localityInfo?.administrative)) {
+          const cityObj = d.localityInfo.administrative.find(a => a.adminLevel === 4 || a.order === 9);
+          if (cityObj) city = cityObj.name;
+        }
+
+        // Format ward
+        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã') && !ward.toLowerCase().startsWith('thị trấn')) {
+          ward = `P. ${ward}`;
+        }
+
+        const parts = [];
+        if (road) parts.push(road);
+        if (ward && !parts.includes(ward)) parts.push(ward);
+        if (district && !parts.some(p => p.toLowerCase().includes(district.toLowerCase()))) parts.push(district);
+        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
+
+        if (parts.length > 0) {
+          return {
+            address: parts.join(', '),
+            cityName: city || district || 'Việt Nam',
+            ward: ward,
+            district: district,
+            road: road
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('BigDataCloud reverse geocode error:', e);
+    }
+
+    // Ưu tiên 2: OpenStreetMap Nominatim với timeout 3s
+    try {
+      const controller = new AbortController();
+      const toId = setTimeout(() => controller.abort(), 3000);
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=vi&addressdetails=1&zoom=18`, {
+        signal: controller.signal
+      });
+      clearTimeout(toId);
       if (res.ok) {
         const d = await res.json();
         const a = d.address || {};
         const houseNum = a.house_number || '';
         const road = a.road || a.pedestrian || a.street || a.path || '';
         let ward = a.suburb || a.quarter || a.neighbourhood || a.city_district || a.subdistrict || '';
-        let city = a.city || a.town || a.county || 'Quy Nhơn';
-        if (city.toLowerCase().includes('quy nhơn') || city.toLowerCase().includes('bình định')) {
-          city = 'Quy Nhơn';
-        }
-
-        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã')) {
-          ward = `P. ${ward}`;
-        }
-
-        let streetPart = '';
-        if (houseNum && road) {
-          streetPart = `${houseNum} ${road}`;
-        } else if (road) {
-          streetPart = road;
-        }
-
+        let city = a.city || a.town || a.county || a.state || '';
+        let streetPart = (houseNum && road) ? `${houseNum} ${road}` : road;
         let parts = [];
         if (streetPart) parts.push(streetPart);
-        if (ward && ward !== streetPart) parts.push(ward);
-        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
-
+        if (ward) parts.push(ward.startsWith('P.') ? ward : `P. ${ward}`);
+        if (city) parts.push(city);
         if (parts.length > 0) {
           return {
             address: parts.join(', '),
-            cityName: city,
+            cityName: city || 'Việt Nam',
             ward: ward,
             road: streetPart
           };
         }
       }
-    } catch (e) {
-      console.warn('Nominatim reverse geocode error:', e);
-    }
+    } catch (e) {}
 
-    // Dự phòng 2: BigDataCloud Reverse Geocoding (Lấy chi tiết tên đường + phường)
-    try {
-      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=vi`);
-      if (res.ok) {
-        const d = await res.json();
-        let street = '';
-        if (Array.isArray(d.localityInfo?.informative)) {
-          const stObj = d.localityInfo.informative.find(i => (i.description && (i.description.includes('street') || i.description.includes('road'))) || i.order >= 9);
-          street = stObj?.name || d.localityInfo.informative[0]?.name || '';
-        }
-        let ward = d.locality || '';
-        if (!ward && Array.isArray(d.localityInfo?.administrative)) {
-          const wardObj = d.localityInfo.administrative.find(a => a.order === 10 || a.adminLevel === 10);
-          if (wardObj) ward = wardObj.name;
-        }
-        let city = d.city || d.principalSubdivision || 'Quy Nhơn';
-        if (city.toLowerCase().includes('quy nhơn') || city.toLowerCase().includes('bình định')) {
-          city = 'Quy Nhơn';
-        }
-
-        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã')) {
-          ward = `P. ${ward}`;
-        }
-
-        let parts = [];
-        if (street) parts.push(street);
-        if (ward && ward !== street) parts.push(ward);
-        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
-
-        return {
-          address: parts.join(', ') || `${city}, Bình Định`,
-          cityName: city,
-          ward: ward,
-          road: street
-        };
-      }
-    } catch (e) {
-      console.warn('BigDataCloud reverse geocode error:', e);
-    }
-
-    // Dự phòng 3: Nếu đang ở Quy Nhơn, dò tìm điểm quán ăn gần nhất trong Database để làm mốc cụ thể
+    // Ưu tiên 3: Dò tìm quán ăn gần nhất nếu ở gần database
     if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods) && APP_DATA.foods.length > 0) {
       const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
       if (calcDistFn) {
@@ -225,23 +208,23 @@ async function getUserLocationAndWeather(opts = {}) {
             }
           }
         }
-        if (closest && minDist <= 0.4) {
+        if (closest && minDist <= 0.8) {
           return {
-            address: `Khu vực ${closest.address || closest.restaurant}`,
-            cityName: 'Quy Nhơn',
-            ward: closest.district || 'Quy Nhơn'
+            address: closest.address || closest.restaurant,
+            cityName: closest.cityName || 'Quy Nhơn',
+            ward: closest.district || ''
           };
         }
       }
     }
 
     return {
-      address: 'Đường Nguyễn Huệ, P. Trần Phú, Quy Nhơn',
-      cityName: 'Quy Nhơn'
+      address: `Vị trí tọa độ (${lat.toFixed(3)}, ${lng.toFixed(3)})`,
+      cityName: 'Vị trí hiện tại'
     };
   };
 
-  // 3. Lấy thời tiết thực tế từ Open-Meteo API
+  // 2. Lấy thời tiết thực tế từ Open-Meteo API
   const fetchLiveWeather = async (lat, lng) => {
     try {
       const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true&timezone=auto`;
@@ -293,16 +276,16 @@ async function getUserLocationAndWeather(opts = {}) {
     };
   };
 
-  // 4. Dự phòng qua IP nếu trình duyệt chặn quyền GPS
+  // 3. Fallback qua IP thực tế của user (ipwho.is)
   const fallbackIp = async () => {
     try {
       const res = await fetch('https://ipwho.is/');
       if (res.ok) {
         const d = await res.json();
         if (d && d.success) {
-          const lat = d.latitude || 13.7820;
-          const lng = d.longitude || 109.2197;
-          const city = d.city || 'Quy Nhơn';
+          const lat = d.latitude || 21.0285;
+          const lng = d.longitude || 105.8542;
+          const city = d.city || d.region || 'Hà Nội';
           const [geo, weather] = await Promise.all([
             reverseGeocode(lat, lng),
             fetchLiveWeather(lat, lng)
@@ -310,23 +293,39 @@ async function getUserLocationAndWeather(opts = {}) {
           return {
             lat,
             lng,
-            address: geo.address || `${city}, ${d.region || 'Bình Định'}`,
+            address: (geo.address && !geo.address.startsWith('Vị trí')) ? geo.address : `${city}, ${d.region || 'Việt Nam'}`,
             cityName: geo.cityName || city,
-            weather
+            weather,
+            isIp: true
           };
         }
       }
     } catch (e) {}
 
-    const lat = 13.7820, lng = 109.2197;
-    const weather = await fetchLiveWeather(lat, lng);
-    return {
-      lat,
-      lng,
-      address: 'Đường Nguyễn Huệ, P. Trần Phú, Quy Nhơn',
-      cityName: 'Quy Nhơn',
-      weather
-    };
+    return null;
+  };
+
+  // 4. Lấy GPS trực tiếp từ trình duyệt
+  const getCoordinates = () => {
+    return new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        reject(new Error('Geolocation không được trình duyệt hỗ trợ.'));
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        (pos) => resolve({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          accuracy: pos.coords.accuracy
+        }),
+        (err) => reject(err),
+        {
+          enableHighAccuracy: true,
+          timeout: opts.timeout || 12000,
+          maximumAge: 0
+        }
+      );
+    });
   };
 
   try {
@@ -340,10 +339,23 @@ async function getUserLocationAndWeather(opts = {}) {
       lng: coords.lng,
       address: geo.address,
       cityName: geo.cityName,
-      weather
+      weather,
+      isGps: true
     };
   } catch (err) {
-    return await fallbackIp();
+    console.log('GPS error/timeout, falling back to IP:', err.message);
+    const ipRes = await fallbackIp();
+    if (ipRes) return ipRes;
+
+    const defLat = 13.7820, defLng = 109.2197;
+    const defWeather = await fetchLiveWeather(defLat, defLng);
+    return {
+      lat: defLat,
+      lng: defLng,
+      address: 'Nguyễn Huệ, Quy Nhơn',
+      cityName: 'Quy Nhơn',
+      weather: defWeather
+    };
   }
 }
 
@@ -500,29 +512,31 @@ class FoodApp {
       window.lucide.createIcons();
     }
 
-    // Tự động phát hiện vị trí & thời tiết thực tế của user (chạy ngầm không làm phiền)
-    setTimeout(() => {
-      this.detectUserLocationAndWeather({ silent: true });
-    }, 1200);
+    // Tự động yêu cầu và kích hoạt định vị ngay khi mở trang
+    this.detectUserLocationAndWeather({ auto: true });
   }
 
   /**
    * Kích hoạt lấy đúng vị trí GPS và thời tiết của user
    */
   async detectUserLocationAndWeather(options = {}) {
-    const isSilent = options.silent || false;
+    const isManual = options.manual || false;
     const addrLabel = document.getElementById('user-current-address-label');
-    const origText = addrLabel ? addrLabel.textContent : '';
 
-    if (!isSilent && addrLabel) {
-      addrLabel.textContent = 'Đang định vị GPS...';
+    if (addrLabel && (!APP_DATA.currentCity.address || APP_DATA.currentCity.address.includes('Đang xác định'))) {
+      addrLabel.innerHTML = `
+        <span class="inline-flex items-center gap-1.5 text-stone-500 font-medium">
+          <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+          <span>Đang xác định vị trí của bạn...</span>
+        </span>
+      `;
     }
 
     try {
       const result = await window.getUserLocationAndWeather(options);
       if (result) {
         this.applyUserLocationAndWeather(result);
-        if (!isSilent) {
+        if (isManual) {
           window.soundFX && window.soundFX.playMatch();
           this.showToast(`📍 Đã định vị: ${result.address} (${result.weather.note})`);
         }
@@ -530,9 +544,8 @@ class FoodApp {
       }
     } catch (err) {
       console.warn('detectUserLocationAndWeather error:', err);
-      if (!isSilent) {
-        if (addrLabel) addrLabel.textContent = origText;
-        this.showToast('Không thể lấy vị trí GPS. Hãy bật định vị trên trình duyệt!');
+      if (isManual) {
+        this.showToast('Không thể lấy vị trí GPS. Hãy kiểm tra cài đặt định vị trên trình duyệt!');
       }
     }
     return null;
@@ -545,15 +558,29 @@ class FoodApp {
     if (!result) return;
     const { lat, lng, address, cityName, weather } = result;
 
-    let resolvedCityName = cityName || 'Quy Nhơn';
-    if (resolvedCityName.toLowerCase().includes('quy nhơn') || resolvedCityName.toLowerCase().includes('bình định')) {
+    const cleanCity = (cityName || '').toLowerCase();
+    const matchedOpt = (APP_DATA.districtOptions || []).find(w => {
+      const wName = (w.shortName || w.city || '').toLowerCase();
+      return cleanCity.includes(wName) || wName.includes(cleanCity);
+    }) || (APP_DATA.weatherOptions || []).find(w => {
+      const wName = (w.shortName || w.city || '').toLowerCase();
+      return cleanCity.includes(wName) || wName.includes(cleanCity);
+    });
+
+    let resolvedCityId = matchedOpt?.cityId || 'quynhon';
+    let resolvedCityName = matchedOpt?.shortName || matchedOpt?.city || cityName || 'Quy Nhơn';
+    let resolvedProvince = matchedOpt?.province || matchedOpt?.parentProvince || resolvedCityName;
+
+    if (cleanCity.includes('quy nhơn') || cleanCity.includes('binhdinh') || cleanCity.includes('bình định')) {
+      resolvedCityId = 'quynhon';
       resolvedCityName = 'Quy Nhơn';
+      resolvedProvince = 'Bình Định';
     }
 
     APP_DATA.currentCity = {
-      cityId: 'quynhon',
+      cityId: resolvedCityId,
       name: resolvedCityName,
-      province: resolvedCityName === 'Quy Nhơn' ? 'Bình Định' : resolvedCityName,
+      province: resolvedProvince,
       address: address || 'Vị trí hiện tại',
       lat: Number(lat),
       lng: Number(lng),
@@ -569,6 +596,42 @@ class FoodApp {
       lat: Number(lat),
       lng: Number(lng)
     };
+
+    // If matched location has specialties, ensure they are registered in APP_DATA.foods
+    if (matchedOpt && Array.isArray(matchedOpt.specialties) && matchedOpt.specialties.length > 0) {
+      matchedOpt.specialties.forEach((spec, sIdx) => {
+        const foodId = 6000 + Math.abs(Math.round(lat * 100)) + sIdx;
+        if (!APP_DATA.foods.some(f => f.id === foodId)) {
+          APP_DATA.foods.push({
+            id: foodId,
+            cityId: matchedOpt.cityId,
+            cityName: matchedOpt.shortName || matchedOpt.city,
+            name: spec.name,
+            restaurant: spec.rest || `Đặc Sản ${matchedOpt.shortName || matchedOpt.city}`,
+            address: matchedOpt.address || address,
+            distance: 0.5 + sIdx * 0.3,
+            distanceText: `Cách bạn ${(500 + sIdx * 300)}m`,
+            weatherNote: `${weather.condition} ${weather.temp}`,
+            priceRange: spec.price || "45.000đ - 85.000đ",
+            rating: 4.8,
+            reviewCount: 320,
+            lat: lat + (sIdx * 0.002),
+            lng: lng + (sIdx * 0.002),
+            category: spec.cat || "streetfood",
+            moodIds: ["comfort", "chill", "craving", "energetic", "sad"],
+            tags: spec.tags || ["#Đặc_sản", "#Nóng_hổi", "#Đậm_đà"],
+            sideRibbon: ["#đặc_sản_địa_phương", "#chuẩn_vị"],
+            recommendReason: spec.reason || `Đặc sản trứ danh tại ${matchedOpt.city}.`,
+            image: spec.img || "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
+            gallery: [spec.img || "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"],
+            likesCount: 520,
+            commentsCount: 45,
+            openTime: "07:00 - 22:00",
+            desc: `Đặc sản địa phương trứ danh tại ${matchedOpt.city}.`
+          });
+        }
+      });
+    }
 
     try {
       localStorage.setItem('foodtinder_user_loc_weather', JSON.stringify({
@@ -648,13 +711,22 @@ class FoodApp {
     // Sidebar location
     const locationEl = document.getElementById('header-location');
     if (locationEl) {
+      const isLocating = !city.address || city.address.includes('Đang xác định');
       locationEl.innerHTML = `
-        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-xl px-3 py-2 cursor-pointer transition relative group" onclick="window.app.detectUserLocationAndWeather()" title="${city.address} (Bấm để lấy đúng GPS & thời tiết thực tế của bạn)">
+        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-xl px-3 py-2 transition relative" title="${city.address} (Tự động cập nhật theo GPS của bạn)">
           <div class="flex items-center justify-between">
             <span class="text-[10px] text-stone-400 block font-medium">Bạn đang ở:</span>
-            <span class="text-[9.5px] text-rose-500 font-bold opacity-0 group-hover:opacity-100 transition flex items-center gap-0.5">
-              <span>Định vị lại</span> 🔄
-            </span>
+            ${isLocating ? `
+              <span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                <span>Đang định vị...</span>
+              </span>
+            ` : `
+              <span class="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Vị trí trực tiếp</span>
+              </span>
+            `}
           </div>
           <span class="text-xs font-bold text-stone-800 flex items-center justify-between gap-1 mt-0.5">
             <span class="truncate" id="user-current-address-label" title="${city.address}">${city.address}</span>
