@@ -2180,6 +2180,30 @@ class FoodApp {
         </div>
       </div>
 
+      <!-- Quick Action Buttons Bar (Cố định ngay phía dưới hình ảnh để người dùng không phải cuộn) -->
+      <div class="px-5 py-3 bg-stone-50/90 border-b border-stone-200/70 flex items-center gap-2.5 shrink-0 z-10">
+        <!-- 1. Yêu Thích -->
+        <button onclick="window.app.toggleLikedFood(${food.id})" class="flex-1 py-2.5 px-3.5 ${isLiked ? 'bg-gradient-to-r from-rose-600 to-rose-500' : 'bg-gradient-to-r from-rose-500 to-amber-500'} hover:opacity-95 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 cursor-pointer transition active:scale-98">
+          <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span>${isLiked ? 'Đã Thích' : 'Yêu Thích'}</span>
+        </button>
+
+        <!-- 2. Khách Quen -->
+        <button onclick="window.app.toggleWillReturn(${food.id})" data-will-return-btn="${food.id}" class="py-2.5 px-3.5 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 text-amber-900 border border-amber-200/90 hover:bg-amber-100'} rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition active:scale-98" title="Đánh dấu bạn sẽ là khách quen quay lại quán">
+          <span class="text-base leading-none shrink-0 inline-block">😋</span>
+          <span><span data-will-return-count="${food.id}">${willReturnCount}</span> khách quen</span>
+        </button>
+
+        <!-- 3. Bản Đồ (Đồng bộ icon origami map với bên ngoài) -->
+        <button onclick="window.app.openMapWithFood(${food.id})" class="w-10 h-10 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/90 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95 shadow-xs" title="Xem quán và chỉ đường trên bản đồ">
+          <svg class="w-4.5 h-4.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+            <line x1="9" y1="3" x2="9" y2="18"></line>
+            <line x1="15" y1="6" x2="15" y2="21"></line>
+          </svg>
+        </button>
+      </div>
+
       <!-- Scrollable Information Body (Chỉ thực hiện cuộn thông tin bên dưới) -->
       <div class="p-5 space-y-4 overflow-y-auto flex-1 min-h-0 overscroll-contain">
         <!-- Open/Closed Notice Banner -->
@@ -2277,23 +2301,6 @@ class FoodApp {
             <span class="text-stone-400">Hotline quán:</span>
             <span class="font-semibold text-blue-600">${food.phone ? `<a href="tel:${food.phone}" class="hover:underline">${food.phone}</a>` : 'Đang cập nhật'}</span>
           </div>
-        </div>
-
-        <div class="flex gap-2 pt-2">
-          <button onclick="window.app.toggleLikedFood(${food.id})" class="flex-1 py-3 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-200 flex items-center justify-center gap-1.5 cursor-pointer">
-            <span>❤️ Yêu Thích</span>
-          </button>
-          <button onclick="window.app.toggleWillReturn(${food.id})" data-will-return-btn="${food.id}" class="px-3 py-3 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/80 text-amber-900 border border-amber-200/90'} rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 cursor-pointer" title="Đánh dấu bạn sẽ là khách quen quay lại quán">
-            <span class="text-lg leading-none shrink-0 inline-block">😋</span>
-            <span><span data-will-return-count="${food.id}">${willReturnCount}</span> khách quen</span>
-          </button>
-          <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="px-3.5 py-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white rounded-xl font-extrabold text-xs shadow-md shadow-orange-200 flex items-center justify-center gap-1.5 cursor-pointer">
-            ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
-            <span>ShopeeFood</span>
-          </button>
-          <button onclick="window.app.openMapWithFood(${food.id})" class="px-3.5 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1 cursor-pointer">
-            <span>📍</span>
-          </button>
         </div>
       </div>
     `;
