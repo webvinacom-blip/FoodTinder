@@ -2575,16 +2575,24 @@ class FoodApp {
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
     // 7. Xây dựng URL Google Maps chuẩn xác:
-    // Dẫn đường từ vị trí của User (origin) đến ĐÚNG ĐỊA CHỈ THỰC TẾ của quán (destination).
-    // Sử dụng địa chỉ thực tế (cleanAddr) đảm bảo Google Maps luôn dẫn thẳng đến đúng số nhà và tên đường của quán,
-    // tuyệt đối không bị Google Maps tự ý tìm kiếm chuyển hướng sang quán khác ở đường khác.
-    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`;
+    // Nếu quán đã có Google Place ID (100% verified):
+    // Sử dụng tham số destination_place_id=<PLACE_ID> của Google Maps Directions API.
+    // Giúp Google Maps gắn cứng chính xác 100% vào quán ăn đó, hiển thị đúng tên quán, ảnh quán, thẻ quán
+    // và tuyệt đối KHÔNG BAO GIỜ bị nhảy sang tiệm tóc hay quán khác!
+    const targetDestName = food.gmapsName || cleanRestName;
+    const hasPlaceId = food.placeId && food.placeId.startsWith('ChIJ');
 
-    const primaryDestHint = `Từ ${userAddrLabel} ➔ ${cleanRestName}`;
-    const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${cleanRestName} (${cleanAddr}).`;
+    const primaryDirUrl = hasPlaceId
+      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(targetDestName)}&destination_place_id=${food.placeId}`
+      : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`;
+
+    const primaryDestHint = `Từ ${userAddrLabel} ➔ ${targetDestName}`;
+    const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${targetDestName} (${cleanAddr}).`;
 
     // URL Tìm kiếm / Xem thẻ thông tin quán trên Google Maps:
-    const gmapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destTitleQuery)}`;
+    const gmapsSearchUrl = hasPlaceId
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(targetDestName)}&query_place_id=${food.placeId}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destTitleQuery)}`;
 
     // URL Dẫn đường theo tọa độ vệ tinh GPS (phòng trường hợp người dùng muốn đi đúng tọa độ số):
     const gmapsCoordsDirUrl = hasValidCoords
