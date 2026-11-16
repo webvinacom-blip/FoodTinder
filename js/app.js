@@ -2147,22 +2147,24 @@ class FoodApp {
     const isLiked = this.likedFoods.some(f => f.id === food.id);
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
+    const foodDesc = (food.desc || food.description || '').trim();
 
     content.innerHTML = `
-      <div class="relative w-full h-64 bg-stone-900">
+      <!-- Fixed Image Banner (Header - Cố định ở trên khi cuộn) -->
+      <div class="relative w-full h-56 sm:h-64 bg-stone-900 shrink-0">
         <img src="${food.image}" alt="${food.name}"
           data-name="${food.name.replace(/"/g, '&quot;')}"
           data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
           data-category="${food.category || ''}"
           onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
           class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
-        <button onclick="window.app.closeFoodDetail()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/35"></div>
+        <button onclick="window.app.closeFoodDetail()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center transition cursor-pointer z-10 shadow-md" title="Đóng">
           ✕
         </button>
         <div class="absolute bottom-4 left-4 right-4 text-white">
           <div class="flex items-center gap-1.5 mb-1 flex-wrap">
-            ${food.tags.map(t => `<span class="bg-rose-500/90 text-[10px] font-bold px-2.5 py-0.5 rounded-full">${t}</span>`).join('')}
+            ${(food.tags || []).map(t => `<span class="bg-rose-500/90 text-[10px] font-bold px-2.5 py-0.5 rounded-full">${t}</span>`).join('')}
             ${status.isOpen ? `
               <span class="bg-emerald-600/90 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-200"></span> Đang mở cửa
@@ -2173,12 +2175,13 @@ class FoodApp {
               </span>
             `}
           </div>
-          <h2 class="font-extrabold text-xl leading-tight text-white">${food.name}</h2>
-          <p class="text-xs text-stone-300 mt-1">${food.restaurant} • ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating} (${food.reviewCount} đánh giá)</p>
+          <h2 class="font-extrabold text-lg sm:text-xl leading-tight text-white">${food.name}</h2>
+          <p class="text-xs text-stone-300 mt-1">${food.restaurant || ''} • ⭐ ${window.formatRating ? window.formatRating(food.rating) : food.rating} (${food.reviewCount || 0} đánh giá)</p>
         </div>
       </div>
 
-      <div class="p-5 space-y-4">
+      <!-- Scrollable Information Body (Chỉ thực hiện cuộn thông tin bên dưới) -->
+      <div class="p-5 space-y-4 overflow-y-auto flex-1 min-h-0 overscroll-contain">
         <!-- Open/Closed Notice Banner -->
         ${status.isOpen ? `
           <div class="bg-emerald-50 border border-emerald-200/90 rounded-2xl p-3.5 flex items-start gap-2.5">
@@ -2188,7 +2191,7 @@ class FoodApp {
                 <span>Đang mở cửa đón khách</span>
                 <span class="text-emerald-600 font-semibold">• ${status.detailText}</span>
               </div>
-              <p class="text-xs text-emerald-700 mt-0.5">Quán đang mở cửa phục vụ từ <strong class="text-emerald-900">${food.openTime}</strong>. Bạn có thể ghé thưởng thức hoặc bấm "Chỉ đường" để đến quán ngay!</p>
+              <p class="text-xs text-emerald-700 mt-0.5">Quán đang mở cửa phục vụ từ <strong class="text-emerald-900">${food.openTime || '07:00 - 22:00'}</strong>. Bạn có thể ghé thưởng thức hoặc bấm "Chỉ đường" để đến quán ngay!</p>
             </div>
           </div>
         ` : `
@@ -2200,23 +2203,17 @@ class FoodApp {
                 <span>Quán hiện đang đóng cửa</span>
                 <span class="text-stone-500 font-semibold">• ${status.detailText}</span>
               </div>
-              <p class="text-xs text-stone-600 mt-0.5">Giờ hoạt động: <strong class="text-stone-800">${food.openTime}</strong>. Quý khách vẫn có thể xem trước món ăn, giá tiền, địa chỉ và lưu vào Yêu Thích để chuẩn bị ghé quán!</p>
+              <p class="text-xs text-stone-600 mt-0.5">Giờ hoạt động: <strong class="text-stone-800">${food.openTime || '07:00 - 22:00'}</strong>. Quý khách vẫn có thể xem trước món ăn, giá tiền, địa chỉ và lưu vào Yêu Thích để chuẩn bị ghé quán!</p>
             </div>
           </div>
         `}
 
-        <div class="bg-[#FFF8F2] border border-[#FFEAD8] rounded-2xl p-3.5 flex items-start gap-2.5">
-          <span class="text-xl">💡</span>
+        ${foodDesc ? `
           <div>
-            <span class="text-[11px] font-bold text-[#8D4D24] uppercase">Lý do chọn món này</span>
-            <p class="text-xs text-[#8D4D24] mt-0.5 leading-relaxed">${food.recommendReason}</p>
+            <h4 class="font-bold text-xs text-stone-800 uppercase tracking-wider mb-1.5">Giới thiệu món ăn</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">${foodDesc}</p>
           </div>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-xs text-stone-800 uppercase tracking-wider mb-1.5">Giới thiệu món ăn</h4>
-          <p class="text-xs text-stone-600 leading-relaxed">${food.desc}</p>
-        </div>
+        ` : ''}
 
         <div class="bg-stone-50 rounded-2xl p-3.5 border border-stone-100 space-y-2 text-xs">
           <div class="flex items-center justify-between">
@@ -2228,19 +2225,19 @@ class FoodApp {
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Giờ mở cửa:</span>
-            <span class="font-semibold text-stone-700">${food.openTime}</span>
+            <span class="font-semibold text-stone-700">${food.openTime || '07:00 - 22:00'}</span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Giá tham khảo:</span>
-            <span class="font-bold text-rose-600">${food.priceRange}</span>
+            <span class="font-bold text-rose-600">${food.priceRange || '35.000đ - 65.000đ'}</span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Địa chỉ:</span>
-            <span class="font-semibold text-stone-700 truncate max-w-[200px]">${food.address}</span>
+            <span class="font-semibold text-stone-700 truncate max-w-[200px]" title="${food.address || ''}">${food.address || 'Đang cập nhật'}</span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Hotline quán:</span>
-            <span class="font-semibold text-blue-600">${food.phone}</span>
+            <span class="font-semibold text-blue-600">${food.phone ? `<a href="tel:${food.phone}" class="hover:underline">${food.phone}</a>` : 'Đang cập nhật'}</span>
           </div>
         </div>
 
@@ -2294,7 +2291,7 @@ class FoodApp {
             ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
             <span>ShopeeFood</span>
           </button>
-          <button onclick="window.app.openMapWithFood(${food.id})" class="px-3.5 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1">
+          <button onclick="window.app.openMapWithFood(${food.id})" class="px-3.5 py-3 bg-stone-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-1 cursor-pointer">
             <span>📍</span>
           </button>
         </div>
