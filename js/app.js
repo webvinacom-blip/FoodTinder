@@ -2499,20 +2499,9 @@ class FoodApp {
 
     window.soundFX && window.soundFX.playPop();
 
-    // 1. Tên quán gốc và địa chỉ gốc (Giữ nguyên tuyệt đối địa chỉ thực tế từ database)
+    // 1. Tên quán gốc và địa chỉ gốc (Giữ nguyên tên quán và địa chỉ chuẩn từ database)
     let restName = (food.restaurant || food.name || '').trim();
     let rawAddress = (food.address || '').trim();
-
-    // Tách tên quán nếu bị dính kèm địa chỉ (VD: "Bánh Xèo Gia Vỹ 2 - 14 Diên Hồng, TP. Quy Nhơn")
-    if (/[-–—]/.test(restName)) {
-      const parts = restName.split(/[-–—]/);
-      const pureName = parts[0].trim();
-      const addrFromRest = parts.slice(1).join(' - ').trim();
-      if (pureName) restName = pureName;
-      if (addrFromRest && (!rawAddress || rawAddress.includes('Nguyễn Huệ') || !/^[0-9]+/.test(rawAddress))) {
-        rawAddress = addrFromRest;
-      }
-    }
 
     // Bỏ số 0 vô nghĩa ở đầu số nhà (VD: "05 Phó Đức Chính" -> "5 Phó Đức Chính") để Google Maps nhận diện chính xác
     rawAddress = rawAddress.replace(/^0+([1-9])/, '$1');
@@ -2586,9 +2575,10 @@ class FoodApp {
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
     // 7. Xây dựng URL Google Maps chuẩn xác:
-    // Dẫn đường từ vị trí của User (origin) đến quán ăn bằng tên quán + địa chỉ (destination).
-    // Giúp Google Maps nhận diện rõ tên quán ăn, ảnh đại diện, đánh giá và vẽ lộ trình từ vị trí hiện tại.
-    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(destTitleQuery)}`;
+    // Dẫn đường từ vị trí của User (origin) đến ĐÚNG ĐỊA CHỈ THỰC TẾ của quán (destination).
+    // Sử dụng địa chỉ thực tế (cleanAddr) đảm bảo Google Maps luôn dẫn thẳng đến đúng số nhà và tên đường của quán,
+    // tuyệt đối không bị Google Maps tự ý tìm kiếm chuyển hướng sang quán khác ở đường khác.
+    const primaryDirUrl = `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`;
 
     const primaryDestHint = `Từ ${userAddrLabel} ➔ ${cleanRestName}`;
     const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${cleanRestName} (${cleanAddr}).`;
