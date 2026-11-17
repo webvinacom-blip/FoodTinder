@@ -72,7 +72,7 @@ class TinderSwipeManager {
 
       cardEl.innerHTML = `
         <!-- Image Container -->
-        <div class="relative w-full h-[62%] overflow-hidden bg-stone-100">
+        <div class="relative w-full h-[60%] overflow-hidden bg-stone-100">
           <img src="${food.image}" alt="${food.name}"
             data-name="${food.name.replace(/"/g, '&quot;')}"
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
@@ -122,8 +122,8 @@ class TinderSwipeManager {
         </div>
 
         <!-- Card Body Info -->
-        <div class="p-3.5 flex flex-col justify-between h-[38%] bg-white">
-          <div>
+        <div class="p-3.5 flex flex-col justify-between h-[40%] bg-white">
+          <div class="space-y-1.5">
             <!-- Hàng 1: Tiêu đề quán & Nút Foody Review -->
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-bold text-base text-stone-900 leading-tight truncate flex-1" title="${food.restaurant}">${food.restaurant}</h3>
@@ -133,8 +133,8 @@ class TinderSwipeManager {
               </button>
             </div>
 
-            <!-- Hàng 2: Địa chỉ, Giá, Icon Map, Giờ mở cửa (Chiếm 100% chiều rộng thẻ) -->
-            <p class="text-[11px] text-stone-500 flex items-center gap-1.5 mt-1 truncate">
+            <!-- Hàng 2: Địa chỉ, Giá, Icon Map, Giờ mở cửa -->
+            <p class="text-[11.5px] text-stone-500 flex items-center gap-1.5 truncate">
               <span class="font-medium text-stone-700 truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
               <span>•</span>
               <span class="font-semibold text-amber-800 shrink-0">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
@@ -149,8 +149,8 @@ class TinderSwipeManager {
               <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'} shrink-0">🕒 ${food.openTime}</span>
             </p>
 
-            <!-- Hàng 3: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT -->
-            <div class="flex items-center gap-2 mt-2 flex-nowrap overflow-hidden">
+            <!-- Hàng 3: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT (KHÔNG CÓ ICON ONLINE) -->
+            <div class="flex items-center gap-2 pt-0.5 flex-nowrap overflow-hidden">
               <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
                 data-will-return-btn="${food.id}"
                 class="inline-flex items-center gap-1 text-xs font-bold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs shrink-0"
@@ -164,18 +164,17 @@ class TinderSwipeManager {
                   <div class="flex items-center">
                     ${displayReturnFriends.map(f => `
                       <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
-                        class="relative cursor-pointer transition hover:scale-110 hover:z-20 active:scale-95 shrink-0 -ml-1.5 first:ml-0"
-                        style="width:24px; height:24px;"
+                        class="relative cursor-pointer transition hover:scale-110 hover:z-20 active:scale-95 shrink-0 -ml-2 first:ml-0 rounded-full"
+                        style="width:26px; height:26px;"
                         title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
-                        <img src="${f.avatar}" alt="${f.name}" class="w-6 h-6 rounded-full object-cover border-2 border-white shadow-xs shrink-0" style="width:24px; height:24px; min-width:24px; min-height:24px;" />
-                        <span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full border border-white"></span>
+                        <img src="${f.avatar}" alt="${f.name}" class="rounded-full object-cover border-2 border-white shadow-xs shrink-0" style="width:26px; height:26px; min-width:26px; min-height:26px;" />
                       </div>
                     `).join('')}
                   </div>
                   ${moreReturnFriendsCount > 0 ? `
                     <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
-                      class="px-2 h-6 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10px] font-extrabold flex items-center justify-center -ml-1.5 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
-                      style="height:24px;"
+                      class="px-2 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10.5px] font-extrabold flex items-center justify-center -ml-2 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
+                      style="height:26px;"
                       title="Xem tất cả bạn bè sẽ quay lại quán">
                       +${moreReturnFriendsCount} more
                     </button>
