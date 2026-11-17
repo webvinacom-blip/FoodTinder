@@ -51,8 +51,8 @@ class TinderSwipeManager {
       const willReturnFriends = (window.app && typeof window.app.getFriendsWhoWillReturn === 'function')
         ? window.app.getFriendsWhoWillReturn(food.id)
         : [];
-      const displayReturnFriends = willReturnFriends.slice(0, 3);
-      const moreReturnFriendsCount = willReturnFriends.length - 3;
+      const displayReturnFriends = willReturnFriends.slice(0, 5);
+      const moreReturnFriendsCount = willReturnFriends.length - 5;
       const isWillReturn = (window.app && typeof window.app.isFoodWillReturn === 'function')
         ? window.app.isFoodWillReturn(food.id)
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
@@ -157,26 +157,38 @@ class TinderSwipeManager {
             </div>
 
             <!-- Hàng 2 (Dòng riêng): Địa chỉ quán đầy đủ có icon Map phía trước -->
-            <div class="flex items-center gap-1.5 text-xs text-stone-600 truncate">
-              <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs shrink-0" title="Xem vị trí & chỉ đường trên bản đồ">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                  <line x1="9" y1="3" x2="9" y2="18"></line>
-                  <line x1="15" y1="6" x2="15" y2="21"></line>
-                </svg>
-              </button>
-              <span class="font-medium text-stone-700 truncate cursor-pointer hover:text-amber-800" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" title="${fullAddress}">${fullAddress}</span>
+            <div class="flex items-center gap-2 text-xs text-stone-600 truncate">
+              <div class="w-5 flex items-center justify-center shrink-0">
+                <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs" title="Xem vị trí & chỉ đường trên bản đồ">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                    <line x1="9" y1="3" x2="9" y2="18"></line>
+                    <line x1="15" y1="6" x2="15" y2="21"></line>
+                  </svg>
+                </button>
+              </div>
+              <span class="font-medium text-stone-700 truncate cursor-pointer hover:text-amber-800 flex-1 min-w-0" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" title="${fullAddress}">${fullAddress}</span>
             </div>
 
             <!-- Hàng 3 (Dòng riêng - Giờ mở cửa đưa lên trước số tiền như Chuẩn Gu): Thời gian mở cửa -->
-            <div class="flex items-center gap-1 text-xs ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-              <span>🕒 ${food.openTime}</span>
-              <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+            <div class="flex items-center gap-2 text-xs ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+              <div class="w-5 flex items-center justify-center shrink-0 text-sm leading-none">
+                🕒
+              </div>
+              <div class="truncate flex-1 min-w-0">
+                <span>${food.openTime}</span>
+                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+              </div>
             </div>
 
             <!-- Hàng 4 (Dòng riêng - Số tiền như Chuẩn Gu): Giá món ăn -->
-            <div class="text-xs font-bold text-rose-600">
-              ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}
+            <div class="flex items-center gap-2 text-xs font-bold text-rose-600">
+              <div class="w-5 flex items-center justify-center shrink-0 text-sm leading-none">
+                🏷️
+              </div>
+              <div class="truncate flex-1 min-w-0">
+                ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}
+              </div>
             </div>
 
             <!-- Hàng 5: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT (KHÔNG CÓ ICON ONLINE) -->
@@ -195,16 +207,16 @@ class TinderSwipeManager {
                     ${displayReturnFriends.map(f => `
                       <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
                         class="relative cursor-pointer transition hover:scale-110 hover:z-20 active:scale-95 shrink-0 -ml-2 first:ml-0 rounded-full"
-                        style="width:26px; height:26px;"
+                        style="width:24px; height:24px;"
                         title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
-                        <img src="${f.avatar}" alt="${f.name}" class="rounded-full object-cover border-2 border-white shadow-xs shrink-0" style="width:26px; height:26px; min-width:26px; min-height:26px;" />
+                        <img src="${f.avatar}" alt="${f.name}" class="rounded-full object-cover border-2 border-white shadow-xs shrink-0" style="width:24px; height:24px; min-width:24px; min-height:24px;" />
                       </div>
                     `).join('')}
                   </div>
                   ${moreReturnFriendsCount > 0 ? `
                     <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
-                      class="px-2 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10.5px] font-extrabold flex items-center justify-center -ml-2 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
-                      style="height:26px;"
+                      class="px-1.5 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10px] font-extrabold flex items-center justify-center -ml-2 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
+                      style="height:24px;"
                       title="Xem tất cả bạn bè sẽ quay lại quán">
                       +${moreReturnFriendsCount} more
                     </button>

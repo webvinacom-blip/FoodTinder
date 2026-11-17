@@ -3528,12 +3528,32 @@ class FoodApp {
         status: "Online",
         visitedCount: 3,
         note: "Lẩu và nước sốt chua cay ở đây ngon xuất sắc, hợp tụ tập!"
+      },
+      {
+        id: 202,
+        name: "Hải Đăng",
+        relation: "Quanh bạn",
+        distance: "Cách bạn 800m",
+        avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 2,
+        note: "Món ăn hợp khẩu vị, phục vụ chu đáo tận tình!"
+      },
+      {
+        id: 106,
+        name: "Phương Linh",
+        relation: "Bạn thân",
+        distance: "Cách bạn 900m",
+        avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 4,
+        note: "Không gian dễ thương, đồ ăn sạch sẽ ngon miệng!"
       }
     ];
 
     const seed = Number(foodId) || 1;
-    // Luôn từ 4 đến 6 bạn bè để luôn có more (> 3 người) để người dùng vuốt xem thêm
-    const count = 4 + (seed % 3);
+    // Luôn từ 5 đến 8 bạn bè để hiển thị tối đa 5 bạn bè và more khi > 5
+    const count = 5 + (seed % 4);
     const startIdx = seed % allFriends.length;
     const friends = [];
     for (let i = 0; i < count; i++) {
