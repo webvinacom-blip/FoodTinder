@@ -6,6 +6,64 @@
   },
   "foods": [
     {
+      "id": 45281,
+      "name": "Ốc Đĩa Bình Dân, Ốc Hương Xào Xả Ớt & Nghêu Hấp Xả",
+      "restaurant": "Ốc Hoa - 55 Tạ Quang Bửu",
+      "address": "55 Tạ Quang Bửu, P. Đống Đa",
+      "district": "Tp. Qui Nhơn",
+      "cityId": "quynhon",
+      "cityName": "Quy Nhơn",
+      "lat": 13.78852,
+      "lng": 109.21543,
+      "latitude": 13.78852,
+      "longitude": 109.21543,
+      "openTime": "14:00 - 22:00",
+      "priceRange": "20.000đ - 60.000đ",
+      "rating": 4.7,
+      "reviewCount": 86,
+      "likesCount": 240,
+      "commentsCount": 19,
+      "category": "seafood",
+      "source": "FoodTinder Verified",
+      "sourceIcon": "⭐",
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+        "images/oc_huong_trung_muoi.jpg"
+      ],
+      "description": "Quán Ốc Hoa tọa lạc tại số 55 Tạ Quang Bửu, P. Đống Đa, là địa chỉ ăn ốc và hải sản bình dân nổi tiếng Quy Nhơn, được đông đảo người dân địa phương và giới trẻ yêu thích nhờ các món ốc xào me, xào sả ớt, nướng mỡ hành tươi ngon đậm đà cùng mức giá cực kỳ phải chăng.",
+      "recommendReason": "Quán ốc bình dân ruột của người dân bản địa Quy Nhơn, hải sản tươi rói chế biến đậm đà, nước mắm chấm gừng sả ớt ngon khó cưỡng!",
+      "attributes": [
+        "spicy",
+        "salty",
+        "crunchy",
+        "heavy"
+      ],
+      "moodIds": [
+        "seafood",
+        "hangout",
+        "comfort",
+        "craving"
+      ],
+      "tags": [
+        "#ỐcHoa",
+        "#QuánỐcHoa",
+        "#ỐcBiển",
+        "#HảiSảnQuyNhơn",
+        "#ĐặcSảnQuyNhơn",
+        "#ĂnVặtĐêm"
+      ],
+      "sideRibbon": [
+        "#nổi_tiếng",
+        "#ngon_rẻ"
+      ],
+      "hotline": "+84 905 558 234",
+      "deliveryPlatform": "Tại chỗ & Mang về",
+      "gmapsVerified": true,
+      "priceMin": 20000,
+      "priceMax": 60000
+    },
+    {
       "id": 8,
       "cityId": "quynhon",
       "cityName": "Quy Nhơn",
@@ -12343,18 +12401,21 @@
       "latitude": 13.777911,
       "longitude": 109.240818,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwcddelngt7d32@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup"
       ],
       "tags": [
-        "#BúnPhởQuyNhơn",
-        "#MónNướcNóngHổi",
+        "#HảiSảnQuyNhơn",
+        "#ĐặcSảnBiển",
         "#TàuHoaHoa",
+        "#HoaHoaSeafood",
         "#ĐặcSảnQuyNhơn"
       ],
       "moodIds": [
+        "seafood",
+        "hangout",
         "comfort"
       ]
     },
@@ -133179,5 +133240,6 @@
         "hot_soup"
       ]
     }
-  ]
+  ],
+  "total": 1695
 }
