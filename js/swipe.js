@@ -164,16 +164,18 @@ class TinderSwipeManager {
                   <div class="flex items-center">
                     ${displayReturnFriends.map(f => `
                       <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
-                        class="relative cursor-pointer transition hover:scale-115 hover:z-20 active:scale-95 shrink-0 -ml-1.5 first:ml-0"
+                        class="relative cursor-pointer transition hover:scale-110 hover:z-20 active:scale-95 shrink-0 -ml-1.5 first:ml-0"
+                        style="width:24px; height:24px;"
                         title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
-                        <img src="${f.avatar}" alt="${f.name}" class="w-6.5 h-6.5 rounded-full object-cover border-2 border-white shadow-xs" />
+                        <img src="${f.avatar}" alt="${f.name}" class="w-6 h-6 rounded-full object-cover border-2 border-white shadow-xs shrink-0" style="width:24px; height:24px; min-width:24px; min-height:24px;" />
                         <span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full border border-white"></span>
                       </div>
                     `).join('')}
                   </div>
                   ${moreReturnFriendsCount > 0 ? `
                     <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
-                      class="px-2 h-6.5 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10px] font-extrabold flex items-center justify-center -ml-1.5 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
+                      class="px-2 h-6 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10px] font-extrabold flex items-center justify-center -ml-1.5 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
+                      style="height:24px;"
                       title="Xem tất cả bạn bè sẽ quay lại quán">
                       +${moreReturnFriendsCount} more
                     </button>
