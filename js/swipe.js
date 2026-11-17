@@ -44,6 +44,7 @@ class TinderSwipeManager {
       const actualIdx = visibleCards.length - 1 - reverseIdx;
       const isTop = actualIdx === 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
 
       const cardEl = document.createElement('div');
       cardEl.className = `tinder-card absolute inset-0 rounded-[28px] overflow-hidden shadow-2xl transition-transform duration-300 select-none bg-white border border-[#F0E6DD] ${status.isOpen ? '' : 'is-closed'}`;
@@ -115,15 +116,17 @@ class TinderSwipeManager {
             <div class="flex items-start justify-between gap-2">
               <div>
                 <div class="flex items-center gap-1.5 mb-1">
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
-                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(14, 'shrink-0') : '🛍️') : '🛵'}
-                    <span>${food.source || 'ShopeeFood'}</span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-extrabold ${hasShopee ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
+                    ${hasShopee ? (window.getShopeeIcon ? window.getShopeeIcon(14, 'shrink-0') : '🛍️') : '📍'}
+                    <span>${hasShopee ? 'ShopeeFood' : (food.deliveryPlatform || 'Tại quán')}</span>
                   </span>
                   <span class="text-[11px] text-stone-400 font-medium">${food.district || 'TP. Quy Nhơn'}</span>
+                  ${hasShopee ? `
                   <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
                     ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
                     <span>ShopeeFood</span>
                   </button>
+                  ` : ''}
                 </div>
                 <h3 class="font-bold text-lg text-stone-900 leading-tight" title="${food.restaurant}">${food.restaurant}</h3>
                 <p class="text-xs text-stone-500 flex items-center gap-1 mt-0.5 flex-wrap">
@@ -149,9 +152,11 @@ class TinderSwipeManager {
           <div class="flex items-center justify-between text-[11px] text-stone-400 pt-1 border-t border-stone-100">
             <span class="truncate max-w-[130px]"><i data-lucide="navigation" class="w-3 h-3 inline mr-1 text-stone-400"></i>${food.address}</span>
             <div class="flex items-center gap-2">
+              ${hasShopee ? `
               <span class="text-orange-600 hover:text-orange-700 font-extrabold cursor-pointer hover:underline flex items-center gap-0.5" onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})">
                 <span>🛵 Đặt món</span>
               </span>
+              ` : ''}
               <span class="text-rose-500 hover:text-rose-600 font-semibold cursor-pointer hover:underline flex items-center gap-1" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})">
                 <svg class="w-3 h-3 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>

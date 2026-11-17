@@ -574,13 +574,21 @@ class FoodApp {
             </svg>
           </button>
 
-          <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+          <!-- 3. Đặt ShopeeFood (chỉ hiện khi quán có trên ShopeeFood) -->
+          ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
           <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
             class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
             title="Đặt món qua ShopeeFood">
             ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
             <span>ShopeeFood</span>
           </button>
+          ` : `
+          <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+            class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+            title="Đến quán thưởng thức trực tiếp">
+            <span>📍 Xem đường đi</span>
+          </button>
+          `}
         </div>
       </div>
     `;
@@ -1964,7 +1972,7 @@ class FoodApp {
         if (!st.isOpen) return false;
       }
       if (filterState.shopeeOnly) {
-        const hasShopee = Boolean(food.deliveryUrl || food.deliveryPlatform === 'ShopeeFood' || food.source === 'ShopeeFood');
+        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
         if (!hasShopee) return false;
       }
       if (filterState.highRatingOnly) {
@@ -2185,7 +2193,7 @@ class FoodApp {
 
       // 5. Có trên ShopeeFood
       if (this.moodFilter?.shopeeOnly) {
-        const hasShopee = Boolean(food.deliveryUrl || food.deliveryPlatform === 'ShopeeFood' || food.source === 'ShopeeFood');
+        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
         if (!hasShopee) return false;
       }
 
@@ -2394,11 +2402,18 @@ class FoodApp {
             <span class="${status.isOpen ? 'text-emerald-600 font-semibold' : 'text-stone-400'} text-[9px]">${status.detailText}</span>
           </div>
           <div class="mt-1.5 flex gap-1">
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="w-full py-1 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
               ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
+            ` : `
+            <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+              class="w-full py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
+              <span>📍 Xem đường đi</span>
+            </button>
+            `}
           </div>
         </div>
       </div>
@@ -2516,13 +2531,21 @@ class FoodApp {
               </svg>
             </button>
 
-            <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+            <!-- 3. Đặt ShopeeFood hoặc Chỉ đường -->
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="flex-1 h-7.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-lg text-[10.5px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đặt món qua ShopeeFood">
               ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
+            ` : `
+            <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+              class="flex-1 h-7.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg text-[10.5px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+              title="Đến quán thưởng thức trực tiếp">
+              <span>📍 Xem đường đi</span>
+            </button>
+            `}
           </div>
         </div>
       </div>
@@ -2972,7 +2995,8 @@ class FoodApp {
           </div>
         `}
 
-        <!-- ShopeeFood Delivery Section (Đặt trước phần Giới thiệu món ăn) -->
+        <!-- ShopeeFood Delivery Section hoặc Thưởng thức tại quán -->
+        ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
         <div class="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/70 border border-orange-200/90 rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
@@ -3009,6 +3033,42 @@ class FoodApp {
             <span class="text-xs">↗</span>
           </button>
         </div>
+        ` : `
+        <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-sky-50 border border-emerald-200/90 rounded-2xl p-4 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-white flex items-center justify-center shadow-xs overflow-hidden p-1 border border-emerald-200 shrink-0 text-base">
+                📍
+              </span>
+              <div>
+                <h5 class="font-extrabold text-xs text-stone-900 flex items-center gap-1.5">
+                  <span>Thưởng Thức Trực Tiếp Tại Quán</span>
+                  <span class="bg-emerald-600 text-white text-[8.5px] font-black px-1.5 py-0.2 rounded-full uppercase">Tại chỗ</span>
+                </h5>
+                <p class="text-[10px] text-stone-500">Quán bản địa không phục vụ giao qua ShopeeFood</p>
+              </div>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-700 bg-white border border-emerald-200 px-2 py-0.5 rounded-full shadow-xs">
+              🍽️ Ăn tại quán / Mang về
+            </span>
+          </div>
+
+          <p class="text-xs text-stone-600 my-2 leading-relaxed">
+            Bạn có thể ghé trực tiếp địa chỉ <strong>${food.address || food.district || 'TP. Quy Nhơn'}</strong> để trải nghiệm không gian và thưởng thức trọn vẹn hương vị nóng hổi nhất!
+          </p>
+
+          <div class="flex gap-2 mt-3">
+            <button onclick="window.app.openMapWithFood(${food.id})" class="flex-1 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-black text-xs shadow-md shadow-emerald-200 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
+              <span>🗺️ XEM CHỈ ĐƯỜNG TRÊN BẢN ĐỒ</span>
+            </button>
+            ${food.hotline ? `
+            <a href="tel:${food.hotline}" class="px-4 py-3 bg-white hover:bg-stone-50 border border-emerald-300 text-emerald-800 rounded-xl font-black text-xs flex items-center justify-center gap-1.5 transition active:scale-98">
+              <span>📞 Gọi quán</span>
+            </a>
+            ` : ''}
+          </div>
+        </div>
+        `}
 
         ${foodDesc ? `
           <div>
@@ -3054,6 +3114,13 @@ class FoodApp {
   openShopeeFoodDelivery(foodId) {
     const food = APP_DATA.foods.find(f => f.id === foodId);
     if (!food) return;
+
+    const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+    if (!hasShopee) {
+      this.showToast(`📍 Quán ${food.restaurant} phục vụ trực tiếp tại chỗ, không có trên ShopeeFood!`);
+      this.openMapWithFood(foodId);
+      return;
+    }
 
     window.soundFX && window.soundFX.playPop();
 

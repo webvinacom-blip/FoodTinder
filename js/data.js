@@ -901,6 +901,15 @@ function isValidQualityFood(food) {
   return true;
 }
 
+function hasShopeeDelivery(food) {
+  if (!food) return false;
+  if (food.hasShopeeDelivery === false) return false;
+  if (food.deliveryPlatform && food.deliveryPlatform !== "ShopeeFood") return false;
+  const url = String(food.deliveryUrl || "").trim();
+  if (url && url.startsWith("http") && url.includes("shopeefood.vn/")) return true;
+  return false;
+}
+
 if (typeof window !== "undefined") {
   window.PERMANENTLY_CLOSED_BLACKLIST = PERMANENTLY_CLOSED_BLACKLIST;
   window.PERMANENTLY_CLOSED_KEYWORDS = PERMANENTLY_CLOSED_KEYWORDS;
@@ -909,12 +918,14 @@ if (typeof window !== "undefined") {
   window.formatDistanceText = formatDistanceText;
   window.isFakeDummyFood = isFakeDummyFood;
   window.isValidQualityFood = isValidQualityFood;
+  window.hasShopeeDelivery = hasShopeeDelivery;
 }
 
 const APP_DATA = {
   calculateDistanceKm: calculateDistanceKm,
   formatDistanceText: formatDistanceText,
   isFakeDummyFood: isFakeDummyFood,
+  hasShopeeDelivery: hasShopeeDelivery,
   homeLocation: {
     cityId: "quynhon",
     name: "Quy Nhơn",

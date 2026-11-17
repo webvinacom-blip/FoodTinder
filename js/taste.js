@@ -603,13 +603,21 @@ class TasteManager {
               </svg>
             </button>
 
-            <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+            <!-- 3. Đặt ShopeeFood hoặc Chỉ đường -->
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đặt món qua ShopeeFood">
               ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
+            ` : `
+            <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+              class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+              title="Đến quán thưởng thức trực tiếp">
+              <span>📍 Xem đường đi</span>
+            </button>
+            `}
           </div>
         </div>
       `;

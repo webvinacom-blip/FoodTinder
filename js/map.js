@@ -232,6 +232,7 @@ class FoodMapManager {
           const targetFoods = (cityFoods && cityFoods.length > 0) ? cityFoods : APP_DATA.foods;
           return targetFoods.map(food => {
             const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+            const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
             return `
             <div id="sheet-food-${food.id}" onclick="window.mapManager.selectFood(${food.id})" 
               class="snap-center shrink-0 w-44 bg-white border border-stone-200 rounded-2xl p-2.5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between ${status.isOpen ? '' : 'is-closed'}">
@@ -265,12 +266,14 @@ class FoodMapManager {
               <div class="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between gap-1">
                 <span class="text-[11px] font-bold text-rose-600 truncate">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
                 <div class="flex items-center gap-1 shrink-0">
+                  ${hasShopee ? `
                   <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
                     class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
                     title="Đặt giao tận nơi trên ShopeeFood">
                     ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
                     <span>ShopeeFood</span>
                   </button>
+                  ` : ''}
                   <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" 
                     class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold flex items-center gap-0.5"
                     title="Chỉ đường trên Google Maps">
