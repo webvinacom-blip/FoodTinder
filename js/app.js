@@ -3220,12 +3220,12 @@ class FoodApp {
             </div>
           </div>
 
-          <!-- SECTION 2: Bạn bè đã dùng app (Gửi thẻ Rich-UI) -->
+          <!-- SECTION 2: Bạn bè đã dùng app -->
           <div class="space-y-2.5">
             <div class="flex items-center justify-between">
               <span class="text-[11px] font-black text-stone-900 uppercase tracking-wide flex items-center gap-1.5">
                 <span>👥</span>
-                <span>Bạn bè trong FoodTinder (Gửi thẻ Rich-UI)</span>
+                <span>Bạn bè trong FoodTinder</span>
               </span>
             </div>
 
@@ -3245,8 +3245,8 @@ class FoodApp {
               </button>
             </div>
 
-            <!-- Friends List: Hiện trọn vẹn đủ 3 đối tượng, vuốt/cuộn để xem thêm -->
-            <div class="space-y-2 h-[206px] max-h-[206px] overflow-y-auto overscroll-contain pr-1 scrollbar-thin">
+            <!-- Friends List: Hiện trọn vẹn đủ 3 đối tượng, vuốt/cuộn để xem thêm (ẩn hoàn toàn scrollbar) -->
+            <div class="space-y-2 h-[206px] max-h-[206px] overflow-y-auto overscroll-contain scrollbar-none no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
               ${activeFilter === 'my' ? myFriends.map(f => `
                 <div class="flex items-center justify-between p-2.5 rounded-xl border border-stone-200/80 bg-white hover:bg-stone-50 transition shrink-0 shadow-2xs">
                   <div class="flex items-center gap-2.5 min-w-0">
