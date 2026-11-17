@@ -57,6 +57,29 @@ class TinderSwipeManager {
         ? window.app.isFoodWillReturn(food.id)
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
 
+      // Địa chỉ đầy đủ chuẩn xác (gồm số nhà/đường, thành phố, tỉnh thành)
+      let fullAddress = (food.address || '').trim().replace(/^0+([1-9])/, '$1');
+      const rawCity = food.cityName || (food.cityId === 'quynhon' ? 'Quy Nhơn' : (window.APP_DATA?.currentCity?.name || 'Quy Nhơn'));
+      const cleanCity = rawCity.split('(')[0].replace(/cũ/gi, '').trim();
+      let cleanProvince = '';
+      const lowerCity = cleanCity.toLowerCase();
+      if (lowerCity.includes('quy nhơn') || food.cityId === 'quynhon') cleanProvince = 'Bình Định';
+      else if (lowerCity.includes('hà nội') || food.cityId === 'hanoi') cleanProvince = 'Hà Nội';
+      else if (lowerCity.includes('đà nẵng') || food.cityId === 'danang') cleanProvince = 'Đà Nẵng';
+      else if (lowerCity.includes('hồ chí minh') || lowerCity.includes('sài gòn') || food.cityId === 'saigon') cleanProvince = 'TP. Hồ Chí Minh';
+      else if (lowerCity.includes('nha trang') || food.cityId === 'nhatrang') cleanProvince = 'Khánh Hòa';
+      else if (lowerCity.includes('đà lạt') || food.cityId === 'dalat') cleanProvince = 'Lâm Đồng';
+      else if (lowerCity.includes('huế') || food.cityId === 'hue') cleanProvince = 'Thừa Thiên Huế';
+      else cleanProvince = cleanCity;
+
+      if (fullAddress && cleanCity && !fullAddress.toLowerCase().includes(cleanCity.toLowerCase())) {
+        fullAddress += `, ${cleanCity}`;
+      }
+      if (cleanProvince && fullAddress && !fullAddress.toLowerCase().includes(cleanProvince.toLowerCase()) && cleanProvince.toLowerCase() !== cleanCity.toLowerCase()) {
+        fullAddress += `, ${cleanProvince}`;
+      }
+      if (!fullAddress) fullAddress = food.district || 'TP. Quy Nhơn, Bình Định';
+
       const cardEl = document.createElement('div');
       cardEl.className = `tinder-card absolute inset-0 rounded-[28px] overflow-hidden shadow-2xl transition-transform duration-300 select-none bg-white border border-[#F0E6DD] ${status.isOpen ? '' : 'is-closed'}`;
       cardEl.style.zIndex = 10 - actualIdx;
@@ -133,15 +156,8 @@ class TinderSwipeManager {
               </button>
             </div>
 
-            <!-- Hàng 2 (Dòng riêng): Địa chỉ quán -->
+            <!-- Hàng 2 (Dòng riêng): Địa chỉ quán đầy đủ có icon Map phía trước -->
             <p class="text-[11.5px] text-stone-600 flex items-center gap-1.5 truncate pt-0.5">
-              <span class="text-rose-500 shrink-0 text-xs">📍</span>
-              <span class="font-medium text-stone-700 truncate">${food.address || food.district || 'TP. Quy Nhơn'}</span>
-            </p>
-
-            <!-- Hàng 3 (Dòng riêng): Số tiền & Icon Bản đồ phía sau giá món -->
-            <p class="text-[11.5px] text-stone-600 flex items-center gap-2">
-              <span class="font-semibold text-stone-800">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
               <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs shrink-0" title="Xem vị trí & chỉ đường trên bản đồ">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
@@ -149,6 +165,12 @@ class TinderSwipeManager {
                   <line x1="15" y1="6" x2="15" y2="21"></line>
                 </svg>
               </button>
+              <span class="font-medium text-stone-700 truncate cursor-pointer hover:text-amber-800" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" title="${fullAddress}">${fullAddress}</span>
+            </p>
+
+            <!-- Hàng 3 (Dòng riêng): Số tiền (đã bỏ icon Map ở giá tiền) -->
+            <p class="text-[11.5px] text-stone-600 flex items-center gap-1.5">
+              <span class="font-semibold text-stone-800">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
             </p>
 
             <!-- Hàng 4 (Dòng riêng): Thời gian mở cửa -->
