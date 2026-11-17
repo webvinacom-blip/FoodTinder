@@ -1,5 +1,180 @@
 // Conversational AI & Friends Messaging Engine (Split Layout: Friends on Left, Chat on Right)
 
+const DEFAULT_MY_FRIENDS = [
+  {
+    id: 101,
+    name: "Hoàng Yến (Yến Ốc)",
+    nickname: "Yến",
+    age: 23,
+    relation: "Bạn thân",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    bio: "Đam mê hải sản & ốc cay vỉa hè Quy Nhơn 🐚✨",
+    phone: "0905 112 334",
+    unread: 1,
+    time: "5 phút trước",
+    distance: "Cách bạn 600m",
+    messages: [
+      { sender: "them", text: "Alo bồ ơi! Tối nay trời mát nè, có rảnh đi càn quét ốc với tui không? 🐚🤤", time: "18:20" },
+      { sender: "you", text: "Nghe hấp dẫn đó! Quán nào ở Quy Nhơn đang hot vậy bà?", time: "18:22" },
+      { sender: "them", text: "Ghé Ốc Hoa ở Tạ Quang Bửu nha! Ốc hương sốt trứng muối với nghêu hấp xả ở đây đỉnh chóp luôn, nước chấm gừng sả siêu thơm! 🤤🔥", time: "18:25" }
+    ]
+  },
+  {
+    id: 102,
+    name: "Minh Quân (Cạ Cứng)",
+    nickname: "Quân",
+    age: 25,
+    relation: "Bạn cạ cứng",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    bio: "Thích đồ nướng xì xèo & bia tươi bờ kè 🥩🍻",
+    phone: "0935 889 900",
+    unread: 0,
+    time: "15 phút trước",
+    distance: "Cách bạn 1.1km",
+    messages: [
+      { sender: "you", text: "Hôm nay làm việc mệt quá ông ơi, tối có kèo gì xả stress không?", time: "17:40" },
+      { sender: "them", text: "Tối nay tụi tui tính ghé Bò Nướng Gia Bảo xì xèo xả stress nè! Thịt bò tảng nướng bơ thơm nức mũi, ông qua nhập tiệc luôn nha! 🥩🔥", time: "17:45" },
+      { sender: "you", text: "Okie chốt nhé, 19h gặp nhau ở quán!", time: "17:48" }
+    ]
+  },
+  {
+    id: 103,
+    name: "Bảo Ngọc (Trà Sữa)",
+    nickname: "Ngọc",
+    age: 22,
+    relation: "Đồng nghiệp",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    bio: "Hảo ngọt • 1 ngày 2 ly trà sữa trân châu đường đen 🧋",
+    phone: "0914 223 344",
+    unread: 2,
+    time: "30 phút trước",
+    distance: "Cùng văn phòng",
+    messages: [
+      { sender: "them", text: "Chiều nay ai gom đơn Trà Sữa Nướng May May không nè mọi người ơi! 🧋", time: "14:15" },
+      { sender: "them", text: "Đang có mã ShopeeFood freeship 25k xịn lắm, ai uống gì nhắn tui đặt chung luôn nha! ✨🛵", time: "14:16" }
+    ]
+  },
+  {
+    id: 104,
+    name: "Tuấn Khang",
+    nickname: "Khang",
+    age: 26,
+    relation: "Bạn thể thao",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    status: "10 phút trước",
+    bio: "Chạy bộ Xuân Diệu & ăn bún sứa cá ngừ 🏃‍♂️🍜",
+    phone: "0908 776 554",
+    unread: 0,
+    time: "Hôm qua",
+    distance: "Cách bạn 2.3km",
+    messages: [
+      { sender: "them", text: "Mai chạy bộ buổi sáng đường bờ biển Xuân Diệu xong ghé ăn Bún Cá Ngọc Liên nha anh em! 🏃‍♂️🌊", time: "06:30" },
+      { sender: "you", text: "Bún sứa ở đó thanh ngọt chuẩn bài luôn, mai 6h gặp ở quảng trường nhé!", time: "06:32" }
+    ]
+  },
+  {
+    id: 105,
+    name: "Thu Thảo",
+    nickname: "Thảo",
+    age: 24,
+    relation: "Bạn đại học",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    bio: "Mê cafe chill ngắm hoàng hôn Quy Nhơn 🌅☕",
+    phone: "0977 334 556",
+    unread: 0,
+    time: "Hôm qua",
+    distance: "Cách bạn 1.8km",
+    messages: [
+      { sender: "them", text: "Cuối tuần này có quán cafe mới view biển nào yên tĩnh chụp hình đẹp không bạn ơi? 📸", time: "10:10" },
+      { sender: "you", text: "Ghé Búp Station hoặc Surf Bar trên bãi biển đi, hoàng hôn chill lắm!", time: "10:15" },
+      { sender: "them", text: "Cảm ơn bạn nhiều nha, để chiều mai mình rủ mấy đứa bạn ghé thử nè! 🥰", time: "10:16" }
+    ]
+  }
+];
+
+const DEFAULT_NEARBY_FRIENDS = [
+  {
+    id: 201,
+    name: "Thanh Hằng",
+    nickname: "Hằng",
+    age: 22,
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    craving: "Đang tìm bạn đi ăn Lẩu Thái chua cay 🍲",
+    distance: "450m",
+    time: "Online",
+    phone: "0988 123 789",
+    unread: 1,
+    messages: [
+      { sender: "them", text: "Chào bạn nha! Thấy bạn trên FoodTinder ở gần khu Ngô Mây. Mình đang thèm lẩu chua cay quá, bạn có biết quán nào ngon gần đây không kết nối đi chung nhé! 👋🍲", time: "Vừa xong" }
+    ]
+  },
+  {
+    id: 202,
+    name: "Đức Anh",
+    nickname: "Anh",
+    age: 24,
+    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    craving: "Tìm cạ cứng càn quét đồ nướng ngói 🥩",
+    distance: "850m",
+    time: "Online",
+    phone: "0934 567 890",
+    unread: 0,
+    messages: [
+      { sender: "them", text: "Hello bạn cùng gu! Mình mới chuyển về Quy Nhơn, hôm nào rảnh lập kèo đi giao lưu ăn uống nha! 🍻✨", time: "14:00" }
+    ]
+  },
+  {
+    id: 203,
+    name: "Khánh Vy",
+    nickname: "Vy",
+    age: 21,
+    avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80",
+    status: "Online",
+    craving: "Thèm bánh xèo tôm nhảy & chè nhớ 🥞",
+    distance: "1.2km",
+    time: "Online",
+    phone: "0909 332 111",
+    unread: 0,
+    messages: [
+      { sender: "them", text: "Bánh xèo tôm nhảy Gia Vỹ ở Diên Hồng ngon xỉu luôn á bạn, hôm nào ghé thử nha! 🦐✨", time: "11:20" }
+    ]
+  }
+];
+
+const DEFAULT_GROUP_CHATS = [
+  {
+    id: "group_1",
+    name: "Hội Càn Quét Ốc & Lẩu Quy Nhơn 🍲",
+    avatar: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80",
+    membersCount: 8,
+    unread: 2,
+    time: "10 phút trước",
+    messages: [
+      { sender: "Hoàng Yến", text: "Alo cả nhà ơi! Tối nay 19h hẹn ở Lẩu Cô Vy hay Ốc Hoa đây ta?", time: "18:00" },
+      { sender: "Minh Quân", text: "Trời mưa lành lạnh thế này vote 1 vé Lẩu Thái tomyum nha anh em! 🍲🔥", time: "18:05" },
+      { sender: "Bảo Ngọc", text: "Chốt Lẩu Cô Vy đi, tui đặt bàn trước cho cả nhóm nha! 🙋‍♀️✨", time: "18:10" }
+    ]
+  },
+  {
+    id: "group_2",
+    name: "Team Trà Sữa & Đồ Ngọt 🧋",
+    avatar: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=200&q=80",
+    membersCount: 5,
+    unread: 1,
+    time: "25 phút trước",
+    messages: [
+      { sender: "Bảo Ngọc", text: "Ai thèm ngọt không, Trà Sữa Vie Tea đang giảm 30% kìa cả nhà ơi!", time: "15:20" },
+      { sender: "Thanh Hằng", text: "Tui 1 ly matcha đậu đỏ ít ngọt nha! 🧋✨", time: "15:25" }
+    ]
+  }
+];
+
 class FoodChatManager {
   constructor() {
     this.currentChatTarget = 'ai'; // 'ai' | number (friend id) | string (group id)
@@ -10,9 +185,43 @@ class FoodChatManager {
   }
 
   init() {
+    this.initDefaultFriends();
     this.initDefaultAIMessages();
     this.renderFriendsSidebar();
     this.renderActiveChatWindow();
+  }
+
+  initDefaultFriends() {
+    if (typeof APP_DATA === 'undefined') return;
+
+    let saved = null;
+    try {
+      const dataStr = localStorage.getItem('foodtinder_friends_v2');
+      if (dataStr) saved = JSON.parse(dataStr);
+    } catch (e) {}
+
+    if (saved && saved.myFriends && saved.myFriends.length > 0) {
+      APP_DATA.myFriends = saved.myFriends;
+      APP_DATA.nearbyFriends = saved.nearbyFriends || [];
+      APP_DATA.groupChats = saved.groupChats || [];
+    } else {
+      APP_DATA.myFriends = JSON.parse(JSON.stringify(DEFAULT_MY_FRIENDS));
+      APP_DATA.nearbyFriends = JSON.parse(JSON.stringify(DEFAULT_NEARBY_FRIENDS));
+      APP_DATA.groupChats = JSON.parse(JSON.stringify(DEFAULT_GROUP_CHATS));
+      this.saveFriendsData();
+    }
+  }
+
+  saveFriendsData() {
+    if (typeof APP_DATA === 'undefined') return;
+    try {
+      const payload = {
+        myFriends: APP_DATA.myFriends || [],
+        nearbyFriends: APP_DATA.nearbyFriends || [],
+        groupChats: APP_DATA.groupChats || []
+      };
+      localStorage.setItem('foodtinder_friends_v2', JSON.stringify(payload));
+    } catch (e) {}
   }
 
   initDefaultAIMessages() {
@@ -660,6 +869,7 @@ class FoodChatManager {
 
     this.renderActiveChatWindow();
     this.renderFriendsSidebar(false);
+    this.saveFriendsData();
 
     // Auto reply
     setTimeout(() => {
@@ -667,7 +877,9 @@ class FoodChatManager {
       const replies = [
         `Okie luôn nè! Mình qua liền đó, gặp nhau ở quán nha! 🥰✨`,
         `Duyệt nha bạn ơi, đang thèm món này dữ dội luôn! 🍲🔥`,
-        `Tuyệt vời! Tầm 15 phút nữa mình có mặt nhé! 🙋‍♀️✨`
+        `Tuyệt vời! Tầm 15 phút nữa mình có mặt nhé! 🙋‍♀️✨`,
+        `Quán này ngon có tiếng ở Quy Nhơn luôn á, đợi tui chút xíu nha! 🛵💨`,
+        `Ôi món này đúng gu tui luôn, để tui lấy xe chạy qua liền! 🤤🎉`
       ];
       friend.messages.push({
         sender: 'them',
@@ -678,6 +890,7 @@ class FoodChatManager {
         this.renderActiveChatWindow();
       }
       this.renderFriendsSidebar(false);
+      this.saveFriendsData();
     }, 1100);
   }
 
@@ -700,6 +913,30 @@ class FoodChatManager {
 
     this.renderActiveChatWindow();
     this.renderFriendsSidebar(false);
+    this.saveFriendsData();
+
+    // Auto reply from group members
+    setTimeout(() => {
+      window.soundFX && window.soundFX.playPop();
+      const groupSenders = ['Hoàng Yến', 'Minh Quân', 'Bảo Ngọc', 'Thanh Hằng'];
+      const randomSender = groupSenders[Math.floor(Math.random() * groupSenders.length)];
+      const groupReplies = [
+        `Kèo này thơm nè, tui ủng hộ cả 2 tay 2 chân luôn! 🙋‍♂️🔥`,
+        `Oke chốt giờ hẹn nha cả nhà, tui chuẩn bị xuất phát đây! 🛵💨`,
+        `Món này hợp lý quá, ai qua trước nhớ giữ bàn giúp tui với nha! 🍲✨`,
+        `Haha tuyệt cú mèo, tối nay phải ăn thật no nê mới về! 🤤🎉`
+      ];
+      group.messages.push({
+        sender: randomSender,
+        text: groupReplies[Math.floor(Math.random() * groupReplies.length)],
+        time: 'Vừa xong'
+      });
+      if (this.currentChatTarget === groupId) {
+        this.renderActiveChatWindow();
+      }
+      this.renderFriendsSidebar(false);
+      this.saveFriendsData();
+    }, 1200);
   }
 
   sendFoodInviteToFriend(friendId) {
@@ -718,6 +955,7 @@ class FoodChatManager {
 
     this.renderActiveChatWindow();
     this.renderFriendsSidebar(false);
+    this.saveFriendsData();
     window.app.showToast(`Đã gửi lời mời đi ăn cho ${friend.name}! 🎉`);
   }
 
@@ -736,6 +974,7 @@ class FoodChatManager {
 
     this.renderActiveChatWindow();
     this.renderFriendsSidebar(false);
+    this.saveFriendsData();
     window.app.showToast(`Đã chia sẻ quán ${food.name} cho ${friend.name}! 🍲`);
   }
 
@@ -812,6 +1051,7 @@ class FoodChatManager {
     };
 
     APP_DATA.myFriends.unshift(newFriend);
+    this.saveFriendsData();
     document.getElementById('add-friend-modal')?.classList.add('hidden');
     this.renderFriendsSidebar();
     this.selectChatTarget(newFriend.id);
