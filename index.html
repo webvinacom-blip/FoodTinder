@@ -622,32 +622,31 @@
           </div>
           <!-- Buttons -->
           <div class="flex items-center justify-center gap-5 mt-5">
-            <button onclick="window.swipeManager && window.swipeManager.undo()"
-              class="w-11 h-11 rounded-full bg-white border border-stone-200 shadow text-amber-500 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer">
-              <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
-            </button>
             <button onclick="window.swipeManager && window.swipeManager.swipeLeft()"
+              title="Bỏ qua món này"
               class="w-16 h-16 rounded-full bg-white border border-stone-200 shadow-lg text-stone-400 hover:text-stone-700 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer">
               <i data-lucide="x" class="w-8 h-8 stroke-[2.5]"></i>
             </button>
             <button onclick="window.swipeManager && window.swipeManager.swipeRight()"
+              title="Thích món này"
               class="w-16 h-16 rounded-full bg-gradient-to-tr from-rose-500 to-rose-400 text-white shadow-xl shadow-rose-300/80 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer">
               <i data-lucide="heart" class="w-8 h-8 fill-current"></i>
             </button>
-            <button onclick="window.swipeManager && window.swipeManager.superLike()"
-              class="w-11 h-11 rounded-full bg-white border border-stone-200 shadow text-sky-500 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer">
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-            </button>
             <button onclick="window.swipeManager && window.swipeManager.orderCurrentFoodDelivery()"
               title="Đặt giao hàng ShopeeFood cho món này"
-              class="w-12 h-12 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-xl shadow-orange-400/60 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer ring-2 ring-orange-200 group overflow-hidden">
-              <svg class="w-9.5 h-9.5 group-hover:scale-110 transition-transform drop-shadow-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#EE4D2D] to-orange-500 text-white shadow-xl shadow-orange-400/80 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer group">
+              <svg class="w-10 h-10 group-hover:scale-110 transition-transform drop-shadow-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48.5" fill="#FFFFFF"/>
                 <path d="M26 15H74L87 30V77C87 82.5 82.5 86 77 86H23C17.5 86 13 82.5 13 77V30L26 15Z" fill="#EE4D2D"/>
                 <rect x="36" y="19" width="28" height="7.5" rx="3.75" fill="#FFFFFF"/>
                 <path d="M29 36V47C29 50.2 31.2 52.8 34.2 53.2V77C34.2 78.2 35.2 79.2 36.5 79.2C37.8 79.2 38.8 78.2 38.8 77V53.2C41.8 52.8 44 50.2 44 47V36H41.5V46.5C41.5 47.5 40.7 48.3 39.7 48.3C38.7 48.3 37.9 47.5 37.9 46.5V36H35.1V46.5C35.1 47.5 34.3 48.3 33.3 48.3C32.3 48.3 31.5 47.5 31.5 46.5V36H29Z" fill="#FFFFFF"/>
                 <path d="M63.5 35C58.2 35 54.5 39.8 54.5 45.5C54.5 50.8 57.8 53.5 61.2 53.8V77C61.2 78.2 62.2 79.2 63.5 79.2C64.8 79.2 65.8 78.2 65.8 77V53.8C69.2 53.5 72.5 50.8 72.5 45.5C72.5 39.8 68.8 35 63.5 35Z" fill="#FFFFFF"/>
               </svg>
+            </button>
+            <button onclick="window.swipeManager && window.swipeManager.undo()"
+              title="Xem lại món vừa bỏ qua"
+              class="w-12 h-12 rounded-full bg-white border border-stone-200 shadow text-amber-500 hover:text-amber-600 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer">
+              <i data-lucide="rotate-ccw" class="w-6 h-6"></i>
             </button>
           </div>
         </div>
@@ -1145,7 +1144,7 @@
 <script src="js/data.js?v=1794930000"></script>
 <script src="js/audio.js?v=1794930000"></script>
 <script src="js/taste.js?v=1794930000"></script>
-<script src="js/swipe.js?v=1794960000"></script>
+<script src="js/swipe.js?v=1794990000"></script>
 <script src="js/map.js?v=1794930000"></script>
 <script src="js/reels.js?v=1794930000"></script>
 <script src="js/chat.js?v=1794970000"></script>

@@ -148,9 +148,9 @@ class TinderSwipeManager {
                   </button>
                 </div>
               </div>
-              <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-full text-xs font-bold flex items-center gap-1 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán trên Foody">
-                <span>⭐</span>
-                <span>Review</span>
+              <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-[#d32323] border border-rose-200 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán ăn trên Foody">
+                <span class="w-4 h-4 rounded-full bg-[#d32323] text-white text-[10px] font-black flex items-center justify-center leading-none shadow-xs">f</span>
+                <span>Foody Review</span>
               </button>
             </div>
           </div>
