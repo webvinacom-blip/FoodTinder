@@ -138237,6 +138237,24 @@ const APP_DATA = {
   ]
 };
 
+
+// Đảm bảo tất cả quán ăn đều có giờ đóng/mở cửa chuẩn xác, không bao giờ bị undefined
+if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods)) {
+  APP_DATA.foods.forEach(f => {
+    if (!f.openTime) {
+      if (f.category === 'boba' || f.category === 'drinks' || f.category === 'coffee' || f.category === 'dessert') {
+        f.openTime = '08:00 - 22:30';
+      } else if (f.category === 'night_food' || f.category === 'snail') {
+        f.openTime = '15:00 - 23:30';
+      } else if (f.category === 'breakfast') {
+        f.openTime = '06:00 - 13:00';
+      } else {
+        f.openTime = '07:00 - 22:30';
+      }
+    }
+  });
+}
+
 if (typeof window !== 'undefined') {
   window.APP_DATA = APP_DATA;
 }

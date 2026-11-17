@@ -260,20 +260,29 @@ class FoodMapManager {
                 <p class="text-[11px] text-stone-400 truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
                 <!-- Operating hours -->
                 <p class="text-[10px] mt-1 ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-                  🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+                  🕒 ${food.openTime || (status && status.openTime) || '07:00 - 22:30'} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
                 </p>
               </div>
               <div class="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between gap-1">
                 <span class="text-[11px] font-bold text-rose-600 truncate">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
                 <div class="flex items-center gap-1 shrink-0">
-                  ${hasShopee ? `
-                  <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
-                    class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
-                    title="Đặt giao tận nơi trên ShopeeFood">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
-                    <span>ShopeeFood</span>
-                  </button>
-                  ` : ''}
+                  ${hasShopee ? (
+                    status.isOpen ? `
+                    <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
+                      class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
+                      title="Đặt giao tận nơi trên ShopeeFood">
+                      ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
+                      <span>ShopeeFood</span>
+                    </button>
+                    ` : `
+                    <button disabled
+                      class="px-2 py-0.5 bg-stone-100 border border-stone-200 text-stone-400 rounded-md text-[9.5px] font-semibold flex items-center gap-1 cursor-not-allowed opacity-60 pointer-events-none select-none"
+                      title="Quán hiện đã đóng cửa">
+                      ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0 filter grayscale opacity-50') : ''}
+                      <span>ShopeeFood (Đóng)</span>
+                    </button>
+                    `
+                  ) : ''}
                   <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" 
                     class="px-2 py-0.5 bg-stone-100 text-stone-700 hover:bg-stone-200 rounded-md text-[9.5px] font-semibold flex items-center gap-0.5"
                     title="Chỉ đường trên Google Maps">

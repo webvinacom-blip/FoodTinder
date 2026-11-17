@@ -439,6 +439,12 @@ class TasteManager {
       displayFoods = cityFoods.filter(f => this.isLocationSpecialty(f, currentCity));
     }
 
+    // Lọc bỏ các quán đã đóng cửa: nếu quán đã đóng cửa thì không gợi ý nữa
+    displayFoods = displayFoods.filter(f => {
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
+      return Boolean(status && status.isOpen);
+    });
+
     // Kiểm tra xem người dùng đang ở location hiện tại (nơi user đang ở) hay đã đổi sang tỉnh thành khác
     const homeCityId = (window.APP_DATA && window.APP_DATA.homeCityId) ? window.APP_DATA.homeCityId : 'quynhon';
     const isHomeLocation = (
@@ -555,8 +561,8 @@ class TasteManager {
 
               <!-- Operating Hours & Status -->
               <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-                <span>🕒 ${food.openTime}</span>
-                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+                <span>🕒 ${food.openTime || (status && status.openTime) || '07:00 - 22:30'}</span>
+                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText || (status.isOpen ? 'Đang mở cửa' : 'Đã đóng cửa')})</span>
               </div>
 
               <div class="flex items-center justify-between text-[11px] pt-1">
@@ -604,14 +610,23 @@ class TasteManager {
             </button>
 
             <!-- 3. Đặt ShopeeFood hoặc Chỉ đường -->
-            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
-            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
-              title="Đặt món qua ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
-              <span>ShopeeFood</span>
-            </button>
-            ` : `
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? (
+              status.isOpen ? `
+              <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+                class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+                title="Đặt món qua ShopeeFood">
+                ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
+                <span>ShopeeFood</span>
+              </button>
+              ` : `
+              <button disabled
+                class="flex-1 h-8 bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
+                title="Quán hiện đã đóng cửa">
+                ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0 filter grayscale opacity-50') : ''}
+                <span>ShopeeFood (Đóng)</span>
+              </button>
+              `
+            ) : `
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đến quán thưởng thức trực tiếp">
