@@ -972,10 +972,18 @@ class FoodApp {
         return window.isVegetarianFood ? window.isVegetarianFood(food) : (cat === 'vegetarian' || allText.includes('chay'));
       }
 
-      case 'seafood': { // Hải sản: CHỈ hiện các quán và món hải sản tươi sống đặc sản biển
-        const isSeafood = cat === 'seafood' || /hải sản|tôm|cua|ghẹ|mực|ốc|cá mú|sứa|nghêu|sò|bào ngư|hàu|cá tà ma|chả cá/.test(allText);
+      case 'seafood': { // Hải sản: CHỈ hiện các quán và món hải sản tươi sống đặc sản biển (KHÔNG nhận bánh xèo tôm, mì quảng tôm)
+        // 1. Chặn triệt để: Món ăn vặt / điểm tâm sáng / bún phở dù có dùng nguyên liệu tôm, cua hay chả cá
+        const isExcluded = /bánh xèo|bánh tráng|mì quảng|bánh canh|bún bò|bún chả cá|bún cá|bún riêu|phở|bánh mì|hủ tiếu|xôi|chè|trà sữa|cà phê|tiệm trà|sinh tố|bánh bèo|chả ram/.test(name) ||
+                           /bánh xèo|mì quảng|bánh mì|tiệm trà|trà sữa|cà phê/.test(rest);
+        if (isExcluded) return false;
+
+        // 2. Phải là: Quán chuyên hải sản, quán ốc, hoặc món hải sản tươi sống
+        const isSeafoodDirect = cat === 'seafood' ||
+          /hải sản|quán ốc|ốc biển|ốc hương|cua huỳnh đế|ghẹ hấp|tôm hùm|tôm tích|tôm nướng|mực lá|mực hấp|mực nướng|cá mú|cá tà ma|sò huyết|sò điệp|hàu nướng|nhum biển|nghêu|ngêu|chíp chíp|vẹm|bào ngư|lẩu hải sản/.test(allText);
+
         const isNotSeafood = cat === 'vegetarian' || cat === 'boba' || allText.includes('chay') || allText.includes('trà sữa');
-        return isSeafood && !isNotSeafood;
+        return isSeafoodDirect && !isNotSeafood;
       }
 
       case 'spicy': { // Thèm cay: món cay xé lưỡi, mì cay, lẩu thái, sa tế
@@ -1141,25 +1149,58 @@ class FoodApp {
       if (foodAttrs.includes('crunchy') || foodAttrs.includes('salty')) weatherScore += 15;
     }
 
-    // Điểm_Thời_Gian
+    // Điểm_Thời_Gian (Time-of-Day Dynamics - Điều tiết sâu theo khung giờ ăn uống thực tế)
     let timeScore = 0;
+    const cat = (food.category || '').toLowerCase();
+    const name = (food.name || '').toLowerCase();
+
     if (currentHour >= 6 && currentHour < 10) {
-      // Sáng: món nước ấm hoặc bánh mì điểm tâm
-      if (foodAttrs.includes('hot_soup') || foodAttrs.includes('crunchy') || foodAttrs.includes('light')) timeScore += 30;
-      if (foodAttrs.includes('heavy')) timeScore -= 20;
+      // 1. SÁNG (06:00 - 10:00): Điểm tâm sáng & Cà phê
+      if (/bún|phở|bánh mì|bánh hỏi|cháo|hủ tiếu|bò kho|bánh cuốn/.test(name) || cat === 'cafe') {
+        timeScore += 55;
+      }
+      // Phạt nặng: Sáng sớm không ai đi ăn lẩu khổng lồ, nhậu hải sản hay nướng BBQ
+      if (cat === 'seafood' || cat === 'hotpot' || cat === 'bbq' || /quán nhậu|mồi bén|bia/.test(name)) {
+        timeScore -= 80;
+      }
     } else if (currentHour >= 11 && currentHour <= 13) {
-      // Trưa: cơm, bún, mì chắc dạ no bụng
-      if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup') || foodAttrs.includes('salty')) timeScore += 30;
+      // 2. TRƯA (11:00 - 13:30): Cơm trưa, bún phở chắc dạ
+      if (cat === 'rice' || /cơm gà|cơm tấm|cơm niêu|cơm bình dân|bún đậu|bún chả/.test(name)) {
+        timeScore += 50;
+      } else if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup')) {
+        timeScore += 30;
+      }
+      // Tráng miệng nhẹ buổi trưa
+      if (foodAttrs.includes('drinks') || foodAttrs.includes('sweet')) {
+        timeScore += 15;
+      }
     } else if (currentHour >= 14 && currentHour <= 17) {
-      // Xế chiều: trà sữa, kem, chè, ăn vặt giòn
-      if (foodAttrs.includes('drinks') || foodAttrs.includes('sweet') || foodAttrs.includes('crunchy')) timeScore += 35;
-      if (foodAttrs.includes('heavy')) timeScore -= 25;
+      // 3. XẾ CHIỀU (14:00 - 17:30): Trà sữa, chè, kem, ăn vặt đường phố
+      if (['boba', 'cafe'].includes(cat) || /trà sữa|chè|kem|sinh tố|bánh tráng|bánh bèo|bánh xèo|tàu hũ|xiên nướng/.test(name)) {
+        timeScore += 55;
+      }
+      // Phạt các bữa ăn quá nặng bụng lúc 3h chiều
+      if (cat === 'hotpot' || /cơm niêu|lẩu khổng lồ/.test(name)) {
+        timeScore -= 40;
+      }
     } else if (currentHour >= 18 && currentHour <= 21) {
-      // Tối: lẩu, nướng, hải sản đậm vị
-      if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup') || foodAttrs.includes('salty') || foodAttrs.includes('crunchy')) timeScore += 35;
+      // 4. BUỔI TỐI (18:00 - 21:30): Giờ vàng Hải sản, Lẩu, Nướng BBQ, Cơm tiệc gia đình & bạn bè
+      if (cat === 'seafood' || cat === 'hotpot' || cat === 'bbq' || /hải sản|quán ốc|nướng|lẩu|gà chỉ|cơm niêu/.test(name)) {
+        timeScore += 60;
+      } else if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup') || foodAttrs.includes('salty')) {
+        timeScore += 35;
+      }
     } else {
-      // Khuya: cháo ấm, ốc, ăn đêm
-      if (foodAttrs.includes('hot_soup') || foodAttrs.includes('crunchy') || foodAttrs.includes('salty')) timeScore += 35;
+      // 5. ĐÊM MUỘN (Sau 22:00): Ốc đêm, cháo đêm, bún đêm, quán mở muộn
+      const openTime = food.openTime || '';
+      const isLateOpen = /22:30|23:|24:|00:|01:|02:|23h|24h/.test(openTime) || /ăn đêm|khuya|cháo đêm|ốc đêm/.test(name);
+      if (isLateOpen || /ốc|cháo|bún bò|mì cay/.test(name)) {
+        timeScore += 50;
+      }
+      // Phạt quán cơm văn phòng hay quán đóng sớm
+      if (cat === 'rice') {
+        timeScore -= 30;
+      }
     }
 
     // Điểm_Phù_Hợp = (Điểm_Tâm_Trạng x 2) + Điểm_Thời_Tiết + Điểm_Thời_Gian
