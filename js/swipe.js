@@ -146,10 +146,10 @@ class TinderSwipeManager {
 
         <!-- Card Body Info -->
         <div class="p-3.5 flex flex-col justify-between h-[46%] bg-white">
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <!-- Hàng 1: Tiêu đề quán & Nút Foody Review -->
             <div class="flex items-center justify-between gap-2">
-              <h3 class="font-bold text-base text-stone-900 leading-tight truncate flex-1" title="${food.restaurant}">${food.restaurant}</h3>
+              <h3 class="font-extrabold text-base text-stone-900 leading-tight truncate flex-1" title="${food.restaurant}">${food.restaurant}</h3>
               <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-[#d32323] border border-rose-200 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán ăn trên Foody">
                 <span class="w-4 h-4 rounded-full bg-[#d32323] text-white text-[10px] font-black flex items-center justify-center leading-none shadow-xs">f</span>
                 <span>Foody Review</span>
@@ -157,7 +157,7 @@ class TinderSwipeManager {
             </div>
 
             <!-- Hàng 2 (Dòng riêng): Địa chỉ quán đầy đủ có icon Map phía trước -->
-            <p class="text-[11.5px] text-stone-600 flex items-center gap-1.5 truncate pt-0.5">
+            <div class="flex items-center gap-1.5 text-xs text-stone-600 truncate">
               <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs shrink-0" title="Xem vị trí & chỉ đường trên bản đồ">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
@@ -166,24 +166,21 @@ class TinderSwipeManager {
                 </svg>
               </button>
               <span class="font-medium text-stone-700 truncate cursor-pointer hover:text-amber-800" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" title="${fullAddress}">${fullAddress}</span>
-            </p>
+            </div>
 
-            <!-- Hàng 3 (Dòng riêng): Số tiền (đã bỏ icon Map ở giá tiền) -->
-            <p class="text-[11.5px] text-stone-600 flex items-center gap-1.5">
-              <span class="font-semibold text-stone-800">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
-            </p>
+            <!-- Hàng 3 (Dòng riêng - Giờ mở cửa đưa lên trước số tiền như Chuẩn Gu): Thời gian mở cửa -->
+            <div class="flex items-center gap-1 text-xs ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+              <span>🕒 ${food.openTime}</span>
+              <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+            </div>
 
-            <!-- Hàng 4 (Dòng riêng): Thời gian mở cửa -->
-            <p class="text-[11.5px] text-stone-500 flex items-center gap-1.5 truncate">
-              <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'} flex items-center gap-1">
-                <span>🕒</span>
-                <span>${food.openTime}</span>
-                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
-              </span>
-            </p>
+            <!-- Hàng 4 (Dòng riêng - Số tiền như Chuẩn Gu): Giá món ăn -->
+            <div class="text-xs font-bold text-rose-600">
+              ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}
+            </div>
 
             <!-- Hàng 5: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT (KHÔNG CÓ ICON ONLINE) -->
-            <div class="flex items-center gap-2 pt-1 flex-nowrap overflow-hidden">
+            <div class="flex items-center gap-2 pt-0.5 flex-nowrap overflow-hidden">
               <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
                 data-will-return-btn="${food.id}"
                 class="inline-flex items-center gap-1 text-xs font-bold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs shrink-0"
@@ -217,8 +214,8 @@ class TinderSwipeManager {
             </div>
           </div>
 
-          <!-- Bottom Row: Button Rủ đi ăn (chuẩn giao diện nút tin nhắn, không bao giờ bị che) -->
-          <div class="pt-2 border-t border-stone-100 flex items-center justify-center mt-auto">
+          <!-- Bottom Row: Button Rủ đi ăn (sát lại gần hơn với hàng số người quay lại cho cân đối) -->
+          <div class="pt-2 flex items-center justify-center">
             <button onclick="event.stopPropagation(); window.app && window.app.openInviteFriendsModal(${food.id})" 
               class="w-full py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-sm rounded-full shadow-md shadow-rose-200/50 flex items-center justify-center gap-1.5 transition active:scale-98 cursor-pointer" 
               title="Rủ bạn bè đi ăn quán này">
