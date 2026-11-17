@@ -122,68 +122,69 @@ class TinderSwipeManager {
         </div>
 
         <!-- Card Body Info -->
-        <div class="p-4 flex flex-col justify-between h-[38%] bg-white">
+        <div class="p-3.5 flex flex-col justify-between h-[38%] bg-white">
           <div>
-            <div class="flex items-start justify-between gap-2">
-              <div class="flex-1 min-w-0">
-                <h3 class="font-bold text-lg text-stone-900 leading-tight truncate" title="${food.restaurant}">${food.restaurant}</h3>
-                <p class="text-xs text-stone-500 flex items-center gap-1.5 mt-1 flex-wrap">
-                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
-                  <span>•</span>
-                  <span>${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
-                  <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs" title="Xem vị trí & chỉ đường trên bản đồ">
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                      <line x1="9" y1="3" x2="9" y2="18"></line>
-                      <line x1="15" y1="6" x2="15" y2="21"></line>
-                    </svg>
-                  </button>
-                  <span>•</span>
-                  <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
-                </p>
-
-                <!-- Mục số người sẽ quay lại làm lớn hơn & Avatars bạn bè -->
-                <div class="flex items-center gap-2 mt-2.5 flex-wrap">
-                  <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
-                    data-will-return-btn="${food.id}"
-                    class="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-extrabold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-3 py-1.5 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
-                    title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
-                    <span class="text-base leading-none">😋</span>
-                    <span><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
-                  </button>
-
-                  ${displayReturnFriends.length > 0 ? `
-                    <div class="flex items-center">
-                      <div class="flex items-center">
-                        ${displayReturnFriends.map(f => `
-                          <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
-                            class="relative cursor-pointer transition hover:scale-115 hover:z-20 active:scale-95 shrink-0 -ml-2 first:ml-0"
-                            title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
-                            <img src="${f.avatar}" alt="${f.name}" class="w-7 h-7 rounded-full object-cover border-2 border-white shadow-2xs" />
-                            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
-                          </div>
-                        `).join('')}
-                      </div>
-                      ${moreReturnFriendsCount > 0 ? `
-                        <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
-                          class="px-2 h-7 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10.5px] font-black flex items-center justify-center -ml-2 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
-                          title="Xem tất cả bạn bè sẽ quay lại quán">
-                          +${moreReturnFriendsCount} more
-                        </button>
-                      ` : ''}
-                    </div>
-                  ` : ''}
-                </div>
-              </div>
+            <!-- Hàng 1: Tiêu đề quán & Nút Foody Review -->
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="font-bold text-base text-stone-900 leading-tight truncate flex-1" title="${food.restaurant}">${food.restaurant}</h3>
               <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-[#d32323] border border-rose-200 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán ăn trên Foody">
                 <span class="w-4 h-4 rounded-full bg-[#d32323] text-white text-[10px] font-black flex items-center justify-center leading-none shadow-xs">f</span>
                 <span>Foody Review</span>
               </button>
             </div>
+
+            <!-- Hàng 2: Địa chỉ, Giá, Icon Map, Giờ mở cửa -->
+            <p class="text-[11px] text-stone-500 flex items-center gap-1.5 mt-1 truncate">
+              <span class="font-medium text-stone-700 truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
+              <span>•</span>
+              <span class="font-semibold text-amber-800 shrink-0">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
+              <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs shrink-0" title="Xem vị trí & chỉ đường trên bản đồ">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                  <line x1="9" y1="3" x2="9" y2="18"></line>
+                  <line x1="15" y1="6" x2="15" y2="21"></line>
+                </svg>
+              </button>
+              <span>•</span>
+              <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'} shrink-0">🕒 ${food.openTime}</span>
+            </p>
+
+            <!-- Hàng 3: Mục số người sẽ quay lại + Thông tin bạn bè NẰM CÙNG MỘT DÒNG (KHÔNG XUỐNG DÒNG) -->
+            <div class="flex items-center gap-2 mt-2 flex-nowrap overflow-hidden">
+              <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
+                data-will-return-btn="${food.id}"
+                class="inline-flex items-center gap-1 text-xs font-bold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs shrink-0"
+                title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
+                <span class="text-sm leading-none">😋</span>
+                <span class="whitespace-nowrap"><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
+              </button>
+
+              ${displayReturnFriends.length > 0 ? `
+                <div class="flex items-center shrink-0">
+                  <div class="flex items-center">
+                    ${displayReturnFriends.map(f => `
+                      <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
+                        class="relative cursor-pointer transition hover:scale-115 hover:z-20 active:scale-95 shrink-0 -ml-1.5 first:ml-0"
+                        title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
+                        <img src="${f.avatar}" alt="${f.name}" class="w-6.5 h-6.5 rounded-full object-cover border-2 border-white shadow-xs" />
+                        <span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full border border-white"></span>
+                      </div>
+                    `).join('')}
+                  </div>
+                  ${moreReturnFriendsCount > 0 ? `
+                    <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
+                      class="px-2 h-6.5 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10px] font-extrabold flex items-center justify-center -ml-1.5 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
+                      title="Xem tất cả bạn bè sẽ quay lại quán">
+                      +${moreReturnFriendsCount} more
+                    </button>
+                  ` : ''}
+                </div>
+              ` : ''}
+            </div>
           </div>
 
-          <!-- Bottom Row: Button Rủ đi ăn (chuẩn giao diện nút tin nhắn) -->
-          <div class="pt-2 border-t border-stone-100 flex items-center justify-center">
+          <!-- Bottom Row: Button Rủ đi ăn (chuẩn giao diện nút tin nhắn, không bao giờ bị che) -->
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-center mt-auto">
             <button onclick="event.stopPropagation(); window.app && window.app.openInviteFriendsModal(${food.id})" 
               class="w-full py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-sm rounded-full shadow-md shadow-rose-200/50 flex items-center justify-center gap-1.5 transition active:scale-98 cursor-pointer" 
               title="Rủ bạn bè đi ăn quán này">
