@@ -3339,15 +3339,30 @@ class FoodApp {
     const userAddrLabel = APP_DATA?.currentCity?.address || 'Vị trí hiện tại của bạn';
 
     // 7. Xây dựng URL Google Maps chuẩn xác:
-    // Nếu quán đã có Google Place ID (100% verified):
-    // Sử dụng tham số destination_place_id=<PLACE_ID> của Google Maps Directions API.
-    // Giúp Google Maps gắn cứng chính xác 100% vào quán ăn đó, hiển thị đúng tên quán, ảnh quán, thẻ quán
-    // và tuyệt đối KHÔNG BAO GIỜ bị nhảy sang tiệm tóc hay quán khác!
-    const targetDestName = food.gmapsName || cleanRestName;
-    const hasPlaceId = food.placeId && food.placeId.startsWith('ChIJ') && !food.placeId.startsWith('ChIJ_food_');
+    // Kiểm tra tính tương đồng thương hiệu và địa chỉ giữa restaurant và gmapsName:
+    // Tránh trường hợp fuzzy search của Google Maps tự động match sai quán khác (vd: Bếp Nhà Sam -> Bếp Nhà Xứ Nẫu).
+    let isGmapsMatch = true;
+    if (food.gmapsName && food.restaurant) {
+      const stopWords = new Set(['quán', 'tiệm', 'bếp', 'nhà', 'ẩm', 'thực', 'cơm', 'bún', 'ốc', 'cafe', 'cà', 'phê', 'trà', 'sữa', 'ăn', 'vặt', 'đặc', 'sản', 'hải', 'sản', 'bánh', 'xèo', 'lẩu', 'nướng', 'quy', 'nhơn', 'bình', 'định', 'food', 'tinder', '-', '&', '+', '/']);
+      const getWords = (str) => (str.toLowerCase().match(/[\p{L}\d]+/gu) || []).filter(w => !stopWords.has(w) && isNaN(w));
+      const restWords = getWords(food.restaurant);
+      const gmapsWords = getWords(food.gmapsName);
+      if (restWords.length > 0 && gmapsWords.length > 0) {
+        const hasCommon = restWords.some(w => gmapsWords.includes(w));
+        if (!hasCommon) {
+          isGmapsMatch = false;
+        }
+      }
+    }
+
+    const safeGmapsName = isGmapsMatch ? food.gmapsName : null;
+    const safePlaceId = isGmapsMatch ? food.placeId : null;
+
+    const targetDestName = safeGmapsName || cleanRestName;
+    const hasPlaceId = safePlaceId && safePlaceId.startsWith('ChIJ') && !safePlaceId.startsWith('ChIJ_food_');
 
     const primaryDirUrl = hasPlaceId
-      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(targetDestName)}&destination_place_id=${food.placeId}`
+      ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(targetDestName)}&destination_place_id=${safePlaceId}`
       : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanRestName + ', ' + cleanAddr)}`;
 
     const primaryDestHint = `Từ ${userAddrLabel} ➔ ${targetDestName}`;
@@ -3355,7 +3370,7 @@ class FoodApp {
 
     // URL Tìm kiếm / Xem thẻ thông tin quán trên Google Maps:
     const gmapsSearchUrl = hasPlaceId
-      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(targetDestName)}&query_place_id=${food.placeId}`
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(targetDestName)}&query_place_id=${safePlaceId}`
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destTitleQuery)}`;
 
     // URL Dẫn đường theo tọa độ vệ tinh GPS (phòng trường hợp người dùng muốn đi đúng tọa độ số):
