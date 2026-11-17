@@ -131,7 +131,7 @@ class ReelsManager {
           <div class="flex flex-wrap gap-1.5 mb-2.5">
             <span class="text-[11px] font-bold text-amber-300">#Đang_đói</span>
             <span class="text-[11px] font-bold text-amber-200">• Phù hợp trời mưa lạnh</span>
-            <span class="text-[11px] font-bold text-white/80">• ${food.priceRange}</span>
+            <span class="text-[11px] font-bold text-white/80">• ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
           </div>
 
           <!-- Rotating sound track title -->

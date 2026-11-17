@@ -730,7 +730,7 @@ class FoodChatManager {
     window.soundFX && window.soundFX.playMatch();
     friend.messages.push({
       sender: 'you',
-      text: `📍 [GỢI Ý QUÁN] "${food.name} - ${food.restaurant}" (${food.distanceText} • ${food.priceRange}). Đi quán này nha bạn ơi! 😋`,
+      text: `📍 [GỢI Ý QUÁN] "${food.name} - ${food.restaurant}" (${food.distanceText} • ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}). Đi quán này nha bạn ơi! 😋`,
       time: 'Vừa xong'
     });
 
@@ -863,7 +863,7 @@ class FoodChatManager {
             <p class="text-[10px] text-stone-400 truncate mt-0.5">${food.restaurant}</p>
           </div>
           <div class="mt-2 flex items-center justify-between gap-1">
-            <span class="text-[10px] font-bold text-rose-500">${food.priceRange.split(' - ')[0]}</span>
+            <span class="text-[10px] font-bold text-rose-500">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg text-[9px] font-bold whitespace-nowrap">
               Chỉ đường 📍

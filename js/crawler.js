@@ -207,29 +207,33 @@ class CrawlerManager {
 
     let currentFoods = (window.APP_DATA && window.APP_DATA.foods) ? window.APP_DATA.foods : [];
     
-    // LỌC ẨN & TỰ ĐỘNG XOÁ KHỎI DATABASE:
-    // Quét sạch toàn bộ quán ảo/giả và quán đã đóng cửa vĩnh viễn khỏi Database bộ nhớ
-    const beforeCount = currentFoods.length;
-    currentFoods = currentFoods.filter(f => {
-      if (window.isFakeDummyFood && window.isFakeDummyFood(f)) return false;
-      if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(f)) return false;
+    // 3. KIỂM SOÁT CHẤT LƯỢNG DỮ LIỆU & TỰ ĐỘNG XOÁ KHỎI DATABASE:
+    // Quét sạch toàn bộ quán không có ảnh, rating thấp < 4.0, quán ảo hoặc đã đóng cửa
+    const checkQuality = (food) => {
+      if (typeof window.isValidQualityFood === 'function') {
+        return window.isValidQualityFood(food);
+      }
+      if (window.isFakeDummyFood && window.isFakeDummyFood(food)) return false;
+      if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(food)) return false;
+      const img = String(food.image || '').trim();
+      if (!img || img.length < 15 || !img.startsWith('http')) return false;
+      const rating = Number(food.rating) || 0;
+      const reviewCount = Number(food.reviewCount || food.totalReviews) || 0;
+      if (rating < 4.0 && reviewCount < 20) return false;
       return true;
-    });
+    };
+
+    const beforeCount = currentFoods.length;
+    currentFoods = currentFoods.filter(checkQuality);
     const purgedFromCurrent = beforeCount - currentFoods.length;
     if (purgedFromCurrent > 0) {
-      console.log(`[Database Purge] Đã xoá ẩn ${purgedFromCurrent} quán ảo/đóng cửa vĩnh viễn khỏi Database bộ nhớ.`);
+      console.log(`[Database Purge] Đã xoá ${purgedFromCurrent} quán không đạt chuẩn chất lượng khỏi Database.`);
     }
 
     let addedCount = 0;
     newFoods.forEach(food => {
-      // Chặn và loại bỏ quán ảo
-      if (window.isFakeDummyFood && window.isFakeDummyFood(food)) {
-        return;
-      }
-      // Chặn và xoá bỏ quán đã đóng cửa vĩnh viễn
-      if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(food)) {
-        console.log(`[Database Purge] Đã loại bỏ quán đóng cửa vĩnh viễn: ${food.restaurant || food.name}`);
-        this.purgeRestaurantFromDatabase(food);
+      // Áp dụng màng lọc chất lượng nghiêm ngặt ngay từ lúc cào / nạp
+      if (!checkQuality(food)) {
         return;
       }
       const exists = currentFoods.some(f => f.id === food.id || (f.name === food.name && f.cityId === food.cityId));

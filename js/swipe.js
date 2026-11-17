@@ -116,18 +116,18 @@ class TinderSwipeManager {
               <div>
                 <div class="flex items-center gap-1.5 mb-1">
                   <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-extrabold ${food.source === 'ShopeeFood' ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
-                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(12, 'shrink-0') : '🛍️') : '🛵'}
+                    ${food.source === 'ShopeeFood' ? (window.getShopeeIcon ? window.getShopeeIcon(14, 'shrink-0') : '🛍️') : '🛵'}
                     <span>${food.source || 'ShopeeFood'}</span>
                   </span>
                   <span class="text-[11px] text-stone-400 font-medium">${food.district || 'TP. Quy Nhơn'}</span>
                   <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(13, 'rounded-xs shrink-0') : ''}
+                    ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
                     <span>ShopeeFood</span>
                   </button>
                 </div>
                 <h3 class="font-bold text-lg text-stone-900 leading-tight" title="${food.restaurant}">${food.restaurant}</h3>
                 <p class="text-xs text-stone-500 flex items-center gap-1 mt-0.5 flex-wrap">
-                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span> • ${food.priceRange}
+                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span> • ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}
                   • <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
                 </p>
               </div>
@@ -257,7 +257,12 @@ class TinderSwipeManager {
     setTimeout(() => {
       if (targetFood) {
         this.history.push({ action: 'like', food: targetFood });
-        window.app.addLikedFood(targetFood);
+        if (window.app) {
+          window.app.addLikedFood(targetFood);
+          if (typeof window.app.recordSwipeLike === 'function') {
+            window.app.recordSwipeLike(targetFood);
+          }
+        }
       }
       this.currentIndex++;
       this.isAnimating = false;
@@ -279,9 +284,26 @@ class TinderSwipeManager {
     setTimeout(() => {
       if (targetFood) {
         this.history.push({ action: 'skip', food: targetFood });
+        // 3. Học từ lịch sử Swipe (Session-based Learning)
+        if (window.app && typeof window.app.recordSwipeSkip === 'function') {
+          window.app.recordSwipeSkip(targetFood);
+        }
       }
       this.currentIndex++;
       this.isAnimating = false;
+      
+      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác
+      if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
+        const freshDeck = window.app.getFoodsForCurrentMood();
+        if (freshDeck && freshDeck.length > 0) {
+          const remaining = this.deck.slice(this.currentIndex);
+          const remainingIds = new Set(remaining.map(f => f.id));
+          const newAdditions = freshDeck.filter(f => !remainingIds.has(f.id));
+          this.deck = remaining.concat(newAdditions);
+          this.currentIndex = 0;
+        }
+      }
+
       this.render();
     }, 280);
   }
@@ -299,7 +321,12 @@ class TinderSwipeManager {
     setTimeout(() => {
       if (targetFood) {
         this.history.push({ action: 'superlike', food: targetFood });
-        window.app.addLikedFood(targetFood);
+        if (window.app) {
+          window.app.addLikedFood(targetFood);
+          if (typeof window.app.recordSwipeLike === 'function') {
+            window.app.recordSwipeLike(targetFood);
+          }
+        }
       }
       this.currentIndex++;
       this.isAnimating = false;

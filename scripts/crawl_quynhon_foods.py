@@ -389,7 +389,7 @@ def generate_300_quynhon_foods():
             "menu": [
                 {"name": item['dish_name'], "price": item['priceRange'].split(' - ')[0], "highlight": True},
                 {"name": f"Phần đặc biệt {item['restaurant']}", "price": item['priceRange'].split(' - ')[-1], "highlight": False},
-                {"name": "Trà đá / Nước suối", "price": "10.000đ", "highlight": False}
+                {"name": "Món ăn kèm đặc sản quán", "price": "25.000đ", "highlight": False}
             ]
         }
         standard_foods.append(food_obj)

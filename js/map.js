@@ -263,12 +263,12 @@ class FoodMapManager {
                 </p>
               </div>
               <div class="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between gap-1">
-                <span class="text-[11px] font-bold text-rose-600 truncate">${food.priceRange.split(' - ')[0]}</span>
+                <span class="text-[11px] font-bold text-rose-600 truncate">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
                 <div class="flex items-center gap-1 shrink-0">
                   <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
                     class="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] text-white hover:opacity-90 rounded-md text-[9.5px] font-bold shadow-xs flex items-center gap-1 cursor-pointer"
                     title="Đặt giao tận nơi trên ShopeeFood">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(12, 'rounded-xs shrink-0') : ''}
+                    ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
                     <span>ShopeeFood</span>
                   </button>
                   <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" 

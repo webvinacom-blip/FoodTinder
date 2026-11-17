@@ -371,6 +371,7 @@ class FoodApp {
     this.willReturnFoods = [];
     this.currentMood = (typeof APP_DATA !== 'undefined' && APP_DATA.currentMoodId) ? APP_DATA.currentMoodId : 'rainy_hotpot';
     this.isPhoneFrame = true;
+    this.searchQuery = '';
     this.moodFilter = {
       moodId: this.currentMood,
       selectedCategories: [],
@@ -415,6 +416,178 @@ class FoodApp {
     return this.modalToggleCategory(catId);
   }
 
+  handleHomeSearch(val) {
+    const text = (val || '').trim();
+    const clearBtn = document.getElementById('home-search-clear-btn');
+    if (clearBtn) {
+      if (text.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+    }
+
+    // Nếu người dùng xóa trắng ô nhập khi đang có kết quả tìm kiếm thì tự động trả về gợi ý ban đầu
+    if (text.length === 0 && this.searchQuery) {
+      this.searchQuery = '';
+      this.renderBentoAndFeed();
+    }
+  }
+
+  submitHomeSearch() {
+    const input = document.getElementById('home-food-search');
+    const val = input ? input.value : this.searchQuery;
+    const trimmed = (val || '').trim();
+
+    // Ẩn bàn phím ảo trên điện thoại để người dùng thấy rõ kết quả
+    if (input) {
+      input.blur();
+    }
+
+    if (!trimmed) {
+      this.clearHomeSearch();
+      return;
+    }
+
+    this.searchQuery = trimmed;
+    this.renderBentoAndFeed();
+
+    // Cuộn nhẹ tới danh sách kết quả món ăn
+    const targetSection = document.getElementById('featured-card-container');
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+  }
+
+  clearHomeSearch() {
+    this.searchQuery = '';
+    const input = document.getElementById('home-food-search');
+    if (input) {
+      input.value = '';
+    }
+    const clearBtn = document.getElementById('home-search-clear-btn');
+    if (clearBtn) clearBtn.classList.add('hidden');
+    this.renderBentoAndFeed();
+  }
+
+  buildFoodCardHtml(food, status, isLiked) {
+    if (!status) {
+      status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    }
+    if (typeof isLiked === 'undefined') {
+      isLiked = Array.isArray(this.likedFoods) && this.likedFoods.some(f => (f && f.id ? f.id === food.id : f === food.id));
+    }
+    const distText = (food.distanceText || '').replace('Cách bạn ', '');
+    const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
+
+    return `
+      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5">
+        <!-- Card Image & Status Badges -->
+        <div class="cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
+          <div class="relative w-full aspect-[4/3] bg-stone-100 overflow-hidden">
+            <img src="${food.image}"
+                 alt="${food.name}"
+                 loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 data-name="${(food.name || '').replace(/"/g, '&quot;')}"
+                 data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+                 data-category="${food.category || ''}"
+                 onerror="window.handleFoodImageError ? window.handleFoodImageError(this, '${(food.name || '').replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}') : (this.onerror=null, this.src='images/tra_sua_nuong_may_may.jpg')" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20 pointer-events-none"></div>
+
+            <!-- Top floating badges -->
+            <div class="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
+              <!-- Open / Closed Badge -->
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs flex items-center gap-1 backdrop-blur-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-800/90 text-stone-300'}">
+                <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
+                <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
+              </span>
+
+              <!-- Rating badge -->
+              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-stone-900/80 backdrop-blur-md text-amber-300 flex items-center gap-0.5 shadow-xs">
+                <span>★</span>
+                <span>${food.rating || 4.5}</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-3 space-y-1.5">
+            <div>
+              <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
+                ${food.restaurant}
+              </h5>
+              <div class="flex items-center justify-between gap-1 mt-0.5">
+                <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
+                  📍 ${food.address || food.district || 'TP. Quy Nhơn'}
+                </p>
+                <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+                  class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
+                  title="Xem quán trên bản đồ">
+                  <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                    <line x1="9" y1="3" x2="9" y2="18"></line>
+                    <line x1="15" y1="6" x2="15" y2="21"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Operating Hours & Status -->
+            <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+              <span>🕒 ${food.openTime || '07:00 - 22:30'}</span>
+              <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText || (status.isOpen ? 'Đang mở cửa' : 'Đã đóng cửa')})</span>
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] pt-1">
+              <span class="font-bold text-rose-600">${priceText}</span>
+              <span class="text-stone-400 flex items-center gap-0.5 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem vị trí quán trên bản đồ">
+                <svg class="w-3 h-3 inline text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                ${distText}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Actions: 1. Thích, 2. Bản đồ, 3. Đặt ShopeeFood -->
+        <div class="p-3.5 pt-0 flex items-center gap-1.5">
+          <!-- 1. Yêu thích (Chỉ icon) -->
+          <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
+            data-like-btn="${food.id}"
+            class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
+            title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
+            <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </button>
+
+          <!-- 2. Bản đồ (Chỉ icon) -->
+          <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+            class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
+            title="Xem trên bản đồ">
+            <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+              <line x1="9" y1="3" x2="9" y2="18"></line>
+              <line x1="15" y1="6" x2="15" y2="21"></line>
+            </svg>
+          </button>
+
+          <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
+          <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
+            class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+            title="Đặt món qua ShopeeFood">
+            ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
+            <span>ShopeeFood</span>
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+
+
   init() {
     // Tự động khôi phục vị trí & thời tiết đã lưu từ phiên trước nếu còn mới (< 3 giờ)
     try {
@@ -443,9 +616,10 @@ class FoodApp {
       }
     } catch (e) {}
 
-    // Lọc ẩn: Xoá toàn bộ quán đã đóng cửa vĩnh viễn và quán ảo khỏi Database ngay khi khởi động
+    // 3. Kiểm soát chất lượng dữ liệu: Xoá toàn bộ quán thiếu ảnh, rating thấp < 4.0, quán đóng cửa và quán ảo khỏi Database
     if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods)) {
       APP_DATA.foods = APP_DATA.foods.filter(f => {
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
         if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(f)) return false;
         if (typeof window.isFakeDummyFood === 'function' && window.isFakeDummyFood(f)) return false;
         return true;
@@ -471,6 +645,7 @@ class FoodApp {
     // Initialize components
     this.renderHeader();
     this.renderMoodSelector();
+    this.renderHeader();
     this.renderBentoAndFeed();
     this.renderFoodGrid();
     this.updateBentoStats();
@@ -705,6 +880,343 @@ class FoodApp {
     }
   }
 
+  doesFoodMatchMood(food, moodId) {
+    if (!food || !moodId) return true;
+    const name = (food.name || '').toLowerCase();
+    const rest = (food.restaurant || '').toLowerCase();
+    const cat = (food.category || '').toLowerCase();
+    const desc = (food.desc || '').toLowerCase();
+    const tags = Array.isArray(food.tags) ? food.tags.map(t => String(t).toLowerCase()) : [];
+    const allText = `${name} ${rest} ${cat} ${desc} ${tags.join(' ')}`;
+
+    switch (moodId) {
+      case 'stress': { // Xả stress / Căng thẳng: ưu tiên đồ cay xé lưỡi kích thích endorphin hoặc đồ giòn rụm nhai xả stress
+        const isSpicy = /cay|sa tế|tomyum|sốt thái|ớt xiêm|mì cay|xé lưỡi|lẩu thái|măng cay/.test(allText);
+        const isCrunchy = /giòn|bánh xèo|chả ram|chiên|rán|bánh tráng|chân gà|nem lụi|nem chua rán/.test(allText);
+        return isSpicy || isCrunchy;
+      }
+
+      case 'sweet': { // Thèm ngọt: CHỈ hiện các quán bánh, đồ ngọt, chè, kem, trà sữa
+        // 1. Chặn tuyệt đối các món mặn: cơm gà, bún bò, bún cá, phở, lẩu, bánh xèo, thịt nướng...
+        const isSavoryMeal = /cơm gà|cơm tấm|cơm niêu|cơm sườn|bún bò|bún cá|bún sứa|bún riêu|bún chả|bún đậu|phở|bánh canh|hủ tiếu|mì quảng|bánh xèo|chả ram|lẩu |lẩu hải sản|hải sản tươi sống|mực lá|bò né|gà chỉ|ốc luộc|bò nướng|gà nướng|thịt nướng/.test(name);
+        if (isSavoryMeal) return false;
+
+        // 2. Phải là quán đồ ngọt / đồ uống
+        const isSweet = ['dessert', 'boba', 'cafe', 'bakery'].includes(cat) ||
+          /trà sữa|chè|kem|bánh ngọt|tiệm bánh|bakery|cake|gelato|flan|bingsu|sinh tố|nước ép|trà đào|trà dâu|trà trái cây|sữa chua|boba|đường đen|caramel|pudding|tàu hũ|chè nhớ|bánh su|waffle|crepe|tiramisu|matcha|kem bơ|kem ý|thạch phô mai/.test(allText);
+        return Boolean(isSweet);
+      }
+
+      case 'zen': { // Thanh tịnh: CHỈ hiển thị các quán chay / món chay thuần chay
+        return window.isVegetarianFood ? window.isVegetarianFood(food) : (cat === 'vegetarian' || allText.includes('chay'));
+      }
+
+      case 'seafood': { // Hải sản: CHỈ hiện các quán và món hải sản tươi sống đặc sản biển
+        const isSeafood = cat === 'seafood' || /hải sản|tôm|cua|ghẹ|mực|ốc|cá mú|sứa|nghêu|sò|bào ngư|hàu|cá tà ma|chả cá/.test(allText);
+        const isNotSeafood = cat === 'vegetarian' || cat === 'boba' || allText.includes('chay') || allText.includes('trà sữa');
+        return isSeafood && !isNotSeafood;
+      }
+
+      case 'spicy': { // Thèm cay: món cay xé lưỡi, mì cay, lẩu thái, sa tế
+        return /cay|sa tế|tomyum|sốt thái|ớt xiêm|mì cay|chua cay|sốt cay|xé lưỡi|lẩu thái|măng cay/.test(allText);
+      }
+
+      case 'hangout': { // Lai rai: mồi bén, quán nhậu, nem nướng, chân gà, bia, đồ nướng
+        const isHangout = /quán nhậu|nướng|bbq|mực lá|chân gà|bia|nem nướng|xì xèo|ốc|mồi|lai rai/.test(allText);
+        const isSweetOnly = ['boba'].includes(cat) && !/ăn vặt|ốc|chân gà/.test(allText);
+        return isHangout && !isSweetOnly;
+      }
+
+      case 'chill': { // Thư giãn: quán cafe, trà sữa, tiệm bánh, ăn vặt nhẹ nhàng
+        return ['cafe', 'boba', 'dessert', 'bakery'].includes(cat) ||
+          /cà phê|cafe|coffee|trà sữa|trà hoa|trà đào|chè|kem|bánh ngọt|tiệm trà|tiệm bánh|sinh tố/.test(allText);
+      }
+
+      case 'healthy': { // Eat Clean: chay, salad, rau củ, nước ép, thanh đạm
+        const isHealthy = /chay|salad|rau|nước ép|sinh tố|sữa chua|thanh đạm|eat clean|sứa|bún cá thanh/.test(allText);
+        const isGreasy = /nướng mỡ|chiên giòn|thịt mỡ|lẩu cay|gà rán/.test(name);
+        return isHealthy && !isGreasy;
+      }
+
+      case 'budget': { // Viêm túi: giá min <= 50k
+        const minPrice = window.getFoodMinPrice ? window.getFoodMinPrice(food) : (food.priceMin || 35000);
+        return minPrice <= 50000;
+      }
+
+      case 'late_night': { // Ăn đêm: quán mở khuya sau 22:30 hoặc cháo đêm, ốc đêm
+        const openTime = food.openTime || '';
+        return /22:30|23:|24:|00:|01:|02:|23h|24h/.test(openTime) || /ăn đêm|khuya|cháo đêm|ốc đêm/.test(allText);
+      }
+
+      case 'refreshing': { // Giải nhiệt: trà trái cây, nước ép, sinh tố, dừa, kem, chè mát
+        return /trà |nước ép|sinh tố|dừa|kem|chè|sứa|thanh mát|giải nhiệt|đá bào/.test(allText);
+      }
+
+      case 'quick': { // Nhanh gọn: bánh mì, xôi, bánh bao, bánh bèo, ăn liền
+        return /bánh mì|xôi|bánh bao|bánh bèo|bò né|nhanh gọn|tiện lợi/.test(allText);
+      }
+
+      case 'celebrate': { // Tự thưởng: tiệc hải sản tươi sống, buffet, lẩu tiệc, steak
+        return (food.priceMax && food.priceMax >= 90000) || /tôm hùm|cua huỳnh đế|cá mú|bò bít tết|hải sản tươi sống|buffet|tiệc|đại tiệc/.test(allText);
+      }
+
+      case 'date': { // Hẹn hò: view biển, rooftop, cà phê lãng mạn, steak, sushi
+        return /view biển|lãng mạn|rooftop|steak|pizza|sushi|bờ biển|acoustic|sang trọng|chill/.test(allText);
+      }
+
+      case 'tired': { // Mệt mỏi: cháo ấm, súp, bún cá nước trong, thanh đạm
+        const isLight = /cháo|súp|bánh canh|bún riêu|bún cá|bún sứa|phở|chay|thanh đạm|nước dừa/.test(allText);
+        const isHeavy = /nướng than|bbq|chiên giòn|lẩu cay|quán nhậu/.test(name);
+        return isLight && !isHeavy;
+      }
+
+      case 'comfort': { // Cần vỗ về: món nước nóng hổi, bún bò, cháo, chè ấm, súp
+        return /bánh canh|bún bò|cháo|chè|súp|hủ tiếu|phở|ấm áp|béo|nóng hổi/.test(allText);
+      }
+
+      case 'craving': // Thèm ăn ngon: món ngon đậm đà đặc sản
+      case 'energetic': // Sôi động: món nhậu, nướng, lẩu, hội bạn
+      default:
+        return Array.isArray(food.moodIds) ? food.moodIds.includes(moodId) : true;
+    }
+  }
+
+  // ==========================================================
+  // THUẬT TOÁN ĐỀ XUẤT THÔNG MINH FOODTINDER (4 TRỤ CỘT & FALLBACK)
+  // ==========================================================
+
+  // 1. XÂY DỰNG MA TRẬN THUỘC TÍNH (ATTRIBUTE MATRIX)
+  calculateMoodRelevance(food, moodId) {
+    if (!food || !moodId) return 0;
+    // Kiểm tra tính phù hợp tuyệt đối: Nếu không khớp tiêu chí tâm trạng thì loại bỏ triệt để
+    if (!this.doesFoodMatchMood(food, moodId)) {
+      return -9999;
+    }
+
+    const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
+    const moodWeights = matrix[moodId] || {};
+    const foodAttrs = Array.isArray(food.attributes) ? food.attributes : [];
+
+    // Lấy thông tin phiên sử dụng (Session-based Learning)
+    const sessionState = this.getSessionLearningState();
+    const fatiguedAttrs = sessionState.fatiguedAttrs || [];
+    const counterTasteBonus = sessionState.counterTasteBonus || {};
+
+    let moodScore = 100; // Điểm nền tảng khi đã khớp tiêu chuẩn tâm trạng
+    let matchedAttrCount = 0;
+
+    // Tính điểm theo ma trận thuộc tính vị giác
+    foodAttrs.forEach(attr => {
+      let weight = (typeof moodWeights[attr] === 'number') ? moodWeights[attr] : 0;
+
+      // 3. Học từ lịch sử Swipe: nếu tag bị quẹt trái liên tiếp >= 3 lần -> giảm trọng số 65%
+      if (fatiguedAttrs.includes(attr)) {
+        weight = weight * 0.35;
+      }
+
+      moodScore += weight * 35;
+      if (weight > 0.5) matchedAttrCount++;
+
+      // Trộn thêm điểm từ thuộc tính đối trọng nếu người dùng đang chán tag cũ
+      if (counterTasteBonus[attr]) {
+        moodScore += counterTasteBonus[attr];
+      }
+    });
+
+    // Thưởng cho các món kết hợp đa thuộc tính khớp hoàn hảo
+    if (matchedAttrCount >= 2) moodScore += 25;
+
+    // 4. Dữ liệu từ Đám đông (Crowdsourcing Tags)
+    const crowdScore = this.getCrowdsourceScore(food.id, moodId);
+    moodScore += Math.min(30, crowdScore * 3);
+
+    return Math.round(moodScore);
+  }
+
+  // 2. THUẬT TOÁN KẾT HỢP NGỮ CẢNH (CONTEXTUAL FUSION)
+  // Công thức: Điểm_Phù_Hợp = (Điểm_Tâm_Trạng x 2) + Điểm_Thời_Tiết + Điểm_Thời_Gian
+  calculateContextualFusionScore(food, moodId, weather = null, now = new Date()) {
+    if (!food) return 0;
+    const moodScore = this.calculateMoodRelevance(food, moodId);
+    if (moodScore <= -9000) return -9999;
+
+    const foodAttrs = Array.isArray(food.attributes) ? food.attributes : [];
+    const currentHour = now.getHours();
+
+    // Phân tích dữ liệu thời tiết thực tế
+    const curWeather = weather || APP_DATA?.currentCity?.weather || { temp: '26°C', condition: 'nhiều mây', icon: '⛅' };
+    const tempNum = parseInt(curWeather.temp, 10) || 26;
+    const cond = String(curWeather.condition || '').toLowerCase();
+    const icon = String(curWeather.icon || '');
+    const isRain = cond.includes('mưa') || cond.includes('rain') || icon.includes('🌧️');
+    const isCold = tempNum <= 23 || cond.includes('lạnh');
+    const isHot = tempNum >= 30 || cond.includes('nóng') || cond.includes('nắng');
+    const isScorchingAtNoon = tempNum >= 32 && (currentHour >= 11 && currentHour <= 14);
+
+    // Điểm_Thời_Tiết
+    let weatherScore = 0;
+    if (isScorchingAtNoon) {
+      // Nắng gắt 32°C - 34°C lúc 12h trưa: Món súp/lẩu bị trừ điểm nặng, đẩy chè/kem/đồ mát lên
+      if (foodAttrs.includes('hot_soup')) weatherScore -= 60;
+      if (foodAttrs.includes('heavy')) weatherScore -= 30;
+      if (foodAttrs.includes('spicy')) weatherScore -= 25;
+      if (foodAttrs.includes('sweet') || foodAttrs.includes('drinks') || foodAttrs.includes('light')) {
+        weatherScore += 45;
+      }
+    } else if (isHot) {
+      if (foodAttrs.includes('hot_soup')) weatherScore -= 45;
+      if (foodAttrs.includes('heavy')) weatherScore -= 20;
+      if (foodAttrs.includes('spicy')) weatherScore -= 15;
+      if (foodAttrs.includes('drinks') || foodAttrs.includes('sweet') || foodAttrs.includes('light')) {
+        weatherScore += 35;
+      }
+    } else if (isRain || isCold) {
+      // Trời mưa hoặc se lạnh (<= 24°C) lúc tối: Bún chả cá, bún sứa, lẩu bò được cộng điểm tối đa
+      if (foodAttrs.includes('hot_soup')) weatherScore += 45;
+      if (foodAttrs.includes('spicy')) weatherScore += 25;
+      if (foodAttrs.includes('drinks') && !foodAttrs.includes('hot_soup')) weatherScore -= 15;
+    } else {
+      // Mát mẻ dễ chịu 24°C - 28°C: cộng điểm cho món ăn vặt giòn rụm hoặc mồi nhậu bờ biển
+      if (foodAttrs.includes('crunchy') || foodAttrs.includes('salty')) weatherScore += 15;
+    }
+
+    // Điểm_Thời_Gian
+    let timeScore = 0;
+    if (currentHour >= 6 && currentHour < 10) {
+      // Sáng: món nước ấm hoặc bánh mì điểm tâm
+      if (foodAttrs.includes('hot_soup') || foodAttrs.includes('crunchy') || foodAttrs.includes('light')) timeScore += 30;
+      if (foodAttrs.includes('heavy')) timeScore -= 20;
+    } else if (currentHour >= 11 && currentHour <= 13) {
+      // Trưa: cơm, bún, mì chắc dạ no bụng
+      if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup') || foodAttrs.includes('salty')) timeScore += 30;
+    } else if (currentHour >= 14 && currentHour <= 17) {
+      // Xế chiều: trà sữa, kem, chè, ăn vặt giòn
+      if (foodAttrs.includes('drinks') || foodAttrs.includes('sweet') || foodAttrs.includes('crunchy')) timeScore += 35;
+      if (foodAttrs.includes('heavy')) timeScore -= 25;
+    } else if (currentHour >= 18 && currentHour <= 21) {
+      // Tối: lẩu, nướng, hải sản đậm vị
+      if (foodAttrs.includes('heavy') || foodAttrs.includes('hot_soup') || foodAttrs.includes('salty') || foodAttrs.includes('crunchy')) timeScore += 35;
+    } else {
+      // Khuya: cháo ấm, ốc, ăn đêm
+      if (foodAttrs.includes('hot_soup') || foodAttrs.includes('crunchy') || foodAttrs.includes('salty')) timeScore += 35;
+    }
+
+    // Điểm_Phù_Hợp = (Điểm_Tâm_Trạng x 2) + Điểm_Thời_Tiết + Điểm_Thời_Gian
+    const contextualScore = (moodScore * 2) + weatherScore + timeScore;
+    return Math.round(contextualScore);
+  }
+
+  // 3. HỌC TỪ LỊCH SỬ SWIPE (SESSION-BASED LEARNING)
+  getSessionLearningState() {
+    try {
+      const raw = sessionStorage.getItem('foodtinder_session_learning_v1');
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return {
+      consecutiveSkips: {},
+      fatiguedAttrs: [],
+      counterTasteBonus: {}
+    };
+  }
+
+  saveSessionLearningState(state) {
+    try {
+      sessionStorage.setItem('foodtinder_session_learning_v1', JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  recordSwipeSkip(food) {
+    if (!food) return;
+    const state = this.getSessionLearningState();
+    const attrs = Array.isArray(food.attributes) ? food.attributes : [];
+
+    attrs.forEach(attr => {
+      state.consecutiveSkips[attr] = (state.consecutiveSkips[attr] || 0) + 1;
+      // Nếu quẹt trái (Bỏ qua) liên tiếp 3 thẻ có cùng tag
+      if (state.consecutiveSkips[attr] >= 3 && !state.fatiguedAttrs.includes(attr)) {
+        state.fatiguedAttrs.push(attr);
+        console.log(`🤖 [AI Session Learning] Người dùng quẹt bỏ qua 3 món liên tiếp có tag "${attr}"! Tự động giảm trọng số và kích hoạt vị giác đối trọng.`);
+
+        // Kích hoạt vị giác đối trọng:
+        if (attr === 'sweet') {
+          // "Gu ngọt hôm nay có vấn đề" -> Giảm sweet, kích hoạt salty, sour, spicy
+          state.counterTasteBonus['salty'] = 45;
+          state.counterTasteBonus['sour'] = 40;
+          state.counterTasteBonus['spicy'] = 30;
+        } else if (attr === 'hot_soup') {
+          // Chán món nước nóng -> kích hoạt crunchy, light, drinks
+          state.counterTasteBonus['crunchy'] = 45;
+          state.counterTasteBonus['light'] = 40;
+          state.counterTasteBonus['drinks'] = 35;
+        } else if (attr === 'spicy') {
+          // Chán cay -> kích hoạt sweet, light
+          state.counterTasteBonus['sweet'] = 45;
+          state.counterTasteBonus['light'] = 40;
+        } else if (attr === 'heavy') {
+          // Chán no ngấy -> kích hoạt light, drinks, sour
+          state.counterTasteBonus['light'] = 45;
+          state.counterTasteBonus['drinks'] = 40;
+          state.counterTasteBonus['sour'] = 35;
+        }
+      }
+    });
+
+    this.saveSessionLearningState(state);
+  }
+
+  recordSwipeLike(food) {
+    if (!food) return;
+    const state = this.getSessionLearningState();
+    const attrs = Array.isArray(food.attributes) ? food.attributes : [];
+
+    attrs.forEach(attr => {
+      state.consecutiveSkips[attr] = 0;
+      const idx = state.fatiguedAttrs.indexOf(attr);
+      if (idx !== -1) {
+        state.fatiguedAttrs.splice(idx, 1);
+      }
+    });
+
+    this.saveSessionLearningState(state);
+
+    // 4. Cộng điểm đám đông (Crowdsourcing)
+    const activeMood = this.moodFilter?.moodId || this.currentMood;
+    this.recordCrowdsourceVote(food.id, activeMood);
+  }
+
+  // 4. DỮ LIỆU TỪ ĐÁM ĐÔNG (CROWDSOURCING TAGS)
+  recordCrowdsourceVote(foodId, moodId) {
+    if (!foodId || !moodId) return;
+    try {
+      const KEY = 'foodtinder_crowdsource_mood_v1';
+      const store = JSON.parse(localStorage.getItem(KEY) || '{}');
+      if (!store[foodId]) store[foodId] = {};
+      store[foodId][moodId] = (store[foodId][moodId] || 0) + 1;
+      localStorage.setItem(KEY, JSON.stringify(store));
+
+      // Realtime Firebase DB sync ngầm nếu có cấu hình
+      if (typeof window !== 'undefined' && window.firebaseDb && typeof window.firebaseDb.ref === 'function') {
+        const ref = window.firebaseDb.ref(`crowdsource_mood/${foodId}/${moodId}`);
+        ref.transaction(cur => (cur || 0) + 1);
+      }
+    } catch (e) {
+      console.warn('Crowdsource vote error:', e);
+    }
+  }
+
+  getCrowdsourceScore(foodId, moodId) {
+    if (!foodId || !moodId) return 0;
+    try {
+      const KEY = 'foodtinder_crowdsource_mood_v1';
+      const store = JSON.parse(localStorage.getItem(KEY) || '{}');
+      const userVotes = store[foodId]?.[moodId] || 0;
+      const defaultVotes = (window.PRESEEDED_CROWD_WISDOM && window.PRESEEDED_CROWD_WISDOM[foodId]?.[moodId]) || 0;
+      return userVotes + defaultVotes;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   getFoodsForCurrentMood() {
     const curCityId = APP_DATA?.currentCity?.cityId;
     const curCityName = APP_DATA?.currentCity?.name;
@@ -713,15 +1225,37 @@ class FoodApp {
       const cityPool = pool.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
       if (cityPool.length > 0) pool = cityPool;
     }
-    const matched = pool.filter(f => Array.isArray(f.moodIds) && f.moodIds.includes(this.currentMood));
-    const result = matched.length > 0 ? matched : pool;
+    const moodId = this.currentMood;
+    const now = new Date();
+    const weather = APP_DATA?.currentCity?.weather;
 
-    // Sắp xếp ưu tiên tuyệt đối theo khoảng cách gần vị trí GPS hiện tại của user nhất (Gần -> Xa)
-    return [...result].sort((a, b) => {
-      const distA = (typeof a.distance === 'number') ? a.distance : 999;
-      const distB = (typeof b.distance === 'number') ? b.distance : 999;
-      return distA - distB;
+    // Lọc theo điều kiện tâm trạng thông minh
+    let matchedMood = pool.filter(food => this.doesFoodMatchMood(food, moodId));
+
+    // Fallback Logic: Khi kết quả trả về < 5 món, tự động nới lỏng để luồng quẹt thẻ không bị đứt đoạn
+    if (matchedMood.length < 5) {
+      const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
+      const weights = matrix[moodId] || {};
+      const matchedIds = new Set(matchedMood.map(f => f.id));
+      const candidates = pool.filter(f => !matchedIds.has(f.id));
+      candidates.sort((a, b) => {
+        const scoreA = (a.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
+        const scoreB = (b.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
+        return scoreB - scoreA;
+      });
+      matchedMood = matchedMood.concat(candidates.slice(0, 10 - matchedMood.length));
+    }
+
+    const scored = matchedMood.map(food => {
+      // Áp dụng công thức Contextual Fusion
+      const fusionScore = this.calculateContextualFusionScore(food, moodId, weather, now);
+      const dist = (typeof food.distance === 'number') ? food.distance : 10;
+      const proximity = Math.max(0, (10 - dist) * 2);
+      return { food, score: fusionScore + proximity + (food.rating || 4.5) * 2 };
     });
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.map(item => item.food);
   }
 
   renderHeader() {
@@ -774,19 +1308,88 @@ class FoodApp {
     if (topbarIcon) topbarIcon.textContent = weather.icon;
     if (topbarText) topbarText.textContent = `${city.name} ${weather.temp}`;
 
-    // Welcome banner subtitle
+    // Welcome banner subtitle (tự động điều chỉnh linh hoạt theo thời tiết & tâm trạng)
     const wSub = document.getElementById('welcome-subtitle');
-    if (wSub) wSub.textContent = `${city.name} đang ${weather.condition.toLowerCase()} ${weather.temp} ${weather.icon} — ăn gì cho ấm?`;
+    if (wSub) {
+      wSub.textContent = this.getWelcomeSubtitle(city, weather, this.currentMood);
+    }
+  }
 
-    // Bento weather
-    const bIcon = document.getElementById('bento-weather-icon');
-    const bTemp = document.getElementById('bento-weather-temp');
-    const bCity = document.getElementById('bento-weather-city');
-    const bCond = document.getElementById('bento-weather-cond');
-    if (bIcon) bIcon.textContent = weather.icon;
-    if (bTemp) bTemp.textContent = weather.temp;
-    if (bCity) bCity.textContent = city.name;
-    if (bCond) bCond.textContent = weather.condition;
+  getWelcomeSubtitle(city, weather, moodId) {
+    const tempNum = parseInt(weather.temp, 10) || 26;
+    const condLower = (weather.condition || '').toLowerCase();
+    const isRaining = condLower.includes('mưa') || weather.icon === '🌧️';
+    const isCold = tempNum < 21 || condLower.includes('gió') || condLower.includes('rét');
+    const isPleasant = tempNum >= 21 && tempNum <= 27; // 21 - 27 độ: mát mẻ, nhiều mây, dễ chịu
+    const isHot = tempNum >= 28; // >= 28 độ: nắng, oi bức
+
+    let suggestion = '';
+
+    // Phân loại thông minh kết hợp tâm trạng & thời tiết
+    if (moodId === 'comfort' || moodId === 'sad') {
+      if (isRaining || isCold) {
+        suggestion = 'tâm trạng cần vỗ về, thưởng thức bát phở nóng hay nồi lẩu ấm lòng nhé?';
+      } else if (isPleasant) {
+        suggestion = 'tâm trạng cần chút nuông chiều, hôm nay ăn món gì thật ngon để vui vẻ lại nào!';
+      } else {
+        suggestion = 'ngày oi ả thấy hơi chùng lòng, làm ly kem mát lạnh hay cốc trà sữa ngọt ngào nhé!';
+      }
+    } else if (moodId === 'craving') {
+      if (isRaining || isCold) {
+        suggestion = 'trời se lạnh thế này, làm nồi lẩu xì xèo hay đĩa nướng thơm lừng thôi nào!';
+      } else if (isPleasant) {
+        suggestion = 'tiết trời mát mẻ lý tưởng, oanh tạc các món giòn rụm hay hải sản tươi ngon nhé?';
+      } else {
+        suggestion = 'thèm ăn ngon ngày nắng ráo, thưởng thức ngay các món đậm đà hấp dẫn nào!';
+      }
+    } else if (moodId === 'chill') {
+      if (isRaining) {
+        suggestion = 'trời mưa lãng mạn, ngồi góc quán quen nhâm nhi cà phê hay chút bánh ngọt nhé!';
+      } else if (isPleasant) {
+        suggestion = 'tiết trời mát mẻ dễ chịu, ghé quán cà phê xinh hay làm bát bún thanh nhẹ nhé?';
+      } else if (isHot) {
+        suggestion = 'trời oi bức, trốn nắng trong quán máy lạnh làm ly trà thanh mát thư giãn nào!';
+      } else {
+        suggestion = 'trời se lạnh bình yên, nhâm nhi tách trà ấm ngắm phố phường nhé!';
+      }
+    } else if (moodId === 'sweet') {
+      suggestion = 'hôm nay thèm chút ngọt ngào, làm ly trà sữa hay bát chè ngon nạp lại năng lượng nhé!';
+    } else if (moodId === 'zen') {
+      suggestion = 'tâm hồn muốn tìm chút an yên, thưởng thức bữa cơm chay hay lẩu nấm thanh tịnh nào!';
+    } else if (moodId === 'seafood') {
+      suggestion = 'đến phố biển là phải ăn hải sản, thưởng thức tôm mực tươi rói hay ốc luộc thơm nức nhé!';
+    } else if (moodId === 'hangout') {
+      suggestion = 'hôm nay lên kèo lai rai, gọi đĩa nem nướng, mực nướng xì xèo cùng bạn bè thôi!';
+    } else if (moodId === 'refreshing') {
+      suggestion = 'ngày oi bức cần giải nhiệt cấp tốc, làm ly trà trái cây mát lạnh hay trái dừa ngọt lịm nhé!';
+    } else if (moodId === 'quick') {
+      suggestion = 'bận rộn cần ăn nhanh gọn, làm ổ bánh mì giòn rụm hay gói xôi nóng chắc dạ nào!';
+    } else if (moodId === 'energetic') {
+      suggestion = 'tinh thần đang lên cao, kéo hội bạn đi ăn uống tụ tập xôm tụ thôi nào!';
+    } else if (moodId === 'tired') {
+      suggestion = 'làm việc vất vả rồi, nạp lại năng lượng bằng bát súp bổ dưỡng hay món nước thanh đạm nhé!';
+    } else if (moodId === 'healthy') {
+      suggestion = 'hôm nay nhẹ nhàng thanh lọc cơ thể với salad tươi giòn hay món ăn thanh sạch nhé!';
+    } else if (moodId === 'budget') {
+      suggestion = 'hôm nay ăn gì vừa ngon - bổ - rẻ chuẩn tiêu chí sinh viên nhỉ?';
+    } else if (moodId === 'celebrate') {
+      suggestion = 'ngày vui là phải mở tiệc, chọn ngay quán ngon xịn sò chiêu đãi bạn bè thôi!';
+    } else {
+      // Mặc định dựa theo thời tiết thực tế
+      if (isRaining) {
+        suggestion = 'trời mưa rả rích thế này, làm đĩa bánh xèo giòn rụm hay bát bún nóng hổi nhé?';
+      } else if (isCold) {
+        suggestion = 'trời se se lạnh, ăn gì cho ấm bụng bây giờ nhỉ?';
+      } else if (isPleasant) {
+        suggestion = 'tiết trời mát mẻ dễ chịu thế này, hôm nay bạn thèm ăn món gì nào?';
+      } else if (isHot) {
+        suggestion = 'trời nắng oi ả, giải nhiệt bằng bát chè mát lạnh hay món thanh mát nhé!';
+      } else {
+        suggestion = 'hôm nay bạn muốn thưởng thức món ngon gì nào?';
+      }
+    }
+
+    return `${city.name} đang ${weather.condition.toLowerCase()} ${weather.temp} ${weather.icon} — ${suggestion}`;
   }
 
   renderMoodSelector() {
@@ -1313,6 +1916,11 @@ class FoodApp {
 
   resetMoodFilters() {
     window.soundFX && window.soundFX.playPop();
+    this.searchQuery = '';
+    const sInput = document.getElementById('home-food-search');
+    if (sInput) sInput.value = '';
+    const clearBtn = document.getElementById('home-search-clear-btn');
+    if (clearBtn) clearBtn.classList.add('hidden');
     this.moodFilter = {
       moodId: this.currentMood,
       selectedCategories: [],
@@ -1333,8 +1941,32 @@ class FoodApp {
     const container = document.getElementById('featured-card-container');
     if (!container) return;
 
+    const hasSearch = Boolean(this.searchQuery && this.searchQuery.trim());
+    const q = (this.searchQuery || '').trim().toLowerCase();
+
+    // Cập nhật tiêu đề & nút đóng tìm kiếm khi đang search
+    const searchSubTitle = document.getElementById('mood-section-search-subtitle');
+    const searchQueryEl = document.getElementById('mood-section-search-query');
+    const clearSearchBtn = document.getElementById('btn-clear-search-in-mood');
+    if (searchSubTitle && searchQueryEl) {
+      if (hasSearch) {
+        searchSubTitle.classList.remove('hidden');
+        searchQueryEl.textContent = `"${this.searchQuery.trim()}"`;
+      } else {
+        searchSubTitle.classList.add('hidden');
+        searchQueryEl.textContent = '';
+      }
+    }
+    if (clearSearchBtn) {
+      if (hasSearch) {
+        clearSearchBtn.classList.remove('hidden');
+      } else {
+        clearSearchBtn.classList.add('hidden');
+      }
+    }
+
     // Update active filter badge & indicator in UI
-    const activeCount = this.getActiveFiltersCount();
+    const activeCount = this.getActiveFiltersCount() + (hasSearch ? 1 : 0);
     const indicatorEl = document.getElementById('active-filter-indicator');
     const countBadgeEl = document.getElementById('active-filter-count');
     const filterBtnCount = document.getElementById('filter-btn-count');
@@ -1358,23 +1990,10 @@ class FoodApp {
       }
     }
     if (resetBtn) {
-      if (activeCount > 0) {
+      if (this.getActiveFiltersCount() > 0) {
         resetBtn.classList.remove('hidden');
       } else {
         resetBtn.classList.add('hidden');
-      }
-    }
-
-    if (descEl) {
-      const selectedCats = this.moodFilter?.selectedCategories || [];
-      if (selectedCats.length > 0) {
-        const catNames = selectedCats.map(cId => {
-          const c = FILTER_CATEGORIES.find(x => x.id === cId);
-          return c ? c.short : cId;
-        }).join(', ');
-        descEl.textContent = `Đang lọc: ${catNames}`;
-      } else {
-        descEl.textContent = `Tự động quét quán mở cửa theo thời tiết & giờ thực tế`;
       }
     }
 
@@ -1411,8 +2030,26 @@ class FoodApp {
       }
     }
 
-    // Apply Filters (Lọc theo lựa chọn của người dùng)
+    // Apply Filters (Lọc theo từ khóa tìm kiếm & bộ lọc)
     let filteredFoods = baseFoods.filter(food => {
+      // -1. Màng lọc chất lượng dữ liệu: loại bỏ quán thiếu ảnh, rating < 4.0, quán đóng cửa / địa chỉ ảo
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) {
+        return false;
+      }
+
+      // 0. Khớp từ khóa tìm kiếm
+      if (hasSearch) {
+        const nameMatch = (food.name || '').toLowerCase().includes(q);
+        const restMatch = (food.restaurant || '').toLowerCase().includes(q);
+        const addrMatch = (food.address || food.district || '').toLowerCase().includes(q);
+        const descMatch = (food.desc || '').toLowerCase().includes(q);
+        const catMatch  = (food.category || '').toLowerCase().includes(q);
+        const tagsMatch = Array.isArray(food.tags) && food.tags.some(t => String(t).toLowerCase().includes(q));
+        if (!nameMatch && !restMatch && !addrMatch && !descMatch && !catMatch && !tagsMatch) {
+          return false;
+        }
+      }
+
       // 1. Loại món (Categories filter)
       const selectedCats = this.moodFilter?.selectedCategories || [];
       if (selectedCats.length > 0) {
@@ -1451,46 +2088,100 @@ class FoodApp {
         return false;
       }
 
+      // 8. Ràng buộc thông minh theo tâm trạng:
+      // Lọc bỏ triệt để các món không đúng tâm trạng (ví dụ: thèm ngọt không bao giờ hiện cơm gà, bún bò)
+      if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
+        return false;
+      }
+
       return true;
     });
 
-    // Sắp xếp điểm số thông minh: Quán mở cửa -> Phù hợp tâm trạng -> Khung giờ -> Thời tiết -> Rating
+    // 5. Fallback Logic: Khi kết quả trả về < 5 món, tự động nới lỏng bộ lọc để luồng không bị đứt đoạn
+    let isRelaxedFallback = false;
+    let fallbackNotice = "";
+
+    if (!hasSearch && filteredFoods.length < 5) {
+      isRelaxedFallback = true;
+      const currentMoodObj = APP_DATA.moods?.find(m => m.id === activeMoodId);
+      const moodLabel = currentMoodObj ? currentMoodObj.label.toLowerCase() : 'tâm trạng';
+      fallbackNotice = `Quanh đây đang hiếm món ${moodLabel}, FoodTinder mở rộng tìm kiếm thêm một chút cho bạn nhé!`;
+
+      // Mở rộng bán kính quét ra toàn bộ địa bàn thành phố
+      const relaxedList = baseFoods.filter(food => {
+        if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
+          return false;
+        }
+        return true;
+      });
+
+      if (relaxedList.length > 0) {
+        filteredFoods = relaxedList;
+      }
+
+      // Nếu vẫn < 5 món (ví dụ chọn các tiêu chí quá đặc thù), mở rộng các món có thuộc tính vị giác tương đồng
+      if (filteredFoods.length < 5) {
+        const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
+        const weights = matrix[activeMoodId] || {};
+        const existingIds = new Set(filteredFoods.map(f => f.id));
+        const extraCandidates = baseFoods.filter(f => !existingIds.has(f.id));
+        extraCandidates.sort((a, b) => {
+          const scoreA = (a.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
+          const scoreB = (b.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
+          return scoreB - scoreA;
+        });
+        filteredFoods = filteredFoods.concat(extraCandidates.slice(0, 8 - filteredFoods.length));
+      }
+    }
+
+    if (descEl) {
+      if (hasSearch) {
+        descEl.textContent = `Tìm thấy ${filteredFoods.length} quán ăn & món ngon phù hợp với từ khóa "${this.searchQuery}"`;
+      } else {
+        const selectedCats = this.moodFilter?.selectedCategories || [];
+        if (selectedCats.length > 0) {
+          const catNames = selectedCats.map(cId => {
+            const c = FILTER_CATEGORIES.find(x => x.id === cId);
+            return c ? c.short : cId;
+          }).join(', ');
+          descEl.textContent = `Đang lọc: ${catNames}`;
+        } else {
+          const currentMoodObj = APP_DATA.moods?.find(m => m.id === activeMoodId);
+          if (currentMoodObj) {
+            if (activeMoodId === 'zen') {
+              descEl.textContent = `Gợi ý theo tâm trạng: 🪷 Thanh tịnh — Tuyển chọn các quán chay thanh tịnh, lẩu nấm & cơm chay an lạc`;
+            } else if (activeMoodId === 'stress') {
+              descEl.textContent = `Gợi ý theo tâm trạng: 🤯 Xả stress — Món cay endorphin & đồ giòn rụm nhai xả stress`;
+            } else {
+              descEl.textContent = `Gợi ý theo tâm trạng: ${currentMoodObj.emoji} ${currentMoodObj.label} — ${currentMoodObj.desc}`;
+            }
+          } else {
+            descEl.textContent = `Tự động quét quán mở cửa theo thời tiết & giờ thực tế`;
+          }
+        }
+      }
+    }
+
+    // Sắp xếp điểm số thông minh: Quán mở cửa -> Contextual Fusion (Tâm trạng x 2 + Thời tiết + Giờ) -> Tìm kiếm -> Khoảng cách -> Rating
     const scoredFoods = filteredFoods.map(food => {
       let score = 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
-      if (status.isOpen) score += 50;
+      if (status.isOpen) score += 40;
 
-      // Match mood
-      if (Array.isArray(food.moodIds) && food.moodIds.includes(activeMoodId)) {
-        score += 30;
+      // Ưu tiên khớp từ khóa tìm kiếm nếu có
+      if (hasSearch) {
+        if ((food.restaurant || '').toLowerCase().includes(q)) score += 120;
+        if ((food.name || '').toLowerCase().includes(q)) score += 100;
+        if ((food.category || '').toLowerCase().includes(q)) score += 50;
       }
 
-      // Match meal slot ngầm
-      const nameCat = `${food.name} ${food.category || ''} ${(food.tags || []).join(' ')}`.toLowerCase();
-      if (currentMealSlot === 'breakfast' && (nameCat.includes('bún') || nameCat.includes('phở') || nameCat.includes('bánh mì') || nameCat.includes('xôi') || nameCat.includes('bánh hỏi') || nameCat.includes('cháo'))) {
-        score += 25;
-      } else if (currentMealSlot === 'lunch' && (nameCat.includes('cơm') || nameCat.includes('bún') || nameCat.includes('mì') || nameCat.includes('phở'))) {
-        score += 20;
-      } else if (currentMealSlot === 'snack' && (nameCat.includes('trà sữa') || nameCat.includes('ăn vặt') || nameCat.includes('bánh xèo') || nameCat.includes('chè') || nameCat.includes('kem') || nameCat.includes('cà phê'))) {
-        score += 25;
-      } else if (currentMealSlot === 'dinner' && (nameCat.includes('lẩu') || nameCat.includes('nướng') || nameCat.includes('hải sản') || nameCat.includes('cơm niêu') || nameCat.includes('bbq'))) {
-        score += 25;
-      } else if (currentMealSlot === 'latenight' && (nameCat.includes('cháo') || nameCat.includes('ốc') || nameCat.includes('lẩu') || nameCat.includes('nướng') || nameCat.includes('mì'))) {
-        score += 25;
-      }
+      // Contextual Fusion Score: (Điểm_Tâm_Trạng x 2) + Điểm_Thời_Tiết + Điểm_Thời_Gian
+      const fusionScore = this.calculateContextualFusionScore(food, activeMoodId, weather, now);
+      score += fusionScore;
 
-      // Match thời tiết ngầm
-      if (isRain && (nameCat.includes('lẩu') || nameCat.includes('cháo') || nameCat.includes('nướng') || nameCat.includes('súp') || nameCat.includes('nóng'))) {
-        score += 15;
-      }
-      if (isHot && (nameCat.includes('trà sữa') || nameCat.includes('kem') || nameCat.includes('chè') || nameCat.includes('nước ép') || nameCat.includes('sinh tố'))) {
-        score += 15;
-      }
-
-      // Ưu tiên khoảng cách gần vị trí hiện tại của user nhất:
+      // Khoảng cách: bổ trợ nhẹ (tối đa 20 điểm), không làm mất đi các món khớp tâm trạng
       const dist = (typeof food.distance === 'number') ? food.distance : 10;
-      // Điểm khoảng cách: quán càng gần điểm càng cao vượt trội (0km -> +60 điểm, 1km -> +54, 5km -> +30, 10km -> 0)
-      const proximityBonus = Math.max(0, (10 - dist) * 6);
+      const proximityBonus = Math.max(0, (10 - dist) * 2);
       score += proximityBonus;
 
       score += (food.rating || 4.5) * 2;
@@ -1498,9 +2189,23 @@ class FoodApp {
     });
 
     scoredFoods.sort((a, b) => (b.score - a.score) || ((a.food.distance || 0) - (b.food.distance || 0)));
-    const topFoods = scoredFoods.slice(0, 12);
+    const displayLimit = hasSearch ? 48 : 24;
+    const topFoods = scoredFoods.slice(0, displayLimit);
 
     if (topFoods.length === 0) {
+      if (hasSearch) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 px-4 text-center bg-white rounded-3xl border border-stone-200 shadow-sm">
+            <div class="text-4xl mb-2">🔍</div>
+            <p class="font-black text-base text-stone-900">Không tìm thấy quán nào khớp với "${this.searchQuery}"</p>
+            <p class="text-xs text-stone-500 mt-1 max-w-md mx-auto">Thử tìm bằng tên món khác (vd: bánh xèo, bún cá, nem nướng, trà sữa), tên quán hoặc tên đường.</p>
+            <button onclick="window.app.clearHomeSearch()" class="mt-4 px-4 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-bold transition shadow-xs cursor-pointer">
+              ✕ Xóa tìm kiếm & xem lại gợi ý
+            </button>
+          </div>
+        `;
+        return;
+      }
       container.innerHTML = `
         <div class="col-span-full py-10 px-4 text-center bg-white rounded-3xl border border-stone-200 shadow-sm">
           <div class="text-3xl mb-2">🔍</div>
@@ -1514,108 +2219,17 @@ class FoodApp {
       return;
     }
 
-    container.innerHTML = topFoods.map(({ food, status }) => {
-      const isLiked = this.likedFoods.includes(food.id);
-      return `
-        <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5">
-          <!-- Card Image & Status Badges -->
-          <div class="cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
-            <div class="relative w-full aspect-[4/3] bg-stone-100 overflow-hidden">
-              <img src="${food.image}"
-                   alt="${food.name}"
-                   loading="lazy"
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=640&q=80'" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20 pointer-events-none"></div>
-
-              <!-- Top floating badges -->
-              <div class="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
-                <!-- Open / Closed Badge -->
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs flex items-center gap-1 backdrop-blur-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-800/90 text-stone-300'}">
-                  <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
-                  <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
-                </span>
-
-                <!-- Rating badge -->
-                <span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-stone-900/80 backdrop-blur-md text-amber-300 flex items-center gap-0.5 shadow-xs">
-                  <span>★</span>
-                  <span>${food.rating}</span>
-                </span>
-              </div>
-            </div>
-
-            <!-- Card Body -->
-            <div class="p-3 space-y-1.5">
-              <div>
-                <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
-                  ${food.restaurant}
-                </h5>
-                <div class="flex items-center justify-between gap-1 mt-0.5">
-                  <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
-                    📍 ${food.address || food.district || 'TP. Quy Nhơn'}
-                  </p>
-                  <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-                    class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
-                    title="Xem quán trên bản đồ">
-                    <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                      <line x1="9" y1="3" x2="9" y2="18"></line>
-                      <line x1="15" y1="6" x2="15" y2="21"></line>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Operating Hours & Status -->
-              <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-                <span>🕒 ${food.openTime}</span>
-                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
-              </div>
-
-              <div class="flex items-center justify-between text-[11px] pt-1">
-                <span class="font-bold text-rose-600">${food.priceRange.split(' - ')[0]}</span>
-                <span class="text-stone-400 flex items-center gap-0.5 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem vị trí quán trên bản đồ">
-                  <svg class="w-3 h-3 inline text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                  ${food.distanceText.replace('Cách bạn ', '')}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Actions: 1. Thích, 2. Bản đồ, 3. Đặt ShopeeFood -->
-          <div class="p-3.5 pt-0 flex items-center gap-1.5">
-            <!-- 1. Yêu thích (Chỉ icon) -->
-            <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
-              data-like-btn="${food.id}"
-              class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
-              title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
-              <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-              </svg>
-            </button>
-
-            <!-- 2. Bản đồ (Chỉ icon) -->
-            <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-              class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
-              title="Xem trên bản đồ">
-              <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                <line x1="9" y1="3" x2="9" y2="18"></line>
-                <line x1="15" y1="6" x2="15" y2="21"></line>
-              </svg>
-            </button>
-
-            <!-- 3. Đặt ShopeeFood (Nút chính bên phải) -->
-            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
-              title="Đặt món qua ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'rounded-xs shrink-0') : ''}
-              <span>ShopeeFood</span>
-            </button>
-          </div>
+    const fallbackBannerHtml = isRelaxedFallback ? `
+      <div class="col-span-full mb-3 p-3.5 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 rounded-2xl flex items-center gap-3 text-amber-950 text-sm shadow-xs animate-pulse-gentle">
+        <span class="text-2xl flex-shrink-0">✨</span>
+        <div class="flex-1 min-w-0">
+          <p class="font-bold text-amber-900 text-xs sm:text-sm">Gợi ý mở rộng thông minh</p>
+          <p class="text-xs text-amber-800">${fallbackNotice}</p>
         </div>
-      `;
-    }).join('');
+      </div>
+    ` : '';
+
+    container.innerHTML = fallbackBannerHtml + topFoods.map(({ food, status }) => this.buildFoodCardHtml(food, status)).join('');
 
     if (window.lucide) window.lucide.createIcons();
     this.updateBentoStats();
@@ -1665,13 +2279,13 @@ class FoodApp {
           <h6 class="font-bold text-xs text-stone-800 truncate" title="${food.restaurant}">${food.restaurant}</h6>
           <p class="text-[10px] text-stone-500 truncate mt-0.5" title="${food.address || ''}">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
           <div class="flex items-center justify-between text-[10px] mt-1">
-            <span class="font-bold text-rose-500">${food.priceRange.split(' - ')[0]}</span>
+            <span class="font-bold text-rose-500">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
             <span class="${status.isOpen ? 'text-emerald-600 font-semibold' : 'text-stone-400'} text-[9px]">${status.detailText}</span>
           </div>
           <div class="mt-1.5 flex gap-1">
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="w-full py-1 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
-              ${window.getShopeeIcon ? window.getShopeeIcon(13, 'rounded-xs shrink-0') : ''}
+              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
           </div>
@@ -1753,7 +2367,7 @@ class FoodApp {
           </div>
 
           <div class="flex items-center justify-between mt-1.5">
-            <span class="text-[10px] font-bold text-rose-500">${food.priceRange.split(' - ')[0]}</span>
+            <span class="text-[10px] font-bold text-rose-500">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
             <span class="text-[10px] text-stone-400 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem trên bản đồ">${food.distanceText.replace('Cách bạn ', '')}</span>
           </div>
 
@@ -1795,7 +2409,7 @@ class FoodApp {
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="flex-1 h-7.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-lg text-[10.5px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đặt món qua ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(14, 'rounded-xs shrink-0') : ''}
+              ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
               <span>ShopeeFood</span>
             </button>
           </div>
@@ -1809,6 +2423,9 @@ class FoodApp {
     window.soundFX && window.soundFX.playPop();
     this.currentMood = moodId;
     APP_DATA.currentMoodId = moodId;
+    if (this.moodFilter) {
+      this.moodFilter.moodId = moodId;
+    }
 
     // Keep expanded if selected mood is in the extended list
     const moodIndex = APP_DATA.moods.findIndex(m => m.id === moodId);
@@ -1817,6 +2434,7 @@ class FoodApp {
     }
 
     this.renderMoodSelector();
+    this.renderHeader();
     this.renderBentoAndFeed();
     this.renderFoodGrid();
     this.updateBentoStats();
@@ -1856,6 +2474,11 @@ class FoodApp {
           this.miniMapInstance.invalidateSize();
         }
       }, 150);
+    }
+    if (tabName === 'taste') {
+      if (window.tasteManager && typeof window.tasteManager.renderLocationRecommendations === 'function') {
+        window.tasteManager.renderLocationRecommendations();
+      }
     }
     if (tabName === 'liked') {
       this.renderLikedView();
@@ -1914,6 +2537,10 @@ class FoodApp {
         window.tasteManager.recordLike(food);
         window.tasteManager.renderLocationRecommendations();
       }
+
+      // Ghi nhận điểm đám đông (Crowdsourcing Tags)
+      const activeMood = this.moodFilter?.moodId || this.currentMood;
+      this.recordCrowdsourceVote(food.id, activeMood);
     }
   }
 
@@ -1990,6 +2617,8 @@ class FoodApp {
     if (isNowVoted) {
       this.willReturnFoods.push(foodId);
       window.soundFX && window.soundFX.playPop();
+      const activeMood = this.moodFilter?.moodId || this.currentMood;
+      this.recordCrowdsourceVote(foodId, activeMood);
     } else {
       this.willReturnFoods = this.willReturnFoods.filter(id => id !== foodId);
     }
@@ -2109,7 +2738,7 @@ class FoodApp {
                 🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
               </p>
               <div class="flex items-center gap-2 mt-1 text-[10px] text-stone-400">
-                <span class="text-rose-500 font-bold">${food.priceRange.split(' - ')[0]}</span>
+                <span class="text-rose-500 font-bold">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
                 <span>•</span>
                 <span>${food.distanceText}</span>
               </div>
@@ -2236,8 +2865,8 @@ class FoodApp {
         <div class="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/70 border border-orange-200/90 rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
-              <span class="w-8 h-8 rounded-xl bg-[#EE4D2D] text-white flex items-center justify-center shadow-xs overflow-hidden">
-                ${window.getShopeeIcon ? window.getShopeeIcon(32, 'w-full h-full object-cover') : '🛍️'}
+              <span class="w-8 h-8 rounded-xl bg-white flex items-center justify-center shadow-xs overflow-hidden p-1 border border-orange-200 shrink-0">
+                ${window.getShopeeIcon ? window.getShopeeIcon(24, 'object-contain') : '🛍️'}
               </span>
               <div>
                 <h5 class="font-extrabold text-xs text-stone-900 flex items-center gap-1.5">
@@ -2264,7 +2893,7 @@ class FoodApp {
           </div>
 
           <button onclick="window.app.openShopeeFoodDelivery(${food.id})" class="w-full py-3 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl font-black text-xs shadow-md shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
-            ${window.getShopeeIcon ? window.getShopeeIcon(18, 'rounded-xs shrink-0') : ''}
+            ${window.getShopeeIcon ? window.getShopeeIcon(22, 'shrink-0') : ''}
             <span>ĐẶT GIAO HÀNG TRÊN SHOPEEFOOD</span>
             <span class="text-xs">↗</span>
           </button>
@@ -2291,7 +2920,7 @@ class FoodApp {
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Giá tham khảo:</span>
-            <span class="font-bold text-rose-600">${food.priceRange || '35.000đ - 65.000đ'}</span>
+            <span class="font-bold text-rose-600">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ')}</span>
           </div>
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Địa chỉ:</span>
@@ -2331,7 +2960,6 @@ class FoodApp {
     const willReturnCount = this.getWillReturnCount(food.id);
     const promoCode = food.deliveryPromoCode || "SHOPEE25K";
     const deliveryUrl = food.deliveryUrl || `https://shopeefood.vn/binh-dinh/${food.restaurant ? encodeURIComponent(food.restaurant) : 'quan-an'}`;
-    const searchUrl = food.deliverySearchUrl || `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(food.restaurant || food.name)}`;
 
     content.innerHTML = `
       <div class="relative bg-white max-h-[85vh] flex flex-col">
@@ -2340,8 +2968,8 @@ class FoodApp {
           <div class="absolute -right-4 -bottom-6 text-7xl opacity-15 pointer-events-none">🛵</div>
           <div class="flex items-center justify-between relative z-10">
             <div class="flex items-center gap-2.5">
-              <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-xs overflow-hidden">
-                ${window.getShopeeIcon ? window.getShopeeIcon(36, 'w-full h-full object-cover rounded-xl') : '🛍️'}
+              <div class="w-10 h-10 rounded-2xl bg-white flex items-center justify-center shadow-xs overflow-hidden p-1 shrink-0">
+                <img src="images/shopeefood-icon.png" class="w-full h-full object-contain" alt="ShopeeFood" />
               </div>
               <div>
                 <div class="flex items-center gap-1.5">
@@ -2372,11 +3000,10 @@ class FoodApp {
             <div class="flex-1 min-w-0 flex flex-col justify-between">
               <div>
                 <h4 class="font-black text-xs sm:text-sm text-stone-900 truncate">🏪 ${food.restaurant}</h4>
-                <p class="text-[11px] font-bold text-orange-600 truncate mt-0.5">🍽️ Món gợi ý: ${food.name}</p>
                 <p class="text-[10px] text-stone-500 truncate mt-0.5">📍 ${food.address} (${food.distanceText})</p>
               </div>
               <div class="flex items-center justify-between mt-1">
-                <span class="text-xs font-black text-rose-600">${food.priceRange.split(' - ')[0]}</span>
+                <span class="text-xs font-black text-rose-600">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ')}</span>
                 <span class="text-[9.5px] font-bold ${status.isOpen ? 'text-emerald-600' : 'text-stone-400'}">
                   ${status.isOpen ? '🟢 Đang nhận đơn giao' : '🌙 Quán đã đóng'}
                 </span>
@@ -2405,7 +3032,7 @@ class FoodApp {
             <div class="flex items-center gap-2.5">
               <span class="text-2xl">🎟️</span>
               <div>
-                <div class="text-[11px] font-extrabold text-orange-900">${food.deliveryPromo || 'Mã SHOPEE25K giảm 25.000đ'}</div>
+                <div class="text-[11px] font-extrabold text-orange-900">${food.deliveryPromo || 'Mã SHOPEE30K giảm 30.000đ'}</div>
                 <p class="text-[9.5px] text-orange-600">Áp dụng ngay khi thanh toán qua ShopeeFood</p>
               </div>
             </div>
@@ -2413,48 +3040,16 @@ class FoodApp {
               Sao chép mã
             </button>
           </div>
-
-          <!-- Popular Menu Items to add -->
-          <div>
-            <h5 class="font-bold text-xs text-stone-800 uppercase tracking-wide mb-2 flex items-center justify-between">
-              <span>Thực đơn gợi ý tại quán</span>
-              <span class="text-[10px] text-stone-400 font-normal">Đặt kèm freeship</span>
-            </h5>
-            <div class="space-y-1.5">
-              ${(food.menu || [
-                { name: food.name, price: food.priceRange.split(' - ')[0], highlight: true },
-                { name: "Phần đặc biệt quán " + food.restaurant, price: food.priceRange.split(' - ')[-1] || "65.000đ" },
-                { name: "Trà đá / Nước ép tươi", price: "15.000đ" }
-              ]).map(m => `
-                <div class="flex items-center justify-between p-2 rounded-xl bg-stone-50 hover:bg-stone-100 transition text-xs">
-                  <div class="flex items-center gap-2 truncate">
-                    <span class="text-orange-500 font-bold">•</span>
-                    <span class="font-semibold text-stone-800 truncate">${m.name}</span>
-                  </div>
-                  <span class="font-bold text-stone-900 shrink-0 ml-2">${m.price}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
         </div>
 
         <!-- Sticky Bottom Action Footer -->
-        <div class="p-4 bg-white border-t border-stone-100 flex flex-col gap-2 shrink-0">
+        <div class="p-4 bg-white border-t border-stone-100 shrink-0">
           <button onclick="window.app.redirectToShopeeFood('${deliveryUrl}', '${food.name.replace(/'/g, "\\'")}', '${food.restaurant.replace(/'/g, "\\'")}')" 
             class="w-full py-3.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-2xl font-black text-sm shadow-xl shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
-            ${window.getShopeeIcon ? window.getShopeeIcon(22, 'rounded-xs shrink-0') : ''}
+            ${window.getShopeeIcon ? window.getShopeeIcon(24, 'shrink-0') : ''}
             <span>MỞ QUÁN TRÊN SHOPEEFOOD ĐẶT HÀNG</span>
             <span>↗</span>
           </button>
-
-          <div class="flex items-center justify-between text-[11px] px-1 text-stone-500">
-            <a href="${searchUrl}" target="_blank" class="hover:text-orange-600 hover:underline flex items-center gap-1 font-medium">
-              <span>🔍 Tìm quán "${food.restaurant}" trên ShopeeFood</span>
-            </a>
-            <a href="tel:${food.hotline || '02563800000'}" class="text-stone-600 hover:text-stone-900 font-semibold flex items-center gap-1">
-              <span>📞 Hotline: ${food.hotline || '0256 3800137'}</span>
-            </a>
-          </div>
         </div>
       </div>
     `;

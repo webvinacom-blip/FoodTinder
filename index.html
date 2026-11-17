@@ -128,9 +128,10 @@
     }
     #topbar .nav-pills button {
       display:flex; align-items:center; gap:6px;
-      padding:7px 16px; border-radius:999px; border:none; cursor:pointer;
+      padding:7px 14px; border-radius:999px; border:none; cursor:pointer;
       font-size:12px; font-weight:600; font-family:inherit;
       background:transparent; color:#747D8C;
+      white-space:nowrap;
       transition: all .2s;
     }
     #topbar .nav-pills button:hover { background:#F5EEE8; color:#2F3542; }
@@ -289,12 +290,14 @@
       transform:translateY(0);
       transition:transform .28s cubic-bezier(.16,1,.3,1);
     }
-    #food-detail-modal .modal-sheet {
+    #food-detail-modal .modal-sheet,
+    #delivery-modal .modal-sheet {
       border-radius:28px !important;
       overflow:hidden !important;
       display:flex !important;
       flex-direction:column !important;
-      max-height:85vh !important;
+      max-height:88vh !important;
+      margin:auto !important;
     }
     .modal-sheet.translate-y-full {
       transform:translateY(100%) !important;
@@ -344,6 +347,9 @@
   <div class="nav-pills">
     <button class="active" onclick="switchTab('home')" id="pill-home">
       <i data-lucide="home"></i> Khám phá
+    </button>
+    <button onclick="switchTab('taste')" id="pill-taste">
+      <i data-lucide="sparkles"></i> Chuẩn Gu
     </button>
     <button onclick="switchTab('swipe')" id="pill-swipe">
       <i data-lucide="layers"></i> Quẹt món
@@ -428,52 +434,50 @@
     <div id="view-home" class="tab-view active scroll-y">
       <div class="p-6 max-w-5xl mx-auto w-full space-y-6 pb-8">
 
-        <!-- Welcome banner -->
-        <div class="rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 p-5 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
+        <!-- Welcome banner with Search -->
+        <div class="rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 p-5 sm:p-6 text-white shadow-md flex flex-col gap-3.5">
           <div>
             <h2 class="text-xl font-extrabold leading-tight">Chào Bạn! <span class="animate-wave inline-block">👋</span></h2>
-            <p id="welcome-subtitle" class="text-sm text-rose-100 mt-1">Quy Nhơn đang mưa râm ran 24°C 🌧️ — Đã kết nối 300 quán Shopee & GrabFood!</p>
+            <p id="welcome-subtitle" class="text-sm text-rose-100 mt-1">Quy Nhơn đang nhiều mây 26°C ⛅ — tiết trời mát mẻ dễ chịu, hôm nay bạn thèm ăn món gì nào?</p>
           </div>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="window.crawlerManager && window.crawlerManager.openModal()" class="bg-amber-400 hover:bg-amber-300 text-stone-900 font-extrabold rounded-xl px-3.5 py-2 text-xs flex items-center gap-1.5 shadow transition cursor-pointer">
-              <span>⚡</span> Cào 300 Quán Quy Nhơn
-            </button>
-            <button onclick="window.app.openCityModal()" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 rounded-xl px-4 py-2 text-xs font-bold transition cursor-pointer">
-              📍 Đổi vị trí
-            </button>
-          </div>
-        </div>
 
-        <!-- Bento Grid -->
-        <div>
-          <h3 class="font-extrabold text-stone-900 mb-3 text-sm">Tổng quan hôm nay</h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <!-- Weather bento -->
-            <div onclick="window.app.openCityModal()" class="bg-gradient-to-br from-sky-400 to-blue-500 text-white rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
-              <div class="text-3xl mb-1" id="bento-weather-icon">🌧️</div>
-              <div class="text-xl font-extrabold" id="bento-weather-temp">24°C</div>
-              <div class="text-xs text-sky-100 mt-0.5" id="bento-weather-city">Quy Nhơn</div>
-              <div class="text-[11px] text-sky-200 mt-0.5" id="bento-weather-cond">Mưa râm ran</div>
+          <!-- Search Form (Chỉ tìm kiếm khi nhấn Enter hoặc bấm nút Tìm kiếm) -->
+          <form onsubmit="event.preventDefault(); window.app.submitHomeSearch();" autocomplete="off" class="w-full max-w-2xl flex items-center gap-2">
+            <div class="relative flex-1 flex items-center">
+              <input type="text"
+                id="home-food-search"
+                name="food_search_query"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                inputmode="search"
+                placeholder="Tìm tên quán, món ăn, địa chỉ..."
+                oninput="window.app.handleHomeSearch(this.value)"
+                class="w-full pl-10 pr-9 py-2.5 bg-white text-stone-900 placeholder:text-stone-400 text-xs sm:text-sm font-semibold rounded-xl shadow-sm border border-white/60 focus:outline-none focus:ring-2 focus:ring-amber-300 transition" />
+              <svg class="w-4 h-4 text-rose-500 absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <button id="home-search-clear-btn"
+                type="button"
+                onclick="window.app.clearHomeSearch()"
+                class="hidden absolute right-2.5 p-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                title="Xóa tìm kiếm">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
             </div>
-            <!-- Mood bento -->
-            <div onclick="switchTab('chat')" class="bg-gradient-to-br from-rose-100 to-pink-100 border border-rose-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
-              <div class="text-3xl mb-1" id="bento-mood-emoji">💔</div>
-              <div class="text-sm font-extrabold text-stone-900" id="bento-mood-label">Hơi buồn rầu</div>
-              <div class="text-[11px] text-rose-500 mt-0.5 font-semibold">Gợi ý món vỗ về ✨</div>
-            </div>
-            <!-- Liked bento -->
-            <div onclick="switchTab('liked')" class="bg-gradient-to-br from-amber-50 to-orange-100 border border-amber-200 rounded-2xl p-4 cursor-pointer hover:opacity-90 transition shadow-sm">
-              <div class="text-3xl mb-1">❤️</div>
-              <div class="text-xl font-extrabold text-stone-900" id="bento-liked-count">0</div>
-              <div class="text-[11px] text-amber-700 mt-0.5 font-semibold">Món đã thích</div>
-            </div>
-            <!-- Distance bento -->
-            <div class="bg-gradient-to-br from-emerald-50 to-teal-100 border border-emerald-200 rounded-2xl p-4 shadow-sm">
-              <div class="text-3xl mb-1">📍</div>
-              <div class="text-xl font-extrabold text-stone-900">700m</div>
-              <div class="text-[11px] text-emerald-700 mt-0.5 font-semibold">Quán gần nhất</div>
-            </div>
-          </div>
+
+            <!-- Nút tìm kiếm cứng (rất tiện bấm trực tiếp trên điện thoại) -->
+            <button type="submit"
+              class="px-4 sm:px-5 py-2.5 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-stone-950 font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-1.5 shrink-0 cursor-pointer border border-amber-200">
+              <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Tìm kiếm</span>
+            </button>
+          </form>
         </div>
 
         <!-- ══ GỢI Ý MÓN PHÙ HỢP TÂM TRẠNG & BỘ LỌC ĐA NĂNG ══ -->
@@ -481,9 +485,13 @@
           <!-- Header & Trigger Buttons -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
             <div>
-              <div class="flex items-center gap-2">
-                <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-2">
-                  <span>🔥 Gợi ý món phù hợp tâm trạng</span>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-1.5 flex-wrap">
+                  <span id="mood-section-base-title">🔥 Gợi ý món phù hợp tâm trạng</span>
+                  <span id="mood-section-search-subtitle" class="hidden text-rose-600 font-extrabold flex items-center gap-1">
+                    <span>- Kết quả tìm kiếm:</span>
+                    <span id="mood-section-search-query" class="underline decoration-rose-300 decoration-wavy"></span>
+                  </span>
                 </h3>
                 <span id="active-filter-indicator" class="hidden text-[10.5px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
                   <span>🎯 Đang lọc</span>
@@ -497,6 +505,9 @@
 
             <!-- Filter Controls -->
             <div class="flex items-center gap-2 shrink-0">
+              <button onclick="window.app.clearHomeSearch()" id="btn-clear-search-in-mood" class="hidden px-2.5 py-1.5 text-xs text-stone-600 hover:text-rose-600 hover:bg-rose-50 font-bold rounded-xl transition cursor-pointer border border-stone-200">
+                ✕ Đóng tìm kiếm
+              </button>
               <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden px-2.5 py-1.5 text-xs text-rose-600 hover:text-rose-700 hover:bg-rose-50 font-bold rounded-xl transition cursor-pointer">
                 ✕ Xóa lọc
               </button>
@@ -516,6 +527,33 @@
           <!-- Recommendations Grid: 4 columns on desktop, 3 on tablet, 2 on mobile/tablet, 1 on small mobile -->
           <div id="featured-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
             <!-- Cards rendered dynamically -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ VIEW: CHUẨN GU (AI GỢI Ý THEO VỊ TRÍ & GU) ══ -->
+    <div id="view-taste" class="tab-view scroll-y">
+      <div class="p-6 max-w-5xl mx-auto w-full space-y-6 pb-8">
+
+        <!-- Welcome Banner for Chuẩn Gu -->
+        <div class="rounded-2xl bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 p-5 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
+          <div>
+            <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-black uppercase tracking-wider mb-1.5 backdrop-blur-sm">
+              <span>🤖 Trí Tuệ Nhân Tạo AI</span>
+            </div>
+            <h2 class="text-xl font-extrabold leading-tight">Gợi Ý Món Ăn Chuẩn Gu 🎯</h2>
+            <p class="text-xs text-rose-100 mt-1">Học theo sở thích quẹt thẻ để đề xuất món ăn và quán ngon hợp khẩu vị bạn nhất tại Quy Nhơn!</p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="window.tasteManager && window.tasteManager.openTasteProfileModal()" class="bg-white hover:bg-stone-50 text-rose-600 font-extrabold rounded-xl px-4 py-2 text-xs flex items-center gap-1.5 shadow transition cursor-pointer">
+              <span>✨ Gu của bạn</span>
+              <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            </button>
+            <button onclick="window.app.openCityModal()" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 rounded-xl px-3.5 py-2 text-xs font-bold transition cursor-pointer">
+              📍 Đổi vị trí
+            </button>
           </div>
         </div>
 
@@ -570,7 +608,6 @@
           </div>
         </div>
 
-
       </div>
     </div>
 
@@ -612,7 +649,13 @@
             <button onclick="window.swipeManager && window.swipeManager.orderCurrentFoodDelivery()"
               title="Đặt giao hàng ShopeeFood cho món này"
               class="w-12 h-12 rounded-full bg-[#EE4D2D] hover:bg-[#D73211] text-white shadow-xl shadow-orange-400/60 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer ring-2 ring-orange-200 group overflow-hidden">
-              <img src="images/shopeefood-icon.png" class="w-8 h-8 rounded-lg object-cover group-hover:scale-110 transition-transform" alt="ShopeeFood" />
+              <svg class="w-9.5 h-9.5 group-hover:scale-110 transition-transform drop-shadow-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48.5" fill="#FFFFFF"/>
+                <path d="M26 15H74L87 30V77C87 82.5 82.5 86 77 86H23C17.5 86 13 82.5 13 77V30L26 15Z" fill="#EE4D2D"/>
+                <rect x="36" y="19" width="28" height="7.5" rx="3.75" fill="#FFFFFF"/>
+                <path d="M29 36V47C29 50.2 31.2 52.8 34.2 53.2V77C34.2 78.2 35.2 79.2 36.5 79.2C37.8 79.2 38.8 78.2 38.8 77V53.2C41.8 52.8 44 50.2 44 47V36H41.5V46.5C41.5 47.5 40.7 48.3 39.7 48.3C38.7 48.3 37.9 47.5 37.9 46.5V36H35.1V46.5C35.1 47.5 34.3 48.3 33.3 48.3C32.3 48.3 31.5 47.5 31.5 46.5V36H29Z" fill="#FFFFFF"/>
+                <path d="M63.5 35C58.2 35 54.5 39.8 54.5 45.5C54.5 50.8 57.8 53.5 61.2 53.8V77C61.2 78.2 62.2 79.2 63.5 79.2C64.8 79.2 65.8 78.2 65.8 77V53.8C69.2 53.5 72.5 50.8 72.5 45.5C72.5 39.8 68.8 35 63.5 35Z" fill="#FFFFFF"/>
+              </svg>
             </button>
           </div>
         </div>
@@ -736,9 +779,9 @@
 </div>
 
 <!-- ShopeeFood Delivery Modal -->
-<div id="delivery-modal" class="modal-backdrop hidden" onclick="if(event.target === this) window.app.closeDeliveryModal()">
-  <div class="modal-sheet w-full max-w-lg translate-y-full bg-white rounded-t-[32px] sm:rounded-[32px] overflow-hidden shadow-2xl border border-stone-200">
-    <div id="delivery-modal-content"></div>
+<div id="delivery-modal" class="modal-backdrop hidden" style="align-items:center; justify-content:center; padding:16px;" onclick="if(event.target === this) window.app.closeDeliveryModal()">
+  <div class="modal-sheet w-full max-w-lg translate-y-full bg-white rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-2xl border border-stone-200 flex flex-col max-h-[88vh]">
+    <div id="delivery-modal-content" class="flex flex-col h-full max-h-[88vh] overflow-hidden min-h-0"></div>
   </div>
 </div>
 
@@ -1100,15 +1143,15 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
-<script src="js/data.js?v=1794769000"></script>
-<script src="js/audio.js?v=1794769000"></script>
-<script src="js/taste.js?v=1794769000"></script>
-<script src="js/swipe.js?v=1794769000"></script>
-<script src="js/map.js?v=1794769000"></script>
-<script src="js/reels.js?v=1794769000"></script>
-<script src="js/chat.js?v=1794769000"></script>
-<script src="js/app.js?v=1794769000"></script>
-<script src="js/crawler.js?v=1794769000"></script>
+<script src="js/data.js?v=1794910000"></script>
+<script src="js/audio.js?v=1794910000"></script>
+<script src="js/taste.js?v=1794910000"></script>
+<script src="js/swipe.js?v=1794910000"></script>
+<script src="js/map.js?v=1794910000"></script>
+<script src="js/reels.js?v=1794910000"></script>
+<script src="js/chat.js?v=1794910000"></script>
+<script src="js/app.js?v=1794910000"></script>
+<script src="js/crawler.js?v=1794910000"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

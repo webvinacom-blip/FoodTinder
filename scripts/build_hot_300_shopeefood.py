@@ -189,102 +189,127 @@ def categorize_and_name_dish(r):
     lower = name.lower()
     kw = (r.get("dishKeyword") or "").lower()
 
-    if "sáu cao" in lower or "gà chỉ" in lower or "gà nướng" in lower:
-        return "bbq", "Gà Chỉ Quy Nhơn Nướng Muối Ớt & Luộc Lá Chanh", "180.000đ - 320.000đ", ["comfort", "celebrate", "craving", "chill"]
-    if "cháo ếch" in lower:
-        return "comfort", "Cháo Ếch Singapore Cay Nồng Thố Đất", "45.000đ - 75.000đ", ["comfort", "spicy", "late_night"]
-    if "mộc viên" in lower:
-        return "rice", "Cơm Niêu Mộc Viên Cá Kho Tộ & Canh Cua Rau Đay", "85.000đ - 180.000đ", ["comfort", "healthy", "chill"]
-    if "s.blue" in lower or "surf bar" in lower:
-        return "cafe", "Mocktail Hoàng Hôn & Cà Phê Muối View Biển", "35.000đ - 65.000đ", ["chill", "date", "craving"]
-    if "jolly" in lower or "kem" in lower:
-        return "boba", "Kem Ý Gelato Tự Chọn Trái Cây Tươi", "25.000đ - 50.000đ", ["chill", "budget", "craving"]
-    if "kfc" in lower or "lotteria" in lower or "jollibee" in lower:
-        return "streetfood", "Combo Gà Rán Giòn Rụm & Khoai Tây Lắc", "65.000đ - 120.000đ", ["comfort", "craving", "budget"]
-    
+    # 1. Quán Chay / Vegan
+    if any(k in lower for k in ["chay", "vegan"]) or kw == "chay":
+        if "pháp luân" in lower:
+            dish = "Cơm Chay Thanh Đạm & Đậu Hũ Sốt Nấm Pháp Luân"
+        elif "minh an" in lower:
+            dish = "Món Chay Thanh Đạm & Lẩu Nấm Minh An Vegan"
+        elif "thiện duyên" in lower:
+            dish = "Lẩu Nấm Chay Dưỡng Sinh & Bún Chay Thiện Duyên"
+        else:
+            dish = "Cơm Chay Tự Chọn & Lẩu Nấm Dưỡng Sinh"
+        return "healthy", dish, "25.000đ - 65.000đ", ["healthy", "chill", "comfort", "budget"]
+
+    # 2. Bánh Canh (Đặc biệt: 83 Vũ Bảo, bánh canh hẹ, cá dầm)
+    if any(k in lower for k in ["bánh canh", "banh canh"]):
+        if "hẹ" in lower or "cá dầm" in lower or "83 vũ bảo" in lower:
+            return "noodles", "Bánh Canh Hẹ Cá Dầm & Bún Riêu Cá Nóng Hổi", "25.000đ - 45.000đ", ["comfort", "budget", "chill", "healthy"]
+        elif "cua" in lower:
+            return "noodles", "Bánh Canh Cua Biển & Chả Cua Đậm Đà", "35.000đ - 65.000đ", ["comfort", "budget", "chill"]
+        elif "tôm" in lower:
+            return "noodles", "Bánh Canh Tôm Đất Nước Dùng Ngọt Thanh", "25.000đ - 45.000đ", ["comfort", "budget", "chill"]
+        return "noodles", "Bánh Canh Chả Cá Nóng Hổi Nước Dùng Ngọt Thanh", "25.000đ - 45.000đ", ["comfort", "budget", "chill"]
+
+    # 3. Bún Đậu Mắm Tôm
+    if any(k in lower for k in ["bún đậu", "ẩm thực đậu"]):
+        return "streetfood", "Mẹt Bún Đậu Mắm Tôm Thập Cẩm Dồi Sụn Chả Cốm", "35.000đ - 75.000đ", ["comfort", "chill", "craving", "budget"]
+
+    # 4. Bánh Hỏi Cháo Lòng
+    if any(k in lower for k in ["bánh hỏi", "cháo lòng", "hồng thanh", "mẫn"]) or kw == "banh hoi chao long":
+        return "noodles", "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà Quy Nhơn", "25.000đ - 50.000đ", ["comfort", "energetic", "budget", "chill"]
+
+    # 5. Bún Cá, Bún Sứa, Bún Rạm, Bún Tôm, Bún Bò, Bún Riêu, Mì Quảng, Phở
+    if any(k in lower for k in ["bún", "bun", "mì quảng", "phở", "hủ tiếu"]):
+        if "rạm" in lower or "bún tôm" in lower:
+            return "noodles", "Bún Rạm Phù Mỹ & Bún Tôm Châu Trúc Đậm Đà", "30.000đ - 45.000đ", ["comfort", "healthy", "budget", "chill"]
+        elif "phượng tèo" in lower or "ngọc liên" in lower:
+            return "noodles", "Bún Chả Cá & Bún Sứa Quy Nhơn Nước Dùng Gia Truyền", "35.000đ - 55.000đ", ["comfort", "healthy", "budget", "chill"]
+        elif "bún bò" in lower:
+            return "noodles", "Bún Bò Huế Đậm Đà Chân Giò Bắp Bò", "35.000đ - 55.000đ", ["comfort", "energetic", "budget"]
+        elif "bún riêu" in lower:
+            return "noodles", "Bún Riêu Cua Chả Cá Nóng Hổi Đậm Vị", "25.000đ - 45.000đ", ["comfort", "budget", "chill"]
+        elif "bún thịt nướng" in lower:
+            return "noodles", "Bún Thịt Nướng & Nem Nướng Chợ Huyện Cuốn Bánh Tráng", "25.000đ - 45.000đ", ["comfort", "budget", "chill"]
+        elif "mì quảng" in lower:
+            return "noodles", "Mì Quảng Tôm Thịt Trứng Đậm Vị Miền Trung", "30.000đ - 45.000đ", ["comfort", "budget", "chill"]
+        return "noodles", "Bún Sứa & Bún Chả Cá Nước Dùng Thanh Ngọt", "30.000đ - 45.000đ", ["comfort", "healthy", "budget", "chill"]
+
+    # 6. Ăn Vặt, Bánh Tráng Nướng, Nem Nướng, Bò Né
+    if any(k in lower for k in ["bánh tráng", "sáu lượng", "bé bòn", "face quán"]):
+        return "streetfood", "Bánh Tráng Nướng Trứng Cút Bò Khô & Chân Gà Sốt Thái", "15.000đ - 45.000đ", ["chill", "budget", "craving", "late_night"]
+
+    if "nem chả lợi" in lower or "nem nướng" in lower or kw == "nem nuong":
+        return "streetfood", "Nem Nướng Chợ Huyện Cuốn Bánh Tráng Rau Sống", "30.000đ - 60.000đ", ["comfort", "chill", "budget"]
+
+    if "bò né" in lower:
+        return "bbq", "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn", "35.000đ - 65.000đ", ["energetic", "comfort", "budget"]
+
+    # 7. Mì Cay Hàn Quốc / Fastfood
+    if any(k in lower for k in ["mì cay", "sasin", "pepa", "kfc", "jollibee", "lotteria"]):
+        return "streetfood", "Mì Cay 7 Cấp Độ, Gà Sốt Cay & Tokbokki Phô Mai", "35.000đ - 75.000đ", ["spicy", "craving", "chill", "late_night"]
+
+    if "pizza" in lower or kw == "pizza":
+        return "streetfood", "Pizza Hải Sản Phô Mai Đút Lò", "65.000đ - 165.000đ", ["celebrate", "craving", "chill"]
+
+    # 8. Bánh Xèo
     if any(k in lower for k in ["bánh xèo", "banh xeo", "gia vỹ", "rau mầm", "anh vũ", "cô năm"]) or kw == "banh xeo":
-        return "streetfood", "Bánh Xèo Tôm Nhảy Giòn Rụm", "35.000đ - 65.000đ", ["comfort", "craving", "chill", "budget"]
-    
-    if any(k in lower for k in ["ốc", "oc", "hải sản", "hai san", "sò", "ghẹ", "cua", "mực", "tôm", "cá", "hướng dương", "hoàng thao", "leng keng", "hải sỹ", "cây dừa", "cô xí"]) or kw in ["hai san", "oc"]:
+        return "streetfood", "Bánh Xèo Tôm Nhảy Giòn Rụm Đậm Vị Quy Nhơn", "30.000đ - 65.000đ", ["comfort", "craving", "chill", "budget"]
+
+    # 9. Cơm
+    if any(k in lower for k in ["cơm gà", "cơm 89", "cơm gà 89"]):
+        return "rice", "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn", "35.000đ - 65.000đ", ["comfort", "energetic", "budget"]
+    if "cơm tấm" in lower or kw == "com tam":
+        return "rice", "Cơm Tấm Sườn Bì Chả Trứng Ốp La", "30.000đ - 55.000đ", ["comfort", "energetic", "budget"]
+    if "cơm niêu" in lower or "mộc viên" in lower:
+        return "rice", "Cơm Niêu Mộc Viên Cá Kho Tộ & Canh Cua Rau Đay", "60.000đ - 150.000đ", ["comfort", "healthy", "chill"]
+    if "cơm" in lower:
+        return "rice", "Cơm Phần Gia Đình Đặc Sản Quy Nhơn", "35.000đ - 65.000đ", ["comfort", "energetic", "budget"]
+
+    # 10. Trà Sữa, Cafe, Kem, Chè
+    if any(k in lower for k in ["trà sữa", "cafe", "cà phê", "coffee", "kem", "tea", "bobapop", "jolly", "chè", "gong cha", "tocotoco", "phúc long", "highlands", "marina", "green cafe", "view coffee", "chu’s", "heekcaa", "like kafe", "búp"]) or kw in ["tra sua", "ca phe", "che"]:
+        if "kem" in lower or "jolly" in lower:
+            return "boba", "Kem Ý Gelato Tự Chọn Trái Cây Tươi Mát Lạnh", "25.000đ - 50.000đ", ["chill", "budget", "craving"]
+        cat = "boba" if any(k in lower for k in ["trà", "kem", "chè"]) else "cafe"
+        return cat, "Trà Sữa Trân Châu Đường Đen & Cà Phê Muối View Biển", "20.000đ - 45.000đ", ["chill", "date", "budget", "craving"]
+
+    # 11. Lẩu & Nướng
+    if "lá é" in lower or "tao ngộ" in lower:
+        return "hotpot", "Lẩu Gà Lá É Cay Nồng Ớt Xiêm Xanh", "120.000đ - 250.000đ", ["comfort", "celebrate", "chill", "spicy"]
+    if "dê" in lower:
+        return "hotpot", "Lẩu Dê Tươi Thuốc Bắc & Dê Nướng Bản Gang", "150.000đ - 300.000đ", ["celebrate", "comfort", "late_night"]
+    if "ếch" in lower:
+        return "hotpot", "Lẩu Ếch Măng Cay Nồng Hổi & Ếch Chiên Bơ Tỏi", "95.000đ - 220.000đ", ["spicy", "comfort", "late_night"]
+    if any(k in lower for k in ["lẩu bò", "aking", "hiền hoà"]):
+        return "hotpot", "Lẩu Bò Ba Toa Quán Gỗ & Bò Nướng Ngói", "150.000đ - 300.000đ", ["comfort", "celebrate", "chill"]
+
+    if any(k in lower for k in ["lẩu", "hotpot", "tomyum"]) or kw == "hotpot" or kw == "lau":
+        return "hotpot", "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ", "150.000đ - 350.000đ", ["comfort", "celebrate", "chill", "craving"]
+
+    if any(k in lower for k in ["sáu cao", "gà chỉ", "gà nướng"]):
+        return "bbq", "Gà Chỉ Quy Nhơn Nướng Muối Ớt & Luộc Lá Chanh", "120.000đ - 280.000đ", ["comfort", "celebrate", "craving", "chill"]
+
+    if any(k in lower for k in ["nướng", "bbq", "bò tơ", "bò nướng", "gogi", "king bbq", "sumo", "nướng ngói"]) or kw in ["bbq", "nuong"]:
+        return "bbq", "Bò Nướng Ngói Xì Xèo & Hải Sản Nướng Mỡ Hành", "60.000đ - 180.000đ", ["celebrate", "craving", "energetic", "late_night"]
+
+    # 12. Hải Sản & Ốc (Chỉ khi thực sự là quán hải sản / ốc)
+    if any(k in lower for k in ["ốc", "oc", "hải sản", "hai san", "sò", "ghẹ", "cua", "mực", "hướng dương", "hoàng thao", "leng keng", "hải sỹ", "cây dừa", "cô xí"]) or kw in ["hai san", "oc"]:
         dish = "Hải Sản Tươi Sống Sốt Me Trứng Muối"
         if "ốc" in lower or "oc" in lower or kw == "oc":
-            dish = "Ốc Hương Xào Trứng Muối Béo Ngậy"
+            dish = "Ốc Hương Xào Trứng Muối & Ốc Móng Tay Xào Me"
+            return "seafood", dish, "35.000đ - 120.000đ", ["celebrate", "craving", "chill", "late_night", "spicy"]
         elif "mực" in lower:
             dish = "Mực Lá Nướng Sa Tế Muối Ớt Xanh"
+            return "seafood", dish, "60.000đ - 180.000đ", ["celebrate", "craving", "chill", "late_night", "spicy"]
         elif "cua" in lower or "ghẹ" in lower:
             dish = "Cua Huỳnh Đế Hấp Nước Dừa Biển Quy Nhơn"
-        elif "cá" in lower:
-            dish = "Cá Tà Ma Nướng Than Hoa Muối Ớt"
-        elif "nhum" in lower:
-            dish = "Nhum Biển Nướng Mỡ Hành Trứng Cút"
+            return "seafood", dish, "120.000đ - 350.000đ", ["celebrate", "craving", "chill", "late_night", "spicy"]
         return "seafood", dish, "60.000đ - 280.000đ", ["celebrate", "craving", "chill", "late_night", "spicy"]
-    
-    if any(k in lower for k in ["bún chả cá", "bún cá", "bún sứa", "bún rạm", "bún tôm", "ngọc liên", "phượng tèo", "thuận hồng"]) or kw in ["bun cha ca", "bun sua"]:
-        dish = "Bún Sứa & Chả Cá Quy Nhơn Nước Dùng Thanh Ngọt"
-        if "bún rạm" in lower:
-            dish = "Bún Rạm Phù Mỹ Đậm Đà Vị Biển"
-        elif "bún tôm" in lower:
-            dish = "Bún Tôm Châu Trúc Nóng Hổi Giòn Ngọt"
-        return "noodles", dish, "35.000đ - 55.000đ", ["comfort", "healthy", "budget", "chill"]
-        
-    if any(k in lower for k in ["bánh hỏi", "cháo lòng", "hồng thanh", "mẫn"]) or kw == "banh hoi chao long":
-        return "noodles", "Bánh Hỏi Cháo Lòng Nóng Hổi Đậm Đà", "30.000đ - 55.000đ", ["comfort", "energetic", "budget"]
-        
-    if any(k in lower for k in ["lẩu", "hotpot", "tomyum", "kichi", "manwah", "haidilao"]) or kw == "hotpot" or kw == "lau":
-        dish = "Lẩu Hải Sản Nấm Chua Cay Khổng Lồ"
-        if "gà lá é" in lower:
-            dish = "Lẩu Gà Lá É Cay Nồng Ớt Xiêm"
-        elif "bò" in lower:
-            dish = "Lẩu Bò Ba Toa Quán Gỗ Đậm Vị"
-        elif "riêu cua" in lower:
-            dish = "Lẩu Riêu Cua Bắp Bò Sườn Sụn"
-        return "hotpot", dish, "150.000đ - 350.000đ", ["comfort", "celebrate", "chill", "craving"]
-        
-    if any(k in lower for k in ["nướng", "bbq", "bò né", "bò tơ", "bò nướng", "gogi", "king bbq", "sumo", "nướng ngói"]) or kw in ["bbq", "nuong", "bo"]:
-        dish = "Bò Nướng Ngói Xì Xèo & Nem Nướng Chợ Huyện"
-        if "bò né" in lower:
-            dish = "Bò Né Trứng Ốp La Xíu Mại Bánh Mì Giòn"
-        elif "gà" in lower or kw == "ga chi":
-            dish = "Gà Chỉ Quy Nhơn Nướng Muối Ớt Mật Ong"
-        return "bbq", dish, "80.000đ - 220.000đ", ["celebrate", "craving", "energetic", "late_night"]
-        
-    if any(k in lower for k in ["cơm gà", "cơm tấm", "cơm niêu", "cơm", "quê hương", "tuyết nhung"]) or kw in ["com tam", "com ga"]:
-        dish = "Cơm Gà Xối Mỡ Da Giòn Rụm Quy Nhơn"
-        if "tấm" in lower or kw == "com tam":
-            dish = "Cơm Tấm Sườn Bì Chả Trứng Ốp La"
-        elif "niêu" in lower:
-            dish = "Cơm Niêu Cá Bống Kho Tộ"
-        return "rice", dish, "40.000đ - 85.000đ", ["comfort", "energetic", "budget"]
-        
-    if any(k in lower for k in ["trà sữa", "cafe", "cà phê", "coffee", "kem", "tea", "bobapop", "jolly", "chè", "gong cha", "tocotoco", "phúc long", "highlands", "the palace tea"]) or kw in ["tra sua", "ca phe", "che"]:
-        dish = "Trà Sữa Nướng Trân Châu Đường Đen"
-        if "cafe" in lower or "cà phê" in lower or kw == "ca phe":
-            dish = "Cà Phê Muối View Biển Ngắm Sóng"
-        elif "kem" in lower:
-            dish = "Kem Ý Gelato Tươi Mát Giải Nhiệt"
-        elif "chè" in lower:
-            dish = "Chè Nhớ Quy Nhơn Thập Cẩm Béo Ngậy"
-        return "boba" if any(k in lower for k in ["trà", "kem", "chè"]) else "cafe", dish, "25.000đ - 55.000đ", ["chill", "date", "budget", "craving"]
-
-    if any(k in lower for k in ["bánh mì", "bánh bèo", "chả ram", "ram", "nem", "ăn vặt", "chả cá"]) or kw in ["banh mi", "banh beo", "cha ram tom dat", "nem nuong", "an vat"]:
-        dish = "Chả Ram Tôm Đất & Bánh Mì Lagu Quy Nhơn"
-        if "bánh mì" in lower or kw == "banh mi":
-            dish = "Bánh Mì Chảo Bò Né Nóng Hổi"
-        elif "bánh bèo" in lower or kw == "banh beo":
-            dish = "Bánh Bèo Chén Tôm Chấy Nước Mắm Kẹo"
-        elif "nem" in lower or kw == "nem nuong":
-            dish = "Nem Nướng Chợ Huyện Cuốn Bánh Tráng"
-        return "streetfood", dish, "20.000đ - 50.000đ", ["comfort", "budget", "chill", "craving"]
-
-    if "chay" in lower or kw == "chay":
-        return "healthy", "Cơm Chay Thanh Đạm & Lẩu Nấm Dưỡng Sinh", "30.000đ - 70.000đ", ["healthy", "chill", "comfort"]
 
     if "sushi" in lower or "nhật" in lower or kw == "sushi":
         return "seafood", "Combo Sashimi Cá Hồi & Sushi Thập Cẩm", "90.000đ - 280.000đ", ["celebrate", "date", "craving"]
-    if "pizza" in lower or kw == "pizza":
-        return "streetfood", "Pizza Hải Sản Phô Mai Đút Lò", "95.000đ - 195.000đ", ["celebrate", "craving", "chill"]
 
-    return "streetfood", f"Đặc Sản {name}", "35.000đ - 85.000đ", ["comfort", "chill", "budget"]
+    return "streetfood", f"Đặc Sản {name}", "25.000đ - 65.000đ", ["comfort", "chill", "budget"]
 
 def main():
     print("🧹 BƯỚC 1: Xóa trắng toàn bộ dữ liệu quán cũ trong database...")
@@ -470,7 +495,7 @@ def main():
             "menu": [
                 {"name": item["dish_name"], "price": item["priceRange"].split(' - ')[0], "highlight": True},
                 {"name": f"Phần đặc biệt {item['restaurant']}", "price": item["priceRange"].split(' - ')[-1], "highlight": False},
-                {"name": "Trà đá / Nước suối", "price": "10.000đ", "highlight": False}
+                {"name": "Món ăn kèm đặc sản quán", "price": "25.000đ", "highlight": False}
             ],
             "deliveryPlatform": "ShopeeFood",
             "deliveryUrl": delivery_url,
