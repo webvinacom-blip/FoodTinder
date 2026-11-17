@@ -172,6 +172,18 @@ const DEFAULT_GROUP_CHATS = [
       { sender: "Bảo Ngọc", text: "Ai thèm ngọt không, Trà Sữa Vie Tea đang giảm 30% kìa cả nhà ơi!", time: "15:20" },
       { sender: "Thanh Hằng", text: "Tui 1 ly matcha đậu đỏ ít ngọt nha! 🧋✨", time: "15:25" }
     ]
+  },
+  {
+    id: "group_3",
+    name: "Hội Đồ Nướng Xì Xèo & Bia Bờ Kè 🥩🍻",
+    avatar: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=200&q=80",
+    membersCount: 6,
+    unread: 0,
+    time: "45 phút trước",
+    messages: [
+      { sender: "Minh Quân", text: "Cuối tuần này làm kèo nướng than bờ kè Xuân Diệu ngắm biển nha anh em! 🥩🌊", time: "16:10" },
+      { sender: "Tuấn Khang", text: "Kèo này chuẩn bài luôn, tui đem thêm thùng bia nữa nha! 🍻🔥", time: "16:15" }
+    ]
   }
 ];
 
@@ -373,9 +385,11 @@ class FoodChatManager {
                 <div onclick="window.chatManager.selectChatTarget(${f.id})" 
                   class="p-2.5 rounded-2xl border transition cursor-pointer flex items-center justify-between gap-2.5 ${isActive ? 'bg-rose-50 border-rose-300 ring-2 ring-rose-200' : 'bg-white border-stone-200/80 hover:border-stone-300 hover:bg-stone-50/50 shadow-xs'}">
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="relative w-11 h-11 rounded-full overflow-hidden border border-amber-300 shrink-0">
-                      <img src="${f.avatar}" alt="${f.name}" class="w-full h-full object-cover" />
-                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border border-white"></span>
+                    <div class="relative w-11 h-11 shrink-0">
+                      <div class="w-full h-full rounded-full overflow-hidden border border-amber-300 shadow-2xs">
+                        <img src="${f.avatar}" alt="${f.name}" class="w-full h-full object-cover" />
+                      </div>
+                      <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border-2 border-white shadow-xs z-10" title="${f.status}"></span>
                     </div>
                     <div class="min-w-0">
                       <div class="flex items-center gap-1.5">
@@ -450,9 +464,11 @@ class FoodChatManager {
                 <div onclick="window.chatManager.selectChatTarget(${f.id})" 
                   class="p-2.5 rounded-2xl border transition cursor-pointer flex items-center justify-between gap-2.5 ${isActive ? 'bg-rose-50 border-rose-300 ring-2 ring-rose-200' : 'bg-white border-stone-200/80 hover:border-stone-300 hover:bg-stone-50/50 shadow-xs'}">
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="relative w-11 h-11 rounded-full overflow-hidden border border-rose-300 shrink-0">
-                      <img src="${f.avatar}" alt="${f.name}" class="w-full h-full object-cover" />
-                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+                    <div class="relative w-11 h-11 shrink-0">
+                      <div class="w-full h-full rounded-full overflow-hidden border border-rose-300 shadow-2xs">
+                        <img src="${f.avatar}" alt="${f.name}" class="w-full h-full object-cover" />
+                      </div>
+                      <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border-2 border-white shadow-xs z-10" title="${f.status}"></span>
                     </div>
                     <div class="min-w-0">
                       <div class="flex items-center gap-1.5">

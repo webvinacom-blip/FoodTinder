@@ -3177,9 +3177,9 @@ class FoodApp {
 
         <!-- Scrollable Body -->
         <div class="p-4 overflow-y-auto space-y-4 scrollbar-none flex-1">
-          <!-- Food Preview Mini Card -->
-          <div class="flex gap-3 p-3 bg-rose-50/50 border border-rose-200/80 rounded-2xl">
-            <div class="w-16 h-16 rounded-xl overflow-hidden bg-stone-200 shrink-0">
+          <!-- Food Preview Mini Card: Căn giữa theo chiều dọc items-center -->
+          <div class="flex items-center gap-3 p-3 bg-rose-50/50 border border-rose-200/80 rounded-2xl">
+            <div class="w-16 h-16 rounded-xl overflow-hidden bg-stone-200 shrink-0 shadow-2xs">
               <img src="${food.image}" class="w-full h-full object-cover" />
             </div>
             <div class="min-w-0 flex-1">
@@ -3245,14 +3245,16 @@ class FoodApp {
               </button>
             </div>
 
-            <!-- Friends List -->
-            <div class="space-y-1.5 max-h-56 overflow-y-auto pr-1 scrollbar-none">
+            <!-- Friends List: Hiện trọn vẹn đủ 3 đối tượng, vuốt/cuộn để xem thêm -->
+            <div class="space-y-2 h-[206px] max-h-[206px] overflow-y-auto overscroll-contain pr-1 scrollbar-thin">
               ${activeFilter === 'my' ? myFriends.map(f => `
-                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                <div class="flex items-center justify-between p-2.5 rounded-xl border border-stone-200/80 bg-white hover:bg-stone-50 transition shrink-0 shadow-2xs">
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-rose-300">
-                      <img src="${f.avatar}" class="w-full h-full object-cover" />
-                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border border-white"></span>
+                    <div class="relative w-11 h-11 shrink-0">
+                      <div class="w-full h-full rounded-full overflow-hidden border border-rose-200 shadow-2xs">
+                        <img src="${f.avatar}" class="w-full h-full object-cover" />
+                      </div>
+                      <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full ring-2 ring-white shadow-xs z-10" title="${f.status}"></span>
                     </div>
                     <div class="min-w-0">
                       <h6 class="font-bold text-xs text-stone-900 truncate">${f.name}</h6>
@@ -3267,11 +3269,13 @@ class FoodApp {
               `).join('') : ''}
 
               ${activeFilter === 'nearby' ? nearbyFriends.map(f => `
-                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                <div class="flex items-center justify-between p-2.5 rounded-xl border border-stone-200/80 bg-white hover:bg-stone-50 transition shrink-0 shadow-2xs">
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-amber-300">
-                      <img src="${f.avatar}" class="w-full h-full object-cover" />
-                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+                    <div class="relative w-11 h-11 shrink-0">
+                      <div class="w-full h-full rounded-full overflow-hidden border border-amber-200 shadow-2xs">
+                        <img src="${f.avatar}" class="w-full h-full object-cover" />
+                      </div>
+                      <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full ring-2 ring-white shadow-xs z-10" title="${f.status}"></span>
                     </div>
                     <div class="min-w-0">
                       <h6 class="font-bold text-xs text-stone-900 truncate">${f.name}, ${f.age}t</h6>
@@ -3286,11 +3290,13 @@ class FoodApp {
               `).join('') : ''}
 
               ${activeFilter === 'groups' ? groupChats.map(g => `
-                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                <div class="flex items-center justify-between p-2.5 rounded-xl border border-stone-200/80 bg-white hover:bg-stone-50 transition shrink-0 shadow-2xs">
                   <div class="flex items-center gap-2.5 min-w-0">
-                    <div class="relative w-10 h-10 rounded-2xl overflow-hidden shrink-0 border border-amber-300">
-                      <img src="${g.avatar}" class="w-full h-full object-cover" />
-                      <span class="absolute top-0 right-0 bg-rose-500 text-white text-[8px] font-bold px-1 rounded-full">${g.membersCount}</span>
+                    <div class="relative w-11 h-11 shrink-0">
+                      <div class="w-full h-full rounded-2xl overflow-hidden border border-amber-200 shadow-2xs">
+                        <img src="${g.avatar}" class="w-full h-full object-cover" />
+                      </div>
+                      <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[8.5px] font-black px-1.5 py-0.2 rounded-full ring-1 ring-white shadow-xs z-10">${g.membersCount}</span>
                     </div>
                     <div class="min-w-0">
                       <h6 class="font-bold text-xs text-stone-900 truncate">${g.name}</h6>
