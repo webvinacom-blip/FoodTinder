@@ -48,11 +48,6 @@ class TinderSwipeManager {
       const willReturnCount = (window.app && typeof window.app.getWillReturnCount === 'function')
         ? window.app.getWillReturnCount(food.id)
         : (food.reviewCount ? Math.floor(food.reviewCount * 1.5) : 38);
-      const willReturnFriends = (window.app && typeof window.app.getFriendsWhoWillReturn === 'function')
-        ? window.app.getFriendsWhoWillReturn(food.id)
-        : [];
-      const displayReturnFriends = willReturnFriends.slice(0, 3);
-      const moreReturnFriendsCount = willReturnFriends.length - 3;
       const isWillReturn = (window.app && typeof window.app.isFoodWillReturn === 'function')
         ? window.app.isFoodWillReturn(food.id)
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
@@ -142,37 +137,15 @@ class TinderSwipeManager {
                   <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
                 </p>
 
-                <!-- Mục số người sẽ quay lại làm lớn hơn & Avatars bạn bè -->
-                <div class="flex items-center gap-2 mt-2.5 flex-wrap">
+                <!-- Đưa thông tin số người sẽ quay lại lên trên -->
+                <div class="flex items-center gap-2 mt-2">
                   <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
                     data-will-return-btn="${food.id}"
-                    class="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-extrabold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-3 py-1.5 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-amber-50/80 hover:bg-amber-100 text-amber-900 border border-amber-200/90'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
                     title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
-                    <span class="text-base leading-none">😋</span>
-                    <span><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
+                    <span class="text-sm leading-none">😋</span>
+                    <span class="font-bold text-xs"><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
                   </button>
-
-                  ${displayReturnFriends.length > 0 ? `
-                    <div class="flex items-center">
-                      <div class="flex items-center">
-                        ${displayReturnFriends.map(f => `
-                          <div onclick="event.stopPropagation(); window.app && window.app.openChatWithFriend(${f.id})" 
-                            class="relative cursor-pointer transition hover:scale-115 hover:z-20 active:scale-95 shrink-0 -ml-2 first:ml-0"
-                            title="${f.name} đã chọn sẽ quay lại • Bấm để nhắn tin">
-                            <img src="${f.avatar}" alt="${f.name}" class="w-7 h-7 rounded-full object-cover border-2 border-white shadow-2xs" />
-                            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
-                          </div>
-                        `).join('')}
-                      </div>
-                      ${moreReturnFriendsCount > 0 ? `
-                        <button onclick="event.stopPropagation(); window.app && window.app.openWillReturnFriendsModal(${food.id})" 
-                          class="px-2 h-7 rounded-full bg-amber-100 hover:bg-amber-200 border-2 border-white text-amber-900 text-[10.5px] font-black flex items-center justify-center -ml-2 shadow-xs cursor-pointer active:scale-95 transition z-10 shrink-0" 
-                          title="Xem tất cả bạn bè sẽ quay lại quán">
-                          +${moreReturnFriendsCount} more
-                        </button>
-                      ` : ''}
-                    </div>
-                  ` : ''}
                 </div>
               </div>
               <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-[#d32323] border border-rose-200 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán ăn trên Foody">
