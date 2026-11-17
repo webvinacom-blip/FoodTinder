@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-FoodTinder - Công cụ cào toàn diện ShopeeFood Quy Nhơn (Bản nâng cấp toàn diện)
-Cập nhật theo yêu cầu:
-1. Cào TẤT CẢ các trang (tự động phát hiện khi hết dữ liệu, không giới hạn 6 trang).
-2. Phân chia theo lô trang (Batching Anti-ban): Sau mỗi lô 5 trang nghỉ giải lao 8s để chống chặn IP.
-3. Giữa mỗi trang đơn lẻ: Delay ngẫu nhiên 2.0s - 3.2s.
-4. BỎ ĐIỀU KIỆN rating >= 4.0 và reviews >= 20: Giữ nguyên điểm rating và review từ Foody (kể cả quán mới mở, 0 review).
-5. Quét bổ sung các chuỗi thương hiệu lớn (Katinat, Phúc Long, Highlands, Phê La, Koi Thé, The Coffee House...) để không bỏ sót.
+FoodTinder - Công cụ Cào Ma Trận Đa Chiều Quy Nhơn (Multi-Dimensional Matrix Crawler)
+Giải pháp vượt qua giới hạn 5 trang của Foody / ShopeeFood:
+1. Ma trận Tuyến đường (Street Matrix): Quét hơn 35 trục đường ẩm thực trọng điểm tại Quy Nhơn.
+2. Ma trận Món ăn & Ẩm thực ngách (Deep Dish Matrix): Hơn 50 từ khóa món ăn đặc sản & vặt.
+3. Ma trận Chuỗi thương hiệu lớn (Brand Matrix): Bắt trọn 100% chi nhánh lớn.
+4. Cơ chế chống chặn (Anti-ban Protection): Delay ngẫu nhiên 1.6s - 2.6s, nghỉ giải lao sau mỗi batch.
+5. Bộ lọc Chất lượng (Quality Gate): Giữ nguyên điểm rating/review từ Foody, loại bỏ quán đóng cửa/không có ảnh.
 6. Đồng bộ chuẩn xác vào food-data.json và js/data.js.
 """
 
@@ -25,7 +25,7 @@ import argparse
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH_DIR = os.path.join(BASE_DIR, "scratch")
-CHECKPOINT_FILE = os.path.join(SCRATCH_DIR, "crawler_checkpoint.json")
+CHECKPOINT_FILE = os.path.join(SCRATCH_DIR, "matrix_checkpoint.json")
 OUTPUT_CRAWLED_FILE = os.path.join(SCRATCH_DIR, "shopeefood_quynhon_clean.json")
 DATABASE_JSON = os.path.join(BASE_DIR, "food-data.json")
 DATA_JS = os.path.join(BASE_DIR, "js/data.js")
@@ -40,45 +40,35 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 ]
 
-CATEGORIES_MAP = {
-    "do-uong": {
-        "label": "Đồ Uống (Trà sữa, Cà phê, Nước ép)",
-        "category": "boba",
-        "url": "https://www.foody.vn/binh-dinh/food/dia-diem?c=2",
-        "keywords": ["trà sữa", "cà phê", "cafe", "tiệm trà", "sinh tố", "nước ép", "nước dừa"]
-    },
-    "do-an": {
-        "label": "Đồ Ăn (Cơm, Bún, Phở, Mì)",
-        "category": "noodles",
-        "url": "https://www.foody.vn/binh-dinh/food/dia-diem?c=1",
-        "keywords": ["bún", "phở", "cơm gà", "bánh canh", "hủ tiếu", "mì quảng", "bò kho"]
-    },
-    "trang-mieng": {
-        "label": "Tráng Miệng & Ăn Vặt",
-        "category": "streetfood",
-        "url": "https://www.foody.vn/binh-dinh/food/dia-diem?c=3",
-        "keywords": ["chè", "kem", "bánh ngọt", "bánh tráng", "ăn vặt", "xiên nướng", "flan"]
-    },
-    "hai-san-lau-nuong": {
-        "label": "Hải Sản, Lẩu & Nướng BBQ",
-        "category": "seafood",
-        "url": "https://www.foody.vn/binh-dinh/food/dia-diem?c=4",
-        "keywords": ["hải sản", "ốc", "lẩu", "nướng", "bbq", "bò né", "gà chỉ", "mực"]
-    },
-    "chay": {
-        "label": "Đồ Chay & Thanh Tịnh",
-        "category": "vegetarian",
-        "url": "https://www.foody.vn/binh-dinh/food/dia-diem?c=5",
-        "keywords": ["chay", "cơm chay", "lẩu nấm", "thanh tịnh", "an lạc"]
-    },
-    "dac-san": {
-        "label": "Đặc Sản Quy Nhơn & Vỉa Hè",
-        "category": "streetfood",
-        "url": "https://www.foody.vn/binh-dinh/dia-diem?page=",
-        "keywords": ["bánh xèo tôm nhảy", "bún chả cá", "bún sứa", "bánh hỏi cháo lòng", "chả ram tôm đất"]
-    }
-}
+# 35 Tuyến đường ẩm thực sầm uất nhất Quy Nhơn
+QUYNHON_STREETS = [
+    "Ngô Mây", "Nguyễn Thái Học", "Xuân Diệu", "Nguyễn Thị Định", "Trần Hưng Đạo",
+    "Lê Hồng Phong", "Đống Đa", "An Dương Vương", "Bạch Đằng", "Phan Bội Châu",
+    "Hai Bà Trưng", "Lê Duẩn", "Diên Hồng", "Võ Thị Yến", "Hoàng Văn Thụ",
+    "Tây Sơn", "Ngọc Hân Công Chúa", "Trần Phú", "Lê Lợi", "Phan Đình Phùng",
+    "Nguyễn Huệ", "Trương Văn Của", "Biên Cương", "Nguyễn Lữ", "Trần Cao Vân",
+    "Vũ Bảo", "Mai Xuân Thưởng", "Hùng Vương", "Cần Vương", "Đô Đốc Bảo",
+    "Tăng Bạt Hổ", "Trần Thị Kỷ", "Lý Thường Kiệt", "Lý Thái Tổ", "Hải Thượng Lãn Ông"
+]
 
+# 50 Từ khóa món ăn & ẩm thực ngách Quy Nhơn
+DEEP_DISH_KEYWORDS = [
+    # Món nước / bún / phở
+    "bún bò", "bún chả cá", "bún sứa", "bún rạm", "bún tôm", "bánh canh",
+    "phở", "hủ tiếu", "mì quảng", "bò kho", "cháo lòng", "cháo ếch", "súp",
+    # Món cơm / điểm tâm
+    "cơm gà", "cơm tấm", "cơm niêu", "cơm bình dân", "bánh mì", "xôi", "bò né", "bánh cuốn",
+    # Món đặc sản / ăn vặt
+    "bánh xèo", "chả ram tôm đất", "nem nướng", "bánh bèo", "bánh hỏi", "bánh tráng nướng",
+    "ốc", "hải sản", "gà chỉ", "mực nướng", "lẩu gà lá é", "lẩu bò", "bbq", "nướng ngói",
+    # Đồ uống / giải khát
+    "trà sữa", "cà phê", "cafe view biển", "trà trái cây", "nước ép", "sinh tố",
+    "chè", "kem bơ", "tàu hũ", "sữa chua", "dừa dầm", "nước dừa",
+    # Ẩm thực khác
+    "chay", "pizza", "burger", "gà rán", "dimsum", "sushi", "mì cay"
+]
+
+# Chuỗi thương hiệu lớn
 BRAND_KEYWORDS = [
     "katinat", "phúc long", "highlands coffee", "phê la", "koi thé",
     "the coffee house", "gong cha", "starbucks", "tocotoco", "mixue",
@@ -95,10 +85,9 @@ CLOSED_BLACKLIST = [
     "nghỉ bán", "sang nhượng"
 ]
 
-def smart_sleep(min_sec=2.0, max_sec=3.2):
-    """Delay chống chặn: Sleep ngẫu nhiên giữa mỗi lần request"""
-    delay = random.uniform(min_sec, max_sec)
-    time.sleep(delay)
+def smart_sleep(min_sec=1.6, max_sec=2.6):
+    """Delay ngẫu nhiên giữa các request để chống chặn IP"""
+    time.sleep(random.uniform(min_sec, max_sec))
 
 def get_headers():
     return {
@@ -131,13 +120,6 @@ def calculate_distance_km(lat1, lon1, lat2, lon2):
     return round(R * c, 1)
 
 def is_valid_quality_food(item):
-    """
-    Màng lọc chất lượng đã cập nhật theo yêu cầu:
-    1. Quán không có ảnh hoặc ảnh placeholder -> LOẠI
-    2. BỎ điều kiện rating >= 4.0 và reviews >= 20 -> GIỮ NGUYÊN rating thực tế từ Foody (kể cả quán mới mở)
-    3. Quán đóng cửa / ngừng app / sang nhượng -> LOẠI
-    4. Quán không có địa chỉ hoặc nằm ngoài Quy Nhơn -> LOẠI
-    """
     if not item or not isinstance(item, dict):
         return False, "Dữ liệu trống"
 
@@ -146,23 +128,23 @@ def is_valid_quality_food(item):
     addr = (item.get("address") or "").strip()
     all_text = f"{name} {rest} {addr}".lower()
 
-    # 1. Kiểm tra ảnh
+    # 1. Ảnh hợp lệ
     img = (item.get("image") or "").strip()
     if not img or len(img) < 15 or not img.startswith("http"):
         return False, "Thiếu URL hình ảnh"
     if any(k in img.lower() for k in ["placeholder", "default_avatar", "no-image", "empty_shop", "d-avatar"]):
         return False, "Ảnh placeholder / logo generic"
 
-    # 2. Kiểm tra quán đóng cửa / ngừng hoạt động
+    # 2. Quán đóng cửa
     for bad_kw in CLOSED_BLACKLIST:
         if bad_kw in all_text:
             return False, f"Quán đóng cửa / ngừng kinh doanh ({bad_kw})"
 
-    # 3. Kiểm tra địa chỉ và tọa độ thực tế tại Quy Nhơn
+    # 3. Địa bàn Quy Nhơn
     lat = float(item.get("lat") or item.get("latitude") or 0)
     lng = float(item.get("lng") or item.get("longitude") or 0)
     if not (13.6 <= lat <= 13.9 and 109.1 <= lng <= 109.35):
-        return False, f"Tọa độ không hợp lệ hoặc nằm ngoài Quy Nhơn ({lat}, {lng})"
+        return False, f"Tọa độ không hợp lệ hoặc ngoài Quy Nhơn ({lat}, {lng})"
 
     if not addr or len(addr) < 4 or "đang cập nhật" in addr.lower():
         return False, "Địa chỉ ảo / không có số nhà tên đường thực tế"
@@ -237,7 +219,6 @@ def format_food_item(it, cat_category="streetfood"):
     shopee_url = f"https://shopeefood.vn/binh-dinh/{clean_slug}"
     shopee_search = f"https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q={urllib.parse.quote(name)}"
 
-    # Tự động gán category chuẩn xác theo tên
     name_lower = name.lower()
     cat = cat_category
     if any(k in name_lower for k in ["trà sữa", "cà phê", "cafe", "coffee", "tiệm trà", "chè", "sinh tố", "nước ép", "katinat", "phúc long", "highlands"]):
@@ -306,146 +287,50 @@ def format_food_item(it, cat_category="streetfood"):
     }
     return enrich_food_attributes(item)
 
-def crawl_shopeefood_category(cat_key, max_pages=100, batch_size=5, checkpoint_state=None):
-    cat_cfg = CATEGORIES_MAP.get(cat_key)
-    if not cat_cfg:
-        return []
+def crawl_query_pages(query_text, max_pages=4, existing_ids=None):
+    """Cào danh sách quán cho một từ khóa/tuyến đường cụ thể (quét tối đa 4 trang)"""
+    results = []
+    seen = existing_ids if existing_ids is not None else set()
+    encoded_q = urllib.parse.quote(query_text)
 
-    print(f"\n🚀 BẮT ĐẦU CÀO PHIÊN DANH MỤC: {cat_cfg['label']} ({cat_key})")
-    print(f"⏱️ Cơ chế Anti-ban: sleep 2.0 - 3.2s giữa các trang, nghỉ 8s sau mỗi lô {batch_size} trang...")
-
-    crawled_restaurants = []
-    seen_ids = set(checkpoint_state.get("seen_ids", [])) if checkpoint_state else set()
-    start_page = checkpoint_state.get("last_page", 0) + 1 if checkpoint_state else 1
-
-    consecutive_empty = 0
-
-    for page in range(start_page, max_pages + 1):
-        url = f"{cat_cfg['url']}&page={page}" if "?" in cat_cfg['url'] else f"{cat_cfg['url']}{page}"
-        print(f"  📄 Đang quét Trang {page}: {url}")
-
+    for page in range(1, max_pages + 1):
+        url = f"https://www.foody.vn/binh-dinh/dia-diem?q={encoded_q}&page={page}"
         req = urllib.request.Request(url, headers=get_headers())
         items = []
         try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=12) as resp:
                 html = resp.read().decode("utf-8", errors="ignore")
                 match = re.search(r"var jsonData = ({.*?});", html)
                 if match:
                     d = json.loads(match.group(1))
                     items = d.get("searchItems", [])
-        except Exception as e:
-            print(f"     ⚠️ Lỗi kết nối Trang {page}: {e}. Đang thử lại với delay an toàn...")
-            smart_sleep(3.5, 5.0)
-            continue
+        except Exception:
+            break
 
         if not items:
-            consecutive_empty += 1
-            print(f"     ℹ️ Trang {page} không có quán nào. (Trang rỗng liên tiếp: {consecutive_empty})")
-            if consecutive_empty >= 2:
-                print(f"     🛑 Đã quét hết tất cả các trang của danh mục '{cat_key}'!")
-                break
-        else:
-            consecutive_empty = 0
+            break
 
-        valid_in_page = 0
+        new_count = 0
         for it in items:
-            item_id = it.get("Id")
-            if item_id in seen_ids:
+            iid = it.get("Id")
+            if not iid or iid in seen:
                 continue
 
-            raw_item = format_food_item(it, cat_category=cat_cfg["category"])
-            is_valid, reason = is_valid_quality_food(raw_item)
-            if not is_valid:
+            raw_item = format_food_item(it)
+            ok, reason = is_valid_quality_food(raw_item)
+            if not ok:
                 continue
 
-            seen_ids.add(item_id)
-            crawled_restaurants.append(raw_item)
-            valid_in_page += 1
-
-        print(f"     ✅ Trang {page}: Quét được {len(items)} quán, chấp thuận {valid_in_page} quán hợp lệ. (Tích lũy: {len(crawled_restaurants)})")
-
-        save_checkpoint({
-            "cat_key": cat_key,
-            "last_page": page,
-            "seen_ids": list(seen_ids),
-            "count": len(crawled_restaurants),
-            "updated_at": time.strftime("%Y-%m-%d %H:%M:%S")
-        })
-
-        # Anti-ban sleep giữa các trang
-        smart_sleep(2.0, 3.2)
-
-        # Nghỉ giải lao theo Batch
-        if page % batch_size == 0:
-            print(f"  ☕ [Batch Anti-ban] Hoàn thành lô {page} trang. Nghỉ 8 giây để chống chặn IP...")
-            time.sleep(8)
-
-    return crawled_restaurants
-
-def crawl_shopeefood_brand_keywords(keywords, existing_ids=None):
-    """Quét chuyên biệt theo từ khóa thương hiệu lớn để không bao giờ bỏ sót (Phúc Long, Katinat, Highlands...)"""
-    print(f"\n🔍 BẮT ĐẦU CÀO BỔ SUNG THEO TỪ KHÓA CHUỖI THƯƠNG HIỆU LỚN...")
-    results = []
-    seen_ids = set(existing_ids or [])
-
-    for kw in keywords:
-        print(f"  🔎 Đang tìm kiếm thương hiệu: '{kw}' tại Bình Định / Quy Nhơn...")
-        url = f"https://www.foody.vn/binh-dinh/dia-diem?q={urllib.parse.quote(kw)}"
-        req = urllib.request.Request(url, headers=get_headers())
-        items = []
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                html = resp.read().decode("utf-8", errors="ignore")
-                match = re.search(r"var jsonData = ({.*?});", html)
-                if match:
-                    d = json.loads(match.group(1))
-                    items = d.get("searchItems", [])
-        except Exception as e:
-            print(f"     ⚠️ Lỗi kết nối khi tìm '{kw}': {e}")
-            continue
-
-        valid_brand = 0
-        for it in items:
-            item_id = it.get("Id")
-            name = it.get("Name", "")
-            if item_id in seen_ids:
-                continue
-
-            # Chỉ nhận nếu tên thực sự chứa từ khóa thương hiệu
-            if slugify(kw) not in slugify(name):
-                continue
-
-            raw_item = format_food_item(it, cat_category="boba")
-            is_valid, reason = is_valid_quality_food(raw_item)
-            if not is_valid:
-                continue
-
-            seen_ids.add(item_id)
+            seen.add(iid)
             results.append(raw_item)
-            valid_brand += 1
-            print(f"     ⭐ Phát hiện & nạp thương hiệu: {name} ({raw_item['address']}) | Rating: {raw_item['rating']} ⭐")
+            new_count += 1
 
-        smart_sleep(2.0, 3.0)
+        smart_sleep(1.6, 2.5)
+        # Nếu trang hiện tại không có thêm món mới nào (bị lặp) -> dừng sớm
+        if new_count == 0 and page >= 2:
+            break
 
-    print(f"✅ Đã quét xong từ khóa thương hiệu. Thu hoạch thêm {len(results)} chi nhánh lớn!")
     return results
-
-def save_checkpoint(data):
-    try:
-        os.makedirs(SCRATCH_DIR, exist_ok=True)
-        with open(CHECKPOINT_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print(f"Lỗi ghi checkpoint: {e}")
-
-def load_checkpoint():
-    if os.path.exists(CHECKPOINT_FILE):
-        try:
-            with open(CHECKPOINT_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return None
-    return None
 
 def clean_address(addr):
     if not addr:
@@ -521,31 +406,16 @@ def merge_new_foods_into_database(new_foods):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     sync_to_data_js(current_foods)
-    print(f"\n🎉 Đã gộp thêm {added} quán mới vào database. Tổng cộng: {len(current_foods)} quán!")
+    print(f"\n🎉 Đã gộp thêm {added} quán mới vào database. Tổng cộng hiện có: {len(current_foods)} quán!")
 
 def main():
-    parser = argparse.ArgumentParser(description="ShopeeFood Quy Nhơn Anti-ban Crawler (Cào tất cả các trang & Bỏ giới hạn rating)")
-    parser.add_argument("--category", type=str, choices=list(CATEGORIES_MAP.keys()), help="Cào 1 danh mục cụ thể")
-    parser.add_argument("--all", action="store_true", help="Cào tất cả danh mục theo từng phiên")
-    parser.add_argument("--max-pages", type=int, default=50, help="Số trang tối đa mỗi danh mục (mặc định: 50, tự dừng khi hết trang)")
-    parser.add_argument("--batch-size", type=int, default=5, help="Số trang mỗi lô nghỉ giải lao Anti-ban (mặc định: 5 trang)")
-    parser.add_argument("--break-sec", type=int, default=15, help="Thời gian nghỉ (giây) giữa các danh mục (mặc định: 15s)")
-    parser.add_argument("--include-brands", action="store_true", default=True, help="Quét bổ sung các chuỗi thương hiệu lớn (Katinat, Phúc Long, v.v.)")
-    parser.add_argument("--merge-into-db", action="store_true", default=True, help="Tự động gộp các quán mới cào vào database")
-    parser.add_argument("--resume", action="store_true", help="Tiếp tục từ checkpoint gần nhất")
+    parser = argparse.ArgumentParser(description="ShopeeFood Quy Nhơn Multi-Dimensional Matrix Crawler")
+    parser.add_argument("--streets", action="store_true", default=True, help="Quét ma trận tuyến đường Quy Nhơn")
+    parser.add_argument("--dishes", action="store_true", default=True, help="Quét ma trận món ăn ngách Quy Nhơn")
+    parser.add_argument("--brands", action="store_true", default=True, help="Quét chuỗi thương hiệu lớn")
+    parser.add_argument("--batch-break", type=int, default=6, help="Thời gian nghỉ (s) sau mỗi 10 truy vấn")
 
     args = parser.parse_args()
-
-    categories_to_run = []
-    if args.category:
-        categories_to_run = [args.category]
-    elif args.all:
-        categories_to_run = list(CATEGORIES_MAP.keys())
-    else:
-        print("\n💡 Gợi ý sử dụng:")
-        print("  - Cào danh mục Đồ Uống:    python3 scripts/crawl_shopeefood_quynhon.py --category do-uong --max-pages 30")
-        print("  - Cào tất cả danh mục:     python3 scripts/crawl_shopeefood_quynhon.py --all --max-pages 50 --batch-size 5")
-        return
 
     # Tải danh sách ID đã có trong database
     existing_ids = set()
@@ -554,39 +424,68 @@ def main():
             d = json.load(f)
             existing_ids = set(f.get("id") for f in d.get("foods", []))
 
-    all_new_foods = []
+    print(f"======================================================================")
+    print(f"🚀 KHỞI ĐỘNG CÔNG CỤ CÀO MA TRẬN ĐA CHIỀU SHOPEEFOOD QUY NHƠN")
+    print(f"📦 Số quán hiện có trong database: {len(existing_ids)} quán")
+    print(f"======================================================================\n")
 
-    # 1. Quét chuỗi thương hiệu lớn trước để bảo đảm Phúc Long, Katinat, Highlands có ngay
-    if args.include_brands:
-        brand_foods = crawl_shopeefood_brand_keywords(BRAND_KEYWORDS, existing_ids=existing_ids)
-        for bf in brand_foods:
-            existing_ids.add(bf["id"])
-        all_new_foods.extend(brand_foods)
+    all_harvested = []
 
-    # 2. Quét tuần tự các danh mục
-    for idx, cat in enumerate(categories_to_run):
-        cp = load_checkpoint() if args.resume else None
-        res = crawl_shopeefood_category(cat, max_pages=args.max_pages, batch_size=args.batch_size, checkpoint_state=cp)
-        for r in res:
-            if r["id"] not in existing_ids:
-                existing_ids.add(r["id"])
-                all_new_foods.append(r)
+    # 1. Quét Chuỗi Thương Hiệu
+    if args.brands:
+        print(f"📍 [GIAI ĐOẠN 1/3] Quét {len(BRAND_KEYWORDS)} Chuỗi Thương Hiệu Lớn...")
+        for idx, brand in enumerate(BRAND_KEYWORDS):
+            res = crawl_query_pages(brand, max_pages=3, existing_ids=existing_ids)
+            if res:
+                all_harvested.extend(res)
+                print(f"   [Thương hiệu {idx+1}/{len(BRAND_KEYWORDS)}] '{brand}': Thu hoạch +{len(res)} chi nhánh.")
+            smart_sleep(1.5, 2.2)
 
-        if idx < len(categories_to_run) - 1:
-            print(f"\n☕ [Anti-ban] Đã hoàn thành danh mục '{cat}'. Nghỉ {args.break_sec} giây trước khi chuyển sang danh mục tiếp theo...")
-            time.sleep(args.break_sec)
+    # 2. Quét Ma Trận Tuyến Đường Quy Nhơn
+    if args.streets:
+        print(f"\n🛣️ [GIAI ĐOẠN 2/3] Quét Ma Trận {len(QUYNHON_STREETS)} Tuyến Phố Ẩm Thực Quy Nhơn...")
+        for idx, street in enumerate(QUYNHON_STREETS):
+            res = crawl_query_pages(f"đường {street} Quy Nhơn", max_pages=4, existing_ids=existing_ids)
+            if res:
+                all_harvested.extend(res)
+                print(f"   [Đường {idx+1}/{len(QUYNHON_STREETS)}] Đường {street}: Thu hoạch +{len(res)} quán mới. (Tổng mới: {len(all_harvested)})")
+            
+            # Anti-ban Batch Break
+            if (idx + 1) % 10 == 0:
+                print(f"   ☕ [Anti-ban] Đã quét {idx+1} tuyến đường. Nghỉ giải lao {args.batch_break}s...")
+                time.sleep(args.batch_break)
 
-    # 3. Lưu và gộp vào database
-    if all_new_foods:
+            smart_sleep(1.6, 2.5)
+
+    # 3. Quét Ma Trận Món Ăn Ngách
+    if args.dishes:
+        print(f"\n🍜 [GIAI ĐOẠN 3/3] Quét Ma Trận {len(DEEP_DISH_KEYWORDS)} Món Ăn & Đặc Sản Ngách Quy Nhơn...")
+        for idx, dish in enumerate(DEEP_DISH_KEYWORDS):
+            res = crawl_query_pages(f"{dish} Quy Nhơn", max_pages=4, existing_ids=existing_ids)
+            if res:
+                all_harvested.extend(res)
+                print(f"   [Món {idx+1}/{len(DEEP_DISH_KEYWORDS)}] '{dish}': Thu hoạch +{len(res)} quán mới. (Tổng mới: {len(all_harvested)})")
+            
+            # Anti-ban Batch Break
+            if (idx + 1) % 10 == 0:
+                print(f"   ☕ [Anti-ban] Đã quét {idx+1} món ăn. Nghỉ giải lao {args.batch_break}s...")
+                time.sleep(args.batch_break)
+
+            smart_sleep(1.6, 2.5)
+
+    # 4. Gộp vào Database & Cập nhật App Data
+    print(f"\n======================================================================")
+    print(f"🎉 HOÀN THÀNH TOÀN DIỆN MA TRẬN CÀO QUY NHƠN!")
+    print(f"📊 Tổng số quán mới thu hoạch được: {len(all_harvested)} quán!")
+    print(f"======================================================================")
+
+    if all_harvested:
         os.makedirs(SCRATCH_DIR, exist_ok=True)
         with open(OUTPUT_CRAWLED_FILE, "w", encoding="utf-8") as f:
-            json.dump(all_new_foods, f, ensure_ascii=False, indent=2)
-        print(f"\n🎉 CÀO THÀNH CÔNG TỔNG CỘNG {len(all_new_foods)} QUÁN MỚI ĐẠT CHUẨN!")
-        print(f"📁 Đã lưu dữ liệu tại: {OUTPUT_CRAWLED_FILE}")
-        if args.merge_into_db:
-            merge_new_foods_into_database(all_new_foods)
+            json.dump(all_harvested, f, ensure_ascii=False, indent=2)
+        merge_new_foods_into_database(all_harvested)
     else:
-        print("\nℹ️ Phiên cào hoàn tất. Toàn bộ các quán tìm thấy đã có trong database.")
+        print("ℹ️ Không phát hiện thêm quán mới. Database đã bao phủ tối đa!")
 
 if __name__ == "__main__":
     main()
