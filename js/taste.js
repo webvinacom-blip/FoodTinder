@@ -615,7 +615,7 @@ class TasteManager {
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đến quán thưởng thức trực tiếp">
-              <span>📍 Xem đường đi</span>
+              <span>Xem đường đi</span>
             </button>
             `}
           </div>

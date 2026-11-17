@@ -586,7 +586,7 @@ class FoodApp {
           <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
             class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
             title="Đến quán thưởng thức trực tiếp">
-            <span>📍 Xem đường đi</span>
+            <span>Xem đường đi</span>
           </button>
           `}
         </div>
@@ -2411,7 +2411,7 @@ class FoodApp {
             ` : `
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="w-full py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
-              <span>📍 Xem đường đi</span>
+              <span>Xem đường đi</span>
             </button>
             `}
           </div>
@@ -2543,7 +2543,7 @@ class FoodApp {
             <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
               class="flex-1 h-7.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg text-[10.5px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
               title="Đến quán thưởng thức trực tiếp">
-              <span>📍 Xem đường đi</span>
+              <span>Xem đường đi</span>
             </button>
             `}
           </div>
@@ -3057,15 +3057,10 @@ class FoodApp {
             Bạn có thể ghé trực tiếp địa chỉ <strong>${food.address || food.district || 'TP. Quy Nhơn'}</strong> để trải nghiệm không gian và thưởng thức trọn vẹn hương vị nóng hổi nhất!
           </p>
 
-          <div class="flex gap-2 mt-3">
-            <button onclick="window.app.openMapWithFood(${food.id})" class="flex-1 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-black text-xs shadow-md shadow-emerald-200 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
-              <span>🗺️ XEM CHỈ ĐƯỜNG TRÊN BẢN ĐỒ</span>
+          <div class="mt-3">
+            <button onclick="window.app.openMapWithFood(${food.id})" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-black text-xs shadow-md shadow-emerald-200 flex items-center justify-center transition active:scale-98 cursor-pointer">
+              <span>XEM CHỈ ĐƯỜNG TRÊN BẢN ĐỒ</span>
             </button>
-            ${food.hotline ? `
-            <a href="tel:${food.hotline}" class="px-4 py-3 bg-white hover:bg-stone-50 border border-emerald-300 text-emerald-800 rounded-xl font-black text-xs flex items-center justify-center gap-1.5 transition active:scale-98">
-              <span>📞 Gọi quán</span>
-            </a>
-            ` : ''}
           </div>
         </div>
         `}
@@ -3096,10 +3091,6 @@ class FoodApp {
           <div class="flex items-center justify-between">
             <span class="text-stone-400">Địa chỉ:</span>
             <span class="font-semibold text-stone-700 truncate max-w-[200px]" title="${food.address || ''}">${food.address || 'Đang cập nhật'}</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span class="text-stone-400">Hotline quán:</span>
-            <span class="font-semibold text-blue-600">${food.phone ? `<a href="tel:${food.phone}" class="hover:underline">${food.phone}</a>` : 'Đang cập nhật'}</span>
           </div>
         </div>
       </div>
