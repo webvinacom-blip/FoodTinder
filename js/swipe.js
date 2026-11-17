@@ -155,14 +155,13 @@ class TinderSwipeManager {
             </div>
           </div>
 
-          <!-- Bottom Row: Bỏ button ShopeeFood, thêm Button Rủ đi ăn -->
-          <div class="pt-2 border-t border-stone-100">
+          <!-- Bottom Row: Button Rủ đi ăn (chuẩn giao diện nút tin nhắn) -->
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-center">
             <button onclick="event.stopPropagation(); window.app && window.app.openInviteFriendsModal(${food.id})" 
-              class="w-full py-2.5 bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-rose-200 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer" 
-              title="Rủ bạn bè hoặc gửi qua Zalo/Messenger đi ăn quán này">
-              <span class="text-base leading-none">👥</span>
+              class="w-full py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-sm rounded-full shadow-md shadow-rose-200/50 flex items-center justify-center gap-1.5 transition active:scale-98 cursor-pointer" 
+              title="Rủ bạn bè đi ăn quán này">
               <span>Rủ đi ăn</span>
-              <span class="text-[10.5px] bg-white/20 px-2 py-0.5 rounded-full font-bold">🍲 Gửi bạn bè & Zalo</span>
+              <span>🍲</span>
             </button>
           </div>
         </div>
