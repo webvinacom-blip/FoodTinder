@@ -349,6 +349,27 @@ class TinderSwipeManager {
         window.app.removeLikedFood(last.food.id);
       }
       this.render();
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast('↩️ Đã quay lại món trước đó');
+      }
+    } else {
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast('Bạn đang ở món đầu tiên!');
+      }
+    }
+  }
+
+  reloadDeck() {
+    if (this.isAnimating) return;
+    const foods = (window.APP_DATA && window.APP_DATA.foods && window.APP_DATA.foods.length > 0)
+      ? window.APP_DATA.foods
+      : (typeof APP_DATA !== 'undefined' && APP_DATA.foods ? APP_DATA.foods : this.deck);
+    this.history = [];
+    this.currentIndex = 0;
+    this.loadCards(foods);
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    if (window.app && typeof window.app.showToast === 'function') {
+      window.app.showToast('🔄 Đã tải lại danh sách món từ đầu!');
     }
   }
 
