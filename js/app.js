@@ -3175,11 +3175,11 @@ class FoodApp {
     // Giúp Google Maps gắn cứng chính xác 100% vào quán ăn đó, hiển thị đúng tên quán, ảnh quán, thẻ quán
     // và tuyệt đối KHÔNG BAO GIỜ bị nhảy sang tiệm tóc hay quán khác!
     const targetDestName = food.gmapsName || cleanRestName;
-    const hasPlaceId = food.placeId && food.placeId.startsWith('ChIJ');
+    const hasPlaceId = food.placeId && food.placeId.startsWith('ChIJ') && !food.placeId.startsWith('ChIJ_food_');
 
     const primaryDirUrl = hasPlaceId
       ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(targetDestName)}&destination_place_id=${food.placeId}`
-      : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`;
+      : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanRestName + ', ' + cleanAddr)}`;
 
     const primaryDestHint = `Từ ${userAddrLabel} ➔ ${targetDestName}`;
     const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${targetDestName} (${cleanAddr}).`;
