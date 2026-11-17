@@ -72,7 +72,7 @@ class TinderSwipeManager {
 
       cardEl.innerHTML = `
         <!-- Image Container -->
-        <div class="relative w-full h-[60%] overflow-hidden bg-stone-100">
+        <div class="relative w-full h-[54%] overflow-hidden bg-stone-100">
           <img src="${food.image}" alt="${food.name}"
             data-name="${food.name.replace(/"/g, '&quot;')}"
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
@@ -122,8 +122,8 @@ class TinderSwipeManager {
         </div>
 
         <!-- Card Body Info -->
-        <div class="p-3.5 flex flex-col justify-between h-[40%] bg-white">
-          <div class="space-y-1.5">
+        <div class="p-3.5 flex flex-col justify-between h-[46%] bg-white">
+          <div class="space-y-1">
             <!-- Hàng 1: Tiêu đề quán & Nút Foody Review -->
             <div class="flex items-center justify-between gap-2">
               <h3 class="font-bold text-base text-stone-900 leading-tight truncate flex-1" title="${food.restaurant}">${food.restaurant}</h3>
@@ -133,11 +133,15 @@ class TinderSwipeManager {
               </button>
             </div>
 
-            <!-- Hàng 2: Địa chỉ, Giá, Icon Map, Giờ mở cửa -->
-            <p class="text-[11.5px] text-stone-500 flex items-center gap-1.5 truncate">
-              <span class="font-medium text-stone-700 truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
-              <span>•</span>
-              <span class="font-semibold text-amber-800 shrink-0">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
+            <!-- Hàng 2 (Dòng riêng): Địa chỉ quán -->
+            <p class="text-[11.5px] text-stone-600 flex items-center gap-1.5 truncate pt-0.5">
+              <span class="text-rose-500 shrink-0 text-xs">📍</span>
+              <span class="font-medium text-stone-700 truncate">${food.address || food.district || 'TP. Quy Nhơn'}</span>
+            </p>
+
+            <!-- Hàng 3 (Dòng riêng): Số tiền & Icon Bản đồ phía sau giá món -->
+            <p class="text-[11.5px] text-stone-600 flex items-center gap-2">
+              <span class="font-semibold text-stone-800">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
               <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs shrink-0" title="Xem vị trí & chỉ đường trên bản đồ">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
@@ -145,12 +149,19 @@ class TinderSwipeManager {
                   <line x1="15" y1="6" x2="15" y2="21"></line>
                 </svg>
               </button>
-              <span>•</span>
-              <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'} shrink-0">🕒 ${food.openTime}</span>
             </p>
 
-            <!-- Hàng 3: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT (KHÔNG CÓ ICON ONLINE) -->
-            <div class="flex items-center gap-2 pt-0.5 flex-nowrap overflow-hidden">
+            <!-- Hàng 4 (Dòng riêng): Thời gian mở cửa -->
+            <p class="text-[11.5px] text-stone-500 flex items-center gap-1.5 truncate">
+              <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'} flex items-center gap-1">
+                <span>🕒</span>
+                <span>${food.openTime}</span>
+                <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
+              </span>
+            </p>
+
+            <!-- Hàng 5: [😋 65 người sẽ quay lại] và [Avatar bạn bè] [+X more] LUÔN NẰM KỀ SÁT NHAU TRÊN CÙNG 1 HÀNG DUY NHẤT (KHÔNG CÓ ICON ONLINE) -->
+            <div class="flex items-center gap-2 pt-1 flex-nowrap overflow-hidden">
               <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
                 data-will-return-btn="${food.id}"
                 class="inline-flex items-center gap-1 text-xs font-bold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-gradient-to-r from-amber-50 to-orange-50/90 hover:bg-amber-100 text-amber-950 border border-amber-200'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs shrink-0"
