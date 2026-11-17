@@ -756,15 +756,7 @@ class FoodChatManager {
           <span class="bg-stone-200/70 text-stone-600 text-[10px] font-semibold px-3 py-0.5 rounded-full">Hôm nay</span>
         </div>
 
-        ${friend.messages.map(m => `
-          <div class="flex items-start gap-2 ${m.sender === 'you' ? 'justify-end' : 'justify-start'}">
-            ${m.sender !== 'you' ? `<img src="${friend.avatar}" class="w-7 h-7 rounded-full object-cover mt-0.5" />` : ''}
-            <div class="${m.sender === 'you' ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-2xl rounded-tr-sm' : 'bg-white text-stone-800 rounded-2xl rounded-tl-sm border border-stone-200 shadow-xs'} px-3.5 py-2.5 max-w-[75%] text-xs leading-relaxed">
-              ${m.text}
-              <div class="text-[9px] ${m.sender === 'you' ? 'text-white/80' : 'text-stone-400'} text-right mt-1">${m.time}</div>
-            </div>
-          </div>
-        `).join('')}
+        ${friend.messages.map(m => this.renderMessageBubble(m, false, friend.id, friend.avatar)).join('')}
       </div>
 
       <!-- Quick eatery sharing bar -->
@@ -819,16 +811,7 @@ class FoodChatManager {
 
       <!-- Messages Stream -->
       <div id="group-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none" style="max-width:760px; align-self:center; width:100%;">
-        ${group.messages.map(m => `
-          <div class="flex items-start gap-2 ${m.sender === 'Bạn' ? 'justify-end' : 'justify-start'}">
-            ${m.sender !== 'Bạn' ? `<div class="w-7 h-7 rounded-full bg-stone-200 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">${m.sender[0]}</div>` : ''}
-            <div class="${m.sender === 'Bạn' ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-2xl rounded-tr-sm' : 'bg-white text-stone-800 rounded-2xl rounded-tl-sm border border-stone-200 shadow-xs'} px-3.5 py-2.5 max-w-[75%] text-xs leading-relaxed">
-              ${m.sender !== 'Bạn' ? `<div class="font-bold text-[10px] text-rose-500 mb-0.5">${m.sender}</div>` : ''}
-              ${m.text}
-              <div class="text-[9px] ${m.sender === 'Bạn' ? 'text-white/80' : 'text-stone-400'} text-right mt-1">${m.time}</div>
-            </div>
-          </div>
-        `).join('')}
+        ${group.messages.map(m => this.renderMessageBubble(m, true, group.id, group.avatar)).join('')}
       </div>
 
       <!-- Group Input Bar -->
@@ -846,6 +829,99 @@ class FoodChatManager {
 
     const stream = document.getElementById('group-messages-stream');
     if (stream) stream.scrollTop = stream.scrollHeight;
+  }
+
+  /* ── RENDER TIN NHẮN (BONG BÓNG TEXT & THẺ RICH-UI KÈO ĂN) ── */
+  renderMessageBubble(m, isGroup = false, targetId = null, defaultAvatar = '') {
+    const isMe = m.sender === 'you' || m.sender === 'Bạn';
+    const isInvite = m.cardType === 'invite_card' && m.food;
+
+    if (isInvite) {
+      return `
+        <div class="flex items-start gap-2 ${isMe ? 'justify-end' : 'justify-start'}">
+          ${!isMe ? (defaultAvatar ? `<img src="${defaultAvatar}" class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5 border" />` : `<div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">🍲</div>`) : ''}
+          <div class="bg-white rounded-2xl border-2 border-rose-300 shadow-md overflow-hidden max-w-[300px] text-xs">
+            <!-- Header Kèo ăn -->
+            <div class="bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 text-white px-3 py-1.5 flex items-center justify-between">
+              <span class="font-black text-[11px] tracking-wide flex items-center gap-1">
+                <span>🍲</span> KÈO ĂN UỐNG
+              </span>
+              <span class="text-[9px] bg-white/25 px-1.5 py-0.2 rounded-full font-bold">Lời mời</span>
+            </div>
+            
+            <!-- Food Info -->
+            <div class="p-3">
+              <div class="relative w-full h-28 rounded-xl overflow-hidden mb-2 bg-stone-100">
+                <img src="${m.food.image}" class="w-full h-full object-cover" />
+                <span class="absolute bottom-1.5 left-1.5 bg-black/65 text-white text-[9.5px] font-bold px-2 py-0.5 rounded-full backdrop-blur-xs">
+                  ${m.food.distanceText || 'Quy Nhơn'}
+                </span>
+                <span class="absolute top-1.5 right-1.5 bg-amber-500 text-white text-[9.5px] font-bold px-1.5 py-0.2 rounded-full shadow-xs">
+                  ⭐ ${m.food.rating || 4.5}
+                </span>
+              </div>
+              <h5 class="font-extrabold text-xs text-stone-900 leading-tight">${m.food.restaurant}</h5>
+              <p class="text-[10px] text-stone-500 truncate mt-0.5">📍 ${m.food.address || 'TP. Quy Nhơn'}</p>
+              <p class="text-[10.5px] text-amber-700 font-bold mt-0.5">${m.food.priceRange || ''}</p>
+
+              <!-- Lời nhắn -->
+              <div class="mt-2 p-2 bg-rose-50/70 border border-rose-100 rounded-xl text-stone-800 text-[11px] leading-relaxed">
+                "${m.text || 'Đi ăn quán này với tui nha! 🤤🍲'}"
+              </div>
+
+              <!-- Action buttons -->
+              <div class="grid grid-cols-2 gap-1.5 mt-2.5">
+                <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${m.food.id})" class="py-1.5 px-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[10.5px] rounded-xl transition text-center flex items-center justify-center gap-1 cursor-pointer">
+                  <span>📍 Chỉ đường</span>
+                </button>
+                <button onclick="event.stopPropagation(); window.chatManager && window.chatManager.acceptInvite(${typeof targetId === 'number' ? targetId : `'${targetId}'`}, ${m.food.id})" class="py-1.5 px-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-black text-[10.5px] rounded-xl transition text-center shadow-xs flex items-center justify-center gap-1 cursor-pointer active:scale-95">
+                  <span>🔥 Chốt kèo!</span>
+                </button>
+              </div>
+            </div>
+            <div class="text-[9px] text-stone-400 text-right px-3 pb-1.5">${m.time}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="flex items-start gap-2 ${isMe ? 'justify-end' : 'justify-start'}">
+        ${!isMe ? (isGroup ? `<div class="w-7 h-7 rounded-full bg-stone-200 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">${m.sender[0]}</div>` : (defaultAvatar ? `<img src="${defaultAvatar}" class="w-7 h-7 rounded-full object-cover shrink-0 mt-0.5 border" />` : '')) : ''}
+        <div class="${isMe ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-2xl rounded-tr-sm' : 'bg-white text-stone-800 rounded-2xl rounded-tl-sm border border-stone-200 shadow-xs'} px-3.5 py-2.5 max-w-[75%] text-xs leading-relaxed">
+          ${!isMe && isGroup ? `<div class="font-bold text-[10px] text-rose-500 mb-0.5">${m.sender}</div>` : ''}
+          ${m.text}
+          <div class="text-[9px] ${isMe ? 'text-white/80' : 'text-stone-400'} text-right mt-1">${m.time}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  acceptInvite(targetId, foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    window.soundFX && window.soundFX.playMatch();
+    if (window.confetti) {
+      window.confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
+    }
+
+    const replyText = food ? `Duyệt kèo quán "${food.restaurant}" luôn nha bạn ơi! 15 phút nữa mình có mặt! 🛵💨🔥` : 'Duyệt kèo luôn bạn ơi, đi liền nha! 🔥';
+    
+    const isGroup = typeof targetId === 'string' && targetId.startsWith('group');
+    let target = isGroup ? (APP_DATA.groupChats || []).find(g => g.id === targetId) :
+                          ((APP_DATA.myFriends || []).find(f => f.id === targetId) || (APP_DATA.nearbyFriends || []).find(f => f.id === targetId));
+
+    if (target) {
+      target.messages.push({
+        sender: isGroup ? 'Bạn' : 'you',
+        text: replyText,
+        time: 'Vừa xong'
+      });
+      this.renderActiveChatWindow();
+      this.renderFriendsSidebar(false);
+      this.saveFriendsData();
+    }
+
+    window.app.showToast('🎉 Đã chốt kèo đi ăn thành công! Chúc bạn có bữa ăn ngon miệng!');
   }
 
   /* ── MESSAGE ACTIONS ── */

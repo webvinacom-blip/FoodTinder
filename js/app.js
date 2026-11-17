@@ -705,13 +705,17 @@ class FoodApp {
           if (initialFoods && initialFoods.length > 0) {
             this.refreshFoods(initialFoods);
           }
+          this.checkDeeplinkInvite();
         },
         (updatedFoods) => {
           console.log(`✨ [App] Nhận bản cập nhật dữ liệu mới (${updatedFoods.length} quán)!`);
           this.refreshFoods(updatedFoods);
           this.showToast(`✨ Đã cập nhật ${updatedFoods.length} quán ăn phiên bản mới!`);
+          this.checkDeeplinkInvite();
         }
       );
+    } else {
+      setTimeout(() => this.checkDeeplinkInvite(), 300);
     }
   }
 
@@ -3116,6 +3120,341 @@ class FoodApp {
     }
     this.showToast(`⭐ Đang mở trang Review quán "${food.restaurant}" trên Foody...`);
     window.open(targetUrl, '_blank');
+  }
+
+  /* ══ RỦ BẠN BÈ ĐI ĂN (IN-APP & DEEPLINK / ZALO / MESSENGER) ══ */
+  openInviteFriendsModal(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    window.soundFX && window.soundFX.playPop();
+
+    const modal = document.getElementById('invite-friends-modal');
+    if (!modal) return;
+
+    this.currentInviteFoodId = foodId;
+    this.renderInviteFriendsContent(foodId, 'my');
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.querySelector('.modal-sheet')?.classList.remove('translate-y-full');
+    }, 10);
+  }
+
+  closeInviteFriendsModal() {
+    const modal = document.getElementById('invite-friends-modal');
+    if (!modal) return;
+    modal.querySelector('.modal-sheet')?.classList.add('translate-y-full');
+    setTimeout(() => modal.classList.add('hidden'), 250);
+  }
+
+  renderInviteFriendsContent(foodId, activeFilter = 'my') {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    const content = document.getElementById('invite-friends-content');
+    if (!food || !content) return;
+
+    const myFriends = APP_DATA.myFriends || [];
+    const nearbyFriends = APP_DATA.nearbyFriends || [];
+    const groupChats = APP_DATA.groupChats || [];
+
+    content.innerHTML = `
+      <div class="relative bg-white flex flex-col h-full overflow-hidden">
+        <!-- Top Gradient Header -->
+        <div class="bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 text-white p-4 shrink-0 relative overflow-hidden">
+          <div class="flex items-center justify-between relative z-10">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🍲</span>
+              <div>
+                <h4 class="font-black text-sm sm:text-base leading-tight">Rủ Bạn Bè Đi Ăn</h4>
+                <p class="text-[11px] text-white/90">Lập kèo ăn uống vui vẻ tại Quy Nhơn</p>
+              </div>
+            </div>
+            <button onclick="window.app.closeInviteFriendsModal()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-sm cursor-pointer">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Scrollable Body -->
+        <div class="p-4 overflow-y-auto space-y-4 scrollbar-none flex-1">
+          <!-- Food Preview Mini Card -->
+          <div class="flex gap-3 p-3 bg-rose-50/50 border border-rose-200/80 rounded-2xl">
+            <div class="w-16 h-16 rounded-xl overflow-hidden bg-stone-200 shrink-0">
+              <img src="${food.image}" class="w-full h-full object-cover" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <span class="text-[9.5px] font-extrabold text-rose-600 bg-rose-100/70 px-1.5 py-0.2 rounded-full uppercase">Kèo rủ ăn</span>
+              <h5 class="font-extrabold text-xs sm:text-sm text-stone-900 leading-tight truncate mt-0.5">${food.restaurant}</h5>
+              <p class="text-[11px] text-stone-500 truncate mt-0.5">📍 ${food.address || 'Quy Nhơn'}</p>
+              <div class="flex items-center gap-2 text-[10.5px] text-amber-700 font-bold mt-1">
+                <span>${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
+                <span>•</span>
+                <span>⭐ ${food.rating || 4.5}</span>
+                <span>•</span>
+                <span>${food.distanceText || 'Gần bạn'}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 1: Bạn bè chưa dùng app (Zalo / Messenger / Web Share) -->
+          <div class="bg-gradient-to-br from-amber-50/80 to-orange-50/60 border border-amber-200/90 rounded-2xl p-3.5 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-black text-amber-900 uppercase tracking-wide flex items-center gap-1.5">
+                <span>📲</span>
+                <span>Bạn bè chưa dùng app (Zalo / Messenger)</span>
+              </span>
+              <span class="text-[9px] bg-amber-200/70 text-amber-900 font-bold px-1.5 py-0.5 rounded-full">Deeplink</span>
+            </div>
+            <p class="text-[11.5px] text-stone-600 leading-relaxed">
+              Gửi link mời qua Zalo/Messenger. Khi bạn bè bấm vào link, web app sẽ mở thẳng vào thẻ quán ăn này để xem chi tiết và cùng bạn <strong>chốt kèo</strong>!
+            </p>
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <button onclick="window.app.shareInviteViaWebShare(${food.id})" class="py-2.5 px-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:opacity-95 text-white font-extrabold text-xs rounded-xl shadow-xs flex items-center justify-center gap-1.5 cursor-pointer transition active:scale-95">
+                <span>💬</span>
+                <span>Gửi qua Zalo</span>
+              </button>
+              <button onclick="window.app.copyInviteDeeplink(${food.id})" class="py-2.5 px-3 bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 font-extrabold text-xs rounded-xl shadow-xs flex items-center justify-center gap-1.5 cursor-pointer transition active:scale-95">
+                <span>📋</span>
+                <span>Sao chép Link</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Bạn bè đã dùng app (Gửi thẻ Rich-UI) -->
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-black text-stone-900 uppercase tracking-wide flex items-center gap-1.5">
+                <span>👥</span>
+                <span>Bạn bè trong FoodTinder (Gửi thẻ Rich-UI)</span>
+              </span>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="flex items-center gap-1.5 border-b border-stone-100 pb-1.5 text-xs font-bold">
+              <button onclick="window.app.renderInviteFriendsContent(${food.id}, 'my')" 
+                class="px-2.5 py-1 rounded-full transition cursor-pointer ${activeFilter === 'my' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+                ❤️ Bạn bè (${myFriends.length})
+              </button>
+              <button onclick="window.app.renderInviteFriendsContent(${food.id}, 'nearby')" 
+                class="px-2.5 py-1 rounded-full transition cursor-pointer ${activeFilter === 'nearby' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+                📍 Quanh bạn (${nearbyFriends.length})
+              </button>
+              <button onclick="window.app.renderInviteFriendsContent(${food.id}, 'groups')" 
+                class="px-2.5 py-1 rounded-full transition cursor-pointer ${activeFilter === 'groups' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+                🍲 Nhóm (${groupChats.length})
+              </button>
+            </div>
+
+            <!-- Friends List -->
+            <div class="space-y-1.5 max-h-56 overflow-y-auto pr-1 scrollbar-none">
+              ${activeFilter === 'my' ? myFriends.map(f => `
+                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-rose-300">
+                      <img src="${f.avatar}" class="w-full h-full object-cover" />
+                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 ${f.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border border-white"></span>
+                    </div>
+                    <div class="min-w-0">
+                      <h6 class="font-bold text-xs text-stone-900 truncate">${f.name}</h6>
+                      <p class="text-[10px] text-stone-400 truncate">${f.relation} • ${f.distance || 'Quy Nhơn'}</p>
+                    </div>
+                  </div>
+                  <button onclick="window.app.sendInviteCardToFriend(${f.id}, ${food.id}, false)" 
+                    class="px-3 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-[11px] rounded-xl shadow-xs transition active:scale-95 cursor-pointer shrink-0">
+                    Rủ ngay 🍲
+                  </button>
+                </div>
+              `).join('') : ''}
+
+              ${activeFilter === 'nearby' ? nearbyFriends.map(f => `
+                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-amber-300">
+                      <img src="${f.avatar}" class="w-full h-full object-cover" />
+                      <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+                    </div>
+                    <div class="min-w-0">
+                      <h6 class="font-bold text-xs text-stone-900 truncate">${f.name}, ${f.age}t</h6>
+                      <p class="text-[10px] text-stone-400 truncate">Cách bạn ${f.distance} • ${f.craving}</p>
+                    </div>
+                  </div>
+                  <button onclick="window.app.sendInviteCardToFriend(${f.id}, ${food.id}, false)" 
+                    class="px-3 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-[11px] rounded-xl shadow-xs transition active:scale-95 cursor-pointer shrink-0">
+                    Rủ ngay 🍲
+                  </button>
+                </div>
+              `).join('') : ''}
+
+              ${activeFilter === 'groups' ? groupChats.map(g => `
+                <div class="flex items-center justify-between p-2 rounded-xl border border-stone-200/80 hover:bg-stone-50 transition">
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="relative w-10 h-10 rounded-2xl overflow-hidden shrink-0 border border-amber-300">
+                      <img src="${g.avatar}" class="w-full h-full object-cover" />
+                      <span class="absolute top-0 right-0 bg-rose-500 text-white text-[8px] font-bold px-1 rounded-full">${g.membersCount}</span>
+                    </div>
+                    <div class="min-w-0">
+                      <h6 class="font-bold text-xs text-stone-900 truncate">${g.name}</h6>
+                      <p class="text-[10px] text-stone-400 truncate">${g.membersCount} thành viên</p>
+                    </div>
+                  </div>
+                  <button onclick="window.app.sendInviteCardToFriend('${g.id}', ${food.id}, true)" 
+                    class="px-3 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-[11px] rounded-xl shadow-xs transition active:scale-95 cursor-pointer shrink-0">
+                    Rủ cả nhóm 🍲
+                  </button>
+                </div>
+              `).join('') : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  shareInviteViaWebShare(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    const deeplink = `${window.location.origin}${window.location.pathname}?foodId=${food.id}&invite=1`;
+    const shareData = {
+      title: `Rủ đi ăn: ${food.restaurant} (Quy Nhơn)`,
+      text: `Ê bạn ơi, đi ăn quán "${food.restaurant}" với mình không? Nhìn ngon nhức nách luôn á! Bấm link xem thực đơn & cùng chốt kèo nha:`,
+      url: deeplink
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      navigator.share(shareData).then(() => {
+        this.showToast('🎉 Đã chia sẻ lời mời đi ăn thành công!');
+      }).catch(err => {
+        if (err.name !== 'AbortError') {
+          this.copyInviteDeeplink(foodId);
+        }
+      });
+    } else {
+      this.copyInviteDeeplink(foodId);
+      setTimeout(() => {
+        window.open('https://chat.zalo.me/', '_blank');
+      }, 800);
+    }
+  }
+
+  copyInviteDeeplink(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+    const deeplink = `${window.location.origin}${window.location.pathname}?foodId=${food.id}&invite=1`;
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(deeplink);
+      } else {
+        const input = document.createElement('textarea');
+        input.value = deeplink;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+      this.showToast(`📋 Đã sao chép link mời quán "${food.restaurant}"! Gửi qua Zalo/Messenger cho bạn bè ngay nhé! 🎉`);
+      window.soundFX && window.soundFX.playMatch();
+    } catch (e) {
+      this.showToast(`Link mời: ${deeplink}`);
+    }
+  }
+
+  sendInviteCardToFriend(targetId, foodId, isGroup = false) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    window.soundFX && window.soundFX.playMatch();
+
+    let target = null;
+    if (isGroup) {
+      target = (APP_DATA.groupChats || []).find(g => g.id === targetId);
+    } else {
+      target = (APP_DATA.myFriends || []).find(f => f.id === targetId) || 
+               (APP_DATA.nearbyFriends || []).find(f => f.id === targetId);
+    }
+
+    if (!target) return;
+
+    const inviteMsg = {
+      sender: isGroup ? 'Bạn' : 'you',
+      cardType: 'invite_card',
+      food: {
+        id: food.id,
+        name: food.name,
+        restaurant: food.restaurant,
+        image: food.image,
+        address: food.address,
+        distanceText: food.distanceText,
+        priceRange: food.priceRange,
+        rating: food.rating
+      },
+      text: `Ê đi ăn quán "${food.restaurant}" này với mình không? Nhìn ngon nhức nách luôn á! 🤤🍲`,
+      time: 'Vừa xong'
+    };
+
+    target.messages.push(inviteMsg);
+    if (window.chatManager && typeof window.chatManager.saveFriendsData === 'function') {
+      window.chatManager.saveFriendsData();
+    }
+
+    this.closeInviteFriendsModal();
+    this.showToast(`🎉 Đã gửi thẻ rủ đi ăn cho ${target.name}!`);
+
+    // Chuyển sang tab chat và mở bạn bè đó
+    this.switchTab('chat');
+    if (window.chatManager) {
+      window.chatManager.selectChatTarget(targetId);
+    }
+
+    // Auto reply sau 1.5s
+    setTimeout(() => {
+      window.soundFX && window.soundFX.playPop();
+      const replies = [
+        `Ui quán này nhìn hấp dẫn xỉu luôn á! Tầm 15 phút nữa mình có mặt nha, chốt kèo luôn! 🛵💨🔥`,
+        `Quán ruột của tui luôn nè! Đi liền đi bạn ơi, đang thèm món này dữ dội! 🤤🍲`,
+        `Kèo này thơm phức! Để tui chuẩn bị xe chạy qua rước bạn hay gặp ở quán luôn nha? 🥰✨`
+      ];
+      target.messages.push({
+        sender: isGroup ? 'Hoàng Yến' : 'them',
+        text: replies[Math.floor(Math.random() * replies.length)],
+        time: 'Vừa xong'
+      });
+      if (window.chatManager) {
+        if (window.chatManager.currentChatTarget === targetId) {
+          window.chatManager.renderActiveChatWindow();
+        }
+        window.chatManager.renderFriendsSidebar(false);
+        window.chatManager.saveFriendsData();
+      }
+    }, 1500);
+  }
+
+  checkDeeplinkInvite() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const foodIdStr = params.get('foodId') || (window.location.hash.startsWith('#food-') ? window.location.hash.replace('#food-', '') : null);
+      if (!foodIdStr) return;
+
+      const foodId = parseInt(foodIdStr, 10);
+      const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+      if (!food) return;
+
+      // Đưa quán lên đầu danh sách swipe deck
+      if (window.swipeManager && window.swipeManager.deck) {
+        window.swipeManager.deck = [food, ...window.swipeManager.deck.filter(f => f.id !== foodId)];
+        window.swipeManager.currentIndex = 0;
+        window.swipeManager.renderCards();
+      }
+
+      this.switchTab('swipe');
+      setTimeout(() => {
+        this.showToast(`🎉 Bạn nhận được lời rủ đi ăn tại "${food.restaurant}"! Hãy xem thực đơn & cùng chốt kèo nhé! 🍲`);
+        window.soundFX && window.soundFX.playMatch();
+      }, 700);
+    } catch (e) {
+      console.warn('[Deeplink] Error checking invite:', e);
+    }
   }
 
   openShopeeFoodDelivery(foodId) {

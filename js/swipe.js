@@ -136,37 +136,33 @@ class TinderSwipeManager {
                   <span>•</span>
                   <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
                 </p>
+
+                <!-- Đưa thông tin số người sẽ quay lại lên trên -->
+                <div class="flex items-center gap-2 mt-2">
+                  <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
+                    data-will-return-btn="${food.id}"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-amber-50/80 hover:bg-amber-100 text-amber-900 border border-amber-200/90'} px-2.5 py-1 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
+                    title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
+                    <span class="text-sm leading-none">😋</span>
+                    <span class="font-bold text-xs"><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
+                  </button>
+                </div>
               </div>
               <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-full text-xs font-bold flex items-center gap-1 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán trên Foody">
                 <span>⭐</span>
                 <span>Review</span>
               </button>
             </div>
-
-            <!-- Emotion Reason Box -->
-            <div class="mt-2.5 bg-[#FFF8F2] border border-[#FFE8D6] rounded-xl p-2.5 flex items-start gap-2">
-              <span class="text-lg leading-none">💡</span>
-              <p class="text-xs text-[#8D4D24] leading-relaxed line-clamp-2">
-                ${food.recommendReason || 'Món ngon đặc sản Quy Nhơn cực chuẩn vị, rất thích hợp thưởng thức hôm nay ✨'}
-              </p>
-            </div>
           </div>
 
-          <!-- Bottom Row: Thông tin số người sẽ quay lại và button đặt hàng ShopeeFood -->
-          <div class="flex items-center justify-between pt-2 border-t border-stone-100">
-            <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
-              data-will-return-btn="${food.id}"
-              class="flex items-center gap-1.5 text-xs font-semibold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'} border px-2.5 py-1.5 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
-              title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
-              <span class="text-sm leading-none">😋</span>
-              <span class="font-bold text-xs"><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
-            </button>
-
-            <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
-              class="bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer shrink-0" 
-              title="Đặt món trực tiếp trên ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : '🛍️'}
-              <span>ShopeeFood</span>
+          <!-- Bottom Row: Bỏ button ShopeeFood, thêm Button Rủ đi ăn -->
+          <div class="pt-2 border-t border-stone-100">
+            <button onclick="event.stopPropagation(); window.app && window.app.openInviteFriendsModal(${food.id})" 
+              class="w-full py-2.5 bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-md shadow-rose-200 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer" 
+              title="Rủ bạn bè hoặc gửi qua Zalo/Messenger đi ăn quán này">
+              <span class="text-base leading-none">👥</span>
+              <span>Rủ đi ăn</span>
+              <span class="text-[10.5px] bg-white/20 px-2 py-0.5 rounded-full font-bold">🍲 Gửi bạn bè & Zalo</span>
             </button>
           </div>
         </div>
