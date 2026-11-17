@@ -21,7 +21,13 @@ class TinderSwipeManager {
   }
 
   loadCards(foods) {
-    this.deck = [...foods];
+    const list = Array.isArray(foods) ? foods : [];
+    // Nếu quán đã đóng cửa thì không hiện ở thẻ quẹt nữa
+    const openFoods = list.filter(food => {
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true };
+      return Boolean(status && status.isOpen);
+    });
+    this.deck = openFoods;
     this.currentIndex = 0;
     this.isAnimating = false;
     this.isDragging = false;
@@ -32,13 +38,35 @@ class TinderSwipeManager {
     if (!this.container) return;
     this.container.innerHTML = '';
 
+    // Bỏ qua các quán đã đóng cửa nếu còn tồn tại trong deck
+    while (this.currentIndex < this.deck.length) {
+      const currentFood = this.deck[this.currentIndex];
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(currentFood.openTime) : { isOpen: true };
+      if (status && status.isOpen) break;
+      this.currentIndex++;
+    }
+
     if (this.currentIndex >= this.deck.length) {
       this.renderEmptyState();
       return;
     }
 
-    // Render up to 3 cards in the stack
-    const visibleCards = this.deck.slice(this.currentIndex, this.currentIndex + 3);
+    // Render up to 3 cards in the stack (chỉ các quán đang mở cửa)
+    const visibleCards = [];
+    let lookAheadIdx = this.currentIndex;
+    while (lookAheadIdx < this.deck.length && visibleCards.length < 3) {
+      const food = this.deck[lookAheadIdx];
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true };
+      if (status && status.isOpen) {
+        visibleCards.push(food);
+      }
+      lookAheadIdx++;
+    }
+
+    if (visibleCards.length === 0) {
+      this.renderEmptyState();
+      return;
+    }
 
     visibleCards.reverse().forEach((food, reverseIdx) => {
       const actualIdx = visibleCards.length - 1 - reverseIdx;
@@ -365,15 +393,22 @@ class TinderSwipeManager {
       this.currentIndex++;
       this.isAnimating = false;
       
-      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác
+      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác (chỉ nạp quán đang mở)
       if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
         const freshDeck = window.app.getFoodsForCurrentMood();
         if (freshDeck && freshDeck.length > 0) {
           const remaining = this.deck.slice(this.currentIndex);
           const remainingIds = new Set(remaining.map(f => f.id));
-          const newAdditions = freshDeck.filter(f => !remainingIds.has(f.id));
-          this.deck = remaining.concat(newAdditions);
-          this.currentIndex = 0;
+          const newAdditions = freshDeck
+            .filter(f => !remainingIds.has(f.id))
+            .filter(f => {
+              const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
+              return Boolean(status && status.isOpen);
+            });
+          if (newAdditions.length > 0) {
+            this.deck = remaining.concat(newAdditions);
+            this.currentIndex = 0;
+          }
         }
       }
 
@@ -403,6 +438,26 @@ class TinderSwipeManager {
       }
       this.currentIndex++;
       this.isAnimating = false;
+
+      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đang mở cửa
+      if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
+        const freshDeck = window.app.getFoodsForCurrentMood();
+        if (freshDeck && freshDeck.length > 0) {
+          const remaining = this.deck.slice(this.currentIndex);
+          const remainingIds = new Set(remaining.map(f => f.id));
+          const newAdditions = freshDeck
+            .filter(f => !remainingIds.has(f.id))
+            .filter(f => {
+              const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
+              return Boolean(status && status.isOpen);
+            });
+          if (newAdditions.length > 0) {
+            this.deck = remaining.concat(newAdditions);
+            this.currentIndex = 0;
+          }
+        }
+      }
+
       this.render();
       if (targetFood) {
         window.app.showMatchModal(targetFood, true);
@@ -432,16 +487,22 @@ class TinderSwipeManager {
 
   reloadDeck() {
     if (this.isAnimating) return;
-    const foods = (window.APP_DATA && window.APP_DATA.foods && window.APP_DATA.foods.length > 0)
-      ? window.APP_DATA.foods
-      : (typeof APP_DATA !== 'undefined' && APP_DATA.foods ? APP_DATA.foods : this.deck);
+    const foods = (window.app && typeof window.app.getFoodsForCurrentMood === 'function')
+      ? window.app.getFoodsForCurrentMood()
+      : ((window.APP_DATA && window.APP_DATA.foods && window.APP_DATA.foods.length > 0)
+          ? window.APP_DATA.foods
+          : (typeof APP_DATA !== 'undefined' && APP_DATA.foods ? APP_DATA.foods : this.deck));
     this.history = [];
     this.currentIndex = 0;
     this.loadCards(foods);
     if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
     if (window.app && typeof window.app.showToast === 'function') {
-      window.app.showToast('🔄 Đã tải lại danh sách món từ đầu!');
+      window.app.showToast('🔄 Đã tải lại danh sách món đang mở cửa!');
     }
+  }
+
+  refreshDeck() {
+    this.reloadDeck();
   }
 
   orderCurrentFoodDelivery() {
@@ -457,15 +518,15 @@ class TinderSwipeManager {
         <div class="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-3xl mb-4 animate-bounce">
           🎉
         </div>
-        <h4 class="font-bold text-stone-800 text-lg">Bạn đã khám phá hết món!</h4>
+        <h4 class="font-bold text-stone-800 text-lg">Bạn đã khám phá hết quán đang mở!</h4>
         <p class="text-xs text-stone-500 mt-2 max-w-xs leading-relaxed">
-          Đã duyệt toàn bộ món phù hợp với tâm trạng và thời tiết hiện tại. Hãy thử đổi tâm trạng hoặc xem danh sách đã thích nhé!
+          Đã duyệt toàn bộ quán đang mở cửa phù hợp với bạn. Hãy thử đổi tâm trạng hoặc ghé lại vào khung giờ khác nhé!
         </p>
         <div class="flex gap-2 mt-5">
-          <button onclick="window.swipeManager.loadCards(APP_DATA.foods)" class="px-5 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-full font-semibold text-xs shadow-md shadow-rose-200 hover:opacity-95 transition">
+          <button onclick="window.swipeManager.reloadDeck()" class="px-5 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-full font-semibold text-xs shadow-md shadow-rose-200 hover:opacity-95 transition cursor-pointer">
             🔄 Quẹt lại từ đầu
           </button>
-          <button onclick="window.app.switchTab('liked')" class="px-4 py-2.5 bg-stone-100 text-stone-700 rounded-full font-semibold text-xs hover:bg-stone-200 transition">
+          <button onclick="window.app.switchTab('liked')" class="px-4 py-2.5 bg-stone-100 text-stone-700 rounded-full font-semibold text-xs hover:bg-stone-200 transition cursor-pointer">
             ❤️ Xem đã thích
           </button>
         </div>
@@ -480,9 +541,11 @@ if (typeof window !== 'undefined') {
     if (!window.swipeManager) {
       window.swipeManager = new TinderSwipeManager('swipe-deck-container');
     }
-    const foods = (window.APP_DATA && window.APP_DATA.foods && window.APP_DATA.foods.length > 0)
-      ? window.APP_DATA.foods
-      : (typeof APP_DATA !== 'undefined' && APP_DATA.foods ? APP_DATA.foods : []);
+    const foods = (window.app && typeof window.app.getFoodsForCurrentMood === 'function')
+      ? window.app.getFoodsForCurrentMood()
+      : ((window.APP_DATA && window.APP_DATA.foods && window.APP_DATA.foods.length > 0)
+          ? window.APP_DATA.foods
+          : (typeof APP_DATA !== 'undefined' && APP_DATA.foods ? APP_DATA.foods : []));
     if (foods.length > 0 && window.swipeManager && (!window.swipeManager.deck || window.swipeManager.deck.length === 0)) {
       window.swipeManager.loadCards(foods);
     }

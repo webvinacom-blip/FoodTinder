@@ -1374,7 +1374,9 @@ class FoodApp {
       const fusionScore = this.calculateContextualFusionScore(food, moodId, weather, now);
       const dist = (typeof food.distance === 'number') ? food.distance : 10;
       const proximity = Math.max(0, (10 - dist) * 2);
-      return { food, score: fusionScore + proximity + (food.rating || 4.5) * 2 };
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
+      const openBonus = status.isOpen ? 100 : 0;
+      return { food, score: fusionScore + proximity + (food.rating || 4.5) * 2 + openBonus };
     });
 
     scored.sort((a, b) => b.score - a.score);
