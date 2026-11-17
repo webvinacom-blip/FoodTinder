@@ -689,6 +689,67 @@ class FoodApp {
 
     // Tự động yêu cầu và kích hoạt định vị ngay khi mở trang
     this.detectUserLocationAndWeather({ auto: true });
+
+    // Kích hoạt Offline-First Data Loader & Version Control (IndexedDB + 60-byte Version Checker)
+    if (window.dataLoader) {
+      window.dataLoader.load(
+        (initialFoods) => {
+          if (initialFoods && initialFoods.length > 0) {
+            this.refreshFoods(initialFoods);
+          }
+        },
+        (updatedFoods) => {
+          console.log(`✨ [App] Nhận bản cập nhật dữ liệu mới (${updatedFoods.length} quán)!`);
+          this.refreshFoods(updatedFoods);
+          this.showToast(`✨ Đã cập nhật ${updatedFoods.length} quán ăn phiên bản mới!`);
+        }
+      );
+    }
+  }
+
+  /**
+   * Cập nhật danh sách món ăn từ Offline Cache hoặc CDN Update
+   */
+  refreshFoods(newFoods) {
+    if (!Array.isArray(newFoods) || newFoods.length === 0) return;
+    if (typeof APP_DATA !== 'undefined') {
+      APP_DATA.foods = newFoods;
+    }
+    window.APP_DATA = APP_DATA;
+
+    // Áp dụng thuật toán tính khoảng cách thực tế (Haversine)
+    const userLoc = APP_DATA.homeLocation || { lat: 13.7735, lng: 109.2365 };
+    const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
+    const formatDistFn = window.formatDistanceText || APP_DATA.formatDistanceText;
+    if (calcDistFn && formatDistFn) {
+      APP_DATA.foods.forEach(f => {
+        if (f.latitude === undefined && f.lat !== undefined) f.latitude = Number(f.lat);
+        if (f.longitude === undefined && f.lng !== undefined) f.longitude = Number(f.lng);
+        if (f.lat && f.lng) {
+          const realDist = calcDistFn(userLoc.lat, userLoc.lng, f.lat, f.lng);
+          f.distance = Number(realDist.toFixed(1));
+          f.distanceText = formatDistFn(realDist);
+        }
+      });
+    }
+
+    // Cập nhật lại UI các component
+    this.renderFoodGrid();
+    this.renderNearbyGrid();
+    this.updateBentoStats();
+    if (window.swipeManager) {
+      const moodFoods = this.getFoodsForCurrentMood();
+      window.swipeManager.loadCards(moodFoods.length > 0 ? moodFoods : (APP_DATA.foods || []));
+    }
+    if (window.reelsManager) {
+      window.reelsManager.init();
+    }
+    if (window.tasteManager) {
+      window.tasteManager.renderLocationRecommendations();
+    }
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   }
 
   /**
