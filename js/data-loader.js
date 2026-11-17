@@ -74,14 +74,26 @@ class FoodDataLoader {
     }
   }
 
+  // Làm sạch danh sách: loại bỏ quán đóng cửa vĩnh viễn, quán bar/club không ẩm thực, quán ảo
+  sanitizeFoods(foods) {
+    if (!Array.isArray(foods)) return [];
+    return foods.filter(f => {
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+      if (typeof window.isFakeDummyFood === 'function' && window.isFakeDummyFood(f)) return false;
+      return true;
+    });
+  }
+
   // Lưu danh sách quán và phiên bản vào Cache máy
   async saveLocalData(foods, version) {
+    const sanitized = this.sanitizeFoods(foods);
     try {
       const db = await this.initDB();
       if (db) {
         const tx = db.transaction(DATA_CONFIG.STORE_NAME, 'readwrite');
         const store = tx.objectStore(DATA_CONFIG.STORE_NAME);
-        store.put(foods, 'cached_foods');
+        store.put(sanitized, 'cached_foods');
         store.put({ version, updatedAt: new Date().toISOString() }, 'cached_meta');
       }
     } catch (e) {
@@ -114,10 +126,11 @@ class FoodDataLoader {
   // Luồng nạp dữ liệu thông minh (Smart Offline-first Loader)
   async load(onDataReady, onDataUpdated) {
     // BƯỚC 1: Đọc ngay cache nội bộ trên máy -> Giao diện hiện ngay lập tức trong vài mili-giây
-    const cachedFoods = await this.getLocalData();
+    const rawCached = await this.getLocalData();
     const localVersion = await this.getLocalVersion();
+    const cachedFoods = this.sanitizeFoods(rawCached);
 
-    if (cachedFoods && Array.isArray(cachedFoods) && cachedFoods.length > 0) {
+    if (cachedFoods && cachedFoods.length > 0) {
       console.log(`⚡ [DataLoader] Cache Hit! Đã nạp ${cachedFoods.length} quán từ bộ nhớ máy (< 30ms). Version: ${localVersion || 'gốc'}`);
       if (typeof onDataReady === 'function') {
         onDataReady(cachedFoods);

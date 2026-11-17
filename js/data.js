@@ -880,10 +880,9 @@ function isValidQualityFood(food) {
   if (!img || img.length < 15 || !img.startsWith("http")) return false;
   if (img.includes("placeholder") || img.includes("default_avatar") || img.includes("no-image") || img.includes("empty_shop")) return false;
 
-  // 2. Quán "ảo" hoặc rating quá thấp: rating >= 4.0 HOẶC có >= 20 lượt đánh giá
+  // 2. Kiểm tra rating: Giữ nguyên rating gốc từ Foody, không loại bỏ quán mới mở
   const rating = Number(food.rating) || 0;
   const reviewCount = Number(food.reviewCount || food.totalReviews) || 0;
-  if (rating < 4.0 && reviewCount < 20) return false;
 
   // 3. Quán đóng cửa / ngừng app
   if (typeof isPermanentlyClosedRestaurant === "function" && isPermanentlyClosedRestaurant(food)) return false;
@@ -16439,11 +16438,14 @@ const APP_DATA = {
       "latitude": 13.780942,
       "longitude": 109.235535,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lweoy5oteva1e9@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16504,11 +16506,14 @@ const APP_DATA = {
       "latitude": 13.883844,
       "longitude": 109.291729,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwdexg43ob8b49@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16547,11 +16552,14 @@ const APP_DATA = {
       "latitude": 13.771717,
       "longitude": 109.241306,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwak9yfkrbh55f@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16569,11 +16577,14 @@ const APP_DATA = {
       "latitude": 13.883813,
       "longitude": 109.290506,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw8oylkwk0yj01@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16591,12 +16602,15 @@ const APP_DATA = {
       "latitude": 13.771602,
       "longitude": 109.24014,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw7m9h42maqj03@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "heavy",
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16657,11 +16671,14 @@ const APP_DATA = {
       "latitude": 13.8831176398908,
       "longitude": 109.2899268865585,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwav4h1h29jv8d@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16743,11 +16760,14 @@ const APP_DATA = {
       "latitude": 13.761441,
       "longitude": 109.222803,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfbpuocjly336@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16786,11 +16806,14 @@ const APP_DATA = {
       "latitude": 13.771857,
       "longitude": 109.245116,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwfv8gi03h7fa1@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -16873,11 +16896,14 @@ const APP_DATA = {
       "latitude": 13.885554,
       "longitude": 109.280809,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgagcakpo0r00@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17001,11 +17027,14 @@ const APP_DATA = {
       "latitude": 13.761544,
       "longitude": 109.220095,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbpvwhhynrv98@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17023,11 +17052,14 @@ const APP_DATA = {
       "latitude": 13.769312,
       "longitude": 109.234051,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwaqdxqv6dw921@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17151,11 +17183,14 @@ const APP_DATA = {
       "latitude": 13.771795,
       "longitude": 109.237407,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9mqyyo3izdb0@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17173,11 +17208,14 @@ const APP_DATA = {
       "latitude": 13.885805,
       "longitude": 109.286471,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwce1uyh3e1l62@resize_ss640x400",
-      "category": "noodles",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "hot_soup",
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17300,10 +17338,13 @@ const APP_DATA = {
       "latitude": 13.884931,
       "longitude": 109.291551,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwe0ftvnv2l790@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17342,10 +17383,13 @@ const APP_DATA = {
       "latitude": 13.8851164085068,
       "longitude": 109.2914950148193,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwck08pt35y3be@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17447,10 +17491,13 @@ const APP_DATA = {
       "latitude": 13.77205,
       "longitude": 109.239333,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwhxl7bsx8m37c@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17809,10 +17856,13 @@ const APP_DATA = {
       "latitude": 13.7726346,
       "longitude": 109.242097,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lw9cd5lhfvff34@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17895,10 +17945,13 @@ const APP_DATA = {
       "latitude": 13.790114,
       "longitude": 109.216149,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwh21vcg2wux0c@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -17958,10 +18011,13 @@ const APP_DATA = {
       "latitude": 13.7690907,
       "longitude": 109.2330210999999,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgzg9vmuk0p62@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -18063,10 +18119,13 @@ const APP_DATA = {
       "latitude": 13.771968,
       "longitude": 109.243835,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbmkfxl81jt81@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {
@@ -18233,11 +18292,27 @@ const APP_DATA = {
       "latitude": 13.7803523,
       "longitude": 109.227868,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwgedh2rvil5f0@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
+        "heavy",
+        "hot_soup",
         "salty"
-      ]
+      ],
+      "moodIds": [
+        "seafood",
+        "hangout",
+        "comfort",
+        "celebrate"
+      ],
+      "tags": [
+        "#Seafood",
+        "#GhẹQuyNhơn",
+        "#NghĩaGhẹ",
+        "#ĐặcSảnBiển"
+      ],
+      "description": "Quán Nghĩa Ghẹ tọa lạc tại 19 Võ Đình Tú, P. Thị Nại, là địa chỉ hải sản nổi tiếng Quy Nhơn chuyên các món ghẹ tươi sống luộc, hấp, sốt me và các loại ốc biển tươi ngon.",
+      "recommendReason": "Quán ghẹ tươi sống trứ danh Quy Nhơn, ghẹ chắc thịt thơm ngọt và giá cả hợp lý được dân địa phương khuyên ghé!"
     },
     {
       "id": 227595,
@@ -18340,10 +18415,13 @@ const APP_DATA = {
       "latitude": 13.768756,
       "longitude": 109.231523,
       "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwbp5vjsz6c9fe@resize_ss640x400",
-      "category": "streetfood",
+      "category": "seafood",
       "source": "ShopeeFood",
       "attributes": [
         "salty"
+      ],
+      "moodIds": [
+        "seafood"
       ]
     },
     {

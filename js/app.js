@@ -712,6 +712,15 @@ class FoodApp {
    */
   refreshFoods(newFoods) {
     if (!Array.isArray(newFoods) || newFoods.length === 0) return;
+
+    // Luôn lọc bỏ triệt để quán đóng cửa vĩnh viễn, bar/pub/club không ăn uống hoặc quán ảo
+    newFoods = newFoods.filter(f => {
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+      if (typeof window.isFakeDummyFood === 'function' && window.isFakeDummyFood(f)) return false;
+      return true;
+    });
+
     if (typeof APP_DATA !== 'undefined') {
       APP_DATA.foods = newFoods;
     }
@@ -978,9 +987,9 @@ class FoodApp {
                            /bánh xèo|mì quảng|bánh mì|tiệm trà|trà sữa|cà phê/.test(rest);
         if (isExcluded) return false;
 
-        // 2. Phải là: Quán chuyên hải sản, quán ốc, hoặc món hải sản tươi sống
+        // 2. Phải là: Quán chuyên hải sản, quán ốc, ghẹ hoặc món hải sản tươi sống
         const isSeafoodDirect = cat === 'seafood' ||
-          /hải sản|quán ốc|ốc biển|ốc hương|cua huỳnh đế|ghẹ hấp|tôm hùm|tôm tích|tôm nướng|mực lá|mực hấp|mực nướng|cá mú|cá tà ma|sò huyết|sò điệp|hàu nướng|nhum biển|nghêu|ngêu|chíp chíp|vẹm|bào ngư|lẩu hải sản/.test(allText);
+          /hải sản|quán ốc|ốc biển|ốc hương|cua huỳnh đế|ghẹ|nghĩa ghẹ|vua ghẹ|tôm hùm|tôm tích|tôm nướng|mực lá|mực hấp|mực nướng|cá mú|cá tà ma|sò huyết|sò điệp|hàu nướng|nhum biển|nghêu|ngêu|chíp chíp|vẹm|bào ngư|lẩu hải sản|đặc sản biển/.test(allText);
 
         const isNotSeafood = cat === 'vegetarian' || cat === 'boba' || allText.includes('chay') || allText.includes('trà sữa');
         return isSeafoodDirect && !isNotSeafood;
@@ -2191,8 +2200,8 @@ class FoodApp {
       }
 
       // 8. Ràng buộc thông minh theo tâm trạng:
-      // Lọc bỏ triệt để các món không đúng tâm trạng (ví dụ: thèm ngọt không bao giờ hiện cơm gà, bún bò)
-      if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
+      // Khi người dùng gõ tìm kiếm cụ thể (hasSearch), ưu tiên từ khóa tìm kiếm hơn tâm trạng
+      if (!hasSearch && activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
         return false;
       }
 
