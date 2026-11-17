@@ -45,6 +45,12 @@ class TinderSwipeManager {
       const isTop = actualIdx === 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
       const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+      const willReturnCount = (window.app && typeof window.app.getWillReturnCount === 'function')
+        ? window.app.getWillReturnCount(food.id)
+        : (food.reviewCount ? Math.floor(food.reviewCount * 1.5) : 38);
+      const isWillReturn = (window.app && typeof window.app.isFoodWillReturn === 'function')
+        ? window.app.isFoodWillReturn(food.id)
+        : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
 
       const cardEl = document.createElement('div');
       cardEl.className = `tinder-card absolute inset-0 rounded-[28px] overflow-hidden shadow-2xl transition-transform duration-300 select-none bg-white border border-[#F0E6DD] ${status.isOpen ? '' : 'is-closed'}`;
@@ -69,11 +75,11 @@ class TinderSwipeManager {
             onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
             class="w-full h-full object-cover pointer-events-none ${status.isOpen ? '' : 'is-closed-img'}" />
           
-          <!-- Top Floating Chip: Cách bạn 1.2km • Trời mưa 24°C -->
+          <!-- Top Floating Chip: Cách bạn 1.2km (chỉ hiển thị khoảng cách) -->
           <div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none gap-2">
             <div class="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-semibold text-stone-700 shadow-sm flex items-center gap-1.5 border border-white/60 truncate">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-500 shrink-0"></i>
-              <span class="truncate">${food.distanceText || ('Cách bạn ' + (food.distance || '1.0') + 'km')} • ${food.weatherNote || 'Quy Nhơn 24°C 🌧️'}</span>
+              <span class="truncate">${food.distanceText || ('Cách bạn ' + (food.distance || '1.0') + 'km')}</span>
             </div>
             <div class="flex items-center gap-1.5 shrink-0">
               <span class="${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200 border border-stone-600'} backdrop-blur-md px-2 py-1 rounded-full text-[10.5px] font-bold shadow-sm flex items-center gap-1">
@@ -114,28 +120,26 @@ class TinderSwipeManager {
         <div class="p-4 flex flex-col justify-between h-[38%] bg-white">
           <div>
             <div class="flex items-start justify-between gap-2">
-              <div>
-                <div class="flex items-center gap-1.5 mb-1">
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-extrabold ${hasShopee ? 'bg-orange-50 text-[#EE4D2D] border border-orange-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'}">
-                    ${hasShopee ? (window.getShopeeIcon ? window.getShopeeIcon(14, 'shrink-0') : '🛍️') : '📍'}
-                    <span>${hasShopee ? 'ShopeeFood' : (food.deliveryPlatform || 'Tại quán')}</span>
-                  </span>
-                  <span class="text-[11px] text-stone-400 font-medium">${food.district || 'TP. Quy Nhơn'}</span>
-                  ${hasShopee ? `
-                  <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" class="ml-auto bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[9.5px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer" title="Đặt giao tận nơi trên ShopeeFood">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
-                    <span>ShopeeFood</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-lg text-stone-900 leading-tight truncate" title="${food.restaurant}">${food.restaurant}</h3>
+                <p class="text-xs text-stone-500 flex items-center gap-1.5 mt-1 flex-wrap">
+                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
+                  <span>•</span>
+                  <span>${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
+                  <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})" class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-700 transition active:scale-95 cursor-pointer shadow-2xs" title="Xem vị trí & chỉ đường trên bản đồ">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                      <line x1="9" y1="3" x2="9" y2="18"></line>
+                      <line x1="15" y1="6" x2="15" y2="21"></line>
+                    </svg>
                   </button>
-                  ` : ''}
-                </div>
-                <h3 class="font-bold text-lg text-stone-900 leading-tight" title="${food.restaurant}">${food.restaurant}</h3>
-                <p class="text-xs text-stone-500 flex items-center gap-1 mt-0.5 flex-wrap">
-                  <span class="font-medium text-stone-700">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span> • ${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}
-                  • <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
+                  <span>•</span>
+                  <span class="${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText})</span></span>
                 </p>
               </div>
-              <button onclick="window.app.showFoodDetail(${food.id})" class="p-1.5 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 transition">
-                <i data-lucide="info" class="w-5 h-5"></i>
+              <button onclick="event.stopPropagation(); window.app && window.app.openFoodyReview(${food.id})" class="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-full text-xs font-bold flex items-center gap-1 shadow-2xs transition active:scale-95 cursor-pointer shrink-0" title="Xem review quán trên Foody">
+                <span>⭐</span>
+                <span>Review</span>
               </button>
             </div>
 
@@ -148,24 +152,22 @@ class TinderSwipeManager {
             </div>
           </div>
 
-          <!-- Address snippet & Quick Action -->
-          <div class="flex items-center justify-between text-[11px] text-stone-400 pt-1 border-t border-stone-100">
-            <span class="truncate max-w-[130px]"><i data-lucide="navigation" class="w-3 h-3 inline mr-1 text-stone-400"></i>${food.address}</span>
-            <div class="flex items-center gap-2">
-              ${hasShopee ? `
-              <span class="text-orange-600 hover:text-orange-700 font-extrabold cursor-pointer hover:underline flex items-center gap-0.5" onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})">
-                <span>🛵 Đặt món</span>
-              </span>
-              ` : ''}
-              <span class="text-rose-500 hover:text-rose-600 font-semibold cursor-pointer hover:underline flex items-center gap-1" onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})">
-                <svg class="w-3 h-3 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                  <line x1="9" y1="3" x2="9" y2="18"></line>
-                  <line x1="15" y1="6" x2="15" y2="21"></line>
-                </svg>
-                <span>Bản đồ</span>
-              </span>
-            </div>
+          <!-- Bottom Row: Thông tin số người sẽ quay lại và button đặt hàng ShopeeFood -->
+          <div class="flex items-center justify-between pt-2 border-t border-stone-100">
+            <button onclick="event.stopPropagation(); window.app && window.app.toggleWillReturn(${food.id})" 
+              data-will-return-btn="${food.id}"
+              class="flex items-center gap-1.5 text-xs font-semibold ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'} border px-2.5 py-1.5 rounded-full transition active:scale-95 cursor-pointer shadow-2xs"
+              title="Đánh dấu bạn sẽ là khách quen quay lại quán này">
+              <span class="text-sm leading-none">😋</span>
+              <span class="font-bold text-xs"><span data-will-return-count="${food.id}">${willReturnCount}</span> người sẽ quay lại</span>
+            </button>
+
+            <button onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
+              class="bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm transition active:scale-95 cursor-pointer shrink-0" 
+              title="Đặt món trực tiếp trên ShopeeFood">
+              ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : '🛍️'}
+              <span>ShopeeFood</span>
+            </button>
           </div>
         </div>
       `;

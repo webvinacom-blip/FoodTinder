@@ -3102,6 +3102,22 @@ class FoodApp {
     }, 10);
   }
 
+  openFoodyReview(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    window.soundFX && window.soundFX.playPop();
+
+    // Link trực tiếp đến trang review của quán trên Foody
+    let targetUrl = food.foodyUrl;
+    if (!targetUrl) {
+      const restName = (food.restaurant || food.name || '').trim();
+      targetUrl = `https://www.foody.vn/binh-dinh/dia-diem?q=${encodeURIComponent(restName)}`;
+    }
+    this.showToast(`⭐ Đang mở trang Review quán "${food.restaurant}" trên Foody...`);
+    window.open(targetUrl, '_blank');
+  }
+
   openShopeeFoodDelivery(foodId) {
     const food = APP_DATA.foods.find(f => f.id === foodId);
     if (!food) return;

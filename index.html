@@ -368,9 +368,9 @@
 
   <!-- Right: weather + liked shortcut -->
   <div class="topbar-right flex items-center gap-2">
-    <!-- Nút Cào Dữ Liệu 300 Quán Quy Nhơn -->
+    <!-- Nút Cào Dữ Liệu 300 Quán Quy Nhơn (đã ẩn theo yêu cầu) -->
     <button onclick="window.crawlerManager && window.crawlerManager.openModal()"
-      class="px-3 py-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-xs rounded-full shadow-sm hover:shadow transition flex items-center gap-1.5 cursor-pointer shrink-0"
+      class="hidden px-3 py-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-xs rounded-full shadow-sm hover:shadow transition items-center gap-1.5 cursor-pointer shrink-0"
       title="Cào dữ liệu 300 Quán nổi bật tại Quy Nhơn từ ShopeeFood & GrabFood">
       <span class="animate-pulse">⚡</span>
       <span class="hidden sm:inline">Cào 300 Quán Quy Nhơn</span>
@@ -616,14 +616,6 @@
       <div class="flex-1 flex items-stretch min-h-0">
         <!-- Card deck area -->
         <div class="flex-1 flex flex-col items-center justify-center p-6 min-h-0">
-          <div class="w-full max-w-sm mb-4 text-center">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200 text-amber-900 rounded-full text-[11px] font-bold mb-2 shadow-xs cursor-pointer hover:bg-amber-100 transition" onclick="window.crawlerManager && window.crawlerManager.openModal()">
-              <span>⚡ 300 Quán Quy Nhơn (Shopee/GrabFood)</span>
-              <span class="text-rose-500 underline text-[10px]">Cào lại ▾</span>
-            </div>
-            <h3 class="font-extrabold text-stone-900 text-base">Thẻ Vuốt Cảm Xúc 🃏</h3>
-            <p class="text-xs text-stone-400 mt-0.5">Dữ liệu từ file tĩnh JSON · Vuốt mượt mà phản hồi tức thời 60fps</p>
-          </div>
           <!-- Fixed-height deck -->
           <div class="relative w-full max-w-sm" style="height:520px;">
             <div id="swipe-deck-container" class="absolute inset-0"></div>
@@ -1143,16 +1135,16 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
-<script src="js/data.js?v=1794910000"></script>
-<script src="js/audio.js?v=1794910000"></script>
-<script src="js/taste.js?v=1794910000"></script>
-<script src="js/swipe.js?v=1794910000"></script>
-<script src="js/map.js?v=1794910000"></script>
-<script src="js/reels.js?v=1794910000"></script>
-<script src="js/chat.js?v=1794910000"></script>
-<script src="js/data-loader.js?v=2.1.0"></script>
-<script src="js/app.js?v=1794910000"></script>
-<script src="js/crawler.js?v=1794910000"></script>
+<script src="js/data.js?v=1794930000"></script>
+<script src="js/audio.js?v=1794930000"></script>
+<script src="js/taste.js?v=1794930000"></script>
+<script src="js/swipe.js?v=1794930000"></script>
+<script src="js/map.js?v=1794930000"></script>
+<script src="js/reels.js?v=1794930000"></script>
+<script src="js/chat.js?v=1794930000"></script>
+<script src="js/data-loader.js?v=2.2.0"></script>
+<script src="js/app.js?v=1794930000"></script>
+<script src="js/crawler.js?v=1794930000"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

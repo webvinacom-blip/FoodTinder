@@ -663,7 +663,7 @@ function getFoodPhotoImage(dishName, restaurantName, category) {
   if (lower.includes("nhúng giấm") || lower.includes("nhúng me") || lower.includes("cô thảo")) return "images/lau_bo_nhung_giam.jpg";
   if (lower.includes("cá tầm") || lower.includes("thắng cố")) return "images/lau_ca_tam_sapa.jpg";
   if (lower.includes("lẩu mắm") || lower.includes("dạ lý")) return "images/lau_mam_can_tho.jpg";
-  if (lower.includes("trà sữa") || lower.includes("mây mây") || lower.includes("đường đen")) return "images/tra_sua_nuong_may_may.jpg";
+  if (lower.includes("trà sữa") || lower.includes("tiệm trà") || lower.includes("milktea") || lower.includes("boba") || lower.includes("trà trái cây") || lower.includes("trà kem") || lower.includes("mây mây") || lower.includes("đường đen")) return "images/tra_sua_nuong_may_may.jpg";
 
   let pool = FOOD_PHOTO_FALLBACKS.streetfood;
   if (lower.includes("trà sữa") || lower.includes("boba") || lower.includes("mây mây") || lower.includes("đường đen") || lower.includes("chè") || lower.includes("kem")) {
