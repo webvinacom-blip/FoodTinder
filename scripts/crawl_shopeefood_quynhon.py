@@ -76,13 +76,22 @@ BRAND_KEYWORDS = [
 ]
 
 CLOSED_BLACKLIST = [
-    "vương khang", "vuong khang",
+    "royal club", "diamond club", "cali beer", "top pub", "win pub", "the fellowship bar",
+    "come together bar", "since 1988 pub", "vip pub", "style pub", "karaoke ocean",
+    "dj cafe & karaoke", "vương khang", "vuong khang",
     "con bò cười bbq", "con bo cuoi bbq", "bò cười bbq",
     "đất võ",
     "chị ba trà", "chi ba tra",
     "ăn vặt ngô mây", "an vat ngo may",
     "đã đóng cửa", "ngừng hoạt động", "permanently closed", "closed permanently",
     "nghỉ bán", "sang nhượng"
+]
+
+NON_DINING_KEYWORDS = [
+    r'\bbar\b', r'\bclub\b', r'\blounge\b', r'\bpub\b', r'\bkaraoke\b', r'\bbida\b', r'\bbilliards\b',
+    r'\bmassage\b', r'\bspa\b', r'\bhotel\b', r'\bkhách sạn\b', r'\bnhà nghỉ\b', r'\bmotel\b', r'\bhomestay\b',
+    r'\bresort\b', r'\bshop\b', r'\bstore\b', r'\bpharmacy\b', r'\bnhà thuốc\b',
+    r'\bvũ trường\b', r'\bnail\b', r'\bsalon\b', r'\bhớt tóc\b', r'\bgym\b', r'\byoga\b'
 ]
 
 def smart_sleep(min_sec=1.6, max_sec=2.6):
@@ -135,18 +144,24 @@ def is_valid_quality_food(item):
     if any(k in img.lower() for k in ["placeholder", "default_avatar", "no-image", "empty_shop", "d-avatar"]):
         return False, "Ảnh placeholder / logo generic"
 
-    # 2. Quán đóng cửa
+    # 2. Quán đóng cửa hoặc thuộc danh sách đen giải thể
     for bad_kw in CLOSED_BLACKLIST:
         if bad_kw in all_text:
             return False, f"Quán đóng cửa / ngừng kinh doanh ({bad_kw})"
 
-    # 3. Địa bàn Quy Nhơn
+    # 3. Loại trừ các loại hình dịch vụ không phải ẩm thực (Bar, Club, Karaoke, Spa, Khách sạn)
+    if "surf bar" not in rest and "surf bar" not in name:
+        for pat in NON_DINING_KEYWORDS:
+            if re.search(pat, f"{rest} {name}", re.IGNORECASE):
+                return False, f"Không phải quán ăn / dịch vụ giải trí khác ({pat})"
+
+    # 4. Địa bàn Quy Nhơn
     lat = float(item.get("lat") or item.get("latitude") or 0)
     lng = float(item.get("lng") or item.get("longitude") or 0)
     if not (13.6 <= lat <= 13.9 and 109.1 <= lng <= 109.35):
         return False, f"Tọa độ không hợp lệ hoặc ngoài Quy Nhơn ({lat}, {lng})"
 
-    if not addr or len(addr) < 4 or "đang cập nhật" in addr.lower():
+    if not addr or len(addr) < 4 or "đang cập nhật" in addr.lower() or addr in ["quảng trường trung tâm", "bờ biển quy nhơn", "hòn khô"]:
         return False, "Địa chỉ ảo / không có số nhà tên đường thực tế"
 
     return True, "Hợp lệ"
