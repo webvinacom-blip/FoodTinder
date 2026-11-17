@@ -3463,6 +3463,200 @@ class FoodApp {
     }
   }
 
+  /* ═══════════════════════════════════════════════════════════════════
+     BẠN BÈ ĐÁNH GIÁ SẼ QUAY LẠI QUÁN (AVATARS & MODAL MORE)
+  ═══════════════════════════════════════════════════════════════════ */
+
+  getFriendsWhoWillReturn(foodId) {
+    const allFriends = [
+      {
+        id: 101,
+        name: "Hoàng Yến (Yến Ốc)",
+        relation: "Bạn thân",
+        distance: "Cách bạn 600m",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 4,
+        note: "Ốc & hải sản ở đây đỉnh chóp, nước chấm gừng sả siêu thơm!"
+      },
+      {
+        id: 102,
+        name: "Minh Quân (Cạ Cứng)",
+        relation: "Bạn cạ cứng",
+        distance: "Cách bạn 1.1km",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 5,
+        note: "Đồ nướng xì xèo đậm vị, không gian bờ kè ngồi nhậu cực đã!"
+      },
+      {
+        id: 103,
+        name: "Bảo Ngọc (Trà Sữa)",
+        relation: "Đồng nghiệp",
+        distance: "Cùng văn phòng",
+        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 3,
+        note: "Trà sữa đậm trà, trân châu dẻo bùi và đồ ăn vặt bao ngon!"
+      },
+      {
+        id: 104,
+        name: "Tuấn Khang",
+        relation: "Bạn thể thao",
+        distance: "Cách bạn 2.3km",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 2,
+        note: "Nước dùng thanh ngọt, ăn xong chạy bộ bờ biển rất khỏe!"
+      },
+      {
+        id: 105,
+        name: "Thu Thảo",
+        relation: "Bạn đại học",
+        distance: "Cách bạn 1.8km",
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 4,
+        note: "View quán đẹp chụp hình chill, đồ ăn ra nhanh nóng hổi!"
+      },
+      {
+        id: 201,
+        name: "Thanh Hằng",
+        relation: "Quanh bạn",
+        distance: "Cách bạn 450m",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+        status: "Online",
+        visitedCount: 3,
+        note: "Lẩu và nước sốt chua cay ở đây ngon xuất sắc, hợp tụ tập!"
+      }
+    ];
+
+    const seed = Number(foodId) || 1;
+    // Luôn từ 4 đến 6 bạn bè để luôn có more (> 3 người) để người dùng vuốt xem thêm
+    const count = 4 + (seed % 3);
+    const startIdx = seed % allFriends.length;
+    const friends = [];
+    for (let i = 0; i < count; i++) {
+      friends.push(allFriends[(startIdx + i) % allFriends.length]);
+    }
+    return friends;
+  }
+
+  openChatWithFriend(friendId) {
+    if (this.closeWillReturnFriendsModal) {
+      this.closeWillReturnFriendsModal();
+    }
+    if (this.closeInviteFriendsModal) {
+      this.closeInviteFriendsModal();
+    }
+    if (typeof switchTab === 'function') {
+      switchTab('chat');
+    } else if (typeof this.switchTab === 'function') {
+      this.switchTab('chat');
+    }
+    const numId = Number(friendId) || friendId;
+    if (window.chatManager) {
+      window.chatManager.selectChatTarget(numId);
+    }
+    this.showToast('💬 Đã mở cuộc trò chuyện với bạn bè!');
+  }
+
+  openWillReturnFriendsModal(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    if (!food) return;
+
+    window.soundFX && window.soundFX.playPop();
+
+    const modal = document.getElementById('will-return-friends-modal');
+    if (!modal) return;
+
+    this.renderWillReturnFriendsContent(foodId);
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.querySelector('.modal-sheet')?.classList.remove('translate-y-full');
+    }, 10);
+  }
+
+  closeWillReturnFriendsModal() {
+    const modal = document.getElementById('will-return-friends-modal');
+    if (!modal) return;
+    modal.querySelector('.modal-sheet')?.classList.add('translate-y-full');
+    setTimeout(() => modal.classList.add('hidden'), 250);
+  }
+
+  renderWillReturnFriendsContent(foodId) {
+    const food = (APP_DATA.foods || []).find(f => f.id === foodId);
+    const content = document.getElementById('will-return-friends-content');
+    if (!food || !content) return;
+
+    const friends = this.getFriendsWhoWillReturn(foodId);
+
+    content.innerHTML = `
+      <!-- Header -->
+      <div class="p-4 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white flex items-center justify-between shrink-0 shadow-sm">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-xl shrink-0">
+            😋
+          </div>
+          <div class="min-w-0">
+            <h4 class="font-extrabold text-sm leading-tight truncate">Bạn bè sẽ quay lại quán</h4>
+            <p class="text-[11px] text-amber-100 truncate mt-0.5">${food.restaurant}</p>
+          </div>
+        </div>
+        <button onclick="window.app.closeWillReturnFriendsModal()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/30 flex items-center justify-center text-white text-sm cursor-pointer transition active:scale-95 shrink-0">
+          ✕
+        </button>
+      </div>
+
+      <!-- Description / Badge info -->
+      <div class="px-4 py-2.5 bg-amber-50/70 border-b border-amber-100 flex items-center justify-between">
+        <span class="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+          <span>👥 Có <strong>${friends.length} người bạn</strong> đã chọn sẽ quay lại quán</span>
+        </span>
+        <span class="text-[10px] text-amber-700 bg-amber-200/60 font-semibold px-2 py-0.5 rounded-full">Vuốt xem thêm 👇</span>
+      </div>
+
+      <!-- Friends List: Hiện trọn vẹn đủ 3 người, sau đó vuốt để xem thêm -->
+      <div class="h-[216px] max-h-[216px] overflow-y-auto overscroll-contain scrollbar-none no-scrollbar p-3 space-y-2 bg-stone-50/50" style="scrollbar-width: none; -ms-overflow-style: none;">
+        ${friends.map(f => `
+          <div class="bg-white p-2.5 rounded-2xl border border-stone-200/90 shadow-2xs hover:border-amber-300 transition flex items-center justify-between gap-3">
+            <!-- Left: Avatar with Online badge (Click to chat) -->
+            <div onclick="window.app.openChatWithFriend(${f.id})" 
+                 class="relative w-11 h-11 shrink-0 cursor-pointer group"
+                 title="Bấm vào avatar để nhắn tin với ${f.name}">
+              <img src="${f.avatar}" alt="${f.name}" class="w-full h-full rounded-full object-cover border-2 border-white shadow-xs group-hover:scale-105 group-hover:ring-2 group-hover:ring-rose-400 transition" />
+              <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white shadow-xs z-10"></span>
+            </div>
+
+            <!-- Middle: Info & Quote (Click to chat) -->
+            <div onclick="window.app.openChatWithFriend(${f.id})" class="min-w-0 flex-1 cursor-pointer">
+              <div class="flex items-center gap-1.5">
+                <h5 class="font-bold text-xs text-stone-900 truncate">${f.name}</h5>
+                <span class="text-[9px] text-amber-700 bg-amber-50 border border-amber-200 font-extrabold px-1.5 py-0.2 rounded-full shrink-0">Đã ghé ${f.visitedCount} lần</span>
+              </div>
+              <p class="text-[10.5px] text-stone-500 truncate mt-0.5">${f.relation} • ${f.distance}</p>
+              <p class="text-[10.5px] text-stone-600 italic truncate mt-0.5 text-stone-500">"${f.note}"</p>
+            </div>
+
+            <!-- Right: Action Button -->
+            <button onclick="window.app.openChatWithFriend(${f.id})" 
+              class="px-3 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-[11px] rounded-full shadow-xs active:scale-95 transition cursor-pointer shrink-0 flex items-center gap-1"
+              title="Nhắn tin với ${f.name}">
+              <span>Nhắn tin</span>
+              <span>💬</span>
+            </button>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- Footer Info -->
+      <div class="p-3 bg-white border-t border-stone-100 text-center">
+        <p class="text-[11px] text-stone-400">💡 Bấm vào ảnh đại diện hoặc nút "Nhắn tin" để lập kèo đi ăn cùng bạn bè</p>
+      </div>
+    `;
+  }
+
   openShopeeFoodDelivery(foodId) {
     const food = APP_DATA.foods.find(f => f.id === foodId);
     if (!food) return;
