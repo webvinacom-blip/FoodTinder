@@ -35,36 +35,11 @@ class AuthManager {
   static SYSTEM_TITLES = [
     {
       id: 'newbie',
-      name: 'Người Mới Đến',
+      name: 'Người Mới',
       icon: '🌱',
       tag: 'Tập sự',
       desc: 'Bắt đầu hành trình khám phá và trải nghiệm các món ăn ngon khắp mọi nơi',
-      missions: [
-        {
-          id: 'newbie_welcome',
-          title: 'Khởi đầu ẩm thực',
-          desc: 'Đăng nhập vào tài khoản FoodTinder',
-          type: 'login',
-          target: 1,
-          icon: '📱'
-        },
-        {
-          id: 'newbie_swipe',
-          title: 'Lướt quẹt món ngon',
-          desc: 'Quẹt khám phá ít nhất 5 thẻ món ăn',
-          type: 'swipes',
-          target: 5,
-          icon: '👆'
-        },
-        {
-          id: 'newbie_like',
-          title: 'Món đầu tiên ưng ý',
-          desc: 'Thả tim yêu thích 2 món ăn hợp khẩu vị',
-          type: 'likes',
-          target: 2,
-          icon: '❤️'
-        }
-      ]
+      missions: []
     },
     {
       id: 'snack_lover',
@@ -409,7 +384,7 @@ class AuthManager {
   // Đếm số nhiệm vụ đã xong và kiểm tra xem danh hiệu đã mở khóa chưa
   getTitleProgress(title) {
     if (!title.missions || title.missions.length === 0) {
-      return { completed: 1, total: 1, isUnlocked: true, percent: 100 };
+      return { completed: 0, total: 0, isUnlocked: true, percent: 100 };
     }
     let completed = 0;
     title.missions.forEach(m => {
@@ -1048,7 +1023,8 @@ class AuthManager {
       const prog = this.getTitleProgress(t);
       const isUnlocked = prog.isUnlocked;
       const isEquipped = currentTitle.id === t.id;
-      const isExpanded = this.expandedTitleId === t.id;
+      const hasMissions = t.missions && t.missions.length > 0;
+      const isExpanded = hasMissions && (this.expandedTitleId === t.id);
 
       return `
         <div class="p-3.5 rounded-2xl border transition ${
@@ -1092,74 +1068,75 @@ class AuthManager {
               </div>
               <p class="text-xs text-stone-500 mt-1 leading-snug">${t.desc}</p>
               
-              <!-- Nút Xổ xuống / Thu gọn xem danh sách nhiệm vụ -->
-              <div class="mt-2.5 pt-2 border-t border-stone-200/60">
-                <button type="button" onclick="window.authManager.toggleTitleMissions('${t.id}')" 
-                  class="w-full flex items-center justify-between py-1.5 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
-                    isExpanded 
-                      ? 'bg-amber-100/80 text-amber-900 border border-amber-300/80' 
-                      : 'bg-stone-100/70 hover:bg-stone-200/70 text-stone-600 hover:text-stone-900 border border-stone-200/60'
-                  }">
-                  <span class="flex items-center gap-1.5">
-                    <span class="text-[11px]">🎯</span>
-                    <span class="text-[11px] font-extrabold">${isExpanded ? 'Đóng danh sách nhiệm vụ' : 'Xem danh sách nhiệm vụ'}</span>
-                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-md ${isUnlocked ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
-                      ${prog.completed}/${prog.total}
+              ${hasMissions ? `
+                <!-- Nút Xổ xuống / Thu gọn xem danh sách nhiệm vụ (không có chữ 'Xổ xuống') -->
+                <div class="mt-2.5 pt-2 border-t border-stone-200/60">
+                  <button type="button" onclick="window.authManager.toggleTitleMissions('${t.id}')" 
+                    class="w-full flex items-center justify-between py-1.5 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                      isExpanded 
+                        ? 'bg-amber-100/80 text-amber-900 border border-amber-300/80' 
+                        : 'bg-stone-100/70 hover:bg-stone-200/70 text-stone-600 hover:text-stone-900 border border-stone-200/60'
+                    }">
+                    <span class="flex items-center gap-1.5">
+                      <span class="text-[11px]">🎯</span>
+                      <span class="text-[11px] font-extrabold">${isExpanded ? 'Đóng danh sách nhiệm vụ' : 'Xem danh sách nhiệm vụ'}</span>
+                      <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-md ${isUnlocked ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                        ${prog.completed}/${prog.total}
+                      </span>
                     </span>
-                  </span>
-                  <span class="flex items-center gap-1 text-[11px] text-stone-500 font-bold">
-                    <span>${isExpanded ? 'Thu lại' : 'Xổ xuống'}</span>
-                    <span class="text-[10px] transition-transform duration-200 inline-block font-black">${isExpanded ? '▲' : '▼'}</span>
-                  </span>
-                </button>
+                    <span class="text-xs text-stone-500 font-black transition-transform duration-200 px-1">
+                      ${isExpanded ? '▲' : '▼'}
+                    </span>
+                  </button>
 
-                ${isExpanded ? `
-                  <!-- Danh sách Nhiệm vụ cần hoàn thành khi bấm xổ xuống -->
-                  <div class="mt-2.5 pt-2 border-t border-stone-200/60 space-y-2">
-                    <div class="flex items-center justify-between text-[11px] font-extrabold text-stone-700">
-                      <span class="flex items-center gap-1">
-                        <span>🎯 Nhiệm vụ mở khóa:</span>
-                        <span class="text-[10px] ${isUnlocked ? 'text-emerald-600' : 'text-amber-600'} font-black">(${prog.completed}/${prog.total} hoàn thành)</span>
-                      </span>
-                      <span class="text-[10px] font-bold ${isUnlocked ? 'text-emerald-600' : 'text-stone-500'}">
-                        ${isUnlocked ? '✅ Đã hoàn tất' : `${prog.percent}%`}
-                      </span>
-                    </div>
+                  ${isExpanded ? `
+                    <!-- Danh sách Nhiệm vụ cần hoàn thành khi bấm xổ xuống -->
+                    <div class="mt-2.5 pt-2 border-t border-stone-200/60 space-y-2">
+                      <div class="flex items-center justify-between text-[11px] font-extrabold text-stone-700">
+                        <span class="flex items-center gap-1">
+                          <span>🎯 Nhiệm vụ mở khóa:</span>
+                          <span class="text-[10px] ${isUnlocked ? 'text-emerald-600' : 'text-amber-600'} font-black">(${prog.completed}/${prog.total} hoàn thành)</span>
+                        </span>
+                        <span class="text-[10px] font-bold ${isUnlocked ? 'text-emerald-600' : 'text-stone-500'}">
+                          ${isUnlocked ? '✅ Đã hoàn tất' : `${prog.percent}%`}
+                        </span>
+                      </div>
 
-                    <div class="space-y-1.5">
-                      ${t.missions.map(m => {
-                        const mp = this.getMissionProgress(m);
-                        return `
-                          <div class="p-2 rounded-xl transition ${
-                            mp.isCompleted 
-                              ? 'bg-emerald-50/80 border border-emerald-200/80' 
-                              : 'bg-white border border-stone-200/90'
-                          }">
-                            <div class="flex items-center justify-between gap-1.5">
-                              <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="text-xs shrink-0">${mp.isCompleted ? '✅' : m.icon}</span>
-                                <span class="font-extrabold text-xs truncate ${mp.isCompleted ? 'text-emerald-900' : 'text-stone-800'}">${m.title}</span>
+                      <div class="space-y-1.5">
+                        ${t.missions.map(m => {
+                          const mp = this.getMissionProgress(m);
+                          return `
+                            <div class="p-2 rounded-xl transition ${
+                              mp.isCompleted 
+                                ? 'bg-emerald-50/80 border border-emerald-200/80' 
+                                : 'bg-white border border-stone-200/90'
+                            }">
+                              <div class="flex items-center justify-between gap-1.5">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                  <span class="text-xs shrink-0">${mp.isCompleted ? '✅' : m.icon}</span>
+                                  <span class="font-extrabold text-xs truncate ${mp.isCompleted ? 'text-emerald-900' : 'text-stone-800'}">${m.title}</span>
+                                </div>
+                                <span class="text-[10px] font-mono font-extrabold shrink-0 px-1.5 py-0.2 rounded-md ${
+                                  mp.isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-100 text-stone-600'
+                                }">
+                                  ${mp.current}/${mp.target}
+                                </span>
                               </div>
-                              <span class="text-[10px] font-mono font-extrabold shrink-0 px-1.5 py-0.2 rounded-md ${
-                                mp.isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-100 text-stone-600'
-                              }">
-                                ${mp.current}/${mp.target}
-                              </span>
+                              <p class="text-[10.5px] text-stone-500 mt-0.5 leading-tight">${m.desc}</p>
+                              
+                              <div class="w-full h-1.5 bg-stone-100 rounded-full mt-1.5 overflow-hidden">
+                                <div class="h-full rounded-full transition-all duration-300 ${
+                                  mp.isCompleted ? 'bg-emerald-500' : 'bg-amber-400'
+                                }" style="width: ${mp.percent}%"></div>
+                              </div>
                             </div>
-                            <p class="text-[10.5px] text-stone-500 mt-0.5 leading-tight">${m.desc}</p>
-                            
-                            <div class="w-full h-1.5 bg-stone-100 rounded-full mt-1.5 overflow-hidden">
-                              <div class="h-full rounded-full transition-all duration-300 ${
-                                mp.isCompleted ? 'bg-emerald-500' : 'bg-amber-400'
-                              }" style="width: ${mp.percent}%"></div>
-                            </div>
-                          </div>
-                        `;
-                      }).join('')}
+                          `;
+                        }).join('')}
+                      </div>
                     </div>
-                  </div>
-                ` : ''}
-              </div>
+                  ` : ''}
+                </div>
+              ` : ''}
             </div>
           </div>
         </div>
