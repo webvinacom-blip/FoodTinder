@@ -85,6 +85,13 @@ class TinderSwipeManager {
         ? window.app.isFoodWillReturn(food.id)
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
 
+      // Thông tin giao hàng & mã giảm giá ShopeeFood
+      const hasShopee = (window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/')));
+      const promoCode = food.deliveryPromoCode || 'SHOPEE25K';
+      const rawPromo = food.deliveryPromo || `Mã ${promoCode} giảm 25.000đ`;
+      const promoCleanDesc = rawPromo.replace(/^Mã\s+[A-Z0-9]+\s*/i, '');
+      const promoDiscountText = promoCleanDesc ? (promoCleanDesc.charAt(0).toUpperCase() + promoCleanDesc.slice(1)) : 'Giảm 25.000đ';
+
       // Địa chỉ đầy đủ chuẩn xác (gồm số nhà/đường, thành phố, tỉnh thành)
       let fullAddress = (food.address || '').trim().replace(/^0+([1-9])/, '$1');
       const rawCity = food.cityName || (food.cityId === 'quynhon' ? 'Quy Nhơn' : (window.APP_DATA?.currentCity?.name || 'Quy Nhơn'));
@@ -252,6 +259,56 @@ class TinderSwipeManager {
                 </div>
               ` : ''}
             </div>
+
+            <!-- Hàng 6: Mã giảm giá ShopeeFood (Đặt tại vùng trống giữa số người quay lại và button Rủ đi ăn) -->
+            ${hasShopee ? `
+              <div class="pt-0.5">
+                <div class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-orange-50/95 via-amber-50/70 to-rose-50/80 border border-orange-200/90 flex items-center justify-between gap-2 shadow-2xs hover:border-orange-300 transition">
+                  <div class="flex items-center gap-2 min-w-0 flex-1 cursor-pointer" 
+                    onclick="event.stopPropagation(); window.app && window.app.openShopeeFoodDelivery(${food.id})" 
+                    title="Bấm để xem và đặt món giao qua ShopeeFood">
+                    <div class="w-6 h-6 rounded-lg bg-white border border-orange-200 flex items-center justify-center shrink-0 p-0.5 shadow-2xs">
+                      ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : '🛍️'}
+                    </div>
+                    <div class="min-w-0 flex-1 leading-tight">
+                      <div class="flex items-center gap-1.5 flex-nowrap overflow-hidden">
+                        <span class="text-[9.5px] font-black text-white bg-[#EE4D2D] px-1.5 py-0.2 rounded font-mono tracking-wider shrink-0 uppercase shadow-2xs">${promoCode}</span>
+                        <span class="text-[11px] font-extrabold text-stone-800 truncate">${promoDiscountText}</span>
+                      </div>
+                      <p class="text-[9px] text-stone-400 truncate mt-0.5">Voucher ShopeeFood • Chạm để đặt món</p>
+                    </div>
+                  </div>
+
+                  <button onclick="event.stopPropagation(); window.app && window.app.copyVoucher('${promoCode}')"
+                    class="px-2 py-1 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 active:scale-95 text-white text-[10px] font-black rounded-lg shrink-0 shadow-xs transition cursor-pointer flex items-center gap-1 select-none"
+                    title="Sao chép mã giảm giá: ${promoCode}">
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Lấy mã</span>
+                  </button>
+                </div>
+              </div>
+            ` : `
+              <div class="pt-0.5">
+                <div class="px-2.5 py-1.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between gap-2 shadow-2xs">
+                  <div class="flex items-center gap-2 min-w-0 flex-1">
+                    <div class="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center shrink-0 text-xs shadow-2xs">
+                      🍽️
+                    </div>
+                    <div class="min-w-0 flex-1 leading-tight">
+                      <span class="text-[11px] font-bold text-stone-700 truncate block">Thưởng thức tại quán</span>
+                      <p class="text-[9px] text-stone-400 truncate mt-0.5">Quán bản địa không phục vụ giao qua ShopeeFood</p>
+                    </div>
+                  </div>
+                  <button onclick="event.stopPropagation(); window.app && window.app.openMapWithFood(${food.id})"
+                    class="px-2 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 text-[10px] font-bold rounded-lg shrink-0 transition active:scale-95 cursor-pointer flex items-center gap-1">
+                    <span>Chỉ đường</span>
+                  </button>
+                </div>
+              </div>
+            `}
           </div>
 
           <!-- Bottom Row: Button Rủ đi ăn (sát lại gần hơn với hàng số người quay lại cho cân đối) -->
