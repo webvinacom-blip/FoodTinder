@@ -243,12 +243,15 @@ class ReelsManager {
           if (videoId) {
             const iframe = document.createElement('iframe');
             iframe.id = `yt-iframe-${idx}`;
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
             // controls=0, mute=1 (autoplay policy), playsinline=1, loop=1
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0${originParam}`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             iframe.allowFullscreen = true;
             mountBox.appendChild(iframe);
           } else if (food.videoUrl && !food.videoUrl.includes('youtube')) {
