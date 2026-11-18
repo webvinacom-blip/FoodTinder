@@ -1223,6 +1223,8 @@ class ReelsManager {
     this.commentsMap = {};
     this.items = [];
     this.observer = null;
+    this.currentVideoTime = 0;
+    this.currentVideoDuration = 0;
 
     // CHIẾN THUẬT 1: Phân trang ngặt nghèo (.limit(5))
     this.PAGE_SIZE = 5;
@@ -1255,7 +1257,18 @@ class ReelsManager {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (!data) return;
 
-        // 1. TỰ ĐỘNG NEXT VIDEO KHI CHẠY HẾT (KHÔNG LOAD LẠI VIDEO CŨ)
+        // 1. CẬP NHẬT TIẾN ĐỘ THỜI GIAN THỰC ĐỂ PHỤC VỤ CHỨC NĂNG TUA VIDEO (SEEK/SCRUB)
+        if (data.event === 'infoDelivery' && data.info) {
+          if (typeof data.info.currentTime === 'number') {
+            this.currentVideoTime = data.info.currentTime;
+          }
+          if (typeof data.info.duration === 'number' && data.info.duration > 0) {
+            this.currentVideoDuration = data.info.duration;
+          }
+          this.updateProgressBar(this.currentIndex, this.currentVideoTime, this.currentVideoDuration);
+        }
+
+        // 2. TỰ ĐỘNG NEXT VIDEO KHI CHẠY HẾT (KHÔNG LOAD LẠI VIDEO CŨ)
         // YouTube API bắn onStateChange (0) hoặc infoDelivery (playerState: 0) khi video phát xong
         const isEnded = 
           (data.event === 'onStateChange' && (data.info === 0 || data.data === 0)) ||
@@ -1267,7 +1280,7 @@ class ReelsManager {
           return;
         }
 
-        // 2. Bắt lỗi video chết / bị xóa / chặn nhúng
+        // 3. Bắt lỗi video chết / bị xóa / chặn nhúng
         if (data.event === 'onError') {
           console.warn('[QA DeadLink Handler] YouTube onError:', data);
           this.handleVideoError(this.currentIndex, data.info);
@@ -1589,35 +1602,74 @@ class ReelsManager {
             </div>
           `}
 
-          <div class="flex items-center gap-2 text-white/70 text-[11px]">
+          <div class="flex items-center gap-2 text-white/70 text-[11px] mb-2">
             <i data-lucide="music" class="w-3.5 h-3.5 animate-spin" style="animation-duration: 4s;"></i>
             <span class="truncate max-w-[220px]">Âm thanh gốc - Ẩm thực Quy Nhơn</span>
+          </div>
+        </div>
+
+        <!-- 5. Huy hiệu tua nhanh / tua lùi 5s (Seek Badge Overlay) -->
+        <div id="reel-seek-badge-left-${idx}" class="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white shadow-2xl opacity-0 scale-75 pointer-events-none transition-all duration-200 z-30">
+          <span class="text-xl font-black">⟲</span>
+          <span class="text-[11px] font-extrabold">-5s</span>
+        </div>
+
+        <div id="reel-seek-badge-right-${idx}" class="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white shadow-2xl opacity-0 scale-75 pointer-events-none transition-all duration-200 z-30">
+          <span class="text-xl font-black">⟳</span>
+          <span class="text-[11px] font-extrabold">+5s</span>
+        </div>
+
+        <!-- 6. Thanh tua video (Interactive Scrubber / Progress Bar) -->
+        <div class="reel-scrubber-container absolute bottom-0 left-0 right-0 z-35 px-3 py-2 cursor-pointer group"
+          data-slide-index="${idx}">
+          <!-- Thời gian hiển thị khi hover / chạm -->
+          <div class="flex items-center justify-between text-[10px] text-white/90 font-mono font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">
+            <span id="reel-time-display-${idx}">0:00 / 0:00</span>
+            <span class="text-amber-300 text-[9.5px]">Chạm hoặc kéo thanh để tua video</span>
+          </div>
+          <!-- Track & Fill Bar -->
+          <div class="relative w-full h-1 group-hover:h-2.5 bg-white/30 rounded-full overflow-hidden transition-all shadow-sm">
+            <div id="reel-progress-bar-${idx}" class="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 rounded-full w-0 transition-all duration-75"></div>
           </div>
         </div>
 
       </div>
     `;
 
-    // ── XỬ LÝ CHẠM MÀN HÌNH ĐỂ TẠM DỪNG / PHÁT TIẾP (PLAY / PAUSE) ──
+    // ── XỬ LÝ CHẠM MÀN HÌNH ĐỂ PLAY/PAUSE HOẶC NHẤP ĐÚP TUA VIDEO ──
     const touchSurface = itemEl.querySelector(`.reel-touch-surface[data-slide-index="${idx}"]`);
     let clickTimer = null;
 
     const handleTapOrClick = (e) => {
-      // Bỏ qua nếu chạm vào các nút điều khiển bên trên / bên phải
-      if (e.target.closest('button') || e.target.closest('a')) return;
+      // Bỏ qua nếu chạm vào các nút điều khiển hoặc thanh tua
+      if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.reel-scrubber-container')) return;
+
+      const rect = itemEl.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratioX = clickX / rect.width;
 
       if (clickTimer) {
-        // Nhấp đúp (Double click) -> Thả tim bay lơ lửng ❤️
+        // Nhấp đúp (Double click):
         clearTimeout(clickTimer);
         clickTimer = null;
-        this.spawnHeartAt(e.clientX, e.clientY, itemEl);
-        this.toggleLike(item.id, itemEl.querySelector('button i[data-lucide="heart"]')?.parentElement, true);
+
+        if (ratioX < 0.35) {
+          // Double click 1/3 bên trái -> TUA LÙI 5 GIÂY (Rewind -5s)
+          this.seekDelta(-5);
+        } else if (ratioX > 0.65) {
+          // Double click 1/3 bên phải -> TUA NHANH 5 GIÂY (Forward +5s)
+          this.seekDelta(5);
+        } else {
+          // Double click ở giữa màn hình -> Thả tim ❤️
+          this.spawnHeartAt(e.clientX, e.clientY, itemEl);
+          this.toggleLike(item.id, null, true);
+        }
       } else {
         // Nhấp đơn (Single click) -> Tạm dừng / Phát tiếp video (Play / Pause)!
         clickTimer = setTimeout(() => {
           clickTimer = null;
           this.togglePlayPause(idx);
-        }, 220);
+        }, 240);
       }
     };
 
@@ -1625,9 +1677,26 @@ class ReelsManager {
       touchSurface.addEventListener('click', handleTapOrClick);
     }
     itemEl.addEventListener('click', (e) => {
-      if (e.target === touchSurface) return; // Đã xử lý bởi touchSurface
+      if (e.target === touchSurface) return;
       handleTapOrClick(e);
     });
+
+    // ── XỬ LÝ KÉO / CHẠM THANH TUA VIDEO (SCRUBBER) ──
+    const scrubber = itemEl.querySelector(`.reel-scrubber-container[data-slide-index="${idx}"]`);
+    if (scrubber) {
+      const handleScrub = (evt) => {
+        evt.stopPropagation();
+        evt.preventDefault();
+        const rect = scrubber.getBoundingClientRect();
+        const clientX = evt.touches && evt.touches.length > 0 ? evt.touches[0].clientX : evt.clientX;
+        const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+        const duration = this.currentVideoDuration || 30;
+        const targetSec = ratio * duration;
+        this.seekTo(targetSec);
+      };
+      scrubber.addEventListener('click', handleScrub);
+      scrubber.addEventListener('touchmove', handleScrub, { passive: false });
+    }
 
     return itemEl;
   }
@@ -1688,6 +1757,72 @@ class ReelsManager {
         }, 400);
       }
     }
+  }
+
+  // ══════════════════════════════════════════════════════════════════════
+  // CHỨC NĂNG TUA VIDEO (SEEK / SCRUB / NHẤP ĐÚP TUA NHANH TUA LÙI)
+  // ══════════════════════════════════════════════════════════════════════
+  seekTo(seconds) {
+    const target = Math.max(0, Math.min(this.currentVideoDuration || 9999, seconds));
+    const mountBox = document.getElementById(`reel-player-mount-${this.currentIndex}`);
+    if (mountBox) {
+      const iframe = mountBox.querySelector('iframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: 'seekTo',
+          args: [target, true]
+        }), '*');
+      }
+      const video = mountBox.querySelector('video');
+      if (video) {
+        video.currentTime = target;
+      }
+    }
+    this.currentVideoTime = target;
+    this.updateProgressBar(this.currentIndex, this.currentVideoTime, this.currentVideoDuration);
+  }
+
+  seekDelta(deltaSeconds) {
+    const target = (this.currentVideoTime || 0) + deltaSeconds;
+    this.seekTo(target);
+    this.showSeekIndicator(deltaSeconds > 0 ? 'forward' : 'rewind');
+  }
+
+  showSeekIndicator(type) {
+    const badgeId = type === 'forward' 
+      ? `reel-seek-badge-right-${this.currentIndex}`
+      : `reel-seek-badge-left-${this.currentIndex}`;
+    const badge = document.getElementById(badgeId);
+    if (!badge) return;
+
+    badge.classList.remove('opacity-0', 'scale-75');
+    badge.classList.add('opacity-100', 'scale-100');
+
+    setTimeout(() => {
+      badge.classList.remove('opacity-100', 'scale-100');
+      badge.classList.add('opacity-0', 'scale-75');
+    }, 450);
+  }
+
+  updateProgressBar(idx, current = 0, duration = 0) {
+    const pBar = document.getElementById(`reel-progress-bar-${idx}`);
+    const timeLabel = document.getElementById(`reel-time-display-${idx}`);
+    if (!pBar) return;
+
+    const pct = duration > 0 ? Math.min(100, Math.max(0, (current / duration) * 100)) : 0;
+    pBar.style.width = `${pct}%`;
+
+    if (timeLabel && duration > 0) {
+      timeLabel.textContent = `${this.formatTime(current)} / ${this.formatTime(duration)}`;
+    }
+  }
+
+  formatTime(sec) {
+    sec = Math.floor(sec || 0);
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
   }
 
   // ══════════════════════════════════════════════════════════════════════
