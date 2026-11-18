@@ -483,14 +483,14 @@ class FoodApp {
     const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
 
     return `
-      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5">
+      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5 ${!status.isOpen ? 'is-closed' : ''}">
         <!-- Card Image & Status Badges -->
         <div class="cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
           <div class="relative w-full aspect-[4/3] bg-stone-100 overflow-hidden">
             <img src="${food.image}"
                  alt="${food.name}"
                  loading="lazy"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!status.isOpen ? 'is-closed-img grayscale' : ''}"
                  data-name="${(food.name || '').replace(/"/g, '&quot;')}"
                  data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
                  data-category="${food.category || ''}"
@@ -588,7 +588,7 @@ class FoodApp {
               class="flex-1 h-8 bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
               title="Quán hiện đã đóng cửa">
               ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0 filter grayscale opacity-50') : ''}
-              <span>ShopeeFood (Đóng)</span>
+              <span>ShopeeFood</span>
             </button>
             `
           ) : `
@@ -2536,7 +2536,7 @@ class FoodApp {
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
             data-category="${food.category || ''}"
             onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-            class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
+            class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
           <!-- Status Badge -->
           <span class="absolute top-1.5 left-1.5 ${status.isOpen ? 'bg-emerald-600/90 text-white border-emerald-400/40' : 'bg-stone-900/90 text-stone-200 border-stone-600'} border text-[8.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
             <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500 animate-pulse'}"></span>
@@ -2566,7 +2566,7 @@ class FoodApp {
                 class="w-full py-1 bg-stone-100 border border-stone-200 text-stone-400 text-[9.5px] font-semibold rounded-md flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
                 title="Quán hiện đã đóng cửa">
                 ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0 filter grayscale opacity-50') : ''}
-                <span>ShopeeFood (Đóng)</span>
+                <span>ShopeeFood</span>
               </button>
               `
             ) : `
@@ -2610,7 +2610,7 @@ class FoodApp {
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
             data-category="${food.category || ''}"
             onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${status.isOpen ? '' : 'is-closed-img'}" />
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent pointer-events-none"></div>
 
           <!-- Open/Close Status Badge -->
@@ -2708,7 +2708,7 @@ class FoodApp {
                 class="flex-1 h-7.5 bg-stone-100 border border-stone-200 text-stone-400 rounded-lg text-[10.5px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
                 title="Quán hiện đã đóng cửa">
                 ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0 filter grayscale opacity-50') : ''}
-                <span>ShopeeFood (Đóng)</span>
+                <span>ShopeeFood</span>
               </button>
               `
             ) : `
@@ -3066,7 +3066,7 @@ class FoodApp {
                 data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
                 data-category="${food.category || ''}"
                 onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-                class="w-full h-full rounded-xl object-cover cursor-pointer ${status.isOpen ? '' : 'is-closed-img'}" onclick="window.app.showFoodDetail(${food.id})" />
+                class="w-full h-full rounded-xl object-cover cursor-pointer ${status.isOpen ? '' : 'is-closed-img grayscale'}" onclick="window.app.showFoodDetail(${food.id})" />
               <span class="absolute bottom-1 left-1 ${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[7.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-sm">
                 <span class="w-1 h-1 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500'}"></span>
                 ${status.statusText}
@@ -3131,7 +3131,7 @@ class FoodApp {
           data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
           data-category="${food.category || ''}"
           onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-          class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
+          class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/35"></div>
         <button onclick="window.app.closeFoodDetail()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center transition cursor-pointer z-10 shadow-md" title="Đóng">
           ✕

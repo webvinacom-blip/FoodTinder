@@ -164,7 +164,7 @@ class TinderSwipeManager {
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
             data-category="${food.category || ''}"
             onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-            class="w-full h-full object-cover pointer-events-none ${status.isOpen ? '' : 'is-closed-img'}" />
+            class="w-full h-full object-cover pointer-events-none ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
           
           <!-- Top Floating Chip: Cách bạn 1.2km (chỉ hiển thị khoảng cách) -->
           <div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none gap-2">

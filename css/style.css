@@ -118,18 +118,20 @@ body {
 
 /* ── Closed Restaurant Styling (Grayscale) ── */
 .is-closed-img,
+.is-closed img,
 .food-card.is-closed img,
 .taste-card.is-closed img,
 .food-card.is-closed .food-card-img {
-  filter: grayscale(100%) contrast(95%);
-  -webkit-filter: grayscale(100%) contrast(95%);
+  filter: grayscale(100%) contrast(95%) !important;
+  -webkit-filter: grayscale(100%) contrast(95%) !important;
   opacity: 0.88;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .food-card.is-closed:hover img,
 .taste-card.is-closed:hover img,
-.food-card.is-closed:hover .food-card-img {
+.food-card.is-closed:hover .food-card-img,
+.is-closed:hover img {
   opacity: 0.96;
 }
 

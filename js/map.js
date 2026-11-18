@@ -242,7 +242,7 @@ class FoodMapManager {
                   data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
                   data-category="${food.category || ''}"
                   onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-                  class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img'}" />
+                  class="w-full h-full object-cover ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
                 <!-- Status Chip -->
                 <span class="absolute top-1.5 left-1.5 ${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[8.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
                   <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500 animate-pulse'}"></span>
@@ -279,7 +279,7 @@ class FoodMapManager {
                       class="px-2 py-0.5 bg-stone-100 border border-stone-200 text-stone-400 rounded-md text-[9.5px] font-semibold flex items-center gap-1 cursor-not-allowed opacity-60 pointer-events-none select-none"
                       title="Quán hiện đã đóng cửa">
                       ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0 filter grayscale opacity-50') : ''}
-                      <span>ShopeeFood (Đóng)</span>
+                      <span>ShopeeFood</span>
                     </button>
                     `
                   ) : ''}

@@ -758,7 +758,7 @@ class TasteManager {
                 data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
                 data-category="${food.category || ''}"
                 onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${status.isOpen ? '' : 'is-closed-img'}" />
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
               
               <!-- Match Score Badge -->
@@ -859,7 +859,7 @@ class TasteManager {
                 class="flex-1 h-8 bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
                 title="Quán hiện đã đóng cửa">
                 ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0 filter grayscale opacity-50') : ''}
-                <span>ShopeeFood (Đóng)</span>
+                <span>ShopeeFood</span>
               </button>
               `
             ) : `
