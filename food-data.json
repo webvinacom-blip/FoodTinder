@@ -2,7 +2,8 @@
   "metadata": {
     "total": 1694,
     "verifiedSource": "100% Google Maps Verified with Place ID",
-    "city": "Quy Nhơn"
+    "city": "Quy Nhơn",
+    "totalFoods": 1693
   },
   "foods": [
     {
@@ -16027,92 +16028,6 @@
       "priceMax": 65000,
       "attributes": [
         "drinks"
-      ]
-    },
-    {
-      "id": 1217226,
-      "cityId": "quynhon",
-      "cityName": "Quy Nhơn",
-      "name": "TOCOTOCO & Kem Tràng Tiền - Go Kim Cúc",
-      "restaurant": "TOCOTOCO & Kem Tràng Tiền - Go Kim Cúc",
-      "address": "Tầng 2 TTTM Go Kim Cúc, Đường 1D, P. Ghềnh Ráng",
-      "district": "Tp. Qui Nhơn",
-      "distance": 3.3,
-      "distanceText": "Cách bạn 3.3km",
-      "priceRange": "25.000đ - 65.000đ",
-      "rating": 0,
-      "reviewCount": 0,
-      "likesCount": 0,
-      "commentsCount": 0,
-      "openTime": "07:00 - 22:30",
-      "category": "boba",
-      "source": "ShopeeFood",
-      "sourceIcon": "🛍️",
-      "latitude": 13.7545899,
-      "longitude": 109.2079109,
-      "lat": 13.7545899,
-      "lng": 109.2079109,
-      "moodIds": [
-        "chill",
-        "energetic",
-        "sweet",
-        "comfort"
-      ],
-      "weather": [
-        "sunny",
-        "rainy",
-        "hot"
-      ],
-      "weatherNote": "Quy Nhơn 24°C 🌧️",
-      "tags": [
-        "#TràSữaQuyNhơn",
-        "#ĐồNgọt",
-        "#KemBơ",
-        "#KhuGàChỉ",
-        "#ĐặcSảnQuyNhơn"
-      ],
-      "sideRibbon": [
-        "#hot",
-        "#chuẩn_vị"
-      ],
-      "image": "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lxhmgruzfkrf6e@resize_ss640x400",
-      "gallery": [
-        "https://down-vn.img.susercontent.com/vn-11134513-7r98o-lxhmgruzfkrf6e@resize_ss640x400"
-      ],
-      "description": "Quán TOCOTOCO & Kem Tràng Tiền - Go Kim Cúc tọa lạc tại Tầng 2 TTTM Go Kim Cúc, Đường 1D, P. Ghềnh Ráng, phục vụ thực khách với thực đơn đa dạng và nguyên liệu tươi ngon tại Quy Nhơn.",
-      "recommendReason": "Địa điểm ẩm thực nổi bật được nhiều thực khách tin tưởng lựa chọn trên ShopeeFood Quy Nhơn!",
-      "menu": [
-        {
-          "name": "Món đặc trưng TOCOTOCO & Kem Tràng Tiền",
-          "price": "35.000đ",
-          "highlight": true
-        },
-        {
-          "name": "Món thêm / Nâng cấp đặc biệt",
-          "price": "55.000đ",
-          "highlight": false
-        },
-        {
-          "name": "Trà đá / Nước giải khát",
-          "price": "10.000đ",
-          "highlight": false
-        }
-      ],
-      "deliveryPlatform": "ShopeeFood",
-      "deliveryUrl": "https://shopeefood.vn/binh-dinh/tocotoco-kem-trang-tien-go-kim-cuc",
-      "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TOCOTOCO%20%26%20Kem%20Tr%C3%A0ng%20Ti%E1%BB%81n%20-%20Go%20Kim%20C%C3%BAc",
-      "deliveryTime": "25 - 40 phút",
-      "deliveryFee": "18.000đ (Áp mã Freeship)",
-      "deliveryFeeVal": 18000,
-      "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-      "deliveryRating": "Quán mới mở ⭐",
-      "gmapsVerified": false,
-      "priceMin": 25000,
-      "priceMax": 65000,
-      "attributes": [
-        "crunchy",
-        "drinks",
-        "sweet"
       ]
     },
     {
@@ -126722,90 +126637,6 @@
       ]
     },
     {
-      "id": 665845,
-      "cityId": "quynhon",
-      "cityName": "Quy Nhơn",
-      "name": "Sandwich Land - Big C Quy Nhơn",
-      "restaurant": "Sandwich Land - Big C Quy Nhơn",
-      "address": "Big C Quy Nhơn, KĐT Xanh Vũng Chua, P. Ghềnh Ráng",
-      "district": "Tp. Qui Nhơn",
-      "distance": 3.4,
-      "distanceText": "Cách bạn 3.4km",
-      "priceRange": "25.000đ - 65.000đ",
-      "rating": 0,
-      "reviewCount": 0,
-      "likesCount": 0,
-      "commentsCount": 0,
-      "openTime": "07:00 - 22:30",
-      "category": "streetfood",
-      "source": "ShopeeFood",
-      "sourceIcon": "🛍️",
-      "latitude": 13.753648,
-      "longitude": 109.208157,
-      "lat": 13.753648,
-      "lng": 109.208157,
-      "moodIds": [
-        "chill",
-        "energetic",
-        "craving",
-        "comfort"
-      ],
-      "weather": [
-        "sunny",
-        "rainy",
-        "hot"
-      ],
-      "weatherNote": "Quy Nhơn 24°C 🌧️",
-      "tags": [
-        "#ĂnVặtQuyNhơn",
-        "#ĐặcSảnĐườngPhố",
-        "#KhuGàChỉ",
-        "#SandwichLand",
-        "#ĐặcSảnQuyNhơn"
-      ],
-      "sideRibbon": [
-        "#hot",
-        "#chuẩn_vị"
-      ],
-      "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2jmnhg3ix19@resize_ss640x400",
-      "gallery": [
-        "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwc2jmnhg3ix19@resize_ss640x400"
-      ],
-      "description": "Quán Sandwich Land - Big C Quy Nhơn tọa lạc tại Big C Quy Nhơn, KĐT Xanh Vũng Chua, P. Ghềnh Ráng, phục vụ thực khách với thực đơn đa dạng và nguyên liệu tươi ngon tại Quy Nhơn.",
-      "recommendReason": "Địa điểm ẩm thực nổi bật được nhiều thực khách tin tưởng lựa chọn trên ShopeeFood Quy Nhơn!",
-      "menu": [
-        {
-          "name": "Món đặc trưng Sandwich Land",
-          "price": "35.000đ",
-          "highlight": true
-        },
-        {
-          "name": "Món thêm / Nâng cấp đặc biệt",
-          "price": "55.000đ",
-          "highlight": false
-        },
-        {
-          "name": "Trà đá / Nước giải khát",
-          "price": "10.000đ",
-          "highlight": false
-        }
-      ],
-      "deliveryPlatform": "ShopeeFood",
-      "deliveryUrl": "https://shopeefood.vn/binh-dinh/sandwich-land-big-c-quy-nhon",
-      "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sandwich%20Land%20-%20Big%20C%20Quy%20Nh%C6%A1n",
-      "deliveryTime": "25 - 40 phút",
-      "deliveryFee": "18.000đ (Áp mã Freeship)",
-      "deliveryFeeVal": 18000,
-      "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-      "deliveryRating": "Quán mới mở ⭐",
-      "gmapsVerified": false,
-      "priceMin": 25000,
-      "priceMax": 65000,
-      "attributes": [
-        "crunchy"
-      ]
-    },
-    {
       "id": 1307228,
       "cityId": "quynhon",
       "cityName": "Quy Nhơn",
@@ -133414,5 +133245,5 @@
       ]
     }
   ],
-  "total": 1695
+  "total": 1693
 }

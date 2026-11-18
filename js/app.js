@@ -1366,7 +1366,10 @@ class FoodApp {
 
     // Lọc bỏ quán đã đóng cửa: nếu quán đã đóng cửa thì không gợi ý nữa
     matchedMood = matchedMood.filter(food => {
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
+      if (!food) return false;
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
 
@@ -1376,8 +1379,10 @@ class FoodApp {
       const weights = matrix[moodId] || {};
       const matchedIds = new Set(matchedMood.map(f => f.id));
       const candidates = pool.filter(f => {
-        if (matchedIds.has(f.id)) return false;
-        const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime, now) : { isOpen: true };
+        if (!f || matchedIds.has(f.id)) return false;
+        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+        const status = window.getRestaurantStatus ? window.getRestaurantStatus(f, now) : { isOpen: true };
         return Boolean(status && status.isOpen);
       });
       candidates.sort((a, b) => {

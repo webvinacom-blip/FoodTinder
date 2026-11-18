@@ -83,8 +83,12 @@ CLOSED_BLACKLIST = [
     "đất võ",
     "chị ba trà", "chi ba tra",
     "ăn vặt ngô mây", "an vat ngo may",
-    "đã đóng cửa", "ngừng hoạt động", "permanently closed", "closed permanently",
-    "nghỉ bán", "sang nhượng"
+    "tocotoco & kem tràng tiền", "tocotoco & kem trang tien", "tocotoco go kim cuc", "tocotoco - go kim cúc", "kem tràng tiền - go kim cúc", "kem trang tien - go kim cuc",
+    "sandwich land - big c quy nhơn", "sandwich land",
+    "đã đóng cửa", "đóng cửa", "ngừng hoạt động", "ngừng kinh doanh", "ngưng hoạt động", "ngưng kinh doanh", "ngưng phục vụ",
+    "permanently closed", "closed permanently", "out of business",
+    "tạm nghỉ", "tạm ngừng", "tạm ngưng", "quán tạm nghỉ", "nghỉ bán vĩnh viễn", "nghỉ bán", "nghỉ hẳn",
+    "chuyển địa điểm", "đã chuyển", "dời địa điểm", "trả mặt bằng", "sang quán", "sang nhượng", "thanh lý quán", "dẹp tiệm", "đã dẹp"
 ]
 
 NON_DINING_KEYWORDS = [

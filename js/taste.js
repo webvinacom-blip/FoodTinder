@@ -439,9 +439,12 @@ class TasteManager {
       displayFoods = cityFoods.filter(f => this.isLocationSpecialty(f, currentCity));
     }
 
-    // Lọc bỏ các quán đã đóng cửa: nếu quán đã đóng cửa thì không gợi ý nữa
+    // Lọc bỏ các quán đã đóng cửa hoặc ngừng kinh doanh
     displayFoods = displayFoods.filter(f => {
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
+      if (!f) return false;
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
 

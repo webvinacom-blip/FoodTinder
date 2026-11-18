@@ -22,9 +22,12 @@ class TinderSwipeManager {
 
   loadCards(foods) {
     const list = Array.isArray(foods) ? foods : [];
-    // Nếu quán đã đóng cửa thì không hiện ở thẻ quẹt nữa
+    // Nếu quán đã đóng cửa hoặc ngừng kinh doanh thì tuyệt đối không hiện ở thẻ quẹt
     const openFoods = list.filter(food => {
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true };
+      if (!food) return false;
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
     this.deck = openFoods;
@@ -41,8 +44,18 @@ class TinderSwipeManager {
     // Bỏ qua các quán đã đóng cửa nếu còn tồn tại trong deck
     while (this.currentIndex < this.deck.length) {
       const currentFood = this.deck[this.currentIndex];
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(currentFood.openTime) : { isOpen: true };
-      if (status && status.isOpen) break;
+      if (currentFood) {
+        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(currentFood)) {
+          this.currentIndex++;
+          continue;
+        }
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(currentFood)) {
+          this.currentIndex++;
+          continue;
+        }
+        const status = window.getRestaurantStatus ? window.getRestaurantStatus(currentFood) : { isOpen: true };
+        if (status && status.isOpen) break;
+      }
       this.currentIndex++;
     }
 
