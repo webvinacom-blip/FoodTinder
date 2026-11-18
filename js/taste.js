@@ -846,7 +846,7 @@ class TasteManager {
             </button>
 
             <!-- 3. Đặt ShopeeFood hoặc Chỉ đường -->
-            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? (
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
               status.isOpen ? `
               <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
                 class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"

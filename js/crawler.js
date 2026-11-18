@@ -541,15 +541,9 @@ class CrawlerManager {
           { name: `Phần đặc biệt ${parsedRest}`, price: d.price.split(' - ')[1] || "95.000đ", highlight: false },
           { name: "Trà đá / Nước suối", price: "10.000đ", highlight: false }
         ],
-        deliveryPlatform: "ShopeeFood",
-        deliveryUrl: `https://shopeefood.vn/${citySlug}/${restSlug}`,
+        deliveryPlatform: "Tại chỗ & Mang về",
+        hasShopeeDelivery: false,
         deliverySearchUrl: `https://shopeefood.vn/${citySlug}/danh-sach-dia-diem-phuc-vu-giao-hang?q=${encodeURIComponent(parsedRest)}`,
-        deliveryTime: "20 - 30 phút",
-        deliveryFee: "16.000đ (Áp mã Freeship Xtra)",
-        deliveryFeeVal: 16000,
-        deliveryPromo: "Mã SHOPEE30K giảm 30.000đ",
-        deliveryPromoCode: "SHOPEE30K",
-        deliveryRating: "4.8 ⭐ (1.000+ đã bán)"
       });
     });
 

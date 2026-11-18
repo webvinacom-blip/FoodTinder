@@ -232,7 +232,7 @@ class FoodMapManager {
           const targetFoods = (cityFoods && cityFoods.length > 0) ? cityFoods : APP_DATA.foods;
           return targetFoods.map(food => {
             const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
-            const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+            const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
             return `
             <div id="sheet-food-${food.id}" onclick="window.mapManager.selectFood(${food.id})" 
               class="snap-center shrink-0 w-44 bg-white border border-stone-200 rounded-2xl p-2.5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between ${status.isOpen ? '' : 'is-closed'}">

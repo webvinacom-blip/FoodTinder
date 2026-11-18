@@ -575,7 +575,7 @@ class FoodApp {
           </button>
 
           <!-- 3. Đặt ShopeeFood (chỉ hiện khi quán có trên ShopeeFood) -->
-          ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? (
+          ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
             status.isOpen ? `
             <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
               class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
@@ -2116,7 +2116,7 @@ class FoodApp {
         if (!st.isOpen) return false;
       }
       if (filterState.shopeeOnly) {
-        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
         if (!hasShopee) return false;
       }
       if (filterState.highRatingOnly) {
@@ -2337,7 +2337,7 @@ class FoodApp {
 
       // 5. Có trên ShopeeFood
       if (this.moodFilter?.shopeeOnly) {
-        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+        const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
         if (!hasShopee) return false;
       }
 
@@ -2554,7 +2554,7 @@ class FoodApp {
             <span class="${status.isOpen ? 'text-emerald-600 font-semibold' : 'text-stone-400'} text-[9px]">${status.detailText}</span>
           </div>
           <div class="mt-1.5 flex gap-1">
-            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? (
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
               status.isOpen ? `
               <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
                 class="w-full py-1 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white text-[9.5px] font-bold rounded-md flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
@@ -2695,7 +2695,7 @@ class FoodApp {
             </button>
 
             <!-- 3. Đặt ShopeeFood hoặc Chỉ đường -->
-            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? (
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
               status.isOpen ? `
               <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
                 class="flex-1 h-7.5 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-lg text-[10.5px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
@@ -3207,7 +3207,7 @@ class FoodApp {
         `}
 
         <!-- ShopeeFood Delivery Section hoặc Thưởng thức tại quán -->
-        ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'))) ? `
+        ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? `
         <div class="bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/70 border border-orange-200/90 rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-2">
@@ -3899,7 +3899,7 @@ class FoodApp {
     const food = APP_DATA.foods.find(f => f.id === foodId);
     if (!food) return;
 
-    const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+    const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
     if (!hasShopee) {
       this.showToast(`📍 Quán ${food.restaurant} phục vụ trực tiếp tại chỗ, không có trên ShopeeFood!`);
       this.openMapWithFood(foodId);
@@ -3925,7 +3925,7 @@ class FoodApp {
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
     const promoCode = food.deliveryPromoCode || "SHOPEE25K";
-    const deliveryUrl = food.deliveryUrl || `https://shopeefood.vn/binh-dinh/${food.restaurant ? encodeURIComponent(food.restaurant) : 'quan-an'}`;
+    const deliveryUrl = (food.deliveryUrl && food.isShopeeVerified) ? food.deliveryUrl : (food.deliverySearchUrl || `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(food.restaurant || food.name)}`);
 
     content.innerHTML = `
       <div class="relative bg-white max-h-[85vh] flex flex-col">
@@ -4038,7 +4038,13 @@ class FoodApp {
       window.authManager.trackStat('shopeeOrders', 1);
     }
     this.showToast(`🛵 Đang mở ShopeeFood đặt món: ${dishName}!`);
-    window.open(url, '_blank');
+
+    let targetUrl = url;
+    // Đảm bảo không bao giờ mở trang 404 "Bài viết không tồn tại"
+    if (!targetUrl || (targetUrl.includes('/binh-dinh/') && !targetUrl.includes('danh-sach-dia-diem-phuc-vu-giao-hang') && !targetUrl.includes('?q='))) {
+      targetUrl = `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(restaurant || dishName)}`;
+    }
+    window.open(targetUrl, '_blank');
   }
 
   copyVoucher(code) {

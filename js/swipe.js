@@ -96,7 +96,7 @@ class TinderSwipeManager {
       const actualIdx = visibleCards.length - 1 - reverseIdx;
       const isTop = actualIdx === 0;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
-      const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/'));
+      const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
       const willReturnCount = (window.app && typeof window.app.getWillReturnCount === 'function')
         ? window.app.getWillReturnCount(food.id)
         : (food.reviewCount ? Math.floor(food.reviewCount * 1.5) : 38);
