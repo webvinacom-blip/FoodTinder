@@ -2858,6 +2858,20 @@ class FoodApp {
     this.updateBentoStats();
     // Update swipe sidebar panel
     this.updateSwipeLikedPanel();
+
+    // Cập nhật danh hiệu và icon avatar nếu có thay đổi
+    if (window.authManager) {
+      if (typeof window.authManager.syncUI === 'function') {
+        window.authManager.syncUI();
+      }
+      if (typeof window.authManager.updateProfileModalBadge === 'function') {
+        window.authManager.updateProfileModalBadge();
+      }
+      const titlesModal = document.getElementById('titles-modal');
+      if (titlesModal && !titlesModal.classList.contains('hidden') && typeof window.authManager.renderTitlesList === 'function') {
+        window.authManager.renderTitlesList();
+      }
+    }
   }
 
   updateSwipeLikedPanel(newFood) {

@@ -1325,7 +1325,7 @@
 
       <div class="relative inline-block mx-auto mb-2">
         <img id="profile-modal-avatar" src="" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg mx-auto" />
-        <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-emerald-500 border-2 border-white shadow-xs"></span>
+        <span id="profile-modal-avatar-badge" onclick="window.authManager.openTitlesModal()" class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md border-2 border-white flex items-center justify-center text-sm cursor-pointer hover:scale-110 active:scale-95 transition" title="Danh hiệu của bạn (Bấm để xem tất cả)">🌱</span>
       </div>
 
       <div class="flex items-center justify-center gap-1.5">
@@ -1335,9 +1335,6 @@
         </button>
       </div>
       <p id="profile-modal-phone" class="text-xs text-rose-100 mt-0.5 font-mono"></p>
-      <div class="mt-2">
-        <span id="profile-modal-provider-badge"></span>
-      </div>
     </div>
 
     <!-- Body Stats & Actions -->
@@ -1347,9 +1344,15 @@
           <span class="text-[10px] text-stone-500 block">❤️ Món đã thích</span>
           <strong id="profile-modal-liked-count" class="text-sm font-extrabold text-rose-600 block mt-0.5">0 món</strong>
         </div>
-        <div class="p-2.5 rounded-2xl bg-amber-50/80 border border-amber-100">
-          <span class="text-[10px] text-stone-500 block">👑 Danh hiệu</span>
-          <strong class="text-sm font-extrabold text-amber-700 block mt-0.5">Thực Thần Nẫu</strong>
+        <div onclick="window.authManager.openTitlesModal()" class="p-2.5 rounded-2xl bg-amber-50/80 hover:bg-amber-100/90 border border-amber-200 transition cursor-pointer group active:scale-95 shadow-2xs text-center" title="Bấm để xem và chọn danh hiệu">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] text-stone-500 block">👑 Danh hiệu</span>
+            <span class="text-[10px] text-amber-600 font-bold group-hover:underline flex items-center gap-0.5">Tất cả ›</span>
+          </div>
+          <strong id="profile-modal-title-text" class="text-xs sm:text-sm font-extrabold text-amber-700 block mt-0.5 flex items-center justify-center gap-1 truncate">
+            <span id="profile-modal-title-icon" class="text-base shrink-0">🌱</span>
+            <span id="profile-modal-title-name" class="truncate">Người Mới Đến</span>
+          </strong>
         </div>
       </div>
 
@@ -1379,6 +1382,59 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     TITLES MODAL: DANH SÁCH DANH HIỆU HỆ THỐNG
+══════════════════════════════════════════ -->
+<div id="titles-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-md mx-3 sm:mx-4 overflow-hidden flex flex-col max-h-[90vh]">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white p-4.5 sm:p-5 relative shrink-0">
+      <button onclick="window.authManager.closeTitlesModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-xs cursor-pointer">
+        ✕
+      </button>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl shadow-inner shrink-0">
+          🏆
+        </div>
+        <div>
+          <h3 class="font-black text-lg text-white leading-tight">Danh Hiệu Ẩm Thực</h3>
+          <p class="text-xs text-amber-100 mt-0.5">Icon định danh riêng sẽ hiển thị ngay trên Avatar</p>
+        </div>
+      </div>
+
+      <!-- Current Badge Banner -->
+      <div class="mt-3.5 p-2.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="relative shrink-0">
+            <img id="titles-modal-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80" alt="Avatar" class="w-9 h-9 rounded-full object-cover border-2 border-white shadow-xs" />
+            <span id="titles-modal-user-badge" class="absolute -bottom-1 -right-1 w-4.5 h-4.5 rounded-full bg-white shadow-2xs border border-amber-200 flex items-center justify-center text-[10px] leading-none">🌱</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-[10px] text-white/80 block leading-tight">Đang đeo trên Avatar</span>
+            <strong id="titles-modal-user-current" class="text-xs text-white font-extrabold truncate block">🌱 Người Mới Đến</strong>
+          </div>
+        </div>
+        <div class="text-right shrink-0">
+          <span class="text-[10px] text-white/80 block">Đã tích lũy</span>
+          <span id="titles-modal-user-liked" class="text-xs font-black text-amber-200">0 món</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body Titles List (Scrollable) -->
+    <div class="p-4 overflow-y-auto space-y-2.5 flex-1 max-h-[50vh] sm:max-h-[55vh]" id="titles-modal-list">
+      <!-- Rendered dynamically by window.authManager.renderTitlesList() -->
+    </div>
+
+    <!-- Footer -->
+    <div class="p-3.5 bg-stone-50 border-t border-stone-200 text-center shrink-0">
+      <button onclick="window.authManager.closeTitlesModal()" class="w-full py-2.5 px-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-extrabold transition cursor-pointer">
+        Đóng danh sách
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- Toast -->
 <div id="app-toast" style="opacity:0;translate:0 -8px;position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:999;pointer-events:none;transition:opacity .3s,translate .3s;">
   <div class="bg-stone-900/90 backdrop-blur-md text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-stone-700">
@@ -1404,9 +1460,9 @@
 <script src="js/map.js?v=1795090000"></script>
 <script src="js/reels.js?v=1794930000"></script>
 <script src="js/chat.js?v=1794970000"></script>
-<script src="js/auth.js?v=1795110000"></script>
+<script src="js/auth.js?v=1795120000"></script>
 <script src="js/data-loader.js?v=2.2.0"></script>
-<script src="js/app.js?v=1795110000"></script>
+<script src="js/app.js?v=1795120000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>

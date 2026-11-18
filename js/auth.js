@@ -23,8 +23,62 @@ class AuthManager {
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&h=200&q=80'
     ];
 
+    this.titles = AuthManager.SYSTEM_TITLES;
+
     this.init();
   }
+
+  // Danh sách các danh hiệu hệ thống FoodTinder với Icon định danh riêng biệt
+  static SYSTEM_TITLES = [
+    {
+      id: 'newbie',
+      name: 'Người Mới Đến',
+      icon: '🌱',
+      minLikes: 0,
+      desc: 'Bắt đầu bước chân vào thiên đường ẩm thực Quy Nhơn',
+      tag: 'Tập sự'
+    },
+    {
+      id: 'snack_lover',
+      name: 'Tín Đồ Ăn Vặt',
+      icon: '🍢',
+      minLikes: 3,
+      desc: 'Mê mẩn chả ram tôm đất, nem nướng, trứng vịt lộn & bánh tráng trứng',
+      tag: 'Ăn Vặt'
+    },
+    {
+      id: 'foodie_quynhon',
+      name: 'Sành Ăn Quy Nhơn',
+      icon: '⭐',
+      minLikes: 7,
+      desc: 'Thuộc lòng bún chả cá, bánh xèo tôm nhảy, bánh hỏi lòng heo ngon nức tiếng',
+      tag: 'Sành Ăn'
+    },
+    {
+      id: 'seafood_master',
+      name: 'Đại Hiệp Hải Sản',
+      icon: '🦀',
+      minLikes: 15,
+      desc: 'Chuyên gia càn quét cua ghẹ, ốc vú nàng, sò điệp, mực nhảy đường biển',
+      tag: 'Hải Sản'
+    },
+    {
+      id: 'food_god',
+      name: 'Thực Thần Nẫu',
+      icon: '👑',
+      minLikes: 25,
+      desc: 'Bậc thầy ẩm thực Bình Định, không ngõ ngách nào chưa từng ghé',
+      tag: 'Thực Thần'
+    },
+    {
+      id: 'legend',
+      name: 'Huyền Thoại Ẩm Thực',
+      icon: '🔥',
+      minLikes: 40,
+      desc: 'Cảnh giới ẩm thực tối cao của cộng đồng FoodTinder',
+      tag: 'Huyền Thoại'
+    }
+  ];
 
   init() {
     if (document.readyState === 'loading') {
@@ -78,6 +132,7 @@ class AuthManager {
         name: user.name || 'Người dùng',
         phone: user.phone,
         avatar: user.avatar || this.defaultAvatars[0],
+        titleId: user.titleId || null,
         biometricEnabled: user.biometricEnabled !== false, // Mặc định bật sinh trắc học
         lastLogin: new Date().toISOString()
       };
@@ -417,6 +472,7 @@ class AuthManager {
       name: customName,
       phone: this.pendingPhone,
       avatar: existing ? existing.avatar : randomAvatar,
+      titleId: existing ? existing.titleId : null,
       authProvider: 'phone',
       biometricEnabled: true, // Tự động kích hoạt đăng nhập khuôn mặt/vân tay cho lần sau
       createdAt: existing ? existing.createdAt : new Date().toISOString(),
@@ -473,7 +529,6 @@ class AuthManager {
     const avatarEl = document.getElementById('profile-modal-avatar');
     const nameEl = document.getElementById('profile-modal-name');
     const phoneEl = document.getElementById('profile-modal-phone');
-    const badgeEl = document.getElementById('profile-modal-provider-badge');
     const likedCountEl = document.getElementById('profile-modal-liked-count');
     const bioToggleText = document.getElementById('profile-biometric-toggle-text');
 
@@ -481,14 +536,11 @@ class AuthManager {
     if (nameEl) nameEl.textContent = user.name || 'Người dùng';
     if (phoneEl) phoneEl.textContent = this.formatPhone(user.phone);
     if (bioToggleText) bioToggleText.textContent = user.biometricEnabled !== false ? 'Đã bật' : 'Đã tắt';
-    
-    if (badgeEl) {
-      badgeEl.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10.5px] font-black bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-2xs';
-      badgeEl.innerHTML = `<span>📱 Phone SMS & 👆 Face ID / Vân Tay</span>`;
-    }
 
     const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
     if (likedCountEl) likedCountEl.textContent = `${likedCount} món`;
+
+    this.updateProfileModalBadge();
 
     modal.classList.remove('hidden');
     const sheet = modal.querySelector('.modal-sheet');
@@ -518,23 +570,204 @@ class AuthManager {
       this.saveSession(this.currentUser);
       const nameEl = document.getElementById('profile-modal-name');
       if (nameEl) nameEl.textContent = this.currentUser.name;
+      this.syncUI();
       this.showToast(`✨ Đã cập nhật tên hiển thị thành công: ${this.currentUser.name}!`);
     }
   }
 
-  // Đồng bộ giao diện topbar, sidebar, chào hỏi
-  syncUI() {
+  // ══════════════════════════════════════════
+  // HỆ THỐNG DANH HIỆU ẨM THỰC FOODTINDER
+  // ══════════════════════════════════════════
+
+  // Lấy danh hiệu hiện tại của người dùng (tính theo số món đã thích hoặc danh hiệu đã chọn)
+  getCurrentUserTitle() {
+    const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
     const user = this.currentUser;
 
-    // 1. Cập nhật Topbar button: Nút Đăng nhập vs Avatar người dùng
+    const unlocked = this.titles.filter(t => likedCount >= t.minLikes);
+
+    // Nếu người dùng đã chọn một danh hiệu cụ thể trong các danh hiệu đã mở khóa
+    if (user && user.titleId) {
+      const chosen = this.titles.find(t => t.id === user.titleId);
+      if (chosen && likedCount >= chosen.minLikes) {
+        return chosen;
+      }
+    }
+
+    // Mặc định chọn danh hiệu cao nhất đã mở khóa
+    if (unlocked.length > 0) {
+      return unlocked[unlocked.length - 1];
+    }
+    return this.titles[0];
+  }
+
+  // Cập nhật huy hiệu trên avatar và card danh hiệu trong modal hồ sơ
+  updateProfileModalBadge() {
+    const currentTitle = this.getCurrentUserTitle();
+    const avatarBadge = document.getElementById('profile-modal-avatar-badge');
+    if (avatarBadge) {
+      avatarBadge.textContent = currentTitle.icon;
+      avatarBadge.title = `Danh hiệu: ${currentTitle.name} (Bấm để xem tất cả)`;
+    }
+
+    const titleIconEl = document.getElementById('profile-modal-title-icon');
+    const titleNameEl = document.getElementById('profile-modal-title-name');
+    if (titleIconEl) titleIconEl.textContent = currentTitle.icon;
+    if (titleNameEl) titleNameEl.textContent = currentTitle.name;
+  }
+
+  // Chọn danh hiệu để hiển thị trên avatar
+  selectTitle(titleId) {
+    const title = this.titles.find(t => t.id === titleId);
+    if (!title) return;
+
+    const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
+    if (likedCount < title.minLikes) {
+      this.showToast(`🔒 Bạn cần thích thêm ${title.minLikes - likedCount} món nữa để mở khóa danh hiệu này!`);
+      return;
+    }
+
+    if (this.currentUser) {
+      this.currentUser.titleId = titleId;
+      this.saveSession(this.currentUser);
+    }
+
+    this.renderTitlesList();
+    this.syncUI();
+    this.updateProfileModalBadge();
+    this.showToast(`✨ Đã kích hoạt danh hiệu ${title.icon} ${title.name}! Icon đã hiển thị trên avatar.`);
+    if (window.soundFX && window.soundFX.playMatch) window.soundFX.playMatch();
+  }
+
+  // Mở modal danh sách danh hiệu hệ thống
+  openTitlesModal() {
+    const modal = document.getElementById('titles-modal');
+    if (!modal) return;
+
+    this.renderTitlesList();
+
+    modal.classList.remove('hidden');
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) {
+      sheet.classList.add('translate-y-full');
+      requestAnimationFrame(() => sheet.classList.remove('translate-y-full'));
+    }
+
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+  }
+
+  closeTitlesModal() {
+    const modal = document.getElementById('titles-modal');
+    if (!modal) return;
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) sheet.classList.add('translate-y-full');
+    setTimeout(() => modal.classList.add('hidden'), 250);
+  }
+
+  // Render danh sách danh hiệu hệ thống
+  renderTitlesList() {
+    const container = document.getElementById('titles-modal-list');
+    if (!container) return;
+
+    const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
+    const currentTitle = this.getCurrentUserTitle();
+    const user = this.currentUser;
+
+    const summaryLiked = document.getElementById('titles-modal-user-liked');
+    const summaryTitle = document.getElementById('titles-modal-user-current');
+    const summaryAvatar = document.getElementById('titles-modal-user-avatar');
+    const summaryBadge = document.getElementById('titles-modal-user-badge');
+
+    if (summaryLiked) summaryLiked.textContent = `${likedCount} món`;
+    if (summaryTitle) summaryTitle.textContent = `${currentTitle.icon} ${currentTitle.name}`;
+    if (summaryAvatar) summaryAvatar.src = (user && user.avatar) ? user.avatar : this.defaultAvatars[0];
+    if (summaryBadge) summaryBadge.textContent = currentTitle.icon;
+
+    container.innerHTML = this.titles.map(t => {
+      const isUnlocked = likedCount >= t.minLikes;
+      const isEquipped = currentTitle.id === t.id;
+      const percent = t.minLikes === 0 ? 100 : Math.min(100, Math.round((likedCount / t.minLikes) * 100));
+
+      return `
+        <div class="p-3.5 rounded-2xl border transition ${
+          isEquipped 
+            ? 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-400/30 shadow-xs' 
+            : isUnlocked 
+              ? 'bg-white hover:bg-stone-50 border-stone-200' 
+              : 'bg-stone-50/70 border-stone-200/60 opacity-80'
+        }">
+          <div class="flex items-start gap-3">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shrink-0 shadow-xs border ${
+              isEquipped 
+                ? 'bg-gradient-to-br from-amber-200 to-yellow-100 border-amber-300 ring-2 ring-amber-300' 
+                : isUnlocked 
+                  ? 'bg-amber-50 border-amber-200' 
+                  : 'bg-stone-200/70 border-stone-200 grayscale'
+            }">
+              ${t.icon}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center justify-between gap-1">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h4 class="font-extrabold text-sm ${isUnlocked ? 'text-stone-900' : 'text-stone-500'}">${t.name}</h4>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                    isUnlocked ? 'bg-amber-100 text-amber-800' : 'bg-stone-200 text-stone-500'
+                  }">${t.tag}</span>
+                </div>
+                ${isEquipped ? `
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 text-white text-[10.5px] font-black shrink-0 shadow-xs">
+                    <span>👑 Đang dùng</span>
+                  </span>
+                ` : isUnlocked ? `
+                  <button onclick="window.authManager.selectTitle('${t.id}')" class="px-2.5 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-[10.5px] font-extrabold transition cursor-pointer shrink-0">
+                    Đeo danh hiệu
+                  </button>
+                ` : `
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-500 text-[10px] font-bold shrink-0">
+                    <span>🔒 Cần thêm ${t.minLikes - likedCount} món</span>
+                  </span>
+                `}
+              </div>
+              <p class="text-xs text-stone-500 mt-1 leading-snug">${t.desc}</p>
+              
+              <!-- Progress bar -->
+              <div class="mt-2.5">
+                <div class="flex items-center justify-between text-[10px] text-stone-500 mb-1 font-semibold">
+                  <span>Yêu cầu: ${t.minLikes === 0 ? 'Mở khóa sẵn' : `${t.minLikes} món yêu thích`}</span>
+                  <span>${likedCount}/${t.minLikes} món (${percent}%)</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-stone-200/70 overflow-hidden">
+                  <div class="h-full rounded-full transition-all duration-300 ${
+                    isUnlocked ? 'bg-gradient-to-r from-amber-400 to-yellow-500' : 'bg-stone-400'
+                  }" style="width: ${percent}%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ══════════════════════════════════════════
+  // ĐỒNG BỘ GIAO DIỆN TOPBAR, SIDEBAR & AVATAR
+  // ══════════════════════════════════════════
+  syncUI() {
+    const user = this.currentUser;
+    const currentTitle = this.getCurrentUserTitle();
+
+    // 1. Cập nhật Topbar button: Nút Đăng nhập vs Avatar người dùng có icon danh hiệu
     const topbarAuthContainer = document.getElementById('topbar-auth-container');
     if (topbarAuthContainer) {
       if (user) {
         topbarAuthContainer.innerHTML = `
           <button onclick="window.authManager.openProfileModal()" 
             class="flex items-center gap-1.5 p-1 pr-2.5 rounded-full bg-stone-50 hover:bg-stone-100 border border-stone-200 transition cursor-pointer shadow-2xs active:scale-95 group" 
-            title="Tài khoản: ${user.name} • Bấm để xem thông tin">
-            <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-6 h-6 rounded-full object-cover border border-orange-300 shrink-0" />
+            title="Tài khoản: ${user.name} • Danh hiệu: ${currentTitle.icon} ${currentTitle.name} (Bấm để xem)">
+            <div class="relative shrink-0 flex items-center justify-center">
+              <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-6 h-6 rounded-full object-cover border border-orange-300 shrink-0" />
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-white shadow-2xs border border-stone-200 flex items-center justify-center text-[8.5px] leading-none" title="${currentTitle.name}">${currentTitle.icon}</span>
+            </div>
             <span class="text-xs font-bold text-stone-800 max-w-[85px] sm:max-w-[120px] truncate group-hover:text-rose-600 transition">${user.name}</span>
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
           </button>
@@ -568,17 +801,20 @@ class AuthManager {
       }
     }
 
-    // 2. Cập nhật Sidebar Chào hỏi
+    // 2. Cập nhật Sidebar Chào hỏi với Avatar mang icon danh hiệu
     const greetingEl = document.getElementById('header-greeting');
     if (greetingEl) {
       if (user) {
         greetingEl.innerHTML = `
-          <div class="flex items-center gap-2 cursor-pointer p-1.5 -m-1.5 rounded-xl hover:bg-stone-50 transition" onclick="window.authManager.openProfileModal()" title="Bấm để xem hồ sơ tài khoản">
-            <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-9 h-9 rounded-full object-cover border-2 border-orange-300 shadow-xs shrink-0" />
+          <div class="flex items-center gap-2.5 cursor-pointer p-1.5 -m-1.5 rounded-xl hover:bg-stone-50 transition" onclick="window.authManager.openProfileModal()" title="Bấm để xem hồ sơ tài khoản">
+            <div class="relative shrink-0 flex items-center justify-center">
+              <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-9 h-9 rounded-full object-cover border-2 border-orange-300 shadow-xs shrink-0" />
+              <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white shadow-xs border border-stone-200 flex items-center justify-center text-xs leading-none" title="${currentTitle.name}">${currentTitle.icon}</span>
+            </div>
             <div class="min-w-0 flex-1 leading-tight">
-              <div class="flex items-center gap-1">
+              <div class="flex items-center gap-1.5">
                 <span class="font-extrabold text-stone-900 text-sm truncate">${user.name}</span>
-                <span class="text-xs shrink-0" title="Đã kích hoạt Face ID / Vân tay">👆</span>
+                <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 font-extrabold shrink-0" title="Danh hiệu: ${currentTitle.name}">${currentTitle.icon}</span>
               </div>
               <p class="text-[10.5px] text-stone-500 truncate mt-0.5">${this.formatPhone(user.phone)}</p>
             </div>
