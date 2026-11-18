@@ -679,12 +679,19 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
     }
   }, [itemsList.length]);
 
-  // 2. Bắt lỗi onError từ YouTube iframe qua postMessage
+  // 2. Bắt sự kiện kết thúc video (AutoNext) và lỗi onError từ YouTube iframe qua postMessage
   useEffect(() => {
     const handleMessage = (e) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        if (data && data.event === 'onError') {
+        if (!data) return;
+
+        // Tự động chuyển tiếp khi video chạy hết (YT.PlayerState.ENDED = 0)
+        const isEnded = 
+          (data.event === 'onStateChange' && (data.info === 0 || data.data === 0)) ||
+          (data.event === 'infoDelivery' && data.info && data.info.playerState === 0);
+
+        if (isEnded || data.event === 'onError') {
           handlePlayerError(currentIndex);
         }
       } catch (err) {}
@@ -776,7 +783,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   {isCurrent && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${item.video_id}&enablejsapi=1`}
+                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"

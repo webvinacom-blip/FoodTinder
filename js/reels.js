@@ -783,7 +783,22 @@ class ReelsManager {
     window.addEventListener('message', (e) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        if (data && data.event === 'onError') {
+        if (!data) return;
+
+        // 1. TỰ ĐỘNG NEXT VIDEO KHI CHẠY HẾT (KHÔNG LOAD LẠI VIDEO CŨ)
+        // YouTube API bắn onStateChange (0) hoặc infoDelivery (playerState: 0) khi video phát xong
+        const isEnded = 
+          (data.event === 'onStateChange' && (data.info === 0 || data.data === 0)) ||
+          (data.event === 'infoDelivery' && data.info && data.info.playerState === 0);
+
+        if (isEnded) {
+          console.log('[Reels AutoNext] Video chạy hết -> Tự động chuyển tiếp sang video tiếp theo... ⏭️');
+          this.skipToNext();
+          return;
+        }
+
+        // 2. Bắt lỗi video chết / bị xóa / chặn nhúng
+        if (data.event === 'onError') {
           console.warn('[QA DeadLink Handler] YouTube onError:', data);
           this.handleVideoError(this.currentIndex, data.info);
         }
@@ -1267,9 +1282,9 @@ class ReelsManager {
             iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA:
-            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=1 & playlist=VIDEO_ID & enablejsapi=1
-            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (loop=0 để bắt sự kiện kết thúc chuyển sang video mới):
+            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=0 & enablejsapi=1
+            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -1278,8 +1293,15 @@ class ReelsManager {
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             iframe.allowFullscreen = true;
 
+            const sendListening = () => {
+              if (iframe.contentWindow) {
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: idx, channel: 'widget' }), '*');
+              }
+            };
+
             const sendPlay = () => {
               if (iframe.contentWindow) {
+                sendListening();
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
                 const muteCmd = this.muted ? 'mute' : 'unMute';
                 iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
@@ -1298,6 +1320,7 @@ class ReelsManager {
             setTimeout(sendPlay, 600);
           } else if (iframe.contentWindow) {
             const sendPlay = () => {
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: idx, channel: 'widget' }), '*');
               iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
               const muteCmd = this.muted ? 'mute' : 'unMute';
               iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
@@ -1313,15 +1336,24 @@ class ReelsManager {
             video = document.createElement('video');
             video.src = videoUrl;
             video.preload = 'auto'; // Ưu tiên tải tối đa băng thông
-            video.loop = true;
+            video.loop = false; // Tắt loop để tự động next khi hết video
             video.muted = this.muted;
             video.playsInline = true;
             video.className = 'w-full h-full object-cover pointer-events-none';
+            video.onended = () => {
+              console.log('[Reels AutoNext] Video HTML5 chạy hết. Tự động chuyển tiếp... ⏭️');
+              this.skipToNext();
+            };
             mountBox.innerHTML = '';
             mountBox.appendChild(video);
           } else {
             video.preload = 'auto';
+            video.loop = false;
             video.muted = this.muted;
+            video.onended = () => {
+              console.log('[Reels AutoNext] Video HTML5 chạy hết. Tự động chuyển tiếp... ⏭️');
+              this.skipToNext();
+            };
           }
           const playPromise = video.play();
           if (playPromise !== undefined) {
@@ -1490,9 +1522,22 @@ class ReelsManager {
   }
 
   skipToNext() {
-    if (this.currentIndex < this.items.length - 1) {
-      this.currentIndex++;
+    if (this.isSkipping) return;
+    this.isSkipping = true;
+    setTimeout(() => { this.isSkipping = false; }, 900);
+
+    const nextIndex = this.currentIndex + 1;
+    if (nextIndex < this.items.length) {
+      this.currentIndex = nextIndex;
       this.scrollToIndex(this.currentIndex);
+    } else {
+      // Khi đã ở video cuối cùng của danh sách hiện có, tải tiếp batch mới rồi chuyển tiếp
+      this.loadNextBatch().then(() => {
+        if (this.currentIndex + 1 < this.items.length) {
+          this.currentIndex++;
+          this.scrollToIndex(this.currentIndex);
+        }
+      });
     }
   }
 
