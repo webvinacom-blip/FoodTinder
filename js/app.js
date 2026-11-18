@@ -1367,7 +1367,22 @@ class FoodApp {
     const curCityName = APP_DATA?.currentCity?.name;
     let pool = APP_DATA?.foods || [];
     if (curCityId || curCityName) {
-      const cityPool = pool.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
+      const cId = (curCityId || '').toLowerCase();
+      const cName = (curCityName || '').toLowerCase();
+      const cityPool = pool.filter(f => {
+        const fCityId = (f.cityId || '').toLowerCase();
+        const fCityName = (f.cityName || '').toLowerCase();
+        const fAddress = (f.address || '').toLowerCase();
+
+        const isQnCity = cId.includes('quynhon') || cId.includes('binhdinh') || cName.includes('quy nhơn') || cName.includes('bình định');
+        const isQnFood = fCityId.includes('quynhon') || fCityId.includes('binhdinh') || fCityName.includes('quy nhơn') || fAddress.includes('quy nhơn') || fAddress.includes('bình định');
+        if (isQnCity && isQnFood) return true;
+
+        if (cId && fCityId && cId === fCityId) return true;
+        if (fCityName && cName && (fCityName.includes(cName) || cName.includes(fCityName))) return true;
+        if (fAddress && cName && fAddress.includes(cName)) return true;
+        return false;
+      });
       if (cityPool.length > 0) pool = cityPool;
     }
     const moodId = this.currentMood;

@@ -32,6 +32,37 @@ class TasteManager {
     this.renderLocationRecommendations();
   }
 
+  // Kiểm tra chính xác món ăn có phải hải sản hay không (không bị nhầm bởi #Đặc_sản)
+  isFoodSeafood(food) {
+    if (!food) return false;
+    if (food.category === 'seafood') return true;
+    const name = (food.name || '').toLowerCase();
+    const rest = (food.restaurant || '').toLowerCase();
+    
+    // Kiểm tra tên món hoặc tên quán có chứa hải sản rõ ràng
+    const seafoodNames = [
+      'hải sản', 'tôm', 'cua biển', 'cua huỳnh đế', 'mực', 'ốc', 'sứa', 'ghẹ',
+      'hàu', 'bạch tuộc', 'sò', 'nghêu', 'cá tà ma', 'chả cá', 'cá ngừ', 'cá bớp',
+      'cá hồi', 'cá thu', 'cá lóc', 'cá diêu hồng', 'cá bống', 'cá kèo'
+    ];
+    if (seafoodNames.some(w => name.includes(w) || rest.includes(w))) return true;
+
+    // Kiểm tra tags: đảm bảo không nhầm #Đặc_sản thành hải sản
+    if (Array.isArray(food.tags)) {
+      for (const rawTag of food.tags) {
+        const t = String(rawTag).toLowerCase();
+        if (t.includes('đặc_sản') || t.includes('đặc sản')) continue;
+        if (t.includes('hải_sản') || t.includes('hải sản') || t.includes('tôm') || t.includes('cua') || 
+            t.includes('mực') || t.includes('ốc') || t.includes('sứa') || t.includes('ghẹ') || 
+            t.includes('hàu') || t.includes('bạch_tuộc') || t.includes('sò') || t.includes('nghêu') || 
+            t.includes('cá_tà_ma') || t.includes('chả_cá')) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   isFoodAllowedByPreferences(food, customPrefs = null) {
     if (!food) return false;
     const prefs = customPrefs || this.userPreferences || this.loadUserPreferences();
@@ -41,10 +72,7 @@ class TasteManager {
 
     // 1. Chế độ ăn kiêng hải sản
     if (diets.includes('no_seafood')) {
-      const isSeafood = food.category === 'seafood' ||
-        (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ|hàu|cá/i.test(t))) ||
-        /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma|chả cá|hàu|bạch tuộc/i.test(food.name || '');
-      if (isSeafood) return false;
+      if (this.isFoodSeafood(food)) return false;
     }
 
     // 2. Chế độ ăn chay / bán chay
@@ -52,7 +80,7 @@ class TasteManager {
       const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
         (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy|rau củ/i.test(t))) ||
         /chay|nấm|đậu hũ|rau/i.test(food.name || '');
-      const isMeatOrSeafood = /thịt|bò|heo|gà|vịt|chả cá|hải sản|tôm|cua|mực|ốc|lòng|sườn|pate|xá xíu|nem chua/i.test(food.name || '');
+      const isMeatOrSeafood = this.isFoodSeafood(food) || /thịt|bò|heo|gà|vịt|lòng|sườn|pate|xá xíu|nem chua/i.test(food.name || '');
       if (isMeatOrSeafood && !isVeg) return false;
     }
 
@@ -235,10 +263,7 @@ class TasteManager {
 
       // Kiêng hải sản
       if (diets.includes('no_seafood')) {
-        const isSeafood = food.category === 'seafood' ||
-          (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ/i.test(t))) ||
-          /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma/i.test(food.name || '');
-        if (isSeafood) return 30;
+        if (this.isFoodSeafood(food)) return 30;
       }
 
       // Ăn chay
@@ -483,13 +508,28 @@ class TasteManager {
     }
 
     // Filter foods belonging to this city or district
+    const cId = (currentCity.cityId || '').toLowerCase();
+    const cName = (currentCity.name || currentCity.city || '').toLowerCase();
+
     let cityFoods = APP_DATA.foods.filter(f => {
       if (window.isFakeDummyFood && window.isFakeDummyFood(f)) return false;
-      if (currentCity.cityId && f.cityId) {
-        return f.cityId === currentCity.cityId;
-      }
-      return (f.cityName && currentCity.name && (f.cityName.includes(currentCity.name) || currentCity.name.includes(f.cityName))) ||
-             (f.address && currentCity.name && f.address.includes(currentCity.name));
+      const fCityId = (f.cityId || '').toLowerCase();
+      const fCityName = (f.cityName || '').toLowerCase();
+      const fAddress = (f.address || '').toLowerCase();
+
+      // Nếu cả hai đều là Quy Nhơn / Bình Định
+      const isQnCity = cId.includes('quynhon') || cId.includes('binhdinh') || cName.includes('quy nhơn') || cName.includes('bình định');
+      const isQnFood = fCityId.includes('quynhon') || fCityId.includes('binhdinh') || fCityName.includes('quy nhơn') || fAddress.includes('quy nhơn') || fAddress.includes('bình định');
+      if (isQnCity && isQnFood) return true;
+
+      // Khớp chính xác cityId
+      if (cId && fCityId && cId === fCityId) return true;
+
+      // Khớp tên thành phố hoặc địa chỉ
+      if (fCityName && cName && (fCityName.includes(cName) || cName.includes(fCityName))) return true;
+      if (fAddress && cName && fAddress.includes(cName)) return true;
+
+      return false;
     });
 
     // If city has no pre-listed foods in APP_DATA.foods, dynamically build from district or province signature specialties!
@@ -619,7 +659,7 @@ class TasteManager {
     }
 
     // Lọc bỏ các quán đã đóng cửa hoặc ngừng kinh doanh & quán không phù hợp với khẩu vị/kiêng khem
-    displayFoods = displayFoods.filter(f => {
+    const eligibleFoods = displayFoods.filter(f => {
       if (!f) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
@@ -627,6 +667,19 @@ class TasteManager {
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
+
+    // Fallback thông minh: nếu bộ lọc kiêng khem quá ngặt nghèo khiến danh sách rỗng, giữ lại các quán chất lượng đang mở
+    if (eligibleFoods.length > 0) {
+      displayFoods = eligibleFoods;
+    } else {
+      displayFoods = displayFoods.filter(f => {
+        if (!f) return false;
+        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+        const status = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
+        return Boolean(status && status.isOpen);
+      });
+    }
 
     // Kiểm tra xem người dùng đang ở location hiện tại (nơi user đang ở) hay đã đổi sang tỉnh thành khác
     const homeCityId = (window.APP_DATA && window.APP_DATA.homeCityId) ? window.APP_DATA.homeCityId : 'quynhon';
@@ -881,6 +934,11 @@ class TasteManager {
   // ══════════════════════════════════════════════════════
   openTasteProfileModal() {
     window.soundFX && window.soundFX.playPop();
+    // Mở trực tiếp bộ thiết lập Gu ẩm thực cá nhân trực quan
+    if (window.authManager && typeof window.authManager.openTasteOnboardingModal === 'function') {
+      window.authManager.openTasteOnboardingModal();
+      return;
+    }
     const modal = document.getElementById('taste-modal');
     if (!modal) return;
 
