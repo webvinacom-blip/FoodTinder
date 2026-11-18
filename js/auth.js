@@ -28,14 +28,14 @@ class AuthManager {
     this.init();
   }
 
-  // Danh sách các danh hiệu hệ thống FoodTinder với Icon định danh riêng biệt
+  // Danh sách các danh hiệu hệ thống FoodTinder đa địa điểm với Icon định danh riêng biệt
   static SYSTEM_TITLES = [
     {
       id: 'newbie',
       name: 'Người Mới Đến',
       icon: '🌱',
       minLikes: 0,
-      desc: 'Bắt đầu bước chân vào thiên đường ẩm thực Quy Nhơn',
+      desc: 'Bắt đầu hành trình khám phá và trải nghiệm các món ăn ngon khắp mọi nơi',
       tag: 'Tập sự'
     },
     {
@@ -43,39 +43,39 @@ class AuthManager {
       name: 'Tín Đồ Ăn Vặt',
       icon: '🍢',
       minLikes: 3,
-      desc: 'Mê mẩn chả ram tôm đất, nem nướng, trứng vịt lộn & bánh tráng trứng',
+      desc: 'Đam mê các món ăn vặt đường phố, món ngon ăn chơi và đồ uống hấp dẫn',
       tag: 'Ăn Vặt'
     },
     {
-      id: 'foodie_quynhon',
-      name: 'Sành Ăn Quy Nhơn',
+      id: 'foodie',
+      name: 'Chuyên Gia Sành Ăn',
       icon: '⭐',
       minLikes: 7,
-      desc: 'Thuộc lòng bún chả cá, bánh xèo tôm nhảy, bánh hỏi lòng heo ngon nức tiếng',
+      desc: 'Gu ẩm thực tinh tế, luôn săn đón những quán ăn ngon chuẩn vị và chất lượng',
       tag: 'Sành Ăn'
     },
     {
-      id: 'seafood_master',
-      name: 'Đại Hiệp Hải Sản',
-      icon: '🦀',
+      id: 'food_explorer',
+      name: 'Thợ Săn Quán Ngon',
+      icon: '🧭',
       minLikes: 15,
-      desc: 'Chuyên gia càn quét cua ghẹ, ốc vú nàng, sò điệp, mực nhảy đường biển',
-      tag: 'Hải Sản'
+      desc: 'Không ngại đường xa, luôn tiên phong khám phá các hàng quán mới lạ và đặc sắc',
+      tag: 'Khám Phá'
     },
     {
-      id: 'food_god',
-      name: 'Thực Thần Nẫu',
+      id: 'food_master',
+      name: 'Bậc Thầy Ẩm Thực',
       icon: '👑',
       minLikes: 25,
-      desc: 'Bậc thầy ẩm thực Bình Định, không ngõ ngách nào chưa từng ghé',
-      tag: 'Thực Thần'
+      desc: 'Sành sỏi hương vị ẩm thực, thuộc lòng các quán ruột từ bình dân đến sang trọng',
+      tag: 'Bậc Thầy'
     },
     {
       id: 'legend',
       name: 'Huyền Thoại Ẩm Thực',
       icon: '🔥',
       minLikes: 40,
-      desc: 'Cảnh giới ẩm thực tối cao của cộng đồng FoodTinder',
+      desc: 'Cảnh giới ẩm thực tối cao, người truyền cảm hứng ăn ngon cho cộng đồng',
       tag: 'Huyền Thoại'
     }
   ];
@@ -588,7 +588,14 @@ class AuthManager {
 
     // Nếu người dùng đã chọn một danh hiệu cụ thể trong các danh hiệu đã mở khóa
     if (user && user.titleId) {
-      const chosen = this.titles.find(t => t.id === user.titleId);
+      // Ánh xạ tương thích ngược các id cũ nếu có
+      const legacyMap = {
+        'foodie_quynhon': 'foodie',
+        'seafood_master': 'food_explorer',
+        'food_god': 'food_master'
+      };
+      const effectiveId = legacyMap[user.titleId] || user.titleId;
+      const chosen = this.titles.find(t => t.id === effectiveId);
       if (chosen && likedCount >= chosen.minLikes) {
         return chosen;
       }
