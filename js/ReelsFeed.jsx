@@ -183,11 +183,23 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
       });
     }
 
-    // Chiến thuật 1: Khi lướt đến video thứ 4, tự động tải thêm đúng 5 video tiếp theo
-    if (currentIndex >= itemsList.length - 2 && itemsList.length < items.length) {
-      const nextBatch = items.slice(itemsList.length, itemsList.length + 5);
-      if (nextBatch.length > 0) {
-        setItemsList(prev => [...prev, ...nextBatch]);
+    // Chiến thuật vòng lặp vô tận: Khi lướt đến gần cuối, nạp tiếp hoặc random xáo trộn kho video
+    if (currentIndex >= itemsList.length - 2) {
+      if (itemsList.length < items.length) {
+        const nextBatch = items.slice(itemsList.length, itemsList.length + 5);
+        if (nextBatch.length > 0) {
+          setItemsList(prev => [...prev, ...nextBatch]);
+        }
+      } else {
+        const curVid = itemsList[currentIndex]?.video_id;
+        const candidates = items.filter(v => v.video_id !== curVid);
+        const shuffled = [...candidates].sort(() => Math.random() - 0.5);
+        const picked = shuffled.slice(0, 5).map((it, i) => ({
+          ...it,
+          id: (itemsList.length + 1) * 100 + i + 1,
+          isRandomLooped: true
+        }));
+        setItemsList(prev => [...prev, ...picked]);
       }
     }
   }, [currentIndex, items, itemsList]);
@@ -295,12 +307,12 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
             >
               <div className="relative w-full max-w-[480px] h-full overflow-hidden bg-stone-950 flex items-center justify-center shadow-2xl">
                 
-                {/* Video Player & Poster với Windowing Virtualization 3 Slide & Preload */}
+                {/* Video Player & Poster với Autoplay tức thì khi vuốt */}
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-black">
-                  {Math.abs(idx - currentIndex) <= 1 && (
+                  {isCurrent && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${item.video_id}?enablejsapi=1&autoplay=${isCurrent ? 1 : 0}&mute=${isCurrent ? (isMuted ? 1 : 0) : 1}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
+                      src={`https://www.youtube-nocookie.com/embed/${item.video_id}?enablejsapi=1&autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"

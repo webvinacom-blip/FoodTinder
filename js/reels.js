@@ -413,11 +413,12 @@ class ReelsManager {
     }
   }
 
-  // Khi người dùng lướt đến video thứ 4, tự động tải thêm đúng 5 document tiếp theo
+  // Khi người dùng lướt đến gần cuối, tự động tải thêm 5 video
+  // ĐẶC BIỆT: Khi đến video cuối cùng, tự động random xáo trộn các video khác từ kho để cuộn vô tận!
   async loadNextBatch() {
-    if (this.isLoadingNextBatch || !this.hasMore) return;
+    if (this.isLoadingNextBatch) return;
     this.isLoadingNextBatch = true;
-    console.log(`[Reels Pagination] Lướt đến video thứ ${this.currentIndex + 1}. Bắt đầu nạp thêm 5 video tiếp theo (Firestore .limit(5))...`);
+    console.log(`[Reels Pagination] Lướt đến video thứ ${this.currentIndex + 1}. Bắt đầu nạp thêm 5 video tiếp theo...`);
 
     let nextItems = [];
     if (typeof firebase !== 'undefined' && firebase.firestore) {
@@ -430,9 +431,6 @@ class ReelsManager {
         if (!snap.empty) {
           this.lastVisibleDoc = snap.docs[snap.docs.length - 1];
           nextItems = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          if (snap.docs.length < this.PAGE_SIZE) this.hasMore = false;
-        } else {
-          this.hasMore = false;
         }
       } catch (err) {
         console.warn('[Reels Pagination] Firestore batch error:', err);
@@ -441,13 +439,28 @@ class ReelsManager {
 
     if (!nextItems || nextItems.length === 0) {
       const startIdx = this.items.length;
-      nextItems = CURATED_REELS_DATA.slice(startIdx, startIdx + this.PAGE_SIZE);
-      if (startIdx + this.PAGE_SIZE >= CURATED_REELS_DATA.length) {
-        this.hasMore = false;
+      if (startIdx < CURATED_REELS_DATA.length) {
+        nextItems = CURATED_REELS_DATA.slice(startIdx, startIdx + this.PAGE_SIZE);
       }
     }
 
-    if (nextItems.length > 0) {
+    // ── VÒNG LẶP RANDOM VÔ TẬN (KHI ĐẾN VIDEO CUỐI CÙNG) ──
+    // Tuyệt đối không đứng yên! Random xáo trộn các video khác trong kho để người dùng lướt mãi mãi
+    if (!nextItems || nextItems.length === 0) {
+      console.log('[Reels Infinite] Đã tới video cuối cùng. Tiến hành random xáo trộn kho video để tiếp tục cuộn mượt mà...');
+      const curVid = this.items[this.currentIndex]?.video_id;
+      const candidates = CURATED_REELS_DATA.filter(v => v.video_id !== curVid);
+      const shuffled = [...candidates].sort(() => Math.random() - 0.5);
+      const picked = shuffled.slice(0, this.PAGE_SIZE);
+      const baseCounter = (this.items.length + 1) * 100;
+      nextItems = picked.map((item, i) => ({
+        ...item,
+        id: baseCounter + i + 1,
+        isRandomLooped: true
+      }));
+    }
+
+    if (nextItems && nextItems.length > 0) {
       const startIndex = this.items.length;
       this.items = [...this.items, ...nextItems];
 
@@ -461,7 +474,7 @@ class ReelsManager {
       });
 
       if (window.lucide) window.lucide.createIcons();
-      console.log(`[Reels Pagination] Nạp thêm thành công 5 video. Hiện có: ${this.items.length} video. (Tốn đúng 5 lượt Read)`);
+      console.log(`[Reels Infinite] Nạp thêm thành công ${nextItems.length} video. Tổng số hiện tại: ${this.items.length} video.`);
     }
 
     this.isLoadingNextBatch = false;
@@ -510,7 +523,7 @@ class ReelsManager {
         <div class="relative w-full h-full flex items-center justify-center overflow-hidden bg-black">
           
           <!-- Iframe mount box (Được Virtualization mount/unmount động) -->
-          <div id="reel-player-mount-${idx}" class="absolute inset-0 w-full h-full z-0 flex items-center justify-center overflow-hidden pointer-events-none">
+          <div id="reel-player-mount-${idx}" class="absolute inset-0 w-full h-full z-[1] flex items-center justify-center overflow-hidden pointer-events-none">
             <!-- Iframe sẽ được gắn vào đây khi slide active -->
           </div>
 
@@ -527,12 +540,14 @@ class ReelsManager {
             </div>
           </div>
 
-          <!-- Fallback Poster Image (Lazy-load & priority allocation để không tranh chấp băng thông với video) -->
-          <img src="${item.image}" alt="${item.title || item.name}"
+          <!-- Fallback Poster Image (z-0 hiển thị ngay lập tức, không để màn hình đen, tự fallback sang YouTube thumbnail) -->
+          <img src="${item.image || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : '')}" 
+            onerror="if('${videoId}') this.src='https://i.ytimg.com/vi/${videoId}/hqdefault.jpg'"
+            alt="${item.title || item.name}"
             loading="${idx <= 1 ? 'eager' : 'lazy'}"
             decoding="async"
             ${idx === 0 ? 'fetchpriority="high"' : 'fetchpriority="low"'}
-            class="reel-poster-img absolute inset-0 w-full h-full object-cover filter brightness-90 -z-10" />
+            class="reel-poster-img absolute inset-0 w-full h-full object-cover filter brightness-90 z-0" />
 
           <!-- Dark Gradient Overlays (Tạo chiều sâu điện ảnh, làm nổi bật text) -->
           <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/95 pointer-events-none z-10"></div>
@@ -779,16 +794,17 @@ class ReelsManager {
       const videoUrl = item.videoUrl || '';
 
       if (isCur) {
-        // ── VỊ TRÍ 1: VIDEO ĐANG XEM TRÊN MÀN HÌNH (preload="auto", ưu tiên băng thông tối đa) ──
+        // ── VỊ TRÍ 1: VIDEO ĐANG XEM TRÊN MÀN HÌNH (TỰ ĐỘNG PHÁT NGAY LẬP TỨC) ──
         if (videoId) {
           let iframe = mountBox.querySelector('iframe');
           if (!iframe) {
             iframe = document.createElement('iframe');
             iframe.id = `yt-iframe-${idx}`;
+            iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
-            iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0${originParam}`;
+            // Dùng youtube-nocookie.com & bỏ originParam để tương thích 100% mọi môi trường (Safari/Chrome/Localhost/Webview), triệt tiêu lỗi Error 153!
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -796,13 +812,35 @@ class ReelsManager {
             iframe.style.transformOrigin = 'center center';
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             iframe.allowFullscreen = true;
+
+            const sendPlay = () => {
+              if (iframe.contentWindow) {
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+                const muteCmd = this.muted ? 'mute' : 'unMute';
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+                iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
+              }
+            };
+            iframe.onload = () => {
+              sendPlay();
+              setTimeout(sendPlay, 150);
+              setTimeout(sendPlay, 400);
+            };
+
             mountBox.innerHTML = '';
             mountBox.appendChild(iframe);
+            setTimeout(sendPlay, 250);
+            setTimeout(sendPlay, 600);
           } else if (iframe.contentWindow) {
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
-            const muteCmd = this.muted ? 'mute' : 'unMute';
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
+            const sendPlay = () => {
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+              const muteCmd = this.muted ? 'mute' : 'unMute';
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
+            };
+            sendPlay();
+            setTimeout(sendPlay, 150);
+            setTimeout(sendPlay, 400);
           }
         } else if (videoUrl) {
           let video = mountBox.querySelector('video');
@@ -820,37 +858,25 @@ class ReelsManager {
             video.preload = 'auto';
             video.muted = this.muted;
           }
-          video.play().catch(() => {});
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              video.muted = true;
+              video.play().catch(() => {});
+            });
+          }
         }
       } else if (isNext) {
-        // ── VỊ TRÍ 2: VIDEO DỰ PHÒNG TIẾP THEO (idx = cur + 1): preload="metadata" ──
-        // Chỉ tải trước thông tin khung hình, độ dài, ảnh cover để sẵn sàng khung hiển thị
+        // ── VỊ TRÍ 2: VIDEO DỰ PHÒNG TIẾP THEO (idx = cur + 1) ──
+        // Giữ poster hình ảnh sắc nét, KHÔNG tạo iframe autoplay=0 để khi vuốt sang là tự động play ngay!
         if (videoId) {
-          let iframe = mountBox.querySelector('iframe');
-          if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.id = `yt-iframe-${idx}`;
-            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
-            iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0${originParam}`;
-            iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.transform = 'scale(1.04)';
-            iframe.style.transformOrigin = 'center center';
-            mountBox.innerHTML = '';
-            mountBox.appendChild(iframe);
-          } else if (iframe.contentWindow) {
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
-          }
+          mountBox.innerHTML = '';
         } else if (videoUrl) {
           let video = mountBox.querySelector('video');
           if (!video) {
             video = document.createElement('video');
             video.src = videoUrl;
-            video.preload = 'metadata'; // Chỉ nạp metadata, chưa tải stream data
+            video.preload = 'metadata'; // Chỉ tải trước khung hình
             video.muted = true;
             video.playsInline = true;
             video.className = 'w-full h-full object-cover pointer-events-none';
@@ -947,8 +973,8 @@ class ReelsManager {
             const curItem = this.items[idx];
             this.logReelViewAnalytics(curItem, idx);
 
-            // CHIẾN THUẬT 1: Khi lướt đến video thứ 4 (áp chót của batch 5 video), trigger nạp tiếp 5 document
-            if (idx >= this.items.length - 2 && this.hasMore && !this.isLoadingNextBatch) {
+            // CHIẾN THUẬT VÒNG LẶP RANDOM: Khi lướt đến gần cuối batch, luôn tự động nạp tiếp 5 video (không bao giờ dừng)
+            if (idx >= this.items.length - 2 && !this.isLoadingNextBatch) {
               this.loadNextBatch();
             }
 
