@@ -853,6 +853,12 @@ const PERMANENTLY_CLOSED_BLACKLIST = [
   "sandwich land - big c quy nhơn",
   "sandwich land - big c",
   "sandwich land",
+  "nhà hàng hứa ý đế chay",
+  "nhà hàng hứa ý đế",
+  "hứa ý đế chay",
+  "hứa ý đế",
+  "hua y de chay",
+  "hua y de",
 
   // Các quán nhậu / bar / pub / ăn vặt đã giải thể hoặc sang nhượng
   "royal club",
@@ -925,7 +931,7 @@ const PERMANENTLY_CLOSED_KEYWORDS = [
 function isPermanentlyClosedRestaurant(food) {
   if (!food) return false;
   // Kiểm tra id cụ thể của các quán đã xác nhận đóng cửa vĩnh viễn
-  if (food.id === 1217226 || food.id === 665845) return true;
+  if (food.id === 1217226 || food.id === 665845 || food.id === 1226906) return true;
   if (food.isPermanentlyClosed || food.isClosedPermanently) return true;
   if (food.isClosed === true) return true;
 
@@ -1011,7 +1017,7 @@ function isValidQualityFood(food) {
   // 1. Quán không có ảnh hoặc ảnh quá xấu / logo placeholder
   const img = String(food.image || "").trim();
   if (!img || img.length < 15 || !img.startsWith("http")) return false;
-  if (img.includes("placeholder") || img.includes("default_avatar") || img.includes("no-image") || img.includes("empty_shop")) return false;
+  if (img.includes("placeholder") || img.includes("default_avatar") || img.includes("no-image") || img.includes("empty_shop") || img.includes("m0r3zfsofv67eb")) return false;
 
   // 2. Kiểm tra rating: Giữ nguyên rating gốc từ Foody, không loại bỏ quán mới mở
   const rating = Number(food.rating) || 0;
@@ -115363,91 +115369,6 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
-    },
-    {
-      "id": 1226906,
-      "cityId": "quynhon",
-      "cityName": "Quy Nhơn",
-      "name": "Nhà hàng HỨA Ý ĐẾ CHAY - Hàn Mặc Tử",
-      "restaurant": "Nhà hàng HỨA Ý ĐẾ CHAY - Hàn Mặc Tử",
-      "address": "20 - 22 Hàn Mặc Tử, P. Ghềnh Ráng",
-      "district": "Tp. Qui Nhơn",
-      "distance": 4,
-      "distanceText": "Cách bạn 4.0km",
-      "priceRange": "25.000đ - 65.000đ",
-      "rating": 0,
-      "reviewCount": 0,
-      "likesCount": 0,
-      "commentsCount": 0,
-      "openTime": "07:00 - 22:30",
-      "category": "vegetarian",
-      "source": "ShopeeFood",
-      "sourceIcon": "🛍️",
-      "latitude": 13.7466549,
-      "longitude": 109.2135242,
-      "lat": 13.7466549,
-      "lng": 109.2135242,
-      "moodIds": [
-        "chill",
-        "energetic",
-        "zen",
-        "comfort"
-      ],
-      "weather": [
-        "sunny",
-        "rainy",
-        "hot"
-      ],
-      "weatherNote": "Quy Nhơn 24°C 🌧️",
-      "tags": [
-        "#ĐồChay",
-        "#ThanhTịnh",
-        "#KhuGàChỉ",
-        "#NhàhàngHỨAÝĐẾCHAY",
-        "#ĐặcSảnQuyNhơn"
-      ],
-      "sideRibbon": [
-        "#hot",
-        "#chuẩn_vị"
-      ],
-      "image": "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m0r3zfsofv67eb@resize_ss640x400",
-      "gallery": [
-        "https://down-vn.img.susercontent.com/vn-11134259-7ras8-m0r3zfsofv67eb@resize_ss640x400"
-      ],
-      "description": "Quán Nhà hàng HỨA Ý ĐẾ CHAY - Hàn Mặc Tử tọa lạc tại 20 - 22 Hàn Mặc Tử, P. Ghềnh Ráng, phục vụ thực khách với thực đơn đa dạng và nguyên liệu tươi ngon tại Quy Nhơn.",
-      "recommendReason": "Địa điểm ẩm thực nổi bật được nhiều thực khách tin tưởng lựa chọn trên ShopeeFood Quy Nhơn!",
-      "menu": [
-        {
-          "name": "Món đặc trưng Nhà hàng HỨA Ý ĐẾ CHAY",
-          "price": "35.000đ",
-          "highlight": true
-        },
-        {
-          "name": "Món thêm / Nâng cấp đặc biệt",
-          "price": "55.000đ",
-          "highlight": false
-        },
-        {
-          "name": "Trà đá / Nước giải khát",
-          "price": "10.000đ",
-          "highlight": false
-        }
-      ],
-      "deliveryPlatform": "ShopeeFood",
-      "deliveryUrl": "https://shopeefood.vn/binh-dinh/nha-hang-hua-y-de-chay-han-mac-tu",
-      "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20h%C3%A0ng%20H%E1%BB%A8A%20%C3%9D%20%C4%90%E1%BA%BE%20CHAY%20-%20H%C3%A0n%20M%E1%BA%B7c%20T%E1%BB%AD",
-      "deliveryTime": "25 - 40 phút",
-      "deliveryFee": "18.000đ (Áp mã Freeship)",
-      "deliveryFeeVal": 18000,
-      "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-      "deliveryRating": "Quán mới mở ⭐",
-      "gmapsVerified": false,
-      "priceMin": 25000,
-      "priceMax": 65000,
-      "attributes": [
-        "crunchy",
-        "light"
       ]
     },
     {
