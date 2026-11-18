@@ -24,6 +24,7 @@ class AuthManager {
     ];
 
     this.titles = AuthManager.SYSTEM_TITLES;
+    this.expandedTitleId = null;
     this.userStatsKey = 'foodtinder_user_stats';
     this.userStats = this.loadUserStats();
 
@@ -75,33 +76,33 @@ class AuthManager {
         {
           id: 'snack_likes',
           title: 'Bộ sưu tập ăn vặt',
-          desc: 'Thả tim yêu thích ít nhất 8 món ăn',
+          desc: 'Thả tim yêu thích ít nhất 15 món ăn',
           type: 'likes',
-          target: 8,
+          target: 15,
           icon: '❤️'
         },
         {
           id: 'snack_swipes',
           title: 'Chăm chỉ quẹt thẻ',
-          desc: 'Quẹt khám phá 25 lượt thẻ món ăn',
+          desc: 'Quẹt khám phá 50 lượt thẻ món ăn',
           type: 'swipes',
-          target: 25,
+          target: 50,
           icon: '🔥'
         },
         {
           id: 'snack_shopee',
           title: 'Đặt món ShopeeFood',
-          desc: 'Mở đặt hàng món ngon qua ShopeeFood 1 lần',
+          desc: 'Mở đặt hàng món ngon qua ShopeeFood 3 lần',
           type: 'shopeeOrders',
-          target: 1,
+          target: 3,
           icon: '🛵'
         },
         {
           id: 'snack_friend',
           title: 'Giao lưu kết bạn',
-          desc: 'Kết bạn mới trên FoodTinder với 1 người bạn',
+          desc: 'Kết bạn mới trên FoodTinder với 2 người bạn',
           type: 'friendsAdded',
-          target: 1,
+          target: 2,
           icon: '🤝'
         }
       ]
@@ -116,41 +117,41 @@ class AuthManager {
         {
           id: 'foodie_likes',
           title: 'Tín đồ sành món',
-          desc: 'Lưu vào danh sách yêu thích 18 món ăn',
+          desc: 'Lưu vào danh sách yêu thích 35 món ăn',
           type: 'likes',
-          target: 18,
+          target: 35,
           icon: '❤️'
         },
         {
           id: 'foodie_map',
           title: 'Định vị quán ngon',
-          desc: 'Mở bản đồ / chỉ đường tới quán ăn 5 lần',
+          desc: 'Mở bản đồ / chỉ đường tới quán ăn 12 lần',
           type: 'mapDirections',
-          target: 5,
+          target: 12,
           icon: '📍'
         },
         {
           id: 'foodie_will_return',
           title: 'Khách quen quán ruột',
-          desc: 'Đánh dấu "Sẽ quay lại" cho ít nhất 3 quán ăn',
+          desc: 'Đánh dấu "Sẽ quay lại" cho ít nhất 8 quán ăn',
           type: 'willReturnVotes',
-          target: 3,
+          target: 8,
           icon: '🔁'
         },
         {
           id: 'foodie_shopee',
           title: 'Thợ săn ShopeeFood',
-          desc: 'Mở đặt món qua ShopeeFood 3 lần',
+          desc: 'Mở đặt món qua ShopeeFood 6 lần',
           type: 'shopeeOrders',
-          target: 3,
+          target: 6,
           icon: '🛵'
         },
         {
           id: 'foodie_friends',
           title: 'Hội bạn ẩm thực',
-          desc: 'Kết bạn với 2 người bạn cùng gu ăn uống',
+          desc: 'Kết bạn với 5 người bạn cùng gu ăn uống',
           type: 'friendsAdded',
-          target: 2,
+          target: 5,
           icon: '🤝'
         }
       ]
@@ -165,49 +166,49 @@ class AuthManager {
         {
           id: 'explorer_likes',
           title: 'Kho báu ẩm thực',
-          desc: 'Lưu 35 món ăn ngon vào danh sách yêu thích',
+          desc: 'Lưu 70 món ăn ngon vào danh sách yêu thích',
           type: 'likes',
-          target: 35,
+          target: 70,
           icon: '❤️'
         },
         {
           id: 'explorer_map',
           title: 'Không ngại đường xa',
-          desc: 'Mở bản đồ hoặc dẫn đường đến quán 10 lần',
+          desc: 'Mở bản đồ hoặc dẫn đường đến quán 25 lần',
           type: 'mapDirections',
-          target: 10,
+          target: 25,
           icon: '🧭'
         },
         {
           id: 'explorer_reels',
           title: 'Xem review ẩm thực',
-          desc: 'Khám phá 8 video review trong mục Video Reels',
+          desc: 'Khám phá 20 video review trong mục Video Reels',
           type: 'reelsWatched',
-          target: 8,
+          target: 20,
           icon: '🎬'
         },
         {
           id: 'explorer_shopee',
           title: 'Chiến thần ShopeeFood',
-          desc: 'Đặt giao món tận nơi qua ShopeeFood 6 lần',
+          desc: 'Đặt giao món tận nơi qua ShopeeFood 15 lần',
           type: 'shopeeOrders',
-          target: 6,
+          target: 15,
           icon: '🛵'
         },
         {
           id: 'explorer_friends',
           title: 'Kết nối bạn sành ăn',
-          desc: 'Kết bạn mới thành công với 4 người bạn',
+          desc: 'Kết bạn mới thành công với 10 người bạn',
           type: 'friendsAdded',
-          target: 4,
+          target: 10,
           icon: '🤝'
         },
         {
           id: 'explorer_share',
           title: 'Lan tỏa quán ngon',
-          desc: 'Bấm "Rủ đi ăn" rủ bạn bè cùng khám phá 3 lần',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè cùng khám phá 8 lần',
           type: 'sharesSent',
-          target: 3,
+          target: 8,
           icon: '👥'
         }
       ]
@@ -222,49 +223,49 @@ class AuthManager {
         {
           id: 'master_likes',
           title: 'Thực đơn thượng hạng',
-          desc: 'Tích lũy 60 món ăn trong danh sách yêu thích',
+          desc: 'Tích lũy 120 món ăn trong danh sách yêu thích',
           type: 'likes',
-          target: 60,
+          target: 120,
           icon: '❤️'
         },
         {
           id: 'master_swipes',
           title: 'Quẹt thẻ cự phách',
-          desc: 'Quẹt khám phá hơn 60 lượt thẻ món ăn',
+          desc: 'Quẹt khám phá hơn 150 lượt thẻ món ăn',
           type: 'swipes',
-          target: 60,
+          target: 150,
           icon: '⚡'
         },
         {
           id: 'master_will_return',
           title: 'Khách VIP nhiều quán',
-          desc: 'Đánh dấu "Sẽ quay lại" cho 12 quán ăn',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 30 quán ăn',
           type: 'willReturnVotes',
-          target: 12,
+          target: 30,
           icon: '🔁'
         },
         {
           id: 'master_taste',
           title: 'Ăn uống chuẩn gu',
-          desc: 'Khám phá thực đơn theo tâm trạng hoặc Chuẩn Gu AI 8 lần',
+          desc: 'Khám phá thực đơn theo tâm trạng hoặc Chuẩn Gu AI 20 lần',
           type: 'moodExplored',
-          target: 8,
+          target: 20,
           icon: '🎯'
         },
         {
           id: 'master_shopee',
           title: 'Đại tiệc ShopeeFood',
-          desc: 'Mở đặt giao hàng qua ShopeeFood 10 lần',
+          desc: 'Mở đặt giao hàng qua ShopeeFood 30 lần',
           type: 'shopeeOrders',
-          target: 10,
+          target: 30,
           icon: '🛵'
         },
         {
           id: 'master_friends',
           title: 'Hội sành ăn đông đảo',
-          desc: 'Kết nối kết bạn với 6 người bạn ẩm thực',
+          desc: 'Kết nối kết bạn với 18 người bạn ẩm thực',
           type: 'friendsAdded',
-          target: 6,
+          target: 18,
           icon: '🤝'
         }
       ]
@@ -279,49 +280,49 @@ class AuthManager {
         {
           id: 'legend_likes',
           title: 'Bộ sưu tập thế kỷ',
-          desc: 'Sở hữu bộ sưu tập 100 món ăn yêu thích',
+          desc: 'Sở hữu bộ sưu tập 200 món ăn yêu thích',
           type: 'likes',
-          target: 100,
+          target: 200,
           icon: '❤️'
         },
         {
           id: 'legend_swipes',
           title: 'Đam mê bất tận',
-          desc: 'Đã quẹt khám phá hơn 120 lượt thẻ món ăn',
+          desc: 'Đã quẹt khám phá hơn 300 lượt thẻ món ăn',
           type: 'swipes',
-          target: 120,
+          target: 300,
           icon: '⚡'
         },
         {
           id: 'legend_will_return',
           title: 'Uy tín ẩm thực tuyệt đối',
-          desc: 'Đánh dấu "Sẽ quay lại" cho 20 quán ăn',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 50 quán ăn',
           type: 'willReturnVotes',
-          target: 20,
+          target: 50,
           icon: '🔁'
         },
         {
           id: 'legend_shopee',
           title: 'Trùm đơn ShopeeFood',
-          desc: 'Mở đặt hàng ShopeeFood 15 lần',
+          desc: 'Mở đặt hàng ShopeeFood 50 lần',
           type: 'shopeeOrders',
-          target: 15,
+          target: 50,
           icon: '🛵'
         },
         {
           id: 'legend_friends',
           title: 'Thủ lĩnh cộng đồng',
-          desc: 'Kết bạn với ít nhất 10 người bạn ẩm thực',
+          desc: 'Kết bạn với ít nhất 30 người bạn ẩm thực',
           type: 'friendsAdded',
-          target: 10,
+          target: 30,
           icon: '🤝'
         },
         {
           id: 'legend_share',
           title: 'Bậc thầy tiệc tùng',
-          desc: 'Bấm "Rủ đi ăn" rủ bạn bè khám phá món ngon 10 lần',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè khám phá món ngon 25 lần',
           type: 'sharesSent',
-          target: 10,
+          target: 25,
           icon: '🎉'
         }
       ]
@@ -989,11 +990,19 @@ class AuthManager {
     if (window.soundFX && window.soundFX.playMatch) window.soundFX.playMatch();
   }
 
+  // Đóng/mở xổ xuống xem danh sách nhiệm vụ của từng danh hiệu (chỉ mở 1 danh hiệu tại một thời điểm)
+  toggleTitleMissions(titleId) {
+    this.expandedTitleId = (this.expandedTitleId === titleId) ? null : titleId;
+    this.renderTitlesList();
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+  }
+
   // Mở modal danh sách danh hiệu hệ thống
   openTitlesModal() {
     const modal = document.getElementById('titles-modal');
     if (!modal) return;
 
+    this.expandedTitleId = null; // Mặc định khi mới mở modal thì chỉ thấy danh hiệu, thu gọn toàn bộ nhiệm vụ
     this.renderTitlesList();
 
     modal.classList.remove('hidden');
@@ -1014,7 +1023,7 @@ class AuthManager {
     setTimeout(() => modal.classList.add('hidden'), 250);
   }
 
-  // Render danh sách danh hiệu hệ thống kèm chi tiết nhiệm vụ
+  // Render danh sách danh hiệu hệ thống kèm tính năng xổ xuống xem nhiệm vụ
   renderTitlesList() {
     const container = document.getElementById('titles-modal-list');
     if (!container) return;
@@ -1039,6 +1048,7 @@ class AuthManager {
       const prog = this.getTitleProgress(t);
       const isUnlocked = prog.isUnlocked;
       const isEquipped = currentTitle.id === t.id;
+      const isExpanded = this.expandedTitleId === t.id;
 
       return `
         <div class="p-3.5 rounded-2xl border transition ${
@@ -1082,49 +1092,73 @@ class AuthManager {
               </div>
               <p class="text-xs text-stone-500 mt-1 leading-snug">${t.desc}</p>
               
-              <!-- Danh sách Nhiệm vụ cần hoàn thành -->
-              <div class="mt-3 pt-2.5 border-t border-stone-200/60 space-y-2">
-                <div class="flex items-center justify-between text-[11px] font-extrabold text-stone-700">
-                  <span class="flex items-center gap-1">
-                    <span>🎯 Nhiệm vụ mở khóa:</span>
-                    <span class="text-[10px] ${isUnlocked ? 'text-emerald-600' : 'text-amber-600'} font-black">(${prog.completed}/${prog.total} hoàn thành)</span>
+              <!-- Nút Xổ xuống / Thu gọn xem danh sách nhiệm vụ -->
+              <div class="mt-2.5 pt-2 border-t border-stone-200/60">
+                <button type="button" onclick="window.authManager.toggleTitleMissions('${t.id}')" 
+                  class="w-full flex items-center justify-between py-1.5 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                    isExpanded 
+                      ? 'bg-amber-100/80 text-amber-900 border border-amber-300/80' 
+                      : 'bg-stone-100/70 hover:bg-stone-200/70 text-stone-600 hover:text-stone-900 border border-stone-200/60'
+                  }">
+                  <span class="flex items-center gap-1.5">
+                    <span class="text-[11px]">🎯</span>
+                    <span class="text-[11px] font-extrabold">${isExpanded ? 'Đóng danh sách nhiệm vụ' : 'Xem danh sách nhiệm vụ'}</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-md ${isUnlocked ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                      ${prog.completed}/${prog.total}
+                    </span>
                   </span>
-                  <span class="text-[10px] font-bold ${isUnlocked ? 'text-emerald-600' : 'text-stone-500'}">
-                    ${isUnlocked ? '✅ Đã hoàn tất' : `${prog.percent}%`}
+                  <span class="flex items-center gap-1 text-[11px] text-stone-500 font-bold">
+                    <span>${isExpanded ? 'Thu lại' : 'Xổ xuống'}</span>
+                    <span class="text-[10px] transition-transform duration-200 inline-block font-black">${isExpanded ? '▲' : '▼'}</span>
                   </span>
-                </div>
+                </button>
 
-                <div class="space-y-1.5">
-                  ${t.missions.map(m => {
-                    const mp = this.getMissionProgress(m);
-                    return `
-                      <div class="p-2 rounded-xl transition ${
-                        mp.isCompleted 
-                          ? 'bg-emerald-50/80 border border-emerald-200/80' 
-                          : 'bg-white border border-stone-200/90'
-                      }">
-                        <div class="flex items-center justify-between gap-1.5">
-                          <div class="flex items-center gap-1.5 min-w-0">
-                            <span class="text-xs shrink-0">${mp.isCompleted ? '✅' : m.icon}</span>
-                            <span class="font-extrabold text-xs truncate ${mp.isCompleted ? 'text-emerald-900' : 'text-stone-800'}">${m.title}</span>
-                          </div>
-                          <span class="text-[10px] font-mono font-extrabold shrink-0 px-1.5 py-0.2 rounded-md ${
-                            mp.isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-100 text-stone-600'
+                ${isExpanded ? `
+                  <!-- Danh sách Nhiệm vụ cần hoàn thành khi bấm xổ xuống -->
+                  <div class="mt-2.5 pt-2 border-t border-stone-200/60 space-y-2">
+                    <div class="flex items-center justify-between text-[11px] font-extrabold text-stone-700">
+                      <span class="flex items-center gap-1">
+                        <span>🎯 Nhiệm vụ mở khóa:</span>
+                        <span class="text-[10px] ${isUnlocked ? 'text-emerald-600' : 'text-amber-600'} font-black">(${prog.completed}/${prog.total} hoàn thành)</span>
+                      </span>
+                      <span class="text-[10px] font-bold ${isUnlocked ? 'text-emerald-600' : 'text-stone-500'}">
+                        ${isUnlocked ? '✅ Đã hoàn tất' : `${prog.percent}%`}
+                      </span>
+                    </div>
+
+                    <div class="space-y-1.5">
+                      ${t.missions.map(m => {
+                        const mp = this.getMissionProgress(m);
+                        return `
+                          <div class="p-2 rounded-xl transition ${
+                            mp.isCompleted 
+                              ? 'bg-emerald-50/80 border border-emerald-200/80' 
+                              : 'bg-white border border-stone-200/90'
                           }">
-                            ${mp.current}/${mp.target}
-                          </span>
-                        </div>
-                        <p class="text-[10.5px] text-stone-500 mt-0.5 leading-tight">${m.desc}</p>
-                        
-                        <div class="w-full h-1.5 bg-stone-100 rounded-full mt-1.5 overflow-hidden">
-                          <div class="h-full rounded-full transition-all duration-300 ${
-                            mp.isCompleted ? 'bg-emerald-500' : 'bg-amber-400'
-                          }" style="width: ${mp.percent}%"></div>
-                        </div>
-                      </div>
-                    `;
-                  }).join('')}
-                </div>
+                            <div class="flex items-center justify-between gap-1.5">
+                              <div class="flex items-center gap-1.5 min-w-0">
+                                <span class="text-xs shrink-0">${mp.isCompleted ? '✅' : m.icon}</span>
+                                <span class="font-extrabold text-xs truncate ${mp.isCompleted ? 'text-emerald-900' : 'text-stone-800'}">${m.title}</span>
+                              </div>
+                              <span class="text-[10px] font-mono font-extrabold shrink-0 px-1.5 py-0.2 rounded-md ${
+                                mp.isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-100 text-stone-600'
+                              }">
+                                ${mp.current}/${mp.target}
+                              </span>
+                            </div>
+                            <p class="text-[10.5px] text-stone-500 mt-0.5 leading-tight">${m.desc}</p>
+                            
+                            <div class="w-full h-1.5 bg-stone-100 rounded-full mt-1.5 overflow-hidden">
+                              <div class="h-full rounded-full transition-all duration-300 ${
+                                mp.isCompleted ? 'bg-emerald-500' : 'bg-amber-400'
+                              }" style="width: ${mp.percent}%"></div>
+                            </div>
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                ` : ''}
               </div>
             </div>
           </div>
