@@ -1225,6 +1225,7 @@ class ReelsManager {
     this.observer = null;
     this.currentVideoTime = 0;
     this.currentVideoDuration = 0;
+    this.isScrubbing = false;
 
     // CHIẾN THUẬT 1: Phân trang ngặt nghèo (.limit(5))
     this.PAGE_SIZE = 5;
@@ -1265,7 +1266,9 @@ class ReelsManager {
           if (typeof data.info.duration === 'number' && data.info.duration > 0) {
             this.currentVideoDuration = data.info.duration;
           }
-          this.updateProgressBar(this.currentIndex, this.currentVideoTime, this.currentVideoDuration);
+          if (!this.isScrubbing) {
+            this.updateProgressBar(this.currentIndex, this.currentVideoTime, this.currentVideoDuration);
+          }
         }
 
         // 2. TỰ ĐỘNG NEXT VIDEO KHI CHẠY HẾT (KHÔNG LOAD LẠI VIDEO CŨ)
@@ -1634,35 +1637,31 @@ class ReelsManager {
           </div>
         </div>
 
-        <!-- 5. Huy hiệu tua nhanh / tua lùi 5s (Seek Badge Overlay) -->
-        <div id="reel-seek-badge-left-${idx}" class="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white shadow-2xl opacity-0 scale-75 pointer-events-none transition-all duration-200 z-30">
-          <span class="text-xl font-black">⟲</span>
-          <span class="text-[11px] font-extrabold">-5s</span>
-        </div>
-
-        <div id="reel-seek-badge-right-${idx}" class="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-16 h-16 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white shadow-2xl opacity-0 scale-75 pointer-events-none transition-all duration-200 z-30">
-          <span class="text-xl font-black">⟳</span>
-          <span class="text-[11px] font-extrabold">+5s</span>
-        </div>
-
-        <!-- 6. Thanh tua video (Interactive Scrubber / Progress Bar) -->
-        <div class="reel-scrubber-container absolute bottom-0 left-0 right-0 z-35 px-3 py-2 cursor-pointer group"
-          data-slide-index="${idx}">
-          <!-- Thời gian hiển thị khi hover / chạm -->
-          <div class="flex items-center justify-between text-[10px] text-white/90 font-mono font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">
-            <span id="reel-time-display-${idx}">0:00 / 0:00</span>
-            <span class="text-amber-300 text-[9.5px]">Chạm hoặc kéo thanh để tua video</span>
+        <!-- 5. Thanh tua video phía dưới (Interactive Bottom Draggable Scrubber) -->
+        <div class="reel-scrubber-container absolute bottom-0 left-0 right-0 z-40 px-3 pt-4 pb-2.5 cursor-pointer select-none group"
+          data-slide-index="${idx}"
+          style="touch-action: none;">
+          
+          <!-- Floating Time Tooltip khi giữ kéo thanh tua -->
+          <div id="reel-time-bubble-${idx}" class="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1 px-3 py-1 rounded-full bg-stone-900/95 backdrop-blur-md border border-white/25 text-white shadow-2xl opacity-0 scale-90 transition-all duration-150 z-50">
+            <span class="text-xs font-mono font-extrabold text-amber-300" id="reel-bubble-time-${idx}">0:00</span>
+            <span class="text-[10px] text-white/50">/</span>
+            <span class="text-[11px] font-mono font-medium text-white/80" id="reel-bubble-dur-${idx}">0:00</span>
           </div>
-          <!-- Track & Fill Bar -->
-          <div class="relative w-full h-1 group-hover:h-2.5 bg-white/30 rounded-full overflow-hidden transition-all shadow-sm">
-            <div id="reel-progress-bar-${idx}" class="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 rounded-full w-0 transition-all duration-75"></div>
+
+          <!-- Track bar (thanh mảnh khi chạy bình thường, nở to khi rê/chạm kéo) -->
+          <div class="reel-scrubber-track relative w-full h-1 group-hover:h-2.5 bg-white/25 rounded-full transition-all duration-150 overflow-visible shadow-sm">
+            <div id="reel-progress-bar-${idx}" class="relative h-full bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 rounded-full w-0 transition-all duration-75">
+              <!-- Nút tròn kéo tua (Thumb knob) -->
+              <div id="reel-scrubber-thumb-${idx}" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-lg border-2 border-orange-500 transform scale-0 group-hover:scale-100 transition-transform duration-150"></div>
+            </div>
           </div>
         </div>
 
       </div>
     `;
 
-    // ── XỬ LÝ CHẠM MÀN HÌNH ĐỂ PLAY/PAUSE HOẶC NHẤP ĐÚP TUA VIDEO ──
+    // ── XỬ LÝ CHẠM MÀN HÌNH ĐỂ PLAY/PAUSE HOẶC NHẤP ĐÚP THẢ TIM ──
     const touchSurface = itemEl.querySelector(`.reel-touch-surface[data-slide-index="${idx}"]`);
     let clickTimer = null;
 
@@ -1670,28 +1669,14 @@ class ReelsManager {
       // Bỏ qua nếu chạm vào các nút điều khiển hoặc thanh tua
       if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.reel-scrubber-container')) return;
 
-      const rect = itemEl.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const ratioX = clickX / rect.width;
-
       if (clickTimer) {
-        // Nhấp đúp (Double click):
+        // Nhấp đúp (Double click bất kỳ đâu trên video) -> Thả tim ❤️ (Không tua video)
         clearTimeout(clickTimer);
         clickTimer = null;
-
-        if (ratioX < 0.35) {
-          // Double click 1/3 bên trái -> TUA LÙI 5 GIÂY (Rewind -5s)
-          this.seekDelta(-5);
-        } else if (ratioX > 0.65) {
-          // Double click 1/3 bên phải -> TUA NHANH 5 GIÂY (Forward +5s)
-          this.seekDelta(5);
-        } else {
-          // Double click ở giữa màn hình -> Thả tim ❤️
-          this.spawnHeartAt(e.clientX, e.clientY, itemEl);
-          this.toggleLike(item.id, null, true);
-        }
+        this.spawnHeartAt(e.clientX, e.clientY, itemEl);
+        this.toggleLike(item.id, null, true);
       } else {
-        // Nhấp đơn (Single click) -> Tạm dừng / Phát tiếp video (Play / Pause)!
+        // Nhấp đơn (Single click) -> Tạm dừng / Phát tiếp video (Play / Pause)
         clickTimer = setTimeout(() => {
           clickTimer = null;
           this.togglePlayPause(idx);
@@ -1707,21 +1692,112 @@ class ReelsManager {
       handleTapOrClick(e);
     });
 
-    // ── XỬ LÝ KÉO / CHẠM THANH TUA VIDEO (SCRUBBER) ──
+    // ── XỬ LÝ KÉO THẢ THANH TUA VIDEO (DRAGGABLE SCRUBBER) ──
     const scrubber = itemEl.querySelector(`.reel-scrubber-container[data-slide-index="${idx}"]`);
     if (scrubber) {
-      const handleScrub = (evt) => {
-        evt.stopPropagation();
-        evt.preventDefault();
+      const bubble = itemEl.querySelector(`#reel-time-bubble-${idx}`);
+      const bubbleTime = itemEl.querySelector(`#reel-bubble-time-${idx}`);
+      const bubbleDur = itemEl.querySelector(`#reel-bubble-dur-${idx}`);
+      const thumb = itemEl.querySelector(`#reel-scrubber-thumb-${idx}`);
+      const pBar = itemEl.querySelector(`#reel-progress-bar-${idx}`);
+      const track = itemEl.querySelector(`.reel-scrubber-track`);
+
+      let isDragging = false;
+
+      const calcTimeAndRatio = (clientX) => {
         const rect = scrubber.getBoundingClientRect();
-        const clientX = evt.touches && evt.touches.length > 0 ? evt.touches[0].clientX : evt.clientX;
         const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
         const duration = this.currentVideoDuration || 30;
         const targetSec = ratio * duration;
-        this.seekTo(targetSec);
+        return { ratio, targetSec, duration };
       };
-      scrubber.addEventListener('click', handleScrub);
-      scrubber.addEventListener('touchmove', handleScrub, { passive: false });
+
+      const applyScrubUI = (clientX) => {
+        const { ratio, targetSec, duration } = calcTimeAndRatio(clientX);
+        if (pBar) {
+          pBar.style.width = `${ratio * 100}%`;
+        }
+        if (bubbleTime) bubbleTime.textContent = this.formatTime(targetSec);
+        if (bubbleDur) bubbleDur.textContent = this.formatTime(duration);
+
+        // Canh chỉnh vị trí bóng thời gian bám theo ngón tay
+        if (bubble) {
+          const rect = scrubber.getBoundingClientRect();
+          const posX = Math.max(40, Math.min(rect.width - 40, clientX - rect.left));
+          bubble.style.left = `${posX}px`;
+        }
+        return targetSec;
+      };
+
+      const onPointerDown = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        isDragging = true;
+        this.isScrubbing = true;
+
+        if (scrubber.setPointerCapture) {
+          try { scrubber.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+
+        if (track) {
+          track.classList.add('!h-2.5');
+        }
+        if (thumb) {
+          thumb.classList.remove('scale-0');
+          thumb.classList.add('scale-125');
+        }
+        if (bubble) {
+          bubble.classList.remove('opacity-0', 'scale-90');
+          bubble.classList.add('opacity-100', 'scale-100');
+        }
+
+        applyScrubUI(e.clientX);
+      };
+
+      const onPointerMove = (e) => {
+        if (!isDragging) return;
+        e.stopPropagation();
+        e.preventDefault();
+        applyScrubUI(e.clientX);
+      };
+
+      const onPointerUp = (e) => {
+        if (!isDragging) return;
+        e.stopPropagation();
+        e.preventDefault();
+        isDragging = false;
+
+        const targetSec = applyScrubUI(e.clientX);
+        this.seekTo(targetSec);
+
+        if (scrubber.releasePointerCapture) {
+          try { scrubber.releasePointerCapture(e.pointerId); } catch (err) {}
+        }
+
+        if (track) {
+          track.classList.remove('!h-2.5');
+        }
+        if (thumb) {
+          thumb.classList.remove('scale-125');
+        }
+        if (bubble) {
+          setTimeout(() => {
+            if (!isDragging && bubble) {
+              bubble.classList.remove('opacity-100', 'scale-100');
+              bubble.classList.add('opacity-0', 'scale-90');
+            }
+          }, 500);
+        }
+
+        setTimeout(() => {
+          this.isScrubbing = false;
+        }, 150);
+      };
+
+      scrubber.addEventListener('pointerdown', onPointerDown);
+      scrubber.addEventListener('pointermove', onPointerMove);
+      scrubber.addEventListener('pointerup', onPointerUp);
+      scrubber.addEventListener('pointercancel', onPointerUp);
     }
 
     return itemEl;
@@ -1786,10 +1862,11 @@ class ReelsManager {
   }
 
   // ══════════════════════════════════════════════════════════════════════
-  // CHỨC NĂNG TUA VIDEO (SEEK / SCRUB / NHẤP ĐÚP TUA NHANH TUA LÙI)
+  // CHỨC NĂNG TUA VIDEO (TỰ DO KÉO THẢ THANH TIẾN TRÌNH SCRUBBER)
   // ══════════════════════════════════════════════════════════════════════
   seekTo(seconds) {
-    const target = Math.max(0, Math.min(this.currentVideoDuration || 9999, seconds));
+    const duration = this.currentVideoDuration || 30;
+    const target = Math.max(0, Math.min(duration, seconds));
     const mountBox = document.getElementById(`reel-player-mount-${this.currentIndex}`);
     if (mountBox) {
       const iframe = mountBox.querySelector('iframe');
@@ -1809,39 +1886,21 @@ class ReelsManager {
     this.updateProgressBar(this.currentIndex, this.currentVideoTime, this.currentVideoDuration);
   }
 
-  seekDelta(deltaSeconds) {
-    const target = (this.currentVideoTime || 0) + deltaSeconds;
-    this.seekTo(target);
-    this.showSeekIndicator(deltaSeconds > 0 ? 'forward' : 'rewind');
-  }
-
-  showSeekIndicator(type) {
-    const badgeId = type === 'forward' 
-      ? `reel-seek-badge-right-${this.currentIndex}`
-      : `reel-seek-badge-left-${this.currentIndex}`;
-    const badge = document.getElementById(badgeId);
-    if (!badge) return;
-
-    badge.classList.remove('opacity-0', 'scale-75');
-    badge.classList.add('opacity-100', 'scale-100');
-
-    setTimeout(() => {
-      badge.classList.remove('opacity-100', 'scale-100');
-      badge.classList.add('opacity-0', 'scale-75');
-    }, 450);
-  }
-
   updateProgressBar(idx, current = 0, duration = 0) {
+    if (this.isScrubbing) return; // Không ghi đè vị trí khi người dùng đang giữ kéo thanh tua
     const pBar = document.getElementById(`reel-progress-bar-${idx}`);
-    const timeLabel = document.getElementById(`reel-time-display-${idx}`);
+    const bubbleTime = document.getElementById(`reel-bubble-time-${idx}`);
+    const bubbleDur = document.getElementById(`reel-bubble-dur-${idx}`);
     if (!pBar) return;
 
     const pct = duration > 0 ? Math.min(100, Math.max(0, (current / duration) * 100)) : 0;
     pBar.style.width = `${pct}%`;
 
-    if (timeLabel && duration > 0) {
-      timeLabel.textContent = `${this.formatTime(current)} / ${this.formatTime(duration)}`;
-    }
+    const formattedCur = this.formatTime(current);
+    const formattedDur = this.formatTime(duration);
+
+    if (bubbleTime) bubbleTime.textContent = formattedCur;
+    if (bubbleDur && duration > 0) bubbleDur.textContent = formattedDur;
   }
 
   formatTime(sec) {
