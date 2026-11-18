@@ -1147,7 +1147,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════
-     AUTH MODAL: ĐĂNG NHẬP SỐ ĐIỆN THOẠI & ZALO
+     AUTH MODAL: ĐĂNG NHẬP SỐ ĐIỆN THOẠI & SINH TRẮC HỌC (FACE ID / VÂN TAY)
 ══════════════════════════════════════════ -->
 <div id="auth-modal" class="modal-backdrop hidden" style="align-items:center;">
   <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-md mx-3 sm:mx-4 overflow-hidden flex flex-col">
@@ -1161,23 +1161,11 @@
           </div>
           <div>
             <h3 class="font-black text-base tracking-wide">Đăng Nhập FoodTinder</h3>
-            <p class="text-xs text-rose-100">Lưu danh sách quán ngon & cùng rủ bạn bè</p>
+            <p class="text-xs text-rose-100">Bảo mật bằng Số Điện Thoại & Sinh trắc học</p>
           </div>
         </div>
         <button onclick="window.authManager.closeLoginModal()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-sm cursor-pointer">
           ✕
-        </button>
-      </div>
-
-      <!-- Tab Buttons: Số Điện Thoại vs Zalo -->
-      <div class="mt-4 p-1 rounded-2xl bg-black/20 backdrop-blur-md flex gap-1">
-        <button id="auth-tab-btn-phone" onclick="window.authManager.switchAuthTab('phone')" 
-          class="flex-1 py-2.5 rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 transition bg-white text-stone-900 shadow-xs cursor-pointer">
-          <span>📱 Số Điện Thoại</span>
-        </button>
-        <button id="auth-tab-btn-zalo" onclick="window.authManager.switchAuthTab('zalo')" 
-          class="flex-1 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition text-white/90 hover:text-white hover:bg-white/10 cursor-pointer">
-          <span>💬 Xác Thực Zalo</span>
         </button>
       </div>
     </div>
@@ -1185,7 +1173,10 @@
     <!-- Modal Content -->
     <div class="p-5 overflow-y-auto max-h-[75vh] space-y-4">
       
-      <!-- TAB 1: ĐĂNG NHẬP BẰNG SỐ ĐIỆN THOẠI (SMS OTP) -->
+      <!-- PHẦN ĐĂNG NHẬP NHANH BẰNG KHUÔN MẶT / DẤU VÂN TAY (DÀNH CHO TÀI KHOẢN ĐÃ ĐĂNG KÝ) -->
+      <div id="auth-biometric-section"></div>
+
+      <!-- ĐĂNG NHẬP BẰNG SỐ ĐIỆN THOẠI (SMS OTP) -->
       <div id="auth-tab-content-phone" class="space-y-4">
         <!-- Bước 1: Nhập Số Điện Thoại -->
         <div id="auth-phone-step-1" class="space-y-3.5">
@@ -1270,32 +1261,54 @@
         </div>
       </div>
 
-      <!-- TAB 2: ĐĂNG NHẬP / XÁC THỰC QUA ZALO -->
-      <div id="auth-tab-content-zalo" class="space-y-4 hidden">
-        <div class="text-center p-4 bg-blue-50/70 border border-blue-200 rounded-2xl space-y-2">
-          <div class="w-14 h-14 rounded-2xl bg-[#0068FF] text-white flex items-center justify-center font-black text-2xl mx-auto shadow-md shadow-blue-200">
-            Z
-          </div>
-          <h4 class="font-extrabold text-stone-900 text-sm">Xác Thực Nhanh Qua Zalo</h4>
-          <p class="text-xs text-stone-500 leading-relaxed">
-            Đăng nhập an toàn, tiện lợi bằng tài khoản Zalo của bạn. Không cần chờ tin nhắn SMS, kết nối danh bạ để cùng rủ bạn bè đi ăn tức thì!
-          </p>
-        </div>
-
-        <button onclick="window.authManager.loginWithZalo()" 
-          class="w-full py-3.5 bg-[#0068FF] hover:bg-[#0055D4] active:scale-98 text-white rounded-2xl font-black text-sm shadow-md shadow-blue-300 transition cursor-pointer flex items-center justify-center gap-2.5">
-          <span class="w-5 h-5 rounded-full bg-white text-[#0068FF] flex items-center justify-center font-black text-xs leading-none">Z</span>
-          <span>Đăng Nhập Bằng Zalo</span>
-        </button>
-
-        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200 text-center">
-          <p class="text-[11px] text-stone-400 leading-normal">
-            🔒 FoodTinder cam kết bảo mật tuyệt đối thông tin cá nhân. Số điện thoại & tài khoản chỉ dùng để lưu trữ danh sách món ăn yêu thích và kết nối bàn ăn cùng bạn bè.
-          </p>
-        </div>
-      </div>
-
     </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     BIOMETRIC SCAN PROMPT MODAL (QUÉT KHUÔN MẶT / DẤU VÂN TAY)
+══════════════════════════════════════════ -->
+<div id="biometric-scan-modal" class="modal-backdrop hidden" style="align-items:center; z-index:250;">
+  <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-xs mx-4 text-center space-y-4 animate-scaleIn">
+    <!-- Visual Scanner Icon with Pulse Animation -->
+    <div class="relative w-20 h-20 mx-auto flex items-center justify-center">
+      <div id="biometric-scan-pulse" class="absolute inset-0 rounded-full bg-rose-500/20 animate-ping"></div>
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 via-orange-500 to-amber-500 text-white flex items-center justify-center shadow-lg shadow-rose-200 z-10 relative">
+        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 3H5a2 2 0 0 0-2 2v2"></path>
+          <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+          <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+          <path d="M3 17v2a2 2 0 0 0 2 2h2"></path>
+          <path d="M9 10h.01"></path>
+          <path d="M15 10h.01"></path>
+          <path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path>
+        </svg>
+      </div>
+      <div id="biometric-scan-success" class="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-emerald-500 text-white font-black text-sm flex items-center justify-center z-20 shadow-md hidden">
+        ✓
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-extrabold text-stone-900 text-base">Xác Thực Sinh Trắc Học</h4>
+      <p id="biometric-scan-status" class="text-xs text-stone-500 mt-1">Đang nhận diện Khuôn mặt hoặc Dấu vân tay...</p>
+    </div>
+
+    <!-- Account Details -->
+    <div class="p-2.5 rounded-xl bg-stone-50 border border-stone-200 text-left">
+      <div class="flex items-center justify-between text-xs">
+        <span class="text-stone-500">Tài khoản:</span>
+        <strong id="biometric-account-name" class="text-stone-900 font-bold"></strong>
+      </div>
+      <div class="flex items-center justify-between text-xs mt-1">
+        <span class="text-stone-500">Số điện thoại:</span>
+        <span id="biometric-account-phone" class="font-mono text-stone-700"></span>
+      </div>
+    </div>
+
+    <button onclick="window.authManager.closeBiometricScanModal()" class="w-full py-2 bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-xl text-xs font-bold transition cursor-pointer">
+      Hủy bỏ
+    </button>
   </div>
 </div>
 
@@ -1341,6 +1354,15 @@
       </div>
 
       <div class="space-y-1.5 pt-1">
+        <!-- Toggle Sinh trắc học (Face ID / Vân tay) -->
+        <button onclick="window.authManager.toggleBiometrics()" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 hover:bg-amber-100 border border-amber-200 text-stone-800 text-xs font-bold transition flex items-center justify-between cursor-pointer">
+          <span class="flex items-center gap-2">
+            <span>👆</span>
+            <span>Đăng nhập Khuôn mặt / Vân tay</span>
+          </span>
+          <span id="profile-biometric-toggle-text" class="text-[10.5px] font-black text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-md">Đã bật</span>
+        </button>
+
         <button onclick="window.authManager.editProfileName()" class="w-full py-2.5 px-3 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-800 text-xs font-bold transition flex items-center justify-between cursor-pointer">
           <span class="flex items-center gap-2"><span>✏️</span><span>Chỉnh sửa tên hiển thị</span></span>
           <span class="text-stone-400">›</span>
