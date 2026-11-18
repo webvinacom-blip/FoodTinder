@@ -48,6 +48,10 @@ class TinderSwipeManager {
     this.render();
   }
 
+  renderCards() {
+    this.render();
+  }
+
   render() {
     if (!this.container) return;
     this.container.innerHTML = '';
@@ -91,6 +95,9 @@ class TinderSwipeManager {
       this.renderEmptyState();
       return;
     }
+
+    // Cập nhật trạng thái nút ShopeeFood theo món trên cùng (Top card)
+    this.updateShopeeButtonState(visibleCards[0]);
 
     visibleCards.reverse().forEach((food, reverseIdx) => {
       const actualIdx = visibleCards.length - 1 - reverseIdx;
@@ -615,14 +622,53 @@ class TinderSwipeManager {
     this.reloadDeck();
   }
 
+  updateShopeeButtonState(food) {
+    const btn = document.getElementById('swipe-shopee-btn');
+    if (!btn) return;
+
+    const hasShopee = food ? (window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) : false;
+
+    if (hasShopee) {
+      btn.disabled = false;
+      btn.removeAttribute('disabled');
+      btn.title = "Đặt giao hàng ShopeeFood cho món này";
+      btn.className = "w-16 h-16 rounded-full bg-gradient-to-tr from-[#EE4D2D] to-orange-500 text-white shadow-xl shadow-orange-400/80 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer group shrink-0";
+      const svg = btn.querySelector('svg');
+      if (svg) {
+        svg.className = "w-10 h-10 group-hover:scale-110 transition-transform drop-shadow-sm";
+      }
+    } else {
+      btn.disabled = true;
+      btn.setAttribute('disabled', 'true');
+      btn.title = "Quán phục vụ trực tiếp tại chỗ, không có giao hàng ShopeeFood";
+      btn.className = "w-16 h-16 rounded-full bg-stone-100 border border-stone-300 text-stone-400 opacity-50 shadow-none flex items-center justify-center cursor-not-allowed pointer-events-none select-none filter grayscale shrink-0";
+      const svg = btn.querySelector('svg');
+      if (svg) {
+        svg.className = "w-10 h-10 drop-shadow-none filter grayscale opacity-40";
+      }
+    }
+  }
+
   orderCurrentFoodDelivery() {
-    const currentFood = this.deck[this.currentIndex];
-    if (currentFood && window.app) {
+    const currentFood = this.deck && this.deck[this.currentIndex];
+    if (!currentFood) return;
+
+    const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(currentFood) : (currentFood.hasShopeeDelivery === true);
+    if (!hasShopee) {
+      if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`📍 Quán ${currentFood.restaurant} chỉ phục vụ tại chỗ, không có trên ShopeeFood!`);
+      }
+      return;
+    }
+
+    if (window.app) {
       window.app.openShopeeFoodDelivery(currentFood.id);
     }
   }
 
   renderEmptyState() {
+    this.updateShopeeButtonState(null);
     this.container.innerHTML = `
       <div class="h-full w-full flex flex-col items-center justify-center p-6 text-center bg-white rounded-[28px] border border-[#F0E6DD] shadow-sm">
         <div class="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-3xl mb-4 animate-bounce">
