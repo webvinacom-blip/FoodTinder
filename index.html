@@ -1604,7 +1604,7 @@
 <script src="js/reels.js?v=1795210000"></script>
 <script src="js/chat.js?v=1795210000"></script>
 <script src="js/auth.js?v=1795210000"></script>
-<script src="js/data-loader.js?v=2.7.0"></script>
+<script src="js/data-loader.js?v=2.7.1"></script>
 <script src="js/app.js?v=1795210000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
@@ -1632,6 +1632,13 @@ function switchTab(tabName) {
 
   // Delegate to app-level logic for lazy inits
   if (window.app) window.app.switchTab(tabName);
+  if (tabName === 'reels' && window.reelsManager) {
+    if (!window.reelsManager.items || window.reelsManager.items.length === 0) {
+      window.reelsManager.init();
+    } else if (typeof window.reelsManager.onTabVisible === 'function') {
+      window.reelsManager.onTabVisible();
+    }
+  }
   if (window.lucide) window.lucide.createIcons();
 
   if (tabName === 'reels' && window.authManager && typeof window.authManager.trackStat === 'function') {

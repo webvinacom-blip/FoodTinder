@@ -2825,7 +2825,9 @@ class FoodApp {
       }
     } else if (tabName === 'reels') {
       if (window.reelsManager) {
-        if (typeof window.reelsManager.onTabVisible === 'function') {
+        if (!window.reelsManager.items || window.reelsManager.items.length === 0) {
+          window.reelsManager.init();
+        } else if (typeof window.reelsManager.onTabVisible === 'function') {
           window.reelsManager.onTabVisible();
         }
         const firstVideo = document.querySelector('#reels-feed-container video');
