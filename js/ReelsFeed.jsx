@@ -610,7 +610,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
   // Chiến thuật 1: Phân trang ngặt nghèo .limit(5), ban đầu chỉ nạp 5 video
   const [itemsList, setItemsList] = useState(() => items.slice(0, 5));
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false); // Mặc định tự động mở tiếng khi vào Reels
   const [isPaused, setIsPaused] = useState(false);
   const [likedMap, setLikedMap] = useState({});
 
@@ -783,7 +783,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   {isCurrent && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`}
+                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=${isMuted ? 1 : 0}&loop=0&enablejsapi=1`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"

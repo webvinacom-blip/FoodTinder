@@ -747,7 +747,7 @@ class ReelsManager {
   constructor(containerId = 'reels-feed-container') {
     this.container = document.getElementById(containerId);
     this.currentIndex = 0;
-    this.muted = true;
+    this.muted = false; // Tự động mở tiếng khi vào video reels
     this.isPaused = false;
     this.likedMap = {};
     this.commentsMap = {};
@@ -847,6 +847,7 @@ class ReelsManager {
     if (!this.container) return;
 
     this.currentIndex = 0;
+    this.muted = false; // Luôn tự động mở tiếng khi khởi tạo reels
     this.items = [];
     this.lastVisibleDoc = null;
     this.hasMore = true;
@@ -854,6 +855,9 @@ class ReelsManager {
     this.currentWatchStartTime = Date.now();
 
     await this.loadInitialBatch();
+    setTimeout(() => {
+      this.unmuteActiveVideo();
+    }, 200);
   }
 
   async loadInitialBatch() {
@@ -1282,9 +1286,9 @@ class ReelsManager {
             iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (loop=0 để bắt sự kiện kết thúc chuyển sang video mới):
-            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=0 & enablejsapi=1
-            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`;
+            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (tự động mở tiếng mute=0, loop=0 để tự động next):
+            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=0 & loop=0 & enablejsapi=1
+            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=${this.muted ? 1 : 0}&loop=0&enablejsapi=1`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -1476,7 +1480,41 @@ class ReelsManager {
   }
 
   onTabVisible() {
+    this.muted = false; // Tự động mở tiếng ngay khi vào video reels
+    this.updateAudioButtonUI();
     this.updateVideoMounts();
+    setTimeout(() => {
+      this.unmuteActiveVideo();
+    }, 150);
+  }
+
+  unmuteActiveVideo() {
+    this.muted = false;
+    this.updateAudioButtonUI();
+    const mountBox = document.getElementById(`reel-player-mount-${this.currentIndex}`);
+    if (mountBox) {
+      const iframe = mountBox.querySelector('iframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+      }
+      const video = mountBox.querySelector('video');
+      if (video) {
+        video.muted = false;
+        video.volume = 1.0;
+      }
+    }
+  }
+
+  updateAudioButtonUI() {
+    const allAudioBtns = this.container ? this.container.querySelectorAll('.reel-audio-toggle-btn') : [];
+    allAudioBtns.forEach(b => {
+      b.innerHTML = `
+        <i data-lucide="${this.muted ? 'volume-x' : 'volume-2'}" class="w-4 h-4"></i>
+        <span>${this.muted ? 'Chạm bật tiếng' : 'Đang phát tiếng'}</span>
+      `;
+    });
+    if (window.lucide) window.lucide.createIcons();
   }
 
   toggleAudio(btn) {
@@ -1502,15 +1540,7 @@ class ReelsManager {
       }
     });
 
-    // Cập nhật tất cả các nút âm thanh trên mọi slide để đồng bộ trạng thái
-    const allAudioBtns = this.container ? this.container.querySelectorAll('.reel-audio-toggle-btn') : [];
-    allAudioBtns.forEach(b => {
-      b.innerHTML = `
-        <i data-lucide="${this.muted ? 'volume-x' : 'volume-2'}" class="w-4 h-4"></i>
-        <span>${this.muted ? 'Chạm bật tiếng' : 'Đang phát tiếng'}</span>
-      `;
-    });
-    if (window.lucide) window.lucide.createIcons();
+    this.updateAudioButtonUI();
   }
 
   handleVideoError(idx, code) {
