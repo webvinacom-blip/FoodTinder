@@ -243,10 +243,16 @@ class ReelsManager {
             <!-- Iframe sẽ được gắn vào đây khi slide active -->
           </div>
 
+          <!-- Touch / Click catcher layer: Ngăn chặn click lọt vào iframe cross-origin, đảm bảo Play/Pause & Thả tim 100% mượt mà -->
+          <div class="reel-touch-surface absolute inset-0 z-20 cursor-pointer" data-slide-index="${idx}"></div>
+
           <!-- Play / Pause Center Animated Overlay Icon -->
-          <div id="reel-play-pause-icon-${idx}" class="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-300 opacity-0 scale-75 z-20">
-            <div class="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white text-3xl shadow-2xl border border-white/20">
-              ⏸
+          <div id="reel-play-pause-icon-${idx}" class="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-300 opacity-0 scale-75 z-25">
+            <div class="w-18 h-18 p-4 rounded-full bg-black/65 backdrop-blur-lg flex items-center justify-center text-white shadow-2xl border border-white/25">
+              <svg id="reel-icon-svg-${idx}" class="w-9 h-9 fill-current text-white" viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
+                <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
+              </svg>
             </div>
           </div>
 
@@ -275,7 +281,7 @@ class ReelsManager {
             </span>
           </div>
           
-          <button onclick="window.reelsManager.toggleAudio(this)" class="px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition flex items-center gap-1.5 text-xs font-bold shadow-lg cursor-pointer">
+          <button onclick="window.reelsManager.toggleAudio(this)" class="reel-audio-toggle-btn px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition flex items-center gap-1.5 text-xs font-bold shadow-lg cursor-pointer">
             <i data-lucide="${this.muted ? 'volume-x' : 'volume-2'}" class="w-4 h-4"></i>
             <span>${this.muted ? 'Chạm bật tiếng' : 'Đang phát tiếng'}</span>
           </button>
@@ -388,8 +394,10 @@ class ReelsManager {
     `;
 
     // ── XỬ LÝ CHẠM MÀN HÌNH ĐỂ TẠM DỪNG / PHÁT TIẾP (PLAY / PAUSE) ──
+    const touchSurface = itemEl.querySelector(`.reel-touch-surface[data-slide-index="${idx}"]`);
     let clickTimer = null;
-    itemEl.addEventListener('click', (e) => {
+
+    const handleTapOrClick = (e) => {
       // Bỏ qua nếu chạm vào các nút điều khiển bên trên / bên phải
       if (e.target.closest('button') || e.target.closest('a')) return;
 
@@ -406,6 +414,14 @@ class ReelsManager {
           this.togglePlayPause(idx);
         }, 220);
       }
+    };
+
+    if (touchSurface) {
+      touchSurface.addEventListener('click', handleTapOrClick);
+    }
+    itemEl.addEventListener('click', (e) => {
+      if (e.target === touchSurface) return; // Đã xử lý bởi touchSurface
+      handleTapOrClick(e);
     });
 
     return itemEl;
@@ -435,15 +451,28 @@ class ReelsManager {
       else video.play().catch(() => {});
     }
 
-    // Hiển thị icon trạng thái Play / Pause ở giữa màn hình
+    // Hiển thị icon trạng thái Play / Pause ở giữa màn hình với icon SVG sắc nét
     if (pauseIcon) {
-      const iconDiv = pauseIcon.querySelector('div');
+      const containerDiv = pauseIcon.querySelector('div');
       if (this.isPaused) {
-        if (iconDiv) iconDiv.innerHTML = '⏸';
+        if (containerDiv) {
+          containerDiv.innerHTML = `
+            <svg class="w-9 h-9 fill-current text-white" viewBox="0 0 24 24">
+              <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
+            </svg>
+          `;
+        }
         pauseIcon.classList.remove('opacity-0', 'scale-75');
         pauseIcon.classList.add('opacity-100', 'scale-100');
       } else {
-        if (iconDiv) iconDiv.innerHTML = '▶';
+        if (containerDiv) {
+          containerDiv.innerHTML = `
+            <svg class="w-9 h-9 fill-current text-white translate-x-0.5" viewBox="0 0 24 24">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          `;
+        }
         pauseIcon.classList.remove('opacity-0', 'scale-75');
         pauseIcon.classList.add('opacity-100', 'scale-100');
         setTimeout(() => {
@@ -490,6 +519,8 @@ class ReelsManager {
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
+            iframe.style.transform = 'scale(1.04)';
+            iframe.style.transformOrigin = 'center center';
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             iframe.allowFullscreen = true;
             mountBox.appendChild(iframe);
@@ -499,6 +530,7 @@ class ReelsManager {
           if (iframe && iframe.contentWindow) {
             iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
             const muteCmd = this.muted ? 'mute' : 'unMute';
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
             iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
           }
         }
@@ -589,6 +621,7 @@ class ReelsManager {
         const iframe = mountBox.querySelector('iframe');
         if (iframe && iframe.contentWindow) {
           const cmd = this.muted ? 'mute' : 'unMute';
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
           iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*');
         }
       } else {
@@ -600,13 +633,15 @@ class ReelsManager {
       }
     });
 
-    if (btn) {
-      btn.innerHTML = `
+    // Cập nhật tất cả các nút âm thanh trên mọi slide để đồng bộ trạng thái
+    const allAudioBtns = this.container ? this.container.querySelectorAll('.reel-audio-toggle-btn') : [];
+    allAudioBtns.forEach(b => {
+      b.innerHTML = `
         <i data-lucide="${this.muted ? 'volume-x' : 'volume-2'}" class="w-4 h-4"></i>
         <span>${this.muted ? 'Chạm bật tiếng' : 'Đang phát tiếng'}</span>
       `;
-      if (window.lucide) window.lucide.createIcons();
-    }
+    });
+    if (window.lucide) window.lucide.createIcons();
   }
 
   handleVideoError(idx, code) {

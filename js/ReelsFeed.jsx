@@ -95,6 +95,50 @@ const CURATED_REELS_DATA = [
     tags: ['#ReviewQuyNhơn', '#BảnĐồẨmThực', '#ĂnGìQuyNhơn'],
     image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80',
     likesCount: 2980
+  },
+  {
+    id: 204,
+    isGeneralReview: true,
+    video_id: '1LpN57SLs4Q',
+    author: 'Giang Mây Travel',
+    title: 'Foodtour 24 Giờ Ăn Sập Ẩm Thực Phố Biển Quy Nhơn',
+    desc: 'Cùng food blogger khám phá từ bữa sáng bánh hỏi cháo lòng đến bữa tối ốc vỉa hè và chè tráng miệng phố biển.',
+    tags: ['#Foodtour24h', '#QuyNhơnFood', '#MónNgonXứNẫu'],
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80',
+    likesCount: 2150
+  },
+  {
+    id: 205,
+    isGeneralReview: true,
+    video_id: '4r-7zAAEUp8',
+    author: 'Võ Ngọc Tài Review',
+    title: 'Quy Nhơn Ăn Gì? Cẩm Nang Ăn Uống Cho Khách Du Lịch',
+    desc: 'Hướng dẫn chi tiết ăn uống khi du lịch Quy Nhơn: những món đặc sản địa phương trứ danh nhất định phải thử một lần.',
+    tags: ['#QuyNhơnĂnGì', '#CẩmNangẨmThực', '#ĐặcSảnBìnhĐịnh'],
+    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80',
+    likesCount: 1940
+  },
+  {
+    id: 206,
+    isGeneralReview: true,
+    video_id: 'OcJqkmePrQc',
+    author: 'Gia Đình Vivu',
+    title: 'Quy Nhơn Có Gì Ngon? 5 Quán Ăn Địa Phương Nổi Tiếng',
+    desc: 'Tổng hợp 5 trải nghiệm ẩm thực độc đáo của người dân bản địa Quy Nhơn, chuẩn vị và giá cả cực kỳ hợp lý.',
+    tags: ['#Top5MónNgon', '#ẨmThựcBảnĐịa', '#QuyNhơnMónNgon'],
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80',
+    likesCount: 2600
+  },
+  {
+    id: 207,
+    isGeneralReview: true,
+    video_id: 'eqGLEGlFCIY',
+    author: 'Food Reviewer Xứ Nẫu',
+    title: 'Food Tour Check-in Ẩm Thực Phố Biển Quy Nhơn',
+    desc: 'Khám phá hải sản tươi sống bên bờ biển Quy Nhơn, lẩu sứa nước lèo và các món ăn vặt hấp dẫn.',
+    tags: ['#HảiSảnQuyNhơn', '#LẩuSứa', '#ĂnUốngQuyNhơn'],
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+    likesCount: 1820
   }
 ];
 
@@ -217,7 +261,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                       id={`yt-iframe-${idx}`}
                       src={`https://www.youtube.com/embed/${item.video_id}?enablejsapi=1&autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
-                      style={{ width: '100%', height: '100%' }}
+                      style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
@@ -227,9 +271,12 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
 
                   {/* Play / Pause Indicator Icon in Center */}
                   {isPaused && (
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                      <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white text-3xl shadow-2xl border border-white/20 animate-pulse">
-                        ⏸
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-25">
+                      <div className="w-18 h-18 p-4 rounded-full bg-black/65 backdrop-blur-lg flex items-center justify-center text-white shadow-2xl border border-white/25 animate-pulse">
+                        <svg className="w-9 h-9 fill-current text-white" viewBox="0 0 24 24">
+                          <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
+                          <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
+                        </svg>
                       </div>
                     </div>
                   )}
