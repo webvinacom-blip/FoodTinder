@@ -803,8 +803,9 @@ class ReelsManager {
             iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            // Dùng youtube-nocookie.com & bỏ originParam để tương thích 100% mọi môi trường (Safari/Chrome/Localhost/Webview), triệt tiêu lỗi Error 153!
-            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`;
+            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA:
+            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=1 & playlist=VIDEO_ID & enablejsapi=1
+            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${videoId}&enablejsapi=1`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -866,41 +867,11 @@ class ReelsManager {
             });
           }
         }
-      } else if (isNext) {
-        // ── VỊ TRÍ 2: VIDEO DỰ PHÒNG TIẾP THEO (idx = cur + 1) ──
-        // Giữ poster hình ảnh sắc nét, KHÔNG tạo iframe autoplay=0 để khi vuốt sang là tự động play ngay!
-        if (videoId) {
-          mountBox.innerHTML = '';
-        } else if (videoUrl) {
-          let video = mountBox.querySelector('video');
-          if (!video) {
-            video = document.createElement('video');
-            video.src = videoUrl;
-            video.preload = 'metadata'; // Chỉ tải trước khung hình
-            video.muted = true;
-            video.playsInline = true;
-            video.className = 'w-full h-full object-cover pointer-events-none';
-            mountBox.innerHTML = '';
-            mountBox.appendChild(video);
-          } else {
-            video.preload = 'metadata';
-            video.pause();
-            video.muted = true;
-          }
-        }
-      } else if (isPrev) {
-        // ── VỊ TRÍ 3: VIDEO VỪA XEM QUA (idx = cur - 1): preload="metadata", tạm dừng để sẵn sàng vuốt ngược ──
-        const iframe = mountBox.querySelector('iframe');
-        if (iframe && iframe.contentWindow) {
-          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
-          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
-        }
-        const video = mountBox.querySelector('video');
-        if (video) {
-          video.preload = 'metadata';
-          video.pause();
-          video.muted = true;
-        }
+      } else {
+        // ── GỠ MÌN RAM & TRẠNG THÁI RỖNG CHO MỌI VIDEO KHÔNG PHẢI VIDEO ĐANG XEM ──
+        // Tuyệt đối không chỉ pause. Ngay khi lướt qua video khác, lập tức xóa src='about:blank'
+        // và unmount hoàn toàn iframe/video khỏi DOM để giải phóng 100% bộ nhớ RAM, chống văng app trên Safari/Chrome!
+        this.unmountVideo(idx, mountBox);
       }
     });
   }

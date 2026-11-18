@@ -312,7 +312,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   {isCurrent && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube-nocookie.com/embed/${item.video_id}?enablejsapi=1&autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
+                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=${item.video_id}&enablejsapi=1`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"
