@@ -5207,7 +5207,11 @@ const APP_DATA = {
       "deliveryPlatform": "Tại chỗ & Mang về",
       "gmapsVerified": true,
       "priceMin": 20000,
-      "priceMax": 60000
+      "priceMax": 60000,
+      "video_id": "wsXvJFY9Pno",
+      "place_id": "oc_hoa_ngovan_so_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/wsXvJFY9Pno",
+      "videoPlatform": "youtube"
     },
     {
       "id": 8,
@@ -5296,7 +5300,11 @@ const APP_DATA = {
       "attributes": [
         "crunchy",
         "salty"
-      ]
+      ],
+      "video_id": "4r-7zAAEUp8",
+      "place_id": "banh_xeo_anh_vu_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/4r-7zAAEUp8",
+      "videoPlatform": "youtube"
     },
     {
       "id": 12,
@@ -5388,7 +5396,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 18,
@@ -6010,7 +6022,11 @@ const APP_DATA = {
       "priceMax": 50000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "gWrDmRmEfJk",
+      "place_id": "banh_hoi_hong_thanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/gWrDmRmEfJk",
+      "videoPlatform": "youtube"
     },
     {
       "id": 13,
@@ -6190,7 +6206,11 @@ const APP_DATA = {
       "attributes": [
         "crunchy",
         "salty"
-      ]
+      ],
+      "video_id": "TQ0uDdrAqAU",
+      "place_id": "nem_cha_loi_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/TQ0uDdrAqAU",
+      "videoPlatform": "youtube"
     },
     {
       "id": 42,
@@ -6284,7 +6304,11 @@ const APP_DATA = {
         "drinks",
         "light",
         "sweet"
-      ]
+      ],
+      "video_id": "1LpN57SLs4Q",
+      "place_id": "che_nho_ngo_may_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/1LpN57SLs4Q",
+      "videoPlatform": "youtube"
     },
     {
       "id": 46,
@@ -6461,7 +6485,11 @@ const APP_DATA = {
       "attributes": [
         "crunchy",
         "salty"
-      ]
+      ],
+      "video_id": "1dT4PMS3HPk",
+      "place_id": "bun_ca_ngoc_lien_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/1dT4PMS3HPk",
+      "videoPlatform": "youtube"
     },
     {
       "id": 49,
@@ -9711,7 +9739,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 135,
@@ -9803,7 +9835,11 @@ const APP_DATA = {
         "hot_soup",
         "salty",
         "spicy"
-      ]
+      ],
+      "video_id": "eqGLEGlFCIY",
+      "place_id": "kichi_kichi_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/eqGLEGlFCIY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 155,
@@ -10966,7 +11002,11 @@ const APP_DATA = {
         "salty",
         "sour",
         "spicy"
-      ]
+      ],
+      "video_id": "wsXvJFY9Pno",
+      "place_id": "bep_nha_sam_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/wsXvJFY9Pno",
+      "videoPlatform": "youtube"
     },
     {
       "id": 203,
@@ -11149,7 +11189,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 208,
@@ -11237,7 +11281,11 @@ const APP_DATA = {
       "priceMax": 55000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 222,
@@ -11508,7 +11556,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 219,
@@ -11598,7 +11650,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "salty"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 225,
@@ -11690,7 +11746,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 228,
@@ -11782,7 +11842,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 230,
@@ -11875,7 +11939,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "sour"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 232,
@@ -12596,7 +12664,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "salty"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 254,
@@ -18940,7 +19012,11 @@ const APP_DATA = {
       "moodIds": [
         "craving"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "gWrDmRmEfJk",
+      "place_id": "banh_hoi_hong_thanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/gWrDmRmEfJk",
+      "videoPlatform": "youtube"
     },
     {
       "id": 287448,
@@ -19005,7 +19081,11 @@ const APP_DATA = {
       "moodIds": [
         "comfort"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 30399,
@@ -19037,7 +19117,11 @@ const APP_DATA = {
       "moodIds": [
         "craving"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "4r-7zAAEUp8",
+      "place_id": "banh_xeo_anh_vu_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/4r-7zAAEUp8",
+      "videoPlatform": "youtube"
     },
     {
       "id": 780567,
@@ -19293,7 +19377,11 @@ const APP_DATA = {
         "hangout",
         "craving"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "TQ0uDdrAqAU",
+      "place_id": "nem_cha_loi_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/TQ0uDdrAqAU",
+      "videoPlatform": "youtube"
     },
     {
       "id": 253664,
@@ -19358,7 +19446,11 @@ const APP_DATA = {
       "moodIds": [
         "comfort"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 44504,
@@ -20003,7 +20095,11 @@ const APP_DATA = {
       "moodIds": [
         "comfort"
       ],
-      "openTime": "07:00 - 22:30"
+      "openTime": "07:00 - 22:30",
+      "video_id": "4r-7zAAEUp8",
+      "place_id": "banh_xeo_anh_vu_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/4r-7zAAEUp8",
+      "videoPlatform": "youtube"
     },
     {
       "id": 138068,
@@ -35050,7 +35146,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 218014,
@@ -72525,7 +72625,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "heavy"
-      ]
+      ],
+      "video_id": "4r-7zAAEUp8",
+      "place_id": "banh_xeo_anh_vu_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/4r-7zAAEUp8",
+      "videoPlatform": "youtube"
     },
     {
       "id": 875823,
@@ -79255,7 +79359,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 47308,
@@ -93630,7 +93738,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "salty"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 44000,
@@ -95125,7 +95237,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "salty"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 1197808,
@@ -99780,7 +99896,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 1178830,
@@ -113870,7 +113990,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 672409,
@@ -113953,7 +114077,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 690889,
@@ -114036,7 +114164,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 673634,
@@ -114119,7 +114251,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "EEZLoTViFA4",
+      "place_id": "bun_cha_ca_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/EEZLoTViFA4",
+      "videoPlatform": "youtube"
     },
     {
       "id": 747933,
@@ -114286,7 +114422,11 @@ const APP_DATA = {
       "priceMax": 65000,
       "attributes": [
         "hot_soup"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 880847,
@@ -114536,7 +114676,11 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "salty"
-      ]
+      ],
+      "video_id": "8sGx-HxIRPY",
+      "place_id": "bun_ram_my_hanh_quynhon",
+      "videoUrl": "https://www.youtube.com/shorts/8sGx-HxIRPY",
+      "videoPlatform": "youtube"
     },
     {
       "id": 642479,
