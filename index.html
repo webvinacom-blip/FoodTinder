@@ -360,10 +360,6 @@
     <button onclick="switchTab('chat')" id="pill-chat">
       <i data-lucide="message-circle"></i> Tin nhắn
     </button>
-    <button onclick="switchTab('liked')" id="pill-liked">
-      <i data-lucide="heart"></i> Đã thích
-      <span id="liked-badge" class="hidden ml-1 bg-rose-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-    </button>
   </div>
 
   <!-- Right: weather + liked shortcut -->
@@ -381,8 +377,9 @@
       <span id="topbar-weather-text">Quy Nhơn 24°C</span>
       <i data-lucide="chevron-down" style="width:12px;height:12px;"></i>
     </div>
-    <div class="liked-btn" onclick="switchTab('liked')" title="Đã thích">
+    <div class="liked-btn" onclick="switchTab('liked')" title="Món đã thích">
       <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
+      <span id="liked-badge" class="hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
     </div>
     <!-- Auth Button / User Profile Pill -->
     <div id="topbar-auth-container" class="flex items-center shrink-0"></div>
