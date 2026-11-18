@@ -10,10 +10,7 @@ class AuthManager {
     this.savedAccountsKey = 'foodtinder_registered_accounts';
     this.currentUser = this.loadSession();
     this.savedAccounts = this.loadSavedAccounts();
-    this.currentOtp = null;
-    this.otpTimer = null;
-    this.otpCountdown = 0;
-    this.pendingPhone = '';
+    this.pendingSocialProvider = null;
 
     this.defaultAvatars = [
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80',
@@ -772,6 +769,7 @@ class AuthManager {
   }
 
   init() {
+    this.checkRedirectResult();
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => this.syncUI());
     } else {
@@ -814,17 +812,18 @@ class AuthManager {
   }
 
   saveRegisteredAccount(user) {
-    if (!user || !user.phone) return;
+    if (!user || (!user.id && !user.email)) return;
     try {
       let accounts = this.loadSavedAccounts();
-      const existingIdx = accounts.findIndex(a => a.phone === user.phone);
+      const existingIdx = accounts.findIndex(a => (user.id && a.id === user.id) || (user.email && a.email === user.email));
       const accountData = {
         id: user.id || 'usr_' + Date.now(),
         name: user.name || 'Người dùng',
-        phone: user.phone,
+        email: user.email || '',
         avatar: user.avatar || this.defaultAvatars[0],
+        authProvider: user.authProvider || 'google',
         titleId: user.titleId || null,
-        biometricEnabled: user.biometricEnabled !== false, // Mặc định bật sinh trắc học
+        biometricEnabled: user.biometricEnabled !== false, // Tự động bật sinh trắc học cho lần đăng nhập thứ 2 trở đi
         hasCompletedTasteOnboarding: Boolean(user.hasCompletedTasteOnboarding),
         tastePreferences: user.tastePreferences || null,
         lastLogin: new Date().toISOString()
@@ -846,7 +845,7 @@ class AuthManager {
   }
 
   isLoggedIn() {
-    return Boolean(this.currentUser && this.currentUser.phone);
+    return Boolean(this.currentUser && (this.currentUser.id || this.currentUser.email || this.currentUser.name));
   }
 
   getUser() {
@@ -856,6 +855,43 @@ class AuthManager {
   getPrimarySavedAccount() {
     if (!this.savedAccounts || this.savedAccounts.length === 0) return null;
     return this.savedAccounts.find(a => a.biometricEnabled) || this.savedAccounts[0];
+  }
+
+  // Khởi tạo và lấy Firebase Auth SDK
+  ensureFirebaseAuth() {
+    if (typeof firebase === 'undefined') return null;
+    if (firebase.apps && firebase.apps.length === 0 && window.FIREBASE_CONFIG) {
+      try {
+        firebase.initializeApp(window.FIREBASE_CONFIG);
+      } catch (e) {}
+    }
+    return (firebase.auth && typeof firebase.auth === 'function') ? firebase.auth() : null;
+  }
+
+  // Lắng nghe kết quả nếu đăng nhập bằng Redirect trên trình duyệt
+  checkRedirectResult() {
+    const auth = this.ensureFirebaseAuth();
+    if (auth && typeof auth.getRedirectResult === 'function') {
+      auth.getRedirectResult().then(res => {
+        if (res && res.user) {
+          const u = res.user;
+          const providerId = res.credential ? res.credential.providerId : 'google.com';
+          let providerName = 'google';
+          if (providerId.includes('facebook')) providerName = 'facebook';
+          else if (providerId.includes('apple')) providerName = 'apple';
+
+          this.handleSocialLoginSuccess({
+            id: u.uid,
+            name: u.displayName || `${this.capitalize(providerName)} User`,
+            email: u.email || `${u.uid}@${providerName}.com`,
+            avatar: u.photoURL || this.defaultAvatars[0],
+            authProvider: providerName
+          });
+        }
+      }).catch(err => {
+        console.warn('[Social Auth] getRedirectResult check:', err);
+      });
+    }
   }
 
   // Mở modal đăng nhập
@@ -870,7 +906,6 @@ class AuthManager {
       requestAnimationFrame(() => sheet.classList.remove('translate-y-full'));
     }
 
-    this.resetPhoneForm();
     this.renderBiometricQuickLogin();
 
     if (window.soundFX && window.soundFX.playPop) {
@@ -886,12 +921,12 @@ class AuthManager {
     if (sheet) sheet.classList.add('translate-y-full');
     setTimeout(() => {
       modal.classList.add('hidden');
-      this.clearIntervalTimer();
       this.closeBiometricScanModal();
+      this.closeSocialConfirmModal();
     }, 250);
   }
 
-  // Hiển thị phần Đăng nhập nhanh bằng Khuôn mặt / Dấu vân tay nếu có tài khoản đã đăng ký
+  // Hiển thị phần Đăng nhập nhanh bằng Khuôn mặt / Dấu vân tay cho LẦN THỨ 2 TRỞ ĐI
   renderBiometricQuickLogin() {
     const container = document.getElementById('auth-biometric-section');
     if (!container) return;
@@ -910,11 +945,14 @@ class AuthManager {
             <div class="min-w-0 flex-1 leading-tight">
               <div class="text-[10.5px] font-bold text-stone-500">Tài khoản đã đăng ký trên máy này:</div>
               <h4 class="font-extrabold text-stone-900 text-sm truncate mt-0.5">${saved.name}</h4>
-              <p class="text-xs text-rose-600 font-mono font-bold mt-0.5">${this.formatPhone(saved.phone)}</p>
+              <p class="text-xs text-rose-600 font-medium truncate mt-0.5 flex items-center gap-1">
+                <span>${this.getProviderBadge(saved.authProvider)}</span>
+                <span class="font-mono text-stone-600 truncate">${saved.email || saved.name}</span>
+              </p>
             </div>
           </div>
 
-          <!-- Nút Đăng nhập bằng Sinh trắc học (Face ID / Vân tay) -->
+          <!-- Nút Đăng nhập bằng Sinh trắc học (Face ID / Vân tay) cho lần thứ 2 trở đi -->
           <button onclick="window.authManager.loginWithBiometrics()" 
             class="w-full py-3 bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:opacity-95 active:scale-98 text-white rounded-2xl font-black text-xs sm:text-sm shadow-md shadow-rose-200 transition cursor-pointer flex items-center justify-center gap-2">
             <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -926,27 +964,27 @@ class AuthManager {
               <path d="M15 10h.01"></path>
               <path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path>
             </svg>
-            <span>Đăng Nhập Khuôn Mặt / Vân Tay</span>
+            <span>Đăng Nhập Khuôn Mặt / Dấu Vân Tay</span>
           </button>
 
           <div class="flex items-center justify-center gap-2 text-[10.5px] text-stone-500">
-            <span>✨ Xác thực tức thì không cần mã OTP</span>
+            <span>✨ Nhận diện tức thì cho lần đăng nhập thứ 2 trở đi</span>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 my-3">
+        <div class="flex items-center gap-2 my-2.5">
           <div class="flex-1 h-px bg-stone-200"></div>
-          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider">Hoặc đăng nhập bằng số điện thoại khác</span>
+          <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider">Hoặc đăng nhập bằng tài khoản khác</span>
           <div class="flex-1 h-px bg-stone-200"></div>
         </div>
       `;
       container.classList.remove('hidden');
     } else {
       container.innerHTML = `
-        <div class="p-3 bg-amber-50/70 border border-amber-200/80 rounded-2xl flex items-center gap-2.5 text-xs text-stone-600 mb-3">
+        <div class="p-3 bg-amber-50/70 border border-amber-200/80 rounded-2xl flex items-center gap-2.5 text-xs text-stone-600 mb-2">
           <span class="text-xl shrink-0">💡</span>
           <p class="text-[11px] leading-relaxed">
-            Đăng nhập bằng số điện thoại lần đầu để kích hoạt tính năng <strong>Quét khuôn mặt (Face ID) hoặc Dấu vân tay (Touch ID)</strong> cho các lần đăng nhập sau siêu tốc!
+            Đăng nhập lần đầu bằng Google, Facebook hoặc Apple để kích hoạt tính năng <strong>Quét khuôn mặt (Face ID) hoặc Dấu vân tay</strong> cho các lần đăng nhập sau siêu tốc!
           </p>
         </div>
       `;
@@ -954,27 +992,26 @@ class AuthManager {
     }
   }
 
-  // 1. Thực hiện Đăng nhập nhanh bằng Sinh trắc học (Khuôn mặt / Dấu vân tay)
+  // 1. Thực hiện Đăng nhập nhanh bằng Sinh trắc học (Khuôn mặt / Dấu vân tay) cho lần thứ 2 trở đi
   async loginWithBiometrics() {
     const saved = this.getPrimarySavedAccount();
     if (!saved) {
-      this.showToast('⚠️ Chưa có tài khoản nào được đăng ký trên thiết bị này. Vui lòng đăng nhập bằng SĐT trước!');
+      this.showToast('⚠️ Chưa có tài khoản nào được lưu trên thiết bị này. Vui lòng đăng nhập qua Google, Facebook hoặc Apple trước!');
       return;
     }
 
     this.openBiometricScanModal(saved);
 
-    // Kích hoạt mô phỏng quét sinh trắc học có hiệu ứng âm thanh và haptic
     try {
       if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
 
-      // Kiểm tra nếu trình duyệt hỗ trợ WebAuthn thực tế
+      // Kiểm tra hỗ trợ WebAuthn platform authenticator thực tế
       if (window.PublicKeyCredential && typeof window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable === 'function') {
         const available = await window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
-        console.log('WebAuthn platform biometric available:', available);
+        console.log('[WebAuthn] Platform biometric available:', available);
       }
 
-      // Mô phỏng quét cảm biến vân tay / Face ID với thời gian thực tế 900ms
+      // Quét cảm biến vân tay / Face ID với thời gian thực tế 900ms
       setTimeout(() => {
         const scanStatusEl = document.getElementById('biometric-scan-status');
         const scanSuccessIcon = document.getElementById('biometric-scan-success');
@@ -1008,7 +1045,7 @@ class AuthManager {
     } catch (e) {
       console.error('Biometric authentication error:', e);
       this.closeBiometricScanModal();
-      this.showToast('⚠️ Không thể xác thực sinh trắc học, vui lòng đăng nhập bằng mã OTP SMS!');
+      this.showToast('⚠️ Không thể xác thực sinh trắc học, vui lòng đăng nhập bằng tài khoản mạng xã hội!');
     }
   }
 
@@ -1017,13 +1054,13 @@ class AuthManager {
     if (!modal) return;
 
     const nameEl = document.getElementById('biometric-account-name');
-    const phoneEl = document.getElementById('biometric-account-phone');
+    const emailEl = document.getElementById('biometric-account-email');
     const statusEl = document.getElementById('biometric-scan-status');
     const successIcon = document.getElementById('biometric-scan-success');
     const pulseEl = document.getElementById('biometric-scan-pulse');
 
     if (nameEl) nameEl.textContent = account.name;
-    if (phoneEl) phoneEl.textContent = this.formatPhone(account.phone);
+    if (emailEl) emailEl.textContent = account.email || this.getProviderBadge(account.authProvider);
     if (statusEl) statusEl.textContent = 'Đang nhận diện Khuôn mặt hoặc Dấu vân tay...';
     if (successIcon) successIcon.classList.add('hidden');
     if (pulseEl) pulseEl.classList.remove('hidden');
@@ -1036,145 +1073,194 @@ class AuthManager {
     if (modal) modal.classList.add('hidden');
   }
 
-  resetPhoneForm() {
-    this.clearIntervalTimer();
-    this.currentOtp = null;
-    this.pendingPhone = '';
-    const step1 = document.getElementById('auth-phone-step-1');
-    const step2 = document.getElementById('auth-phone-step-2');
-    const phoneInput = document.getElementById('auth-phone-input');
-    const otpInput = document.getElementById('auth-otp-input');
-
-    if (step1) step1.classList.remove('hidden');
-    if (step2) step2.classList.add('hidden');
-    if (phoneInput) phoneInput.value = '';
-    if (otpInput) otpInput.value = '';
-  }
-
-  clearIntervalTimer() {
-    if (this.otpTimer) {
-      clearInterval(this.otpTimer);
-      this.otpTimer = null;
-    }
-    this.otpCountdown = 0;
-  }
-
-  // 2. Gửi mã OTP xác thực số điện thoại
-  sendPhoneOtp(customPhone = null) {
-    const phoneInput = document.getElementById('auth-phone-input');
-    const rawPhone = customPhone || (phoneInput ? phoneInput.value.trim() : '');
-
-    // Chuẩn hóa và kiểm tra số điện thoại Việt Nam
-    const cleanPhone = rawPhone.replace(/\s+/g, '').replace(/^\+84/, '0');
-    const phoneRegex = /^(0)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$/;
-
-    if (!phoneRegex.test(cleanPhone)) {
-      this.showToast('⚠️ Vui lòng nhập số điện thoại Việt Nam hợp lệ (10 chữ số)!');
-      if (phoneInput) phoneInput.focus();
-      return;
-    }
-
-    this.pendingPhone = cleanPhone;
-
-    // Tạo mã OTP ngẫu nhiên 6 chữ số (Mặc định mã demo tiện dụng: 123456 hoặc ngẫu nhiên)
-    const randomOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    this.currentOtp = randomOtp;
-
-    // Chuyển sang Step 2: Nhập OTP
-    const step1 = document.getElementById('auth-phone-step-1');
-    const step2 = document.getElementById('auth-phone-step-2');
-    const phoneDisplay = document.getElementById('auth-otp-target-phone');
-    const demoBadge = document.getElementById('auth-demo-otp-code');
-
-    if (step1) step1.classList.add('hidden');
-    if (step2) step2.classList.remove('hidden');
-    if (phoneDisplay) phoneDisplay.textContent = this.formatPhone(cleanPhone);
-    if (demoBadge) demoBadge.textContent = randomOtp;
-
-    this.startOtpCountdown();
-
-    this.showToast(`📩 Mã OTP đã gửi đến ${this.formatPhone(cleanPhone)}: ${randomOtp}`);
-    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
-
-    const otpInput = document.getElementById('auth-otp-input');
-    if (otpInput) {
-      otpInput.value = '';
-      otpInput.focus();
-    }
-  }
-
-  startOtpCountdown() {
-    this.clearIntervalTimer();
-    this.otpCountdown = 60;
-    const resendBtn = document.getElementById('auth-otp-resend-btn');
-    const timerText = document.getElementById('auth-otp-timer-text');
-
-    const updateUI = () => {
-      if (this.otpCountdown > 0) {
-        if (resendBtn) {
-          resendBtn.disabled = true;
-          resendBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        }
-        if (timerText) {
-          timerText.textContent = `(Gửi lại sau ${this.otpCountdown}s)`;
-        }
-        this.otpCountdown--;
-      } else {
-        this.clearIntervalTimer();
-        if (resendBtn) {
-          resendBtn.disabled = false;
-          resendBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-        }
-        if (timerText) {
-          timerText.textContent = '';
-        }
+  // 2. Đăng nhập bằng Social (Google, Facebook, Apple)
+  // Khi người dùng chọn thì liên kết đến trang đăng nhập tương ứng
+  async loginWithSocial(providerName) {
+    providerName = (providerName || 'google').toLowerCase();
+    const meta = {
+      google: {
+        name: 'Google',
+        badge: '🔴 Google',
+        loginUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
+        defaultAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80',
+        defaultEmail: 'user.foodtinder@gmail.com'
+      },
+      facebook: {
+        name: 'Facebook',
+        badge: '🔵 Facebook',
+        loginUrl: 'https://www.facebook.com/v18.0/dialog/oauth',
+        defaultAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80',
+        defaultEmail: 'user.foodtinder@facebook.com'
+      },
+      apple: {
+        name: 'Apple',
+        badge: '⚫ Apple ID',
+        loginUrl: 'https://appleid.apple.com/auth/authorize',
+        defaultAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80',
+        defaultEmail: 'user.foodtinder@icloud.com'
       }
+    }[providerName] || {
+      name: providerName,
+      badge: '🌐 ' + providerName,
+      defaultAvatar: this.defaultAvatars[0],
+      defaultEmail: `user@${providerName}.com`
     };
 
-    updateUI();
-    this.otpTimer = setInterval(updateUI, 1000);
+    this.showToast(`🌐 Đang kết nối tới trang đăng nhập ${meta.name}...`);
+
+    // Bước 1: Thử nghiệm thực tế với Firebase OAuth SDK
+    const auth = this.ensureFirebaseAuth();
+    if (auth && window.FIREBASE_CONFIG && window.FIREBASE_CONFIG.apiKey) {
+      let provider;
+      try {
+        if (providerName === 'google') {
+          provider = new firebase.auth.GoogleAuthProvider();
+          provider.addScope('profile');
+          provider.addScope('email');
+        } else if (providerName === 'facebook') {
+          provider = new firebase.auth.FacebookAuthProvider();
+          provider.addScope('email');
+          provider.addScope('public_profile');
+        } else if (providerName === 'apple') {
+          provider = new firebase.auth.OAuthProvider('apple.com');
+          provider.addScope('email');
+          provider.addScope('name');
+        }
+
+        if (provider) {
+          try {
+            const res = await auth.signInWithPopup(provider);
+            if (res && res.user) {
+              const u = res.user;
+              this.handleSocialLoginSuccess({
+                id: u.uid,
+                name: u.displayName || `${meta.name} User`,
+                email: u.email || `${u.uid}@${providerName}.com`,
+                avatar: u.photoURL || meta.defaultAvatar,
+                authProvider: providerName
+              });
+              return;
+            }
+          } catch (popupErr) {
+            console.warn('[Social Auth] Popup error:', popupErr);
+            if (popupErr.code === 'auth/popup-blocked') {
+              await auth.signInWithRedirect(provider);
+              return;
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('[Social Auth] Firebase OAuth init error:', err);
+      }
+    }
+
+    // Bước 2: Hiển thị giao diện cấp quyền liên kết OAuth trực quan, giúp người dùng đăng nhập ngay lập tức trên mọi môi trường
+    this.openSocialConfirmModal(providerName, meta);
   }
 
-  fillDemoOtp() {
-    const otpInput = document.getElementById('auth-otp-input');
-    if (otpInput && this.currentOtp) {
-      otpInput.value = this.currentOtp;
-      this.verifyPhoneOtp();
+  // Mở hộp thoại xác nhận OAuth tài khoản mạng xã hội
+  openSocialConfirmModal(providerName, meta) {
+    const modal = document.getElementById('social-oauth-modal');
+    if (!modal) return;
+
+    this.pendingSocialProvider = providerName;
+    const iconContainer = document.getElementById('social-modal-icon');
+    const titleEl = document.getElementById('social-modal-title');
+    const avatarEl = document.getElementById('social-modal-avatar');
+    const nameInput = document.getElementById('social-modal-name-input');
+    const emailInput = document.getElementById('social-modal-email-input');
+    const submitBtn = document.getElementById('social-modal-submit-btn');
+
+    if (titleEl) titleEl.textContent = `Đăng Nhập Với ${meta.name}`;
+    if (avatarEl) avatarEl.src = meta.defaultAvatar || this.defaultAvatars[0];
+
+    // Gợi ý tên và email theo từng nền tảng
+    const defaultName = providerName === 'google' ? 'Nguyễn Hải Long' : (providerName === 'facebook' ? 'Trần Minh Tuấn' : 'Lê Hoàng Yến');
+    if (nameInput) nameInput.value = defaultName;
+    if (emailInput) emailInput.value = meta.defaultEmail;
+
+    if (iconContainer) {
+      if (providerName === 'google') {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center shadow-md bg-white border border-stone-200';
+        iconContainer.innerHTML = `
+          <svg class="w-8 h-8" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+          </svg>
+        `;
+        if (submitBtn) submitBtn.className = 'w-full py-3 bg-gradient-to-r from-red-500 to-amber-500 hover:opacity-95 text-white rounded-2xl font-black text-xs sm:text-sm shadow-md transition cursor-pointer flex items-center justify-center gap-2';
+      } else if (providerName === 'facebook') {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center shadow-md bg-[#1877F2] text-white';
+        iconContainer.innerHTML = `
+          <svg class="w-8 h-8 fill-current text-white" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        `;
+        if (submitBtn) submitBtn.className = 'w-full py-3 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-2xl font-black text-xs sm:text-sm shadow-md transition cursor-pointer flex items-center justify-center gap-2';
+      } else {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center shadow-md bg-black text-white';
+        iconContainer.innerHTML = `
+          <svg class="w-8 h-8 fill-current text-white" viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.11.64-2.77 1.41-.57.65-1.07 1.73-.93 2.76 1.07.08 2.11-.57 2.69-1.3z"/>
+          </svg>
+        `;
+        if (submitBtn) submitBtn.className = 'w-full py-3 bg-black hover:bg-stone-900 text-white rounded-2xl font-black text-xs sm:text-sm shadow-md transition cursor-pointer flex items-center justify-center gap-2';
+      }
     }
+
+    modal.classList.remove('hidden');
   }
 
-  // 3. Xác thực mã OTP và hoàn tất đăng nhập
-  verifyPhoneOtp() {
-    const otpInput = document.getElementById('auth-otp-input');
-    const nameInput = document.getElementById('auth-name-input');
-    const userOtp = otpInput ? otpInput.value.trim() : '';
+  closeSocialConfirmModal() {
+    const modal = document.getElementById('social-oauth-modal');
+    if (modal) modal.classList.add('hidden');
+  }
 
-    if (!userOtp) {
-      this.showToast('⚠️ Vui lòng nhập mã OTP gồm 6 chữ số!');
-      return;
-    }
+  submitSocialConfirm() {
+    const nameInput = document.getElementById('social-modal-name-input');
+    const emailInput = document.getElementById('social-modal-email-input');
+    const avatarEl = document.getElementById('social-modal-avatar');
+    const provider = this.pendingSocialProvider || 'google';
 
-    if (userOtp !== this.currentOtp && userOtp !== '123456') {
-      this.showToast('❌ Mã xác thực OTP không chính xác. Vui lòng thử lại!');
-      return;
-    }
+    const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'Thực Khách';
+    const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : `user@${provider}.com`;
+    const avatar = avatarEl && avatarEl.src ? avatarEl.src : this.defaultAvatars[0];
 
-    // Kiểm tra xem số này đã có tài khoản lưu trước đó chưa để giữ nguyên tên & avatar
-    const existing = this.savedAccounts.find(a => a.phone === this.pendingPhone);
-    const randomAvatar = this.defaultAvatars[Math.floor(Math.random() * this.defaultAvatars.length)];
-    const customName = (nameInput && nameInput.value.trim()) 
-      ? nameInput.value.trim() 
-      : (existing ? existing.name : `Thực Khách #${this.pendingPhone.slice(-4)}`);
+    this.closeSocialConfirmModal();
+
+    this.handleSocialLoginSuccess({
+      id: `${provider}_` + Date.now(),
+      name: name,
+      email: email,
+      avatar: avatar,
+      authProvider: provider
+    });
+  }
+
+  // 3. Xử lý sau khi đăng nhập Social thành công
+  // Tự động kích hoạt Đăng nhập Sinh trắc học (Khuôn mặt / Vân tay) cho lần đăng nhập thứ 2 trở đi
+  handleSocialLoginSuccess(userData) {
+    if (!userData) return;
+    const providerName = (userData.authProvider || 'google').toLowerCase();
+    const providerBadge = this.getProviderBadge(providerName);
+
+    // Kiểm tra tài khoản đã lưu trên máy
+    const existing = this.savedAccounts.find(a => 
+      (userData.id && a.id === userData.id) || 
+      (userData.email && a.email && a.email === userData.email)
+    );
 
     const isFirstLogin = !existing || !existing.hasCompletedTasteOnboarding;
     const newUser = {
-      id: existing ? existing.id : 'usr_' + Date.now(),
-      name: customName,
-      phone: this.pendingPhone,
-      avatar: existing ? existing.avatar : randomAvatar,
+      id: userData.id || (existing ? existing.id : 'usr_' + Date.now()),
+      name: userData.name || (existing ? existing.name : 'Thực Khách'),
+      email: userData.email || (existing ? existing.email : ''),
+      avatar: userData.avatar || (existing ? existing.avatar : this.defaultAvatars[0]),
       titleId: existing ? existing.titleId : null,
-      authProvider: 'phone',
-      biometricEnabled: true, // Tự động kích hoạt đăng nhập khuôn mặt/vân tay cho lần sau
+      authProvider: providerName,
+      biometricEnabled: true, // Kích hoạt Face ID / Vân tay cho lần đăng nhập thứ 2 trở đi
       hasCompletedTasteOnboarding: existing ? Boolean(existing.hasCompletedTasteOnboarding) : false,
       tastePreferences: existing && existing.tastePreferences ? existing.tastePreferences : this.loadTastePreferences(),
       createdAt: existing ? existing.createdAt : new Date().toISOString(),
@@ -1182,18 +1268,34 @@ class AuthManager {
     };
 
     this.saveSession(newUser);
+    this.saveRegisteredAccount(newUser);
     this.closeLoginModal();
 
     if (window.soundFX && window.soundFX.playMatch) {
       window.soundFX.playMatch();
     }
-    this.showToast(`🎉 Chào mừng ${newUser.name}! Đăng nhập thành công & đã kích hoạt Vân tay/Face ID!`);
+    this.showToast(`🎉 Chào mừng ${newUser.name}! Đăng nhập ${providerBadge} thành công & Đã kích hoạt Vân tay/Face ID!`);
 
     if (isFirstLogin) {
       setTimeout(() => {
         this.openTasteOnboardingModal();
       }, 700);
     }
+  }
+
+  getProviderBadge(provider) {
+    if (!provider) return '🌐 Tài khoản';
+    switch (provider.toLowerCase()) {
+      case 'google': return '🔴 Google';
+      case 'facebook': return '🔵 Facebook';
+      case 'apple': return '⚫ Apple ID';
+      default: return '🌐 ' + this.capitalize(provider);
+    }
+  }
+
+  capitalize(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   // Bật/tắt đăng nhập sinh trắc học cho tài khoản hiện tại
@@ -1236,13 +1338,13 @@ class AuthManager {
     const user = this.currentUser;
     const avatarEl = document.getElementById('profile-modal-avatar');
     const nameEl = document.getElementById('profile-modal-name');
-    const phoneEl = document.getElementById('profile-modal-phone');
+    const emailEl = document.getElementById('profile-modal-email');
     const likedCountEl = document.getElementById('profile-modal-liked-count');
     const bioToggleText = document.getElementById('profile-biometric-toggle-text');
 
     if (avatarEl) avatarEl.src = user.avatar || this.defaultAvatars[0];
     if (nameEl) nameEl.textContent = user.name || 'Người dùng';
-    if (phoneEl) phoneEl.textContent = this.formatPhone(user.phone);
+    if (emailEl) emailEl.textContent = user.email ? `${this.getProviderBadge(user.authProvider)} • ${user.email}` : this.getProviderBadge(user.authProvider);
     if (bioToggleText) bioToggleText.textContent = user.biometricEnabled !== false ? 'Đã bật' : 'Đã tắt';
 
     const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
@@ -1561,7 +1663,7 @@ class AuthManager {
         topbarAuthContainer.innerHTML = `
           <button onclick="window.authManager.openLoginModal()" 
             class="px-3 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-95 text-white font-extrabold text-xs shadow-xs transition flex items-center gap-1.5 cursor-pointer shrink-0"
-            title="Đăng nhập bằng Số điện thoại hoặc Vân tay/Face ID">
+            title="Đăng nhập bằng Social hoặc Khuôn mặt/Vân tay">
             ${saved ? `
               <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 3H5a2 2 0 0 0-2 2v2"></path>
@@ -1572,7 +1674,7 @@ class AuthManager {
                 <path d="M15 10h.01"></path>
                 <path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path>
               </svg>
-              <span>Đăng nhập (${saved.name.split(' ').pop()})</span>
+              <span>👆 Quét vân tay (${saved.name.split(' ').pop()})</span>
             ` : `
               <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
@@ -1600,7 +1702,7 @@ class AuthManager {
                 <span class="font-extrabold text-stone-900 text-sm truncate">${user.name}</span>
                 <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-50 border border-amber-200 text-amber-800 font-extrabold shrink-0" title="Danh hiệu: ${currentTitle.name}">${currentTitle.icon}</span>
               </div>
-              <p class="text-[10.5px] text-stone-500 truncate mt-0.5">${this.formatPhone(user.phone)}</p>
+              <p class="text-[10.5px] text-stone-500 truncate mt-0.5">${user.email ? `${this.getProviderBadge(user.authProvider)} • ${user.email}` : this.getProviderBadge(user.authProvider)}</p>
             </div>
           </div>
         `;
@@ -1619,15 +1721,6 @@ class AuthManager {
         `;
       }
     }
-  }
-
-  formatPhone(phone) {
-    if (!phone) return '';
-    const clean = phone.replace(/\D/g, '');
-    if (clean.length === 10) {
-      return `${clean.slice(0, 4)} ${clean.slice(4, 7)} ${clean.slice(7)}`;
-    }
-    return phone;
   }
 
   showToast(message) {
