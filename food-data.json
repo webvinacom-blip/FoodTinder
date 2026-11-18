@@ -3736,15 +3736,7 @@
           "highlight": false
         }
       ],
-      "deliveryPlatform": "ShopeeFood",
-      "deliveryUrl": "https://shopeefood.vn/binh-dinh/puppy-tea-tra-sua-an-vat",
-      "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Puppy%20Tea%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t",
-      "deliveryTime": "20 - 30 phút",
-      "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
-      "deliveryFeeVal": 16000,
-      "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
-      "deliveryPromoCode": "SHOPEE30K",
-      "deliveryRating": "4.3 ⭐ (1.000+ đã bán)",
+      "hasShopeeDelivery": false,
       "gmapsVerified": true,
       "gmapsName": "Puppy cafe",
       "placeId": "ChIJl_4X35NsbzERYoX4PVDV-wI",
