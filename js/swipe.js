@@ -453,6 +453,15 @@ class TinderSwipeManager {
         if (window.authManager && typeof window.authManager.trackStat === 'function') {
           window.authManager.trackStat('swipes', 1);
         }
+        if (window.userActionBatcher) {
+          window.userActionBatcher.recordAction({
+            type: 'swipe_liked',
+            foodId: targetFood.id,
+            name: targetFood.name,
+            category: targetFood.category,
+            restaurant: targetFood.restaurant
+          });
+        }
       }
       this.currentIndex++;
       this.isAnimating = false;
@@ -480,6 +489,15 @@ class TinderSwipeManager {
         }
         if (window.authManager && typeof window.authManager.trackStat === 'function') {
           window.authManager.trackStat('swipes', 1);
+        }
+        if (window.userActionBatcher) {
+          window.userActionBatcher.recordAction({
+            type: 'swipe_skipped',
+            foodId: targetFood.id,
+            name: targetFood.name,
+            category: targetFood.category,
+            restaurant: targetFood.restaurant
+          });
         }
       }
       this.currentIndex++;

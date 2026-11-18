@@ -149,6 +149,136 @@ const CURATED_REELS_DATA = [
   }
 ];
 
+// ══════════════════════════════════════════════════════════════════════
+// CHIẾN THUẬT 3: GỘP WRITE BẰNG LOCALSTORAGE (DEBOUNCE / BATCHING 3 PHÚT)
+// Không ghi Firebase liên tục. Gom toàn bộ hành động người dùng lưu vào
+// LocalStorage, định kỳ 3 phút hoặc khi thoát app mới ghi 1 Document duy nhất!
+// ══════════════════════════════════════════════════════════════════════
+class UserActionBatcher {
+  constructor() {
+    this.STORAGE_KEY = 'foodtinder_user_actions_batch';
+    this.BATCH_INTERVAL_MS = 3 * 60 * 1000; // 3 phút
+    this.queue = [];
+    this.timer = null;
+    this.isFlushing = false;
+
+    this.loadFromStorage();
+    this.startPeriodicTimer();
+    this.setupLifecycleListeners();
+  }
+
+  loadFromStorage() {
+    try {
+      const raw = localStorage.getItem(this.STORAGE_KEY);
+      if (raw) {
+        this.queue = JSON.parse(raw);
+        if (!Array.isArray(this.queue)) this.queue = [];
+      }
+    } catch (e) {
+      this.queue = [];
+    }
+  }
+
+  saveToStorage() {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.queue));
+    } catch (e) {}
+  }
+
+  recordAction(actionData) {
+    const action = {
+      ...actionData,
+      timestamp: Date.now(),
+      isoTime: new Date().toISOString()
+    };
+    this.queue.push(action);
+    this.saveToStorage();
+
+    // Giới hạn buffer 100 hành động tránh tràn bộ nhớ
+    if (this.queue.length > 100) {
+      this.queue = this.queue.slice(-100);
+      this.saveToStorage();
+    }
+  }
+
+  startPeriodicTimer() {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      if (this.queue.length > 0) {
+        console.log(`[Firebase Batcher] Đã 3 phút trôi qua. Tự động đóng gói và đẩy ${this.queue.length} hành động lên Firebase...`);
+        this.flush();
+      }
+    }, this.BATCH_INTERVAL_MS);
+  }
+
+  setupLifecycleListeners() {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden' && this.queue.length > 0) {
+        console.log(`[Firebase Batcher] App chuyển nền/thoát. Gộp và đẩy ${this.queue.length} hành động lên Firebase...`);
+        this.flush();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (this.queue.length > 0) {
+        this.flush(true);
+      }
+    });
+  }
+
+  async flush(isUnloading = false) {
+    if (this.isFlushing || this.queue.length === 0) return;
+    this.isFlushing = true;
+
+    const actionsToFlush = [...this.queue];
+    const payload = {
+      userId: (window.authManager && window.authManager.currentUser && window.authManager.currentUser.id) || 'guest_user',
+      count: actionsToFlush.length,
+      createdAt: new Date().toISOString(),
+      timestamp: Date.now(),
+      actions: actionsToFlush,
+      summary: {
+        reelsEvents: actionsToFlush.filter(a => a.type && a.type.startsWith('reel_')).length,
+        swipeEvents: actionsToFlush.filter(a => a.type && a.type.startsWith('swipe_')).length
+      }
+    };
+
+    let writeSuccess = false;
+
+    // 1. Thử ghi 1 document duy nhất vào Firestore: collection 'user_behavior_batches'
+    if (typeof firebase !== 'undefined' && firebase.firestore) {
+      try {
+        await firebase.firestore().collection('user_behavior_batches').add(payload);
+        writeSuccess = true;
+        console.log(`[Firebase Batcher] Thành công! Đã gộp ${actionsToFlush.length} hành động thành 1 lượt Write duy nhất trên Firestore!`);
+      } catch (err) {
+        console.warn('[Firebase Batcher] Firestore write error:', err);
+      }
+    }
+
+    // 2. Fallback Realtime Database
+    if (!writeSuccess && typeof firebase !== 'undefined' && firebase.database) {
+      try {
+        await firebase.database().ref('user_behavior_batches').push(payload);
+        writeSuccess = true;
+        console.log(`[Firebase Batcher] Thành công! Đã đẩy batch ${actionsToFlush.length} hành động lên Realtime Database!`);
+      } catch (e) {}
+    }
+
+    // 3. Fallback phân tích học Gu AI nội bộ nếu offline
+    if (window.tasteManager && typeof window.tasteManager.recordBatchInteractions === 'function') {
+      window.tasteManager.recordBatchInteractions(actionsToFlush);
+    }
+
+    this.queue = [];
+    try {
+      localStorage.removeItem(this.STORAGE_KEY);
+    } catch (e) {}
+    this.isFlushing = false;
+  }
+}
+window.userActionBatcher = new UserActionBatcher();
+
 class ReelsManager {
   constructor(containerId = 'reels-feed-container') {
     this.container = document.getElementById(containerId);
@@ -159,6 +289,16 @@ class ReelsManager {
     this.commentsMap = {};
     this.items = [];
     this.observer = null;
+
+    // CHIẾN THUẬT 1: Phân trang ngặt nghèo (.limit(5))
+    this.PAGE_SIZE = 5;
+    this.lastVisibleDoc = null;
+    this.hasMore = true;
+    this.isLoadingNextBatch = false;
+
+    // CHIẾN THUẬT 2: Không ghi Write lượt View vào Firestore (Google Analytics miễn phí)
+    this.viewedAnalyticsSet = new Set();
+    this.currentWatchStartTime = Date.now();
 
     this.ensureYouTubeApi();
     this.setupGlobalMessageListener();
@@ -187,13 +327,144 @@ class ReelsManager {
     });
   }
 
-  init() {
+  // CHIẾN THUẬT 2: Ghi nhận lượt xem qua Google Analytics for Firebase (Hoàn toàn miễn phí, 0 Write Firestore)
+  logReelViewAnalytics(item, idx) {
+    if (!item) return;
+    const vidKey = item.id || item.video_id;
+    if (this.viewedAnalyticsSet.has(vidKey)) return;
+    this.viewedAnalyticsSet.add(vidKey);
+
+    console.log(`[Firebase Analytics] Bắn event reel_watched miễn phí (0 Write) cho video: ${item.video_id}`);
+
+    if (typeof firebase !== 'undefined' && typeof firebase.analytics === 'function') {
+      try {
+        const analytics = firebase.analytics();
+        analytics.logEvent('reel_watched', {
+          video_id: item.video_id || '',
+          restaurant: item.restaurant || '',
+          author: item.author || '',
+          title: (item.title || item.name || '').substring(0, 100),
+          is_general: Boolean(item.isGeneralReview),
+          watch_index: idx
+        });
+      } catch (e) {
+        console.warn('[Firebase Analytics] Error logging reel_watched:', e);
+      }
+    }
+
+    if (typeof window.gtag === 'function') {
+      try {
+        window.gtag('event', 'reel_watched', {
+          video_id: item.video_id || '',
+          restaurant: item.restaurant || ''
+        });
+      } catch (e) {}
+    }
+  }
+
+  // CHIẾN THUẬT 1: Bắt buộc sử dụng .limit(5), chỉ lấy trước đúng 5 document
+  async init() {
     this.container = document.getElementById('reels-feed-container');
     if (!this.container) return;
 
-    // Sử dụng bộ dữ liệu Reels đã phân loại chuẩn xác
-    this.items = CURATED_REELS_DATA;
+    this.currentIndex = 0;
+    this.items = [];
+    this.lastVisibleDoc = null;
+    this.hasMore = true;
+    this.isLoadingNextBatch = false;
+    this.currentWatchStartTime = Date.now();
+
+    await this.loadInitialBatch();
+  }
+
+  async loadInitialBatch() {
+    this.isLoadingNextBatch = true;
+    let initialItems = [];
+
+    // 1. Thử lấy từ Firestore với .limit(5) (Chỉ tốn đúng 5 lượt Read)
+    if (typeof firebase !== 'undefined' && firebase.firestore) {
+      try {
+        const snap = await firebase.firestore().collection('reels_curated').limit(this.PAGE_SIZE).get();
+        if (!snap.empty) {
+          this.lastVisibleDoc = snap.docs[snap.docs.length - 1];
+          initialItems = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          console.log(`[Reels Pagination] Đã nạp 5 video đầu tiên từ Firestore (.limit(5)). Tốn đúng 5 lượt Read!`);
+        }
+      } catch (err) {
+        console.warn('[Reels Pagination] Firestore initial query error:', err);
+      }
+    }
+
+    // 2. Fallback sang dataset CURATED_REELS_DATA nếu Firestore chưa khởi tạo
+    if (!initialItems || initialItems.length === 0) {
+      initialItems = CURATED_REELS_DATA.slice(0, this.PAGE_SIZE);
+      if (CURATED_REELS_DATA.length <= this.PAGE_SIZE) {
+        this.hasMore = false;
+      }
+    }
+
+    this.items = initialItems;
     this.render();
+    this.isLoadingNextBatch = false;
+
+    // Bắn event Analytics miễn phí cho video đầu tiên
+    if (this.items.length > 0) {
+      this.logReelViewAnalytics(this.items[0], 0);
+    }
+  }
+
+  // Khi người dùng lướt đến video thứ 4, tự động tải thêm đúng 5 document tiếp theo
+  async loadNextBatch() {
+    if (this.isLoadingNextBatch || !this.hasMore) return;
+    this.isLoadingNextBatch = true;
+    console.log(`[Reels Pagination] Lướt đến video thứ ${this.currentIndex + 1}. Bắt đầu nạp thêm 5 video tiếp theo (Firestore .limit(5))...`);
+
+    let nextItems = [];
+    if (typeof firebase !== 'undefined' && firebase.firestore) {
+      try {
+        let q = firebase.firestore().collection('reels_curated').limit(this.PAGE_SIZE);
+        if (this.lastVisibleDoc) {
+          q = q.startAfter(this.lastVisibleDoc);
+        }
+        const snap = await q.get();
+        if (!snap.empty) {
+          this.lastVisibleDoc = snap.docs[snap.docs.length - 1];
+          nextItems = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          if (snap.docs.length < this.PAGE_SIZE) this.hasMore = false;
+        } else {
+          this.hasMore = false;
+        }
+      } catch (err) {
+        console.warn('[Reels Pagination] Firestore batch error:', err);
+      }
+    }
+
+    if (!nextItems || nextItems.length === 0) {
+      const startIdx = this.items.length;
+      nextItems = CURATED_REELS_DATA.slice(startIdx, startIdx + this.PAGE_SIZE);
+      if (startIdx + this.PAGE_SIZE >= CURATED_REELS_DATA.length) {
+        this.hasMore = false;
+      }
+    }
+
+    if (nextItems.length > 0) {
+      const startIndex = this.items.length;
+      this.items = [...this.items, ...nextItems];
+
+      nextItems.forEach((item, i) => {
+        const slideIdx = startIndex + i;
+        const slideEl = this.createSlideElement(item, slideIdx);
+        this.container.appendChild(slideEl);
+        if (this.observer) {
+          this.observer.observe(slideEl);
+        }
+      });
+
+      if (window.lucide) window.lucide.createIcons();
+      console.log(`[Reels Pagination] Nạp thêm thành công 5 video. Hiện có: ${this.items.length} video. (Tốn đúng 5 lượt Read)`);
+    }
+
+    this.isLoadingNextBatch = false;
   }
 
   render() {
@@ -652,9 +923,35 @@ class ReelsManager {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           // Video lọt vào 50% màn hình -> Kích hoạt phát video
           if (idx !== this.currentIndex) {
+            // Ghi nhận thời gian xem video trước đó vào LocalStorage Batcher (cho AI học gu, 0 Write Firebase)
+            const prevItem = this.items[this.currentIndex];
+            if (prevItem) {
+              const watchSec = Math.max(1, Math.round((Date.now() - this.currentWatchStartTime) / 1000));
+              if (window.userActionBatcher) {
+                window.userActionBatcher.recordAction({
+                  type: watchSec >= 4 ? 'reel_watched_deep' : 'reel_skipped_fast',
+                  video_id: prevItem.video_id,
+                  restaurant: prevItem.restaurant || '',
+                  tags: prevItem.tags || [],
+                  durationSeconds: watchSec
+                });
+              }
+            }
+            this.currentWatchStartTime = Date.now();
+
             this.pauseAll(); // Dừng ngay các video cũ
             this.currentIndex = idx;
             this.updateVideoMounts();
+
+            // CHIẾN THUẬT 2: Bắn Google Analytics event miễn phí (0 Write Firestore)
+            const curItem = this.items[idx];
+            this.logReelViewAnalytics(curItem, idx);
+
+            // CHIẾN THUẬT 1: Khi lướt đến video thứ 4 (áp chót của batch 5 video), trigger nạp tiếp 5 document
+            if (idx >= this.items.length - 2 && this.hasMore && !this.isLoadingNextBatch) {
+              this.loadNextBatch();
+            }
+
             if (window.authManager && typeof window.authManager.trackStat === 'function') {
               window.authManager.trackStat('reelsWatched', 1);
             }
@@ -1085,6 +1382,17 @@ class ReelsManager {
     if (window.chatManager && typeof window.chatManager.saveFriendsData === 'function') {
       window.chatManager.saveFriendsData();
     }
+
+    // Ghi nhận hành động chia sẻ vào LocalStorage Batcher
+    if (window.userActionBatcher) {
+      window.userActionBatcher.recordAction({
+        type: 'reel_shared',
+        targetType: targetType,
+        video_id: item.video_id,
+        restaurant: item.restaurant || '',
+        tags: item.tags || []
+      });
+    }
   }
 
   copyShareLink() {
@@ -1114,6 +1422,16 @@ class ReelsManager {
     if (!item) return;
 
     this.pauseAll();
+
+    // Ghi nhận hành động khám phá vào LocalStorage Batcher cho AI học gu
+    if (window.userActionBatcher) {
+      window.userActionBatcher.recordAction({
+        type: 'reel_explore_clicked',
+        video_id: item.video_id,
+        restaurant: item.restaurant || '',
+        tags: item.tags || []
+      });
+    }
 
     // 1. Phân tích từ khoá từ hashtag, tên quán, tiêu đề và mô tả
     const rawTags = (item.tags || []).map(t => t.replace(/^#/, '').toLowerCase());

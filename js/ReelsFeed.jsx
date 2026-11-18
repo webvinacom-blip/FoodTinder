@@ -143,6 +143,8 @@ const CURATED_REELS_DATA = [
 ];
 
 export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
+  // Chiến thuật 1: Phân trang ngặt nghèo .limit(5), ban đầu chỉ nạp 5 video
+  const [itemsList, setItemsList] = useState(() => items.slice(0, 5));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
@@ -150,17 +152,56 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
 
   const containerRef = useRef(null);
   const clickTimerRef = useRef(null);
+  const watchStartTimeRef = useRef(Date.now());
+
+  // Chiến thuật 2: Bắn Google Analytics event miễn phí (0 Write Firestore)
+  useEffect(() => {
+    const curItem = itemsList[currentIndex];
+    if (curItem) {
+      if (typeof window !== 'undefined' && window.firebase && typeof window.firebase.analytics === 'function') {
+        try {
+          window.firebase.analytics().logEvent('reel_watched', {
+            video_id: curItem.video_id || '',
+            restaurant: curItem.restaurant || '',
+            title: curItem.title || curItem.name || '',
+            index: currentIndex
+          });
+        } catch (e) {}
+      }
+    }
+
+    // Ghi nhận thời gian xem video vào LocalStorage Batcher
+    const prevTime = watchStartTimeRef.current;
+    watchStartTimeRef.current = Date.now();
+    const duration = Math.round((Date.now() - prevTime) / 1000);
+
+    if (window.userActionBatcher && curItem) {
+      window.userActionBatcher.recordAction({
+        type: duration >= 4 ? 'reel_watched_deep' : 'reel_skipped_fast',
+        video_id: curItem.video_id,
+        durationSeconds: duration
+      });
+    }
+
+    // Chiến thuật 1: Khi lướt đến video thứ 4, tự động tải thêm đúng 5 video tiếp theo
+    if (currentIndex >= itemsList.length - 2 && itemsList.length < items.length) {
+      const nextBatch = items.slice(itemsList.length, itemsList.length + 5);
+      if (nextBatch.length > 0) {
+        setItemsList(prev => [...prev, ...nextBatch]);
+      }
+    }
+  }, [currentIndex, items, itemsList]);
 
   // 1. Tự động skip khi video lỗi (Dead Link QA)
   const handlePlayerError = useCallback((index) => {
-    if (index < items.length - 1 && containerRef.current) {
+    if (index < itemsList.length - 1 && containerRef.current) {
       const itemHeight = containerRef.current.clientHeight;
       containerRef.current.scrollTo({
         top: (index + 1) * itemHeight,
         behavior: 'smooth'
       });
     }
-  }, [items.length]);
+  }, [itemsList.length]);
 
   // 2. Bắt lỗi onError từ YouTube iframe qua postMessage
   useEffect(() => {
@@ -241,7 +282,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
         className="w-full h-full overflow-y-auto snap-y snap-mandatory scrollbar-none"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {items.map((item, idx) => {
+        {itemsList.map((item, idx) => {
           const isCurrent = idx === currentIndex;
           const isLiked = !!likedMap[item.id];
           const isGeneral = !!item.isGeneralReview;
