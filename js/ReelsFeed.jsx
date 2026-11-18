@@ -315,40 +315,42 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   </button>
                 </div>
 
-                {/* Action Bar Right */}
-                <div className="absolute right-3 bottom-24 flex flex-col items-center gap-3.5 z-30 pointer-events-auto">
-                  <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
-                    {isGeneral ? (
-                      <div className="w-full h-full bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white text-lg">
-                        🍜
-                      </div>
-                    ) : (
-                      <img src={item.image} alt={item.restaurant} className="w-full h-full object-cover" />
-                    )}
+                {/* Action Bar Right: CHỈ ĐỂ LẠI 2 ICON CHIA SẺ & KHÁM PHÁ */}
+                <div className="absolute right-3.5 bottom-24 flex flex-col items-center gap-4 z-30 pointer-events-auto">
+                  {/* Chia sẻ */}
+                  <div className="flex flex-col items-center">
+                    <button
+                      onClick={() => {
+                        if (window.reelsManager && typeof window.reelsManager.openShareModal === 'function') {
+                          window.reelsManager.openShareModal(item.id);
+                        } else if (navigator.clipboard) {
+                          navigator.clipboard.writeText(window.location.href);
+                          alert('Đã sao chép liên kết video!');
+                        }
+                      }}
+                      className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 active:scale-95 transition shadow-xl border border-white/20"
+                      title="Chia sẻ video với bạn bè & nhóm"
+                    >
+                      <span className="text-xl">↗️</span>
+                    </button>
+                    <span className="text-white text-[11px] font-bold mt-1 drop-shadow-md">Chia sẻ</span>
                   </div>
 
-                  <button
-                    onClick={() => setLikedMap(prev => ({ ...prev, [item.id]: !prev[item.id] }))}
-                    className="flex flex-col items-center text-white"
-                  >
-                    <div className="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition">
-                      {isLiked ? '❤️' : '🤍'}
-                    </div>
-                    <span className="text-[11px] font-bold mt-1 drop-shadow-md">
-                      {(item.likesCount || 1200) + (isLiked ? 1 : 0)}
-                    </span>
-                  </button>
-
-                  {!isGeneral && item.gmapsQuery && (
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.gmapsQuery)}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="bg-[#F5B041] hover:bg-[#F39C12] text-stone-900 font-extrabold text-[11px] px-2.5 py-2 rounded-xl shadow-lg flex flex-col items-center gap-0.5 border border-amber-200"
+                  {/* Khám phá */}
+                  <div className="flex flex-col items-center">
+                    <button
+                      onClick={() => {
+                        if (window.reelsManager && typeof window.reelsManager.exploreHashtags === 'function') {
+                          window.reelsManager.exploreHashtags(item.id);
+                        }
+                      }}
+                      className="w-12 h-12 rounded-full bg-gradient-to-tr from-rose-500 via-orange-500 to-amber-500 flex items-center justify-center text-white hover:scale-110 active:scale-95 transition shadow-2xl border border-amber-200/50"
+                      title="Quẹt các món ngon phù hợp với video này"
                     >
-                      <span>🧭 Chỉ đường</span>
-                    </a>
-                  )}
+                      <span className="text-xl">🍲</span>
+                    </button>
+                    <span className="text-amber-300 text-[11px] font-extrabold mt-1 drop-shadow-md">Khám phá</span>
+                  </div>
                 </div>
 
                 {/* Bottom Information */}

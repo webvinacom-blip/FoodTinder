@@ -287,64 +287,27 @@ class ReelsManager {
           </button>
         </div>
 
-        <!-- 3. Action Bar bên phải: Avatar, Tim, Bình luận, Chia sẻ, Chỉ đường -->
-        <div class="absolute right-3 bottom-24 flex flex-col items-center gap-3.5 z-30 pointer-events-auto">
-          <!-- Avatar tác giả / quán -->
-          <div class="relative mb-0.5">
-            <div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden shadow-xl bg-white flex items-center justify-center">
-              ${isGeneral ? `
-                <div class="w-full h-full bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white font-extrabold text-base">
-                  🍜
-                </div>
-              ` : `
-                <img src="${item.image}" alt="${item.restaurant}" class="w-full h-full object-cover" />
-              `}
-            </div>
-            <button onclick="window.reelsManager.toggleFollow(this)" class="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-rose-500 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-md hover:scale-110 transition">
-              +
-            </button>
-          </div>
-
-          <!-- Thả tim (Like) -->
+        <!-- 3. Action Bar bên phải: CHỈ ĐỂ LẠI ICON CHIA SẺ & KHÁM PHÁ -->
+        <div class="absolute right-3.5 bottom-24 flex flex-col items-center gap-4 z-30 pointer-events-auto">
+          <!-- Chia sẻ với Bạn bè & Nhóm -->
           <div class="flex flex-col items-center">
-            <button onclick="window.reelsManager.toggleLike(${item.id}, this)" class="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 active:scale-95 transition">
-              <i data-lucide="heart" class="w-6 h-6 ${isLiked ? 'fill-rose-500 text-rose-500' : 'text-white'}"></i>
+            <button onclick="window.reelsManager.openShareModal(${item.id})" 
+              class="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 active:scale-95 transition shadow-xl border border-white/20 cursor-pointer group"
+              title="Chia sẻ video với bạn bè & nhóm">
+              <i data-lucide="share-2" class="w-5 h-5 text-white group-hover:scale-110 transition-transform"></i>
             </button>
-            <span class="text-white text-[11px] font-semibold mt-1 drop-shadow-md likes-counter">${likesCount}</span>
+            <span class="text-white text-[11px] font-bold mt-1 drop-shadow-md">Chia sẻ</span>
           </div>
 
-          <!-- Bình luận -->
+          <!-- Khám phá quẹt món theo hashtag video -->
           <div class="flex flex-col items-center">
-            <button onclick="window.reelsManager.openComments(${item.id})" class="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 active:scale-95 transition">
-              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <button onclick="window.reelsManager.exploreHashtags(${item.id})" 
+              class="w-12 h-12 rounded-full bg-gradient-to-tr from-rose-500 via-orange-500 to-amber-500 flex items-center justify-center text-white hover:scale-110 active:scale-95 transition shadow-2xl border border-amber-200/50 cursor-pointer group"
+              title="Quẹt các món ngon phù hợp với video này">
+              <span class="text-xl group-hover:scale-125 transition-transform">🍲</span>
             </button>
-            <span class="text-white text-[11px] font-semibold mt-1 drop-shadow-md">${item.commentsCount || 98}</span>
+            <span class="text-amber-300 text-[11px] font-extrabold mt-1 drop-shadow-md">Khám phá</span>
           </div>
-
-          <!-- Chia sẻ -->
-          <div class="flex flex-col items-center">
-            <button onclick="window.reelsManager.shareReel(${item.id})" class="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 active:scale-95 transition">
-              <i data-lucide="share-2" class="w-6 h-6"></i>
-            </button>
-            <span class="text-white text-[11px] font-semibold mt-1 drop-shadow-md">Chia sẻ</span>
-          </div>
-
-          <!-- Nút Hành Động: Nếu review riêng quán -> Chỉ đường Google Maps; Nếu review chung -> Khám phá món ngon -->
-          ${isGeneral ? `
-            <button onclick="window.app && window.app.switchTab ? window.app.switchTab('taste') : null" class="bg-gradient-to-r from-orange-500 to-rose-500 hover:from-orange-600 hover:to-rose-600 text-white font-extrabold text-[11px] px-2.5 py-2 rounded-xl shadow-lg flex flex-col items-center gap-0.5 hover:scale-105 active:scale-95 transition border border-white/20">
-              <span class="text-sm">🍲</span>
-              <span>Khám phá</span>
-            </button>
-          ` : `
-            <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.gmapsQuery || (item.restaurant + ' Quy Nhơn'))}', '_blank')" class="bg-[#F5B041] hover:bg-[#F39C12] text-stone-900 font-extrabold text-[11px] px-2.5 py-2 rounded-xl shadow-lg flex flex-col items-center gap-0.5 hover:scale-105 active:scale-95 transition border border-amber-200">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                <line x1="9" y1="3" x2="9" y2="18"></line>
-                <line x1="15" y1="6" x2="15" y2="21"></line>
-              </svg>
-              <span>Chỉ đường</span>
-            </button>
-          `}
         </div>
 
         <!-- 4. Thông tin hiển thị bên dưới màn hình -->
@@ -754,14 +717,394 @@ class ReelsManager {
     setTimeout(() => modal.classList.add('hidden'), 250);
   }
 
-  shareReel(foodId) {
+  // ══════════════════════════════════════════════════════════════════════
+  // MODAL CHIA SẺ VIDEO VỚI BẠN BÈ VÀ NHÓM ĂN UỐNG
+  // ══════════════════════════════════════════════════════════════════════
+  openShareModal(foodId) {
+    window.soundFX && window.soundFX.playPop();
+    const modal = document.getElementById('share-reel-modal');
+    const content = document.getElementById('share-reel-modal-content');
+    if (!modal || !content) return;
+
+    this.currentSharingReel = this.items.find(f => f.id === foodId) || this.items[this.currentIndex];
+    this.shareFilter = 'all'; // 'all' | 'friends' | 'groups'
+    this.shareSearchQuery = '';
+
+    this.renderShareModalContent();
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      const sheet = modal.querySelector('.modal-sheet');
+      if (sheet) sheet.classList.remove('translate-y-full');
+    }, 10);
+  }
+
+  closeShareModal() {
+    const modal = document.getElementById('share-reel-modal');
+    if (!modal) return;
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) sheet.classList.add('translate-y-full');
+    setTimeout(() => modal.classList.add('hidden'), 250);
+  }
+
+  handleShareFilter(filter) {
+    this.shareFilter = filter;
+    this.renderShareModalContent();
+  }
+
+  handleShareSearch(query) {
+    this.shareSearchQuery = (query || '').toLowerCase().trim();
+    this.renderShareModalContent();
+  }
+
+  renderShareModalContent() {
+    const content = document.getElementById('share-reel-modal-content');
+    if (!content) return;
+
+    const item = this.currentSharingReel || this.items[this.currentIndex] || {};
+    const title = item.title || item.restaurant || 'Video review ẩm thực Quy Nhơn';
+
+    // 1. Lấy danh sách bạn bè và nhóm từ APP_DATA
+    const myFriends = (window.APP_DATA && Array.isArray(window.APP_DATA.myFriends)) ? window.APP_DATA.myFriends : [];
+    const nearbyFriends = (window.APP_DATA && Array.isArray(window.APP_DATA.nearbyFriends)) ? window.APP_DATA.nearbyFriends : [];
+    const groupChats = (window.APP_DATA && Array.isArray(window.APP_DATA.groupChats)) ? window.APP_DATA.groupChats : [];
+
+    // Kết hợp và lọc bạn bè
+    const friendsMap = new Map();
+    [...myFriends, ...nearbyFriends].forEach(f => {
+      if (f && f.id && !friendsMap.has(f.id)) friendsMap.set(f.id, f);
+    });
+    let friends = Array.from(friendsMap.values());
+    let groups = [...groupChats];
+
+    // Lọc theo tìm kiếm
+    if (this.shareSearchQuery) {
+      const q = this.shareSearchQuery;
+      friends = friends.filter(f => (f.name && f.name.toLowerCase().includes(q)) || (f.nickname && f.nickname.toLowerCase().includes(q)));
+      groups = groups.filter(g => g.name && g.name.toLowerCase().includes(q));
+    }
+
+    content.innerHTML = `
+      <!-- Header -->
+      <div class="p-4 border-b border-stone-100 flex items-center justify-between shrink-0 bg-stone-50/70">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white shadow-sm shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h4 class="font-extrabold text-sm text-stone-900 leading-tight">Chia sẻ với Bạn bè & Nhóm</h4>
+            <p class="text-[11px] text-stone-500 truncate max-w-[240px] mt-0.5">${title}</p>
+          </div>
+        </div>
+        <button onclick="window.reelsManager.closeShareModal()" class="w-8 h-8 rounded-full bg-stone-200/70 hover:bg-stone-300 text-stone-600 flex items-center justify-center transition shrink-0 cursor-pointer">✕</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="p-3 border-b border-stone-100 bg-white shrink-0">
+        <div class="relative">
+          <input type="text" placeholder="Tìm kiếm bạn bè hoặc nhóm..." 
+            value="${this.shareSearchQuery || ''}"
+            oninput="window.reelsManager.handleShareSearch(this.value)"
+            class="w-full bg-stone-100 text-xs px-3.5 py-2 pl-9 rounded-xl border border-stone-200 focus:outline-none focus:bg-white focus:border-rose-400 transition" />
+          <svg class="w-4 h-4 text-stone-400 absolute left-3 top-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </div>
+      </div>
+
+      <!-- Filter Tabs: Tất cả | Bạn bè | Nhóm ăn uống -->
+      <div class="px-3 py-2 border-b border-stone-100 flex items-center gap-1.5 shrink-0 bg-stone-50/40 text-xs font-bold">
+        <button onclick="window.reelsManager.handleShareFilter('all')" 
+          class="px-3 py-1 rounded-full transition ${this.shareFilter === 'all' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+          Tất cả
+        </button>
+        <button onclick="window.reelsManager.handleShareFilter('friends')" 
+          class="px-3 py-1 rounded-full transition ${this.shareFilter === 'friends' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+          ❤️ Bạn bè (${friends.length})
+        </button>
+        <button onclick="window.reelsManager.handleShareFilter('groups')" 
+          class="px-3 py-1 rounded-full transition ${this.shareFilter === 'groups' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'}">
+          👥 Nhóm ăn uống (${groups.length})
+        </button>
+      </div>
+
+      <!-- Scrollable Friends & Groups List -->
+      <div class="flex-1 overflow-y-auto p-3 space-y-2.5 max-h-[50vh] scrollbar-none">
+        
+        <!-- Nhóm ăn uống (nếu bộ lọc cho phép) -->
+        ${(this.shareFilter === 'all' || this.shareFilter === 'groups') && groups.length > 0 ? `
+          <div class="text-[11px] font-black uppercase tracking-wider text-stone-400 px-1 pt-1">
+            Nhóm ăn uống (${groups.length})
+          </div>
+          ${groups.map(g => `
+            <div class="p-2.5 rounded-2xl border border-stone-100 bg-stone-50/50 hover:bg-amber-50/40 flex items-center justify-between gap-3 transition shadow-2xs">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="relative w-10 h-10 rounded-2xl overflow-hidden shrink-0 shadow-xs border border-amber-200">
+                  <img src="${g.avatar || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80'}" alt="${g.name}" class="w-full h-full object-cover" />
+                </div>
+                <div class="min-w-0">
+                  <h5 class="font-extrabold text-xs text-stone-900 leading-snug truncate">${g.name}</h5>
+                  <p class="text-[10px] text-stone-500 font-medium">${g.membersCount || 6} thành viên • ${g.time || 'Đang hoạt động'}</p>
+                </div>
+              </div>
+              <button onclick="window.reelsManager.sendShareToTarget('group', '${g.id}', this)" 
+                class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 text-white text-xs font-bold shadow-xs hover:opacity-95 active:scale-95 transition shrink-0 cursor-pointer">
+                Gửi
+              </button>
+            </div>
+          `).join('')}
+        ` : ''}
+
+        <!-- Bạn bè (nếu bộ lọc cho phép) -->
+        ${(this.shareFilter === 'all' || this.shareFilter === 'friends') && friends.length > 0 ? `
+          <div class="text-[11px] font-black uppercase tracking-wider text-stone-400 px-1 pt-1.5">
+            Bạn bè (${friends.length})
+          </div>
+          ${friends.map(f => `
+            <div class="p-2.5 rounded-2xl border border-stone-100 bg-stone-50/50 hover:bg-rose-50/40 flex items-center justify-between gap-3 transition shadow-2xs">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0 shadow-xs border border-stone-200">
+                  <img src="${f.avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80'}" alt="${f.name}" class="w-full h-full object-cover" />
+                  <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border border-white"></span>
+                </div>
+                <div class="min-w-0">
+                  <h5 class="font-extrabold text-xs text-stone-900 leading-snug truncate">${f.name}</h5>
+                  <p class="text-[10px] text-stone-500 font-medium truncate">${f.distance || f.status || 'Bạn bè'}</p>
+                </div>
+              </div>
+              <button onclick="window.reelsManager.sendShareToTarget('friend', '${f.id}', this)" 
+                class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 text-white text-xs font-bold shadow-xs hover:opacity-95 active:scale-95 transition shrink-0 cursor-pointer">
+                Gửi
+              </button>
+            </div>
+          `).join('')}
+        ` : ''}
+
+        ${friends.length === 0 && groups.length === 0 ? `
+          <div class="p-8 text-center text-stone-400 text-xs">
+            Không tìm thấy bạn bè hoặc nhóm nào phù hợp.
+          </div>
+        ` : ''}
+
+      </div>
+
+      <!-- Footer: Sao chép liên kết -->
+      <div class="p-3 bg-stone-50 border-t border-stone-200 flex items-center justify-between gap-2 shrink-0">
+        <button onclick="window.reelsManager.copyShareLink()" class="flex-1 py-2 px-3 rounded-xl bg-white border border-stone-200 hover:bg-stone-100 text-stone-700 text-xs font-bold flex items-center justify-center gap-1.5 transition shadow-xs cursor-pointer">
+          <svg class="w-3.5 h-3.5 text-stone-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>Sao chép liên kết</span>
+        </button>
+        <button onclick="window.reelsManager.closeShareModal(); if (window.app && window.app.switchTab) window.app.switchTab('chat');" class="py-2 px-3.5 rounded-xl bg-stone-900 hover:bg-black text-white text-xs font-bold flex items-center justify-center gap-1.5 transition shadow-xs cursor-pointer">
+          <span>Mở mục Chat</span>
+          <span>💬</span>
+        </button>
+      </div>
+    `;
+
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  sendShareToTarget(targetType, targetId, btnEl) {
+    window.soundFX && window.soundFX.playPop();
+    const item = this.currentSharingReel || this.items[this.currentIndex];
+    if (!item) return;
+
+    let targetName = 'bạn bè';
+    const currentTime = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    const shareText = `🍜 Mình vừa xem video review "${item.title || item.name}" ở Quy Nhơn nè! Khi nào tụi mình ghé ăn chung nha! 😋✨`;
+
+    if (targetType === 'friend') {
+      const friendList = [...(window.APP_DATA?.myFriends || []), ...(window.APP_DATA?.nearbyFriends || [])];
+      const friend = friendList.find(f => String(f.id) === String(targetId));
+      if (friend) {
+        targetName = friend.name;
+        if (!friend.messages) friend.messages = [];
+        friend.messages.push({
+          sender: 'you',
+          text: shareText,
+          time: currentTime,
+          sharedVideo: {
+            id: item.id,
+            title: item.title || item.name,
+            image: item.image,
+            video_id: item.video_id,
+            tags: item.tags
+          }
+        });
+      }
+    } else if (targetType === 'group') {
+      const groupList = window.APP_DATA?.groupChats || [];
+      const group = groupList.find(g => String(g.id) === String(targetId));
+      if (group) {
+        targetName = group.name;
+        if (!group.messages) group.messages = [];
+        group.messages.push({
+          sender: 'Bạn',
+          text: shareText,
+          time: currentTime,
+          sharedVideo: {
+            id: item.id,
+            title: item.title || item.name,
+            image: item.image,
+            video_id: item.video_id,
+            tags: item.tags
+          }
+        });
+      }
+    }
+
+    if (btnEl) {
+      btnEl.innerHTML = '<span>Đã gửi ✓</span>';
+      btnEl.className = 'px-3.5 py-1.5 rounded-full bg-emerald-500 text-white text-xs font-bold shadow-xs transition flex items-center gap-1 cursor-default pointer-events-none';
+    }
+
+    if (window.app && typeof window.app.showToast === 'function') {
+      window.app.showToast(`Đã chia sẻ video đến "${targetName}" thành công! 🚀`);
+    }
+
+    if (window.chatManager && typeof window.chatManager.saveFriendsData === 'function') {
+      window.chatManager.saveFriendsData();
+    }
+  }
+
+  copyShareLink() {
+    window.soundFX && window.soundFX.playPop();
+    const item = this.currentSharingReel || this.items[this.currentIndex];
+    const url = item?.video_id 
+      ? `https://www.youtube.com/shorts/${item.video_id}` 
+      : window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url);
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`Đã sao chép liên kết video vào clipboard! 📋`);
+      }
+    } else {
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast('Đã chia sẻ liên kết thành công! 🚀');
+      }
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════════════════
+  // KHÁM PHÁ: CHUYỂN QUA QUẸT MÓN THEO HASHTAG & MÓN ĂN CỦA VIDEO
+  // ══════════════════════════════════════════════════════════════════════
+  exploreHashtags(foodId) {
     window.soundFX && window.soundFX.playPop();
     const item = this.items.find(f => f.id === foodId) || this.items[this.currentIndex];
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
-      window.app && window.app.showToast && window.app.showToast(`Đã sao chép liên kết video "${(item && (item.title || item.restaurant)) || ''}"! 📋`);
-    } else {
-      window.app && window.app.showToast && window.app.showToast("Đã chia sẻ thành công! 🚀");
+    if (!item) return;
+
+    this.pauseAll();
+
+    // 1. Phân tích từ khoá từ hashtag, tên quán, tiêu đề và mô tả
+    const rawTags = (item.tags || []).map(t => t.replace(/^#/, '').toLowerCase());
+    const keywords = new Set();
+    rawTags.forEach(t => {
+      keywords.add(t);
+      t.split(/[\s_]+/).forEach(w => {
+        if (w.length > 2) keywords.add(w);
+      });
+    });
+
+    if (item.restaurant) {
+      keywords.add(item.restaurant.toLowerCase());
+      item.restaurant.toLowerCase().split(/\s+/).forEach(w => {
+        if (w.length > 2) keywords.add(w);
+      });
+    }
+
+    const textBlob = `${item.title || ''} ${item.name || ''} ${item.desc || ''} ${(item.tags || []).join(' ')}`.toLowerCase();
+    
+    const dishPatterns = [
+      { key: 'bún cá', match: ['bún chả cá', 'bún cá', 'bún sứa', 'chả cá'] },
+      { key: 'ốc', match: ['ốc', 'sò', 'hải sản', 'nghêu', 'hàu', 'phố ốc'] },
+      { key: 'nem nướng', match: ['nem nướng', 'nem chả', 'chả ram', 'chợ huyện'] },
+      { key: 'bánh xèo', match: ['bánh xèo', 'tôm nhảy'] },
+      { key: 'bánh hỏi', match: ['bánh hỏi', 'cháo lòng', 'lòng heo'] },
+      { key: 'bánh bèo', match: ['bánh bèo', 'bánh nậm', 'bánh lọc', 'bánh tráng'] },
+      { key: 'hải sản', match: ['hải sản', 'cá ngừ', 'mực', 'tôm', 'cua', 'lẩu sứa'] },
+      { key: 'nướng', match: ['nướng', 'bbq', 'bò nướng', 'xiên'] },
+      { key: 'ăn vặt', match: ['ăn vặt', 'chè', 'trà sữa', 'siêu rẻ'] },
+      { key: 'xôi', match: ['xôi', 'cháo'] }
+    ];
+
+    const detectedPatterns = [];
+    dishPatterns.forEach(p => {
+      if (p.match.some(m => textBlob.includes(m))) {
+        detectedPatterns.push(p);
+      }
+    });
+
+    // 2. Lọc danh sách món ăn từ kho dữ liệu APP_DATA.foods
+    const allFoods = (window.APP_DATA && Array.isArray(window.APP_DATA.foods)) ? window.APP_DATA.foods : [];
+    const scoredFoods = [];
+
+    allFoods.forEach(food => {
+      if (!food) return;
+      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return;
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return;
+
+      let score = 0;
+      const fName = (food.name || '').toLowerCase();
+      const fRest = (food.restaurant || '').toLowerCase();
+      const fTags = (food.tags || []).join(' ').toLowerCase();
+      const fDesc = (food.description || '').toLowerCase();
+
+      // Nếu trùng quán -> Ưu tiên tuyệt đối
+      if (item.restaurant && (fRest.includes(item.restaurant.toLowerCase()) || item.restaurant.toLowerCase().includes(fRest))) {
+        score += 200;
+      }
+
+      // Khớp theo các món đặc trưng phát hiện trong video
+      detectedPatterns.forEach(p => {
+        p.match.forEach(m => {
+          if (fName.includes(m)) score += 60;
+          if (fTags.includes(m)) score += 40;
+          if (fRest.includes(m)) score += 30;
+          if (fDesc.includes(m)) score += 20;
+        });
+      });
+
+      // Khớp theo keywords từ hashtags
+      keywords.forEach(kw => {
+        if (fName.includes(kw)) score += 35;
+        if (fTags.includes(kw)) score += 25;
+        if (fRest.includes(kw)) score += 20;
+      });
+
+      if (score > 0) {
+        scoredFoods.push({ food, score });
+      }
+    });
+
+    scoredFoods.sort((a, b) => b.score - a.score);
+    let matchedFoods = scoredFoods.map(s => s.food);
+
+    // Nếu quá ít (< 10 món), bổ sung thêm các món đặc sản Quy Nhơn để thẻ quẹt luôn dồi dào
+    if (matchedFoods.length < 10) {
+      const remaining = allFoods.filter(f => !matchedFoods.some(m => m.id === f.id));
+      matchedFoods = [...matchedFoods, ...remaining.slice(0, 20)];
+    }
+
+    // 3. Nạp vào Swipe Deck
+    if (window.swipeManager && typeof window.swipeManager.loadCards === 'function') {
+      window.swipeManager.loadCards(matchedFoods);
+    }
+
+    // 4. Chuyển sang Tab Quẹt món
+    if (window.app && typeof window.app.switchTab === 'function') {
+      window.app.switchTab('swipe');
+    } else if (typeof window.switchTab === 'function') {
+      window.switchTab('swipe');
+    }
+
+    // 5. Hiển thị Toast thông báo chủ đề đang quẹt
+    const tagLabel = (item.tags && item.tags[0]) || (item.restaurant ? `@${item.restaurant}` : 'Video');
+    if (window.app && typeof window.app.showToast === 'function') {
+      window.app.showToast(`🎯 Đang quẹt các món theo chủ đề "${tagLabel}" (${matchedFoods.length} món)!`);
     }
   }
 }
