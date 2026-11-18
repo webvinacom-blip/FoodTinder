@@ -1324,6 +1324,19 @@ class ReelsManager {
     }
   }
 
+  // Kiểm tra xem giao diện Reels có đang thực sự hiển thị trên màn hình không
+  isViewVisible() {
+    const viewReels = document.getElementById('view-reels');
+    if (!viewReels) return false;
+    if (viewReels.style.display === 'none') return false;
+    if (!viewReels.classList.contains('active')) return false;
+    if (window.getComputedStyle) {
+      const comp = window.getComputedStyle(viewReels);
+      if (comp.display === 'none' || comp.visibility === 'hidden') return false;
+    }
+    return true;
+  }
+
   // CHIẾN THUẬT 1: Bắt buộc sử dụng .limit(5), chỉ lấy trước đúng 5 document
   async init() {
     this.container = document.getElementById('reels-feed-container');
@@ -1338,9 +1351,13 @@ class ReelsManager {
     this.currentWatchStartTime = Date.now();
 
     await this.loadInitialBatch();
-    setTimeout(() => {
-      this.unmuteActiveVideo();
-    }, 200);
+
+    // Chỉ kích hoạt phát và âm thanh nếu tab Reels đang thực sự hiển thị trên màn hình
+    if (this.isViewVisible()) {
+      setTimeout(() => {
+        this.unmuteActiveVideo();
+      }, 200);
+    }
   }
 
   async loadInitialBatch() {
@@ -1352,9 +1369,14 @@ class ReelsManager {
       try {
         const snap = await firebase.firestore().collection('reels_curated').limit(this.PAGE_SIZE).get();
         if (!snap.empty) {
-          this.lastVisibleDoc = snap.docs[snap.docs.length - 1];
-          initialItems = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          console.log(`[Reels Pagination] Đã nạp 5 video đầu tiên từ Firestore (.limit(5)). Tốn đúng 5 lượt Read!`);
+          const docs = snap.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .filter(item => item && typeof item.video_id === 'string' && /^[a-zA-Z0-9_-]{11}$/.test(item.video_id.trim()));
+          if (docs.length > 0) {
+            this.lastVisibleDoc = snap.docs[snap.docs.length - 1];
+            initialItems = docs;
+            console.log(`[Reels Pagination] Đã nạp ${docs.length} video hợp lệ đầu tiên từ Firestore (.limit(5)). Tốn đúng 5 lượt Read!`);
+          }
         }
       } catch (err) {
         console.warn('[Reels Pagination] Firestore initial query error:', err);
@@ -1465,9 +1487,13 @@ class ReelsManager {
 
     this.setupScrollObserver();
 
-    setTimeout(() => {
-      this.updateVideoMounts();
-    }, 60);
+    // CHỈ mount iframe nếu tab Reels đang thực sự hiển thị trên màn hình
+    // Tuyệt đối không mount iframe khi tab đang ẩn (display: none / 0x0)
+    if (this.isViewVisible()) {
+      setTimeout(() => {
+        this.updateVideoMounts();
+      }, 60);
+    }
   }
 
   createSlideElement(item, idx) {
@@ -1853,6 +1879,12 @@ class ReelsManager {
   updateVideoMounts() {
     if (!this.container || this.items.length === 0) return;
 
+    // Gác cổng: Nếu tab Reels đang ẩn (display: none / 0x0), tuyệt đối hoãn việc mount iframe
+    // Tránh lỗi YouTube Error 150/153 (Video player configuration error) do mount trong container tàng hình
+    if (!this.isViewVisible()) {
+      return;
+    }
+
     const cur = this.currentIndex;
     this.isPaused = false; // Reset trạng thái pause khi kích hoạt video mới
 
@@ -1885,15 +1917,20 @@ class ReelsManager {
         // ── VỊ TRÍ 1: VIDEO ĐANG XEM TRÊN MÀN HÌNH (TỰ ĐỘNG PHÁT NGAY LẬP TỨC) ──
         if (videoId) {
           let iframe = mountBox.querySelector('iframe');
-          if (!iframe) {
+          // Nếu chưa có iframe hoặc iframe rỗng -> mount mới sạch sẽ
+          if (!iframe || !iframe.src || iframe.src === 'about:blank') {
+            mountBox.innerHTML = '';
             iframe = document.createElement('iframe');
             iframe.id = `yt-iframe-${idx}`;
             iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            const originParam = (window.location.origin && window.location.origin.startsWith('http'))
+              ? `&origin=${encodeURIComponent(window.location.origin)}`
+              : '';
             // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (autoplay=1&mute=1 để vượt qua chính sách Autoplay Policy của trình duyệt, loop=0 để tự động next):
             // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=0 & enablejsapi=1
-            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1${originParam}`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -1923,7 +1960,6 @@ class ReelsManager {
               setTimeout(sendPlay, 400);
             };
 
-            mountBox.innerHTML = '';
             mountBox.appendChild(iframe);
             setTimeout(sendPlay, 250);
             setTimeout(sendPlay, 600);
@@ -2087,10 +2123,29 @@ class ReelsManager {
   onTabVisible() {
     this.muted = false; // Tự động mở tiếng ngay khi vào video reels
     this.updateAudioButtonUI();
+
+    // 1. Nếu chưa có items (chưa init xong), gọi init
+    if (!this.items || this.items.length === 0) {
+      this.init();
+      return;
+    }
+
+    // 2. Dọn sạch iframe cũ/lỗi ở slide hiện tại để tạo mới hoàn toàn trong container đã hiển thị đủ kích thước
+    const mountBox = document.getElementById(`reel-player-mount-${this.currentIndex}`);
+    if (mountBox) {
+      const oldIframe = mountBox.querySelector('iframe');
+      if (oldIframe) {
+        try { oldIframe.src = 'about:blank'; } catch (e) {}
+        oldIframe.remove();
+        mountBox.innerHTML = '';
+      }
+    }
+
+    // 3. Mount video và kích hoạt tự động phát
     this.updateVideoMounts();
     setTimeout(() => {
       this.unmuteActiveVideo();
-    }, 150);
+    }, 200);
   }
 
   unmuteActiveVideo() {
@@ -2149,11 +2204,14 @@ class ReelsManager {
   }
 
   handleVideoError(idx, code) {
-    console.warn(`[QA DeadLink Handler] Video vị trí ${idx} lỗi (code: ${code}). Tự động lướt tiếp...`);
-    if (window.app && typeof window.app.showToast === 'function') {
-      window.app.showToast('Video không khả dụng, đang chuyển sang video tiếp theo... ⏭️');
-    }
-    this.skipToNext();
+    if (idx !== this.currentIndex) return;
+    if (this._errorSkipping) return;
+    this._errorSkipping = true;
+    console.warn(`[QA DeadLink Handler] Video vị trí ${idx} lỗi (code: ${code}). Tự động chuyển video tiếp theo...`);
+    setTimeout(() => {
+      this.skipToNext();
+      setTimeout(() => { this._errorSkipping = false; }, 1200);
+    }, 300);
   }
 
   skipToNext() {

@@ -784,9 +784,6 @@ class FoodApp {
       const moodFoods = this.getFoodsForCurrentMood();
       window.swipeManager.loadCards(moodFoods.length > 0 ? moodFoods : (APP_DATA.foods || []));
     }
-    if (window.reelsManager) {
-      window.reelsManager.init();
-    }
     if (window.tasteManager) {
       window.tasteManager.renderLocationRecommendations();
     }
