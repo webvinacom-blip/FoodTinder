@@ -420,6 +420,9 @@ class TinderSwipeManager {
             window.app.recordSwipeLike(targetFood);
           }
         }
+        if (window.authManager && typeof window.authManager.trackStat === 'function') {
+          window.authManager.trackStat('swipes', 1);
+        }
       }
       this.currentIndex++;
       this.isAnimating = false;
@@ -444,6 +447,9 @@ class TinderSwipeManager {
         // 3. Học từ lịch sử Swipe (Session-based Learning)
         if (window.app && typeof window.app.recordSwipeSkip === 'function') {
           window.app.recordSwipeSkip(targetFood);
+        }
+        if (window.authManager && typeof window.authManager.trackStat === 'function') {
+          window.authManager.trackStat('swipes', 1);
         }
       }
       this.currentIndex++;

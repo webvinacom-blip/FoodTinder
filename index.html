@@ -1398,7 +1398,7 @@
         </div>
         <div>
           <h3 class="font-black text-lg text-white leading-tight">Danh Hiệu Ẩm Thực</h3>
-          <p class="text-xs text-amber-100 mt-0.5">Icon định danh riêng sẽ hiển thị ngay trên Avatar</p>
+          <p class="text-xs text-amber-100 mt-0.5">Hoàn thành nhiệm vụ để mở khóa và nhận icon danh hiệu trên Avatar</p>
         </div>
       </div>
 
@@ -1456,13 +1456,13 @@
 <script src="js/data.js?v=1795090000"></script>
 <script src="js/audio.js?v=1794930000"></script>
 <script src="js/taste.js?v=1795090000"></script>
-<script src="js/swipe.js?v=1795100000"></script>
+<script src="js/swipe.js?v=1795140000"></script>
 <script src="js/map.js?v=1795090000"></script>
-<script src="js/reels.js?v=1794930000"></script>
+<script src="js/reels.js?v=1795140000"></script>
 <script src="js/chat.js?v=1794970000"></script>
-<script src="js/auth.js?v=1795130000"></script>
+<script src="js/auth.js?v=1795140000"></script>
 <script src="js/data-loader.js?v=2.2.0"></script>
-<script src="js/app.js?v=1795130000"></script>
+<script src="js/app.js?v=1795140000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>
@@ -1490,6 +1490,12 @@ function switchTab(tabName) {
   // Delegate to app-level logic for lazy inits
   if (window.app) window.app.switchTab(tabName);
   if (window.lucide) window.lucide.createIcons();
+
+  if (tabName === 'reels' && window.authManager && typeof window.authManager.trackStat === 'function') {
+    window.authManager.trackStat('reelsWatched', 1);
+  } else if (tabName === 'taste' && window.authManager && typeof window.authManager.trackStat === 'function') {
+    window.authManager.trackStat('moodExplored', 1);
+  }
 }
 
 // Override app.switchTab so it doesn't fight our CSS

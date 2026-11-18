@@ -1827,6 +1827,9 @@ class FoodApp {
 
   openMoodFilterModal() {
     window.soundFX && window.soundFX.playPop();
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('moodExplored', 1);
+    }
     if (!this.moodFilter) {
       this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: false, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
@@ -2977,6 +2980,10 @@ class FoodApp {
     const food = APP_DATA.foods.find(f => f.id === foodId);
     if (!food) return;
 
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('detailsViewed', 1);
+    }
+
     const modal = document.getElementById('food-detail-modal');
     const content = document.getElementById('food-detail-content');
     if (!modal || !content) return;
@@ -3206,6 +3213,10 @@ class FoodApp {
     if (!food) return;
 
     window.soundFX && window.soundFX.playPop();
+
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('sharesSent', 1);
+    }
 
     const modal = document.getElementById('invite-friends-modal');
     if (!modal) return;
@@ -3915,6 +3926,10 @@ class FoodApp {
     if (!food) return;
 
     window.soundFX && window.soundFX.playPop();
+
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('mapDirections', 1);
+    }
 
     // 1. Tên quán gốc và địa chỉ gốc (Giữ nguyên tên quán và địa chỉ chuẩn từ database)
     let restName = (food.restaurant || food.name || '').trim();

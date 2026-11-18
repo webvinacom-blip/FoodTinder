@@ -24,61 +24,322 @@ class AuthManager {
     ];
 
     this.titles = AuthManager.SYSTEM_TITLES;
+    this.userStatsKey = 'foodtinder_user_stats';
+    this.userStats = this.loadUserStats();
 
     this.init();
   }
 
-  // Danh sách các danh hiệu hệ thống FoodTinder đa địa điểm với Icon định danh riêng biệt
+  // Danh sách các danh hiệu hệ thống FoodTinder đa địa điểm kèm hệ thống nhiệm vụ mở khóa
   static SYSTEM_TITLES = [
     {
       id: 'newbie',
       name: 'Người Mới Đến',
       icon: '🌱',
-      minLikes: 0,
+      tag: 'Tập sự',
       desc: 'Bắt đầu hành trình khám phá và trải nghiệm các món ăn ngon khắp mọi nơi',
-      tag: 'Tập sự'
+      missions: [
+        {
+          id: 'newbie_welcome',
+          title: 'Khởi đầu ẩm thực',
+          desc: 'Đăng nhập vào tài khoản FoodTinder',
+          type: 'login',
+          target: 1,
+          icon: '📱'
+        },
+        {
+          id: 'newbie_swipe',
+          title: 'Lướt quẹt món ngon',
+          desc: 'Quẹt khám phá ít nhất 3 thẻ món ăn',
+          type: 'swipes',
+          target: 3,
+          icon: '👆'
+        },
+        {
+          id: 'newbie_like',
+          title: 'Món đầu tiên ưng ý',
+          desc: 'Thả tim yêu thích 1 món ăn hợp khẩu vị',
+          type: 'likes',
+          target: 1,
+          icon: '❤️'
+        }
+      ]
     },
     {
       id: 'snack_lover',
       name: 'Tín Đồ Ăn Vặt',
       icon: '🍢',
-      minLikes: 3,
+      tag: 'Ăn Vặt',
       desc: 'Đam mê các món ăn vặt đường phố, món ngon ăn chơi và đồ uống hấp dẫn',
-      tag: 'Ăn Vặt'
+      missions: [
+        {
+          id: 'snack_likes',
+          title: 'Bộ sưu tập ăn vặt',
+          desc: 'Thả tim yêu thích ít nhất 3 món ăn',
+          type: 'likes',
+          target: 3,
+          icon: '❤️'
+        },
+        {
+          id: 'snack_swipes',
+          title: 'Chăm chỉ quẹt thẻ',
+          desc: 'Quẹt khám phá 10 lượt món ăn',
+          type: 'swipes',
+          target: 10,
+          icon: '🔥'
+        },
+        {
+          id: 'snack_details',
+          title: 'Tìm hiểu quán ăn',
+          desc: 'Xem chi tiết thông tin của 3 quán ăn',
+          type: 'detailsViewed',
+          target: 3,
+          icon: '🔍'
+        }
+      ]
     },
     {
       id: 'foodie',
       name: 'Chuyên Gia Sành Ăn',
       icon: '⭐',
-      minLikes: 7,
+      tag: 'Sành Ăn',
       desc: 'Gu ẩm thực tinh tế, luôn săn đón những quán ăn ngon chuẩn vị và chất lượng',
-      tag: 'Sành Ăn'
+      missions: [
+        {
+          id: 'foodie_likes',
+          title: 'Tín đồ sành món',
+          desc: 'Lưu vào danh sách yêu thích 7 món ăn',
+          type: 'likes',
+          target: 7,
+          icon: '❤️'
+        },
+        {
+          id: 'foodie_map',
+          title: 'Định vị quán ngon',
+          desc: 'Mở bản đồ / chỉ đường tới quán ăn 2 lần',
+          type: 'mapDirections',
+          target: 2,
+          icon: '📍'
+        },
+        {
+          id: 'foodie_will_return',
+          title: 'Khách quen quán ruột',
+          desc: 'Đánh dấu "Sẽ quay lại" cho ít nhất 1 quán ăn',
+          type: 'willReturnVotes',
+          target: 1,
+          icon: '🔁'
+        }
+      ]
     },
     {
       id: 'food_explorer',
       name: 'Thợ Săn Quán Ngon',
       icon: '🧭',
-      minLikes: 15,
+      tag: 'Khám Phá',
       desc: 'Không ngại đường xa, luôn tiên phong khám phá các hàng quán mới lạ và đặc sắc',
-      tag: 'Khám Phá'
+      missions: [
+        {
+          id: 'explorer_likes',
+          title: 'Kho báu ẩm thực',
+          desc: 'Lưu 15 món ăn ngon vào danh sách yêu thích',
+          type: 'likes',
+          target: 15,
+          icon: '❤️'
+        },
+        {
+          id: 'explorer_map',
+          title: 'Không ngại đường xa',
+          desc: 'Mở bản đồ hoặc dẫn đường đến quán 5 lần',
+          type: 'mapDirections',
+          target: 5,
+          icon: '🧭'
+        },
+        {
+          id: 'explorer_reels',
+          title: 'Xem review ẩm thực',
+          desc: 'Khám phá 3 video review trong mục Video Reels',
+          type: 'reelsWatched',
+          target: 3,
+          icon: '🎬'
+        },
+        {
+          id: 'explorer_share',
+          title: 'Lan tỏa quán ngon',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè cùng khám phá 1 lần',
+          type: 'sharesSent',
+          target: 1,
+          icon: '👥'
+        }
+      ]
     },
     {
       id: 'food_master',
       name: 'Bậc Thầy Ẩm Thực',
       icon: '👑',
-      minLikes: 25,
+      tag: 'Bậc Thầy',
       desc: 'Sành sỏi hương vị ẩm thực, thuộc lòng các quán ruột từ bình dân đến sang trọng',
-      tag: 'Bậc Thầy'
+      missions: [
+        {
+          id: 'master_likes',
+          title: 'Thực đơn đỉnh cao',
+          desc: 'Tích lũy 25 món ăn trong danh sách yêu thích',
+          type: 'likes',
+          target: 25,
+          icon: '❤️'
+        },
+        {
+          id: 'master_will_return',
+          title: 'Khách VIP nhiều quán',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 5 quán ăn',
+          type: 'willReturnVotes',
+          target: 5,
+          icon: '🔁'
+        },
+        {
+          id: 'master_taste',
+          title: 'Ăn uống chuẩn gu',
+          desc: 'Sử dụng bộ lọc tâm trạng hoặc khám phá Chuẩn Gu AI 3 lần',
+          type: 'moodExplored',
+          target: 3,
+          icon: '🎯'
+        },
+        {
+          id: 'master_details',
+          title: 'Am hiểu hàng quán',
+          desc: 'Xem chi tiết thông tin và thực đơn của 10 quán ăn',
+          type: 'detailsViewed',
+          target: 10,
+          icon: '📖'
+        }
+      ]
     },
     {
       id: 'legend',
       name: 'Huyền Thoại Ẩm Thực',
       icon: '🔥',
-      minLikes: 40,
+      tag: 'Huyền Thoại',
       desc: 'Cảnh giới ẩm thực tối cao, người truyền cảm hứng ăn ngon cho cộng đồng',
-      tag: 'Huyền Thoại'
+      missions: [
+        {
+          id: 'legend_likes',
+          title: 'Đại thực thần',
+          desc: 'Sở hữu bộ sưu tập 40 món ăn yêu thích',
+          type: 'likes',
+          target: 40,
+          icon: '❤️'
+        },
+        {
+          id: 'legend_swipes',
+          title: 'Đam mê bất tận',
+          desc: 'Đã quẹt khám phá hơn 40 lượt thẻ món ăn',
+          type: 'swipes',
+          target: 40,
+          icon: '⚡'
+        },
+        {
+          id: 'legend_will_return',
+          title: 'Uy tín ẩm thực',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 10 quán ăn',
+          type: 'willReturnVotes',
+          target: 10,
+          icon: '🔁'
+        },
+        {
+          id: 'legend_share',
+          title: 'Thủ lĩnh bàn tiệc',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè khám phá món ngon 3 lần',
+          type: 'sharesSent',
+          target: 3,
+          icon: '🎉'
+        }
+      ]
     }
   ];
+
+  // Tải thống kê hoạt động làm nhiệm vụ của người dùng
+  loadUserStats() {
+    try {
+      const data = localStorage.getItem(this.userStatsKey);
+      return data ? JSON.parse(data) : {
+        swipes: 0,
+        detailsViewed: 0,
+        mapDirections: 0,
+        reelsWatched: 0,
+        sharesSent: 0,
+        moodExplored: 0
+      };
+    } catch (e) {
+      return { swipes: 0, detailsViewed: 0, mapDirections: 0, reelsWatched: 0, sharesSent: 0, moodExplored: 0 };
+    }
+  }
+
+  // Lưu thống kê làm nhiệm vụ
+  saveUserStats() {
+    try {
+      localStorage.setItem(this.userStatsKey, JSON.stringify(this.userStats));
+    } catch (e) {}
+  }
+
+  // Cập nhật thống kê hoạt động (quẹt thẻ, xem map, xem reel, share...)
+  trackStat(key, amount = 1) {
+    if (!this.userStats) this.userStats = this.loadUserStats();
+    this.userStats[key] = (this.userStats[key] || 0) + amount;
+    this.saveUserStats();
+
+    // Cập nhật giao diện nếu modal danh hiệu đang mở
+    const titlesModal = document.getElementById('titles-modal');
+    if (titlesModal && !titlesModal.classList.contains('hidden')) {
+      this.renderTitlesList();
+    }
+    this.syncUI();
+    this.updateProfileModalBadge();
+  }
+
+  // Kiểm tra tiến độ của một nhiệm vụ đơn lẻ
+  getMissionProgress(mission) {
+    let current = 0;
+    switch (mission.type) {
+      case 'login':
+        current = this.isLoggedIn() ? 1 : 0;
+        break;
+      case 'likes':
+        current = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
+        break;
+      case 'willReturnVotes':
+        current = (window.app && window.app.willReturnFoods) ? window.app.willReturnFoods.length : 0;
+        break;
+      default:
+        current = (this.userStats && this.userStats[mission.type]) || 0;
+        break;
+    }
+    const target = mission.target || 1;
+    const isCompleted = current >= target;
+    const percent = Math.min(100, Math.round((current / target) * 100));
+    return {
+      current,
+      target,
+      isCompleted,
+      percent
+    };
+  }
+
+  // Đếm số nhiệm vụ đã xong và kiểm tra xem danh hiệu đã mở khóa chưa
+  getTitleProgress(title) {
+    if (!title.missions || title.missions.length === 0) {
+      return { completed: 1, total: 1, isUnlocked: true, percent: 100 };
+    }
+    let completed = 0;
+    title.missions.forEach(m => {
+      if (this.getMissionProgress(m).isCompleted) completed++;
+    });
+    const total = title.missions.length;
+    return {
+      completed,
+      total,
+      isUnlocked: completed === total,
+      percent: Math.round((completed / total) * 100)
+    };
+  }
 
   init() {
     if (document.readyState === 'loading') {
@@ -579,12 +840,12 @@ class AuthManager {
   // HỆ THỐNG DANH HIỆU ẨM THỰC FOODTINDER
   // ══════════════════════════════════════════
 
-  // Lấy danh hiệu hiện tại của người dùng (tính theo số món đã thích hoặc danh hiệu đã chọn)
+  // Lấy danh hiệu hiện tại của người dùng (tính theo nhiệm vụ đã hoàn thành hoặc danh hiệu đã chọn)
   getCurrentUserTitle() {
-    const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
     const user = this.currentUser;
 
-    const unlocked = this.titles.filter(t => likedCount >= t.minLikes);
+    // Tìm các danh hiệu đã hoàn thành tất cả nhiệm vụ
+    const unlockedTitles = this.titles.filter(t => this.getTitleProgress(t).isUnlocked);
 
     // Nếu người dùng đã chọn một danh hiệu cụ thể trong các danh hiệu đã mở khóa
     if (user && user.titleId) {
@@ -596,14 +857,14 @@ class AuthManager {
       };
       const effectiveId = legacyMap[user.titleId] || user.titleId;
       const chosen = this.titles.find(t => t.id === effectiveId);
-      if (chosen && likedCount >= chosen.minLikes) {
+      if (chosen && this.getTitleProgress(chosen).isUnlocked) {
         return chosen;
       }
     }
 
     // Mặc định chọn danh hiệu cao nhất đã mở khóa
-    if (unlocked.length > 0) {
-      return unlocked[unlocked.length - 1];
+    if (unlockedTitles.length > 0) {
+      return unlockedTitles[unlockedTitles.length - 1];
     }
     return this.titles[0];
   }
@@ -628,9 +889,9 @@ class AuthManager {
     const title = this.titles.find(t => t.id === titleId);
     if (!title) return;
 
-    const likedCount = (window.app && window.app.likedFoods) ? window.app.likedFoods.length : 0;
-    if (likedCount < title.minLikes) {
-      this.showToast(`🔒 Bạn cần thích thêm ${title.minLikes - likedCount} món nữa để mở khóa danh hiệu này!`);
+    const prog = this.getTitleProgress(title);
+    if (!prog.isUnlocked) {
+      this.showToast(`🔒 Bạn cần hoàn thành tất cả nhiệm vụ (${prog.completed}/${prog.total}) để mở khóa danh hiệu này!`);
       return;
     }
 
@@ -671,7 +932,7 @@ class AuthManager {
     setTimeout(() => modal.classList.add('hidden'), 250);
   }
 
-  // Render danh sách danh hiệu hệ thống
+  // Render danh sách danh hiệu hệ thống kèm chi tiết nhiệm vụ
   renderTitlesList() {
     const container = document.getElementById('titles-modal-list');
     if (!container) return;
@@ -680,28 +941,30 @@ class AuthManager {
     const currentTitle = this.getCurrentUserTitle();
     const user = this.currentUser;
 
+    const unlockedTitlesCount = this.titles.filter(t => this.getTitleProgress(t).isUnlocked).length;
+
     const summaryLiked = document.getElementById('titles-modal-user-liked');
     const summaryTitle = document.getElementById('titles-modal-user-current');
     const summaryAvatar = document.getElementById('titles-modal-user-avatar');
     const summaryBadge = document.getElementById('titles-modal-user-badge');
 
-    if (summaryLiked) summaryLiked.textContent = `${likedCount} món`;
+    if (summaryLiked) summaryLiked.textContent = `${unlockedTitlesCount}/${this.titles.length} mở khóa`;
     if (summaryTitle) summaryTitle.textContent = `${currentTitle.icon} ${currentTitle.name}`;
     if (summaryAvatar) summaryAvatar.src = (user && user.avatar) ? user.avatar : this.defaultAvatars[0];
     if (summaryBadge) summaryBadge.textContent = currentTitle.icon;
 
     container.innerHTML = this.titles.map(t => {
-      const isUnlocked = likedCount >= t.minLikes;
+      const prog = this.getTitleProgress(t);
+      const isUnlocked = prog.isUnlocked;
       const isEquipped = currentTitle.id === t.id;
-      const percent = t.minLikes === 0 ? 100 : Math.min(100, Math.round((likedCount / t.minLikes) * 100));
 
       return `
         <div class="p-3.5 rounded-2xl border transition ${
           isEquipped 
-            ? 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-400/30 shadow-xs' 
+            ? 'bg-amber-50/95 border-amber-300 ring-2 ring-amber-400/30 shadow-xs' 
             : isUnlocked 
-              ? 'bg-white hover:bg-stone-50 border-stone-200' 
-              : 'bg-stone-50/70 border-stone-200/60 opacity-80'
+              ? 'bg-white hover:bg-stone-50 border-stone-200 shadow-2xs' 
+              : 'bg-stone-50/80 border-stone-200/70 opacity-90'
         }">
           <div class="flex items-start gap-3">
             <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shrink-0 shadow-xs border ${
@@ -716,9 +979,9 @@ class AuthManager {
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-1">
                 <div class="flex items-center gap-1.5 flex-wrap">
-                  <h4 class="font-extrabold text-sm ${isUnlocked ? 'text-stone-900' : 'text-stone-500'}">${t.name}</h4>
+                  <h4 class="font-extrabold text-sm ${isUnlocked ? 'text-stone-900' : 'text-stone-700'}">${t.name}</h4>
                   <span class="text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                    isUnlocked ? 'bg-amber-100 text-amber-800' : 'bg-stone-200 text-stone-500'
+                    isUnlocked ? 'bg-amber-100 text-amber-800' : 'bg-stone-200 text-stone-600'
                   }">${t.tag}</span>
                 </div>
                 ${isEquipped ? `
@@ -730,23 +993,55 @@ class AuthManager {
                     Đeo danh hiệu
                   </button>
                 ` : `
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-500 text-[10px] font-bold shrink-0">
-                    <span>🔒 Cần thêm ${t.minLikes - likedCount} món</span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-600 text-[10px] font-bold shrink-0">
+                    <span>🔒 ${prog.completed}/${prog.total} nhiệm vụ</span>
                   </span>
                 `}
               </div>
               <p class="text-xs text-stone-500 mt-1 leading-snug">${t.desc}</p>
               
-              <!-- Progress bar -->
-              <div class="mt-2.5">
-                <div class="flex items-center justify-between text-[10px] text-stone-500 mb-1 font-semibold">
-                  <span>Yêu cầu: ${t.minLikes === 0 ? 'Mở khóa sẵn' : `${t.minLikes} món yêu thích`}</span>
-                  <span>${likedCount}/${t.minLikes} món (${percent}%)</span>
+              <!-- Danh sách Nhiệm vụ cần hoàn thành -->
+              <div class="mt-3 pt-2.5 border-t border-stone-200/60 space-y-2">
+                <div class="flex items-center justify-between text-[11px] font-extrabold text-stone-700">
+                  <span class="flex items-center gap-1">
+                    <span>🎯 Nhiệm vụ mở khóa:</span>
+                    <span class="text-[10px] ${isUnlocked ? 'text-emerald-600' : 'text-amber-600'} font-black">(${prog.completed}/${prog.total} hoàn thành)</span>
+                  </span>
+                  <span class="text-[10px] font-bold ${isUnlocked ? 'text-emerald-600' : 'text-stone-500'}">
+                    ${isUnlocked ? '✅ Đã hoàn tất' : `${prog.percent}%`}
+                  </span>
                 </div>
-                <div class="w-full h-1.5 rounded-full bg-stone-200/70 overflow-hidden">
-                  <div class="h-full rounded-full transition-all duration-300 ${
-                    isUnlocked ? 'bg-gradient-to-r from-amber-400 to-yellow-500' : 'bg-stone-400'
-                  }" style="width: ${percent}%;"></div>
+
+                <div class="space-y-1.5">
+                  ${t.missions.map(m => {
+                    const mp = this.getMissionProgress(m);
+                    return `
+                      <div class="p-2 rounded-xl transition ${
+                        mp.isCompleted 
+                          ? 'bg-emerald-50/80 border border-emerald-200/80' 
+                          : 'bg-white border border-stone-200/90'
+                      }">
+                        <div class="flex items-center justify-between gap-1.5">
+                          <div class="flex items-center gap-1.5 min-w-0">
+                            <span class="text-xs shrink-0">${mp.isCompleted ? '✅' : m.icon}</span>
+                            <span class="font-extrabold text-xs truncate ${mp.isCompleted ? 'text-emerald-900' : 'text-stone-800'}">${m.title}</span>
+                          </div>
+                          <span class="text-[10px] font-mono font-extrabold shrink-0 px-1.5 py-0.2 rounded-md ${
+                            mp.isCompleted ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-100 text-stone-600'
+                          }">
+                            ${mp.current}/${mp.target}
+                          </span>
+                        </div>
+                        <p class="text-[10.5px] text-stone-500 mt-0.5 leading-tight">${m.desc}</p>
+                        
+                        <div class="w-full h-1.5 bg-stone-100 rounded-full mt-1.5 overflow-hidden">
+                          <div class="h-full rounded-full transition-all duration-300 ${
+                            mp.isCompleted ? 'bg-emerald-500' : 'bg-amber-400'
+                          }" style="width: ${mp.percent}%"></div>
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
                 </div>
               </div>
             </div>

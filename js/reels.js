@@ -171,6 +171,9 @@ class ReelsManager {
 
         if (entry.isIntersecting) {
           video.play().catch(() => {});
+          if (window.authManager && typeof window.authManager.trackStat === 'function') {
+            window.authManager.trackStat('reelsWatched', 1);
+          }
         } else {
           video.pause();
         }
