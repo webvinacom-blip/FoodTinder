@@ -256,8 +256,11 @@ class ReelsManager {
             </div>
           </div>
 
-          <!-- Fallback Poster Image (Luôn hiển thị ảnh sắc nét ngay lập tức) -->
+          <!-- Fallback Poster Image (Lazy-load & priority allocation để không tranh chấp băng thông với video) -->
           <img src="${item.image}" alt="${item.title || item.name}"
+            loading="${idx <= 1 ? 'eager' : 'lazy'}"
+            decoding="async"
+            ${idx === 0 ? 'fetchpriority="high"' : 'fetchpriority="low"'}
             class="reel-poster-img absolute inset-0 w-full h-full object-cover filter brightness-90 -z-10" />
 
           <!-- Dark Gradient Overlays (Tạo chiều sâu điện ảnh, làm nổi bật text) -->
@@ -449,13 +452,35 @@ class ReelsManager {
   }
 
   // ══════════════════════════════════════════════════════════════════════
-  // QUẢN LÝ BỘ NHỚ & ĐẢM BẢO CHỈ 1 VIDEO DUY NHẤT ĐƯỢC PHÁT TIẾNG
+  // CHIẾN THUẬT 1 & 2: THUẬT TOÁN "CỬA SỔ TRƯỢT" (DOM VIRTUALIZATION)
+  // & ĐIỀU PHỐI PRELOAD CÓ CHỦ ĐÍCH (PRELOAD="AUTO" / "METADATA" / "NONE")
   // ══════════════════════════════════════════════════════════════════════
+  unmountVideo(idx, mountBox) {
+    if (!mountBox) return;
+    const iframe = mountBox.querySelector('iframe');
+    if (iframe) {
+      try {
+        iframe.src = 'about:blank'; // Đóng băng luồng mạng cross-origin ngay lập tức
+      } catch (e) {}
+      iframe.remove();
+    }
+    const video = mountBox.querySelector('video');
+    if (video) {
+      try {
+        video.pause();
+        video.removeAttribute('src'); // Giải phóng giải mã video khỏi bộ nhớ RAM
+        video.load();
+      } catch (e) {}
+      video.remove();
+    }
+    mountBox.innerHTML = '';
+  }
+
   updateVideoMounts() {
     if (!this.container || this.items.length === 0) return;
 
     const cur = this.currentIndex;
-    this.isPaused = false; // Reset trạng thái pause khi chuyển sang video mới
+    this.isPaused = false; // Reset trạng thái pause khi kích hoạt video mới
 
     this.items.forEach((item, idx) => {
       const mountBox = document.getElementById(`reel-player-mount-${idx}`);
@@ -467,13 +492,27 @@ class ReelsManager {
         pauseIcon.classList.add('opacity-0', 'scale-75');
       }
 
-      const videoId = item.video_id || '';
+      const isCur = idx === cur;
+      const isNext = idx === cur + 1;
+      const isPrev = idx === cur - 1;
+      const isInWindow = isCur || isNext || isPrev;
 
-      if (idx === cur) {
-        // VIDEO ĐANG XEM: Duy nhất video này được phép phát hình và tiếng
-        if (!mountBox.querySelector('iframe') && !mountBox.querySelector('video')) {
-          if (videoId) {
-            const iframe = document.createElement('iframe');
+      // THUẬT TOÁN CỬA SỔ TRƯỢT: Tuyệt đối không giữ quá 3 thẻ video/iframe trong DOM
+      // Nếu nằm ngoài [cur - 1, cur, cur + 1] -> Gỡ bỏ hoàn toàn thẻ HTML và giải phóng RAM
+      if (!isInWindow) {
+        this.unmountVideo(idx, mountBox);
+        return;
+      }
+
+      const videoId = item.video_id || '';
+      const videoUrl = item.videoUrl || '';
+
+      if (isCur) {
+        // ── VỊ TRÍ 1: VIDEO ĐANG XEM TRÊN MÀN HÌNH (preload="auto", ưu tiên băng thông tối đa) ──
+        if (videoId) {
+          let iframe = mountBox.querySelector('iframe');
+          if (!iframe) {
+            iframe = document.createElement('iframe');
             iframe.id = `yt-iframe-${idx}`;
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
@@ -486,19 +525,74 @@ class ReelsManager {
             iframe.style.transformOrigin = 'center center';
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             iframe.allowFullscreen = true;
+            mountBox.innerHTML = '';
             mountBox.appendChild(iframe);
-          }
-        } else {
-          const iframe = mountBox.querySelector('iframe');
-          if (iframe && iframe.contentWindow) {
+          } else if (iframe.contentWindow) {
             iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
             const muteCmd = this.muted ? 'mute' : 'unMute';
             iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
             iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
           }
+        } else if (videoUrl) {
+          let video = mountBox.querySelector('video');
+          if (!video) {
+            video = document.createElement('video');
+            video.src = videoUrl;
+            video.preload = 'auto'; // Ưu tiên tải tối đa băng thông
+            video.loop = true;
+            video.muted = this.muted;
+            video.playsInline = true;
+            video.className = 'w-full h-full object-cover pointer-events-none';
+            mountBox.innerHTML = '';
+            mountBox.appendChild(video);
+          } else {
+            video.preload = 'auto';
+            video.muted = this.muted;
+          }
+          video.play().catch(() => {});
         }
-      } else {
-        // TẤT CẢ CÁC VIDEO KHÁC (idx !== cur): DỪNG VÀ TẮT TIẾNG NGAY LẬP TỨC
+      } else if (isNext) {
+        // ── VỊ TRÍ 2: VIDEO DỰ PHÒNG TIẾP THEO (idx = cur + 1): preload="metadata" ──
+        // Chỉ tải trước thông tin khung hình, độ dài, ảnh cover để sẵn sàng khung hiển thị
+        if (videoId) {
+          let iframe = mountBox.querySelector('iframe');
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = `yt-iframe-${idx}`;
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
+            iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0${originParam}`;
+            iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.transform = 'scale(1.04)';
+            iframe.style.transformOrigin = 'center center';
+            mountBox.innerHTML = '';
+            mountBox.appendChild(iframe);
+          } else if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+          }
+        } else if (videoUrl) {
+          let video = mountBox.querySelector('video');
+          if (!video) {
+            video = document.createElement('video');
+            video.src = videoUrl;
+            video.preload = 'metadata'; // Chỉ nạp metadata, chưa tải stream data
+            video.muted = true;
+            video.playsInline = true;
+            video.className = 'w-full h-full object-cover pointer-events-none';
+            mountBox.innerHTML = '';
+            mountBox.appendChild(video);
+          } else {
+            video.preload = 'metadata';
+            video.pause();
+            video.muted = true;
+          }
+        }
+      } else if (isPrev) {
+        // ── VỊ TRÍ 3: VIDEO VỪA XEM QUA (idx = cur - 1): preload="metadata", tạm dừng để sẵn sàng vuốt ngược ──
         const iframe = mountBox.querySelector('iframe');
         if (iframe && iframe.contentWindow) {
           iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
@@ -506,13 +600,9 @@ class ReelsManager {
         }
         const video = mountBox.querySelector('video');
         if (video) {
+          video.preload = 'metadata';
           video.pause();
           video.muted = true;
-        }
-
-        // Nếu nằm ngoài khoảng lân cận [cur - 1, cur + 1] -> Thu hồi giải phóng RAM
-        if (Math.abs(idx - cur) > 1) {
-          mountBox.innerHTML = '';
         }
       }
     });
@@ -538,6 +628,10 @@ class ReelsManager {
     });
   }
 
+  // ══════════════════════════════════════════════════════════════════════
+  // CHIẾN THUẬT 3: ĐÓNG BĂNG BẰNG INTERSECTION OBSERVER (THRESHOLD: 0.5)
+  // Kích hoạt khi lọt vào 50% màn hình, đóng băng và giải phóng khi khuất màn hình
+  // ══════════════════════════════════════════════════════════════════════
   setupScrollObserver() {
     if (!this.container) return;
 
@@ -547,19 +641,41 @@ class ReelsManager {
 
     const options = {
       root: this.container,
-      threshold: 0.6
+      threshold: 0.5 // Kích hoạt chính xác khi khung video lọt vào 50% màn hình
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const idx = Number(entry.target.dataset.index);
-          if (!isNaN(idx) && idx !== this.currentIndex) {
-            this.pauseAll(); // Dừng ngay video cũ
+        const idx = Number(entry.target.dataset.index);
+        if (isNaN(idx)) return;
+
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          // Video lọt vào 50% màn hình -> Kích hoạt phát video
+          if (idx !== this.currentIndex) {
+            this.pauseAll(); // Dừng ngay các video cũ
             this.currentIndex = idx;
             this.updateVideoMounts();
             if (window.authManager && typeof window.authManager.trackStat === 'function') {
               window.authManager.trackStat('reelsWatched', 1);
+            }
+          }
+        } else if (!entry.isIntersecting) {
+          // Khi video bị vuốt qua và khuất khỏi màn hình -> Lập tức đóng băng
+          const mountBox = document.getElementById(`reel-player-mount-${idx}`);
+          if (mountBox) {
+            const iframe = mountBox.querySelector('iframe');
+            if (iframe && iframe.contentWindow) {
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+            }
+            const video = mountBox.querySelector('video');
+            if (video) {
+              video.pause();
+              video.muted = true;
+            }
+            // Nếu khuất khỏi phạm vi 3 cửa sổ trượt -> Xoá src="" giải phóng bộ nhớ RAM
+            if (Math.abs(idx - this.currentIndex) > 1) {
+              this.unmountVideo(idx, mountBox);
             }
           }
         }

@@ -2533,6 +2533,8 @@ class FoodApp {
       <div onclick="window.app.showFoodDetail(${food.id})" class="food-card ${status.isOpen ? '' : 'is-closed'} cursor-pointer">
         <div class="relative h-24 overflow-hidden bg-stone-100">
           <img src="${food.image}" alt="${food.name}"
+            loading="lazy"
+            decoding="async"
             data-name="${food.name.replace(/"/g, '&quot;')}"
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
             data-category="${food.category || ''}"
@@ -2605,6 +2607,8 @@ class FoodApp {
       <div onclick="window.app.showFoodDetail(${food.id})" class="food-card ${status.isOpen ? '' : 'is-closed'} cursor-pointer">
         <div class="relative h-32 overflow-hidden bg-stone-100">
           <img src="${food.image}" alt="${food.name}"
+            loading="lazy"
+            decoding="async"
             data-name="${food.name.replace(/"/g, '&quot;')}"
             data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
             data-category="${food.category || ''}"

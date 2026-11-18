@@ -254,12 +254,12 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
             >
               <div className="relative w-full max-w-[480px] h-full overflow-hidden bg-stone-950 flex items-center justify-center shadow-2xl">
                 
-                {/* Video Player & Poster */}
+                {/* Video Player & Poster với Windowing Virtualization 3 Slide & Preload */}
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-black">
-                  {isCurrent && (
+                  {Math.abs(idx - currentIndex) <= 1 && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${item.video_id}?enablejsapi=1&autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
+                      src={`https://www.youtube.com/embed/${item.video_id}?enablejsapi=1&autoplay=${isCurrent ? 1 : 0}&mute=${isCurrent ? (isMuted ? 1 : 0) : 1}&controls=0&loop=1&playlist=${item.video_id}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -284,6 +284,8 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   <img
                     src={item.image}
                     alt={item.title || item.name}
+                    loading={idx <= 1 ? 'eager' : 'lazy'}
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover filter brightness-90 -z-10"
                   />
 
