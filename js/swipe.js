@@ -22,14 +22,25 @@ class TinderSwipeManager {
 
   loadCards(foods) {
     const list = Array.isArray(foods) ? foods : [];
-    // Nếu quán đã đóng cửa hoặc ngừng kinh doanh thì tuyệt đối không hiện ở thẻ quẹt
+    // Nếu quán đã đóng cửa hoặc ngừng kinh doanh hoặc vi phạm chế độ ăn thì tuyệt đối không hiện ở thẻ quẹt
     const openFoods = list.filter(food => {
       if (!food) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+      if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
+
+    // Sắp xếp ưu tiên các món có Match Score cao theo Gu khẩu vị lên đầu deck quẹt thẻ
+    if (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function') {
+      openFoods.sort((a, b) => {
+        const scoreB = window.tasteManager.calculateMatchScore(b);
+        const scoreA = window.tasteManager.calculateMatchScore(a);
+        return scoreB - scoreA;
+      });
+    }
+
     this.deck = openFoods;
     this.currentIndex = 0;
     this.isAnimating = false;
@@ -97,6 +108,11 @@ class TinderSwipeManager {
       const isWillReturn = (window.app && typeof window.app.isFoodWillReturn === 'function')
         ? window.app.isFoodWillReturn(food.id)
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
+
+      const matchScore = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
+        ? window.tasteManager.calculateMatchScore(food)
+        : null;
+      const isTasteMatch = matchScore && matchScore >= 80;
 
       // Thông tin giao hàng & mã giảm giá ShopeeFood
       const promoCode = food.deliveryPromoCode || 'SHOPEE25K';
@@ -169,6 +185,7 @@ class TinderSwipeManager {
 
           <!-- Mood / Atmosphere Tag Badge on Photo -->
           <div class="absolute top-16 left-4 flex flex-wrap gap-1.5 z-10 pointer-events-none">
+            ${isTasteMatch ? `<span class="bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white font-black text-[10.5px] px-2.5 py-1 rounded-full shadow-md flex items-center gap-1 border border-white/60">🎯 Chuẩn Gu ${matchScore}%</span>` : ''}
             ${food.tags.map(t => `<span class="bg-[#FFF4ED]/90 backdrop-blur-md text-[#E65100] font-bold text-[11px] px-3 py-1 rounded-full border border-[#FFE0B2] shadow-sm">${t}</span>`).join('')}
           </div>
 

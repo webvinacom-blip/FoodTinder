@@ -1369,6 +1369,7 @@ class FoodApp {
       if (!food) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+      if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
@@ -1394,13 +1395,16 @@ class FoodApp {
     }
 
     const scored = matchedMood.map(food => {
-      // Áp dụng công thức Contextual Fusion
+      // Áp dụng công thức Contextual Fusion & Điểm Gu Khẩu Vị Cá Nhân
       const fusionScore = this.calculateContextualFusionScore(food, moodId, weather, now);
       const dist = (typeof food.distance === 'number') ? food.distance : 10;
       const proximity = Math.max(0, (10 - dist) * 2);
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
       const openBonus = status.isOpen ? 100 : 0;
-      return { food, score: fusionScore + proximity + (food.rating || 4.5) * 2 + openBonus };
+      const tasteBonus = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
+        ? (window.tasteManager.calculateMatchScore(food, moodId) * 0.6)
+        : 40;
+      return { food, score: fusionScore + proximity + (food.rating || 4.5) * 2 + openBonus + tasteBonus };
     });
 
     scored.sort((a, b) => b.score - a.score);
@@ -2653,6 +2657,19 @@ class FoodApp {
     }
 
     this.showToast(`Đã chọn tâm trạng: ${APP_DATA.moods.find(m => m.id === moodId)?.label}`);
+  }
+
+  // Áp dụng Gu khẩu vị mới từ khảo sát vào toàn bộ ứng dụng
+  applyTastePreferences(prefs) {
+    if (window.tasteManager && typeof window.tasteManager.applyTastePreferences === 'function') {
+      window.tasteManager.applyTastePreferences(prefs);
+    }
+    const moodFoods = this.getFoodsForCurrentMood();
+    if (window.swipeManager) {
+      window.swipeManager.loadCards(moodFoods.length > 0 ? moodFoods : (APP_DATA.foods || []));
+    }
+    this.renderBentoAndFeed();
+    this.renderFoodGrid();
   }
 
   skipFeaturedFood() {

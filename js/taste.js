@@ -7,10 +7,61 @@ class TasteManager {
   constructor() {
     this.storageKey = 'foodtinder_user_taste_v1';
     this.profile = this.loadProfile();
+    this.userPreferences = this.loadUserPreferences();
     this.visibleLimit = 40; // Mặc định hiển thị 40 quán, mỗi lần nhấn Xem thêm hiện thêm 12 quán
     this.currentRadius = 1;
     this.lastCityId = null;
     this.onlySpecialties = false; // Lọc chỉ hiển thị đặc sản địa phương
+  }
+
+  loadUserPreferences() {
+    try {
+      const saved = localStorage.getItem('foodtinder_user_taste_prefs');
+      if (saved) return JSON.parse(saved);
+      if (window.authManager && typeof window.authManager.loadTastePreferences === 'function') {
+        return window.authManager.loadTastePreferences();
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  applyTastePreferences(prefs) {
+    this.userPreferences = prefs || this.loadUserPreferences();
+    this.renderLocationRecommendations();
+  }
+
+  isFoodAllowedByPreferences(food, customPrefs = null) {
+    if (!food) return false;
+    const prefs = customPrefs || this.userPreferences || this.loadUserPreferences();
+    if (!prefs) return true;
+
+    // 1. Chế độ ăn kiêng hải sản
+    if (prefs.diet === 'no_seafood') {
+      const isSeafood = food.category === 'seafood' ||
+        (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ|hàu|cá/i.test(t))) ||
+        /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma|chả cá|hàu|bạch tuộc/i.test(food.name || '');
+      if (isSeafood) return false;
+    }
+
+    // 2. Chế độ ăn chay / bán chay
+    if (prefs.diet === 'vegetarian') {
+      const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
+        (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy|rau củ/i.test(t))) ||
+        /chay|nấm|đậu hũ|rau/i.test(food.name || '');
+      const isMeatOrSeafood = /thịt|bò|heo|gà|vịt|chả cá|hải sản|tôm|cua|mực|ốc|lòng|sườn|pate|xá xíu|nem chua/i.test(food.name || '');
+      if (isMeatOrSeafood && !isVeg) return false;
+    }
+
+    // 3. Khẩu vị không ăn cay
+    if (Array.isArray(prefs.flavors) && prefs.flavors.includes('no_spicy')) {
+      const isSpicy = (Array.isArray(food.tags) && food.tags.some(t => /cay|siêu cay|sa tế/i.test(t))) ||
+        /siêu cay|mì cay|lẩu thái cay|sa tế/i.test(food.name || '');
+      if (isSpicy) return false;
+    }
+
+    return true;
   }
 
   loadMoreTasteFoods() {
@@ -175,25 +226,89 @@ class TasteManager {
     if (!food) return 70;
     let score = 65;
 
-    // 1. Category match
+    // 1. User Onboarding Taste Preferences Bonus & Checks
+    const prefs = this.userPreferences || this.loadUserPreferences();
+    if (prefs) {
+      // Kiêng hải sản
+      if (prefs.diet === 'no_seafood') {
+        const isSeafood = food.category === 'seafood' ||
+          (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ/i.test(t))) ||
+          /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma/i.test(food.name || '');
+        if (isSeafood) return 30;
+      }
+
+      // Ăn chay
+      if (prefs.diet === 'vegetarian') {
+        const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
+          (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy/i.test(t))) ||
+          /chay|nấm|đậu hũ/i.test(food.name || '');
+        if (isVeg) score += 20;
+        else score -= 25;
+      }
+
+      // Nhóm món ăn yêu thích (+14 điểm)
+      if (Array.isArray(prefs.categories)) {
+        const cat = food.category;
+        const foodName = (food.name || '').toLowerCase();
+        let catMatch = false;
+
+        if (prefs.categories.includes('noodles') && (cat === 'noodles' || /phở|bún|mì|bánh canh|hủ tiếu/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('rice_chicken') && (cat === 'rice' || /cơm|gà/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('streetfood') && (cat === 'streetfood' || /bánh xèo|bánh hỏi|ăn vặt|nem/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('seafood') && (cat === 'seafood' || /hải sản|ốc|tôm|cua|mực/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('hotpot_bbq') && (cat === 'hotpot' || cat === 'bbq' || /lẩu|nướng|bbq/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('sweet_tea') && (cat === 'cafe' || cat === 'drink' || /trà sữa|cà phê|kem|chè/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('healthy') && (cat === 'healthy' || /chay|clean|salad/i.test(foodName))) catMatch = true;
+
+        if (catMatch) {
+          score += 14;
+        }
+      }
+
+      // Khẩu vị đặc trưng (+8 điểm)
+      if (Array.isArray(prefs.flavors)) {
+        const foodName = (food.name || '').toLowerCase();
+        const tags = Array.isArray(food.tags) ? food.tags.join(' ').toLowerCase() : '';
+
+        if (prefs.flavors.includes('spicy') && (/cay/i.test(foodName) || tags.includes('cay'))) score += 8;
+        if (prefs.flavors.includes('no_spicy') && (/cay/i.test(foodName) || tags.includes('cay'))) score -= 20;
+        if (prefs.flavors.includes('light') && (tags.includes('thanh') || tags.includes('nước') || food.category === 'healthy')) score += 7;
+        if (prefs.flavors.includes('crispy_rich') && (tags.includes('giòn') || tags.includes('đậm') || /chiên|nướng|ram/i.test(foodName))) score += 7;
+        if (prefs.flavors.includes('sweet_creamy') && (tags.includes('béo') || tags.includes('ngọt') || food.category === 'cafe')) score += 7;
+      }
+
+      // Ngân sách trung bình (+6 điểm)
+      const parsePrice = (priceStr) => {
+        if (!priceStr) return 40000;
+        const nums = String(priceStr).replace(/\./g, '').match(/\d+/g);
+        if (!nums || nums.length === 0) return 40000;
+        return parseInt(nums[0], 10);
+      };
+      const estPrice = parsePrice(food.priceRange || food.price);
+      if (prefs.budget === 'budget_low' && estPrice <= 35000) score += 6;
+      else if (prefs.budget === 'budget_mid' && estPrice > 30000 && estPrice <= 75000) score += 6;
+      else if (prefs.budget === 'budget_high' && estPrice > 70000) score += 6;
+    }
+
+    // 2. Category match from interaction history
     const cat = food.category;
     const catWeight = this.profile.likedCategories[cat] || 0;
     if (catWeight > 0) {
-      score += Math.min(18, catWeight * 5);
+      score += Math.min(15, catWeight * 4);
     }
 
-    // 2. Tags match
+    // 3. Tags match from interaction history
     if (Array.isArray(food.tags)) {
       let tagPoints = 0;
       food.tags.forEach(t => {
         if (this.profile.likedTags[t]) {
-          tagPoints += Math.min(6, this.profile.likedTags[t] * 2);
+          tagPoints += Math.min(5, this.profile.likedTags[t] * 2);
         }
       });
-      score += Math.min(15, tagPoints);
+      score += Math.min(12, tagPoints);
     }
 
-    // 3. Custom preference match
+    // 4. Custom preference match
     if (Array.isArray(this.profile.customPreferences)) {
       this.profile.customPreferences.forEach(pref => {
         if (pref.includes("Cay") && (food.tags?.some(t => t.toLowerCase().includes("cay")) || food.name.toLowerCase().includes("cay"))) score += 4;
@@ -206,20 +321,43 @@ class TasteManager {
       });
     }
 
-    // 4. Current mood match bonus
+    // 5. Current mood match bonus
     if (currentMoodId && Array.isArray(food.moodIds) && food.moodIds.includes(currentMoodId)) {
       score += 5;
     }
 
-    // 5. Rating boost
+    // 6. Rating boost
     if (food.rating >= 4.8) score += 3;
 
-    return Math.min(99, Math.max(68, Math.round(score)));
+    return Math.min(99, Math.max(60, Math.round(score)));
   }
 
   // Generate customized reason for why this food was recommended
   generateMatchReason(food) {
     if (!food) return "Gợi ý được yêu thích nhất";
+
+    const prefs = this.userPreferences || this.loadUserPreferences();
+    if (prefs) {
+      const foodName = (food.name || '').toLowerCase();
+      if (prefs.diet === 'vegetarian' && (food.category === 'vegetarian' || food.category === 'healthy' || /chay|nấm/.test(foodName))) {
+        return "Chuẩn theo chế độ ăn chay thanh đạm của bạn";
+      }
+      if (prefs.categories?.includes('noodles') && (food.category === 'noodles' || /phở|bún|mì|bánh canh/.test(foodName))) {
+        return "Chuẩn gu món sợi & bún phở bạn đã chọn";
+      }
+      if (prefs.categories?.includes('seafood') && (food.category === 'seafood' || /hải sản|ốc/.test(foodName))) {
+        return "Hợp gu hải sản & ốc tươi ngon bạn yêu thích";
+      }
+      if (prefs.categories?.includes('rice_chicken') && (food.category === 'rice' || /cơm|gà/.test(foodName))) {
+        return "Chuẩn gu cơm tấm & cơm gà no bụng bạn yêu thích";
+      }
+      if (prefs.categories?.includes('streetfood') && (food.category === 'streetfood' || /bánh xèo|ăn vặt/.test(foodName))) {
+        return "Chuẩn gu ăn vặt & ẩm thực đường phố của bạn";
+      }
+      if (prefs.flavors?.includes('spicy') && (/cay/.test(foodName) || food.tags?.some(t => /cay/.test(t)))) {
+        return "Đậm vị cay nồng chuẩn khẩu vị yêu thích của bạn";
+      }
+    }
 
     const matchedTags = (food.tags || []).filter(t => (this.profile.likedTags[t] || 0) > 0);
     if (matchedTags.length >= 2) {
@@ -439,11 +577,12 @@ class TasteManager {
       displayFoods = cityFoods.filter(f => this.isLocationSpecialty(f, currentCity));
     }
 
-    // Lọc bỏ các quán đã đóng cửa hoặc ngừng kinh doanh
+    // Lọc bỏ các quán đã đóng cửa hoặc ngừng kinh doanh & quán không phù hợp với khẩu vị/kiêng khem
     displayFoods = displayFoods.filter(f => {
       if (!f) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+      if (!this.isFoodAllowedByPreferences(f)) return false;
       const status = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
       return Boolean(status && status.isOpen);
     });
