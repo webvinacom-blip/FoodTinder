@@ -86,7 +86,6 @@ class TinderSwipeManager {
         : (window.app && typeof window.app.isWillReturn === 'function' ? window.app.isWillReturn(food.id) : false);
 
       // Thông tin giao hàng & mã giảm giá ShopeeFood
-      const hasShopee = (window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : Boolean(food.deliveryUrl && food.deliveryUrl.includes('shopeefood.vn/')));
       const promoCode = food.deliveryPromoCode || 'SHOPEE25K';
       const rawPromo = food.deliveryPromo || `Mã ${promoCode} giảm 25.000đ`;
       const promoCleanDesc = rawPromo.replace(/^Mã\s+[A-Z0-9]+\s*/i, '');
