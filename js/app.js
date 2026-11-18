@@ -2801,6 +2801,11 @@ class FoodApp {
     if (tabName === 'liked') {
       this.renderLikedView();
     }
+    // Dừng và tắt tiếng toàn bộ Reels khi rời khỏi tab reels
+    if (tabName !== 'reels' && window.reelsManager && typeof window.reelsManager.pauseAll === 'function') {
+      window.reelsManager.pauseAll();
+    }
+
     if (tabName === 'map') {
       setTimeout(() => {
         if (window.mapManager) {
@@ -2830,8 +2835,6 @@ class FoodApp {
         } else if (typeof window.reelsManager.onTabVisible === 'function') {
           window.reelsManager.onTabVisible();
         }
-        const firstVideo = document.querySelector('#reels-feed-container video');
-        if (firstVideo) firstVideo.play().catch(() => {});
       }
     } else if (tabName === 'liked') {
       this.renderLikedView();

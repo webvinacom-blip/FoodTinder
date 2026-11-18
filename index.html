@@ -1604,13 +1604,18 @@
 <script src="js/reels.js?v=1795210000"></script>
 <script src="js/chat.js?v=1795210000"></script>
 <script src="js/auth.js?v=1795210000"></script>
-<script src="js/data-loader.js?v=2.7.2"></script>
+<script src="js/data-loader.js?v=2.7.3"></script>
 <script src="js/app.js?v=1795210000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──
 function switchTab(tabName) {
+  // Dừng và tắt tiếng toàn bộ Reels khi rời khỏi tab reels
+  if (tabName !== 'reels' && window.reelsManager && typeof window.reelsManager.pauseAll === 'function') {
+    window.reelsManager.pauseAll();
+  }
+
   // Hide all views
   document.querySelectorAll('.tab-view').forEach(v => {
     v.classList.remove('active');

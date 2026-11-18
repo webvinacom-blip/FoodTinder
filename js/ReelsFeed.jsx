@@ -120,11 +120,11 @@ export default function ReelsFeed({ foods = [] }) {
                 {/* 1. Video Container & Poster Fallback */}
                 <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-black">
                   
-                  {/* Iframe Mount Box (Chỉ mount khi nằm trong Virtual Window) */}
+                  {/* Iframe Mount Box: Chỉ video ĐANG XEM (isCurrent) mới được phép phát tiếng, video kế tiếp luôn câm và pause */}
                   {shouldMountIframe(idx) && videoId ? (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
+                      src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=${isCurrent ? 1 : 0}&mute=${isCurrent && !isMuted ? 0 : 1}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%' }}
                       referrerPolicy="strict-origin-when-cross-origin"

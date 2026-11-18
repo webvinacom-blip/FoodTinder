@@ -221,15 +221,13 @@ class ReelsManager {
   }
 
   // ══════════════════════════════════════════════════════════════════════
-  // QA CASE 2: QUẢN LÝ BỘ NHỚ & VIRTUALIZATION
-  // Chỉ mount tối đa 2 iframe YouTube trong DOM (hiện tại và kế tiếp)
-  // Toàn bộ slide khác không chứa iframe để tránh tràn RAM/GPU (Chống Crash)
+  // QA CASE 2: QUẢN LÝ BỘ NHỚ & ĐẢM BẢO CHỈ PHÁT ÂM THANH 1 VIDEO DUY NHẤT
+  // Tuyệt đối không cho phép 2 video cùng phát tiếng hoặc chạy song song
   // ══════════════════════════════════════════════════════════════════════
   updateVideoMounts() {
     if (!this.container || this.items.length === 0) return;
 
     const cur = this.currentIndex;
-    const shouldMountIndices = [cur, cur + 1].filter(i => i >= 0 && i < this.items.length);
 
     this.items.forEach((food, idx) => {
       const mountBox = document.getElementById(`reel-player-mount-${idx}`);
@@ -237,8 +235,8 @@ class ReelsManager {
 
       const videoId = food.video_id || (food.videoUrl && food.videoUrl.includes('shorts/') ? food.videoUrl.split('shorts/')[1].split('?')[0] : '');
 
-      if (shouldMountIndices.includes(idx)) {
-        // Cần mount iframe nếu chưa có
+      if (idx === cur) {
+        // VIDEO ĐANG XEM: Duy nhất video này được phép phát hình và tiếng
         if (!mountBox.querySelector('iframe') && !mountBox.querySelector('video')) {
           if (videoId) {
             const iframe = document.createElement('iframe');
@@ -246,7 +244,6 @@ class ReelsManager {
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
             const originParam = window.location.protocol.startsWith('http') ? `&origin=${encodeURIComponent(window.location.origin)}` : '';
-            // controls=0, mute=1 (autoplay policy), playsinline=1, loop=1
             iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=${this.muted ? 1 : 0}&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0${originParam}`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
@@ -265,34 +262,59 @@ class ReelsManager {
             video.preload = 'metadata';
             video.onerror = () => this.handleVideoError(idx);
             mountBox.appendChild(video);
-            if (idx === cur) video.play().catch(() => {});
+            video.play().catch(() => {});
           }
         } else {
-          // Iframe đã có, gửi lệnh play/pause tương ứng
+          // Iframe đã có sẵn: lệnh phát tiếp
           const iframe = mountBox.querySelector('iframe');
           if (iframe && iframe.contentWindow) {
-            const cmd = idx === cur ? 'playVideo' : 'pauseVideo';
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*');
-            if (idx === cur) {
-              const muteCmd = this.muted ? 'mute' : 'unMute';
-              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
-            }
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+            const muteCmd = this.muted ? 'mute' : 'unMute';
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muteCmd, args: [] }), '*');
           }
           const video = mountBox.querySelector('video');
           if (video) {
-            if (idx === cur) {
-              video.muted = this.muted;
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
+            video.muted = this.muted;
+            video.play().catch(() => {});
           }
         }
       } else {
-        // Nằm ngoài cửa sổ -> XÓA TRIỆT ĐỂ KHỎI DOM ĐỂ GIẢI PHÓNG BỘ NHỚ
-        if (mountBox.innerHTML.trim() !== '') {
+        // TẤT CẢ CÁC VIDEO KHÁC (idx !== cur): DỪNG VÀ TẮT TIẾNG NGAY LẬP TỨC
+        const iframe = mountBox.querySelector('iframe');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+        }
+        const video = mountBox.querySelector('video');
+        if (video) {
+          video.pause();
+          video.muted = true;
+        }
+
+        // Nếu nằm ngoài khoảng lân cận [cur - 1, cur + 1] -> Thu hồi giải phóng RAM
+        if (Math.abs(idx - cur) > 1) {
           mountBox.innerHTML = '';
         }
+      }
+    });
+  }
+
+  // Tạm dừng và tắt tiếng toàn bộ video khi chuyển tab hoặc vuốt
+  pauseAll() {
+    this.items.forEach((food, idx) => {
+      const mountBox = document.getElementById(`reel-player-mount-${idx}`);
+      if (!mountBox) return;
+      const iframe = mountBox.querySelector('iframe');
+      if (iframe && iframe.contentWindow) {
+        try {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+        } catch (e) {}
+      }
+      const video = mountBox.querySelector('video');
+      if (video) {
+        video.pause();
+        video.muted = true;
       }
     });
   }
@@ -317,6 +339,7 @@ class ReelsManager {
         if (entry.isIntersecting) {
           const idx = Number(entry.target.dataset.index);
           if (!isNaN(idx) && idx !== this.currentIndex) {
+            this.pauseAll(); // Dừng và tắt tiếng ngay lập tức video cũ trước khi chuyển
             this.currentIndex = idx;
             this.updateVideoMounts();
             if (window.authManager && typeof window.authManager.trackStat === 'function') {
@@ -336,24 +359,36 @@ class ReelsManager {
 
   // ══════════════════════════════════════════════════════════════════════
   // QA CASE 1: BẬT / TẮT ÂM THANH (AUTOPLAY POLICY & USER GESTURE)
+  // Chỉ cho phép DUY NHẤT video hiện tại phát tiếng, câm toàn bộ video khác
   // ══════════════════════════════════════════════════════════════════════
   toggleAudio(btn) {
     this.muted = !this.muted;
 
-    const mountBox = document.getElementById(`reel-player-mount-${this.currentIndex}`);
-    if (mountBox) {
-      // Điều khiển YouTube Iframe
-      const iframe = mountBox.querySelector('iframe');
-      if (iframe && iframe.contentWindow) {
-        const cmd = this.muted ? 'mute' : 'unMute';
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*');
+    this.items.forEach((food, idx) => {
+      const mountBox = document.getElementById(`reel-player-mount-${idx}`);
+      if (!mountBox) return;
+
+      if (idx === this.currentIndex) {
+        const iframe = mountBox.querySelector('iframe');
+        if (iframe && iframe.contentWindow) {
+          const cmd = this.muted ? 'mute' : 'unMute';
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: [] }), '*');
+        }
+        const video = mountBox.querySelector('video');
+        if (video) video.muted = this.muted;
+      } else {
+        const iframe = mountBox.querySelector('iframe');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+        }
+        const video = mountBox.querySelector('video');
+        if (video) {
+          video.muted = true;
+          video.pause();
+        }
       }
-      // Điều khiển HTML5 Video
-      const video = mountBox.querySelector('video');
-      if (video) {
-        video.muted = this.muted;
-      }
-    }
+    });
 
     // Cập nhật nhãn nút loa
     if (btn) {
