@@ -668,12 +668,14 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
     }
   }, [currentIndex, items, itemsList]);
 
-  // 1. Tự động skip khi video lỗi (Dead Link QA)
+  // 1. Tự động skip khi video lỗi hoặc hết video (Dead Link QA & AutoNext)
   const handlePlayerError = useCallback((index) => {
     if (index < itemsList.length - 1 && containerRef.current) {
+      const nextIdx = index + 1;
+      setCurrentIndex(nextIdx); // Lập tức kích hoạt mount video tiếp theo và autoplay
       const itemHeight = containerRef.current.clientHeight;
       containerRef.current.scrollTo({
-        top: (index + 1) * itemHeight,
+        top: nextIdx * itemHeight,
         behavior: 'smooth'
       });
     }
@@ -783,7 +785,7 @@ export default function ReelsFeed({ items = CURATED_REELS_DATA }) {
                   {isCurrent && (
                     <iframe
                       id={`yt-iframe-${idx}`}
-                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=${isMuted ? 1 : 0}&loop=0&enablejsapi=1`}
+                      src={`https://www.youtube.com/embed/${item.video_id}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`}
                       className="absolute inset-0 w-full h-full object-cover border-0 z-0 pointer-events-none"
                       style={{ width: '100%', height: '100%', transform: 'scale(1.04)', transformOrigin: 'center center' }}
                       referrerPolicy="strict-origin-when-cross-origin"

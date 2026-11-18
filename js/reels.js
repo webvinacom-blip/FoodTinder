@@ -1286,9 +1286,9 @@ class ReelsManager {
             iframe.dataset.autoplay = '1';
             iframe.referrerPolicy = 'strict-origin-when-cross-origin';
             iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (tự động mở tiếng mute=0, loop=0 để tự động next):
-            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=0 & loop=0 & enablejsapi=1
-            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=${this.muted ? 1 : 0}&loop=0&enablejsapi=1`;
+            // Bộ tham số "Xóa sổ" giao diện YouTube chuẩn QA (autoplay=1&mute=1 để vượt qua chính sách Autoplay Policy của trình duyệt, loop=0 để tự động next):
+            // controls=0 & rel=0 & playsinline=1 & modestbranding=1 & autoplay=1 & mute=1 & loop=0 & enablejsapi=1
+            iframe.src = `https://www.youtube.com/embed/${videoId}?controls=0&rel=0&playsinline=1&modestbranding=1&autoplay=1&mute=1&loop=0&enablejsapi=1`;
             iframe.className = 'w-full h-full border-0 pointer-events-none object-cover';
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -1559,12 +1559,15 @@ class ReelsManager {
     const nextIndex = this.currentIndex + 1;
     if (nextIndex < this.items.length) {
       this.currentIndex = nextIndex;
+      this.updateVideoMounts(); // LẬP TỨC mount iframe mới và kích hoạt autoplay ngay!
       this.scrollToIndex(this.currentIndex);
+      this.logReelViewAnalytics(this.items[nextIndex], nextIndex);
     } else {
       // Khi đã ở video cuối cùng của danh sách hiện có, tải tiếp batch mới rồi chuyển tiếp
       this.loadNextBatch().then(() => {
         if (this.currentIndex + 1 < this.items.length) {
           this.currentIndex++;
+          this.updateVideoMounts();
           this.scrollToIndex(this.currentIndex);
         }
       });
