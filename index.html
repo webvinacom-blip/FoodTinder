@@ -1153,7 +1153,7 @@
 <!-- ══════════════════════════════════════════
      AUTH MODAL: ĐĂNG NHẬP BẰNG SOCIAL (GOOGLE, FACEBOOK, APPLE) & SINH TRẮC HỌC (FACE ID / VÂN TAY)
 ══════════════════════════════════════════ -->
-<div id="auth-modal" class="modal-backdrop hidden" style="align-items:center;">
+<div id="auth-modal" class="modal-backdrop hidden" style="align-items:center;" onclick="if(event.target === this) window.authManager.closeLoginModal()">
   <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-md mx-3 sm:mx-4 overflow-hidden flex flex-col">
     <!-- Header Gradient Banner -->
     <div class="bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white p-5 relative overflow-hidden shrink-0">
@@ -1251,7 +1251,7 @@
 <!-- ══════════════════════════════════════════
      SOCIAL OAUTH CONFIRM MODAL (XÁC NHẬN ĐĂNG NHẬP GOOGLE / FACEBOOK / APPLE)
 ══════════════════════════════════════════ -->
-<div id="social-oauth-modal" class="modal-backdrop hidden" style="align-items:center; z-index:260;">
+<div id="social-oauth-modal" class="modal-backdrop hidden" style="align-items:center; z-index:260;" onclick="if(event.target === this) window.authManager.closeSocialConfirmModal()">
   <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-sm mx-4 text-center space-y-4 animate-scaleIn">
     <!-- Provider Brand Logo Header -->
     <div id="social-modal-header" class="flex flex-col items-center gap-2">
@@ -1296,7 +1296,7 @@
 <!-- ══════════════════════════════════════════
      BIOMETRIC SCAN PROMPT MODAL (QUÉT KHUÔN MẶT / DẤU VÂN TAY)
 ══════════════════════════════════════════ -->
-<div id="biometric-scan-modal" class="modal-backdrop hidden" style="align-items:center; z-index:250;">
+<div id="biometric-scan-modal" class="modal-backdrop hidden" style="align-items:center; z-index:250;" onclick="if(event.target === this) window.authManager.closeBiometricScanModal()">
   <div class="bg-white rounded-3xl p-6 shadow-2xl border border-stone-200 w-full max-w-xs mx-4 text-center space-y-4 animate-scaleIn">
     <!-- Visual Scanner Icon with Pulse Animation -->
     <div class="relative w-20 h-20 mx-auto flex items-center justify-center">
@@ -1635,9 +1635,9 @@
 <script src="js/map.js?v=1795210000"></script>
 <script src="js/reels.js?v=1795320000"></script>
 <script src="js/chat.js?v=1795210000"></script>
-<script src="js/auth.js?v=1795330000"></script>
-<script src="js/data-loader.js?v=2.9.0"></script>
-<script src="js/app.js?v=1795320000"></script>
+<script src="js/auth.js?v=1795340000"></script>
+<script src="js/data-loader.js?v=2.9.1"></script>
+<script src="js/app.js?v=1795340000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>

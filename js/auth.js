@@ -1,8 +1,21 @@
 /**
  * FoodTinder Authentication Manager (js/auth.js)
- * Quản lý đăng nhập bằng Số điện thoại (SMS OTP) và Đăng nhập nhanh bằng Sinh trắc học (Khuôn mặt / Dấu vân tay).
- * Hỗ trợ lưu trữ tài khoản đã đăng ký trên thiết bị, xác thực Face ID / Touch ID / WebAuthn chuẩn xác.
+ * Quản lý đăng nhập bằng Social (Google, Facebook, Apple) và Đăng nhập nhanh bằng Sinh trắc học (Khuôn mặt / Dấu vân tay).
+ * Hỗ trợ lưu trữ tài khoản đã đăng ký trên thiết bị, xác thực Face ID / Touch ID / WebAuthn chuẩn xác cho lần thứ 2 trở đi.
  */
+
+const DEFAULT_FIREBASE_CONFIG = {
+  apiKey: "AIzaSyAsGwepKeeIAYPGG0D2XIX7aaWlFzbeoJQ",
+  authDomain: "foodfinder-76596.firebaseapp.com",
+  projectId: "foodfinder-76596",
+  storageBucket: "foodfinder-76596.firebasestorage.app",
+  messagingSenderId: "539125592216",
+  appId: "1:539125592216:web:24f4fcc19948ff8bfa20ed",
+  measurementId: "G-XMZ9TL4SVR"
+};
+if (typeof window !== 'undefined') {
+  window.FIREBASE_CONFIG = window.FIREBASE_CONFIG || DEFAULT_FIREBASE_CONFIG;
+}
 
 class AuthManager {
   constructor() {
@@ -857,49 +870,63 @@ class AuthManager {
     return this.savedAccounts.find(a => a.biometricEnabled) || this.savedAccounts[0];
   }
 
-  // Khởi tạo và lấy Firebase Auth SDK
+  // Khởi tạo và lấy Firebase Auth SDK an toàn, không bao giờ ném ngoại lệ
   ensureFirebaseAuth() {
     if (typeof firebase === 'undefined') return null;
-    if (firebase.apps && firebase.apps.length === 0 && window.FIREBASE_CONFIG) {
-      try {
-        firebase.initializeApp(window.FIREBASE_CONFIG);
-      } catch (e) {}
+    try {
+      const cfg = (typeof window !== 'undefined' && window.FIREBASE_CONFIG) ? window.FIREBASE_CONFIG : DEFAULT_FIREBASE_CONFIG;
+      if (firebase.apps && firebase.apps.length === 0 && cfg && cfg.apiKey) {
+        firebase.initializeApp(cfg);
+      }
+      if (firebase.apps && firebase.apps.length > 0 && typeof firebase.auth === 'function') {
+        return firebase.auth();
+      }
+    } catch (e) {
+      console.warn('[Social Auth] ensureFirebaseAuth error:', e);
     }
-    return (firebase.auth && typeof firebase.auth === 'function') ? firebase.auth() : null;
+    return null;
   }
 
   // Lắng nghe kết quả nếu đăng nhập bằng Redirect trên trình duyệt
   checkRedirectResult() {
-    const auth = this.ensureFirebaseAuth();
-    if (auth && typeof auth.getRedirectResult === 'function') {
-      auth.getRedirectResult().then(res => {
-        if (res && res.user) {
-          const u = res.user;
-          const providerId = res.credential ? res.credential.providerId : 'google.com';
-          let providerName = 'google';
-          if (providerId.includes('facebook')) providerName = 'facebook';
-          else if (providerId.includes('apple')) providerName = 'apple';
+    try {
+      const auth = this.ensureFirebaseAuth();
+      if (auth && typeof auth.getRedirectResult === 'function') {
+        auth.getRedirectResult().then(res => {
+          if (res && res.user) {
+            const u = res.user;
+            const providerId = res.credential ? res.credential.providerId : 'google.com';
+            let providerName = 'google';
+            if (providerId.includes('facebook')) providerName = 'facebook';
+            else if (providerId.includes('apple')) providerName = 'apple';
 
-          this.handleSocialLoginSuccess({
-            id: u.uid,
-            name: u.displayName || `${this.capitalize(providerName)} User`,
-            email: u.email || `${u.uid}@${providerName}.com`,
-            avatar: u.photoURL || this.defaultAvatars[0],
-            authProvider: providerName
-          });
-        }
-      }).catch(err => {
-        console.warn('[Social Auth] getRedirectResult check:', err);
-      });
+            this.handleSocialLoginSuccess({
+              id: u.uid,
+              name: u.displayName || `${this.capitalize(providerName)} User`,
+              email: u.email || `${u.uid}@${providerName}.com`,
+              avatar: u.photoURL || this.defaultAvatars[0],
+              authProvider: providerName
+            });
+          }
+        }).catch(err => {
+          console.warn('[Social Auth] getRedirectResult check:', err);
+        });
+      }
+    } catch (e) {
+      console.warn('[Social Auth] checkRedirectResult error:', e);
     }
   }
 
   // Mở modal đăng nhập
   openLoginModal() {
     const modal = document.getElementById('auth-modal');
-    if (!modal) return;
+    if (!modal) {
+      console.warn('[Social Auth] Modal #auth-modal not found');
+      return;
+    }
 
     modal.classList.remove('hidden');
+    modal.style.display = 'flex';
     const sheet = modal.querySelector('.modal-sheet');
     if (sheet) {
       sheet.classList.add('translate-y-full');
@@ -921,6 +948,7 @@ class AuthManager {
     if (sheet) sheet.classList.add('translate-y-full');
     setTimeout(() => {
       modal.classList.add('hidden');
+      modal.style.display = 'none';
       this.closeBiometricScanModal();
       this.closeSocialConfirmModal();
     }, 250);
@@ -1066,11 +1094,15 @@ class AuthManager {
     if (pulseEl) pulseEl.classList.remove('hidden');
 
     modal.classList.remove('hidden');
+    modal.style.display = 'flex';
   }
 
   closeBiometricScanModal() {
     const modal = document.getElementById('biometric-scan-modal');
-    if (modal) modal.classList.add('hidden');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.style.display = 'none';
+    }
   }
 
   // 2. Đăng nhập bằng Social (Google, Facebook, Apple)
@@ -1211,11 +1243,15 @@ class AuthManager {
     }
 
     modal.classList.remove('hidden');
+    modal.style.display = 'flex';
   }
 
   closeSocialConfirmModal() {
     const modal = document.getElementById('social-oauth-modal');
-    if (modal) modal.classList.add('hidden');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.style.display = 'none';
+    }
   }
 
   submitSocialConfirm() {
