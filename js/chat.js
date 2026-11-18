@@ -1144,6 +1144,9 @@ class FoodChatManager {
 
     APP_DATA.myFriends.unshift(newFriend);
     this.saveFriendsData();
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('friendsAdded', 1);
+    }
     document.getElementById('add-friend-modal')?.classList.add('hidden');
     this.renderFriendsSidebar();
     this.selectChatTarget(newFriend.id);

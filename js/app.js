@@ -3779,6 +3779,10 @@ class FoodApp {
 
     window.soundFX && window.soundFX.playPop();
 
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('shopeeOrders', 1);
+    }
+
     const modal = document.getElementById('delivery-modal');
     const content = document.getElementById('delivery-modal-content');
     if (!modal || !content) {
@@ -3901,6 +3905,9 @@ class FoodApp {
   }
 
   redirectToShopeeFood(url, dishName, restaurant) {
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('shopeeOrders', 1);
+    }
     this.showToast(`🛵 Đang mở ShopeeFood đặt món: ${dishName}!`);
     window.open(url, '_blank');
   }

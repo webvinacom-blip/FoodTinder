@@ -30,7 +30,7 @@ class AuthManager {
     this.init();
   }
 
-  // Danh sách các danh hiệu hệ thống FoodTinder đa địa điểm kèm hệ thống nhiệm vụ mở khóa
+  // Danh sách các danh hiệu hệ thống FoodTinder đa địa điểm kèm hệ thống nhiệm vụ mở khóa nâng cao
   static SYSTEM_TITLES = [
     {
       id: 'newbie',
@@ -50,17 +50,17 @@ class AuthManager {
         {
           id: 'newbie_swipe',
           title: 'Lướt quẹt món ngon',
-          desc: 'Quẹt khám phá ít nhất 3 thẻ món ăn',
+          desc: 'Quẹt khám phá ít nhất 5 thẻ món ăn',
           type: 'swipes',
-          target: 3,
+          target: 5,
           icon: '👆'
         },
         {
           id: 'newbie_like',
           title: 'Món đầu tiên ưng ý',
-          desc: 'Thả tim yêu thích 1 món ăn hợp khẩu vị',
+          desc: 'Thả tim yêu thích 2 món ăn hợp khẩu vị',
           type: 'likes',
-          target: 1,
+          target: 2,
           icon: '❤️'
         }
       ]
@@ -70,31 +70,39 @@ class AuthManager {
       name: 'Tín Đồ Ăn Vặt',
       icon: '🍢',
       tag: 'Ăn Vặt',
-      desc: 'Đam mê các món ăn vặt đường phố, món ngon ăn chơi và đồ uống hấp dẫn',
+      desc: 'Đam mê các món ăn vặt đường phố, món ngon ăn chơi và đặt giao tận nơi',
       missions: [
         {
           id: 'snack_likes',
           title: 'Bộ sưu tập ăn vặt',
-          desc: 'Thả tim yêu thích ít nhất 3 món ăn',
+          desc: 'Thả tim yêu thích ít nhất 8 món ăn',
           type: 'likes',
-          target: 3,
+          target: 8,
           icon: '❤️'
         },
         {
           id: 'snack_swipes',
           title: 'Chăm chỉ quẹt thẻ',
-          desc: 'Quẹt khám phá 10 lượt món ăn',
+          desc: 'Quẹt khám phá 25 lượt thẻ món ăn',
           type: 'swipes',
-          target: 10,
+          target: 25,
           icon: '🔥'
         },
         {
-          id: 'snack_details',
-          title: 'Tìm hiểu quán ăn',
-          desc: 'Xem chi tiết thông tin của 3 quán ăn',
-          type: 'detailsViewed',
-          target: 3,
-          icon: '🔍'
+          id: 'snack_shopee',
+          title: 'Đặt món ShopeeFood',
+          desc: 'Mở đặt hàng món ngon qua ShopeeFood 1 lần',
+          type: 'shopeeOrders',
+          target: 1,
+          icon: '🛵'
+        },
+        {
+          id: 'snack_friend',
+          title: 'Giao lưu kết bạn',
+          desc: 'Kết bạn mới trên FoodTinder với 1 người bạn',
+          type: 'friendsAdded',
+          target: 1,
+          icon: '🤝'
         }
       ]
     },
@@ -108,26 +116,42 @@ class AuthManager {
         {
           id: 'foodie_likes',
           title: 'Tín đồ sành món',
-          desc: 'Lưu vào danh sách yêu thích 7 món ăn',
+          desc: 'Lưu vào danh sách yêu thích 18 món ăn',
           type: 'likes',
-          target: 7,
+          target: 18,
           icon: '❤️'
         },
         {
           id: 'foodie_map',
           title: 'Định vị quán ngon',
-          desc: 'Mở bản đồ / chỉ đường tới quán ăn 2 lần',
+          desc: 'Mở bản đồ / chỉ đường tới quán ăn 5 lần',
           type: 'mapDirections',
-          target: 2,
+          target: 5,
           icon: '📍'
         },
         {
           id: 'foodie_will_return',
           title: 'Khách quen quán ruột',
-          desc: 'Đánh dấu "Sẽ quay lại" cho ít nhất 1 quán ăn',
+          desc: 'Đánh dấu "Sẽ quay lại" cho ít nhất 3 quán ăn',
           type: 'willReturnVotes',
-          target: 1,
+          target: 3,
           icon: '🔁'
+        },
+        {
+          id: 'foodie_shopee',
+          title: 'Thợ săn ShopeeFood',
+          desc: 'Mở đặt món qua ShopeeFood 3 lần',
+          type: 'shopeeOrders',
+          target: 3,
+          icon: '🛵'
+        },
+        {
+          id: 'foodie_friends',
+          title: 'Hội bạn ẩm thực',
+          desc: 'Kết bạn với 2 người bạn cùng gu ăn uống',
+          type: 'friendsAdded',
+          target: 2,
+          icon: '🤝'
         }
       ]
     },
@@ -141,33 +165,49 @@ class AuthManager {
         {
           id: 'explorer_likes',
           title: 'Kho báu ẩm thực',
-          desc: 'Lưu 15 món ăn ngon vào danh sách yêu thích',
+          desc: 'Lưu 35 món ăn ngon vào danh sách yêu thích',
           type: 'likes',
-          target: 15,
+          target: 35,
           icon: '❤️'
         },
         {
           id: 'explorer_map',
           title: 'Không ngại đường xa',
-          desc: 'Mở bản đồ hoặc dẫn đường đến quán 5 lần',
+          desc: 'Mở bản đồ hoặc dẫn đường đến quán 10 lần',
           type: 'mapDirections',
-          target: 5,
+          target: 10,
           icon: '🧭'
         },
         {
           id: 'explorer_reels',
           title: 'Xem review ẩm thực',
-          desc: 'Khám phá 3 video review trong mục Video Reels',
+          desc: 'Khám phá 8 video review trong mục Video Reels',
           type: 'reelsWatched',
-          target: 3,
+          target: 8,
           icon: '🎬'
+        },
+        {
+          id: 'explorer_shopee',
+          title: 'Chiến thần ShopeeFood',
+          desc: 'Đặt giao món tận nơi qua ShopeeFood 6 lần',
+          type: 'shopeeOrders',
+          target: 6,
+          icon: '🛵'
+        },
+        {
+          id: 'explorer_friends',
+          title: 'Kết nối bạn sành ăn',
+          desc: 'Kết bạn mới thành công với 4 người bạn',
+          type: 'friendsAdded',
+          target: 4,
+          icon: '🤝'
         },
         {
           id: 'explorer_share',
           title: 'Lan tỏa quán ngon',
-          desc: 'Bấm "Rủ đi ăn" rủ bạn bè cùng khám phá 1 lần',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè cùng khám phá 3 lần',
           type: 'sharesSent',
-          target: 1,
+          target: 3,
           icon: '👥'
         }
       ]
@@ -181,35 +221,51 @@ class AuthManager {
       missions: [
         {
           id: 'master_likes',
-          title: 'Thực đơn đỉnh cao',
-          desc: 'Tích lũy 25 món ăn trong danh sách yêu thích',
+          title: 'Thực đơn thượng hạng',
+          desc: 'Tích lũy 60 món ăn trong danh sách yêu thích',
           type: 'likes',
-          target: 25,
+          target: 60,
           icon: '❤️'
+        },
+        {
+          id: 'master_swipes',
+          title: 'Quẹt thẻ cự phách',
+          desc: 'Quẹt khám phá hơn 60 lượt thẻ món ăn',
+          type: 'swipes',
+          target: 60,
+          icon: '⚡'
         },
         {
           id: 'master_will_return',
           title: 'Khách VIP nhiều quán',
-          desc: 'Đánh dấu "Sẽ quay lại" cho 5 quán ăn',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 12 quán ăn',
           type: 'willReturnVotes',
-          target: 5,
+          target: 12,
           icon: '🔁'
         },
         {
           id: 'master_taste',
           title: 'Ăn uống chuẩn gu',
-          desc: 'Sử dụng bộ lọc tâm trạng hoặc khám phá Chuẩn Gu AI 3 lần',
+          desc: 'Khám phá thực đơn theo tâm trạng hoặc Chuẩn Gu AI 8 lần',
           type: 'moodExplored',
-          target: 3,
+          target: 8,
           icon: '🎯'
         },
         {
-          id: 'master_details',
-          title: 'Am hiểu hàng quán',
-          desc: 'Xem chi tiết thông tin và thực đơn của 10 quán ăn',
-          type: 'detailsViewed',
+          id: 'master_shopee',
+          title: 'Đại tiệc ShopeeFood',
+          desc: 'Mở đặt giao hàng qua ShopeeFood 10 lần',
+          type: 'shopeeOrders',
           target: 10,
-          icon: '📖'
+          icon: '🛵'
+        },
+        {
+          id: 'master_friends',
+          title: 'Hội sành ăn đông đảo',
+          desc: 'Kết nối kết bạn với 6 người bạn ẩm thực',
+          type: 'friendsAdded',
+          target: 6,
+          icon: '🤝'
         }
       ]
     },
@@ -222,34 +278,50 @@ class AuthManager {
       missions: [
         {
           id: 'legend_likes',
-          title: 'Đại thực thần',
-          desc: 'Sở hữu bộ sưu tập 40 món ăn yêu thích',
+          title: 'Bộ sưu tập thế kỷ',
+          desc: 'Sở hữu bộ sưu tập 100 món ăn yêu thích',
           type: 'likes',
-          target: 40,
+          target: 100,
           icon: '❤️'
         },
         {
           id: 'legend_swipes',
           title: 'Đam mê bất tận',
-          desc: 'Đã quẹt khám phá hơn 40 lượt thẻ món ăn',
+          desc: 'Đã quẹt khám phá hơn 120 lượt thẻ món ăn',
           type: 'swipes',
-          target: 40,
+          target: 120,
           icon: '⚡'
         },
         {
           id: 'legend_will_return',
-          title: 'Uy tín ẩm thực',
-          desc: 'Đánh dấu "Sẽ quay lại" cho 10 quán ăn',
+          title: 'Uy tín ẩm thực tuyệt đối',
+          desc: 'Đánh dấu "Sẽ quay lại" cho 20 quán ăn',
           type: 'willReturnVotes',
-          target: 10,
+          target: 20,
           icon: '🔁'
         },
         {
+          id: 'legend_shopee',
+          title: 'Trùm đơn ShopeeFood',
+          desc: 'Mở đặt hàng ShopeeFood 15 lần',
+          type: 'shopeeOrders',
+          target: 15,
+          icon: '🛵'
+        },
+        {
+          id: 'legend_friends',
+          title: 'Thủ lĩnh cộng đồng',
+          desc: 'Kết bạn với ít nhất 10 người bạn ẩm thực',
+          type: 'friendsAdded',
+          target: 10,
+          icon: '🤝'
+        },
+        {
           id: 'legend_share',
-          title: 'Thủ lĩnh bàn tiệc',
-          desc: 'Bấm "Rủ đi ăn" rủ bạn bè khám phá món ngon 3 lần',
+          title: 'Bậc thầy tiệc tùng',
+          desc: 'Bấm "Rủ đi ăn" rủ bạn bè khám phá món ngon 10 lần',
           type: 'sharesSent',
-          target: 3,
+          target: 10,
           icon: '🎉'
         }
       ]
@@ -262,14 +334,15 @@ class AuthManager {
       const data = localStorage.getItem(this.userStatsKey);
       return data ? JSON.parse(data) : {
         swipes: 0,
-        detailsViewed: 0,
         mapDirections: 0,
         reelsWatched: 0,
         sharesSent: 0,
-        moodExplored: 0
+        moodExplored: 0,
+        friendsAdded: 0,
+        shopeeOrders: 0
       };
     } catch (e) {
-      return { swipes: 0, detailsViewed: 0, mapDirections: 0, reelsWatched: 0, sharesSent: 0, moodExplored: 0 };
+      return { swipes: 0, mapDirections: 0, reelsWatched: 0, sharesSent: 0, moodExplored: 0, friendsAdded: 0, shopeeOrders: 0 };
     }
   }
 
@@ -307,6 +380,15 @@ class AuthManager {
         break;
       case 'willReturnVotes':
         current = (window.app && window.app.willReturnFoods) ? window.app.willReturnFoods.length : 0;
+        break;
+      case 'friendsAdded':
+        const addedFromChat = (typeof APP_DATA !== 'undefined' && APP_DATA.myFriends) 
+          ? Math.max(0, APP_DATA.myFriends.length - 5) 
+          : 0;
+        current = Math.max((this.userStats && this.userStats.friendsAdded) || 0, addedFromChat);
+        break;
+      case 'shopeeOrders':
+        current = (this.userStats && this.userStats.shopeeOrders) || 0;
         break;
       default:
         current = (this.userStats && this.userStats[mission.type]) || 0;
