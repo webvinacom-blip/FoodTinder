@@ -726,6 +726,19 @@ class FoodApp {
     } else {
       setTimeout(() => this.checkDeeplinkInvite(), 300);
     }
+
+    // Luôn hỏi tâm trạng của user khi vào app để suggest đúng món theo tâm trạng
+    setTimeout(() => {
+      const onboardingModal = document.getElementById('taste-onboarding-modal');
+      const authModal = document.getElementById('auth-modal');
+      const isSurveyOpen = onboardingModal && !onboardingModal.classList.contains('hidden');
+      const isAuthOpen = authModal && !authModal.classList.contains('hidden');
+      const hasAskedThisSession = sessionStorage.getItem('foodtinder_session_mood_asked');
+
+      if (!isSurveyOpen && !isAuthOpen && !hasAskedThisSession) {
+        this.openTodayMoodModal();
+      }
+    }, 1200);
   }
 
   /**
@@ -1860,6 +1873,76 @@ class FoodApp {
   closeMoodFilterModal() {
     const modal = document.getElementById('mood-filter-modal');
     if (modal) modal.classList.add('hidden');
+  }
+
+  // Mở modal hỏi tâm trạng hôm nay
+  openTodayMoodModal(options = {}) {
+    const modal = document.getElementById('today-mood-modal');
+    if (!modal) return;
+    this.renderTodayMoodModal();
+    modal.classList.remove('hidden');
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) {
+      sheet.classList.add('scale-95', 'opacity-0');
+      requestAnimationFrame(() => {
+        sheet.classList.remove('scale-95', 'opacity-0');
+        sheet.classList.add('transition-all', 'duration-200');
+      });
+    }
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+  }
+
+  // Đóng modal hỏi tâm trạng hôm nay
+  closeTodayMoodModal() {
+    const modal = document.getElementById('today-mood-modal');
+    if (!modal) return;
+    sessionStorage.setItem('foodtinder_session_mood_asked', 'true');
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) sheet.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      if (sheet) sheet.classList.remove('scale-95', 'opacity-0');
+    }, 200);
+  }
+
+  // Render danh sách tâm trạng trực quan trong modal hôm nay
+  renderTodayMoodModal() {
+    const container = document.getElementById('today-mood-options-container');
+    if (!container) return;
+    const moods = APP_DATA.moods || [];
+    container.innerHTML = moods.map(m => {
+      const isSelected = this.currentMood === m.id;
+      return `
+        <button type="button" onclick="window.app.selectTodayMood('${m.id}')"
+          class="p-3 rounded-2xl border text-left transition flex flex-col justify-between cursor-pointer select-none active:scale-98 ${
+            isSelected 
+              ? 'bg-gradient-to-br from-rose-50 to-amber-50 border-rose-400 shadow-sm ring-2 ring-rose-300/60' 
+              : 'bg-white border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700'
+          }">
+          <div class="flex items-center justify-between w-full">
+            <span class="text-2xl">${m.emoji}</span>
+            <span class="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${
+              isSelected ? 'bg-rose-500 text-white' : 'border border-stone-300 text-transparent'
+            }">✓</span>
+          </div>
+          <div class="mt-2">
+            <div class="text-xs font-black ${isSelected ? 'text-rose-900' : 'text-stone-800'}">${m.label}</div>
+            <div class="text-[10px] text-stone-400 line-clamp-2 mt-0.5 leading-snug">${m.desc}</div>
+          </div>
+        </button>
+      `;
+    }).join('');
+  }
+
+  // Chọn tâm trạng hôm nay và kích hoạt gợi ý món chuẩn Gu
+  selectTodayMood(moodId) {
+    sessionStorage.setItem('foodtinder_session_mood_asked', 'true');
+    this.setMood(moodId);
+    this.closeTodayMoodModal();
+    const moodObj = APP_DATA.moods?.find(m => m.id === moodId);
+    const moodName = moodObj ? moodObj.label : 'Mới';
+    if (window.soundFX && window.soundFX.playMatch) window.soundFX.playMatch();
+    this.showToast(`✨ Tâm trạng hôm nay: ${moodName}! Đã kích hoạt gợi ý chuẩn Gu cho bạn!`);
   }
 
   renderMoodFilterModal() {

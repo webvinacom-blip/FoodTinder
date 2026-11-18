@@ -318,11 +318,14 @@ class AuthManager {
       { id: 'healthy', label: 'Đồ Chay & Healthy', emoji: '🥗', desc: 'Thanh đạm, Eat Clean' }
     ],
     flavors: [
-      { id: 'spicy', label: 'Thích ăn cay', emoji: '🌶️', desc: 'Cay nồng đậm vị' },
+      { id: 'spicy', label: 'Cay nồng / Siêu cay', emoji: '🌶️🔥', desc: 'Thích ăn cay đậm vị' },
+      { id: 'mild_spicy', label: 'Cay vừa / Ít cay', emoji: '🌶️', desc: 'Vừa miệng, êm dịu' },
+      { id: 'no_spicy', label: 'Không ăn cay', emoji: '🚫', desc: 'Chỉ ăn món không cay' },
+      { id: 'less_sweet', label: 'Ít ngọt / Thanh nhẹ', emoji: '🧃', desc: 'Ngọt thanh, ít đường' },
       { id: 'sweet_creamy', label: 'Ngọt béo bùi', emoji: '🥥', desc: 'Nước cốt dừa, phô mai' },
-      { id: 'light', label: 'Thanh đạm ít dầu', emoji: '🍵', desc: 'Dịu nhẹ, ít gia vị' },
+      { id: 'light', label: 'Thanh đạm ít dầu', emoji: '🍵', desc: 'Dịu nhẹ, thanh lọc' },
       { id: 'crispy_rich', label: 'Đậm đà giòn rụm', emoji: '🥓', desc: 'Chiên giòn, nướng thơm' },
-      { id: 'no_spicy', label: 'Không ăn cay', emoji: '🚫', desc: 'Chỉ ăn không cay' }
+      { id: 'sour_fresh', label: 'Chua ngọt thanh mát', emoji: '🍋', desc: 'Kích thích vị giác' }
     ],
     diets: [
       { id: 'normal', label: 'Ăn tự do', emoji: '😋', desc: 'Món gì cũng mê' },
@@ -340,19 +343,33 @@ class AuthManager {
   getDefaultTastePreferences() {
     return {
       categories: ['noodles', 'streetfood'],
-      flavors: ['spicy', 'crispy_rich'],
-      diet: 'normal',
-      budget: 'budget_mid'
+      flavors: ['mild_spicy', 'crispy_rich'],
+      diets: ['normal'],
+      budgets: ['budget_low', 'budget_mid']
     };
   }
 
   loadTastePreferences() {
     try {
+      let prefs = null;
       if (this.currentUser && this.currentUser.tastePreferences) {
-        return this.currentUser.tastePreferences;
+        prefs = this.currentUser.tastePreferences;
+      } else {
+        const saved = localStorage.getItem(this.tastePreferencesKey);
+        if (saved) prefs = JSON.parse(saved);
       }
-      const saved = localStorage.getItem(this.tastePreferencesKey);
-      return saved ? JSON.parse(saved) : this.getDefaultTastePreferences();
+      if (!prefs) return this.getDefaultTastePreferences();
+
+      // Normalize array fields
+      if (!Array.isArray(prefs.categories) || prefs.categories.length === 0) prefs.categories = ['noodles', 'streetfood'];
+      if (!Array.isArray(prefs.flavors) || prefs.flavors.length === 0) prefs.flavors = ['mild_spicy', 'crispy_rich'];
+      if (!Array.isArray(prefs.diets) || prefs.diets.length === 0) {
+        prefs.diets = prefs.diet ? [prefs.diet] : ['normal'];
+      }
+      if (!Array.isArray(prefs.budgets) || prefs.budgets.length === 0) {
+        prefs.budgets = prefs.budget ? [prefs.budget] : ['budget_mid'];
+      }
+      return prefs;
     } catch (e) {
       return this.getDefaultTastePreferences();
     }
@@ -402,7 +419,7 @@ class AuthManager {
     }
     const q = AuthManager.ONBOARDING_QUESTIONS;
 
-    // 1. Nhóm món ăn yêu thích
+    // 1. Nhóm món ăn yêu thích (Chọn nhiều)
     const catContainer = document.getElementById('onboarding-categories-container');
     if (catContainer) {
       catContainer.innerHTML = q.categories.map(cat => {
@@ -429,7 +446,7 @@ class AuthManager {
       }).join('');
     }
 
-    // 2. Khẩu vị đặc trưng
+    // 2. Khẩu vị đặc trưng (Chọn nhiều)
     const flavorContainer = document.getElementById('onboarding-flavors-container');
     if (flavorContainer) {
       flavorContainer.innerHTML = q.flavors.map(flv => {
@@ -456,13 +473,16 @@ class AuthManager {
       }).join('');
     }
 
-    // 3. Chế độ ăn uống
+    // 3. Chế độ ăn uống (Chọn nhiều)
     const dietContainer = document.getElementById('onboarding-diet-container');
     if (dietContainer) {
+      const selectedDiets = Array.isArray(this.tempTastePrefs.diets) 
+        ? this.tempTastePrefs.diets 
+        : (this.tempTastePrefs.diet ? [this.tempTastePrefs.diet] : ['normal']);
       dietContainer.innerHTML = q.diets.map(diet => {
-        const isSelected = this.tempTastePrefs.diet === diet.id;
+        const isSelected = selectedDiets.includes(diet.id);
         return `
-          <button type="button" onclick="window.authManager.selectTasteDiet('${diet.id}')"
+          <button type="button" onclick="window.authManager.toggleTasteDiet('${diet.id}')"
             class="p-2.5 rounded-xl border text-left transition flex items-center gap-2.5 cursor-pointer select-none active:scale-98 ${
               isSelected 
                 ? 'bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-400 shadow-xs ring-2 ring-emerald-300/60' 
@@ -481,13 +501,16 @@ class AuthManager {
       }).join('');
     }
 
-    // 4. Ngân sách trung bình
+    // 4. Ngân sách trung bình (Chọn nhiều)
     const budgetContainer = document.getElementById('onboarding-budget-container');
     if (budgetContainer) {
+      const selectedBudgets = Array.isArray(this.tempTastePrefs.budgets) 
+        ? this.tempTastePrefs.budgets 
+        : (this.tempTastePrefs.budget ? [this.tempTastePrefs.budget] : ['budget_mid']);
       budgetContainer.innerHTML = q.budgets.map(b => {
-        const isSelected = this.tempTastePrefs.budget === b.id;
+        const isSelected = selectedBudgets.includes(b.id);
         return `
-          <button type="button" onclick="window.authManager.selectTasteBudget('${b.id}')"
+          <button type="button" onclick="window.authManager.toggleTasteBudget('${b.id}')"
             class="p-2.5 rounded-xl border text-center transition flex flex-col items-center justify-between cursor-pointer select-none active:scale-98 ${
               isSelected 
                 ? 'bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-400 shadow-xs ring-2 ring-amber-300/60' 
@@ -496,6 +519,9 @@ class AuthManager {
             <span class="text-xl mb-1">${b.emoji}</span>
             <div class="text-xs font-bold ${isSelected ? 'text-amber-900' : 'text-stone-800'}">${b.label}</div>
             <div class="text-[9.5px] text-stone-400 mt-0.5 truncate">${b.desc}</div>
+            <span class="w-4 h-4 rounded-full mt-1 flex items-center justify-center text-[10px] font-bold shrink-0 ${
+              isSelected ? 'bg-amber-500 text-white' : 'border border-stone-300 text-transparent'
+            }">✓</span>
           </button>
         `;
       }).join('');
@@ -520,12 +546,19 @@ class AuthManager {
 
   toggleTasteFlavor(flavorId) {
     if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
+    if (!Array.isArray(this.tempTastePrefs.flavors)) this.tempTastePrefs.flavors = ['mild_spicy', 'crispy_rich'];
+
+    // Mutual exclusivity
     if (flavorId === 'no_spicy') {
-      const spIdx = this.tempTastePrefs.flavors.indexOf('spicy');
-      if (spIdx >= 0) this.tempTastePrefs.flavors.splice(spIdx, 1);
-    } else if (flavorId === 'spicy') {
-      const nspIdx = this.tempTastePrefs.flavors.indexOf('no_spicy');
-      if (nspIdx >= 0) this.tempTastePrefs.flavors.splice(nspIdx, 1);
+      this.tempTastePrefs.flavors = this.tempTastePrefs.flavors.filter(f => f !== 'spicy' && f !== 'mild_spicy');
+    } else if (flavorId === 'spicy' || flavorId === 'mild_spicy') {
+      this.tempTastePrefs.flavors = this.tempTastePrefs.flavors.filter(f => f !== 'no_spicy');
+    }
+
+    if (flavorId === 'less_sweet') {
+      this.tempTastePrefs.flavors = this.tempTastePrefs.flavors.filter(f => f !== 'sweet_creamy');
+    } else if (flavorId === 'sweet_creamy') {
+      this.tempTastePrefs.flavors = this.tempTastePrefs.flavors.filter(f => f !== 'less_sweet');
     }
 
     const idx = this.tempTastePrefs.flavors.indexOf(flavorId);
@@ -540,16 +573,49 @@ class AuthManager {
     this.renderTasteOnboarding();
   }
 
-  selectTasteDiet(dietId) {
+  toggleTasteDiet(dietId) {
     if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
-    this.tempTastePrefs.diet = dietId;
+    if (!Array.isArray(this.tempTastePrefs.diets)) {
+      this.tempTastePrefs.diets = this.tempTastePrefs.diet ? [this.tempTastePrefs.diet] : ['normal'];
+    }
+
+    if (dietId === 'normal') {
+      this.tempTastePrefs.diets = ['normal'];
+    } else {
+      // Bỏ 'normal' khi chọn chế độ ăn cụ thể
+      this.tempTastePrefs.diets = this.tempTastePrefs.diets.filter(d => d !== 'normal');
+      const idx = this.tempTastePrefs.diets.indexOf(dietId);
+      if (idx >= 0) {
+        this.tempTastePrefs.diets.splice(idx, 1);
+        if (this.tempTastePrefs.diets.length === 0) {
+          this.tempTastePrefs.diets = ['normal'];
+        }
+      } else {
+        this.tempTastePrefs.diets.push(dietId);
+      }
+    }
+
     if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
     this.renderTasteOnboarding();
   }
 
-  selectTasteBudget(budgetId) {
+  toggleTasteBudget(budgetId) {
     if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
-    this.tempTastePrefs.budget = budgetId;
+    if (!Array.isArray(this.tempTastePrefs.budgets)) {
+      this.tempTastePrefs.budgets = this.tempTastePrefs.budget ? [this.tempTastePrefs.budget] : ['budget_mid'];
+    }
+
+    const idx = this.tempTastePrefs.budgets.indexOf(budgetId);
+    if (idx >= 0) {
+      if (this.tempTastePrefs.budgets.length > 1) {
+        this.tempTastePrefs.budgets.splice(idx, 1);
+      } else {
+        this.showToast('Vui lòng chọn ít nhất 1 mức ngân sách!');
+      }
+    } else {
+      this.tempTastePrefs.budgets.push(budgetId);
+    }
+
     if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
     this.renderTasteOnboarding();
   }
@@ -581,7 +647,15 @@ class AuthManager {
     if (window.soundFX && window.soundFX.playMatch) {
       window.soundFX.playMatch();
     }
-    this.showToast('🎯 Đã lưu Gu ẩm thực cá nhân! Gợi ý quán ăn đã được tùy biến chuẩn xác!');
+
+    // Sau khi lưu Gu, hỏi ngay tâm trạng hôm nay của bạn để gợi ý đúng món theo tâm trạng!
+    setTimeout(() => {
+      if (window.app && typeof window.app.openTodayMoodModal === 'function') {
+        window.app.openTodayMoodModal({ fromSurvey: true });
+      } else {
+        this.showToast('🎯 Đã lưu Gu ẩm thực cá nhân! Gợi ý quán ăn đã được tùy biến chuẩn xác!');
+      }
+    }, 280);
   }
 
   // Bỏ qua khảo sát khẩu vị ban đầu
@@ -591,7 +665,15 @@ class AuthManager {
       this.saveSession(this.currentUser);
     }
     this.closeTasteOnboardingModal();
-    this.showToast('💡 Bạn có thể vào Hồ sơ để thiết lập Gu ẩm thực bất kỳ lúc nào!');
+
+    // Hỏi tâm trạng hôm nay
+    setTimeout(() => {
+      if (window.app && typeof window.app.openTodayMoodModal === 'function') {
+        window.app.openTodayMoodModal();
+      } else {
+        this.showToast('💡 Bạn có thể vào Hồ sơ để thiết lập Gu ẩm thực bất kỳ lúc nào!');
+      }
+    }, 280);
   }
 
   // Tải thống kê hoạt động làm nhiệm vụ của người dùng

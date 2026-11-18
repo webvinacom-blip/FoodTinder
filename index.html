@@ -1504,7 +1504,7 @@
             <span>🥗</span>
             <span>3. Chế độ ăn uống của bạn?</span>
           </label>
-          <span class="text-[10px] text-stone-400 font-bold">Chọn 1</span>
+          <span class="text-[10px] text-stone-400 font-bold">Chọn nhiều</span>
         </div>
         <div class="grid grid-cols-2 gap-2" id="onboarding-diet-container">
           <!-- Rendered dynamically -->
@@ -1518,7 +1518,7 @@
             <span>💳</span>
             <span>4. Ngân sách trung bình mỗi bữa ăn?</span>
           </label>
-          <span class="text-[10px] text-stone-400 font-bold">Chọn 1</span>
+          <span class="text-[10px] text-stone-400 font-bold">Chọn nhiều</span>
         </div>
         <div class="grid grid-cols-3 gap-2" id="onboarding-budget-container">
           <!-- Rendered dynamically -->
@@ -1533,9 +1533,50 @@
         Bỏ qua
       </button>
       <button onclick="window.authManager.saveTasteOnboarding()" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white text-xs font-extrabold transition shadow-md active:scale-98 cursor-pointer flex items-center justify-center gap-1.5">
-        <span>Lưu & Bắt đầu gợi ý chuẩn Gu</span>
-        <span>🎯</span>
+        <span>Lưu Gu & Chọn Tâm Trạng Hôm Nay</span>
+        <span>➔</span>
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TODAY MOOD MODAL: HỎI TÂM TRẠNG HÔM NAY ĐỂ GỢI Ý ĐÚNG MÓN
+══════════════════════════════════════════ -->
+<div id="today-mood-modal" class="modal-backdrop hidden" style="align-items:center;" onclick="if(event.target === this) window.app.closeTodayMoodModal()">
+  <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-lg mx-3 sm:mx-4 overflow-hidden flex flex-col max-h-[92vh]">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 text-white p-5 relative shrink-0">
+      <button onclick="window.app.closeTodayMoodModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-xs cursor-pointer">
+        ✕
+      </button>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl shadow-inner shrink-0">
+          ✨
+        </div>
+        <div>
+          <span class="text-[10px] uppercase font-black tracking-widest text-amber-200 block">Khám phá ẩm thực theo cảm xúc</span>
+          <h3 class="font-black text-lg sm:text-xl text-white leading-tight">Hôm Nay Bạn Cảm Thấy Thế Nào?</h3>
+          <p class="text-xs text-rose-100 mt-0.5">Chọn tâm trạng để FoodTinder gợi ý đúng món ngon chạm đúng cảm xúc của bạn!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mood Options Grid -->
+    <div class="p-4 sm:p-5 overflow-y-auto flex-1 max-h-[62vh]">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5" id="today-mood-options-container">
+        <!-- Rendered dynamically from APP_DATA.moods -->
+      </div>
+    </div>
+
+    <!-- Footer Actions -->
+    <div class="p-3.5 sm:p-4 bg-stone-50 border-t border-stone-200/90 flex items-center justify-between gap-3 shrink-0">
+      <button onclick="window.app.closeTodayMoodModal()" class="py-2.5 px-4 rounded-xl text-stone-500 hover:text-stone-800 hover:bg-stone-200/60 text-xs font-bold transition cursor-pointer">
+        Để lúc khác
+      </button>
+      <div class="text-[11px] font-bold text-stone-500 flex items-center gap-1.5">
+        <span>💡 Bạn có thể đổi tâm trạng bất kỳ lúc nào</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1558,16 +1599,16 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
 
-<script src="js/data.js?v=1795170000"></script>
+<script src="js/data.js?v=1795180000"></script>
 <script src="js/audio.js?v=1794930000"></script>
-<script src="js/taste.js?v=1795170000"></script>
-<script src="js/swipe.js?v=1795170000"></script>
-<script src="js/map.js?v=1795170000"></script>
-<script src="js/reels.js?v=1795170000"></script>
-<script src="js/chat.js?v=1795170000"></script>
-<script src="js/auth.js?v=1795170000"></script>
-<script src="js/data-loader.js?v=2.5.9"></script>
-<script src="js/app.js?v=1795170000"></script>
+<script src="js/taste.js?v=1795180000"></script>
+<script src="js/swipe.js?v=1795180000"></script>
+<script src="js/map.js?v=1795180000"></script>
+<script src="js/reels.js?v=1795180000"></script>
+<script src="js/chat.js?v=1795180000"></script>
+<script src="js/auth.js?v=1795180000"></script>
+<script src="js/data-loader.js?v=2.6.0"></script>
+<script src="js/app.js?v=1795180000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>

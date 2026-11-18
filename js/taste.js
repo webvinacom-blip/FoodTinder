@@ -37,8 +37,10 @@ class TasteManager {
     const prefs = customPrefs || this.userPreferences || this.loadUserPreferences();
     if (!prefs) return true;
 
+    const diets = Array.isArray(prefs.diets) ? prefs.diets : (prefs.diet ? [prefs.diet] : ['normal']);
+
     // 1. Chế độ ăn kiêng hải sản
-    if (prefs.diet === 'no_seafood') {
+    if (diets.includes('no_seafood')) {
       const isSeafood = food.category === 'seafood' ||
         (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ|hàu|cá/i.test(t))) ||
         /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma|chả cá|hàu|bạch tuộc/i.test(food.name || '');
@@ -46,7 +48,7 @@ class TasteManager {
     }
 
     // 2. Chế độ ăn chay / bán chay
-    if (prefs.diet === 'vegetarian') {
+    if (diets.includes('vegetarian')) {
       const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
         (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy|rau củ/i.test(t))) ||
         /chay|nấm|đậu hũ|rau/i.test(food.name || '');
@@ -229,8 +231,10 @@ class TasteManager {
     // 1. User Onboarding Taste Preferences Bonus & Checks
     const prefs = this.userPreferences || this.loadUserPreferences();
     if (prefs) {
+      const diets = Array.isArray(prefs.diets) ? prefs.diets : (prefs.diet ? [prefs.diet] : ['normal']);
+
       // Kiêng hải sản
-      if (prefs.diet === 'no_seafood') {
+      if (diets.includes('no_seafood')) {
         const isSeafood = food.category === 'seafood' ||
           (Array.isArray(food.tags) && food.tags.some(t => /hải sản|sản|tôm|cua|mực|ốc|sứa|ghẹ/i.test(t))) ||
           /hải sản|tôm|cua|mực|ốc|sứa|ghẹ|cá tà ma/i.test(food.name || '');
@@ -238,12 +242,20 @@ class TasteManager {
       }
 
       // Ăn chay
-      if (prefs.diet === 'vegetarian') {
+      if (diets.includes('vegetarian')) {
         const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
           (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy/i.test(t))) ||
           /chay|nấm|đậu hũ/i.test(food.name || '');
         if (isVeg) score += 20;
         else score -= 25;
+      }
+
+      // Eat clean / Giữ dáng
+      if (diets.includes('eatclean')) {
+        const isClean = food.category === 'healthy' ||
+          (Array.isArray(food.tags) && food.tags.some(t => /clean|healthy|salad|luộc|hấp/i.test(t))) ||
+          /salad|ức gà|gạo lứt|hấp|thanh đạm/i.test(food.name || '');
+        if (isClean) score += 12;
       }
 
       // Nhóm món ăn yêu thích (+14 điểm)
@@ -270,14 +282,27 @@ class TasteManager {
         const foodName = (food.name || '').toLowerCase();
         const tags = Array.isArray(food.tags) ? food.tags.join(' ').toLowerCase() : '';
 
-        if (prefs.flavors.includes('spicy') && (/cay/i.test(foodName) || tags.includes('cay'))) score += 8;
-        if (prefs.flavors.includes('no_spicy') && (/cay/i.test(foodName) || tags.includes('cay'))) score -= 20;
+        // Cay nồng / Siêu cay
+        if (prefs.flavors.includes('spicy') && (/cay|sa tế/i.test(foodName) || tags.includes('cay') || tags.includes('sa tế'))) score += 9;
+        // Cay vừa / Ít cay
+        if (prefs.flavors.includes('mild_spicy') && !/siêu cay|cay xé/i.test(foodName)) score += 7;
+        // Không ăn cay
+        if (prefs.flavors.includes('no_spicy') && (/cay|sa tế/i.test(foodName) || tags.includes('cay'))) score -= 25;
+
+        // Ít ngọt / Thanh nhẹ
+        if (prefs.flavors.includes('less_sweet') && (tags.includes('thanh') || !/ngọt lịm|béo ngậy/i.test(foodName))) score += 7;
+        // Ngọt béo bùi
+        if (prefs.flavors.includes('sweet_creamy') && (tags.includes('béo') || tags.includes('ngọt') || food.category === 'cafe' || /chè|sữa|kem/i.test(foodName))) score += 8;
+
+        // Thanh đạm ít dầu
         if (prefs.flavors.includes('light') && (tags.includes('thanh') || tags.includes('nước') || food.category === 'healthy')) score += 7;
+        // Đậm đà giòn rụm
         if (prefs.flavors.includes('crispy_rich') && (tags.includes('giòn') || tags.includes('đậm') || /chiên|nướng|ram/i.test(foodName))) score += 7;
-        if (prefs.flavors.includes('sweet_creamy') && (tags.includes('béo') || tags.includes('ngọt') || food.category === 'cafe')) score += 7;
+        // Chua ngọt thanh mát
+        if (prefs.flavors.includes('sour_fresh') && (/chua|me|chanh|gỏi|nộm/i.test(foodName) || tags.includes('chua'))) score += 7;
       }
 
-      // Ngân sách trung bình (+6 điểm)
+      // Ngân sách trung bình (+6 điểm cho bất kỳ mức nào được chọn)
       const parsePrice = (priceStr) => {
         if (!priceStr) return 40000;
         const nums = String(priceStr).replace(/\./g, '').match(/\d+/g);
@@ -285,9 +310,12 @@ class TasteManager {
         return parseInt(nums[0], 10);
       };
       const estPrice = parsePrice(food.priceRange || food.price);
-      if (prefs.budget === 'budget_low' && estPrice <= 35000) score += 6;
-      else if (prefs.budget === 'budget_mid' && estPrice > 30000 && estPrice <= 75000) score += 6;
-      else if (prefs.budget === 'budget_high' && estPrice > 70000) score += 6;
+      const budgets = Array.isArray(prefs.budgets) ? prefs.budgets : (prefs.budget ? [prefs.budget] : ['budget_mid']);
+      let budgetMatch = false;
+      if (budgets.includes('budget_low') && estPrice <= 35000) budgetMatch = true;
+      if (budgets.includes('budget_mid') && estPrice > 30000 && estPrice <= 75000) budgetMatch = true;
+      if (budgets.includes('budget_high') && estPrice > 70000) budgetMatch = true;
+      if (budgetMatch) score += 6;
     }
 
     // 2. Category match from interaction history
@@ -339,8 +367,12 @@ class TasteManager {
     const prefs = this.userPreferences || this.loadUserPreferences();
     if (prefs) {
       const foodName = (food.name || '').toLowerCase();
-      if (prefs.diet === 'vegetarian' && (food.category === 'vegetarian' || food.category === 'healthy' || /chay|nấm/.test(foodName))) {
+      const diets = Array.isArray(prefs.diets) ? prefs.diets : (prefs.diet ? [prefs.diet] : []);
+      if (diets.includes('vegetarian') && (food.category === 'vegetarian' || food.category === 'healthy' || /chay|nấm/.test(foodName))) {
         return "Chuẩn theo chế độ ăn chay thanh đạm của bạn";
+      }
+      if (diets.includes('eatclean') && (food.category === 'healthy' || /clean|salad/.test(foodName))) {
+        return "Chuẩn chế độ Eat Clean giữ dáng thanh lành";
       }
       if (prefs.categories?.includes('noodles') && (food.category === 'noodles' || /phở|bún|mì|bánh canh/.test(foodName))) {
         return "Chuẩn gu món sợi & bún phở bạn đã chọn";
@@ -356,6 +388,15 @@ class TasteManager {
       }
       if (prefs.flavors?.includes('spicy') && (/cay/.test(foodName) || food.tags?.some(t => /cay/.test(t)))) {
         return "Đậm vị cay nồng chuẩn khẩu vị yêu thích của bạn";
+      }
+      if (prefs.flavors?.includes('mild_spicy') && !/siêu cay/.test(foodName)) {
+        return "Vị cay vừa phải, hài hòa êm dịu đúng gu của bạn";
+      }
+      if (prefs.flavors?.includes('less_sweet') && (food.tags?.some(t => /thanh/.test(t)) || food.category === 'healthy')) {
+        return "Vị thanh nhẹ ít ngọt đúng sở thích của bạn";
+      }
+      if (prefs.flavors?.includes('sour_fresh') && (/chua|me|gỏi/.test(foodName) || food.tags?.some(t => /chua/.test(t)))) {
+        return "Vị chua ngọt thanh mát kích thích vị giác của bạn";
       }
     }
 
