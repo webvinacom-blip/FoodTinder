@@ -384,6 +384,8 @@
     <div class="liked-btn" onclick="switchTab('liked')" title="Đã thích">
       <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
     </div>
+    <!-- Auth Button / User Profile Pill -->
+    <div id="topbar-auth-container" class="flex items-center shrink-0"></div>
   </div>
 </div>
 
@@ -1144,6 +1146,217 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     AUTH MODAL: ĐĂNG NHẬP SỐ ĐIỆN THOẠI & ZALO
+══════════════════════════════════════════ -->
+<div id="auth-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-md mx-3 sm:mx-4 overflow-hidden flex flex-col">
+    <!-- Header Gradient Banner -->
+    <div class="bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white p-5 relative overflow-hidden shrink-0">
+      <div class="absolute -right-4 -bottom-4 text-7xl opacity-15 pointer-events-none">🍲</div>
+      <div class="flex items-center justify-between relative z-10">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-xl shadow-xs shrink-0">
+            🔥
+          </div>
+          <div>
+            <h3 class="font-black text-base tracking-wide">Đăng Nhập FoodTinder</h3>
+            <p class="text-xs text-rose-100">Lưu danh sách quán ngon & cùng rủ bạn bè</p>
+          </div>
+        </div>
+        <button onclick="window.authManager.closeLoginModal()" class="w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-sm cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Tab Buttons: Số Điện Thoại vs Zalo -->
+      <div class="mt-4 p-1 rounded-2xl bg-black/20 backdrop-blur-md flex gap-1">
+        <button id="auth-tab-btn-phone" onclick="window.authManager.switchAuthTab('phone')" 
+          class="flex-1 py-2.5 rounded-xl font-extrabold text-xs flex items-center justify-center gap-1.5 transition bg-white text-stone-900 shadow-xs cursor-pointer">
+          <span>📱 Số Điện Thoại</span>
+        </button>
+        <button id="auth-tab-btn-zalo" onclick="window.authManager.switchAuthTab('zalo')" 
+          class="flex-1 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition text-white/90 hover:text-white hover:bg-white/10 cursor-pointer">
+          <span>💬 Xác Thực Zalo</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Content -->
+    <div class="p-5 overflow-y-auto max-h-[75vh] space-y-4">
+      
+      <!-- TAB 1: ĐĂNG NHẬP BẰNG SỐ ĐIỆN THOẠI (SMS OTP) -->
+      <div id="auth-tab-content-phone" class="space-y-4">
+        <!-- Bước 1: Nhập Số Điện Thoại -->
+        <div id="auth-phone-step-1" class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-bold text-stone-700 mb-1.5">Số điện thoại của bạn</label>
+            <div class="flex items-center rounded-2xl border-2 border-stone-200 focus-within:border-rose-500 overflow-hidden bg-stone-50 transition">
+              <span class="px-3.5 py-3 text-xs font-black text-stone-600 bg-stone-200/60 border-r border-stone-200 shrink-0 select-none flex items-center gap-1">
+                <span>🇻🇳</span>
+                <span>+84</span>
+              </span>
+              <input type="tel" id="auth-phone-input" placeholder="0912 345 678" maxlength="12"
+                class="flex-1 px-3.5 py-3 text-sm font-bold text-stone-900 bg-transparent outline-none placeholder:text-stone-400"
+                onkeydown="if(event.key==='Enter') window.authManager.sendPhoneOtp();" />
+            </div>
+            <p class="text-[11px] text-stone-400 mt-1">Mã xác thực OTP gồm 6 chữ số sẽ được gửi qua tin nhắn SMS.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-stone-700 mb-1.5">Tên hiển thị (Tùy chọn)</label>
+            <input type="text" id="auth-name-input" placeholder="Ví dụ: Hoàng Long, Minh Thảo..." maxlength="30"
+              class="w-full px-3.5 py-2.5 text-xs font-bold text-stone-800 rounded-xl border border-stone-200 bg-stone-50 focus:bg-white focus:border-rose-400 outline-none" />
+          </div>
+
+          <!-- Quick Test Numbers -->
+          <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200/80">
+            <span class="text-[10.5px] font-bold text-amber-800 block mb-1.5">⚡ Thử nghiệm nhanh bằng số mẫu:</span>
+            <div class="flex flex-wrap gap-1.5">
+              <button onclick="document.getElementById('auth-phone-input').value='0988888888'; window.authManager.sendPhoneOtp('0988888888');" 
+                class="px-2.5 py-1 rounded-lg bg-white border border-amber-300 text-amber-900 text-[10.5px] font-bold hover:bg-amber-100 transition cursor-pointer shadow-2xs">
+                📱 0988 888 888
+              </button>
+              <button onclick="document.getElementById('auth-phone-input').value='0912345678'; window.authManager.sendPhoneOtp('0912345678');" 
+                class="px-2.5 py-1 rounded-lg bg-white border border-amber-300 text-amber-900 text-[10.5px] font-bold hover:bg-amber-100 transition cursor-pointer shadow-2xs">
+                📱 0912 345 678
+              </button>
+            </div>
+          </div>
+
+          <button onclick="window.authManager.sendPhoneOtp()" 
+            class="w-full py-3 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-98 text-white rounded-2xl font-black text-sm shadow-md shadow-rose-200 transition cursor-pointer flex items-center justify-center gap-2">
+            <span>Tiếp Tục & Gửi Mã OTP</span>
+            <span>➔</span>
+          </button>
+        </div>
+
+        <!-- Bước 2: Nhập Mã Xác Thực OTP -->
+        <div id="auth-phone-step-2" class="space-y-4 hidden">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-2xl">
+            <div class="text-xs text-stone-600">
+              Đã gửi mã xác thực OTP đến số: <strong id="auth-otp-target-phone" class="text-rose-600 font-extrabold"></strong>
+            </div>
+            <!-- Demo OTP Helper -->
+            <div class="mt-2 pt-2 border-t border-rose-200/60 flex items-center justify-between">
+              <span class="text-[10.5px] text-stone-500">Mã xác thực mẫu: <strong id="auth-demo-otp-code" class="text-rose-600 font-mono font-black text-xs">123456</strong></span>
+              <button onclick="window.authManager.fillDemoOtp()" class="text-[10px] font-black text-white bg-rose-500 hover:bg-rose-600 px-2 py-0.5 rounded-md shadow-2xs cursor-pointer active:scale-95">
+                ⚡ Tự Điền & Đăng Nhập
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-stone-700 mb-1.5">Nhập mã OTP (6 chữ số)</label>
+            <input type="text" id="auth-otp-input" placeholder="• • • • • •" maxlength="6"
+              class="w-full px-4 py-3 text-center text-2xl font-black font-mono tracking-[0.5em] text-stone-900 rounded-2xl border-2 border-stone-200 focus:border-rose-500 outline-none bg-stone-50 focus:bg-white transition"
+              onkeydown="if(event.key==='Enter') window.authManager.verifyPhoneOtp();" />
+          </div>
+
+          <button onclick="window.authManager.verifyPhoneOtp()" 
+            class="w-full py-3 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-98 text-white rounded-2xl font-black text-sm shadow-md shadow-rose-200 transition cursor-pointer flex items-center justify-center gap-2">
+            <span>Xác Nhận & Đăng Nhập</span>
+            <span>✓</span>
+          </button>
+
+          <div class="flex items-center justify-between text-xs pt-1">
+            <button id="auth-otp-resend-btn" onclick="window.authManager.sendPhoneOtp()" class="font-bold text-rose-600 hover:underline cursor-pointer">
+              Gửi lại mã OTP <span id="auth-otp-timer-text" class="text-stone-400 font-normal"></span>
+            </button>
+            <button onclick="window.authManager.resetPhoneForm()" class="text-stone-500 hover:text-stone-800 font-medium cursor-pointer">
+              Đổi số điện thoại
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: ĐĂNG NHẬP / XÁC THỰC QUA ZALO -->
+      <div id="auth-tab-content-zalo" class="space-y-4 hidden">
+        <div class="text-center p-4 bg-blue-50/70 border border-blue-200 rounded-2xl space-y-2">
+          <div class="w-14 h-14 rounded-2xl bg-[#0068FF] text-white flex items-center justify-center font-black text-2xl mx-auto shadow-md shadow-blue-200">
+            Z
+          </div>
+          <h4 class="font-extrabold text-stone-900 text-sm">Xác Thực Nhanh Qua Zalo</h4>
+          <p class="text-xs text-stone-500 leading-relaxed">
+            Đăng nhập an toàn, tiện lợi bằng tài khoản Zalo của bạn. Không cần chờ tin nhắn SMS, kết nối danh bạ để cùng rủ bạn bè đi ăn tức thì!
+          </p>
+        </div>
+
+        <button onclick="window.authManager.loginWithZalo()" 
+          class="w-full py-3.5 bg-[#0068FF] hover:bg-[#0055D4] active:scale-98 text-white rounded-2xl font-black text-sm shadow-md shadow-blue-300 transition cursor-pointer flex items-center justify-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-white text-[#0068FF] flex items-center justify-center font-black text-xs leading-none">Z</span>
+          <span>Đăng Nhập Bằng Zalo</span>
+        </button>
+
+        <div class="p-3 bg-stone-50 rounded-xl border border-stone-200 text-center">
+          <p class="text-[11px] text-stone-400 leading-normal">
+            🔒 FoodTinder cam kết bảo mật tuyệt đối thông tin cá nhân. Số điện thoại & tài khoản chỉ dùng để lưu trữ danh sách món ăn yêu thích và kết nối bàn ăn cùng bạn bè.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     USER PROFILE MODAL: HỒ SƠ TÀI KHOẢN
+══════════════════════════════════════════ -->
+<div id="user-profile-modal" class="modal-backdrop hidden" style="align-items:center;">
+  <div class="modal-sheet bg-white rounded-3xl p-0 shadow-2xl border border-stone-200 w-full max-w-sm mx-3 sm:mx-4 overflow-hidden flex flex-col">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 text-white p-5 text-center relative shrink-0">
+      <button onclick="window.authManager.closeProfileModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-xs cursor-pointer">
+        ✕
+      </button>
+
+      <div class="relative inline-block mx-auto mb-2">
+        <img id="profile-modal-avatar" src="" alt="Avatar" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg mx-auto" />
+        <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-emerald-500 border-2 border-white shadow-xs"></span>
+      </div>
+
+      <div class="flex items-center justify-center gap-1.5">
+        <h3 id="profile-modal-name" class="font-black text-base text-white"></h3>
+        <button onclick="window.authManager.editProfileName()" class="text-white/80 hover:text-white transition cursor-pointer" title="Đổi tên hiển thị">
+          ✏️
+        </button>
+      </div>
+      <p id="profile-modal-phone" class="text-xs text-rose-100 mt-0.5 font-mono"></p>
+      <div class="mt-2">
+        <span id="profile-modal-provider-badge"></span>
+      </div>
+    </div>
+
+    <!-- Body Stats & Actions -->
+    <div class="p-4 space-y-3.5">
+      <div class="grid grid-cols-2 gap-2 text-center">
+        <div class="p-2.5 rounded-2xl bg-rose-50/80 border border-rose-100">
+          <span class="text-[10px] text-stone-500 block">❤️ Món đã thích</span>
+          <strong id="profile-modal-liked-count" class="text-sm font-extrabold text-rose-600 block mt-0.5">0 món</strong>
+        </div>
+        <div class="p-2.5 rounded-2xl bg-amber-50/80 border border-amber-100">
+          <span class="text-[10px] text-stone-500 block">👑 Danh hiệu</span>
+          <strong class="text-sm font-extrabold text-amber-700 block mt-0.5">Thực Thần Nẫu</strong>
+        </div>
+      </div>
+
+      <div class="space-y-1.5 pt-1">
+        <button onclick="window.authManager.editProfileName()" class="w-full py-2.5 px-3 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-800 text-xs font-bold transition flex items-center justify-between cursor-pointer">
+          <span class="flex items-center gap-2"><span>✏️</span><span>Chỉnh sửa tên hiển thị</span></span>
+          <span class="text-stone-400">›</span>
+        </button>
+        <button onclick="window.authManager.closeProfileModal(); switchTab('liked');" class="w-full py-2.5 px-3 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-800 text-xs font-bold transition flex items-center justify-between cursor-pointer">
+          <span class="flex items-center gap-2"><span>❤️</span><span>Xem danh sách món đã thích</span></span>
+          <span class="text-stone-400">›</span>
+        </button>
+        <button onclick="window.authManager.logout()" class="w-full py-2.5 px-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer mt-2">
+          <span>🚪 Đăng xuất tài khoản</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Toast -->
 <div id="app-toast" style="opacity:0;translate:0 -8px;position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:999;pointer-events:none;transition:opacity .3s,translate .3s;">
   <div class="bg-stone-900/90 backdrop-blur-md text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-stone-700">
@@ -1169,8 +1382,9 @@
 <script src="js/map.js?v=1795090000"></script>
 <script src="js/reels.js?v=1794930000"></script>
 <script src="js/chat.js?v=1794970000"></script>
+<script src="js/auth.js?v=1795110000"></script>
 <script src="js/data-loader.js?v=2.2.0"></script>
-<script src="js/app.js?v=1795090000"></script>
+<script src="js/app.js?v=1795110000"></script>
 <script src="js/crawler.js?v=1794930000"></script>
 
 <script>

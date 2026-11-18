@@ -1409,13 +1409,25 @@ class FoodApp {
     // Sidebar greeting
     const greetingEl = document.getElementById('header-greeting');
     if (greetingEl) {
-      greetingEl.innerHTML = `
-        <div class="flex items-center gap-1.5 font-extrabold text-stone-900 text-sm leading-tight">
-          <span>Chào Bạn!</span>
-          <span class="inline-block animate-wave text-lg">👋</span>
-        </div>
-        <p class="text-xs text-stone-500 font-medium mt-0.5">${city.name} đang ${weather.condition.toLowerCase()} ${weather.temp} ${weather.icon}</p>
-      `;
+      if (window.authManager && window.authManager.isLoggedIn()) {
+        window.authManager.syncUI();
+      } else {
+        greetingEl.innerHTML = `
+          <div class="flex items-center justify-between gap-1.5">
+            <div class="flex items-center gap-1.5 font-extrabold text-stone-900 text-sm leading-tight">
+              <span>Chào Bạn!</span>
+              <span class="inline-block animate-wave text-lg">👋</span>
+            </div>
+            <button onclick="window.authManager && window.authManager.openLoginModal()" class="text-[10.5px] font-bold text-rose-600 hover:text-rose-700 bg-rose-50 hover:bg-rose-100 px-2 py-0.5 rounded-full transition cursor-pointer shrink-0">
+              Đăng nhập
+            </button>
+          </div>
+          <p class="text-xs text-stone-500 font-medium mt-0.5">${city.name} đang ${weather.condition.toLowerCase()} ${weather.temp} ${weather.icon}</p>
+        `;
+      }
+    }
+    if (window.authManager) {
+      window.authManager.syncUI();
     }
 
     // Sidebar location
