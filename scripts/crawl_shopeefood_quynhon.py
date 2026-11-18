@@ -76,6 +76,7 @@ BRAND_KEYWORDS = [
 ]
 
 CLOSED_BLACKLIST = [
+    "cơm chay an lạc", "com chay an lac", "quán cơm chay an lạc", "quan com chay an lac", "chay an lạc", "chay an lac",
     "royal club", "diamond club", "cali beer", "top pub", "win pub", "the fellowship bar",
     "come together bar", "since 1988 pub", "vip pub", "style pub", "karaoke ocean",
     "dj cafe & karaoke", "vương khang", "vuong khang",
@@ -132,14 +133,22 @@ def calculate_distance_km(lat1, lon1, lat2, lon2):
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     return round(R * c, 1)
 
-def is_valid_quality_food(item):
+def is_valid_quality_food(item, raw_it=None):
     if not item or not isinstance(item, dict):
         return False, "Dữ liệu trống"
+
+    iid = item.get("id")
+    if iid in [166, 660823, 1217226, 665845, 1226906]:
+        return False, "Quán nằm trong danh sách đen đóng cửa (ID)"
 
     name = (item.get("name") or "").strip()
     rest = (item.get("restaurant") or name).strip()
     addr = (item.get("address") or "").strip()
     all_text = f"{name} {rest} {addr}".lower()
+
+    # Quán Cơm Chay An Lạc - 6 Nguyễn Lữ đã đóng cửa vĩnh viễn trên thực tế & Google Maps
+    if ("an lạc" in all_text or "an lac" in all_text) and ("6 nguyễn lữ" in all_text or "6 nguyen lu" in all_text):
+        return False, "Quán Cơm Chay An Lạc 6 Nguyễn Lữ đã đóng cửa vĩnh viễn"
 
     # 1. Ảnh hợp lệ
     img = (item.get("image") or "").strip()
@@ -154,12 +163,22 @@ def is_valid_quality_food(item):
             return False, f"Quán đóng cửa / ngừng kinh doanh ({bad_kw})"
 
     # 3. Loại trừ các loại hình dịch vụ không phải ẩm thực (Bar, Club, Karaoke, Spa, Khách sạn)
-    if "surf bar" not in rest and "surf bar" not in name:
+    if "surf bar" not in rest.lower() and "surf bar" not in name.lower():
         for pat in NON_DINING_KEYWORDS:
             if re.search(pat, f"{rest} {name}", re.IGNORECASE):
                 return False, f"Không phải quán ăn / dịch vụ giải trí khác ({pat})"
 
-    # 4. Địa bàn Quy Nhơn
+    # 4. Kiểm tra dịch vụ giao hàng ShopeeFood thực tế
+    if item.get("deliveryPlatform") == "ShopeeFood" and not item.get("deliveryUrl"):
+        return False, "Không có URL ShopeeFood hợp lệ"
+
+    if raw_it:
+        if raw_it.get("HasDelivery") is False and not raw_it.get("DeliveryUrl"):
+            return False, "Quán không còn hoạt động giao hàng trên ShopeeFood"
+        if raw_it.get("ShowInSearchResult") is False and raw_it.get("HasDelivery") is False:
+            return False, "Quán bị ẩn khỏi kết quả tìm kiếm ShopeeFood"
+
+    # 5. Địa bàn Quy Nhơn
     lat = float(item.get("lat") or item.get("latitude") or 0)
     lng = float(item.get("lng") or item.get("longitude") or 0)
     if not (13.6 <= lat <= 13.9 and 109.1 <= lng <= 109.35):
@@ -235,8 +254,22 @@ def format_food_item(it, cat_category="streetfood"):
     dist = calculate_distance_km(QUYNHON_LAT, QUYNHON_LNG, lat, lng)
 
     clean_slug = slugify(name)
-    shopee_url = f"https://shopeefood.vn/binh-dinh/{clean_slug}"
+    delivery_url = (it.get("DeliveryUrl") or "").strip()
+    has_delivery = it.get("HasDelivery") is True or bool(delivery_url and "shopeefood.vn" in delivery_url)
+
+    # Chỉ dùng link thật từ hệ thống ShopeeFood
+    if delivery_url and "shopeefood.vn" in delivery_url:
+        shopee_url = delivery_url
+    elif has_delivery and clean_slug:
+        shopee_url = f"https://shopeefood.vn/binh-dinh/{clean_slug}"
+    else:
+        shopee_url = ""
+
     shopee_search = f"https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q={urllib.parse.quote(name)}"
+
+    # Lấy giờ mở cửa thực tế nếu có, tránh gắn bừa gây hiểu lầm quán đóng cửa vẫn đang mở
+    operating_time = (it.get("OperatingTime") or "").strip()
+    open_time = operating_time if operating_time else "07:00 - 22:00"
 
     name_lower = name.lower()
     cat = cat_category
@@ -270,7 +303,7 @@ def format_food_item(it, cat_category="streetfood"):
         "reviewCount": review_count,
         "likesCount": 0,
         "commentsCount": 0,
-        "openTime": "07:00 - 22:30",
+        "openTime": open_time,
         "category": cat,
         "source": "ShopeeFood",
         "sourceIcon": "🛍️",
@@ -335,8 +368,12 @@ def crawl_query_pages(query_text, max_pages=4, existing_ids=None):
             if not iid or iid in seen:
                 continue
 
+            # Bỏ qua ngay các địa điểm Foody không còn hoạt động giao hàng trên ShopeeFood
+            if it.get("HasDelivery") is False and not it.get("DeliveryUrl"):
+                continue
+
             raw_item = format_food_item(it)
-            ok, reason = is_valid_quality_food(raw_item)
+            ok, reason = is_valid_quality_food(raw_item, raw_it=it)
             if not ok:
                 continue
 
@@ -386,10 +423,13 @@ def sync_to_data_js(foods):
         content = f.read()
 
     start_marker = '  foods: ['
-    end_marker = '\n};\n\nif (typeof window !== \'undefined\') {\n  window.APP_DATA = APP_DATA;\n}'
-
     start_pos = content.find(start_marker)
+
+    # Tìm điểm kết thúc của mảng foods trong APP_DATA
+    end_marker = '\n  ]\n};'
     end_pos = content.find(end_marker, start_pos)
+    if end_pos != -1:
+        end_pos += len('\n  ]')  # Giữ lại '\n};'
 
     if start_pos != -1 and end_pos != -1:
         foods_json = json.dumps(foods, ensure_ascii=False, indent=2)
@@ -399,9 +439,79 @@ def sync_to_data_js(foods):
         with open(DATA_JS, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"✅ Đã đồng bộ {len(foods)} quán chất lượng sang js/data.js!")
+    else:
+        print(f"⚠️ Không tìm thấy vị trí đồng bộ trong {DATA_JS} (start: {start_pos}, end: {end_pos})")
+
+def cleanup_closed_foods_database(database_file=DATABASE_JSON):
+    """Hậu xử lý sau cào: Quét và loại bỏ vĩnh viễn các quán đóng cửa / không hợp lệ khỏi database"""
+    if not os.path.exists(database_file):
+        return
+    with open(database_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    foods = data.get("foods", [])
+    before_count = len(foods)
+
+    cleaned_foods = []
+    removed_items = []
+
+    for f in foods:
+        fid = f.get("id")
+        frest = (f.get("restaurant") or "").strip()
+        fname = (f.get("name") or "").strip()
+        faddr = (f.get("address") or "").strip()
+        ftext = f"{frest} {fname} {faddr}".lower()
+
+        # 1. Danh sách ID quán đã đóng cửa vĩnh viễn
+        if fid in [166, 660823, 1217226, 665845, 1226906]:
+            removed_items.append((fid, frest, "ID quán đóng cửa vĩnh viễn"))
+            continue
+
+        # 2. Quán Cơm Chay An Lạc - 6 Nguyễn Lữ
+        if ("an lạc" in ftext or "an lac" in ftext) and ("6 nguyễn lữ" in ftext or "6 nguyen lu" in ftext):
+            removed_items.append((fid, frest, "Quán Cơm Chay An Lạc (6 Nguyễn Lữ) đã đóng cửa vĩnh viễn"))
+            continue
+
+        # 3. Khớp danh sách từ khóa đóng cửa / giải thể
+        is_closed = False
+        for bad_kw in CLOSED_BLACKLIST:
+            if bad_kw in ftext:
+                removed_items.append((fid, frest, f"Khớp blacklist đóng cửa ({bad_kw})"))
+                is_closed = True
+                break
+        if is_closed:
+            continue
+
+        # 4. Loại bỏ dịch vụ giải trí không phải ăn uống (Bar, Club, Spa, Khách sạn...)
+        if "surf bar" not in ftext:
+            is_non_dining = False
+            for pat in NON_DINING_KEYWORDS:
+                if re.search(pat, f"{frest} {fname}", re.IGNORECASE):
+                    removed_items.append((fid, frest, f"Không phải quán ăn ({pat})"))
+                    is_non_dining = True
+                    break
+            if is_non_dining:
+                continue
+
+        # 5. Nếu nguồn là ShopeeFood mà không có URL giao hàng thật
+        if f.get("deliveryPlatform") == "ShopeeFood" and not f.get("deliveryUrl"):
+            removed_items.append((fid, frest, "Thiếu link giao hàng ShopeeFood"))
+            continue
+
+        cleaned_foods.append(f)
+
+    data["foods"] = cleaned_foods
+    with open(database_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    sync_to_data_js(cleaned_foods)
+    print(f"\n🧹 [Hậu xử lý dọn dẹp quán đóng cửa] Trước: {before_count} quán -> Sau: {len(cleaned_foods)} quán (Đã xoá {len(removed_items)} quán đóng cửa).")
+    for r in removed_items:
+        print(f"   ❌ Đã xoá: [{r[0]}] {r[1]} - Lý do: {r[2]}")
 
 def merge_new_foods_into_database(new_foods):
     if not new_foods:
+        cleanup_closed_foods_database(DATABASE_JSON)
         return
     with open(DATABASE_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -424,17 +534,23 @@ def merge_new_foods_into_database(new_foods):
     with open(DATABASE_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    sync_to_data_js(current_foods)
     print(f"\n🎉 Đã gộp thêm {added} quán mới vào database. Tổng cộng hiện có: {len(current_foods)} quán!")
+    cleanup_closed_foods_database(DATABASE_JSON)
 
 def main():
     parser = argparse.ArgumentParser(description="ShopeeFood Quy Nhơn Multi-Dimensional Matrix Crawler")
     parser.add_argument("--streets", action="store_true", default=True, help="Quét ma trận tuyến đường Quy Nhơn")
     parser.add_argument("--dishes", action="store_true", default=True, help="Quét ma trận món ăn ngách Quy Nhơn")
     parser.add_argument("--brands", action="store_true", default=True, help="Quét chuỗi thương hiệu lớn")
+    parser.add_argument("--cleanup", action="store_true", help="Chỉ chạy thuật toán dọn dẹp quán đóng cửa / blacklist")
     parser.add_argument("--batch-break", type=int, default=6, help="Thời gian nghỉ (s) sau mỗi 10 truy vấn")
 
     args = parser.parse_args()
+
+    if args.cleanup:
+        print("🧹 Bắt đầu chạy thuật toán dọn dẹp các quán đóng cửa...")
+        cleanup_closed_foods_database(DATABASE_JSON)
+        return
 
     # Tải danh sách ID đã có trong database
     existing_ids = set()

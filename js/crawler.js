@@ -208,13 +208,15 @@ class CrawlerManager {
     let currentFoods = (window.APP_DATA && window.APP_DATA.foods) ? window.APP_DATA.foods : [];
     
     // 3. KIỂM SOÁT CHẤT LƯỢNG DỮ LIỆU & TỰ ĐỘNG XOÁ KHỎI DATABASE:
-    // Quét sạch toàn bộ quán không có ảnh, rating thấp < 4.0, quán ảo hoặc đã đóng cửa
+    // Quét sạch toàn bộ quán không có ảnh, rating thấp < 4.0, quán ảo hoặc đã đóng cửa vĩnh viễn
     const checkQuality = (food) => {
-      if (typeof window.isValidQualityFood === 'function') {
+      if (!food) return false;
+      if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(food)) return false;
+      if (typeof window !== 'undefined' && typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
+      if (typeof window !== 'undefined' && typeof window.isValidQualityFood === 'function') {
         return window.isValidQualityFood(food);
       }
       if (window.isFakeDummyFood && window.isFakeDummyFood(food)) return false;
-      if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(food)) return false;
       const img = String(food.image || '').trim();
       if (!img || img.length < 15 || !img.startsWith('http')) return false;
       const rating = Number(food.rating) || 0;

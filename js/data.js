@@ -842,6 +842,12 @@ if (typeof window !== 'undefined') {
 
 const PERMANENTLY_CLOSED_BLACKLIST = [
   // Chi nhánh & quán đã đóng cửa tại Quy Nhơn / TTTM Go Kim Cúc
+  "cơm chay an lạc",
+  "com chay an lac",
+  "quán cơm chay an lạc",
+  "quan com chay an lac",
+  "chay an lạc",
+  "chay an lac",
   "tocotoco & kem tràng tiền",
   "tocotoco & kem trang tien",
   "tocotoco - go kim cúc",
@@ -930,8 +936,8 @@ const PERMANENTLY_CLOSED_KEYWORDS = [
 
 function isPermanentlyClosedRestaurant(food) {
   if (!food) return false;
-  // Kiểm tra id cụ thể của các quán đã xác nhận đóng cửa vĩnh viễn
-  if (food.id === 1217226 || food.id === 665845 || food.id === 1226906) return true;
+  // Kiểm tra id cụ thể của các quán đã xác nhận đóng cửa vĩnh viễn (bao gồm Quán Cơm Chay An Lạc ID 166 / 660823)
+  if (food.id === 166 || food.id === 660823 || food.id === 1217226 || food.id === 665845 || food.id === 1226906) return true;
   if (food.isPermanentlyClosed || food.isClosedPermanently) return true;
   if (food.isClosed === true) return true;
 
@@ -951,6 +957,12 @@ function isPermanentlyClosedRestaurant(food) {
 
   // Cho phép Surf Bar vì là quán cafe view biển nổi tiếng Quy Nhơn
   if (rest.includes("surf bar") || name.includes("surf bar") || unaccented.includes("surf bar")) return false;
+
+  // Quán Cơm Chay An Lạc - 6 Nguyễn Lữ đã đóng vĩnh viễn trên thực tế và Google Maps
+  if ((rest.includes("an lạc") || rest.includes("an lac") || name.includes("an lạc") || name.includes("an lac")) &&
+      (address.includes("6 nguyễn lữ") || address.includes("6 nguyen lu") || unaccented.includes("6 nguyen lu"))) {
+    return true;
+  }
 
   for (const b of PERMANENTLY_CLOSED_BLACKLIST) {
     const unaccentedB = typeof stripVietnameseAccents === 'function' ? stripVietnameseAccents(b) : b;
@@ -10324,96 +10336,6 @@ const APP_DATA = {
       "attributes": [
         "hot_soup",
         "spicy"
-      ]
-    },
-    {
-      "id": 166,
-      "cityId": "quynhon",
-      "cityName": "Quy Nhơn",
-      "name": "Cơm Chay Tự Chọn & Lẩu Nấm Dưỡng Sinh",
-      "restaurant": "Cơm Chay An Lạc",
-      "address": "6 Nguyễn Lữ",
-      "district": "Tp. Qui Nhơn",
-      "distance": 2,
-      "distanceText": "Cách bạn 2.0km",
-      "priceRange": "25.000đ - 65.000đ",
-      "rating": 4.1,
-      "reviewCount": 1,
-      "likesCount": 33,
-      "commentsCount": 5,
-      "openTime": "07:00 - 22:30",
-      "category": "vegetarian",
-      "source": "ShopeeFood",
-      "sourceIcon": "🛍️",
-      "latitude": 13.763275499999999,
-      "longitude": 109.2176198,
-      "lat": 13.763275499999999,
-      "lng": 109.2176198,
-      "moodIds": [
-        "energetic",
-        "zen",
-        "tired",
-        "healthy"
-      ],
-      "weather": [
-        "sunny",
-        "rainy",
-        "hot"
-      ],
-      "weatherNote": "Quy Nhơn 24°C 🌧️",
-      "tags": [
-        "#ĐồChay",
-        "#ThanhTịnh",
-        "#CơmChayAnLạc",
-        "#ĐặcSảnQuyNhơn"
-      ],
-      "sideRibbon": [
-        "#hot",
-        "#chuẩn_vị"
-      ],
-      "image": "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6o9orz8wpe7@resize_ss640x400",
-      "gallery": [
-        "https://down-vn.img.susercontent.com/vn-11134259-7r98o-lwa6o9orz8wpe7@resize_ss640x400"
-      ],
-      "description": "Quán Cơm Chay An Lạc tọa lạc tại 6 Nguyễn Lữ, phục vụ món Cơm Chay Tự Chọn & Lẩu Nấm Dưỡng Sinh hương vị thơm ngon đặc trưng. Hình ảnh thực tế từ nền tảng ShopeeFood.",
-      "recommendReason": "Món Cơm Chay Tự Chọn & Lẩu Nấm Dưỡng Sinh tại Cơm Chay An Lạc được đông đảo thực khách đánh giá cao, giá cả cực kỳ hợp lý!",
-      "hotline": "+84 365 622 781",
-      "menu": [
-        {
-          "name": "Cơm Chay Tự Chọn",
-          "price": "25.000đ",
-          "highlight": true
-        },
-        {
-          "name": "Lẩu Nấm Dưỡng Sinh Chay",
-          "price": "65.000đ",
-          "highlight": false
-        },
-        {
-          "name": "Chả Giò Chay Giòn Rụm",
-          "price": "20.000đ",
-          "highlight": false
-        }
-      ],
-      "deliveryPlatform": "ShopeeFood",
-      "deliveryUrl": "https://shopeefood.vn/binh-dinh/com-chay-an-lac",
-      "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20An%20L%E1%BA%A1c",
-      "deliveryTime": "20 - 30 phút",
-      "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
-      "deliveryFeeVal": 16000,
-      "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
-      "deliveryPromoCode": "SHOPEE25K",
-      "deliveryRating": "4.4 ⭐ (1.000+ đã bán)",
-      "gmapsVerified": true,
-      "gmapsName": "Quán Cơm Chay An Lạc",
-      "placeId": "ChIJE5MAVetsbzERTwaZTqiAKdc",
-      "gmapsAddr": "6 Nguyễn Lữ Quy Nhơn Nam Gia Lai Việt Nam",
-      "priceMin": 25000,
-      "priceMax": 65000,
-      "attributes": [
-        "heavy",
-        "hot_soup",
-        "light"
       ]
     },
     {
