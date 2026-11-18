@@ -4167,9 +4167,7 @@ class FoodApp {
 
     const primaryDirUrl = hasPlaceId
       ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(targetDestName)}&destination_place_id=${safePlaceId}`
-      : (hasValidCoords
-          ? `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${coordStr}`
-          : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`);
+      : `https://www.google.com/maps/dir/?api=1&origin=${originStr}&destination=${encodeURIComponent(cleanAddr)}`;
 
     const primaryDestHint = `Từ ${userAddrLabel} ➔ ${targetDestName}`;
     const statusNoteText = `🎯 Dẫn đường Google Maps từ ${userAddrLabel} đến ${targetDestName} (${cleanAddr}).`;
