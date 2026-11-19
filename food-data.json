@@ -1065,8 +1065,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-loc-quan-hai-san-binh-dan",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "gmapsName": "Hai Lộc Quán - Hải Sản Bình Dân",
     "placeId": null,
@@ -1077,7 +1077,7 @@
       "salty",
       "sour"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -1093,13 +1093,13 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-loc-quan-hai-san-binh-dan",
-    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryUrl": "",
+    "deliveryPromo": "",
     "deliveryPromoCode": "SHOPEE25K",
-    "deliveryFee": "22.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 22000,
-    "deliveryTime": "30 - 45 phút",
-    "deliveryRating": "5.0 ⭐ (1.000+ đã bán)"
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 40,
@@ -1918,8 +1918,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-loc-bien-hai-san-quy-nhon-48-xuan-dieu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": true,
     "gmapsName": "Hải Sản Quy Nhơn - 48 Xuân Diệu - Lộc Biển",
     "placeId": "ChIJT28YNZptbzER4936qWPltEM",
@@ -1930,7 +1930,7 @@
       "salty",
       "sour"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner",
       "late_night"
@@ -1947,13 +1947,13 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nha-hang-loc-bien-hai-san-quy-nhon-48-xuan-dieu",
-    "deliveryPromo": "Mã SHOPEE30K giảm 30.000đ",
+    "deliveryUrl": "",
+    "deliveryPromo": "",
     "deliveryPromoCode": "SHOPEE30K",
-    "deliveryFee": "22.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 22000,
-    "deliveryTime": "30 - 45 phút",
-    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 55,
@@ -2749,8 +2749,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/muc-khong-lo-quy-nhon-hai-san-tuoi-song",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": true,
     "gmapsName": "Mực Khổng Lồ Quy Nhơn",
     "placeId": "ChIJ2VPHSQBtbzEROomUePehZPU",
@@ -2761,7 +2761,7 @@
       "salty",
       "spicy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -2776,13 +2776,13 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/muc-khong-lo-quy-nhon-hai-san-tuoi-song",
-    "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+    "deliveryUrl": "",
+    "deliveryPromo": "",
     "deliveryPromoCode": "SHOPEE25K",
-    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
-    "deliveryFeeVal": 16000,
-    "deliveryTime": "20 - 30 phút",
-    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 81,
@@ -2853,8 +2853,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tam-food-vuon-am-thuc-dac-san-hai-san",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": true,
     "gmapsName": "Tâm Food - Chuyên Đặc Sản Khô Và Tươi Bình Định",
     "placeId": "ChIJPX6EtsZtbzERmWjg69g4sQc",
@@ -2865,7 +2865,7 @@
       "salty",
       "sour"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -2880,13 +2880,13 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/tam-food-vuon-am-thuc-dac-san-hai-san",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
+    "deliveryUrl": "",
+    "deliveryPromo": "",
     "deliveryPromoCode": "SHOPEE20K",
-    "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
-    "deliveryFeeVal": 16000,
-    "deliveryTime": "20 - 30 phút",
-    "deliveryRating": "4.6 ⭐ (1.000+ đã bán)"
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 77,
@@ -4690,7 +4690,7 @@
     "reviewCount": 1,
     "likesCount": 23,
     "commentsCount": 5,
-    "openTime": "05:00 - 10:00, 16:00 - 21:30",
+    "openTime": "16:00 - 22:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -16969,7 +16969,7 @@
     "moodIds": [
       "craving"
     ],
-    "openTime": "05:00 - 10:00, 16:00 - 21:30",
+    "openTime": "16:00 - 22:00",
     "hasShopeeDelivery": true,
     "deliveryPlatform": "ShopeeFood",
     "mealTimes": [
@@ -29868,8 +29868,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-via-he-lau-an-vat-58-nguyen-lu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -29877,7 +29877,7 @@
       "heavy",
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner"
@@ -29893,12 +29893,12 @@
     "companions": [
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pizza-via-he-lau-an-vat-58-nguyen-lu",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1180564,
@@ -31234,15 +31234,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-ngo-may",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -31255,12 +31255,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-ngo-may",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 257124,
@@ -39734,15 +39734,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phao-quan-nuoc-ep-nuoc-mia-banh-bao-xuan-dieu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "drinks"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -39757,12 +39757,12 @@
     "companions": [
       "date_couple"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ca-phao-quan-nuoc-ep-nuoc-mia-banh-bao-xuan-dieu",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1219373,
@@ -40435,15 +40435,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-hoang-xuan-dieu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner",
@@ -40462,12 +40462,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-hoang-xuan-dieu",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 260552,
@@ -41245,15 +41245,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-bien-hai-san-tuoi-song",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -41268,12 +41268,12 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/huong-bien-hai-san-tuoi-song",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 262209,
@@ -41747,15 +41747,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-bien-quan-hai-san-tuoi-song",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -41770,12 +41770,12 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bo-bien-quan-hai-san-tuoi-song",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 227765,
@@ -43021,15 +43021,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-hung-dao",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -43043,12 +43043,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-hung-dao",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 694193,
@@ -43216,15 +43216,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tran-hung-dao",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -43238,12 +43238,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tran-hung-dao",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 754855,
@@ -44182,15 +44182,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-via-he-25k-le-hong-phong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "lunch"
@@ -44204,12 +44204,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/pho-via-he-25k-le-hong-phong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1291037,
@@ -46719,15 +46719,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-tieu-via-he",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -46740,12 +46740,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-tieu-via-he",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 284511,
@@ -48648,15 +48648,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rau-ma-mix-nuoc-mia-sau-rieng-dong-da",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -48669,12 +48669,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/rau-ma-mix-nuoc-mia-sau-rieng-dong-da",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 993744,
@@ -53691,7 +53691,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "06:00 - 13:30, 16:30 - 21:30",
+    "openTime": "14:00 - 22:30",
     "category": "noodles",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -58976,8 +58976,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cua",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -58985,7 +58985,7 @@
       "hot_soup",
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "lunch"
@@ -58999,12 +58999,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cua",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1181893,
@@ -60818,15 +60818,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-san-cu-lao-xanh-58-le-duan",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner"
     ],
@@ -60841,12 +60841,12 @@
       "date_couple",
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/hai-san-cu-lao-xanh-58-le-duan",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 16657,
@@ -64214,15 +64214,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-huynh-lai-dien-hong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner",
@@ -64239,12 +64239,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-huynh-lai-dien-hong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 89021,
@@ -64314,15 +64314,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-hong-phong-dien-hong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner",
@@ -64339,12 +64339,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-hong-phong-dien-hong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 89746,
@@ -66266,15 +66266,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-280-dien-hong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -66288,12 +66288,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-280-dien-hong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1230582,
@@ -66310,7 +66310,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -71321,15 +71321,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-286-tay-son",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -71343,12 +71343,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-286-tay-son",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 686971,
@@ -71419,15 +71419,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tay-son",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -71441,12 +71441,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tay-son",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 282062,
@@ -72872,15 +72872,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-thit-quay",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -72894,12 +72894,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-thit-quay",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 686826,
@@ -74615,15 +74615,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-dua-lanh-tran-phu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -74636,12 +74636,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-dua-lanh-tran-phu",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 733509,
@@ -80159,15 +80159,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-77-01c-le-loi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -80181,12 +80181,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-77-01c-le-loi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1000098228,
@@ -80646,15 +80646,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-nhung-thi-210-le-loi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -80667,12 +80667,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-nhung-thi-210-le-loi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 632688,
@@ -85091,15 +85091,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-nguyen-hue",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "lunch"
@@ -85113,12 +85113,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bun-bo-nguyen-hue",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 861575,
@@ -85135,7 +85135,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "05:00 - 10:00, 16:00 - 21:30",
+    "openTime": "16:00 - 22:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -87857,7 +87857,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "06:00 - 13:30, 16:30 - 21:30",
+    "openTime": "14:00 - 22:30",
     "category": "noodles",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -89463,8 +89463,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-giang-banh-hoi-chao-long-bun-dau-mam-tom",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -89472,7 +89472,7 @@
       "hot_soup",
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "lunch"
@@ -89487,12 +89487,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-giang-banh-hoi-chao-long-bun-dau-mam-tom",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 675513,
@@ -93187,15 +93187,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-vi-bac",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -93209,12 +93209,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-vi-bac",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1182655,
@@ -93771,15 +93771,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-cao-van",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -93793,12 +93793,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-cao-van",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 281022,
@@ -94157,15 +94157,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-kingwin-61-tran-cao-van",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon"
     ],
@@ -94178,12 +94178,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-kingwin-61-tran-cao-van",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1027590,
@@ -95740,7 +95740,7 @@
     "reviewCount": 1,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -97148,15 +97148,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tu-ly-tran-cao-van",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -97170,12 +97170,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tu-ly-tran-cao-van",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1192985,
@@ -101597,7 +101597,7 @@
     "reviewCount": 6,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "seafood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -104269,15 +104269,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-lan-khong-chi-nhanh-an-sang-mai-xuan-thuong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -104291,12 +104291,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-lan-khong-chi-nhanh-an-sang-mai-xuan-thuong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 779541,
@@ -105778,7 +105778,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -109422,15 +109422,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thuy-chau-can-vuong",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -109444,12 +109444,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thuy-chau-can-vuong",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1179688,
@@ -110455,7 +110455,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "seafood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -119796,7 +119796,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "07:30 - 22:00",
+    "openTime": "16:00 - 23:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -121892,8 +121892,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-linh-lau-cua-cau-huynh-tan-phat",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -121902,7 +121902,7 @@
       "hot_soup",
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner",
       "late_night"
@@ -121916,12 +121916,12 @@
     "companions": [
       "group_family"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-linh-lau-cua-cau-huynh-tan-phat",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1304643,
@@ -135245,7 +135245,7 @@
     "reviewCount": 0,
     "likesCount": 0,
     "commentsCount": 0,
-    "openTime": "05:00 - 10:00, 16:00 - 21:30",
+    "openTime": "16:00 - 22:00",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -135782,15 +135782,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-ba-chi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -135804,12 +135804,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-ba-chi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 771020,
@@ -135880,15 +135880,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-ha-thanh",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -135902,12 +135902,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-ha-thanh",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 748386,
@@ -135979,15 +135979,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-tam-banh-hoi-chao-long",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -136001,12 +136001,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-tam-banh-hoi-chao-long",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 857421,
@@ -136077,15 +136077,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-giup-banh-hoi-chao-long",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -136099,12 +136099,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/co-giup-banh-hoi-chao-long",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 775717,
@@ -136175,15 +136175,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-chao-long-banh-hoi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -136197,12 +136197,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-chao-long-banh-hoi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 259462,
@@ -136859,15 +136859,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-pho-duc-chinh",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -136881,12 +136881,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-pho-duc-chinh",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1263307,
@@ -137247,15 +137247,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-5-huong-thuc-an-3-to-huu",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "crunchy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner",
@@ -137272,12 +137272,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-5-huong-thuc-an-3-to-huu",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1000070737,
@@ -137348,15 +137348,15 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ba-huong-chao-long-banh-hoi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
     "attributes": [
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast"
@@ -137370,12 +137370,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ba-huong-chao-long-banh-hoi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1000070641,
@@ -141261,8 +141261,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bon-man-ga-chi-com-ga",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -141271,7 +141271,7 @@
       "heavy",
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "dinner",
       "lunch"
@@ -141289,12 +141289,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/bon-man-ga-chi-com-ga",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 877508,
@@ -141954,8 +141954,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-chi-nhu-quynh",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -141964,7 +141964,7 @@
       "heavy",
       "salty"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "dinner"
@@ -141982,12 +141982,12 @@
       "group_family",
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-chi-nhu-quynh",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 878275,
@@ -144792,8 +144792,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-com-tam-com-chien",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -144801,7 +144801,7 @@
       "crunchy",
       "heavy"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "dinner",
@@ -144816,12 +144816,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/xoi-com-tam-com-chien",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1180843,
@@ -148012,8 +148012,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/win-banh-mi-cha-ca",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -148021,7 +148021,7 @@
       "crunchy",
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "lunch"
@@ -148035,12 +148035,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/win-banh-mi-cha-ca",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 266474,
@@ -148796,8 +148796,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-banh-mi-cham",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -148805,7 +148805,7 @@
       "crunchy",
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "breakfast",
       "dinner",
@@ -148820,12 +148820,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/xoi-banh-mi-cham",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 1180811,
