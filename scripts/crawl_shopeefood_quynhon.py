@@ -462,6 +462,20 @@ def cleanup_closed_foods_database(database_file=DATABASE_JSON):
         faddr = (f.get("address") or "").strip()
         ftext = f"{frest} {fname} {faddr}".lower()
 
+        # 0. Không tìm thấy trên Google Maps hoặc địa chỉ ảo
+        if f.get("gmapsVerified") is False:
+            removed_items.append((fid, frest, "Không tìm thấy tên và địa chỉ đúng trên Google Maps (gmapsVerified: False)"))
+            continue
+        if fid in [1295849, 248550]:
+            removed_items.append((fid, frest, "Quán ảo không tìm thấy trên Google Maps"))
+            continue
+        if "108/16 nguyễn thái học" in ftext or "15 lê hồng phong" in ftext:
+            removed_items.append((fid, frest, "Địa chỉ không tồn tại trên Google Maps"))
+            continue
+        if not re.search(r'\d+', faddr):
+            removed_items.append((fid, frest, "Địa chỉ không có số nhà cụ thể"))
+            continue
+
         # 1. Danh sách ID quán đã đóng cửa vĩnh viễn
         if fid in [166, 660823, 1217226, 665845, 1226906]:
             removed_items.append((fid, frest, "ID quán đóng cửa vĩnh viễn"))

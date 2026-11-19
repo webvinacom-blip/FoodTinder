@@ -19,13 +19,17 @@ DATA_JS_PATH = os.path.join(BASE_DIR, "js", "data.js")
 VERSION_JSON_PATH = os.path.join(BASE_DIR, "version.json")
 
 def is_unfindable_gmaps(f):
-    if f.get('id') == 1295849:
-        return True, 'ID 1295849 (Ăn Đêm Đường Luồng)'
+    if f.get('id') in [1295849, 248550]:
+        return True, f"ID {f.get('id')} ({f.get('restaurant')})"
     addr = (f.get('address') or '').lower()
     rest = (f.get('restaurant') or '').lower()
     
-    if '108/16 nguyễn thái học' in addr:
-        return True, '108/16 Nguyễn Thái Học'
+    # Quán bị đánh dấu rõ ràng là chưa xác thực hoặc không tìm thấy trên Google Maps
+    if f.get('gmapsVerified') is False:
+        return True, f"gmapsVerified is False ({f.get('restaurant')} - {addr})"
+
+    if '108/16 nguyễn thái học' in addr or '15 lê hồng phong' in addr:
+        return True, f"Unfindable street address ({addr})"
     if 'đường chính' in addr or 'bờ biển quy nhơn' in addr or 'quảng trường trung tâm' in addr or 'khu bông hồng' in addr or addr == 'đường xuân diệu':
         return True, 'Generic phantom address'
     if not re.search(r'\d+', addr):
@@ -38,8 +42,8 @@ def is_unfindable_gmaps(f):
         rating = 0.0
     reviews = int(f.get('reviewCount', 0) or f.get('totalReviews', 0) or 0)
     
-    if (f.get('gmapsVerified') is False or 'gmapsVerified' not in f) and rating <= 0 and reviews <= 0:
-        return True, 'Unverified on GMaps with 0 review/rating'
+    if rating <= 0 and reviews <= 0:
+        return True, '0 review and 0 rating'
         
     return False, 'Valid'
 
@@ -58,6 +62,17 @@ def main():
         if bad:
             removed_foods.append((f, reason))
         else:
+            # Chuẩn hóa trạng thái gmapsVerified và rating chuẩn hệ 5 sao
+            f["gmapsVerified"] = True
+            raw_r = f.get("rating", 4.5)
+            try:
+                r_val = float(raw_r)
+                if r_val > 5.0:
+                    f["rating"] = round(r_val / 2.0, 1)
+                else:
+                    f["rating"] = round(r_val, 1)
+            except:
+                f["rating"] = 4.5
             cleaned_foods.append(f)
 
     print(f"Original total: {len(foods)}")
@@ -106,8 +121,8 @@ def main():
         with open(VERSION_JSON_PATH, "r", encoding="utf-8") as f:
             v_data = json.load(f)
         v_data["total"] = len(cleaned_foods)
-        v_data["version"] = "3.2.5"
-        v_data["updatedAt"] = "2026-11-20T00:08:00Z"
+        v_data["version"] = "3.2.6"
+        v_data["updatedAt"] = "2026-11-20T00:15:00Z"
         with open(VERSION_JSON_PATH, "w", encoding="utf-8") as f:
             json.dump(v_data, f, ensure_ascii=False, indent=2)
         print("✅ Successfully updated version.json (total: %d)" % len(cleaned_foods))

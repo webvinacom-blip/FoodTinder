@@ -23,6 +23,7 @@ class TinderSwipeManager {
 
   isFoodValidForSwipe(food) {
     if (!food) return false;
+    if (food.gmapsVerified === false) return false;
     if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
     if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
     if (food.isPermanentlyClosed || food.isClosedPermanently || food.isClosed === true) return false;
