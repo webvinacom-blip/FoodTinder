@@ -39,9 +39,25 @@ class TinderSwipeManager {
       return true;
     });
 
-    // Fallback nếu bộ lọc quá ngặt nghèo khiến danh sách rỗng: nạp lại quán chất lượng của thành phố
+    // Fallback nếu bộ lọc quá ngặt nghèo khiến danh sách rỗng: nạp lại quán chất lượng của thành phố hiện tại
     if (validFoods.length === 0) {
-      validFoods = ((window.APP_DATA && window.APP_DATA.foods) || []).filter(food => {
+      const curCityId = (window.APP_DATA?.currentCity?.cityId || 'quynhon').toLowerCase();
+      const curCityName = (window.APP_DATA?.currentCity?.name || 'Quy Nhơn').toLowerCase();
+      const allFoods = (window.APP_DATA && window.APP_DATA.foods) || [];
+      const cityFoods = allFoods.filter(f => {
+        if (!f) return false;
+        const fCityId = (f.cityId || '').toLowerCase();
+        const fCityName = (f.cityName || '').toLowerCase();
+        const fAddress = (f.address || '').toLowerCase();
+        const isQnCity = curCityId.includes('quynhon') || curCityName.includes('quy nhơn');
+        const isQnFood = fCityId.includes('quynhon') || fCityName.includes('quy nhơn') || fAddress.includes('quy nhơn');
+        if (isQnCity && isQnFood) return true;
+        if (curCityId && fCityId && curCityId === fCityId) return true;
+        if (fCityName && curCityName && (fCityName.includes(curCityName) || curCityName.includes(fCityName))) return true;
+        return false;
+      });
+      const pool = cityFoods.length > 0 ? cityFoods : allFoods;
+      validFoods = pool.filter(food => {
         if (!food) return false;
         if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
         if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
@@ -541,22 +557,21 @@ class TinderSwipeManager {
       this.currentIndex++;
       this.isAnimating = false;
       
-      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác
+      // Nếu số thẻ còn lại dưới 3, nạp thêm thẻ mới chưa từng quẹt trong phiên này vào cuối deck
       if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
         const freshDeck = window.app.getFoodsForCurrentMood();
         if (freshDeck && freshDeck.length > 0) {
-          const remaining = this.deck.slice(this.currentIndex);
-          const remainingIds = new Set(remaining.map(f => f.id));
+          const swipedIds = new Set(this.history.map(h => h.food.id));
+          const currentDeckIds = new Set(this.deck.map(f => f.id));
           const newAdditions = freshDeck
-            .filter(f => !remainingIds.has(f.id))
+            .filter(f => !currentDeckIds.has(f.id) && !swipedIds.has(f.id))
             .filter(f => {
               if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
               if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
               return true;
             });
           if (newAdditions.length > 0) {
-            this.deck = remaining.concat(newAdditions);
-            this.currentIndex = 0;
+            this.deck = this.deck.concat(newAdditions);
           }
         }
       }

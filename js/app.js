@@ -2824,7 +2824,9 @@ class FoodApp {
         window.swipeManager = new TinderSwipeManager('swipe-deck-container');
       }
       if (window.swipeManager) {
-        if (!window.swipeManager.deck || window.swipeManager.deck.length === 0 || window.swipeManager.currentIndex >= window.swipeManager.deck.length) {
+        const curCityId = (APP_DATA?.currentCity?.cityId || 'quynhon').toLowerCase();
+        const deckHasCity = window.swipeManager.deck && window.swipeManager.deck.some(f => (f.cityId || 'quynhon').toLowerCase() === curCityId);
+        if (!window.swipeManager.deck || window.swipeManager.deck.length === 0 || window.swipeManager.currentIndex >= window.swipeManager.deck.length || !deckHasCity) {
           const foods = this.getFoodsForCurrentMood();
           window.swipeManager.loadCards(foods.length > 0 ? foods : (APP_DATA.foods || []));
         } else {
@@ -4646,6 +4648,12 @@ class FoodApp {
     if (window.tasteManager) {
       window.tasteManager.resetRadius();
       window.tasteManager.renderLocationRecommendations();
+    }
+
+    // Luôn nạp lại bộ thẻ quẹt theo thành phố mới
+    if (window.swipeManager) {
+      const moodFoods = this.getFoodsForCurrentMood();
+      window.swipeManager.loadCards(moodFoods.length > 0 ? moodFoods : (APP_DATA.foods || []));
     }
 
     if (window.mapManager && window.mapManager.map) {
