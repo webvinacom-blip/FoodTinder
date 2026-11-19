@@ -5,13 +5,17 @@
 
 class TasteManager {
   constructor() {
-    this.storageKey = 'foodtinder_user_taste_v1';
+    this.storageKey = 'foodtinder_user_taste_profile_v2';
     this.profile = this.loadProfile();
     this.userPreferences = this.loadUserPreferences();
     this.visibleLimit = 40; // Mặc định hiển thị 40 quán, mỗi lần nhấn Xem thêm hiện thêm 12 quán
     this.currentRadius = 1;
     this.lastCityId = null;
     this.onlySpecialties = false; // Lọc chỉ hiển thị đặc sản địa phương
+    this.selectedColdStartCategories = new Set();
+
+    // 1. Kích hoạt suy giảm theo thời gian (Time Decay: giảm 15% điểm cũ mỗi 7 ngày)
+    this.applyTimeDecay();
   }
 
   loadUserPreferences() {
@@ -205,15 +209,85 @@ class TasteManager {
   loadProfile() {
     try {
       const saved = localStorage.getItem(this.storageKey);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') {
+          if (!parsed.categories) parsed.categories = {};
+          if (!parsed.flavors) parsed.flavors = {};
+          if (!parsed.consecutive_skips) parsed.consecutive_skips = {};
+          if (!parsed.recent_interacted) parsed.recent_interacted = {};
+          if (!parsed.last_decay_time) parsed.last_decay_time = Date.now();
+          if (typeof parsed.max_distance_km !== 'number') parsed.max_distance_km = 3.5;
+          if (!parsed.preferred_price) parsed.preferred_price = 'medium';
+          return parsed;
+        }
+      }
+
+      // Tương thích ngược từ v1 nếu có
+      const oldV1 = localStorage.getItem('foodtinder_user_taste_v1');
+      if (oldV1) {
+        const p1 = JSON.parse(oldV1);
+        if (p1 && typeof p1 === 'object') {
+          return {
+            categories: {
+              hai_san: (p1.likedCategories?.seafood || 0) * 3,
+              lau: (p1.likedCategories?.hotpot || 0) * 3,
+              nuong: (p1.likedCategories?.bbq || 0) * 3,
+              com_bun: (p1.likedCategories?.noodles || 0) * 3,
+              tra_sua: 6,
+              an_vat: (p1.likedCategories?.streetfood || 0) * 3,
+              banh_xeo: 0,
+              chay: 0
+            },
+            flavors: {
+              cay: 8,
+              thanh_dam: 4,
+              ngot: 6,
+              dam_da: 10,
+              chua: 4,
+              gion: 6
+            },
+            preferred_price: 'medium',
+            max_distance_km: 3.5,
+            last_decay_time: Date.now(),
+            consecutive_skips: {},
+            recent_interacted: {},
+            likedCategories: p1.likedCategories || {},
+            likedTags: p1.likedTags || {},
+            totalInteractions: p1.totalInteractions || 5
+          };
+        }
+      }
     } catch (e) {}
 
-    // Starter profile with balanced initial foodie tastes
+    // Khởi tạo Hồ Sơ Khẩu Vị ban đầu (Clean Slate)
     return {
-      likedCategories: { "hotpot": 4, "bbq": 3, "noodles": 2, "streetfood": 2, "seafood": 1 },
-      likedTags: { "#Xả_stress": 3, "#Đậm_đà": 3, "#Cay_nồng": 3, "#Ấm_áp": 2, "#Xì_xèo": 2 },
-      customPreferences: ["Cay nồng", "Lẩu & Nướng", "Đậm đà"],
-      totalInteractions: 8
+      categories: {
+        hai_san: 6,
+        lau: 6,
+        nuong: 6,
+        com_bun: 6,
+        tra_sua: 4,
+        an_vat: 4,
+        banh_xeo: 2,
+        chay: 0
+      },
+      flavors: {
+        cay: 5,
+        thanh_dam: 3,
+        ngot: 4,
+        dam_da: 6,
+        chua: 3,
+        gion: 4
+      },
+      preferred_price: 'medium',
+      max_distance_km: 3.5,
+      last_decay_time: Date.now(),
+      consecutive_skips: {},
+      recent_interacted: {},
+      likedCategories: {},
+      likedTags: {},
+      totalInteractions: 0
     };
   }
 
@@ -223,232 +297,469 @@ class TasteManager {
     } catch (e) {}
   }
 
-  // Sync profile from whatever liked foods exist in localStorage
-  syncFromLikedFoods(likedFoods = []) {
-    if (!Array.isArray(likedFoods) || likedFoods.length === 0) return;
-
-    likedFoods.forEach(food => {
-      if (!food) return;
-      const cat = food.category || 'streetfood';
-      this.profile.likedCategories[cat] = (this.profile.likedCategories[cat] || 0) + 1;
-      if (Array.isArray(food.tags)) {
-        food.tags.forEach(t => {
-          this.profile.likedTags[t] = (this.profile.likedTags[t] || 0) + 1;
-        });
+  // 1. CƠ CHẾ SUY GIẢM THEO THỜI GIAN (TIME DECAY: Giảm 15% mỗi 7 ngày)
+  applyTimeDecay() {
+    const now = Date.now();
+    const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+    const timeDiff = now - (this.profile.last_decay_time || now);
+    if (timeDiff >= ONE_WEEK_MS) {
+      const weeks = Math.floor(timeDiff / ONE_WEEK_MS);
+      const decayFactor = Math.pow(0.85, Math.min(weeks, 4));
+      if (this.profile.categories) {
+        for (const cat in this.profile.categories) {
+          this.profile.categories[cat] = Math.round(this.profile.categories[cat] * decayFactor * 10) / 10;
+        }
       }
-    });
-    this.profile.totalInteractions = (this.profile.totalInteractions || 0) + likedFoods.length;
-    this.saveProfile();
+      if (this.profile.flavors) {
+        for (const fl in this.profile.flavors) {
+          this.profile.flavors[fl] = Math.round(this.profile.flavors[fl] * decayFactor * 10) / 10;
+        }
+      }
+      this.profile.last_decay_time = now;
+      this.saveProfile();
+    }
   }
 
-  // Record a new like action
-  recordLike(food) {
-    if (!food) return;
-    this.profile.totalInteractions = (this.profile.totalInteractions || 0) + 1;
+  // Trích xuất đặc trưng danh mục và khẩu vị từ quán ăn
+  extractFoodProfileFeatures(food) {
+    if (!food) return { categories: ['an_vat'], flavors: ['dam_da'], priceTier: 'medium' };
 
-    const cat = food.category || 'streetfood';
-    this.profile.likedCategories[cat] = (this.profile.likedCategories[cat] || 0) + 1;
+    const name = String(food.name || '').toLowerCase();
+    const rest = String(food.restaurant || '').toLowerCase();
+    const cat = String(food.category || '').toLowerCase();
+    const tags = Array.isArray(food.tags) ? food.tags.map(t => String(t).toLowerCase()) : [];
+    const allText = `${name} ${rest} ${cat} ${tags.join(' ')}`;
 
-    if (Array.isArray(food.tags)) {
-      food.tags.forEach(t => {
-        this.profile.likedTags[t] = (this.profile.likedTags[t] || 0) + 1;
-      });
+    // 1. Phân loại danh mục (Categories)
+    const categories = [];
+    if (this.isFoodSeafood(food) || cat === 'seafood' || /hải sản|ốc|tôm|cua|mực|sứa|ghẹ|hàu|bạch tuộc|sò|nghêu|cá/i.test(allText)) {
+      categories.push('hai_san');
+    }
+    if (cat === 'hotpot' || /lẩu|tomyum/i.test(allText)) {
+      categories.push('lau');
+    }
+    if (cat === 'bbq' || /nướng|bbq|xiên que nướng|bò nướng|chân gà nướng/i.test(allText)) {
+      categories.push('nuong');
+    }
+    if (cat === 'rice' || cat === 'noodles' || /cơm|bún|phở|bánh canh|hủ tiếu|mì quảng|cháo/i.test(allText)) {
+      categories.push('com_bun');
+    }
+    if (cat === 'cafe' || cat === 'drink' || cat === 'boba' || /trà sữa|cà phê|nước ép|sinh tố|chè|kem/i.test(allText)) {
+      categories.push('tra_sua');
+    }
+    if (cat === 'streetfood' || /bánh tráng|ăn vặt|nem|chả ram|bánh bèo|chân gà|tré|xiên que/i.test(allText)) {
+      categories.push('an_vat');
+    }
+    if (/bánh xèo|bánh khọt|bánh căn/i.test(allText)) {
+      categories.push('banh_xeo');
+    }
+    if (cat === 'vegetarian' || cat === 'healthy' || /chay|salad|healthy|eat clean/i.test(allText)) {
+      categories.push('chay');
     }
 
-    this.saveProfile();
+    if (categories.length === 0) {
+      categories.push(cat || 'an_vat');
+    }
+
+    // 2. Phân loại khẩu vị (Flavors)
+    const flavors = [];
+    if (/cay|sa tế|ớt|siêu cay/i.test(allText)) flavors.push('cay');
+    if (/thanh|luộc|hấp|thanh đạm|ít dầu|healthy|nước lèo thanh/i.test(allText)) flavors.push('thanh_dam');
+    if (/ngọt|béo|sữa|chè|kem|bơ/i.test(allText) || categories.includes('tra_sua')) flavors.push('ngot');
+    if (/chua|me|gỏi|nộm|chanh|tomyum/i.test(allText)) flavors.push('chua');
+    if (/đậm đà|mặn|sốt|kho|chiên mắm/i.test(allText)) flavors.push('dam_da');
+    if (/giòn|ram|chiên giòn|da giòn/i.test(allText)) flavors.push('gion');
+
+    if (flavors.length === 0) {
+      flavors.push('dam_da');
+    }
+
+    // 3. Phân khúc giá
+    let priceTier = 'medium';
+    const priceMin = food.priceMin || 0;
+    const priceMax = food.priceMax || 0;
+    const avgPrice = priceMax > 0 ? (priceMin + priceMax) / 2 : (priceMin || 40000);
+    if (avgPrice < 35000) priceTier = 'low';
+    else if (avgPrice > 90000) priceTier = 'high';
+
+    return { categories, flavors, priceTier };
   }
 
-  // Calculate Match Percentage (60% to 99%)
+  // 2. GÁN TRỌNG SỐ CHO TỪNG HÀNH VI CỦA NGƯỜI DÙNG
+  recordAction(food, actionType) {
+    if (!food) return;
+    this.applyTimeDecay();
+
+    const foodId = String(food.id || food.restaurant);
+    const { categories, flavors } = this.extractFoodProfileFeatures(food);
+
+    // Xác định trọng số hành vi theo yêu cầu
+    let delta = 0;
+    if (actionType === 'order' || actionType === 'invite') {
+      delta = 10; // Bấm đặt hàng ShopeeFood / Rủ đi ăn: +10 điểm (tín hiệu mạnh nhất)
+    } else if (actionType === 'like') {
+      delta = 5;  // Quẹt phải (Thích) / Lưu quán: +5 điểm
+    } else if (actionType === 'view_reels' || actionType === 'view_menu') {
+      delta = 3;  // Xem Reels > 50% thời lượng hoặc xem chi tiết menu: +3 điểm
+    } else if (actionType === 'dislike') {
+      delta = -3; // Quẹt trái (Bỏ qua): -3 điểm
+    }
+
+    // Cập nhật điểm danh mục
+    categories.forEach(cat => {
+      this.profile.categories[cat] = (this.profile.categories[cat] || 0) + delta;
+
+      if (actionType === 'dislike') {
+        this.profile.consecutive_skips[cat] = (this.profile.consecutive_skips[cat] || 0) + 1;
+        // Bỏ qua liên tiếp 3 lần cùng một loại món: phạt thêm -8 điểm
+        if (this.profile.consecutive_skips[cat] >= 3) {
+          this.profile.categories[cat] -= 8;
+        }
+      } else if (delta > 0) {
+        // Reset skip liên tiếp khi user có tương tác tích cực
+        this.profile.consecutive_skips[cat] = 0;
+      }
+    });
+
+    // Cập nhật điểm khẩu vị
+    flavors.forEach(fl => {
+      this.profile.flavors[fl] = (this.profile.flavors[fl] || 0) + (delta * 0.5);
+    });
+
+    // Tự điều chỉnh max_distance_km dựa trên các quán user hay chọn
+    if (delta > 0 && typeof food.distance === 'number' && food.distance > 0) {
+      const currentMax = this.profile.max_distance_km || 3.5;
+      this.profile.max_distance_km = Math.round(Math.min(10, Math.max(2.0, (currentMax * 0.8) + (food.distance * 1.2 * 0.2))) * 10) / 10;
+    }
+
+    // Ghi nhận cooldown & tương tác gần nhất
+    if (!this.profile.recent_interacted) this.profile.recent_interacted = {};
+    this.profile.recent_interacted[foodId] = {
+      action: actionType,
+      timestamp: Date.now()
+    };
+
+    this.profile.totalInteractions = (this.profile.totalInteractions || 0) + 1;
+    this.saveProfile();
+
+    // Đồng bộ lên UserActionBatcher (để ghi vào Firestore user_behavior_batches theo batch 3 phút)
+    if (window.userActionBatcher && typeof window.userActionBatcher.recordAction === 'function') {
+      window.userActionBatcher.recordAction({
+        type: `taste_${actionType}`,
+        foodId: food.id,
+        restaurant: food.restaurant,
+        category: food.category,
+        categories,
+        flavors
+      });
+    }
+  }
+
+  // Phương thức tương thích ngược
+  recordLike(food) {
+    this.recordAction(food, 'like');
+  }
+
+  recordBatchInteractions(actions) {
+    if (!Array.isArray(actions) || actions.length === 0) return;
+    const allFoods = (window.APP_DATA && window.APP_DATA.foods) || [];
+
+    actions.forEach(act => {
+      if (!act) return;
+      const food = allFoods.find(f => f.id === act.foodId) || { id: act.foodId, restaurant: act.restaurant, category: act.category };
+      if (act.type === 'swipe_liked' || act.type === 'taste_like') {
+        this.recordAction(food, 'like');
+      } else if (act.type === 'swipe_skipped' || act.type === 'taste_dislike') {
+        this.recordAction(food, 'dislike');
+      } else if (act.type === 'reel_watched_deep' || act.type === 'taste_view_reels') {
+        this.recordAction(food, 'view_reels');
+      } else if (act.type === 'shopee_order' || act.type === 'taste_order') {
+        this.recordAction(food, 'order');
+      }
+    });
+  }
+
+  syncFromLikedFoods(likedFoods = []) {
+    if (!Array.isArray(likedFoods) || likedFoods.length === 0) return;
+    likedFoods.forEach(food => {
+      if (food) this.recordAction(food, 'like');
+    });
+  }
+
+  // 3. CƠ CHẾ COOLDOWN (Tạm ẩn quán vừa tương tác)
+  getCooldownPenalty(restaurantId) {
+    if (!this.profile || !this.profile.recent_interacted) return 0;
+    const record = this.profile.recent_interacted[String(restaurantId)];
+    if (!record) return 0;
+
+    const now = Date.now();
+    const ageDays = (now - record.timestamp) / (24 * 60 * 60 * 1000);
+
+    // Quán vừa quẹt trái: Trừ -50 điểm trong vòng 7 ngày để không hiện lại ngay lập tức
+    if (record.action === 'dislike') {
+      if (ageDays <= 7) return -50;
+      return 0;
+    }
+
+    // Quán vừa chốt đi ăn / đặt hàng:
+    // Trừ -30 điểm trong vòng 3 ngày (vì ít ai ăn 1 quán 2 ngày liên tiếp),
+    // Sau 3 ngày thì được thưởng +5 điểm vì là "quán ruột"
+    if (record.action === 'order' || record.action === 'invite') {
+      if (ageDays <= 3) return -30;
+      return 5;
+    }
+
+    return 0;
+  }
+
+  // 4. ĐIỂM NGỮ CẢNH (0 - 50 ĐIỂM: Tâm trạng + Thời tiết + Khung giờ)
+  getContextScore(restaurant, context = null) {
+    let score = 0;
+    const now = context && context.now ? context.now : new Date();
+    const curHour = now.getHours();
+
+    // 1. Trạng thái mở cửa (0 - 20 điểm)
+    const status = window.getRestaurantStatus ? window.getRestaurantStatus(restaurant, now) : { isOpen: true };
+    if (status && status.isOpen) {
+      score += 20;
+    } else {
+      score -= 10;
+    }
+
+    // 2. Khung giờ & Bữa ăn trong ngày (0 - 15 điểm)
+    const mealTimes = Array.isArray(restaurant.mealTimes) ? restaurant.mealTimes : [];
+    let currentMeal = '';
+    if (curHour >= 5 && curHour < 10) currentMeal = 'breakfast';
+    else if (curHour >= 11 && curHour < 14) currentMeal = 'lunch';
+    else if (curHour >= 14 && curHour < 17) currentMeal = 'afternoon';
+    else if (curHour >= 17 && curHour < 21) currentMeal = 'dinner';
+    else if (curHour >= 21 || curHour < 5) currentMeal = 'late_night';
+
+    if (currentMeal && mealTimes.includes(currentMeal)) {
+      score += 15;
+    } else if (mealTimes.length === 0) {
+      score += 8;
+    }
+
+    // 3. Tâm trạng & Thời tiết thực tế (0 - 15 điểm)
+    const moodId = (context && context.moodId) || (window.app && window.app.currentMood) || 'rainy_hotpot';
+    if (Array.isArray(restaurant.moodIds) && restaurant.moodIds.includes(moodId)) {
+      score += 15;
+    } else {
+      score += 6;
+    }
+
+    return Math.max(0, Math.min(50, score));
+  }
+
+  // 5. CÔNG THỨC CHẤM ĐIỂM TỔNG HỢP (HYBRID SCORING: 50% Ngữ Cảnh - 40% Gu Cá Nhân - 10% Độ Uy Tín)
+  calculatePersonalScore(restaurant, context = null) {
+    if (!restaurant) return 50;
+
+    // 1. Điểm Ngữ cảnh (0 - 50 điểm)
+    const contextScore = this.getContextScore(restaurant, context);
+
+    // 2. Điểm Gu cá nhân (0 - 40 điểm, chuẩn hóa [-20, 40])
+    let tasteScore = 0;
+    const { categories, flavors } = this.extractFoodProfileFeatures(restaurant);
+    categories.forEach(cat => {
+      tasteScore += (this.profile.categories[cat] || 0);
+    });
+    flavors.forEach(flav => {
+      tasteScore += (this.profile.flavors[flav] || 0) * 0.5;
+    });
+    // Chuẩn hóa tasteScore về khoảng [-20, 40] để không lấn át hoàn toàn ngữ cảnh
+    tasteScore = Math.max(-20, Math.min(40, tasteScore));
+
+    // 3. Điểm Độ uy tín & Khoảng cách (0 - 10 điểm)
+    const maxDist = this.profile.max_distance_km || 3.5;
+    const dist = typeof restaurant.distance === 'number' ? restaurant.distance : 2.0;
+    const distancePenalty = dist > maxDist ? -15 : 0;
+    const popularityScore = Math.min(10, Math.max(0, (restaurant.rating ? restaurant.rating * 2 : 7)));
+
+    // 4. Điểm Phạt chống lặp lại (Cooldown)
+    const cooldownPenalty = this.getCooldownPenalty(restaurant.id);
+
+    const total = contextScore + tasteScore + popularityScore + distancePenalty + cooldownPenalty;
+    return Math.max(0, Math.round(total));
+  }
+
+  // 6. QUY TẮC 80/20: 80% CHUẨN GU & 20% KHÁM PHÁ (Tránh "Bong bóng lọc")
+  rankAndMixFoods(foods, context = null) {
+    if (!Array.isArray(foods) || foods.length === 0) return [];
+
+    // Chấm điểm cho toàn bộ quán
+    const scoredFoods = foods.map(f => ({
+      food: f,
+      personalScore: this.calculatePersonalScore(f, context)
+    }));
+
+    // Sắp xếp giảm dần theo điểm cá nhân hóa
+    scoredFoods.sort((a, b) => b.personalScore - a.personalScore);
+
+    const tastePool = scoredFoods.map(s => s.food);
+    const interactedIds = new Set(Object.keys(this.profile.recent_interacted || {}));
+
+    // Pool Khám Phá (Exploration): quán mở cửa, rating >= 4.5 hoặc là đặc sản, chưa từng tương tác gần đây
+    const explorePool = foods.filter(f => {
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
+      const fid = String(f.id);
+      return status.isOpen && !interactedIds.has(fid) && (f.rating >= 4.5 || f.isSpecialty);
+    });
+
+    const result = [];
+    const usedIds = new Set();
+    let tasteIdx = 0;
+    let exploreIdx = 0;
+
+    while (tasteIdx < tastePool.length || exploreIdx < explorePool.length) {
+      // Lấy 4 thẻ Chuẩn Gu cao nhất
+      for (let i = 0; i < 4 && tasteIdx < tastePool.length; i++) {
+        const item = tastePool[tasteIdx++];
+        const fid = String(item.id);
+        if (!usedIds.has(fid)) {
+          usedIds.add(fid);
+          result.push(item);
+        }
+      }
+
+      // Chèn 1 thẻ Khám Phá (sau mỗi 4 thẻ Chuẩn Gu)
+      while (exploreIdx < explorePool.length && usedIds.has(String(explorePool[exploreIdx].id))) {
+        exploreIdx++;
+      }
+      if (exploreIdx < explorePool.length) {
+        const expItem = explorePool[exploreIdx++];
+        const fid = String(expItem.id);
+        usedIds.add(fid);
+        result.push({
+          ...expItem,
+          _isExploration: true
+        });
+      }
+    }
+
+    return result;
+  }
+
+  // 7. XỬ LÝ NGƯỜI DÙNG MỚI (COLD START: Popup 5 giây "Chọn 3 món bạn không thể chối từ")
+  checkColdStart() {
+    const isDone = localStorage.getItem('foodtinder_cold_start_done');
+    if (!isDone) {
+      setTimeout(() => {
+        this.openColdStartModal();
+      }, 700);
+    }
+  }
+
+  openColdStartModal() {
+    const modal = document.getElementById('cold-start-modal');
+    if (modal) {
+      this.selectedColdStartCategories.clear();
+      this.updateColdStartCounter();
+      modal.classList.remove('hidden');
+    }
+  }
+
+  closeColdStartModal() {
+    const modal = document.getElementById('cold-start-modal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  toggleColdStartOption(cat, el) {
+    if (!cat) return;
+    window.soundFX && window.soundFX.playPop();
+
+    if (this.selectedColdStartCategories.has(cat)) {
+      this.selectedColdStartCategories.delete(cat);
+      el.classList.remove('border-[#EE4D2D]', 'bg-orange-50/90', 'shadow-xs');
+      el.classList.add('border-stone-200', 'bg-stone-50');
+    } else {
+      if (this.selectedColdStartCategories.size >= 3) {
+        if (window.app && window.app.showToast) {
+          window.app.showToast('Bạn đã chọn đủ 3 món yêu thích nhất!');
+        }
+        return;
+      }
+      this.selectedColdStartCategories.add(cat);
+      el.classList.remove('border-stone-200', 'bg-stone-50');
+      el.classList.add('border-[#EE4D2D]', 'bg-orange-50/90', 'shadow-xs');
+    }
+
+    this.updateColdStartCounter();
+  }
+
+  updateColdStartCounter() {
+    const countEl = document.getElementById('cold-start-counter');
+    if (countEl) {
+      const size = this.selectedColdStartCategories.size;
+      countEl.innerHTML = `Đã chọn: <b class="text-orange-600">${size}/3</b> món`;
+    }
+  }
+
+  submitColdStart() {
+    window.soundFX && window.soundFX.playSuccess();
+    // Gán ngay +10 điểm cho mỗi danh mục đã chọn
+    this.selectedColdStartCategories.forEach(cat => {
+      this.profile.categories[cat] = (this.profile.categories[cat] || 0) + 10;
+    });
+
+    localStorage.setItem('foodtinder_cold_start_done', 'true');
+    this.saveProfile();
+    this.closeColdStartModal();
+
+    // Làm mới luồng Quẹt món và Tab Chuẩn Gu với gu mới
+    if (window.swipeManager && typeof window.swipeManager.loadCards === 'function') {
+      window.swipeManager.loadCards();
+    }
+    this.renderLocationRecommendations();
+
+    if (window.app && window.app.showToast) {
+      window.app.showToast('🚀 Đã thiết lập hồ sơ khẩu vị thành công!');
+    }
+  }
+
+  skipColdStart() {
+    window.soundFX && window.soundFX.playPop();
+    localStorage.setItem('foodtinder_cold_start_done', 'true');
+    this.closeColdStartModal();
+
+    // Chuyển 100% trọng số sang ngữ cảnh + rating cao nhất
+    if (window.swipeManager && typeof window.swipeManager.loadCards === 'function') {
+      window.swipeManager.loadCards();
+    }
+    this.renderLocationRecommendations();
+  }
+
+  // Calculate Match Percentage (65% to 99%)
   calculateMatchScore(food, currentMoodId = '') {
     if (!food) return 70;
     if (typeof window.classifyFood === 'function') {
       window.classifyFood(food);
     }
-    let score = 65;
 
-    // 1. User Onboarding Taste Preferences Bonus & Checks
+    // 1. Kiểm tra ăn kiêng nghiêm ngặt (Dietary Restrictions)
     const prefs = this.userPreferences || this.loadUserPreferences();
     if (prefs) {
       const diets = Array.isArray(prefs.diets) ? prefs.diets : (prefs.diet ? [prefs.diet] : ['normal']);
-
-      // Kiêng hải sản
-      if (diets.includes('no_seafood')) {
-        if (this.isFoodSeafood(food)) return 30;
-      }
-
-      // Kiêng thịt heo
+      if (diets.includes('no_seafood') && this.isFoodSeafood(food)) return 30;
       if (diets.includes('no_pork')) {
         const isPork = /heo|lợn|sườn heo|ba chỉ|xá xíu|giò heo|chả lụa|nem chua|thịt kho tàu|lòng heo/i.test(food.name || '') ||
           (Array.isArray(food.tags) && food.tags.some(t => /heo|lợn|ba_chỉ|xá_xíu/i.test(t)));
         if (isPork) return 30;
       }
-
-      // Ăn chay
       if (diets.includes('vegetarian')) {
         const isVeg = food.category === 'vegetarian' || food.category === 'healthy' ||
           (Array.isArray(food.tags) && food.tags.some(t => /chay|nấm|salad|healthy/i.test(t))) ||
           /chay|nấm|đậu hũ/i.test(food.name || '');
-        if (isVeg) score += 20;
-        else score -= 25;
+        if (!isVeg) return 25;
       }
-
-      // Eat clean / Giữ dáng
-      if (diets.includes('eatclean')) {
-        const isClean = food.category === 'healthy' ||
-          (Array.isArray(food.tags) && food.tags.some(t => /clean|healthy|salad|luộc|hấp/i.test(t))) ||
-          /salad|ức gà|gạo lứt|hấp|thanh đạm/i.test(food.name || '');
-        if (isClean) score += 12;
-      }
-
-      // Nhóm món ăn yêu thích (+14 điểm)
-      if (Array.isArray(prefs.categories) && prefs.categories.length > 0) {
-        const cat = food.category;
-        const foodName = (food.name || '').toLowerCase();
-        let catMatch = false;
-
-        if (prefs.categories.includes('noodles') && (cat === 'noodles' || /phở|bún|mì|bánh canh|hủ tiếu/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('rice_chicken') && (cat === 'rice' || /cơm|gà/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('streetfood') && (cat === 'streetfood' || /bánh xèo|bánh hỏi|ăn vặt|nem/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('seafood') && (cat === 'seafood' || /hải sản|ốc|tôm|cua|mực/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('hotpot_bbq') && (cat === 'hotpot' || cat === 'bbq' || /lẩu|nướng|bbq/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('sweet_tea') && (cat === 'cafe' || cat === 'drink' || cat === 'boba' || /trà sữa|cà phê|kem|chè/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('healthy') && (cat === 'healthy' || /chay|clean|salad/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('fastfood') && (/gà rán|burger|pizza|mì ý|fast food/i.test(foodName) || (food.cuisineStyles || []).includes('western_fastfood'))) catMatch = true;
-
-        if (catMatch) {
-          score += 14;
-        }
-      }
-
-      // Khẩu vị đặc trưng (+8 điểm)
-      if (Array.isArray(prefs.flavors) && prefs.flavors.length > 0) {
-        const foodName = (food.name || '').toLowerCase();
-        const tags = Array.isArray(food.tags) ? food.tags.join(' ').toLowerCase() : '';
-
-        // Cay nồng / Siêu cay
-        if (prefs.flavors.includes('spicy') && (/cay|sa tế/i.test(foodName) || tags.includes('cay') || tags.includes('sa tế'))) score += 9;
-        // Cay vừa / Ít cay
-        if (prefs.flavors.includes('mild_spicy') && !/siêu cay|cay xé/i.test(foodName)) score += 7;
-        // Không ăn cay
-        if (prefs.flavors.includes('no_spicy') && (/cay|sa tế/i.test(foodName) || tags.includes('cay'))) score -= 25;
-
-        // Ít ngọt / Thanh nhẹ
-        if (prefs.flavors.includes('less_sweet') && (tags.includes('thanh') || !/ngọt lịm|béo ngậy/i.test(foodName))) score += 7;
-        // Ngọt béo bùi
-        if (prefs.flavors.includes('sweet_creamy') && (tags.includes('béo') || tags.includes('ngọt') || food.category === 'cafe' || /chè|sữa|kem/i.test(foodName))) score += 8;
-
-        // Thanh đạm ít dầu
-        if (prefs.flavors.includes('light') && (tags.includes('thanh') || tags.includes('nước') || food.category === 'healthy')) score += 7;
-        // Đậm đà giòn rụm
-        if (prefs.flavors.includes('crispy_rich') && (tags.includes('giòn') || tags.includes('đậm') || /chiên|nướng|ram/i.test(foodName))) score += 7;
-        // Chua ngọt thanh mát
-        if (prefs.flavors.includes('sour_fresh') && (/chua|me|chanh|gỏi|nộm/i.test(foodName) || tags.includes('chua'))) score += 7;
-      }
-
-      // Bữa ăn & Thời điểm (mealTimes) (+10 điểm)
-      if (Array.isArray(prefs.mealTimes) && prefs.mealTimes.length > 0) {
-        const foodMealTimes = Array.isArray(food.mealTimes) ? food.mealTimes : [];
-        const hasMealMatch = prefs.mealTimes.some(m => foodMealTimes.includes(m));
-        if (hasMealMatch) {
-          score += 10;
-          // Thưởng thêm nếu thời gian thực hiện tại khớp với bữa ăn đó
-          const curHour = new Date().getHours();
-          let currentRealTime = '';
-          if (curHour >= 5 && curHour < 10) currentRealTime = 'breakfast';
-          else if (curHour >= 11 && curHour < 14) currentRealTime = 'lunch';
-          else if (curHour >= 14 && curHour < 17) currentRealTime = 'afternoon';
-          else if (curHour >= 17 && curHour < 21) currentRealTime = 'dinner';
-          else if (curHour >= 21 || curHour < 4) currentRealTime = 'late_night';
-          
-          if (currentRealTime && prefs.mealTimes.includes(currentRealTime) && foodMealTimes.includes(currentRealTime)) {
-            score += 4;
-          }
-        }
-      }
-
-      // Không gian & Hình thức ăn uống (atmospheres) (+8 điểm)
-      if (Array.isArray(prefs.atmospheres) && prefs.atmospheres.length > 0) {
-        const foodAtmospheres = Array.isArray(food.atmospheres) ? food.atmospheres : [];
-        const hasAtmoMatch = prefs.atmospheres.some(a => foodAtmospheres.includes(a));
-        if (hasAtmoMatch) {
-          score += 8;
-        }
-      }
-
-      // Phong cách & Nguồn gốc ẩm thực (cuisineStyles) (+8 điểm)
-      if (Array.isArray(prefs.cuisineStyles) && prefs.cuisineStyles.length > 0) {
-        const foodCuisines = Array.isArray(food.cuisineStyles) ? food.cuisineStyles : [];
-        const hasCuisineMatch = prefs.cuisineStyles.some(c => foodCuisines.includes(c));
-        if (hasCuisineMatch) {
-          score += 8;
-        }
-      }
-
-      // Đối tượng đi cùng (companions) (+6 điểm)
-      if (Array.isArray(prefs.companions) && prefs.companions.length > 0) {
-        const foodCompanions = Array.isArray(food.companions) ? food.companions : [];
-        const hasCompanionMatch = prefs.companions.some(cp => foodCompanions.includes(cp));
-        if (hasCompanionMatch) {
-          score += 6;
-        }
-      }
-
-      // Ngân sách trung bình (+6 điểm cho bất kỳ mức nào được chọn)
-      const parsePrice = (priceStr) => {
-        if (!priceStr) return 40000;
-        const nums = String(priceStr).replace(/\./g, '').match(/\d+/g);
-        if (!nums || nums.length === 0) return 40000;
-        return parseInt(nums[0], 10);
-      };
-      const estPrice = parsePrice(food.priceRange || food.price);
-      const budgets = Array.isArray(prefs.budgets) ? prefs.budgets : (prefs.budget ? [prefs.budget] : ['budget_mid']);
-      let budgetMatch = false;
-      if (budgets.includes('budget_low') && estPrice <= 35000) budgetMatch = true;
-      if (budgets.includes('budget_mid') && estPrice > 30000 && estPrice <= 75000) budgetMatch = true;
-      if (budgets.includes('budget_high') && estPrice > 70000) budgetMatch = true;
-      if (budgetMatch) score += 6;
     }
 
-    // 2. Category match from interaction history
-    const cat = food.category;
-    const catWeight = this.profile.likedCategories[cat] || 0;
-    if (catWeight > 0) {
-      score += Math.min(15, catWeight * 4);
-    }
-
-    // 3. Tags match from interaction history
-    if (Array.isArray(food.tags)) {
-      let tagPoints = 0;
-      food.tags.forEach(t => {
-        if (this.profile.likedTags[t]) {
-          tagPoints += Math.min(5, this.profile.likedTags[t] * 2);
-        }
-      });
-      score += Math.min(12, tagPoints);
-    }
-
-    // 4. Custom preference match
-    if (Array.isArray(this.profile.customPreferences)) {
-      this.profile.customPreferences.forEach(pref => {
-        if (pref.includes("Cay") && (food.tags?.some(t => t.toLowerCase().includes("cay")) || food.name.toLowerCase().includes("cay"))) score += 4;
-        if (pref.includes("Lẩu") && (food.category === 'hotpot' || food.name.toLowerCase().includes("lẩu"))) score += 4;
-        if (pref.includes("Nướng") && (food.category === 'bbq' || food.tags?.some(t => t.includes("Xì_xèo") || t.includes("nướng")))) score += 4;
-        if (pref.includes("Healthy") && (food.category === 'healthy' || food.tags?.some(t => t.toLowerCase().includes("clean")))) score += 5;
-        if (pref.includes("Sợi") && (food.category === 'noodles' || food.name.toLowerCase().includes("phở") || food.name.toLowerCase().includes("bún"))) score += 4;
-        if (pref.includes("Đậm đà") && food.tags?.some(t => t.includes("Đậm"))) score += 3;
-        if (pref.includes("Hải sản") && (food.category === 'seafood' || food.tags?.some(t => t.includes("sản") || t.includes("sứa") || t.includes("cua")))) score += 4;
-      });
-    }
-
-    // 5. Current mood match bonus
-    if (currentMoodId && Array.isArray(food.moodIds) && food.moodIds.includes(currentMoodId)) {
-      score += 5;
-    }
-
-    // 6. Rating boost
-    if (food.rating >= 4.8) score += 3;
-
-    return Math.min(99, Math.max(60, Math.round(score)));
+    // 2. Sử dụng PersonalScore từ thuật toán Hybrid Scoring
+    const pScore = this.calculatePersonalScore(food, { moodId: currentMoodId, now: new Date() });
+    // Scale personalScore (0 - 100) về tỉ lệ phần trăm hiển thị trực quan [65% - 99%]
+    const pct = Math.min(99, Math.max(65, Math.round(55 + (pScore * 0.44))));
+    return pct;
   }
 
   // Generate customized reason for why this food was recommended
@@ -814,8 +1125,8 @@ class TasteManager {
       (currentCity.cityId && typeof currentCity.cityId === 'string' && currentCity.cityId.toLowerCase().includes('quynhon'))
     );
 
-    // Hiển thị các quán chuẩn Gu (mặc định 40 quán, mỗi lần nhấn Xem thêm hiện thêm 12 quán)
-    const rankedFoods = displayFoods.map(food => {
+    // Hiển thị các quán chuẩn Gu (kết hợp Hybrid Scoring và quy tắc 80/20 Tránh bong bóng lọc)
+    const rankedFoods = this.rankAndMixFoods(displayFoods, { moodId: currentMoodId, now: new Date() }).map(food => {
       const matchScore = this.calculateMatchScore(food, currentMoodId);
       const matchReason = this.generateMatchReason(food);
       return {
@@ -823,7 +1134,7 @@ class TasteManager {
         matchScore,
         matchReason
       };
-    }).sort((a, b) => (b.matchScore - a.matchScore) || ((Number(a.distance) || 0) - (Number(b.distance) || 0)));
+    });
 
     const totalCount = rankedFoods.length;
     const limit = this.visibleLimit || 40;
