@@ -5417,7 +5417,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Anh%20V%C5%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-anh-vu",
           "gmapsVerified": true,
           "gmapsName": "BÁNH XÈO TÔM NHẢY ANH VŨ",
           "placeId": "ChIJ41a4GwttbzERMutJ6xsCaqM",
@@ -5523,7 +5523,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Ph%C6%B0%E1%BB%A3ng%20T%C3%A8o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-phuong-teo",
           "gmapsVerified": true,
           "gmapsName": "Quán bún chả cá Phượng Tèo",
           "placeId": "ChIJp1nzIYxsbzERVtjYyDM8hQs",
@@ -5628,7 +5628,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20%E1%BA%BEch%20Singapore%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-ech-singapore-hai-ba-trung",
           "gmapsVerified": true,
           "gmapsName": "Cháo Ếch Singapore -***",
           "placeId": "ChIJVVWh9IhsbzERobHVknP39Y8",
@@ -5730,7 +5730,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y%20-%20Ph%C6%B0%E1%BB%9Bc%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay-phuoc-son",
           "gmapsVerified": true,
           "gmapsName": "Bánh Xèo Tôm Nhảy Phước Sơn",
           "placeId": "ChIJRQZlxsptbzERMxUtN71rusI",
@@ -5829,7 +5829,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Riverside%20Restaurant",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/riverside-restaurant",
           "gmapsVerified": true,
           "gmapsName": "Nhà hàng Riverside Quy Nhơn",
           "placeId": "ChIJq1AzZWJrbzER1jwIR_jl7zM",
@@ -6024,7 +6024,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20M%E1%BB%B1c%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-muc-xuan-dieu",
           "gmapsVerified": true,
           "gmapsName": "Bánh Xèo Mực 70 Xuân Diệu",
           "placeId": "ChIJz0zDRGVsbzER3_UJsYPeJ4c",
@@ -6131,7 +6131,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Marina%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/marina-coffee",
           "gmapsVerified": false,
           "gmapsName": "Marina Coffee",
           "placeId": null,
@@ -6236,7 +6236,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20H%E1%BB%93ng%20Thanh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-hong-thanh",
           "gmapsVerified": true,
           "gmapsName": "Bánh hỏi cháo lòng Hồng Thanh",
           "placeId": "ChIJB7sBV31sbzERYG6mz8mXdqo",
@@ -6339,7 +6339,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hai%20L%E1%BB%99c%20Qu%C3%A1n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-loc-quan-hai-san-binh-dan",
           "gmapsVerified": false,
           "gmapsName": "Hai Lộc Quán - Hải Sản Bình Dân",
           "placeId": null,
@@ -6445,7 +6445,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20Ch%E1%BA%A3%20L%E1%BB%A3i%20-%20Nem%20N%C6%B0%E1%BB%9Bng%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-cha-loi-nem-nuong-quy-nhon",
           "gmapsVerified": true,
           "gmapsName": "Quán Nem chả Lợi",
           "placeId": "ChIJP6D6pYhsbzERwB1f8w80exI",
@@ -6557,7 +6557,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20Kim%20%C4%90%C3%ACnh%20-%20B%C3%A1nh%20B%C3%A8o%20N%C3%B3ng%20%26%20Ch%C3%A8%20%C4%90%E1%BA%ADu%20Xanh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-kim-dinh-banh-beo-nong-che-dau-xanh",
           "gmapsVerified": true,
           "gmapsName": "Sinh Tố Bánh Bèo Kim Đình",
           "placeId": "ChIJFZv9gmJsbzERssE9baOGw_o",
@@ -6661,7 +6661,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20H%E1%BA%A3o%20H%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-hao-hao",
           "gmapsVerified": true,
           "gmapsName": "Ốc Hảo Hảo đường ngọc hân công chúa",
           "placeId": "ChIJsbkilo5sbzER_dR6940Vzzg",
@@ -6764,7 +6764,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Ch%E1%BA%A3o%20Ng%E1%BB%8Dc%20Li%C3%AAn%20-%2063/13%20Thanh%20Ni%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-chao-ngoc-lien-6313-thanh-nien",
           "gmapsVerified": true,
           "gmapsName": "Bánh Xèo Ngọc Liên",
           "placeId": "ChIJ1_oArkVtbzERsxHEDBerDNs",
@@ -6867,7 +6867,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Green%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/green-cafe",
           "gmapsVerified": true,
           "gmapsName": "Cafe Green",
           "placeId": "ChIJO8M5F4hsbzER9G5D4Tq5bRM",
@@ -6973,7 +6973,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-bobapop-le-loi",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Bobapop",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-bobapop-le-loi",
           "deliveryTime": "20 - 30 phút",
           "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
           "deliveryFeeVal": 16000,
@@ -7083,7 +7083,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=View%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/view-coffee",
           "gmapsVerified": true,
           "gmapsName": "Funny Coffee_ View Quảng Trường Quy Nhơn",
           "placeId": "ChIJcVRZoYltbzERqW7zUtofaMg",
@@ -7192,7 +7192,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20L%E1%BB%99c%20Bi%E1%BB%83n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%2048%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-loc-bien-hai-san-quy-nhon-48-xuan-dieu",
           "gmapsVerified": true,
           "gmapsName": "Hải Sản Quy Nhơn - 48 Xuân Diệu - Lộc Biển",
           "placeId": "ChIJT28YNZptbzER4936qWPltEM",
@@ -7299,7 +7299,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20ANN%20FOODS%20-%20H%E1%BA%A2I%20S%E1%BA%A2N%20GI%C3%81%20G%E1%BB%90C%20-%2022%20%C4%90%E1%BA%B6NG%20TH%C3%80NH%20T%C3%8DCH",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-ann-foods-hai-san-gia-goc-22-dang-thanh-tich",
           "gmapsVerified": true,
           "gmapsName": "Ann Foods - quán hải sản giá rẻ",
           "placeId": "ChIJd1MJewBtbzERrr0oWAB2aHY",
@@ -7405,7 +7405,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20AKING%20-%20L%E1%BA%A9u%20B%C3%B2%2C%20L%E1%BA%A9u%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20L%E1%BA%A9u%20D%C3%AA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-bo-aking-lau-bo-lau-hai-san-lau-de",
           "gmapsVerified": true,
           "gmapsName": "Quán nhậu Aking 2 (Quán Gốc)",
           "placeId": "ChIJ960ycm0VbzER8nlNEgQLqAE",
@@ -7510,7 +7510,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Th%C3%A1i%20Ho%C3%A0%20-%20Tr%E1%BA%A7n%20%C4%90%C4%83ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-thai-hoa-tran-dang-phong",
           "gmapsVerified": true,
           "gmapsName": "Bánh xèo Thái Hoà",
           "placeId": "ChIJdcNpfT1tbzERa02lHncqJjE",
@@ -7612,7 +7612,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Gi%C3%B2n%20A%20T%E1%BB%91t%20-%20B%C3%A1nh%20X%C3%A8o%20Ho%C3%A0i%20Nh%C6%A1n%20-%20957%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-gion-a-tot-banh-xeo-hoai-nhon-957-tran-hung-dao",
           "gmapsVerified": true,
           "gmapsName": "Bánh xèo giòn a tốt",
           "placeId": "ChIJK8ATcwBtbzERR9Ggzjm2X4A",
@@ -7714,7 +7714,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y%20Anh%20T%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay-anh-tu",
           "gmapsVerified": true,
           "gmapsName": "Bánh xèo tôm nhảy Anh Tú",
           "placeId": "ChIJRyGiui1tbzERxIi4I77lhjQ",
@@ -7816,7 +7816,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20C%C3%B4%20S%E1%BB%ADu%20-%20152%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-co-suu-152-dao-tan",
           "gmapsVerified": true,
           "gmapsName": "Bánh Xèo Cô Sửu",
           "placeId": "ChIJ96g1LwBrbzER1P7Yaot0Kog",
@@ -7917,7 +7917,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20Duy%20T%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-duy-tan",
           "gmapsVerified": true,
           "gmapsName": "Bánh xèo 02 Duy Tân",
           "placeId": "ChIJJ9r4Eb5tbzER6ENA_lZTjWQ",
@@ -8023,7 +8023,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%B1c%20Kh%E1%BB%95ng%20L%E1%BB%93%20Quy%20Nh%C6%A1n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/muc-khong-lo-quy-nhon-hai-san-tuoi-song",
           "gmapsVerified": true,
           "gmapsName": "Mực Khổng Lồ Quy Nhơn",
           "placeId": "ChIJ2VPHSQBtbzEROomUePehZPU",
@@ -8127,7 +8127,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%A2m%20Food%20-%20V%C6%B0%E1%BB%9Dn%20%E1%BA%A8m%20Th%E1%BB%B1c%2C%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20%26%20H%E1%BA%A3i%20S%E1%BA%A3n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tam-food-vuon-am-thuc-dac-san-hai-san",
           "gmapsVerified": true,
           "gmapsName": "Tâm Food - Chuyên Đặc Sản Khô Và Tươi Bình Định",
           "placeId": "ChIJPX6EtsZtbzERmWjg69g4sQc",
@@ -8231,7 +8231,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20Ch%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-chao",
           "gmapsVerified": true,
           "gmapsName": "Bánh Xèo Chảo Cô Hoa",
           "placeId": "ChIJLcmboCNtbzERB6PEZyWV6Uo",
@@ -8333,7 +8333,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20H%E1%BA%B9%20%26%20B%C3%BAn%20M%E1%BA%AFt%20C%C3%A1%20-%20169A%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-he-bun-mat-ca-169a-le-loi",
           "gmapsVerified": true,
           "gmapsName": "Quán ăn Bún cá & Bánh canh hẹ VÂN QUY NHƠN",
           "placeId": "ChIJNd1ZSD9tbzERE2fDm35ezSE",
@@ -8436,7 +8436,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20Tinh%20Hoa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-tinh-hoa",
           "gmapsVerified": true,
           "gmapsName": "Tiệm bánh Tinh Hoa",
           "placeId": "ChIJPWRtsYhsbzERppiihdAZ1xM",
@@ -8541,7 +8541,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Pop%20-%20Kem%20Gelato%20%26%20Yogurt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-pop-kem-gelato-yogurt",
           "gmapsVerified": true,
           "gmapsName": "POP Tea & Coffee",
           "placeId": "ChIJUQzZ94RsbzERiO9UZHpZ2eQ",
@@ -8641,7 +8641,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Like%20Kafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/like-kafe",
           "gmapsVerified": true,
           "gmapsName": "Like Cafe",
           "placeId": "ChIJm7lBVpBsbzERRPPcN6AbgFA",
@@ -8748,7 +8748,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAp%20Station%20-%20Coffee%20%26%20Milktea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bup-station-coffee-milktea",
           "gmapsVerified": true,
           "gmapsName": "Bup Station",
           "placeId": "ChIJMYh0S-tsbzERIw8Uc92doMo",
@@ -8852,7 +8852,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20173",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-173",
           "gmapsVerified": true,
           "gmapsName": "Quán Cơm Tấm 173",
           "placeId": "ChIJ-fQmqY5sbzERXqijEb9vauI",
@@ -8956,7 +8956,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20Ph%E1%BA%A1m%20Gia%20-%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-pham-gia-truong-chinh",
           "gmapsVerified": true,
           "gmapsName": "Bò Né Phạm Gia",
           "placeId": "ChIJqbuXLVJtbzERYfFSHpKneNI",
@@ -9063,7 +9063,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=BBQ%20Garden",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bbq-garden",
           "gmapsVerified": true,
           "gmapsName": "Bbq Garden",
           "placeId": "ChIJbf0CaoxsbzERSLo8uF0wzLY",
@@ -9172,7 +9172,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chu%E2%80%99s%20Coffee%20%26%20Fruit",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chus-coffee-fruit",
           "gmapsVerified": true,
           "gmapsName": "CHU’S Coffee&Fruit",
           "placeId": "ChIJ19l7wqptbzER17cIn8qB-3A",
@@ -9278,7 +9278,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Monza%20Pizza%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/monza-pizza-quy-nhon",
           "gmapsVerified": true,
           "gmapsName": "MONZA PIZZA QUY NHƠN",
           "placeId": "ChIJwezOWPVtbzERAqesWPD5R_I",
@@ -9388,7 +9388,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Face%20Qu%C3%A1n%20-%20C%C3%A1c%20M%C3%B3n%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/face-quan-cac-mon-an-vat",
           "gmapsVerified": true,
           "gmapsName": "Face Quán",
           "placeId": "ChIJGV07TJNsbzERCBTK8WVkgDI",
@@ -9495,7 +9495,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20T%C3%A2m%20Thi%E1%BB%87n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-tam-thien",
           "gmapsVerified": true,
           "gmapsName": "Nhà Hàng Cơm Chay Tâm Thiện",
           "placeId": "ChIJdf9ZU49sbzERndkZ6zxuzBs",
@@ -9705,7 +9705,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20H%E1%BA%BBm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hem",
           "gmapsVerified": true,
           "gmapsName": "Bún Bò Hẻm",
           "placeId": "ChIJJ8yexj5tbzER9YI-VeNS2Cs",
@@ -9810,7 +9810,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20-%20Ch%C3%A1o%20L%C3%B2ng%20-%20Ch%C3%A1o%20L%C6%B0%C6%A1n%20Anh%20Th%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-chao-luon-anh-thu",
           "gmapsVerified": true,
           "gmapsName": "Bánh Hỏi Cháo Lòng Anh Thư – Đặc Sản Quy Nhơn",
           "placeId": "ChIJ5T5RrDptbzERfo46Y8Q5hgs",
@@ -9914,7 +9914,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20%C4%90%E1%BA%ADu%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%2024%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-dau-bun-dau-mam-tom-24-nguyen-lu",
           "gmapsVerified": true,
           "gmapsName": "Ẩm thực Đậu - Bún đậu mắm tôm Quy Nhơn",
           "placeId": "ChIJc3-GUQJtbzERUnucXeF0XP4",
@@ -10019,7 +10019,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20%C3%94ng%20Hi%E1%BB%87u%20-%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pha-lau-ong-hieu-nguyen-cong-tru",
           "gmapsVerified": true,
           "gmapsName": "Phá Lấu Ông Hiệu",
           "placeId": "ChIJZeIiW4ZsbzERsTHTHHEb898",
@@ -10129,7 +10129,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%203%20Ngon%20-%20B%C3%B2%20Quanh%20L%E1%BB%ADa%20H%E1%BB%93ng%20-%20Nguy%E1%BB%85n%20T%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-3-ngon-bo-quanh-lua-hong-nguyen-tu",
           "gmapsVerified": true,
           "gmapsName": "BÒ NÉ 3 NGON - 32 Nguyễn Tư, Quy Nhơn",
           "placeId": "ChIJrbWRq5NsbzERTbZjl7thbyg",
@@ -10234,7 +10234,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TP66%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tp66-cafe",
           "gmapsVerified": true,
           "gmapsName": "Cafe TP66",
           "placeId": "ChIJ25AjZIVsbzERe1mKVhJ_oKQ",
@@ -10340,7 +10340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20B%C3%A1nh%20L%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-banh-loc",
           "gmapsVerified": true,
           "gmapsName": "Bánh bèo bánh tai vạt bánh gói",
           "placeId": "ChIJndbZNS1tbzERHr2-kl49AKk",
@@ -10442,7 +10442,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Tuy%E1%BA%BFt%20Nhung%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-tuyet-nhung-nguyen-thai-hoc",
           "gmapsVerified": true,
           "gmapsName": "Tiệm Cơm Gà Tuyết Nhung",
           "placeId": "ChIJ3X7mQpRsbzERM_QNiCB_eLU",
@@ -10549,7 +10549,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20C%C3%B4%20H%E1%BA%A1nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-co-hanh",
           "gmapsVerified": true,
           "gmapsName": "Bún Chả Cá Cô Hạnh",
           "placeId": "ChIJu90DvodsbzERmVhC3N4uHrI",
@@ -10654,7 +10654,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kichi%20Kichi%20L%E1%BA%A9u%20B%C4%83ng%20Chuy%E1%BB%81n%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kichi-kichi-lau-bang-chuyen-nguyen-thi-dinh",
           "gmapsVerified": true,
           "gmapsName": "Kichi-Kichi An Dương Vương Bình Định",
           "placeId": "ChIJF7uQ3QNtbzERnyntPYfn_4E",
@@ -10759,7 +10759,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20Hi%E1%BB%83n%20Nam",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-hien-nam",
           "gmapsVerified": true,
           "gmapsName": "Quán Cơm Chay Hiển Nam",
           "placeId": "ChIJJc_T0JNsbzERGyZDAKcNX50",
@@ -10865,7 +10865,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sam%20BBQ",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sam-bbq",
           "gmapsVerified": true,
           "gmapsName": "Sam Bbq",
           "placeId": "ChIJG2ofKIZsbzERk04R-bL1oTs",
@@ -10968,7 +10968,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Bi%E1%BB%83n%20Mai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-bien-mai",
           "gmapsVerified": true,
           "gmapsName": "Quán Ốc Biển Mai",
           "placeId": "ChIJwVz-PYlsbzER7JsL47XGlB0",
@@ -11069,7 +11069,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hannam%20Korean%20Food%20-%20138%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hannam-korean-food-138-ngo-may",
           "gmapsVerified": true,
           "gmapsName": "Hannam Korean Food 한남식당",
           "placeId": "ChIJHcQYYZZtbzEReMcFkveKAhA",
@@ -11172,7 +11172,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Thoa%20-%2002%20B%C3%A0%20Tri%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-thoa-02-ba-trieu",
           "gmapsVerified": true,
           "gmapsName": "Ốc Thoa Quy Nhơn",
           "placeId": "ChIJVwsnoGVtbzERihySIRdfr9A",
@@ -11276,7 +11276,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sasin-quy-nhon-le-hong-phong",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Sasin%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sasin-quy-nhon-le-hong-phong",
           "deliveryTime": "15 - 20 phút",
           "deliveryFee": "Freeship đơn từ 50k",
           "deliveryFeeVal": 0,
@@ -11382,7 +11382,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20B%E1%BB%A5p%20-%2036%20L%C3%AA%20V%C4%83n%20Th%E1%BB%A7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-bup-36-le-van-thu",
           "gmapsVerified": true,
           "gmapsName": "Ốc BỤP",
           "placeId": "ChIJ74bSEwBrbzER1OnEafKZuQ0",
@@ -11486,7 +11486,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%20N%C3%B3n%20-%2035%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-oc-non-35-ly-thai-to",
           "gmapsVerified": true,
           "gmapsName": "Quán Ốc Nón",
           "placeId": "ChIJn9msmHhtbzERJ7OrFMUMDeo",
@@ -11591,7 +11591,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%20Chang%20Chang%20-%2073%20Tr%E1%BA%A7n%20B%C3%ACnh%20Tr%E1%BB%8Dng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-oc-chang-chang-73-tran-binh-trong",
           "gmapsVerified": true,
           "gmapsName": "Quán Ốc Chang Chang",
           "placeId": "ChIJsS2HUgBtbzERf5Wk1H7YlsY",
@@ -11696,7 +11696,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20M%E1%BA%B9t%20Quy%20Nh%C6%A1n%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-met-quy-nhon-xuan-dieu",
           "gmapsVerified": true,
           "gmapsName": "Ốc Mẹt 35k 316 Xuân Diệu - Quy Nhơn",
           "placeId": "ChIJqTYwzMJtbzER_G2zpWfuVtE",
@@ -11799,7 +11799,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Bi%E1%BB%83n%20Hai%20Lan%20-%20L%C3%AA%20Thanh%20Ngh%E1%BB%8B",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-bien-hai-lan-le-thanh-nghi",
           "gmapsVerified": true,
           "gmapsName": "Ốc Hai Lan",
           "placeId": "ChIJzyRLDABrbzERB-PiBEz2110",
@@ -11904,7 +11904,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ri%C3%AAu%20%E1%BB%90c%20C%C3%A1%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-rieu-oc-ca-tran-hung-dao",
           "gmapsVerified": true,
           "gmapsName": "Bún Riêu Ốc Cá 147D Trần Hưng Đạo",
           "placeId": "ChIJYQIwx69tbzERlPFhaHH4wOc",
@@ -12013,7 +12013,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20Sam%20-%20%E1%BB%90c%2C%20Cafe%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-sam-oc-cafe-an-vat",
           "gmapsVerified": false,
           "gmapsName": "Bếp Nhà Sam - Ốc, Cafe & Ăn Vặt",
           "placeId": null,
@@ -12128,7 +12128,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Gh%E1%BA%B9%2023%20-%20V%C3%B5%20%C4%90%C3%ACnh%20T%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-ghe-23-vo-dinh-tu",
           "gmapsVerified": true,
           "gmapsName": "Quán Ghẹ 23",
           "placeId": "ChIJt37YhINsbzERxpTikM65Tjc",
@@ -12236,7 +12236,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20C%C3%B4%20H%E1%BA%A1nh%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-co-hanh-tran-hung-dao",
           "gmapsVerified": true,
           "gmapsName": "Bún Chả Cá Cô Hạnh",
           "placeId": "ChIJu90DvodsbzERmVhC3N4uHrI",
@@ -12341,7 +12341,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2u%20Loan%20-%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chau-loan-bun-bo-hue-bun-cha-ca",
           "gmapsVerified": true,
           "gmapsName": "Bún Bò Châu Loan",
           "placeId": "ChIJ29SOjp1tbzERoaNYuZcmJZA",
@@ -12447,7 +12447,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20B%C3%A0%20H%E1%BA%A3o%20-%2097%20Hu%E1%BB%B3nh%20V%C4%83n%20Th%E1%BB%91ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-an-ba-hao-97-huynh-van-thong",
           "gmapsVerified": true,
           "gmapsName": "Tiệm ăn bà hảo",
           "placeId": "ChIJnVOJKgBrbzER-r41hs0AI4Y",
@@ -12552,7 +12552,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%9AT%20H%E1%BA%A0NH%20-%20B%C3%BAn%20Ri%C3%AAu%2C%20Ch%E1%BA%A3%20C%C3%A1%20%26%20Th%E1%BA%ADp%20C%E1%BA%A9m%20-%2054%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ut-hanh-bun-rieu-cha-ca-thap-cam-54-nguyen-tat-thanh",
           "gmapsVerified": true,
           "gmapsName": "Quán Ăn Út Hạnh",
           "placeId": "ChIJeQg-IptsbzERuZc-i9EnDKA",
@@ -12658,7 +12658,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Qu%E1%BA%ADy%20X%E1%BB%A9%20N%E1%BA%ABu%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-quay-xu-nau-nguyen-thi-dinh",
           "gmapsVerified": false,
           "gmapsName": "Bún Quậy Xứ Nẫu",
           "priceMin": 30000,
@@ -12761,7 +12761,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20H%E1%BB%93ng%20-%20B%C3%A1nh%20Canh%20T%C3%B4m%2C%20B%C3%BAn%20Ri%C3%AAu%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-co-hong-banh-canh-tom-bun-rieu-bun-cha-ca",
           "gmapsVerified": true,
           "gmapsName": "Quán Bún Cô Hồng",
           "placeId": "ChIJWSZeEQBrbzERwuQQhKPSJbM",
@@ -12868,7 +12868,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20H%E1%BB%93%20Th%E1%BB%8B",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-ho-thi",
           "gmapsVerified": true,
           "gmapsName": "Bún Cá Hồ Thị",
           "placeId": "ChIJd0nJOQ9tbzERGwYogCkzYzY",
@@ -12975,7 +12975,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20To%C3%A0n%20H%C3%A0%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-toan-ha-nguyen-thi-dinh",
           "gmapsVerified": true,
           "gmapsName": "Bún Cá Quy Nhơn Toàn Hà",
           "placeId": "ChIJNR7_HQBtbzERhnUaPGr-HP0",
@@ -13083,7 +13083,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20V%C4%83n%20H%C3%B9ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-van-hung-tran-hung-dao",
           "gmapsVerified": true,
           "gmapsName": "Bún Văn Hùng",
           "placeId": "ChIJbZ2Kn8ltbzERGmmMCig0mbM",
@@ -13188,7 +13188,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20B%C3%9AN%20C%C3%94%20T%C3%82M%20-%20B%C3%BAn%20B%C3%B2%20-%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-bun-co-tam-bun-bo-truong-chinh",
           "gmapsVerified": true,
           "gmapsName": "Bún Cô Tâm",
           "placeId": "ChIJvUgNMQBtbzERU92eK2cheVw",
@@ -13291,7 +13291,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20H%E1%BA%B9%2C%20B%C3%BAn%20Ri%C3%AAu%20C%C3%A1%20%26%20M%C3%AC%20Qu%E1%BA%A3ng%20-%2083%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-he-bun-rieu-ca-mi-quang-83-vu-bao",
           "gmapsVerified": true,
           "gmapsName": "Bánh canh hẹ cá dầm - 83 vũ bảo",
           "placeId": "ChIJ49JtFwBtbzERTCtI4rTdHVs",
@@ -13400,7 +13400,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=RUTO%20-%20B%C3%BAn%20Ri%C3%AAu%2C%20Tr%C3%A0%20S%E1%BB%AFa%2C%20Tr%E1%BB%A9ng%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ruto-bun-rieu-tra-sua-trung-nuong",
           "gmapsVerified": true,
           "gmapsName": "Ruto Milk Tea & Food",
           "placeId": "ChIJXbE7FZVsbzERQZbQ_88bMhc",
@@ -13507,7 +13507,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%206%20L%C3%B9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-6-lun",
           "gmapsVerified": true,
           "gmapsName": "Bún Bò 6 Lùn",
           "placeId": "ChIJj6uNDzZtbzERbyvFYgKa2Zw",
@@ -13611,7 +13611,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%2032%20-%20M%C3%AC%20Qu%E1%BA%A3ng%2C%20Lagu%20B%C3%A1nh%20M%C3%AC%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20-%2032%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-32-mi-quang-lagu-banh-mi-banh-cuon-32-truong-chinh",
           "gmapsVerified": true,
           "gmapsName": "Mì Quảng 32",
           "placeId": "ChIJJScqKZBsbzERY06h5YgeerM",
@@ -13715,7 +13715,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%2089%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-89-vu-bao",
           "gmapsVerified": true,
           "gmapsName": "Cơm gà 89",
           "placeId": "ChIJdTcgdABtbzERE2Z87ZlsbLc",
@@ -13819,7 +13819,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20A%20Ho%C3%A0i%20-%20260%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-a-hoai-260-dao-tan",
           "gmapsVerified": true,
           "gmapsName": "A Hoài – Bún Bò Huế",
           "placeId": "ChIJY7eb5e5rbzERZxmCPtRXpug",
@@ -13922,7 +13922,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20-%20B%C3%BAn%20R%E1%BA%A1m%20%C4%90%E1%BA%A7m%20Tr%C3%BAc%20-%2003%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-bun-ram-dam-truc-03-mai-xuan-thuong",
           "gmapsVerified": true,
           "gmapsName": "Bún Tôm - Rạm Đầm Trúc ( Cơ sở 2 )",
           "placeId": "ChIJg5O8tPxtbzERQS91J9A31vA",
@@ -14026,7 +14026,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20Thu%E1%BB%B3%20Ch%C3%A2u%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thuy-chau-can-vuong",
           "gmapsVerified": true,
           "gmapsName": "Bánh hỏi cháo lòng Thuỳ Châu",
           "placeId": "ChIJ8VCN9RNtbzEREBQauiBRVwQ",
@@ -14133,7 +14133,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-do-doc-bao",
           "gmapsVerified": true,
           "gmapsName": "Bánh hỏi cháo lòng 52 Đô Đốc Bảo",
           "placeId": "ChIJWYeDs5xtbzERKV4NVHFe76w",
@@ -14239,7 +14239,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-hung-dao",
           "gmapsVerified": true,
           "gmapsName": "Quán Bánh Hỏi Cháo Lòng 858",
           "placeId": "ChIJaWfdedZtbzERxx1btCZGChY",
@@ -14343,7 +14343,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Kim%20Qu%C3%A1n%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-kim-quan-banh-hoi-chao-long",
           "gmapsVerified": true,
           "gmapsName": "Phở Thố Đá Hoàng Kim",
           "placeId": "ChIJZzqcji1tbzERtyo5uNRoxPI",
@@ -14446,7 +14446,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Chay%20Thi%E1%BB%87n%20Duy%C3%AAn%20-%20L%E1%BA%A9u%20Chay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-chay-thien-duyen-lau-chay",
           "gmapsVerified": true,
           "gmapsName": "Lẩu Chay Thiện Duyên 6",
           "placeId": "ChIJayFeHQBtbzERxrsbn63wz1E",
@@ -14551,7 +14551,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%E1%BA%ABu%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nau-banh-hoi-chao-long",
           "gmapsVerified": true,
           "gmapsName": "Quán Nẫu",
           "placeId": "ChIJMUDF0Y5sbzERjqKjFhD9N0k",
@@ -14654,7 +14654,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20G%C3%A0%20L%C3%A1%20%C3%89%20Tao%20Ng%E1%BB%99%20Qu%C3%A1n%20-%2086%20B%C3%ACnh%20H%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-ga-la-e-tao-ngo-quan-86-binh-ha",
           "gmapsVerified": true,
           "gmapsName": "Lẩu gà lá é-Tao ngộ quán",
           "placeId": "ChIJE_gcyNVtbzER2A0qWSOK5Dg",
@@ -14759,7 +14759,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20Chay%20Ph%C3%A1p%20Lu%C3%A2n%20-%20H%C3%A0m%20Nghi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-phap-luan-ham-nghi",
           "gmapsVerified": true,
           "gmapsName": "ẨM THỰC CHAY PHÁP LUÂN",
           "placeId": "ChIJ7RJyBTVtbzERM5CS5yxwNEE",
@@ -14862,7 +14862,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20Hi%E1%BB%81n%20Ho%C3%A0%20-%20275%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-bo-hien-hoa-275-bach-dang",
           "gmapsVerified": true,
           "gmapsName": "Lẩu Hiền Hòa",
           "placeId": "ChIJtxkh2fhtbzERU-oA7e33uKQ",
@@ -14964,7 +14964,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=GreenMart%20-%2069%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/greenmart-69-tran-cao-van",
           "gmapsVerified": true,
           "gmapsName": "Siêu thị GreenMart - Tã sữa và hàng gia dụng",
           "placeId": "ChIJezkOVgBtbzERab5vjNCdJGE",
@@ -15071,7 +15071,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=D%C3%8A%20KH%C3%94NG%20T%C3%8AN%20-%2052%20B%C3%ACnh%20H%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/de-khong-ten-52-binh-ha",
           "gmapsVerified": true,
           "gmapsName": "Quán Dê Không Tên",
           "placeId": "ChIJa7HlUdJtbzERbqzyhKSyJjw",
@@ -15175,7 +15175,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%ABu%20Cu%E1%BB%91n%20-%2084%2086%2088%20%C4%90%E1%BB%91ng%20%C4%90a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nau-cuon-84-86-88-dong-da",
           "gmapsVerified": true,
           "gmapsName": "Nẫu Cuốn - Quán Ăn Ngon Quy Nhơn",
           "placeId": "ChIJX7c-GwBtbzERpJnjOpV1YqE",
@@ -15275,7 +15275,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8M%20TH%E1%BB%B0C%20CHAY%20MINH%20AN%20VEGAN",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-minh-an-vegan",
           "gmapsVerified": true,
           "gmapsName": "Ẩm Thực Chay Minh An",
           "placeId": "ChIJt3GqhF9tbzERfUCF_CsQ5Ls",
@@ -15377,7 +15377,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pepa%E2%80%99s%20Kitchen%20-%20245%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pepas-kitchen-245-nguyen-thi-minh-khai",
           "gmapsVerified": true,
           "gmapsName": "Quán Ăn Vặt Hàn Quốc PePa's Kitchen",
           "placeId": "ChIJmW1k2epsbzERoJXKQZOTXPw",
@@ -15485,7 +15485,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ga%CC%81nh%20Cua%20M%C6%A1%CC%A3%20U%CC%81t%20-%20Ba%CC%81nh%20Canh%20Cua%2C%20L%C3%A2%CC%89u%20Cua%20%26%20C%C6%A1m%20Cua%20-%2055%20Bi%C3%AAn%20C%C6%B0%C6%A1ng%2C%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ganh-cua-mo-ut-banh-canh-cua-lau-cua-com-cua-55-bien-cuong-quy-nhon",
           "gmapsVerified": true,
           "gmapsName": "Gánh Cua Mợ Út",
           "placeId": "ChIJMUzHBlhtbzERuol8sZrrusc",
@@ -15591,7 +15591,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%BEch%20Xanh%20Quy%20Nh%C6%A1n%20-%20L%C3%B4%2003%20Tr%C6%B0%C6%A1ng%20V%C4%83n%20C%E1%BB%A7a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ech-xanh-quy-nhon-lo-03-truong-van-cua",
           "gmapsVerified": true,
           "gmapsName": "Ếch Xanh Quy Nhơn",
           "placeId": "ChIJm0EoXwBtbzERzd4e5cN732s",
@@ -15700,7 +15700,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A9%20B%C3%B2n%20-%20B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-be-bon-banh-trang-nuong-tran-thi-ky",
           "gmapsVerified": true,
           "gmapsName": "Tiệm Bé Bòn - Bánh Tráng nướng",
           "placeId": "ChIJQ6OpWoVtbzERgVzUjUDzdh0",
@@ -15810,7 +15810,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20%26%20Nem%20Ch%E1%BA%A3%20Ho%C3%A0%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-thit-nuong-nem-cha-hoa-quy-nhon",
           "gmapsVerified": true,
           "gmapsName": "BÁNH XÈO QUY NHƠN • BÚN THỊT NƯỚNG HOÀ",
           "placeId": "ChIJ-ZD8kqdtbzERL9PuHAWCSYc",
@@ -15923,7 +15923,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20S%C3%A1u%20L%C6%B0%E1%BB%A3ng%20-%20B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%2C%20Tr%E1%BB%A9ng%20N%C6%B0%E1%BB%9Bng%20%26%20Ch%C3%A2n%20G%C3%A0%20S%E1%BB%91t%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-sau-luong-banh-trang-nuong-trung-nuong-chan-ga-sot-thai",
           "gmapsVerified": true,
           "gmapsName": "Ăn Vặt Sáu Lượng CN Quy Nhơn",
           "placeId": "ChIJTxoKSwBtbzERkLMnz3rps4M",
@@ -16034,7 +16034,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Jolly%20-%20Kem%20Ý%20Tự%20Chọn%20-%20Lê%20Lợi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/jolly-kem-t-ch-n-l-l-i",
           "gmapsVerified": true,
           "gmapsName": "Jolly - Kem Ý Tự Chọn - Lê Lợi",
           "placeId": "ChIJ_food_297",
@@ -16142,7 +16142,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trà%20Sữa%20Nướng%20Đài%20Loan%20-%20Xinxian",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tr-s-a-n-ng-i-loan-xinxian",
           "gmapsVerified": true,
           "gmapsName": "Trà Sữa Nướng Đài Loan - Xinxian",
           "placeId": "ChIJ_food_298",
@@ -16249,7 +16249,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Bơ%20ALoo%20-%20395%20Nguyễn%20Huệ",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-b-aloo-395-nguy-n-hu",
           "gmapsVerified": true,
           "gmapsName": "Kem Bơ ALoo - 395 Nguyễn Huệ",
           "placeId": "ChIJ_food_299",
@@ -16354,7 +16354,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Bơ%20Sầu%20Riêng%20Mỹ%20Tài%20-%20Sinh%20Tố%20Giải%20Khát,%20Trái%20Cây%20&%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-b-s-u-ri-ng-m-t-i-sinh-t-gi-i-kh-t-tr-i-c-y-cafe",
           "gmapsVerified": true,
           "gmapsName": "Kem Bơ Sầu Riêng Mỹ Tài - Sinh Tố Giải Khát, Trái Cây & Cafe",
           "placeId": "ChIJ_food_300",
@@ -16460,7 +16460,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tiệm%20Trà%20Nhà%20Bo%20-%20Trà%20Sữa,%20Trà%20Trái%20Cây%20&%20Nước%20Ép%20Online",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ti-m-tr-nh-bo-tr-s-a-tr-tr-i-c-y-n-c-p-online",
           "gmapsVerified": true,
           "gmapsName": "Tiệm Trà Nhà Bo - Trà Sữa, Trà Trái Cây & Nước Ép Online",
           "placeId": "ChIJ_food_301",
@@ -16568,7 +16568,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/tr-s-a-pozaa-tea-ng-m-y",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Pozaa%20Tea%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tr-s-a-pozaa-tea-ng-m-y",
           "deliveryTime": "15 - 25 phút",
           "deliveryFee": "16.000đ (Áp mã Freeship Xtra)",
           "deliveryFeeVal": 16000,
@@ -16673,7 +16673,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trà%20Sữa%20Vie%20Tea%20-%2043%20Nguyễn%20Lữ",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tr-s-a-vie-tea-43-nguy-n-l",
           "gmapsVerified": true,
           "gmapsName": "Trà Sữa Vie Tea - 43 Nguyễn Lữ",
           "placeId": "ChIJ_food_303",
@@ -16776,7 +16776,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trà%20Sữa%20Nọng%20-%20Vũ%20Bảo",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tr-s-a-n-ng-v-b-o",
           "gmapsVerified": true,
           "gmapsName": "Trà Sữa Nọng - Vũ Bảo",
           "placeId": "ChIJ_food_304",
@@ -16878,7 +16878,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20Trà%20-%20Trà%20Sữa%20-%20401B%20Nguyễn%20Huệ",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-tr-tr-s-a-401b-nguy-n-hu",
           "gmapsVerified": true,
           "gmapsName": "Thanh Trà - Trà Sữa - 401B Nguyễn Huệ",
           "placeId": "ChIJ_food_305",
@@ -16984,7 +16984,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ốc%20Um%20&%20Kem%20Flan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/c-um-kem-flan",
           "gmapsVerified": true,
           "gmapsName": "Ốc Um & Kem Flan",
           "placeId": "ChIJ_food_306",
@@ -17147,11 +17147,11 @@ const APP_DATA = {
               "chill"
           ],
           "openTime": "08:00 - 22:30",
-          "hasShopeeDelivery": true,
+          "hasShopeeDelivery": false,
           "isShopeeVerified": true,
-          "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Bobapop%20-%20L%C3%AA%20L%E1%BB%A3i",
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Bobapop%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliveryPlatform": "Tại chỗ & Mang về",
+          "deliverySearchUrl": null,
+          "deliveryUrl": null,
           "mealTimes": [
               "afternoon"
           ],
@@ -17434,11 +17434,11 @@ const APP_DATA = {
               "chill"
           ],
           "openTime": "08:00 - 22:30",
-          "hasShopeeDelivery": true,
+          "hasShopeeDelivery": false,
           "isShopeeVerified": true,
-          "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Heekcaa%20Quy%20Nh%C6%A1n",
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Heekcaa%20Quy%20Nh%C6%A1n",
+          "deliveryPlatform": "Tại chỗ & Mang về",
+          "deliverySearchUrl": null,
+          "deliveryUrl": null,
           "mealTimes": [
               "afternoon"
           ],
@@ -18721,11 +18721,11 @@ const APP_DATA = {
               "chill"
           ],
           "openTime": "08:00 - 22:30",
-          "hasShopeeDelivery": true,
+          "hasShopeeDelivery": false,
           "isShopeeVerified": true,
-          "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ding%20Tea%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%C4%90%C3%A0i%20Loan",
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ding%20Tea%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%C4%90%C3%A0i%20Loan",
+          "deliveryPlatform": "Tại chỗ & Mang về",
+          "deliverySearchUrl": null,
+          "deliveryUrl": null,
           "mealTimes": [
               "afternoon"
           ],
@@ -19436,8 +19436,8 @@ const APP_DATA = {
           "hasShopeeDelivery": true,
           "isShopeeVerified": true,
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFC%20-%20Quy%20Nh%C6%A1n",
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFC%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfc-le-hong-phong-quy-nhon",
+          "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfc-le-hong-phong-quy-nhon",
           "mealTimes": [
               "breakfast",
               "lunch"
@@ -20021,8 +20021,8 @@ const APP_DATA = {
           "hasShopeeDelivery": true,
           "isShopeeVerified": true,
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lotteria%20-%20Kim%20C%C3%BAc%20Plaza",
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lotteria%20-%20Kim%20C%C3%BAc%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lotteria-quy-nhon-go",
+          "deliveryUrl": "https://shopeefood.vn/binh-dinh/lotteria-quy-nhon-go",
           "mealTimes": [
               "breakfast",
               "lunch"
@@ -24182,7 +24182,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/phuc-long-nguyen-thiep",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%BAc%20Long%20Nguy%E1%BB%85n%20Thi%E1%BA%BFp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phuc-long-nguyen-thiep",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -24281,7 +24281,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-z-beach-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Highlands%20Coffee%20-%20Tr%C3%A0%2C%20C%C3%A0%20Ph%C3%AA%20%26%20B%C3%A1nh%20-%20Z%20Beach%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-z-beach-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -24379,7 +24379,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20ph%C3%AA%20-%20Latte%20-%20Tr%C3%A0%20Qu%E1%BB%B3nh%20Aka%20-%20L%C3%AA%20Lai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-latte-tra-quynh-aka-le-lai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -24475,7 +24475,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tan%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%20-%20L%E1%BA%A1c%20Long%20Qu%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tan-coffee-ca-phe-lac-long-quan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -24573,7 +24573,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20Li%C3%AAn%20%C4%90%C3%A0%20N%E1%BA%B5ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-lien-da-nang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -24671,7 +24671,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-va-mi-y-jollibee-ec-quy-nhon-2",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20V%C3%A0%20M%C3%AC%20%C3%9D%20-%20Jollibee%20-%20EC%20Quy%20Nh%C6%A1n%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-va-mi-y-jollibee-ec-quy-nhon-2",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -24775,7 +24775,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-burger-lotteria-quy-nhon-go",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20%26%20Burger%20Lotteria%20-%20Quy%20Nh%C6%A1n%20Go",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-burger-lotteria-quy-nhon-go",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -24877,7 +24877,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/pizza-hut-go-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20Hut%20-%20Go%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-hut-go-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -24975,7 +24975,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trio%20Dj%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trio-dj-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25071,7 +25071,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Ch%C3%A1y%20S%C3%A0i%20G%C3%B2n%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-sai-gon-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25169,7 +25169,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=The%20Social%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/the-social-nguyen-thi-minh-khai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25269,7 +25269,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=5%20Elements%20Restaurant%20-%20Pizza%20%26%20Mexican%20Food%20-%2014%20H%C3%A0m%20Nghi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/5-elements-restaurant-pizza-mexican-food-14-ham-nghi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25368,7 +25368,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KATINAT%20-%20Nguy%E1%BB%85n%20L%E1%BA%A1c%20%28Quy%20Nh%C6%A1n%29",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/katinat-nguyen-lac-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25465,7 +25465,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-nguyen-trung-tin-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Highlands%20Coffee%20-%20Tr%C3%A0%2C%20C%C3%A0%20Ph%C3%AA%20%26%20B%C3%A1nh%20-%20Nguy%E1%BB%85n%20Trung%20T%C3%ADn%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-nguyen-trung-tin-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -25563,7 +25563,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Starbucks%20Coffee%20-%20Xu%C3%A2n%20Di%E1%BB%87u%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/starbucks-coffee-xuan-dieu-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25663,7 +25663,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bear%20Milk%20Tea%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%C4%90%E1%BA%ADm%20V%E1%BB%8B",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bear-milk-tea-tra-sua-dam-vi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25761,7 +25761,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CH%C3%82N%20G%C3%80%20N%C3%88%20M%C3%8CNH",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-ne-minh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25859,7 +25859,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TI%E1%BB%86M%20TR%C3%80%20TR%C3%81I%20C%C3%82Y%20%C3%9A%20NU%20-%20H%E1%BA%BBm%2044%20%C4%90inh%20B%E1%BB%99%20L%C4%A9nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-trai-cay-u-nu-hem-44-dinh-bo-linh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -25956,7 +25956,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20Nh%E1%BB%8F%20-%20C%C3%A0%20Ph%C3%AA%2C%20Matcha%20And%20More%20-%201155A%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-nho-ca-phe-matcha-and-more-1155a-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26055,7 +26055,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20%C4%82n%20V%E1%BA%B7t%20G%E1%BA%A1o%20B%E1%BA%AFp%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-an-vat-gao-bap-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26153,7 +26153,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MiniMart24h%20-%202B%20Tr%E1%BA%A7n%20%C4%90%E1%BB%99c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/minimart24h-2b-tran-doc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26248,7 +26248,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nino%20C%C3%A0%20Ph%C3%AA%20Rang%20-%2032E%20%E1%BB%B6%20Lan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nino-ca-phe-rang-32e-y-lan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26345,7 +26345,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KIM%20Cafe%20-%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20%26%20Matcha%20Latte",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kim-cafe-ca-phe-muoi-matcha-latte",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26441,7 +26441,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%8D%20X%C3%8DU%20COFFEE%20-%20Matcha%20Latte%20%26%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20-%20%C4%90%C6%B0%E1%BB%9Dng%2031%20Th%C3%A1ng%203",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ti-xiu-coffee-matcha-latte-ca-phe-muoi-duong-31-thang-3",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26537,7 +26537,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=La%20Meda%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%20-%2014A%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/la-meda-coffee-ca-phe-14a-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26635,7 +26635,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C3%A0%20Ph%C3%AA%205ST%20-%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%2C%20Matcha%20Latte%20Kem%20Mu%E1%BB%91i%20%26%20Ca%20Cao%20Kem%20D%E1%BA%BBo%20-%207A%20%C4%90%C6%B0%E1%BB%9Dng%2031/3",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-ca-phe-5st-ca-phe-muoi-matcha-latte-kem-muoi-ca-cao-kem-deo-7a-duong-313",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26732,7 +26732,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20M%E1%BB%99c%20C%C3%A1t.L%C3%A1%20-%2015%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-moc-catla-15-nguyen-tat-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26828,7 +26828,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20U%E1%BB%91ng%20L%C3%A0%20M%C3%AA%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-muoi-uong-la-me-ha-huy-tap",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -26925,7 +26925,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C6%B0%20H%E1%BA%A3i%20-%20M%C3%AC%20Cay%2C%20C%C3%A0%20Ph%C3%AA%20%26%20%C4%82n%20V%E1%BA%B7t%20-%2062%20B%C3%B9i%20Xu%C3%A2n%20Ph%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tu-hai-mi-cay-ca-phe-an-vat-62-bui-xuan-phai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27026,7 +27026,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20Nh%C3%A0%20Tui",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-nha-tui",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27122,7 +27122,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20TiTi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-titi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27219,7 +27219,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Family%20Coffee%20-%20Coffee%2C%20Matcha%20Latte%20%26%20Tea%20-%20319%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/family-coffee-coffee-matcha-latte-tea-319-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27316,7 +27316,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20MitDog%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-mitdog-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27414,7 +27414,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%99t%20Chi%E1%BA%BFc%20%C3%94m%20-%20Coffee%20%26%20Matcha",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mot-chiec-om-coffee-matcha",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27512,7 +27512,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chang%20Coffee%20%26%20Tea%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chang-coffee-tea-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27608,7 +27608,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SIT%20Caf%C3%A9%20-%20T%C3%B4%20Hi%E1%BA%BFn%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sit-cafe-to-hien-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27704,7 +27704,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C3%A0%20Ph%C3%AA%20Nh%C3%A0%20My%20-%20171A%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-ca-phe-nha-my-171a-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27800,7 +27800,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Saman%20Coffee%20-%2010%20Nguy%E1%BB%85n%20Phong%20S%E1%BA%AFc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/saman-coffee-10-nguyen-phong-sac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27896,7 +27896,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%AFng%20Cafe%20-%2051%20L%C3%AA%20%C4%90%E1%BA%A1i%20H%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nang-cafe-51-le-dai-hanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -27992,7 +27992,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=99%20Station%20Coffee%20-%2032%20Nguy%E1%BB%85n%20L%E1%BA%A1c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/99-station-coffee-32-nguyen-lac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28088,7 +28088,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20Nh%C3%A0%20M%E1%BB%B9%20Hoa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-nha-my-hoa",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28184,7 +28184,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Majori%20Coffee%20-%20Caf%C3%A9%20%26%20Dessert%20-%20V%C3%B5%20Th%E1%BB%8B%20Y%E1%BA%BFn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/majori-coffee-cafe-dessert-vo-thi-yen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28280,7 +28280,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20Mang%20%C4%90i%20-%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20T%C6%B0%C6%A1i%20Ngon%20Ng%E1%BB%8Dc%20Tr%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-mang-di-nuoc-ep-tuoi-ngon-ngoc-tran",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28376,7 +28376,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%B4ng%20Tr%C4%83ng%20Coffee%20%26%20Tea%20-%20343%20Hoa%20L%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/song-trang-coffee-tea-343-hoa-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28474,7 +28474,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Ngo%E1%BA%A1i%20Sam%20-%201%20Th%C3%A1ng%205",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-ngoai-sam-1-thang-5",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28570,7 +28570,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%B3c%20Nh%E1%BB%8F%20Coffee%20-%2025%20Ho%C3%A0ng%20Minh%20Th%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goc-nho-coffee-25-hoang-minh-thao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28666,7 +28666,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20CE%20-%20Coffee%2C%20Matcha%20Latte%20%26%20Tea%20-%201185%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-ce-coffee-matcha-latte-tea-1185-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28763,7 +28763,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bean%20S%E1%BB%AFa%20H%E1%BA%A1t%20-%2037%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bean-sua-hat-37-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28858,7 +28858,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20%26%20Cafe%20Ka%20Bi%E2%80%99",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-cafe-ka-bi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -28955,7 +28955,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TI%E1%BB%86M%20NH%C3%80%20%C3%9A%20-%20Hot%20Trend%20-%2077A%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nha-u-hot-trend-77a-nguyen-thi-minh-khai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29052,7 +29052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ly%20Ly%20Coffee%20%26%20Tea%20-%20Lamer2-363%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ly-ly-coffee-tea-lamer2-363-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29148,7 +29148,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pleiku%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pleiku-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29244,7 +29244,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%B1ng%20L%C4%83ng%20Cafe%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bang-lang-cafe-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29340,7 +29340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lan%20Vi%C3%AAn%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lan-vien-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29436,7 +29436,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C3%A9t%20X%C6%B0a%20-%20Tr%C3%A0%2C%20Cafe%20%26%20Matcha%20-%20Nguy%E1%BB%85n%20Di%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/net-xua-tra-cafe-matcha-nguyen-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29533,7 +29533,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20D%E1%BA%A1c%20C%C3%B4%20T%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-dac-co-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29629,7 +29629,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Ng%E1%BB%8Dc%20-%20B%C3%BAn%20Ri%C3%AAu%20C%C3%A1%20%26%20M%C3%AC%20Qu%E1%BA%A3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-ngoc-bun-rieu-ca-mi-quang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29727,7 +29727,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20S%C6%B0%E1%BB%9Dn%20B%C3%B2%20T%C3%A2y%20Ninh%20-%20C%C6%A1m%20T%E1%BA%A5m%20%26%20B%C3%B2%20kho%20Tr%E1%BB%A9%20Danh%20Ch%E1%BA%A5m%20B%C3%A1nh%20M%C3%AC%20-%2003%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-suon-bo-tay-ninh-com-tam-bo-kho-tru-danh-cham-banh-mi-03-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29828,7 +29828,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20B%C3%A9%20Bo%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-be-bo-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -29926,7 +29926,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Lan%20-%20B%C3%A1nh%20Canh%2C%20B%C3%A1nh%20Cu%E1%BB%91n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-lan-banh-canh-banh-cuon-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30024,7 +30024,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%A3o%20T%C3%ADch%20-%20B%C3%A1nh%20Canh%20C%C3%A1%20L%C3%B3c%20-%20Tr%E1%BA%A7n%20An%20T%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lao-tich-banh-canh-ca-loc-tran-an-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30121,7 +30121,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20Hoa%20Ph%C6%B0%E1%BB%A3ng%20%C4%90%E1%BB%8F%202%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-hoa-phuong-do-2-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30218,7 +30218,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20H%E1%BA%BBm%2097%20-%20L%E1%BA%A9u%20N%C6%B0%E1%BB%9Bng%20%26%20C%C6%A1m%20Gia%20%C4%90%C3%ACnh%20-%20168%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-hem-97-lau-nuong-com-gia-dinh-168-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30320,7 +30320,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20T%C3%AA%20-%20248%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-te-248-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30418,7 +30418,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20%26%20%C4%82n%20V%E1%BA%B7t%20K%E1%BB%B7%20Tuy%E1%BB%81n%20-%20312%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-an-vat-ky-tuyen-312-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30517,7 +30517,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C6%A1m%20T%E1%BA%A5m%20-%20245%20Thanh%20Ni%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-com-tam-245-thanh-nien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30616,7 +30616,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20R%E1%BA%A1m%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Ph%C3%B9%20M%E1%BB%B9%20-%20Nguy%E1%BB%85n%20V%C4%83n%20Tr%E1%BB%97i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-ram-dac-san-phu-my-nguyen-van-troi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30715,7 +30715,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Susi%20-%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%2C%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/susi-bun-thit-nuong-banh-trang-tron-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30815,7 +30815,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chu%C3%B4ng%20Gi%C3%B3%20Cafe%20%C4%90i%E1%BB%83m%20T%C3%A2m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chuong-gio-cafe-diem-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -30911,7 +30911,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20Ngon%20C%C3%94%20BA%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-ngon-co-ba-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31009,7 +31009,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BA%B9%20Kin%20-%20B%C3%A1nh%20M%C3%AC%2C%20Ch%C3%A8%20C%C3%A1c%20Lo%E1%BA%A1i%20%26%20N%C6%B0%E1%BB%9Bc%20U%E1%BB%91ng%20-%20Xu%C3%A2n%20Th%E1%BB%A7y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/me-kin-banh-mi-che-cac-loai-nuoc-uong-xuan-thuy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31110,7 +31110,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20M%E1%BA%AFm%20N%C3%AAm%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-mam-nem-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31209,7 +31209,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%C3%B4%20C%C3%A0%20Ph%C3%AA%20-%20320C%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngo-ca-phe-320c-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31307,7 +31307,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%2077",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-77",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31405,7 +31405,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20K%E1%BA%BB%20T%E1%BA%A1nh%20-%20B%C3%BAn%20Ch%E1%BA%A3%20-%2023%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ke-tanh-bun-cha-23-truong-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31504,7 +31504,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20L%E1%BB%99c%20Bi%E1%BB%83n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%2048%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-loc-bien-hai-san-quy-nhon-48-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31602,7 +31602,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Tr%E1%BB%99n%20T%C3%B3p%20M%E1%BB%A1%20%26%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%20Blessing%20Time%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-tron-top-mo-tra-trai-cay-blessing-time-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31704,7 +31704,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%E1%BB%90c%2C%20%C4%82n%20V%E1%BA%B7t%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t%20C%C3%B4%20Vy%20-%20127%20Mai%20H%E1%BA%AFc%20%C4%90%E1%BA%BF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-oc-an-vat-giai-khat-co-vy-127-mai-hac-de",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31805,7 +31805,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BB%8B%20M%E1%BA%ADp%20-%20B%C3%A1nh%20Canh%20Da%20Heo%20Ch%E1%BA%A3%20C%C3%A1%20Quy%20Nh%C6%A1n%20%26%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20T%C3%B3p%20M%E1%BB%A1%20-%20184%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chi-map-banh-canh-da-heo-cha-ca-quy-nhon-banh-trang-tron-top-mo-184-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -31906,7 +31906,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20H%E1%BA%A1nh%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-hanh-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32004,7 +32004,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%2068%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-68-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32102,7 +32102,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%ADp%20Nh%E1%BB%8B%20Qu%C3%A1n%20-%20424%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thap-nhi-quan-424-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32199,7 +32199,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=BonBon%20-%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%A9ng%20N%C6%B0%E1%BB%9Bng%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bonbon-banh-trang-trung-nuong-nguyen-thi-minh-khai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32296,7 +32296,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Ngon%20-%20Ph%E1%BB%9F%20B%C3%B2%20%26%20Ph%E1%BB%9F%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ngon-pho-bo-pho-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32393,7 +32393,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20N%C6%B0%E1%BB%9Bc%20M%C3%A1t%20M%E1%BB%99c%20Tr%C3%A0%20-%20T%E1%BB%91%20H%E1%BB%AFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nuoc-mat-moc-tra-to-huu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32489,7 +32489,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20%26%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20-%20Nguy%E1%BB%85n%20Nh%E1%BA%A1c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-bun-thit-nuong-nguyen-nhac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32588,7 +32588,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%B3%20Cay%20Jipii%20Food%20-%2067%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/my-cay-jipii-food-67-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32688,7 +32688,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-go-kim-cuc-plaza",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Mixue%20-%20Go%20Kim%20C%C3%BAc%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-go-kim-cuc-plaza",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -32787,7 +32787,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TN%20Coffee%20%26%20Sweet",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tn-coffee-sweet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -32885,7 +32885,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-va-mi-y-jollibee-big-c-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20V%C3%A0%20M%C3%AC%20%C3%9D%20-%20Jollibee%20-%20Big%20C%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-va-mi-y-jollibee-big-c-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -32988,7 +32988,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chang%20Chang%20-%2012D%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chang-chang-12d-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33084,7 +33084,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFK%20Quy%20Nh%C6%A1n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfk-quy-nhon-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33180,7 +33180,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20HP%20Quy%20Nh%C6%A1n%20-%20Pizza%20%26%20M%E1%BB%B3%20%C3%9D%20-%2025%20Ho%C3%A0ng%20Hoa%20Th%C3%A1m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-hp-quy-nhon-pizza-my-y-25-hoang-hoa-tham",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33281,7 +33281,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%2029K%20-%2099%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-29k-99-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33380,7 +33380,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Buratino%20Pizza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/buratino-pizza",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33479,7 +33479,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Happy%20Hour%20-%20Food%20%26%20Drink",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/happy-hour-food-drink",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33578,7 +33578,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Quy%20Nh%C6%A1n%20%C6%A0i%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quy-nhon-oi-tra-sua-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33675,7 +33675,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20-%20N%C3%B3n%20-%20137%20Thanh%20Ni%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-non-137-thanh-nien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33774,7 +33774,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Pizza%20-%2081%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-pizza-81-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33872,7 +33872,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=The%20Social%20-%2079%20%E1%BB%B6%20Lan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/the-social-79-y-lan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -33968,7 +33968,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kimbap%20Nys",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kimbap-nys",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34065,7 +34065,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=3%20R%C3%A2u%20-%20G%C3%A0%20R%C3%A1n%2C%20Pizza%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/3-rau-ga-ran-pizza-tra-sua-nguyen-cong-tru",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34166,7 +34166,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TOK%20TOK%20FOODS%20-%20NGUY%C3%8AN%20LI%E1%BB%86U%20XI%C3%8AN%20QUE%20%26%20NGUY%C3%8AN%20LI%E1%BB%86U%20H%C3%80N%20QU%E1%BB%90C%20-%2015%20BI%C3%8AN%20C%C6%AF%C6%A0NG",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tok-tok-foods-nguyen-lieu-xien-que-nguyen-lieu-han-quoc-15-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34265,7 +34265,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hamburger%20BoBo%20-%20Nguy%E1%BB%85n%20An%20Kh%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hamburger-bobo-nguyen-an-khuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34362,7 +34362,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%2C%20Xi%C3%AAn%20Que%20%26%20L%E1%BA%A1p%20X%C6%B0%E1%BB%9Fng%20N%C6%B0%E1%BB%9Bng%20%C4%90%C3%A1%20-%20Street%20Food%20-%20Ng%C3%A3%203%20Ph%C3%BA%20T%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-xien-que-lap-xuong-nuong-da-street-food-nga-3-phu-tai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34461,7 +34461,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SUSHI%20T%C3%80I%20-%20326%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sushi-tai-326-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34556,7 +34556,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bakery%20HO%C3%80NG%20TH%C3%81I%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bakery-hoang-thai-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34654,7 +34654,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SWEET%20HOME%20FastFood%20-%20162%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sweet-home-fastfood-162-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34751,7 +34751,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20%C4%90%C4%83ng%20Kh%C3%B4i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-dang-khoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34850,7 +34850,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MOONLIGHT%20COFFEE%20-%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20Nhi%E1%BB%87t%20%C4%90%E1%BB%9Bi%2C%20C%C3%A0%20Ph%C3%AA%20Kem%20D%E1%BA%BBo%20Bu%C3%B4n%20M%C3%AA%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20Kem%20Tr%E1%BB%A9ng%20D%E1%BB%ABa%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moonlight-coffee-tra-trai-cay-nhiet-doi-ca-phe-kem-deo-buon-me-tra-sua-kem-trung-dua-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -34948,7 +34948,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%80%20Steak%20%26%20Pizza%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/a-steak-pizza-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35045,7 +35045,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gh%C3%A9%20Coffee%20-%2033%20Nguy%E1%BB%85n%20T%C6%B0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ghe-coffee-33-nguyen-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35142,7 +35142,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20V%E1%BB%89a%20H%C3%A8%20-%20L%E1%BA%A9u%20%26%20%C4%82n%20V%E1%BA%B7t%20-%2058%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-via-he-lau-an-vat-58-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35242,7 +35242,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20%C3%94ng%20Ho%C3%A0ng%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-ong-hoang-tran-thi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35341,7 +35341,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-chicken-plus-hung-vuong-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20Chicken%20Plus%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng%20%28Quy%20Nh%C6%A1n%29",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-chicken-plus-hung-vuong-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -35439,7 +35439,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%B3%20Cay%20%26%20M%E1%BB%B3%20Tr%E1%BB%99n%20%C3%94ng%20Ho%C3%A0ng%20-%20Ng%C3%A3%20T%C6%B0%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/my-cay-my-tron-ong-hoang-nga-tu-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35536,7 +35536,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=YUMMY%20BURGER%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/yummy-burger-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35632,7 +35632,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=PAM%27S%20CHICKEN%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pams-chicken-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35727,7 +35727,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20M%C3%AC%20T%C6%B0%C6%A1i%20M%E1%BA%B7n%20Ng%E1%BB%8Dt%20-%20KUN%20BAKERY%20QUY%20NH%C6%A0N%20Chuy%C3%AAn%20Pizza.%20Hoa%20C%C3%BAc%20-%20417%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-mi-tuoi-man-ngot-kun-bakery-quy-nhon-chuyen-pizza-hoa-cuc-417-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35830,7 +35830,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Burger%20R%C3%A2u%20K%C3%A9t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-tra-sua-burger-rau-ket",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -35927,7 +35927,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Maya%20-%20Restaurant%20-%2003%20B%C3%B9i%20T%C6%B0%20To%C3%A0n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/maya-restaurant-03-bui-tu-toan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36023,7 +36023,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rainbow%20Yogurt%20-%20TTTM%20Ch%E1%BB%A3%20L%E1%BB%9Bn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rainbow-yogurt-tttm-cho-lon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36119,7 +36119,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Athena%20Restaurant%20-%20M%C3%B3n%20%C4%82n%203%20Mi%E1%BB%81n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/athena-restaurant-mon-an-3-mien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36215,7 +36215,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Queen%20Coffee%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/queen-coffee-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36313,7 +36313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Ram%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-ram-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36411,7 +36411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36508,7 +36508,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36606,7 +36606,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20N%C3%B3ng%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-nong-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36704,7 +36704,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Phi%20Bakery%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-phi-bakery-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36802,7 +36802,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20G%C3%A0%20%26%20V%E1%BB%8Bt%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-ga-vit-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36900,7 +36900,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-nong-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -36999,7 +36999,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20Ng%E1%BB%8Dc%20Th%E1%BA%A1ch%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-ngoc-thach-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37097,7 +37097,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Ngon%20B%C3%ACnh%20D%C3%A2n%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ngon-binh-dan-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37196,7 +37196,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-tra-sua-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37295,7 +37295,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Kem%20Ho%C3%A0ng%20Y%E1%BA%BFn%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-kem-hoang-yen-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37393,7 +37393,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Jolly%20-%20Kem%20%C3%9D%20T%E1%BB%B1%20Ch%E1%BB%8Dn%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/jolly-kem-y-tu-chon-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37491,7 +37491,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TR%C3%80%20S%E1%BB%AEA%20T%E1%BA%A4M%20-%20200%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-tam-200-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37589,7 +37589,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%8A%20Ngon%20-%20B%C6%A1%20Gi%C3%A0%20D%E1%BB%ABa%20Non%20-%20S%E1%BB%91%206%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/e-ngon-bo-gia-dua-non-so-6-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37687,7 +37687,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20S%E1%BB%AFa%20Nh%C3%A0%20Bo%20-%2044%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-sua-nha-bo-44-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37785,7 +37785,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFK%20Quy%20Nh%C6%A1n%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfk-quy-nhon-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37883,7 +37883,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KOS%20Milk%20Tea%20Quy%20Nh%C6%A1n%20-%20248%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kos-milk-tea-quy-nhon-248-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -37980,7 +37980,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Xuy%C3%AAn%20%C4%90%C3%AAm%20Quy%20Nh%C6%A1n%20-%20201%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-xuyen-dem-quy-nhon-201-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38078,7 +38078,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%A1%20Ng%E1%BB%AB%20Quy%20Nh%C6%A1n%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-ca-ngu-quy-nhon-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38178,7 +38178,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kh%E1%BB%95ng%20L%E1%BB%93%2020k%20-%2062%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khong-lo-20k-62-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38274,7 +38274,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%26%20B%C3%A1nh%20Bao%20Pate%20Kim%20Ng%E1%BB%8Dc%20-%20108%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-banh-bao-pate-kim-ngoc-108-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38373,7 +38373,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Quy%20Nh%C6%A1n%20-%20B%C3%A1nh%20M%C3%AC%20Pate%20%26%20Ph%C3%B4%20Mai%20Que%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-quy-nhon-banh-mi-pate-pho-mai-que-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38471,7 +38471,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=An%20-%20B%C3%BAn%20M%E1%BA%AFm%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-bun-mam-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38571,7 +38571,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1%20S%E1%BB%9F%20S%E1%BA%A3n%20Xu%E1%BA%A5t%20Ch%E1%BA%A3%20Ram%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-so-san-xuat-cha-ram-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38670,7 +38670,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20Th%E1%BA%A7n%20T%E1%BB%91c%20-%20%C4%82n%20V%E1%BA%B7t%20%26%20%C4%82n%20No%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-an-than-toc-an-vat-an-no-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38771,7 +38771,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFn%20Th%C6%B0%E1%BB%A3ng%20H%E1%BA%A3i%20-%20138%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ben-thuong-hai-138-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38868,7 +38868,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20Dung%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-co-dung-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -38965,7 +38965,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Hy%20Ch%E1%BA%A3%20C%C3%A1%20-%2048%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-hy-cha-ca-48-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39063,7 +39063,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20Ken%20Ken%20-%2062%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-ken-ken-62-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39160,7 +39160,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20Th%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-thao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39259,7 +39259,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%93ng%20Tr%C3%A0%20S%E1%BB%AFa%20Mr.%20Lee%20-%2087%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hong-tra-sua-mr-lee-87-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39359,7 +39359,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%201992%20-%20157D%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-1992-157d-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39455,7 +39455,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20Queen%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-queen-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39553,7 +39553,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Phong%20L%E1%BA%A9u%20Qu%C3%A1n%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phong-lau-quan-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39653,7 +39653,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20N%C6%B0%E1%BB%9Bng%20%26%20Tr%E1%BB%A9ng%20L%E1%BB%99n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-nuong-trung-lon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39752,7 +39752,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20%26%20B%C3%BAn%20Ri%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-bun-rieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39849,7 +39849,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20G%C3%A0%20Cay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-ga-cay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -39948,7 +39948,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20H%E1%BB%A7%20Ti%E1%BA%BFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-hu-tieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40045,7 +40045,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Fire%20Station%20-%20Coffee%20%26%20Milktea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/fire-station-coffee-milktea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40144,7 +40144,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Banana%20-%20Qu%C3%A1n%20Ch%C3%A8",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banana-quan-che",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40243,7 +40243,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40341,7 +40341,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40437,7 +40437,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20Quay%20B%E1%BA%AFc%20Kinh%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-quay-bac-kinh-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40534,7 +40534,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/five-star-viet-nam-nguyen-thai-hoc",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Five%20Star%20Vi%E1%BB%87t%20Nam%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/five-star-viet-nam-nguyen-thai-hoc",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -40629,7 +40629,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G-Life%20Cafe%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/g-life-cafe-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40727,7 +40727,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Kem%20Gelato%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-kem-gelato-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40822,7 +40822,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -40919,7 +40919,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-thit-nuong-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41019,7 +41019,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20H%C6%B0%C6%A1ng%20Vi%E1%BB%87t%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-san-huong-viet-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41117,7 +41117,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20P%C3%ADa%20S%C3%B3c%20Tr%C4%83ng%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-pia-soc-trang-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41212,7 +41212,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%B3c%20Ph%E1%BB%91%20Cafe%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goc-pho-cafe-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41312,7 +41312,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20338%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-338-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41408,7 +41408,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Lan%20Anh%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-lan-anh-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41504,7 +41504,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20C%C3%B4%20Ph%C6%B0%C6%A1ng%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-tron-co-phuong-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41600,7 +41600,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20Ph%E1%BB%9F%20B%C3%B2%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-bo-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41698,7 +41698,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%A1%20Ng%E1%BB%AB%20Quy%20Nh%C6%A1n%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-ca-ngu-quy-nhon-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41798,7 +41798,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-burger-lotteria-quy-nhon-nguyen-thai-hoc",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20%26%20Burger%20Lotteria%20-%20Quy%20Nh%C6%A1n%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-burger-lotteria-quy-nhon-nguyen-thai-hoc",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -41898,7 +41898,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20KFK%20Quy%20Nh%C6%A1n%20-%20459%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfk-quy-nhon-459-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -41995,7 +41995,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20%C4%82n%20V%E1%BA%B7t%202CE%20Quy%20Nh%C6%A1n%20-%2025C%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-an-vat-2ce-quy-nhon-25c-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42091,7 +42091,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20G%C3%8C%20C%C5%A8NG%20C%C3%93%20-%20S%E1%BB%A9a%20M%E1%BA%AFm%20Nh%C4%A9%2C%20B%C3%BAn%20Cua%20Th%C3%B4%CC%81i%20%26%20N%C6%B0%C6%A1%CC%81c%20E%CC%81p%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-gi-cung-co-sua-mam-nhi-bun-cua-thoi-nuoc-ep-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42189,7 +42189,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%E1%BA%A7n%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tran-coffee-ca-phe-nuoc-ep-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42286,7 +42286,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A1i%20C%C3%A2y%20G%E1%BB%8Dt%20S%E1%BA%B5n%20-%2075/4%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trai-cay-got-san-754-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42473,7 +42473,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mochi%20-%20Cafe%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mochi-cafe-tra-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42572,7 +42572,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Merino",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-merino",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42667,7 +42667,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Th%E1%BA%ADp%20C%E1%BA%A9m%20-%20X%C3%B4i%20Th%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-thap-cam-xoi-thit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42855,7 +42855,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20X%C3%ADu%20M%E1%BA%A1i%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-xiu-mai-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -42953,7 +42953,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20G%C3%A2n%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-gan-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43051,7 +43051,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Lagu%20-%20B%C3%A1nh%20M%C3%AC%20B%C3%B2%20Kho",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-lagu-banh-mi-bo-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43148,7 +43148,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Song%20Anh%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-song-anh-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43244,7 +43244,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43341,7 +43341,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20Ph%C6%B0%E1%BB%9Bc%20Duy%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-phuoc-duyen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43439,7 +43439,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Li%C3%AAn%20-%20B%C3%A1nh%20B%C3%A8o%20N%C3%B3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-lien-banh-beo-nong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43534,7 +43534,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20H%E1%BA%A3i%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-hai-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43720,7 +43720,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20B%E1%BB%91n%20-%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-bon-bun-thit-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43818,7 +43818,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20-%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-bun-thit-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -43917,7 +43917,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Bao%20Li%C3%AAn%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-bao-lien-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44015,7 +44015,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Zipper%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-zipper-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44115,7 +44115,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20H%E1%BA%A3o%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-hao-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44215,7 +44215,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20M%E1%BB%B1c%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-muc-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44316,7 +44316,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%8Bt%20Xi%C3%AAn%20N%C6%B0%E1%BB%9Bng%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thit-xien-nuong-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44414,7 +44414,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20-%20344%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-344-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44513,7 +44513,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Nh%C3%A0%20YiDi%20-%20276%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nha-yidi-276-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44614,7 +44614,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20Nam%20-%20Nh%C3%A0%20H%C3%A0ng%20H%E1%BA%A3i%20S%E1%BA%A3n%20-%2080%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-nam-nha-hang-hai-san-80-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44716,7 +44716,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20M%E1%BA%B9t%20Quy%20Nh%C6%A1n%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-met-quy-nhon-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44815,7 +44815,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TRA%CC%80%20S%C6%AF%CC%83A%20BINGXUE%20-%20XU%C3%82N%20DI%C3%8A%CC%A3U%20-%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-bingxue-xuan-dieu-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -44912,7 +44912,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A9%20Tr%E1%BB%99n%20C%C3%B4%20Gi%C3%A0u%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tre-tron-co-giau-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45008,7 +45008,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%A1o%20Qu%C3%A1n%20-%20N%C6%B0%E1%BB%9Bc%20%C3%89p%2C%20N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20%26%20B%C3%A1nh%20Bao%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phao-quan-nuoc-ep-nuoc-mia-banh-bao-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45108,7 +45108,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=2WIN%20-%20Ch%C3%A2n%20G%C3%A0%20S%E1%BA%A3%20T%E1%BA%AFc%20%26%20%C4%82n%20V%E1%BA%B7t%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/2win-chan-ga-sa-tac-an-vat-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45208,7 +45208,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=East%20West%20Brewing%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/east-west-brewing-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45307,7 +45307,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20B%C3%92%20HU%E1%BA%BE%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45406,7 +45406,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C6%A1%20Gi%C3%A0%20D%E1%BB%ABa%20Non%2C%20Sinh%20T%E1%BB%91%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20-%203%20Anh%20Em%20-%20138%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-gia-dua-non-sinh-to-nuoc-ep-3-anh-em-138-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45507,7 +45507,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=See%20Fruit%20Tea%20%26%20Coffee%20-%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Cafe%20Mu%E1%BB%91i%20-%20124A%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/see-fruit-tea-coffee-tra-trai-cay-tra-sua-cafe-muoi-124a-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45607,7 +45607,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Bi%E1%BB%83n%20Xanh%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-bien-xanh-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45709,7 +45709,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%E1%BA%ADu%20Ph%C6%B0%E1%BB%A3ng%20Ho%C3%A0ng%20-%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-hoang-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45812,7 +45812,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20Di%E1%BB%87p%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-diep-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -45914,7 +45914,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%ADch%20M%E1%BB%B9%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bich-my-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46018,7 +46018,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Ch%E1%BA%A3o%20B%E1%BA%A3y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-chao-bay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46116,7 +46116,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Nh%C3%A0%20M%E1%BA%B9%20N%E1%BA%A5u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-nha-me-nau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46215,7 +46215,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Linh%20Qu%C3%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-linh-quan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46314,7 +46314,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=2%20Ti%E1%BA%BFn%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/2-tien-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46416,7 +46416,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kim%20Ng%C3%A2n%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kim-ngan-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46519,7 +46519,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%C6%A1ng%20Bi%E1%BB%83n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-bien-hai-san-tuoi-song",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46618,7 +46618,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Babara%20Restaurant",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/babara-restaurant",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46718,7 +46718,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%A1m%20X%C3%AD%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tam-xi-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46819,7 +46819,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%E1%BB%8Bnh%20C%C3%B4ng%20S%C6%A1n%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trinh-cong-son-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -46918,7 +46918,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%A2m%20Bi%E1%BB%83n%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sam-bien-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47021,7 +47021,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%9D%20Bi%E1%BB%83n%20Qu%C3%A1n%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20T%C6%B0%C6%A1i%20S%E1%BB%91ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-bien-quan-hai-san-tuoi-song",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47120,7 +47120,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Yolo%20Coffee%20-%20%E1%BA%A8m%20Th%E1%BB%B1c%20H%C3%A0n%20Qu%E1%BB%91c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/yolo-coffee-am-thuc-han-quoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47313,7 +47313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20-%20Tr%E1%BB%A9ng%20L%E1%BB%99n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-trung-lon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47414,7 +47414,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%C3%A0o%20Vi%C3%AAn%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Bi%E1%BB%83n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dao-vien-dac-san-bien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47513,7 +47513,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%A3y%20Sen%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bay-sen-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47614,7 +47614,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rau%20M%C3%A1%20Ca%20Mix%20-%20Rau%20M%C3%A1%2C%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20%26%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rau-ma-ca-mix-rau-ma-tra-trai-cay-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47715,7 +47715,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-260-xuan-dieu",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Mixue%20-%20260%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-260-xuan-dieu",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -47814,7 +47814,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -47910,7 +47910,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48006,7 +48006,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%A9c%20Cafe%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thuc-cafe-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48103,7 +48103,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A1i%20C%C3%A2y%20T%C3%B4%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trai-cay-to-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48198,7 +48198,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20B%C3%ACnh%20D%C3%A2n%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-binh-dan-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48295,7 +48295,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48391,7 +48391,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%C4%90%E1%BA%ADu%20%26%20X%C3%B4i%20Th%E1%BB%8Bt%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-dau-xoi-thit-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48490,7 +48490,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48586,7 +48586,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ha-noi-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48683,7 +48683,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20T%E1%BA%AFc%20Mon%20Mon%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-tac-mon-mon-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48780,7 +48780,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20Lu%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-nuong-lu-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48876,7 +48876,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20P%C3%ADa%20S%C3%B3c%20Tr%C4%83ng%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-pia-soc-trang-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -48972,7 +48972,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49068,7 +49068,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Relax%20Coffee%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/relax-coffee-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49165,7 +49165,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49262,7 +49262,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-le-hong-phong",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Five%20Star%20Vietnam%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-le-hong-phong",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -49359,7 +49359,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20M%C3%AC%20Qu%E1%BA%A3ng%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-mi-quang-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49456,7 +49456,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20V%E1%BB%89a%20H%C3%A8%2025K%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-via-he-25k-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49553,7 +49553,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BA%A1p%20B%C3%A1nh%20Qu%C3%AA%20M%E1%BA%B9%20Shi%20King%20-%20196%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sap-banh-que-me-shi-king-196-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49651,7 +49651,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49751,7 +49751,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20N%C6%B0%E1%BB%9Bc%20Nh%C3%A0%20%C3%9A%20-%20284%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nuoc-nha-u-284-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -49850,7 +49850,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sasin-quy-nhon-le-hong-phong",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Sasin%20Quy%20Nh%C6%A1n%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sasin-quy-nhon-le-hong-phong",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -49950,7 +49950,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ru%20Cafe%20-%20132/10%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ru-cafe-13210-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50048,7 +50048,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfc-le-hong-phong-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%80%20R%C3%81N%20KFC%20-%20L%C3%8A%20H%E1%BB%92NG%20PHONG%20-%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kfc-le-hong-phong-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -50146,7 +50146,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20YAMAN%20Quy%20Nh%C6%A1n%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-yaman-quy-nhon-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50246,7 +50246,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20%C3%89p%20Ngon%20X%E1%BB%89u%20-%2016%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-ep-ngon-xiu-16-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50345,7 +50345,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20L%C3%BD%20Qu%E1%BB%91c%20S%C6%B0%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ly-quoc-su-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50446,7 +50446,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20S%C6%B0%E1%BB%9Dn%20B%C3%AC%20Ch%E1%BA%A3%20-%20160%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-suon-bi-cha-160-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50542,7 +50542,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MORNING%20Coffee%20%26%20Milk%20Tea%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/morning-coffee-milk-tea-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50638,7 +50638,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Nh%C3%A0%20Yu%20-%20%C4%82n%20V%E1%BA%B7t%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nha-yu-an-vat-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50735,7 +50735,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%83u%20Nh%E1%BB%8B%20Qu%C3%A1n%20-%20M%C3%AC%20Truy%E1%BB%81n%20Th%E1%BB%91ng%20Ng%C6%B0%E1%BB%9Di%20Hoa%2C%20Dimsum%20%26%20B%C3%A1nh%20Bao",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tieu-nhi-quan-mi-truyen-thong-nguoi-hoa-dimsum-banh-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50833,7 +50833,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%BAp%20Cua%20G%C3%A0%20355%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sup-cua-ga-355-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -50931,7 +50931,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%B2ng%20N%C6%B0%E1%BB%9Bng%20Ngh%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/long-nuong-nghe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51026,7 +51026,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20Nga%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-nga-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51125,7 +51125,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20Bin%20Bin",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-bin-bin",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51221,7 +51221,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20Mu%E1%BB%99i%20-%20Tr%C3%A0%20%26%20B%C3%A1nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-muoi-tra-banh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51317,7 +51317,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20B%C3%BAn%20Ri%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bun-rieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51415,7 +51415,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Go%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%20199%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/go-coffee-ca-phe-tra-sua-tra-trai-cay-199-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51513,7 +51513,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sanh%20Ph%C6%B0%C6%A1ng%20-%20S%E1%BB%AFa%20Chua%20H%C5%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sanh-phuong-sua-chua-hu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51609,7 +51609,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20Kh%C3%B4%20H%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-kho-hang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51704,7 +51704,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gh%E1%BA%BF%20%C4%90%E1%BA%A9u%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ghe-dau-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51800,7 +51800,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAp%20Station%202%20-%20Coffee%20%26%20Milktea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bup-station-2-coffee-milktea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51896,7 +51896,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20L%C3%AA%20H%E1%BB%93ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-le-hong-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -51993,7 +51993,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Ti%C3%AAu%20V%E1%BB%89a%20H%C3%A8",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-tieu-via-he",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52088,7 +52088,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20R%E1%BA%BF%20-%20X%C3%B4i%20Chi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-re-xoi-chien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52187,7 +52187,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Th%E1%BA%A1ch%20Nh%C3%A0%20L%C3%A0m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-thach-nha-lam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52284,7 +52284,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20P%C3%ADa%20S%E1%BA%A7u%20Ri%C3%AAng%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20S%C3%B3c%20Tr%C4%83ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-pia-sau-rieng-dac-san-soc-trang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52380,7 +52380,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%B4%20B%C3%B4ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-co-bong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52477,7 +52477,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Daisy%20-%20Gelato%20-%20Tea%20%26%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/daisy-gelato-tea-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52574,7 +52574,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20M%E1%BB%B1c%20S%E1%BB%91%201",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-muc-so-1",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52673,7 +52673,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gia%20Thu%20-%20%C4%90%E1%BA%A1i%20L%C3%BD%20Kem%20Ly%20Merino",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gia-thu-dai-ly-kem-ly-merino",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52769,7 +52769,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Dat%E2%80%99s%20Cake%20%26%20Dessert",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dats-cake-dessert",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52866,7 +52866,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20M%E1%BB%B9%20Cang",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-my-cang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -52962,7 +52962,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20C%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-can",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53058,7 +53058,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20T%C3%B4m%20-%2062%20%C4%90%E1%BB%91ng%20%C4%90a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-tom-62-dong-da",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53154,7 +53154,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nguy%E1%BB%85n%20Lan%20-%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nguyen-lan-nuoc-ep-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53250,7 +53250,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%C6%A1ng%20C%E1%BA%A3ng%20-%20%E1%BA%A8m%20Th%E1%BB%B1c%20%C3%81%20-%20%C3%82u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-cang-am-thuc-a-au",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53345,7 +53345,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bi%E1%BB%83n%20H%E1%BB%93%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bien-ho-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53442,7 +53442,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MC%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mc-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53539,7 +53539,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%ABu%20Cu%E1%BB%91n%20-%2084%2086%2088%20%C4%90%E1%BB%91ng%20%C4%90a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nau-cuon-84-86-88-dong-da",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53634,7 +53634,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=D%C3%A2u%20T%C3%A2y%20Coffee%20-%20Coffee%20Mu%E1%BB%91i%20%26%20Matcha%20Latte",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dau-tay-coffee-coffee-muoi-matcha-latte",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53730,7 +53730,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Melody%20Milano%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/melody-milano-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53827,7 +53827,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20%C4%90%C3%B4ng%20Seafood",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-dong-seafood",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -53922,7 +53922,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rau%20M%C3%A1%20Mix%20%26%20N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20S%E1%BA%A7u%20Ri%C3%AAng%20-%20%C4%90%E1%BB%91ng%20%C4%90a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rau-ma-mix-nuoc-mia-sau-rieng-dong-da",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54018,7 +54018,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20M%E1%BA%ADu%20-%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-mau-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54116,7 +54116,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Chu%E1%BB%91i%20Chi%C3%AAn%20-%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-chuoi-chien-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54215,7 +54215,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KATINAT%20-%2054%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng%20%28Quy%20Nh%C6%A1n%29",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/katinat-54-an-duong-vuong-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54313,7 +54313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20%C3%9At%20Coffee%20-%2058%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-ut-coffee-58-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54411,7 +54411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QUY%20NH%C6%A0N%20BY%20NIGHT%20CH%E1%BA%A4T%20%26%20CHILL%20-%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quy-nhon-by-night-chat-chill-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54509,7 +54509,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C6%A1m%20Trong%20H%E1%BA%BBm%20-%20Th%E1%BB%A9c%20%C4%82n%20Nhanh%20-%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-com-trong-hem-thuc-an-nhanh-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54610,7 +54610,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cosevco%20Center",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cosevco-center",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54709,7 +54709,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=F%C3%BA%20Lok%20Restaurant%20-%20Nh%C3%A0%20H%C3%A0ng%20Vi%E1%BB%87t%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/fu-lok-restaurant-nha-hang-viet-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54811,7 +54811,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Fulok%20Champa%20-%20Nh%C3%A0%20H%C3%A0ng%20Vi%E1%BB%87t%20%26%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/fulok-champa-nha-hang-viet-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -54912,7 +54912,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cat%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cat-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55011,7 +55011,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xo%C3%A0i%20L%E1%BA%AFc%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoai-lac-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55111,7 +55111,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20%26%20Xi%C3%AAn%20Que",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-xien-que",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55210,7 +55210,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Sinh%20Vi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-sinh-vien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55310,7 +55310,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ba%20C%C3%A2y%20D%E1%BB%ABa%20-%20N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ba-cay-dua-nuoc-mia-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55411,7 +55411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hotdog%20H%C3%A0n%20Qu%E1%BB%91c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hotdog-han-quoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55511,7 +55511,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20T%E1%BA%AFc%20B%C3%A0%20M%E1%BA%ADp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-tac-ba-map",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55609,7 +55609,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8B%20N%E1%BA%AFng%20-%20V%E1%BB%8B%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20T%C6%B0%C6%A1i%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vi-nang-vi-nuoc-ep-tuoi-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55710,7 +55710,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20%C3%82u%20Vi%E1%BB%87t%2086%20-%20B%C3%B2%20B%C3%ADt%20T%E1%BA%BFt%20%26%20M%E1%BB%B3%20%C3%9D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-au-viet-86-bo-bit-tet-my-y",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55810,7 +55810,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20Hoa%20L%C6%B0%20-%20An%20D%C6%B0%C6%A1ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-hoa-lu-an-duong-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -55908,7 +55908,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20%C4%90%C3%A0o%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20Th%C3%A1i%208Teen",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-dao-tra-sua-thai-8teen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56005,7 +56005,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C6%B0a%20%26%20Nay%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xua-nay-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56104,7 +56104,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20Sinh%20Vi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-sinh-vien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56202,7 +56202,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Barbara%27s%20Kiwi%20Restaurant",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/barbaras-kiwi-restaurant",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56302,7 +56302,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%BF%20Gi%E1%BB%9Bi%205K%20-%20Xi%C3%AAn%20Que",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/the-gioi-5k-xien-que",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56400,7 +56400,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cat%27%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cat-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56498,7 +56498,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lucky%20Luke%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lucky-luke-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56596,7 +56596,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20Take%20Away",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-take-away",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56695,7 +56695,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56794,7 +56794,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56890,7 +56890,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Lagu%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-lagu-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -56988,7 +56988,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20Chua%20N%E1%BA%BFp%20C%E1%BA%A9m%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-chua-nep-cam-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57084,7 +57084,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20L%C3%A2m%20T%E1%BB%8F%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-lam-to-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57182,7 +57182,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%A1t%20Quy%20Nh%C6%A1n%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mat-quy-nhon-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57277,7 +57277,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20%C6%AF%E1%BB%9Bt%20L%C3%B2ng%20G%C3%A0%20Ti%C3%AAn%20Nguy%C3%AAn%20-%20144%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-uot-long-ga-tien-nguyen-144-bach-dang-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57372,7 +57372,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20M%E1%BA%AFm%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-mam-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57471,7 +57471,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Flan%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-flan-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57568,7 +57568,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20Ngon%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-ngon-tra-sua-tra-trai-cay-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57665,7 +57665,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Chay%2010K%20Tu%E1%BB%87%20Minh%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-chay-10k-tue-minh-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57763,7 +57763,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20C%C3%A2y%20Xo%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cay-xoai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57860,7 +57860,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -57956,7 +57956,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58052,7 +58052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B3c%20Cafe%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/coc-cafe-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58149,7 +58149,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Da%20Heo%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-da-heo-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58245,7 +58245,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20Tr%C3%A1i%20C%C3%A2y%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-trai-cay-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58343,7 +58343,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Chu%E1%BB%91i%20Chi%C3%AAn%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-chuoi-chien-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58440,7 +58440,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20B%E1%BA%A3o%20V%C3%A2n%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-bao-van-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58536,7 +58536,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20Chua%20N%C6%B0%C6%A1%CC%81ng%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-chua-nuong-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58632,7 +58632,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%A9ng%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-trung-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58728,7 +58728,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20V%E1%BB%8Bt%20B%C3%ACnh%20D%C3%A2n%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-vit-binh-dan-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58825,7 +58825,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20B%C3%BAn%20C%C3%A1%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-bun-ca-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -58922,7 +58922,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Minion%20Ice%20Cream%20%26%20Tea%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/minion-ice-cream-tea-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59017,7 +59017,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Ch%E1%BA%A3%20C%C3%A1%20%26%20Sinh%20T%E1%BB%91%20L%E1%BB%81%20%C4%90%C6%B0%E1%BB%9Dng%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cha-ca-sinh-to-le-duong-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59115,7 +59115,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Cua%20Th%E1%BB%91%20%C4%90%C3%A1%20To%C3%A0n%20Ph%C3%A1t%20-%2036%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cua-tho-da-toan-phat-36-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59213,7 +59213,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%BAn%20M%E1%BB%B1c%20Gi%C3%A3%20Tay%20-%20B%C3%BAn%20C%C3%A1%20T%C6%B0%C6%A1i%20-%20224%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-bun-muc-gia-tay-bun-ca-tuoi-224-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59312,7 +59312,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%E1%BB%B3nh%20Qu%E1%BB%B3nh%20-%20B%C3%BAn%20%26%20Ph%E1%BB%9F%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quynh-quynh-bun-pho-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59409,7 +59409,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=DECOMA%20-%20%C4%82N%20U%E1%BB%90NG%20-%2023%20PHAN%20B%E1%BB%98I%20CH%C3%82U",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/decoma-an-uong-23-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59505,7 +59505,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20D%E1%BA%ADu%20-%20B%C3%A1nh%20M%C3%AC%20-%20%C4%90%E1%BB%91i%20Di%E1%BB%87n%20286%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-dau-banh-mi-doi-dien-286-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59602,7 +59602,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2n%20G%C3%A0%20Y%E1%BA%BFn%20Nhi%20Chi%20Nh%C3%A1nh%202%20-%20M%C3%AC%20Cay%20Kh%C3%B4%20%26%20%C4%82n%20V%E1%BA%B7t%20-%2011%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-yen-nhi-chi-nhanh-2-mi-cay-kho-an-vat-11-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59703,7 +59703,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%C3%81%20B%C3%80O%20T%C3%80U%20H%E1%BB%A6%20%C4%90%C3%80I%20LOAN%2C%20M%C3%8C%20TR%E1%BB%98N%20INDO%20%26%20%C4%90%E1%BB%92%20U%E1%BB%90NG%20%C4%82N%20V%E1%BA%B6T%20-%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/da-bao-tau-hu-dai-loan-mi-tron-indo-do-uong-an-vat-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59802,7 +59802,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%A1t%20%C4%90%C3%A1%20425%20-%20Qu%C3%A1n%20%C4%82n%20B%C3%ACnh%20D%C3%A2n%20-%2023%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bat-da-425-quan-an-binh-dan-23-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59899,7 +59899,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%B3c%20Ph%E1%BB%91%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goc-pho-bun-dau-mam-tom-bun-cha-ha-noi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -59996,7 +59996,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20C%C3%B4%20Thu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-co-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60096,7 +60096,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20C%C3%B4%20Nga",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-co-nga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60194,7 +60194,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20B%E1%BA%A3o%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-bao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60291,7 +60291,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20%26%20N%C6%B0%E1%BB%9Bng%20Ben%20Ben",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-nuong-ben-ben",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60389,7 +60389,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20-%20Th%E1%BA%BF%20Gi%E1%BB%9Bi%20Kem",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/van-the-gioi-kem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60485,7 +60485,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%BAn%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-bun-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60581,7 +60581,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20%26%20S%C3%BAp%20Bibo",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-sup-bibo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60769,7 +60769,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60866,7 +60866,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20B%C6%A1%20Ng%E1%BB%8Dc%20Tr%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-bo-ngoc-tran",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -60961,7 +60961,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20H%C6%B0ng%20Bakery",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-hung-bakery",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61058,7 +61058,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20C%C3%B4%20H%C3%A0%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-co-ha-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61153,7 +61153,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20K%E1%BA%B9o%20Ch%E1%BB%89%20%26%20B%C3%B2%20P%C3%ADa%20Ng%E1%BB%8Dt%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-keo-chi-bo-pia-ngot-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61251,7 +61251,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%A9ng%20C%C3%B4%20Ch%C3%ADn%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-trung-co-chin-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61348,7 +61348,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20C%C3%B4%202%20-%20Ch%C3%A2n%20G%C3%A0%20%26%20G%C3%A2n%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-co-2-chan-ga-gan-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61444,7 +61444,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ly%20Coffee%20%26%20Tea%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ly-coffee-tea-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61540,7 +61540,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CAS%20Tea%20%26%20Coffee%20House%20-%20Phan%20B%E1%BB%99i%20Ch%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cas-tea-coffee-house-phan-boi-chau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61637,7 +61637,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tra%CC%80%20S%C6%B0%CC%83a%20TORO",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-toro",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61733,7 +61733,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Neko%20Cakes%20-%20%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/neko-cakes-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61828,7 +61828,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BA%A5u%20Coffee%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gau-coffee-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -61924,7 +61924,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Th%E1%BB%A7y%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-thuy-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62021,7 +62021,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Chay%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-chay-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62120,7 +62120,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20T%E1%BA%AFc%20Win%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-tac-win-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62217,7 +62217,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Ly%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-ly-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62313,7 +62313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20G%E1%BB%8Fi%20Cu%E1%BB%91n%20Quy%20Nh%C6%A1n%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-goi-cuon-quy-nhon-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62411,7 +62411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20H%E1%BA%A1t%20N%C3%B3ng%20Nh%C3%A0%20B%E1%BA%AFp%20-%2044%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-hat-nong-nha-bap-44-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62506,7 +62506,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20Th%C6%B0%E1%BB%9Fng%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-thuong-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62604,7 +62604,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%E1%BB%A7a%20Boy%20-%20Matcha%20Kem%20Mu%E1%BB%91i%20-%2055%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-cua-boy-matcha-kem-muoi-55-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62702,7 +62702,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KuKai%20Qu%C3%A1n%20%C4%82n%20H%C3%A0n%20Qu%E1%BB%91c%20%28Strettfood%20Korea%29",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kukai-quan-an-han-quoc-strettfood-korea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62800,7 +62800,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%203%20Mi%E1%BB%81n%20-%20B%C3%A1nh%20Tr%C3%A1ng%20-%2065%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-3-mien-banh-trang-65-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62895,7 +62895,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20M%E1%BB%A5i%20%20-%20172F%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-mui-172f-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -62992,7 +62992,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20Vi%20-%20B%C3%BAn%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/van-vi-bun-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63089,7 +63089,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20Cam%20M%E1%BB%B9%20-%20174%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-cam-my-174-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63185,7 +63185,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20Thanh%20T%C3%A2m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-thanh-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63282,7 +63282,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20%C4%90%C3%A0o%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20Th%C3%A1i%208Teen%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-dao-tra-sua-thai-8teen-ha-huy-tap",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63378,7 +63378,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cherry%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cherry-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63475,7 +63475,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Thu%E1%BA%ADn%20Ph%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-thuan-phat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63572,7 +63572,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=An%20B%C3%ACnh%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-binh-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63668,7 +63668,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tattoo%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tattoo-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63766,7 +63766,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20Hi%E1%BB%81n%20-%20Kem%20Flan%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-hien-kem-flan-tra-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -63955,7 +63955,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20%26%20Ch%C3%A1o%20H%C3%A0u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-chao-hau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64053,7 +64053,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Say%20Cheese",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-say-cheese",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64150,7 +64150,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Ho%C3%A0ng%20Nh%C6%A1n%20-%20%E1%BA%A8m%20Th%E1%BB%B1c%20Vi%E1%BB%87t%20Nam",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-hoang-nhon-am-thuc-viet-nam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64250,7 +64250,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Cua",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64350,7 +64350,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20N%C6%B0%E1%BB%9Bng%20Hai%20H%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-nuong-hai-hung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64449,7 +64449,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20B%C3%A1nh%20Chino%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-banh-chino-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64547,7 +64547,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thi%C3%AAn%20Y%20Bakery%20-%20B%C3%A1nh%20M%C3%AC%2C%20X%C3%B4i%20Heo%20Quay%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thien-y-bakery-banh-mi-xoi-heo-quay-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64647,7 +64647,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%2095A%20-%20B%E1%BB%99t%20Chi%C3%AAn%20Tr%E1%BB%A9ng%20S%C3%A0i%20G%C3%B2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-95a-bot-chien-trung-sai-gon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64742,7 +64742,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CHACEE%20Tea%20%26%20Coffee%20-%2027%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chacee-tea-coffee-27-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64838,7 +64838,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20O%20Ng%E1%BB%8Dc%20Qu%C3%A1n%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-o-ngoc-quan-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -64935,7 +64935,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chay%20Thanh%20L%C6%B0%C6%A1ng%20-%20150%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chay-thanh-luong-150-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65032,7 +65032,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CaBi%20Coffee%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cabi-coffee-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65128,7 +65128,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20Th%C6%B0%C6%A1ng%20Vy%20-%2009%20Chu%20V%C4%83n%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-tron-thuong-vy-09-chu-van-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65224,7 +65224,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Chay%20S%C3%A1u%20Thu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-chay-sau-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65321,7 +65321,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Your%20House%20Cafe%20-%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/your-house-cafe-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65418,7 +65418,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mini%2064%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mini-64-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65513,7 +65513,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65610,7 +65610,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tu%E1%BA%A5n%20Cafe%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tuan-cafe-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65706,7 +65706,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Milano%20Coffee%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/milano-coffee-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65803,7 +65803,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Skykids%20Quy%20Nh%C6%A1n%20-%2007%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/skykids-quy-nhon-07-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65898,7 +65898,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bookafe%20Quy%20Nh%C6%A1n%20-%20Cafe%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bookafe-quy-nhon-cafe-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -65994,7 +65994,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%A0%20O%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ba-o-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66092,7 +66092,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BA%A3n%20C%C3%B9%20Lao%20Xanh%20-%2058%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-san-cu-lao-xanh-58-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66189,7 +66189,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C3%A2u%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nau-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66285,7 +66285,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Areca%20Cafe%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/areca-cafe-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66381,7 +66381,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%B9%20N%E1%BB%AF%20-%20Cafe%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/my-nu-cafe-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66478,7 +66478,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xi%C3%AAn%20Que%2077",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xien-que-77",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66575,7 +66575,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20%26%20B%C3%BAn%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-bun-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66673,7 +66673,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Khu%20%E1%BA%A8m%20Th%E1%BB%B1c%20Ch%E1%BB%A3%20%C4%90%C3%AAm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khu-am-thuc-cho-dem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66770,7 +66770,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20Ch%E1%BB%8B%20T%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-tron-chi-tai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66865,7 +66865,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=56%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/56-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -66961,7 +66961,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BB%93ng%20Giao%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dong-giao-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67058,7 +67058,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Mr.C%C3%B4ng%20-%20Ph%E1%BB%9F%20Kh%C3%B4%202%20T%C3%B4%20Gia%20Lai%20-%2007%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-mrcong-pho-kho-2-to-gia-lai-07-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67158,7 +67158,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%93ng%20Ch%E1%BB%A3%20%C4%90%C3%AAm%20-%20Food%20%26%20Drink",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hong-cho-dem-food-drink",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67255,7 +67255,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pizza%20G%C3%A0%20R%C3%A1n%20S%C3%A0i%20G%C3%B2n%20-%20TTTM%20QN",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pizza-ga-ran-sai-gon-tttm-qn",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67352,7 +67352,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AA%20Trang%20Cafe%20%26%20Tr%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/me-trang-cafe-tra",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67449,7 +67449,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20-%20L%C3%AA%20Du%E1%BA%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-le-duan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67544,7 +67544,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bazan%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bazan-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67640,7 +67640,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=2N%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/2n-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67737,7 +67737,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tre%20Xanh%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tre-xanh-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67837,7 +67837,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Quy%C3%AAn%20-%20Xi%C3%AAn%20Que%20%26%20H%E1%BA%A3i%20S%E1%BA%A3n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quyen-xien-que-hai-san",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -67936,7 +67936,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%81i%20V%C3%A2n%20-%20B%C3%BAn%20M%E1%BA%AFm%20Heo%20Quay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ai-van-bun-mam-heo-quay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68036,7 +68036,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Zui%20L%C3%A0%20Ch%C3%ADnh%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/zui-la-chinh-tra-sua-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68134,7 +68134,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xo%C3%A0i%20L%E1%BA%AFc%20%26%20C%C3%B3c%20L%E1%BA%AFc%20-%20Ch%E1%BB%A3%20%C4%90%C3%AAm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoai-lac-coc-lac-cho-dem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68232,7 +68232,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68328,7 +68328,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68424,7 +68424,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68521,7 +68521,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20Bonsai%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-bonsai-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68617,7 +68617,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68713,7 +68713,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ha-noi-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68810,7 +68810,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Oscar%20Qu%C3%A1n%20-%20L%E1%BA%A9u%20%26%20Buffet%20N%C6%B0%E1%BB%9Bng%2079K%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oscar-quan-lau-buffet-nuong-79k-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -68907,7 +68907,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tokbokki%20Quy%20Nh%C6%A1n%20Signature%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tokbokki-quy-nhon-signature-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69004,7 +69004,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%2077%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dac-san-binh-dinh-77-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69101,7 +69101,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Ho%C3%A0%20-%2098%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-hoa-98-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69197,7 +69197,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Any%20C%C3%A0%20Ph%C6%A1%20-%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/any-ca-pho-ca-phe-muoi-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69294,7 +69294,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20Ph%E1%BB%9F%20Kh%C3%B4%20Gia%20Lai%20-%20Ph%E1%BB%9F%20B%C3%A0%20Nhoi%20-%20Di%C3%AAn%20H%E1%BB%93ng%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-pho-kho-gia-lai-pho-ba-nhoi-dien-hong-truong-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69391,7 +69391,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20M%E1%BA%A1ch%20S%E1%BB%91ng%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-mach-song-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69488,7 +69488,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%E1%BA%ADu%20Hu%E1%BB%B3nh%20Lai%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-huynh-lai-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69588,7 +69588,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%E1%BA%ADu%20H%E1%BB%93ng%20Phong%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-hong-phong-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69687,7 +69687,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C6%B0%E1%BB%A3t%20Cafe%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phuot-cafe-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69784,7 +69784,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%A2y%20B%C3%A0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cay-bang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69881,7 +69881,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cu%E1%BB%99i%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cuoi-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -69977,7 +69977,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=75%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/75-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70075,7 +70075,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20B%E1%BA%A3o%202%20-%20H%E1%BA%A3i%20S%E1%BA%A3n%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-bao-2-hai-san-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70174,7 +70174,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Phi%20Th%E1%BA%A3o%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phi-thao-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70272,7 +70272,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lop%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lop-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70370,7 +70370,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20TBC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-tbc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70467,7 +70467,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20N%E1%BB%99i%20Qu%C3%A1n%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-noi-quan-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70566,7 +70566,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20Ch%E1%BB%A3%20%C4%90%C3%AAm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-cho-dem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70663,7 +70663,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t%20Qu%E1%BB%B3nh%20H%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-an-vat-quynh-huong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70762,7 +70762,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xi%C3%AAn%20N%C6%B0%E1%BB%9Bng%20Ch%E1%BB%A3%20%C4%90%C3%AAm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xien-nuong-cho-dem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70858,7 +70858,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=127%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/127-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -70954,7 +70954,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20%26%20Sinh%20T%E1%BB%91%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-sinh-to-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71052,7 +71052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A5t%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chat-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71150,7 +71150,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thu%20-%20Ch%C3%A8%20T%E1%BB%B1%20M%C3%BAc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thu-che-tu-muc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71248,7 +71248,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Takoyaki%20%C3%94ng%20Ch%E1%BB%A7%20Nh%E1%BB%8F%20-%20B%C3%A1nh%20B%E1%BA%A1ch%20Tu%E1%BB%99c%20-%20182%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/takoyaki-ong-chu-nho-banh-bach-tuoc-182-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71345,7 +71345,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%B4%20B%C3%B4ng%20X%E1%BB%A9%20N%E1%BA%ABu%20-%20242%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-co-bong-xu-nau-242-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71443,7 +71443,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20C%C3%A1%20L%C3%B3c%20Th%E1%BB%A7y%20D%C6%B0%C6%A1ng%20-%20260%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-ca-loc-thuy-duong-260-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71540,7 +71540,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20280%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-280-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71639,7 +71639,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2n%20G%C3%A0%20B%C3%A9%20%C6%A0ii%20-%20168%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-be-oii-168-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71736,7 +71736,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=RONA%20Coffee%20%26%20MilkTea%20-%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rona-coffee-milktea-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71833,7 +71833,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%2010k%20-%20268%20Di%C3%AAn%20H%E1%BB%93ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-10k-268-dien-hong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -71931,7 +71931,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20R%E1%BA%A1m%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-ram-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72029,7 +72029,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Phong%20L%E1%BA%A9u%20Qu%C3%A1n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phong-lau-quan-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72126,7 +72126,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Xi%C3%AAn%20Que%20Quy%20Nh%C6%A1n%20-%20122/2%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-xien-que-quy-nhon-1222-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72225,7 +72225,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Vui%20V%E1%BA%BB%20-%20269%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-vui-ve-269-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72323,7 +72323,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72423,7 +72423,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20M%C3%AC%20T%C6%B0%C6%A1i%20M%E1%BA%B7n%20Ng%E1%BB%8Dt%20-%20G%E1%BA%A4U%20BAKERY%20QUY%20NH%C6%A0N%20-171%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-mi-tuoi-man-ngot-gau-bakery-quy-nhon-171-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72524,7 +72524,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Bao%20K%E1%BA%B9p%20%C4%90%C3%A0i%20Loan%20Tai%20Bao%20-%20365%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-bao-kep-dai-loan-tai-bao-365-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72622,7 +72622,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20C%C3%A1%20L%C3%B3c%20A%20Kay%207%20-%20543%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-ca-loc-a-kay-7-543-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72720,7 +72720,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%A5%20Cua%20Quy%20Nh%C6%A1n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vu-cua-quy-nhon-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72815,7 +72815,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Saman%20Coffee%20-%20388%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/saman-coffee-388-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -72912,7 +72912,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lagu%20%C3%9At%20T%C3%ACnh%20-%2079%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lagu-ut-tinh-79-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73009,7 +73009,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20-%2055%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-55-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73106,7 +73106,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20Quy%20Nh%C6%A1n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-quy-nhon-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73205,7 +73205,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Quy%20Nh%C6%A1n%20-%20Ch%C3%A2n%20G%C3%A0%20Tr%C3%A9%20Tr%E1%BB%99n%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-quy-nhon-chan-ga-tre-tron-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73303,7 +73303,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Phi%20H%C3%B9ng%20-%20258%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-phi-hung-258-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73399,7 +73399,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Ch%C3%A1y%20Kho%20Qu%E1%BA%B9t%20Gia%20H%C3%A2n%20-%20131%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-kho-quet-gia-han-131-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73497,7 +73497,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%B3c%20Nh%C3%A0%20B%E1%BA%AFp%20-%20263/18/31%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goc-nha-bap-2631831-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73595,7 +73595,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20D%E1%BB%ABa%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-dua-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73692,7 +73692,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thi%C3%AAn%20M%E1%BB%99c%20H%E1%BA%A1t%20-%20S%E1%BB%AFa%20H%E1%BA%A1t%20Nguy%C3%AAn%20Ch%E1%BA%A5t%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thien-moc-hat-sua-hat-nguyen-chat-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73789,7 +73789,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Minky%20-%20Block%20C%20Chung%20C%C6%B0%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-minky-block-c-chung-cu-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73885,7 +73885,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%A8o%20Meo%20-%20N%C6%B0%E1%BB%9Bc%20M%C3%A1t%20V%C3%A0%20Tr%C3%A0%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/meo-meo-nuoc-mat-va-tra-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -73981,7 +73981,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CHUCHU%20Coffee%20%26%20Matcha%20-%20318A%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chuchu-coffee-matcha-318a-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74077,7 +74077,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Dung%20Phuong%20B%C3%B9i%20Juice%20%26%20Smoothie",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dung-phuong-bui-juice-smoothie",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74175,7 +74175,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C6%B0%E1%BB%9Bng%20H%C3%A0%20Ki%E1%BB%81u%20-%20344%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-nuong-ha-kieu-344-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74273,7 +74273,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SAM%20Kute%20-%20Tr%E1%BB%A9ng%20C%C3%BAt%20N%C6%B0%E1%BB%9Bng%20-%20306/29/7%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sam-kute-trung-cut-nuong-306297-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74369,7 +74369,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A3%20R%E1%BA%BF%20Tu%E1%BA%A5n%20To%C3%A0n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cha-re-tuan-toan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74465,7 +74465,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chang%20-%20Cafe%2C%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20%26%20S%E1%BB%AFa%20H%E1%BA%A1t%20-%2016%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chang-cafe-nuoc-ep-sua-hat-16-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74562,7 +74562,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Coffee%20MILANO%20LK21%20-%20Hoa%CC%80ng%20V%C4%83n%20Thu%CC%A3",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/coffee-milano-lk21-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74660,7 +74660,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20-%20Soup%20Nui%20Cao%20C%E1%BA%A5p%20Babuu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-soup-nui-cao-cap-babuu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74757,7 +74757,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20%C4%90%E1%BB%93i%20-%20480%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-doi-480-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74853,7 +74853,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Toro%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%20Phin%20%C4%90%E1%BA%ADm%20V%E1%BB%8B%20-%20102%20Hai%20B%C3%A0%20Tr%C6%B0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/toro-coffee-ca-phe-phin-dam-vi-102-hai-ba-trung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -74950,7 +74950,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Blue%20Home%20-%20C%C3%A0%20Ph%C3%AA%2C%20Tr%C3%A0%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20-%20265%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/blue-home-ca-phe-tra-nuoc-ep-265-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75048,7 +75048,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20A%20Ho%C3%A0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-a-hoang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75145,7 +75145,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=QU%C3%81N%20XI%C3%8AN%20N%C6%AF%E1%BB%9ANG%2C%20C%C6%A0M%20%26%20B%C3%9AN%20%C4%90%C3%8AM%20-%20122/5%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-xien-nuong-com-bun-dem-1225-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75243,7 +75243,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%2023%20-%20M%C3%AC%20Qu%E1%BA%A3ng%20G%C3%A0%2C%20M%C3%AC%20S%C6%B0%E1%BB%9Dn%20Non%20%26%20M%C3%AC%20X%C3%A1%20X%C3%ADu%20-%20550%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-23-mi-quang-ga-mi-suon-non-mi-xa-xiu-550-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75340,7 +75340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MO.ON%20Coffee%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moon-coffee-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75437,7 +75437,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Qua%20%C4%90%C3%AAm%20-%20%EB%B0%A4%EB%B0%A4",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-qua-dem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75534,7 +75534,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bia%20H%C6%A1i%20Phu%20Minh%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bia-hoi-phu-minh-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75723,7 +75723,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%A1u%20Nguy%E1%BB%85n%20-%20Qu%C3%A1n%20Th%E1%BB%8Bt%20R%E1%BA%AFn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sau-nguyen-quan-thit-ran",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75818,7 +75818,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20-%20Ho%C3%A0ng%20V%C4%83n%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-hoang-van-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -75915,7 +75915,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20C%C3%A1%20K%C3%A8o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-ca-keo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76013,7 +76013,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thu%E1%BA%ADn%20Ph%C3%A1t%20-%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thuan-phat-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76113,7 +76113,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20Tri%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-nuong-tri-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76209,7 +76209,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sakura%20Sushi%20Quy%20Nh%C6%A1n%20-%2067%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sakura-sushi-quy-nhon-67-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76305,7 +76305,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76401,7 +76401,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Pin%20Pin%20Cafe%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pin-pin-cafe-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76497,7 +76497,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C6%A1m%20-%2018%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-com-18-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76595,7 +76595,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20-%20286%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-286-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76693,7 +76693,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76789,7 +76789,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BA%BFng%20Th%E1%BB%9Di%20Gian%20Cafe%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tieng-thoi-gian-cafe-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76886,7 +76886,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Lan%20Anh%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-lan-anh-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -76984,7 +76984,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Lilak%20Quy%20Nh%C6%A1n%20-%20%C4%82n%20V%E1%BA%B7t%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Coffee%20-%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lilak-quy-nhon-an-vat-tra-sua-coffee-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77081,7 +77081,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Marina%20Coffee%20-%20Big%20C%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/marina-coffee-big-c-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77179,7 +77179,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Cho%20B%C3%A9%20PaPa%20Dashi%20-%20Quy%20Nh%C6%A1n%20B%E1%BA%AFc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-cho-be-papa-dashi-quy-nhon-bac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77275,7 +77275,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20%26%20Tea%20-%20Oanh%2093",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-tea-oanh-93",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77372,7 +77372,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Quy%C3%AAn%20Quy%C3%AAn%20-%20%C4%82n%20V%E1%BA%B7t%20%26%20S%E1%BB%AFa%20Chua",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quyen-quyen-an-vat-sua-chua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77467,7 +77467,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%BBm%20C%C3%A0%20Ph%C3%AA%20-%20372/1%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hem-ca-phe-3721-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77565,7 +77565,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20T%C3%A2y%20S%C6%A1n%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-tay-son-dac-san",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77664,7 +77664,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%8Bnh%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thinh-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77760,7 +77760,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gia%20H%C3%A2n%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gia-han-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77856,7 +77856,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kh%C3%A1nh%20Ng%E1%BB%8Dc%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khanh-ngoc-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -77952,7 +77952,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gattino%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gattino-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78049,7 +78049,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C6%B0%20Chung%20-%20Ph%E1%BB%9F%20%26%20Mi%E1%BA%BFn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tu-chung-pho-mien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78146,7 +78146,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20Th%E1%BB%8Bt%20Quay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-thit-quay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78243,7 +78243,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20O%20Ph%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-o-phuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78340,7 +78340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20Hoa%20%C4%90%E1%BA%AFc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-hoa-dac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78436,7 +78436,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=329%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/329-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78532,7 +78532,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hai%20T%C3%A0i%20-%20C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-tai-com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78629,7 +78629,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n%20167",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhau-binh-dan-167",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78727,7 +78727,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=169%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/169-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78823,7 +78823,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8B%20%C4%90%E1%BA%AFng%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vi-dang-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -78919,7 +78919,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=284%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/284-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79015,7 +79015,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gia%20Tr%C3%A2n%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gia-tran-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79112,7 +79112,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n%20A%20T%C3%BD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhau-binh-dan-a-ty",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79210,7 +79210,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=166%20-%20Cafe%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/166-cafe-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79306,7 +79306,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kh%C3%A1nh%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khanh-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79404,7 +79404,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20Ti%E1%BB%81m%20%26%20V%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-tiem-vit-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79500,7 +79500,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xi%C3%AAn%20Que%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xien-que-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79596,7 +79596,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20H%C3%A0%20N%E1%BB%99i%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ha-noi-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79693,7 +79693,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20H%C3%A0%20N%E1%BB%99i%20-%20107%20Tr%E1%BA%A7n%20Ph%C3%BA%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ha-noi-107-tran-phu-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79791,7 +79791,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%C4%90%E1%BA%A5t%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-dat-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79889,7 +79889,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20%26%20D%E1%BB%ABa%20L%E1%BA%A1nh%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-dua-lanh-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -79986,7 +79986,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20%26%20B%C3%A1nh%20G%C3%B3i%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-banh-goi-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80081,7 +80081,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20M%E1%BB%B9%20Hi%E1%BB%81n%20-%2064%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-my-hien-64-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80178,7 +80178,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Kh%C3%B4%20Gia%20Lai%20%C4%90%C3%B4ng%203%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kho-gia-lai-dong-3-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80275,7 +80275,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%A1%20Ng%E1%BB%AB%20Quy%20Nh%C6%A1n%20-%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-ca-ngu-quy-nhon-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80374,7 +80374,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20L%C3%A2m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-lam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80471,7 +80471,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cao%20L%E1%BA%A9u%20-%20Ph%E1%BB%9F%20%26%20M%C3%AC%20X%C3%ADu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cao-lau-pho-mi-xiu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80570,7 +80570,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20-%20C%C6%A1m%20S%C6%B0%E1%BB%9Dn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-com-suon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80668,7 +80668,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%82n%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-an-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80763,7 +80763,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20247",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-247",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80861,7 +80861,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hoa%20L%E1%BB%A3i%20-%20B%C3%BAn%20%26%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoa-loi-bun-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -80960,7 +80960,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Hoa%20T%C3%A2n%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-hoa-tan-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81061,7 +81061,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%2087",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-thit-nuong-87",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81159,7 +81159,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20B%C3%ADt%20T%E1%BA%BFt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-bit-tet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81257,7 +81257,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%BD%20H%E1%BA%A3i%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ly-hai-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81353,7 +81353,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Times%20-%20Coffee%20%26%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/times-coffee-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81449,7 +81449,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chum%20Cafe%20S%E1%BA%A1ch",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chum-cafe-sach",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81548,7 +81548,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20B%C3%B2%20B%C3%ADt%20T%E1%BA%BFt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-bo-bit-tet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81649,7 +81649,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%ADt%20T%E1%BA%BFt%202H",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bit-tet-2h",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81745,7 +81745,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%C4%90%E1%BB%91ng%20%C4%90a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-dong-da",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81843,7 +81843,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nhi%20Qu%C3%A1n%20-%20B%C3%A1nh%20Canh%20H%E1%BA%B9%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20%26%20B%C3%BAn%20Kh%C3%B4",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhi-quan-banh-canh-he-banh-cuon-bun-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -81939,7 +81939,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20Thanh%20-%20Cafe%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-thanh-cafe-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82036,7 +82036,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20T%C3%B4m%20Nh%E1%BA%A3y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-tom-nhay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82133,7 +82133,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20%26%20B%C3%BAn%20Gi%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-bun-gio",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82230,7 +82230,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%E1%BB%9Bng%20D%C6%B0%C6%A1ng%20-%20C%C6%A1m%20G%C3%A0%20-%20Mi%E1%BA%BFn%20%26%20Ph%E1%BB%9F",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-duong-com-ga-mien-pho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82328,7 +82328,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%A5i%20Cafe%20-%2059%20Tr%E1%BA%A7n%20Ph%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bui-cafe-59-tran-phu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82424,7 +82424,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Chi%C3%AAn%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-chien-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82521,7 +82521,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=93%20Coffee%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/93-coffee-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82616,7 +82616,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G-Life%20Cafe%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/g-life-cafe-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82713,7 +82713,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Que%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-que-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82811,7 +82811,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20Quay%20%26%20Heo%20Quay%20-160%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-quay-heo-quay-160-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -82909,7 +82909,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20Anh%20V%C5%A9%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-anh-vu-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83006,7 +83006,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2n%20G%C3%A0%20N%C6%B0%E1%BB%9Bng%20%26%20L%C3%B2ng%20N%C6%B0%E1%BB%9Bng%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-nuong-long-nuong-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83103,7 +83103,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20Beo%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-nuoc-ep-beo-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83200,7 +83200,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thu%20H%E1%BA%B1ng%20-%20B%C3%A1nh%20M%C3%AC%20%26%20X%C3%B4i%20-%2010%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thu-hang-banh-mi-xoi-10-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83298,7 +83298,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20S%E1%BB%91%201%20-%20C%C6%A1m%20V%C4%83n%20Ph%C3%B2ng%20%26%20C%C3%A0%20Ph%C3%AA%20T%C3%B4%20T%C6%B0%E1%BB%A3ng%20-%20189%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-so-1-com-van-phong-ca-phe-to-tuong-189-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83397,7 +83397,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KING%20FOODS%20-%20Sushi%20%26%20Sashimi%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/king-foods-sushi-sashimi-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83495,7 +83495,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20L%C4%83ng%20%C3%94ng%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-lang-ong-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83591,7 +83591,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=YUMMMY%20BURGER%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/yummmy-burger-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83686,7 +83686,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20%C3%89p%20Tr%C3%A1i%20C%C3%A2y%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-ep-trai-cay-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83782,7 +83782,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=BiBi%20Coffee%20%26%20Tea%20-%20204%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bibi-coffee-tea-204-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83879,7 +83879,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A3%20Cu%E1%BB%91n%205K",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cha-cuon-5k",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -83975,7 +83975,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20N%C4%83m%20-%20N%C6%B0%E1%BB%9Bc%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-nam-nuoc-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84072,7 +84072,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%2093%20-%20Cafe%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-93-cafe-tra-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84170,7 +84170,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Tho%C3%A1ng%20-%20L%E1%BA%A9u%20%26%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-thoang-lau-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84267,7 +84267,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20N%C6%B0%E1%BB%9Bng%20Ph%E1%BB%91",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-nuong-pho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84364,7 +84364,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%ADu%20Qu%C3%A1n%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dau-quan-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84462,7 +84462,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BB%8B%20Hoa%20-%20B%C3%BAn%20%26%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chi-hoa-bun-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84560,7 +84560,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20Thanh%20-%20Qu%C3%A1n%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-thanh-quan-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84655,7 +84655,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/m-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84752,7 +84752,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%BAn%20B%C3%B2%20G%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-bun-bo-gan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84850,7 +84850,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20V%E1%BA%A1n%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-van-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -84946,7 +84946,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%A1nh%20M%C3%AC%2023",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-banh-mi-23",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85044,7 +85044,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TCV%20COFFEE%201H%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tcv-coffee-1h-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85141,7 +85141,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Brownie%20Coffee%20%26%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/brownie-coffee-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85238,7 +85238,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Xanh%20-%2005%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-xanh-05-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85336,7 +85336,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BB%8EI%20C%C3%94%207",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goi-co-7",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85433,7 +85433,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%2077%20-%2001C%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-77-01c-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85529,7 +85529,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KEN%20%C4%90%E1%BB%93%20%C4%82n%20Heatlhy%20-%20%C4%90%E1%BB%93%20H%E1%BA%A5p%2C%20B%C3%BAn%20%2C%20C%C6%A1m%2C%20S%E1%BB%AFa%20H%E1%BA%A1t-%20158%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ken-do-an-heatlhy-do-hap-bun-com-sua-hat-158-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85626,7 +85626,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Linh%20Linh%20%C3%94ng%209%20-%20C%C6%A1m%20T%E1%BA%A5m%2C%20B%C3%BAn%20%26%20M%C3%AC%20Cay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/linh-linh-ong-9-com-tam-bun-mi-cay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85727,7 +85727,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20HaNa%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-hana-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85823,7 +85823,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%A7y%20Ng%C3%A2n%20-%20B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thuy-ngan-bun-cha-ha-noi-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -85920,7 +85920,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20Nhung%20Th%E1%BB%8B%20-%20210%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-nhung-thi-210-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86018,7 +86018,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BB%8Fi%20-%20Ch%E1%BA%A3%20Ram%20%26%20Nem%20N%C6%B0%E1%BB%9Bng%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goi-cha-ram-nem-nuong-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86116,7 +86116,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nino%20Cafe%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nino-cafe-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86213,7 +86213,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20B%C3%ACnh%20D%C3%A2n%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-binh-dan-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86309,7 +86309,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20X%C3%A9o%20C%C3%B4%20Hu%E1%BB%87%20-%2046%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-xeo-co-hue-46-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86407,7 +86407,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C3%89P%20Juice%20-%2050D%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nep-juice-50d-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86503,7 +86503,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%204Q%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-4q-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86603,7 +86603,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CHIN%20TACOS%20QUY%20NH%C6%A0N%20-%2055%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chin-tacos-quy-nhon-55-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86699,7 +86699,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20S%C3%A0i%20G%C3%B2n%20-%2050%20Phan%20%C4%90%C3%8Cnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-sai-gon-50-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86797,7 +86797,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Kebab%20Nova%20-%2050%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-kebab-nova-50-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86895,7 +86895,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Anh%20M%E1%BA%ADp%20-%20Sandwich%20%26%20Hamburger%20-%2014%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/anh-map-sandwich-hamburger-14-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -86991,7 +86991,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20-%20Qu%C3%A1n%20H%E1%BA%A1nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-quan-hanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87088,7 +87088,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A1%20L%C3%B3c%20C%C3%B4%20S%C3%A1u%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-loc-co-sau-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87184,7 +87184,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%A7y%20Khu%C3%AA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thuy-khue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87280,7 +87280,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C3%81i%20Nhi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ai-nhi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87376,7 +87376,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Kh%C3%B4%20Gia%20Lai%20A%20Ho%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kho-gia-lai-a-hoai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87473,7 +87473,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%C3%9D%20-%2019%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-y-19-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87572,7 +87572,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20-%20B%C3%B2%20N%C3%A9%20%26%20B%C3%B2%20Kho",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-bo-ne-bo-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87668,7 +87668,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20N%C6%B0%E1%BB%9Bng%20Su%20Su",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-nuong-su-su",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87763,7 +87763,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G-LIFE%20COFFEE%20-%20111%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/g-life-coffee-111-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87859,7 +87859,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20Linh%20-%20B%C3%BAn%20Ch%E1%BA%A3",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-linh-bun-cha",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -87955,7 +87955,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C6%B0%C6%A1n%20%26%20Mi%E1%BA%BFn%20L%C6%B0%C6%A1n%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-luon-mien-luon-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88052,7 +88052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20%C4%90i%E1%BB%87p%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20X%E1%BB%A9%20N%E1%BA%ABu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-diep-dac-san-xu-nau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88148,7 +88148,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kim%20H%E1%BA%A3i%20-%20Ch%C3%A1o%20%E1%BA%BEch%20Singapore",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kim-hai-chao-ech-singapore",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88244,7 +88244,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A1t%20Vi%E1%BB%87t%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hat-viet-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88340,7 +88340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0ng%20Me%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hang-me-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88437,7 +88437,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20M%E1%BB%99c%20-%20C%C3%A1c%20M%C3%B3n%20D%C3%AA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-moc-cac-mon-de",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88533,7 +88533,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%99i%20Qu%C3%A1n%20V%C4%83n%20Ho%C3%A1%20-%20Du%20L%E1%BB%8Bch%20Gsm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoi-quan-van-hoa-du-lich-gsm",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88628,7 +88628,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AA%20Trang%20Cafe%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/me-trang-cafe-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88725,7 +88725,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A1nh%20-%20Qu%C3%A1n%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hanh-quan-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88822,7 +88822,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%B1ng%2081%20-%20C%C3%A1c%20M%C3%B3n%20%C4%82n%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hang-81-cac-mon-an-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -88918,7 +88918,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20Hoa%20Sen",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-hoa-sen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89013,7 +89013,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C6%A1m%20-%20376%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-com-376-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89109,7 +89109,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Cay%20Th%C3%A1i%20Thanh%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cay-thai-thanh-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89207,7 +89207,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20GHI%E1%BB%80N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-ghien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89303,7 +89303,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nhung%20B%C3%BAn%20C%C3%A1%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhung-bun-ca-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89400,7 +89400,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20B%C3%A1nh%20%C4%90a%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-banh-da-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89496,7 +89496,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Anh%20M%E1%BA%ADp%20Fast%20Food%20-%2016%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/anh-map-fast-food-16-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89592,7 +89592,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20O%20T%C3%A2m%20-%20117%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-o-tam-117-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89688,7 +89688,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%91%20%C4%90%E1%BA%A7m%20Cafe%20-%20Phan%20%C4%90%C3%ACnh%20Ph%C3%B9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-dam-cafe-phan-dinh-phung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89785,7 +89785,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20T%C3%B4m%20Ba%20Bi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-tom-ba-bien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89883,7 +89883,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BB%8Fi%20Kh%C3%B4%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goi-kho-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -89981,7 +89981,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20Con%20B%C3%B2%20C%C6%B0%E1%BB%9Di",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-con-bo-cuoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90078,7 +90078,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%C6%A1ng%20Qu%C3%AA%20-%20B%C3%A1nh%20N%E1%BA%ADm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-que-banh-nam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90173,7 +90173,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A9%20L%E1%BB%99c%20-%20H%E1%BB%A7%20Ti%E1%BA%BFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/be-loc-hu-tieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90269,7 +90269,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B3c%20Cafe%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/coc-cafe-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90365,7 +90365,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90463,7 +90463,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pha-lau-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90560,7 +90560,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Daisutee%20Milktea%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/daisutee-milktea-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90657,7 +90657,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-nguyen-hue",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Five%20Star%20Vietnam%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-nguyen-hue",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -90753,7 +90753,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90850,7 +90850,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Phi%20Bakery%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-phi-bakery-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -90947,7 +90947,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20C%C4%83n%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-can-ca-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91042,7 +91042,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-giai-khat-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91139,7 +91139,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20P%C3%ADa%20S%C3%B3c%20Tr%C4%83ng%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-pia-soc-trang-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91237,7 +91237,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91337,7 +91337,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-162a-nguyen-hue-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Highlands%20Coffee%20-%20Tr%C3%A0%2C%20C%C3%A0%20Ph%C3%AA%20%26%20B%C3%A1nh%20-%20162A%20Nguy%E1%BB%85n%20Hu%E1%BB%87%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/highlands-coffee-tra-ca-phe-banh-162a-nguyen-hue-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -91435,7 +91435,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Hi%E1%BA%BFu%20Quy%20Nh%C6%A1n%20-%20389B%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-hieu-quy-nhon-389b-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91535,7 +91535,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20141%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-141-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91637,7 +91637,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20115%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-115-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91738,7 +91738,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20L%C3%BD%20Qu%E1%BB%91c%20S%C6%B0%20%26%20Ch%C3%A1o%20%E1%BA%BEch%20Singapore%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ly-quoc-su-chao-ech-singapore-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91838,7 +91838,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SALA%20CAFE%20QUY%20NH%C6%A0N%20-%2010%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sala-cafe-quy-nhon-10-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -91935,7 +91935,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Lagu%20Quy%20Nh%C6%A1n%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-lagu-quy-nhon-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92033,7 +92033,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%81NH%20BURRITO%207%20SIU%20QUY%20NH%C6%A0N%20-%20393A%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-burrito-7-siu-quy-nhon-393a-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92128,7 +92128,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BA%A7u%20Ri%C3%AAng%20B%E1%BB%91n%20M%C3%B9a%20Quy%20Nh%C6%A1n%20-%20393A%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sau-rieng-bon-mua-quy-nhon-393a-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92226,7 +92226,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-65-nguyen-hue-quy-nhon",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20s%E1%BB%AFa%20Mixue%20-%2065%20Nguy%E1%BB%85n%20Hu%E1%BB%87%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-mixue-65-nguyen-hue-quy-nhon",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -92324,7 +92324,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=GenZ%20Quy%20Nh%C6%A1n%20-%20%C4%82n%20Nh%E1%BA%ADu%2C%20L%E1%BA%A9u%20%26%20N%C6%B0%E1%BB%9Bng%20-%2037%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/genz-quy-nhon-an-nhau-lau-nuong-37-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92421,7 +92421,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SWEET%20HOME%20Mart%20-%20138%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sweet-home-mart-138-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92517,7 +92517,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ki%E1%BB%81u%20Linh%20Foods%20-%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%20%26%20%C4%90%E1%BB%93%20U%E1%BB%91ng%20-%2071%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kieu-linh-foods-do-an-vat-do-uong-71-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92613,7 +92613,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%83u%20M%C3%A0n%20Th%E1%BA%A7u%20-%20B%C3%A1nh%20Bao%20T%C6%B0%C6%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tieu-man-thau-banh-bao-tuoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92710,7 +92710,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Kitty%20-%20Kenbar",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-kitty-kenbar",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92895,7 +92895,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20B%E1%BA%A3y%20Qu%C3%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-bay-quan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -92991,7 +92991,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%20%26%20T%C3%B4i%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/m-toi-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93087,7 +93087,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bana%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bana-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93184,7 +93184,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20PH%C3%9AC%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-phuc-tra-sua-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93284,7 +93284,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20Thu%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-thu-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93381,7 +93381,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Th%C3%A1i%20H%C3%A0o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-thai-hao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93478,7 +93478,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20T%C3%B4m%20M%E1%BB%B1c%20CHU%20-%2040%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-tom-muc-chu-40-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93576,7 +93576,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A3%20C%C3%A1%20Thu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cha-ca-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93673,7 +93673,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20L%E1%BB%91p%20U",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-lop-u",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93770,7 +93770,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Tr%C6%B0a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-trua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93867,7 +93867,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20R%C3%A1n%20Doraemon",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-ran-doraemon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -93963,7 +93963,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BA%A3i%20S%E1%BB%89%20Restaurant",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-si-restaurant",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94058,7 +94058,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sao%20Bi%E1%BB%83n%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sao-bien-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94155,7 +94155,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Avatar%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/avatar-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94253,7 +94253,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Qu%E1%BB%B3nh%20Anh%20-%2059%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-quynh-anh-59-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94349,7 +94349,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ga%CC%81nh%20Cua%20M%C6%A1%CC%A3%20U%CC%81t%20-%20Ba%CC%81nh%20Canh%20Cua%2C%20L%C3%A2%CC%89u%20Cua%20%26%20C%C6%A1m%20Cua%20-%2055%20Bi%C3%AAn%20C%C6%B0%C6%A1ng%2C%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ganh-cua-mo-ut-banh-canh-cua-lau-cua-com-cua-55-bien-cuong-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94449,7 +94449,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thi%C3%AAn%20%C3%9D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thien-y",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94545,7 +94545,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=La%20Mia%20Kafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/la-mia-kafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94641,7 +94641,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Da%20Heo%20Chi%C3%AAn%20T%E1%BB%8Fi%20%E1%BB%9At%20Sushi%20Tr%E1%BA%A7n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/da-heo-chien-toi-ot-sushi-tran",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94737,7 +94737,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Giang%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-giang-banh-hoi-chao-long-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94836,7 +94836,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MiO%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mio-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -94935,7 +94935,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Xi%C3%AAn%20Que%20T%E1%BB%B1%20N%C6%B0%E1%BB%9Bng%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xien-que-tu-nuong-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95032,7 +95032,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20M%C3%AC%20Tu%E1%BB%87%20Vi%C3%AAn%20-%20Coffee%20%26%20B%C3%A1nh%20%C4%90%E1%BB%8Ba%20Ph%C6%B0%C6%A1ng%20-%20110%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-mi-tue-vien-coffee-banh-dia-phuong-110-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95131,7 +95131,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=GOGO%20TEA%20-%20Tr%C3%A0%20S%E1%BB%AFa%20Olong%2C%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20%26%20%C4%90%E1%BB%93%20U%E1%BB%91ng%20Healthy",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gogo-tea-tra-sua-olong-tra-trai-cay-do-uong-healthy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95229,7 +95229,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Qu%E1%BB%B3nh%20Em%20-%2064A%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-quynh-em-64a-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95418,7 +95418,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20TBC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-tbc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95515,7 +95515,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20S%C3%A1ng%2010K",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-sang-10k",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95611,7 +95611,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=36%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/36-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95707,7 +95707,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Coffee%20Student%20House",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/coffee-student-house",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95804,7 +95804,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%8C%20CAY%2030k%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-30k-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -95904,7 +95904,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Loyal%20Coffee%20-%20Coffee%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/loyal-coffee-coffee-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96001,7 +96001,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20V%E1%BB%8Bt%20%26%20G%E1%BB%8Fi%20V%E1%BB%8Bt%20-%2023%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-vit-goi-vit-23-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96100,7 +96100,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C6%B0%20%C3%9D%20-%20N%C6%B0%E1%BB%9Bc%20%C3%89p%2C%20B%C3%A1nh%20Cu%E1%BB%91n%2C%20B%C3%A1nh%20L%E1%BB%8Dc%20Hu%E1%BA%BF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhu-y-nuoc-ep-banh-cuon-banh-loc-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96197,7 +96197,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20B%C3%A1nh%20Ch%C3%BA%20Duy%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-banh-chu-duy-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96294,7 +96294,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C6%A1m%20%26%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%203CE",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-com-bun-dau-mam-tom-3ce",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96393,7 +96393,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Coffee%20%26%20Tea%20MIN%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-coffee-tea-min-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96491,7 +96491,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%82n%20H%E1%BA%A1nh%20An%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-an-hanh-an-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96589,7 +96589,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Ch%C3%A8%201990%20-%20Bi%C3%AAn%20C%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-che-1990-bien-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96687,7 +96687,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96783,7 +96783,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96881,7 +96881,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20Ph%E1%BB%9F%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -96979,7 +96979,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-nong-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97075,7 +97075,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AA%20Trang%20Cafe%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/me-trang-cafe-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97173,7 +97173,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A9%20B%E1%BA%A3y%20-%20G%C3%A0%20Chi%C3%AAn%2C%20C%C3%A1%20Vi%C3%AAn%20%26%20Nem%20Chua%20R%C3%A1n%20-%2020%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/be-bay-ga-chien-ca-vien-nem-chua-ran-20-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97270,7 +97270,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20v%E1%BA%B7t%20S%C3%A1u%20L%C6%B0%E1%BB%A3ng%20-%20B%C3%A1nh%20tr%C3%A1ng%20n%C6%B0%E1%BB%9Bng%2C%20Tr%E1%BB%A9ng%20n%C6%B0%E1%BB%9Bng%20%26%20Ch%C3%A2n%20g%C3%A0%20s%E1%BB%91t%20th%C3%A1i%20-%2024%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-sau-luong-banh-trang-nuong-trung-nuong-chan-ga-sot-thai-24-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97374,7 +97374,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C3%A0%20F%C6%A1%20-%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-ca-fo-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97473,7 +97473,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20Quy%20Nh%C6%A1n%20-%20Lagu%20Nh%C6%B0%20%C3%9D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-quy-nhon-lagu-nhu-y",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97571,7 +97571,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Chay%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20Chay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-chay-banh-cuon-chay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97671,7 +97671,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20-%20Sinh%20T%E1%BB%91",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-sinh-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97769,7 +97769,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cha-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97866,7 +97866,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20B%C3%A0%20B%E1%BA%A3y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-ba-bay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -97966,7 +97966,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Lu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98064,7 +98064,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20T%E1%BB%B1%20Ch%E1%BB%8Dn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-tu-chon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98162,7 +98162,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Vi%E1%BB%87t%20Qu%C3%A1n%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/viet-quan-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98262,7 +98262,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20%C4%90%E1%BA%ACU%20B%C3%80%20M%C6%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-ba-mo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98360,7 +98360,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Sen%20-%20S%E1%BB%91%206%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-sen-so-6-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98461,7 +98461,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20B%C3%A1nh%20H%E1%BB%8Fi%20V%E1%BB%8B%20B%E1%BA%AFc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-vi-bac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98559,7 +98559,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20-%20Ti%E1%BB%87m%20%C4%82n%20V%E1%BA%B7t%20Trong%20H%E1%BA%BBm%20-%2054/15%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-tron-tiem-an-vat-trong-hem-5415-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98658,7 +98658,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98755,7 +98755,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98852,7 +98852,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%81NH%20X%C3%88O%20QUY%20NH%C6%A0N%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-quy-nhon-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -98949,7 +98949,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Kem%20Minh%20T%C3%A2m%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-kem-minh-tam-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99045,7 +99045,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99142,7 +99142,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20-%2048%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-48-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99239,7 +99239,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20Chick%20%26%20Go%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-chick-go-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99335,7 +99335,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Chu%E1%BB%91i%20Chi%C3%AAn%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-chuoi-chien-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99431,7 +99431,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20M%C3%ADa%20Kingwin%20-%2061%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-mia-kingwin-61-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99526,7 +99526,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20Chua%20Tr%C3%A2n%20Ch%C3%A2u%20H%E1%BA%A1%20Long%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-chua-tran-chau-ha-long-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99621,7 +99621,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%91t%20C%C3%A0%20Ph%C3%AA%20-%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20-%2008%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mot-ca-phe-ca-phe-muoi-08-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99717,7 +99717,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20Chua%20Tr%C3%A2n%20Ch%C3%A2u%20H%E1%BA%A1%20Long%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-chua-tran-chau-ha-long-tran-cao-van-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99813,7 +99813,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Quy%20Nh%C6%A1n%20-%20Qu%C3%A1n%20%C4%82n%20Gia%20%C4%90%C3%ACnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-quy-nhon-quan-an-gia-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -99911,7 +99911,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%A3o%20D%E1%BB%B1%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lao-du-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100007,7 +100007,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thu%20V%C3%A0ng%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thu-vang-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100103,7 +100103,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CARTER%20COFFEE",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/carter-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100200,7 +100200,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chay%20T%E1%BB%8Bnh%20T%C3%A2m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-tinh-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100296,7 +100296,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20My%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-my-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100485,7 +100485,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100582,7 +100582,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20N%C4%83m%20Hi%E1%BB%81n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-bo-nam-hien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100679,7 +100679,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20C%C6%A1m%20T%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-com-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100777,7 +100777,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20Thu%20H%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-thu-huong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100875,7 +100875,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20B%C3%A8o%20Ch%C3%A9n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-beo-chen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -100970,7 +100970,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20S%C3%A2m%20L%C3%A0i%20-%20199B%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-sam-lai-199b-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101068,7 +101068,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%C6%A1ng%20Rio%20-%20Ch%C3%A2n%20G%C3%A0%20B%C3%B3%20X%C3%B4i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-rio-chan-ga-bo-xoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101166,7 +101166,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ahihi%20Qu%C3%A1n%20-%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ahihi-quan-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101262,7 +101262,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20B%C3%A0%20B%C3%B4ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-ba-bong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101358,7 +101358,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20Th%C3%A0nh%20Qu%C3%A1n%20-%20Ph%E1%BB%9F%20G%C3%A0%20Ph%E1%BB%91%20C%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-thanh-quan-pho-ga-pho-co",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101455,7 +101455,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20Chay%20Thanh%20T%C3%A2m%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-thanh-tam-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101553,7 +101553,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20K%E1%BA%B9p%20B%C3%A0%20B%C3%B4ng%20-%2037%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-kep-ba-bong-37-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101648,7 +101648,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=DAVI%20COFFEE%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/davi-coffee-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101745,7 +101745,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mr%207%20-%20Coffee%20%26%20Milk%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mr-7-coffee-milk-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101841,7 +101841,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20H%E1%BA%A1t%20HAVE%20A%20-%20Nguy%E1%BB%85n%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-hat-have-a-nguyen-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -101936,7 +101936,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%E1%BB%8Fn%20Caf%C3%A9%20-%20Online",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/con-cafe-online",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102033,7 +102033,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C3%A0%20Kha%20Th%C3%A1i%20Tea%20COHO%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/na-kha-thai-tea-coho-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102129,7 +102129,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20T%C3%B4m%20111",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-tom-111",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102227,7 +102227,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Y%E1%BA%BFn%20Ho%C3%A0%20-%20Online",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-yen-hoa-online",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102324,7 +102324,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=NINO%20CAFE%20-%2050%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nino-cafe-50-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102422,7 +102422,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20T%C6%B0%20L%C3%BD%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-tu-ly-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102519,7 +102519,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A9%20B%C3%B2n%20-%20B%C3%A1nh%20Tr%C3%A1ng%20N%C6%B0%E1%BB%9Bng%20-%20Tr%E1%BA%A7n%20Cao%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-be-bon-banh-trang-nuong-tran-cao-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102619,7 +102619,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Th%E1%BB%8Bt%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-thit-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102717,7 +102717,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bobo%20Station%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bobo-station-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102814,7 +102814,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20SUMO%20-%2076%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-sumo-76-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -102911,7 +102911,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Buffet%20Tr%C3%A1i%20C%C3%A2y%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/buffet-trai-cay-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103008,7 +103008,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%20%26%20Kem%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-kem-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103107,7 +103107,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A1i%20C%C3%A2y%20T%C3%B4%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trai-cay-to-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103204,7 +103204,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20T%C3%A2y%20S%C6%A1n%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-tay-son-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103303,7 +103303,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20N%C6%B0%E1%BB%9Bng%20Mu%E1%BB%91i%20%E1%BB%9At%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-nuong-muoi-ot-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103404,7 +103404,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20D%E1%BB%ABa%20S%C6%B0%C6%A1ng%20S%C3%A1o%20-%20D%E1%BB%ABa%20T%E1%BA%AFc%20C%C3%B4%20H%E1%BA%B1ng%20-%2043%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-dua-suong-sao-dua-tac-co-hang-43-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103501,7 +103501,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20Ch%C3%BA%20B%C3%A9o%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%2076%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-chu-beo-bun-dau-mam-tom-76-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103601,7 +103601,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%B9m%20Food%20-%20Ch%C3%A2n%20G%C3%A0%20S%E1%BB%91t%20Th%C3%A1i%20%26%20G%C3%A0%20%E1%BB%A6%20Mu%E1%BB%91i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trum-food-chan-ga-sot-thai-ga-u-muoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103700,7 +103700,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20L%C3%A1%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-la-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103797,7 +103797,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20262%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-262-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103894,7 +103894,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Vua%20-%20B%C3%A1nh%20M%C3%AC%20Que",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vua-banh-mi-que",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -103993,7 +103993,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Nh%C3%A0%20L%C3%A0m%20Bin%20B%C3%B4n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-nha-lam-bin-bon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104091,7 +104091,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tra%CC%81i%20C%C3%A2y%20T%C6%B0%CC%A3%20Cho%CC%A3n%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trai-cay-tu-chon-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104188,7 +104188,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Beefsteak%20P%E1%BA%AFp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/beefsteak-pap",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104285,7 +104285,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20M%E1%BB%B1c%20T%C3%B4m%20B%C3%B2%20-%20%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-muc-tom-bo-dac-san-binh-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104384,7 +104384,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Th%E1%BA%A1ch",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-thach",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104482,7 +104482,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20%26%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104578,7 +104578,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chocolate%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chocolate-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104674,7 +104674,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%BAn%20Ri%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-bun-rieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104772,7 +104772,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20Kun",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-kun",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104868,7 +104868,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20C%C3%B4%20Linh%20-%20108%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-co-linh-108-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -104966,7 +104966,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Seoul%20-%20109%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/seoul-109-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105062,7 +105062,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%A1%20Kho%20Cay%2C%20B%C3%BAn%20M%E1%BB%B1c%20Sate%20%26%20B%C3%BAn%20M%E1%BA%AFm%20N%C3%AAm%20-%2022%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ca-kho-cay-bun-muc-sate-bun-mam-nem-22-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105162,7 +105162,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Heal%20To%20Health%20-%20Kombucha%20-%2027%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/heal-to-health-kombucha-27-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105258,7 +105258,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=HAVEN%20-%20C%C3%A0%20Ph%C3%AA%20%26%20%C4%90%E1%BB%93%20Ng%E1%BB%8Dt%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/haven-ca-phe-do-ngot-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105356,7 +105356,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20M%E1%BA%B9%20Hoa%20-%20X%C3%B4i%20%26%20Ch%C3%A2n%20G%C3%A0%20S%E1%BA%A3%20T%E1%BA%AFc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-me-hoa-xoi-chan-ga-sa-tac",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105455,7 +105455,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20M%E1%BA%B9%20Bin%20-%20Tr%C3%A0%20T%E1%BA%AFc%2C%20N%C6%B0%E1%BB%9Bc%20D%E1%BB%ABa%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20-%2054%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-me-bin-tra-tac-nuoc-dua-nuoc-ep-54-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105552,7 +105552,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TP%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%20X%E1%BB%A9%20N%E1%BA%ABu%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tp-dac-san-binh-dinh-xu-nau-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105649,7 +105649,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=LaLa%20Kitchen%20-%2058%20Nguy%E1%BB%85n%20L%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lala-kitchen-58-nguyen-lu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105746,7 +105746,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2n%20g%C3%A0%20s%E1%BB%91t%20th%C3%A1i%20-%20110%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-sot-thai-110-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105846,7 +105846,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20M%E1%BA%B9%20Vi%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-me-vi-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -105945,7 +105945,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20-%20108%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-108-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106044,7 +106044,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20H%C3%A0u%20Linh%20Ch%C6%B0%C6%A1ng%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-hau-linh-chuong-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106142,7 +106142,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20C%C3%B4%20Thi%E1%BB%87n%20-%2087%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-co-thien-87-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106240,7 +106240,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Ch%E1%BA%A5m%20T%E1%BB%91p%20M%E1%BB%A1%2C%20Xi%C3%AAn%20Que%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20HIHE",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-cham-top-mo-xien-que-nuoc-ep-hihe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106337,7 +106337,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Nh%C3%A0%20D%C3%A2u%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nha-dau-dac-san-binh-dinh-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106435,7 +106435,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20D%E1%BB%A9a%20H%E1%BA%A1nh%20Hu%E1%BB%B3nh%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-dua-hanh-huynh-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106533,7 +106533,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20S%C3%A0i%20G%C3%B2n%20-%20122%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-sai-gon-122-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106633,7 +106633,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/ga-ran-chicken-plus-vu-bao",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20R%C3%A1n%20Chicken%20Plus%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-ran-chicken-plus-vu-bao",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -106730,7 +106730,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20M%E1%BA%B9%20Ken%202K%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-me-ken-2k-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106826,7 +106826,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C3%A0%20Ph%C3%AA%20%26%20Sinh%20T%E1%BB%91%20Nh%E1%BB%8F%20NANA%20-%20V%C5%A9%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-ca-phe-sinh-to-nho-nana-vu-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -106926,7 +106926,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%2094%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-94-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107024,7 +107024,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107120,7 +107120,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bami%20Vi%E1%BB%87t%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bami-viet-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107215,7 +107215,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107311,7 +107311,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Smart%20Kids%20-%20Coffee%20%26%20Tea%20-%2002%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/smart-kids-coffee-tea-02-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107408,7 +107408,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20C%C3%A1i%20Chum%20-%20102B%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-cai-chum-102b-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107504,7 +107504,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20B%C3%BAn%20R%E1%BA%A1m%20%C4%90%E1%BA%A7m%20Tr%C3%A0%20%E1%BB%94%20-%20%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-bun-ram-dam-tra-o-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107601,7 +107601,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20Kim%20C%C3%BAc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-kim-cuc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107698,7 +107698,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Minh%20H%E1%BA%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-minh-hai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107795,7 +107795,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Epress%20-%20C%C6%A1m%20T%E1%BA%A5m%20S%C3%A0i%20G%C3%B2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/epress-com-tam-sai-gon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107890,7 +107890,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%20-%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/t-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -107986,7 +107986,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20Ch%C3%A2u%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-chau-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108083,7 +108083,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20C%C3%B4%20Uy%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-co-uyen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108179,7 +108179,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=A%20Ho%C3%A0i%20-%20Ph%E1%BB%9F%20Kh%C3%B4%20Gia%20Lai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/a-hoai-pho-kho-gia-lai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108278,7 +108278,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Khoai%20T%C3%A2y%20L%E1%BB%91c%20Xo%C3%A1y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khoai-tay-loc-xoay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108377,7 +108377,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20%C3%8Dt%20-%20B%C3%A1nh%20L%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-it-banh-loc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108472,7 +108472,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tre%20Xanh%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tre-xanh-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108569,7 +108569,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Nh%C3%A0%20L%C3%A0m%20Bin%20B%C3%B4n%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-nha-lam-bin-bon-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108666,7 +108666,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Ki%E1%BB%81u%20Di%E1%BB%85m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kieu-diem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108763,7 +108763,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Busan%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-busan-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108862,7 +108862,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sola%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sola-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -108959,7 +108959,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Kh%C3%B4%20A%20Ho%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kho-a-hoai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109058,7 +109058,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20B%C3%A0%20B%C3%A9%20-%20Nem%20N%C6%B0%E1%BB%9Bng%20%26%20M%E1%BB%B1c%20Rim",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-ba-be-nem-nuong-muc-rim",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109155,7 +109155,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rhum%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rhum-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109252,7 +109252,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20-%20B%C3%BAn%20R%E1%BA%A1m%20%C4%90%E1%BA%A7m%20Tr%C3%BAc%20-%2003%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-bun-ram-dam-truc-03-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109350,7 +109350,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20KingKe%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-kingke-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109446,7 +109446,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%E1%BA%A3y%20Qu%C3%A1n%20-%2047%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-bay-quan-47-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109543,7 +109543,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20C%C3%B4%20Lan%20%28Kh%C3%B4ng%20Chi%20Nh%C3%A1nh%29%20-%20%C4%82n%20S%C3%A1ng%20-%20Mai%20Xu%C3%A2n%20Th%C6%B0%E1%BB%9Fng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-co-lan-khong-chi-nhanh-an-sang-mai-xuan-thuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109639,7 +109639,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Moon%20Cafe%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moon-cafe-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109737,7 +109737,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0%C6%A1ng%20Ch%C3%A8%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huong-che-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109834,7 +109834,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=LaRose%20Cafe%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/larose-cafe-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -109932,7 +109932,7 @@ const APP_DATA = {
           ],
           "deliveryPlatform": "ShopeeFood",
           "deliveryUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-hung-vuong",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Five%20Star%20Vietnam%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/five-star-vietnam-hung-vuong",
           "deliveryTime": "25 - 40 phút",
           "deliveryFee": "18.000đ (Áp mã Freeship)",
           "deliveryFeeVal": 18000,
@@ -110029,7 +110029,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Khoai%20Lang%20L%E1%BA%AFc%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/khoai-lang-lac-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110125,7 +110125,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Que%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-que-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110224,7 +110224,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20B%C3%ACnh%20D%C3%A2n%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-binh-dan-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110322,7 +110322,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%C4%90%E1%BB%87%20Nh%E1%BA%A5t%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-de-nhat-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110421,7 +110421,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=UM%C3%AA%20Caf%C3%AA%20-%20Ti%E1%BB%87m%20Tr%C3%A0%20S%E1%BB%AFa%20-%20797%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ume-cafe-tiem-tra-sua-797-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110518,7 +110518,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20V%C3%A0%20L%E1%BA%A9u%20Sanu%20Quy%20Nh%C6%A1n%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-va-lau-sanu-quy-nhon-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110619,7 +110619,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20S%E1%BB%A3i%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-soi-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110718,7 +110718,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20Lu%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vit-nuong-lu-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110815,7 +110815,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20N%C6%B0%E1%BB%9Bng%20Ly%20Na%20-%20270%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-nuong-ly-na-270-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -110910,7 +110910,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A0M%20CHAY%20%26%20L%E1%BA%A8U%20CHAY%20PH%C6%AF%E1%BB%9AC%20AN",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chay-lau-chay-phuoc-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111008,7 +111008,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Daty%20-%20Coffee%20And%20Tea%20-%20178%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/daty-coffee-and-tea-178-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111106,7 +111106,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A2n%20G%C3%A0%20Cha%20G%E1%BA%A7n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chan-ga-cha-gan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111204,7 +111204,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20X%C3%A8o%20H%C6%AF%C6%A0NG%20QU%C3%8A%20-%201522%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-xeo-huong-que-1522-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111299,7 +111299,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Traa.n%20Coffee%20%26%20Tea%20-%20131%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/traan-coffee-tea-131-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111396,7 +111396,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CHA%20TRA%20THAI%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cha-tra-thai-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111492,7 +111492,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sun%20Coffee%20-%20168%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sun-coffee-168-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111589,7 +111589,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%B1%20-%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bu-tra-sua-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111686,7 +111686,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20V%E1%BB%8Bt%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-vit-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111782,7 +111782,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nha%CC%80%20Ha%CC%80ng%20Ti%C3%AA%CC%A3c%20C%C6%B0%C6%A1%CC%81i%20Xu%C3%A2n%20Hi%C3%AA%CC%81u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-tiec-cuoi-xuan-hieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111879,7 +111879,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Kiwi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-kiwi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -111976,7 +111976,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kem%20X%C3%B4i%20Thanh%20H%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kem-xoi-thanh-hang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112074,7 +112074,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=A%20Quang%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/a-quang-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112172,7 +112172,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%A5i%20-%20Cafe%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bui-cafe-tra-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112269,7 +112269,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Victoria%20-%20Cafe%20%26%20Fast%20Food",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/victoria-cafe-fast-food",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112365,7 +112365,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Alice%20Cafe%20-%20Cafe%20H%E1%BB%93%20B%C6%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/alice-cafe-cafe-ho-boi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112461,7 +112461,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Chim%20Th%E1%BA%AFng%20-%20Cafe%20S%C3%A2n%20V%C6%B0%E1%BB%9Dn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chim-thang-cafe-san-vuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112558,7 +112558,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%A1u%20C%C3%A2u%20C%C3%A1%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sau-cau-ca-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112657,7 +112657,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%E1%BA%A9u%20B%C3%B2%20%C4%90%C6%B0%E1%BB%9Dng%20S%E1%BA%AFt%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lau-bo-duong-sat-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112756,7 +112756,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20Tin%20Tin",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-tin-tin",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112853,7 +112853,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C6%B0%C6%A1ng%20Th%E1%BB%A7y%20-%20Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phuong-thuy-nhau-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -112952,7 +112952,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113048,7 +113048,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C6%B0%E1%BB%A3ng%20C%C3%A1t%20Cafe%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phuong-cat-cafe-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113145,7 +113145,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%E1%BA%ADu%20B%C3%ACnh%20D%C3%A2n%20154",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhau-binh-dan-154",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113243,7 +113243,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C6%B0%E1%BB%A3ng%20H%E1%BB%93ng%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phuong-hong-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113340,7 +113340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gi%E1%BA%A3i%20Kh%C3%A1t%20Vy",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/giai-khat-vy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113435,7 +113435,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20Ly%20Cafe%20-%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-ly-cafe-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113534,7 +113534,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20Ch%E1%BB%89",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-chi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113631,7 +113631,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Happy%20Life%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/happy-life-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113728,7 +113728,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20H%C6%B0%C6%A1ng%20X%C6%B0a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-huong-xua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113824,7 +113824,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mai%20H%C3%A2n%20-%20Cafe%20%26%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mai-han-cafe-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -113920,7 +113920,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=King%20Cafe%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/king-cafe-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114017,7 +114017,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%90%E1%BA%ADu%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-dau-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114115,7 +114115,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kinh%20B%E1%BA%AFc%20-%20Qu%C3%A1n%20%C4%82n%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kinh-bac-quan-an-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114211,7 +114211,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Hoa%20T%C3%A2n%20An%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-hoa-tan-an-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114310,7 +114310,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tu%E1%BA%A5n%20B%E1%BA%AFc%20-%20B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tuan-bac-bun-cha-ha-noi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114406,7 +114406,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cheerio%20-%20Cafe%20%26%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cheerio-cafe-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114502,7 +114502,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C5%A9%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cu-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114599,7 +114599,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20R%E1%BA%A1m%20N%C3%A0ng%20B%C3%B4ng%20%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ram-nang-bong-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114696,7 +114696,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20Thu%E1%BB%B3%20Ch%C3%A2u%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thuy-chau-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114792,7 +114792,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20B%C3%A0%20S%C3%A1u%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-thit-nuong-ba-sau-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114891,7 +114891,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KANFEEE%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kanfeee-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -114986,7 +114986,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i%20Homemade%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ha-noi-homemade-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115082,7 +115082,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20ATY%20-%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-aty-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115180,7 +115180,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%82n%20Sam%20Sam%20-%20La%20V%C4%83n%20Ti%E1%BA%BFn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-an-sam-sam-la-van-tien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115278,7 +115278,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%BAt%20C%C3%A0%20Ph%C6%A1%20-%2003%20C%E1%BA%A7n%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chut-ca-pho-03-can-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115376,7 +115376,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%ABu%20Cafe%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nau-cafe-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115477,7 +115477,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Share%20House%20Coffee%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/share-house-coffee-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115578,7 +115578,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20Ph%E1%BB%9F%20B%C3%B2%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-bo-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115680,7 +115680,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A5m%20C%C3%B4%20H%E1%BA%A1nh%2034%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cham-co-hanh-34-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115783,7 +115783,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%E1%BA%A3%20P%C3%AD%20L%C3%B9%20Quy%20Nh%C6%A1n%20Ch%C3%ADnh%20G%E1%BB%91c%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ta-pi-lu-quy-nhon-chinh-goc-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115881,7 +115881,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Rabbit%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/rabbit-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -115984,7 +115984,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mstyle%20Cafe%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mstyle-cafe-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116085,7 +116085,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MARINA%20COFFEE%20-%20138%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/marina-coffee-138-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116186,7 +116186,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%A7y%20Ti%C3%AAn%20Cafe%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thuy-tien-cafe-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116285,7 +116285,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Fisherman%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/fisherman-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116386,7 +116386,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%A9%20Na%20-%20B%C3%BAn%20B%C3%B2%20-%20Ch%E1%BA%A3%20Cua%20%26%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-be-na-bun-bo-cha-cua-cha-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116487,7 +116487,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Vi%E1%BB%87t%20-%20Cafe%20%26%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/viet-cafe-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116587,7 +116587,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T-Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/t-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116688,7 +116688,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sunrise%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sunrise-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116790,7 +116790,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C3%A0%20H%C3%A0ng%20Vi%20S%E1%BA%A3n%20-%20Quy%20Nh%C6%A1n%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nha-hang-vi-san-quy-nhon-plaza",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116892,7 +116892,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20T%C3%B9ng%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-tung-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -116993,7 +116993,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Huy%20Ho%C3%A0ng%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/huy-hoang-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117094,7 +117094,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BB%9Di%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thoi-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117195,7 +117195,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%C3%A2n%20H%C3%A0%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngan-ha-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117296,7 +117296,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kin%20Kin%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kin-kin-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117397,7 +117397,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-banh-mi-cham",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117500,7 +117500,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Song%20Linh%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/song-linh-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117601,7 +117601,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ho%C3%A0ng%20Thi%E1%BB%87n%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoang-thien-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117702,7 +117702,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Z39%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/z39-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117803,7 +117803,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Morning%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/morning-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -117904,7 +117904,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%E1%BB%90p%20La%20C%C3%B4%20N%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-op-la-co-nu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118006,7 +118006,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Ho%C3%A0ng%20Gia",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-hoang-gia",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118107,7 +118107,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%A1ch%20Cafe%20-%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sach-cafe-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118209,7 +118209,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%E1%BB%A7a%20Th%E1%BA%A3o%20-%20Tr%C3%A1i%20C%C3%A2y%20C%E1%BA%AFt%20S%E1%BA%B5n%20%26%20N%C6%B0%E1%BB%9Bc%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-cua-thao-trai-cay-cat-san-nuoc-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118312,7 +118312,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%AA%20La%20Coffee%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/le-la-coffee-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118411,7 +118411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=A%20To%C3%A0n%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/a-toan-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118514,7 +118514,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%C6%B0%E1%BB%9Bc%20%C3%89p%2C%20Tr%C3%A1i%20C%C3%A2y%20C%E1%BA%AFt%20S%E1%BA%B5n%20%26%20%C4%82n%20V%E1%BA%B7t%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nuoc-ep-trai-cay-cat-san-an-vat-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118616,7 +118616,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=CAFEIN%20Coffee%20-%20%C4%90%C3%B4%20%C4%90%E1%BB%91c%20B%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafein-coffee-do-doc-bao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118715,7 +118715,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=3G%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/3g-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118817,7 +118817,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20S%E1%BB%AFa%20King",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-sua-king",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -118918,7 +118918,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%B3c%20N%C3%A2u%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/soc-nau-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119019,7 +119019,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%C3%A0o%20Nguy%C3%AAn%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dao-nguyen-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119120,7 +119120,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20159%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-159-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119217,7 +119217,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Patesso%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-patesso-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119313,7 +119313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BA%A7u%20Ri%C3%AAng%20Quy%20Nh%C6%A1n%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sau-rieng-quy-nhon-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119411,7 +119411,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20V%E1%BB%89a%20H%C3%A8%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-via-he-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119510,7 +119510,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C6%B0%C6%A1n%20Thu%20H%C6%B0%C6%A1ng%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-luon-thu-huong-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119608,7 +119608,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Kem%20Ho%C3%A0ng%20Y%E1%BA%BFn%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-kem-hoang-yen-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119704,7 +119704,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20223K%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-223k-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119801,7 +119801,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20kh%C3%B4%20Gia%20Lai%20%C4%90%C3%B4ng%203%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kho-gia-lai-dong-3-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119898,7 +119898,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Burger%20Vi%E1%BB%87t%20Quy%20Nh%C6%A1n%20-%20C%E1%BB%ADa%20H%C3%A0ng%20Th%E1%BB%A9c%20%C4%83n%20Nhanh%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/burger-viet-quy-nhon-cua-hang-thuc-an-nhanh-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -119994,7 +119994,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120089,7 +120089,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=An%20Roastery%20Coffee%20-%20X%C6%B0%E1%BB%9Fng%20rang%20C%C3%A0%20Ph%C3%AA%20M%E1%BB%99c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-roastery-coffee-xuong-rang-ca-phe-moc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120185,7 +120185,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20Ti%C3%AAn%20-%20M%C3%AC%20%C3%9D%20%26%20Tr%E1%BB%A9ng%20L%E1%BB%99n%20X%C3%A0o%20Me%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-tien-mi-y-trung-lon-xao-me-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120282,7 +120282,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=New%20Day%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/new-day-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120378,7 +120378,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20A%20Khanh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-a-khanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120474,7 +120474,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=AB%20Bakery",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ab-bakery",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120570,7 +120570,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Meo%20Cafe%20-%20Cafe%20Mu%E1%BB%91i%20%26%20Matcha%20Latte",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/meo-cafe-cafe-muoi-matcha-latte",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120667,7 +120667,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=O%20V%C4%A9nh%20-%20B%C3%BAn%20B%C3%B2%20Gi%C3%B2%20Heo",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/o-vinh-bun-bo-gio-heo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120764,7 +120764,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Jolly%20Gelato%20-%20125%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/jolly-gelato-125-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120859,7 +120859,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Cafe%20Gi%E1%BA%A3i%20Kh%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cafe-giai-khat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -120957,7 +120957,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121052,7 +121052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ngo%CC%A3c%20Li%E1%BB%85u%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-lieu-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121148,7 +121148,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sinh%20T%E1%BB%91%20M%E1%BB%B9%20Li%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sinh-to-my-lien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121246,7 +121246,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20H%C6%B0%E1%BB%9Dng%20-%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/van-huong-bun-bo-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121342,7 +121342,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121439,7 +121439,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Hot%20Dogs",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-hot-dogs",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121536,7 +121536,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Star%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/star-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121632,7 +121632,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Mai%20-%20B%C3%BAn%20Ri%C3%AAu%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-mai-bun-rieu-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121729,7 +121729,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Scoop%20Yogurts%20-%20An%20Ph%C3%BA%20Th%E1%BB%8Bnh%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/scoop-yogurts-an-phu-thinh-plaza",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121824,7 +121824,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Phin%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phin-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -121920,7 +121920,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%80%20PH%C3%8A%20ROVINA%20-%20T%C4%83ng%20B%E1%BA%A1t%20H%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-rovina-tang-bat-ho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122017,7 +122017,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122114,7 +122114,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gia%20Hu%E1%BB%87%20-%20D%E1%BB%ABa%20L%E1%BA%A1nh%20%26%20Rau%20C%C3%A2u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gia-hue-dua-lanh-rau-cau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122209,7 +122209,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20Ng%E1%BB%8Dc%20Lan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-ngoc-lan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122308,7 +122308,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20N%C6%B0%E1%BB%9Bng%20T%C3%AD%20Ti",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-nuong-ti-ti",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122405,7 +122405,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Starlight%20Coffee%20-%20An%20Ph%C3%BA%20Th%E1%BB%8Bnh%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/starlight-coffee-an-phu-thinh-plaza",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122501,7 +122501,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Crew%20Cafe%20-%20An%20Ph%C3%BA%20Th%E1%BB%8Bnh%20Plaza",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/crew-cafe-an-phu-thinh-plaza",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122597,7 +122597,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Friendcha%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/friendcha-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122693,7 +122693,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B3m%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xom-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122790,7 +122790,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122886,7 +122886,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tamba%20Bakery%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tamba-bakery-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -122983,7 +122983,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kebab%20Torki%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kebab-torki-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123078,7 +123078,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C6%B0ng%20K%C3%BD%20M%C3%AC%20Gia%20-%20Qu%C3%A1n%20%C4%82n%20-%2010%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hung-ky-mi-gia-quan-an-10-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123175,7 +123175,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20B%C3%ACnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-binh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123270,7 +123270,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%81%20%C4%90%C3%A2y%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ve-day-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123367,7 +123367,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%E1%BB%A9ng%20V%E1%BB%8Bt%20L%E1%BB%99n%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trung-vit-lon-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123464,7 +123464,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Anh%20Th%C6%B0%20-%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/anh-thu-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123563,7 +123563,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=The%20Siro%20Cake%20Workshop",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/the-siro-cake-workshop",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123659,7 +123659,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MonCha%20Milk%20Tea",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moncha-milk-tea",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123755,7 +123755,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=HOMIE%20Food%20%26%20Drink",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/homie-food-drink",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123851,7 +123851,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Hotdog%20P%C3%A9%20T%C3%AD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hotdog-pe-ti",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -123947,7 +123947,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20B%C3%A1nh%20M%C3%AC%20Ph%C3%BAc%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-banh-mi-phuc-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124047,7 +124047,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20S%C3%80%20B%C3%8C%20CH%C6%AF%E1%BB%9ENG",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-sa-bi-chuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124144,7 +124144,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sanh%20Ph%C6%B0%C6%A1ng%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20%26%20S%C3%BAp%20Cua",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sanh-phuong-banh-cuon-sup-cua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124241,7 +124241,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Yes%20Coffee%20%26%20Friends",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/yes-coffee-friends",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124338,7 +124338,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Y%E1%BA%BFn%20Ch%C6%B0ng%20B%C3%ADch%20Hi%E1%BB%81n%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/yen-chung-bich-hien-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124434,7 +124434,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Tr%E1%BB%91ng%20-%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-trong-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124531,7 +124531,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20V%E1%BB%8B%20Nh%C3%A0%20B%E1%BA%AFp%20-%20477/7%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-vi-nha-bap-4777-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124629,7 +124629,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=MiMi%20Food%20-%20C%C6%A1m%20G%C3%A0%20X%C3%A9%20%26%20B%C3%BAn%20M%E1%BA%AFm%20N%C3%AAm%20-%20528%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mimi-food-com-ga-xe-bun-mam-nem-528-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124729,7 +124729,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20%C4%90oraemon%20-%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-an-doraemon-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124826,7 +124826,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20M%C3%B3n%20-%20121%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-mon-121-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -124923,7 +124923,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Kh%C3%B4%20A%20Huy%20-%2083%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-kho-a-huy-83-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125020,7 +125020,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KOCHI%20-%20M%C3%AC%20Cay%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%2008%20Tr%E1%BA%A7n%20%C4%90%C4%83ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kochi-mi-cay-tra-sua-08-tran-dang-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125124,7 +125124,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=TI%E1%BB%86M%20CH%C3%82N%20G%C3%80%20M%E1%BA%ACP%20-%2035/2/20%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-chan-ga-map-35220-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125224,7 +125224,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Moon%20Tea%20Quy%20Nh%C6%A1n%20-%20Tea%20%26%20Food%20-%20221%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moon-tea-quy-nhon-tea-food-221-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125319,7 +125319,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20M%E1%BA%B9%20N%E1%BA%A5m%20-%20Ph%E1%BA%A1m%20H%E1%BB%93ng%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-me-nam-pham-hong-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125417,7 +125417,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20%26%20C%C3%A0%20Ph%C3%AA%20-%20C%C3%B4%20T%C3%A2m%20-%2052%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-ca-phe-co-tam-52-nguyen-cong-tru",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125515,7 +125515,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%2C%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20-%2039%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-bun-thit-nuong-banh-cuon-39-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125613,7 +125613,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20Ch%E1%BA%A9m%20-%20106%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-cham-106-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125709,7 +125709,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nguy%E1%BB%87t%20Thanh%20Food%20%26%20Drink%20-%20205/10B%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nguyet-thanh-food-drink-20510b-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125805,7 +125805,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20T%E1%BA%AFc%20L%E1%BA%AFc%20-%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-tac-lac-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -125902,7 +125902,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A8%20Chill%20Chill",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/che-chill-chill",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126001,7 +126001,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Gala%20-%20C%C3%A0%20Ph%C3%AA%20%26%20Tr%C3%A0%20S%E1%BB%AFa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/gala-ca-phe-tra-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126100,7 +126100,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C3%B4%20Hai%20-%20Ch%C3%A8%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20S%E1%BB%AFa%20Chua%20N%E1%BA%BFp%20C%E1%BA%A9m%20-%20Th%C3%A1p%20%C4%90%C3%B4i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-co-hai-che-tra-sua-sua-chua-nep-cam-thap-doi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126197,7 +126197,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ng%E1%BB%8Dc%20%C3%81nh%20-%20Coffee%20%26%20Tea%20-%20222%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ngoc-anh-coffee-tea-222-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126293,7 +126293,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hi%C3%AAn%20Coffee%20-%20306%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hien-coffee-306-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126389,7 +126389,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=ST%20COFFEE%20-%2098%20Xu%C3%A2n%20Th%E1%BB%A7y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/st-coffee-98-xuan-thuy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126486,7 +126486,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%93M%20TI%C3%8AU%20QU%C3%81N%20-%2071%20Xu%C3%A2n%20Thu%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xom-tieu-quan-71-xuan-thuy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126581,7 +126581,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20Th%C3%A0nh%20Nguy%C3%AAn%20-%20Nguy%E1%BB%85n%20Di%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-thanh-nguyen-nguyen-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126679,7 +126679,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20N%C6%B0%E1%BB%9Bc%20M%E1%BA%B9%20Th%E1%BB%8Bnh%20-%20404%20Xu%C3%A2n%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nuoc-me-thinh-404-xuan-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126779,7 +126779,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C4%83ng%20Garden%20Cafe%20-%20Ch%C3%A8%20L%E1%BA%A1nh%20%C3%8Dt%20Ng%E1%BB%8Dt%20%20-%20110%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trang-garden-cafe-che-lanh-it-ngot-110-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126878,7 +126878,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Boxdohan%20-%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/boxdohan-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -126973,7 +126973,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%A0%20Ph%C3%AA%201990%20-%20621%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ca-phe-1990-621-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127069,7 +127069,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=P%C3%B3c%20Coffee%20-%2068%20Nguy%E1%BA%BFn%20Khuy%E1%BA%BFn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/poc-coffee-68-nguyen-khuyen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127166,7 +127166,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%E1%BA%ADu%20Ph%C6%B0%C6%A1ng%20Linh%20-%20L%E1%BA%A9u%20Cua%20-%20C%E1%BA%A7u%20Hu%E1%BB%B3nh%20T%E1%BA%A5n%20Ph%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-phuong-linh-lau-cua-cau-huynh-tan-phat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127265,7 +127265,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Dum.Dum.Dum%20-%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dumdumdum-tra-trai-cay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127362,7 +127362,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20V%E1%BA%B7t%20Tr%C3%A0%20S%E1%BB%AFa%20Th%E1%BB%8B%20N%E1%BB%9F%20-%20856/70%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-tra-sua-thi-no-85670-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127460,7 +127460,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%2036%20Ph%E1%BB%91%20C%E1%BB%95%20H%C3%A0%20N%E1%BB%99i%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-36-pho-co-ha-noi-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127559,7 +127559,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Tr%C3%A0%20G%E1%BA%A5u%20-%2052/12%20H%C3%A0n%20M%E1%BA%B7c%20T%E1%BB%AD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-tra-gau-5212-han-mac-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127657,7 +127657,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Quang%20Coffee%20-%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quang-coffee-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127843,7 +127843,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20G%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-gan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -127940,7 +127940,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Gi%C3%B2%20Hu%E1%BA%BF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-gio-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128037,7 +128037,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%205%20Hi%E1%BA%BFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-5-hieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128134,7 +128134,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128232,7 +128232,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Gi%C3%B2%20Heo",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-gio-heo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128329,7 +128329,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Gi%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-gio",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128427,7 +128427,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20%26%20Ph%E1%BB%9F%20B%C3%B2%20-%20V%C3%B5%20V%C4%83n%20D%C5%A9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-pho-bo-vo-van-dung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128524,7 +128524,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Thanh%20Sa%20-%2031%20Nguy%E1%BB%85n%20H%E1%BB%AFu%20Th%E1%BB%8D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-thanh-sa-31-nguyen-huu-tho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128622,7 +128622,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20O%20Th%C6%A1m%20-%2061B%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-o-thom-61b-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128719,7 +128719,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20S%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-suong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128816,7 +128816,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%2050",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-50",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -128913,7 +128913,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20%26%20B%C3%BAn%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-bun-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129010,7 +129010,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%2071",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-71",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129107,7 +129107,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20-%2032%20S%C6%B0%20%C4%90o%C3%A0n%203%20Sao%20V%C3%A0ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-bun-bo-hue-32-su-doan-3-sao-vang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129204,7 +129204,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20V%C3%A2n%20H%C6%B0%E1%BB%9Dng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-van-huong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129300,7 +129300,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%9AN%20B%C3%92%20HU%E1%BA%BE%20S%C3%80I%20G%C3%92N%20KH%C3%81NH%20V%C3%82N%203%20-%2035%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-hue-sai-gon-khanh-van-3-35-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129397,7 +129397,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1t%20-%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20%26%20B%C3%B2%20Kho",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/phat-bun-bo-hue-bo-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129494,7 +129494,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20H%C6%B0%E1%BB%9Dng%20-%20B%C3%BAn%20B%C3%B2%20Gi%C3%B2%20Hu%E1%BA%BF%20-%20T%E1%BB%91%20H%E1%BB%AFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/van-huong-bun-bo-gio-hue-to-huu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129590,7 +129590,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%B2%20-%20Gi%C3%B2%20%26%20Ph%E1%BB%9F%20T%C3%A1i%20-%20H%C3%A0n%20M%E1%BA%A1c%20T%E1%BB%AD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-bo-gio-pho-tai-han-mac-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129687,7 +129687,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%89%20X%C3%8DU%20-%20Canh%20B%C3%BAn%20S%C3%A0i%20G%C3%B2n%2C%20B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20-%2035%20B%C3%B9i%20Th%E1%BB%8B%20Xu%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/be-xiu-canh-bun-sai-gon-bun-bo-hue-35-bui-thi-xuan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129785,7 +129785,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%26%20B%C3%BAn%20B%C3%B2%201997%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-bun-bo-1997-tran-thi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129882,7 +129882,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20M%E1%BA%AFm%20Cua%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-mam-cua-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -129981,7 +129981,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20N%C3%BAp%20H%E1%BA%BBm%20-%20B%C3%BAn%20M%C4%83ng%20V%E1%BB%8Bt%20%26%20B%C3%BAn%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20-%2024/4%20Nguy%E1%BB%85n%20V%C4%83n%20Tr%E1%BB%97i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-nup-hem-bun-mang-vit-bun-thit-nuong-244-nguyen-van-troi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130080,7 +130080,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%B4%20H%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-co-ha",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130177,7 +130177,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20C%C3%B4%20Loan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-co-loan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130273,7 +130273,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%20Nhu%E1%BA%ADn%20Kh%C3%B4i%20Qu%C3%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dac-san-quy-nhon-nhuan-khoi-quan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130369,7 +130369,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ph%E1%BB%9F%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130465,7 +130465,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hoa%20H%E1%BB%93ng%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoa-hong-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130562,7 +130562,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20Ph%E1%BB%9F%20B%C3%B2%20-%20Duy%20T%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-bo-duy-tan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130661,7 +130661,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20T%C3%A1i%20%26%20N%E1%BA%A1m%20-%20Ho%C3%A0ng%20Qu%E1%BB%91c%20Vi%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-tai-nam-hoang-quoc-viet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130761,7 +130761,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20B%C3%A0%20B%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ba-bon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130858,7 +130858,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bu%CC%81n%20Ch%E1%BA%A3%20C%C3%A1%20T%C3%A2m%20Ha%CC%A3nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-tam-hanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -130954,7 +130954,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%20Ph%C3%BA%20Th%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-phu-thinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131052,7 +131052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20-%20Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-bun-cha-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131150,7 +131150,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20C%C3%A1%2005",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ca-05",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131248,7 +131248,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%C3%A2n%20-%20B%C3%BAn%20C%C3%A1%20-%20Ri%C3%AAu%20%26%20S%E1%BB%A9a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/van-bun-ca-rieu-sua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131346,7 +131346,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20R%E1%BA%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ram-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131443,7 +131443,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Little%20H%C3%A0%20N%E1%BB%99i%20-%20B%C3%BAn%20Ch%E1%BA%A3%20%26%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/little-ha-noi-bun-cha-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131540,7 +131540,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131637,7 +131637,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20R%E1%BA%A1m%2C%20B%C3%BAm%20T%C3%B4m%20%26%20Ch%C3%A1o%20L%C6%B0%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-ram-bum-tom-chao-luon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131735,7 +131735,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%ADu%20-%20B%C3%BAn%20Ri%C3%AAu%20C%C3%A1%20%26%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dau-bun-rieu-ca-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131833,7 +131833,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20N%E1%BB%99i%20Nh%E1%BB%9B%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20%26%20B%C3%BAn%20N%C3%AAm",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-noi-nho-bun-dau-mam-tom-bun-nem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -131931,7 +131931,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20N%E1%BB%99i%20Qu%C3%A1n%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%20B%C3%BAn%20Ch%E1%BA%A3%20%26%20B%C3%BAn%20Nem",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-noi-quan-bun-dau-mam-tom-bun-cha-bun-nem",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132029,7 +132029,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20L%C3%A0%20Ghi%E1%BB%81n%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-la-ghien-bun-dau-mam-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132127,7 +132127,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20T%C3%B4m%20R%E1%BA%A1m%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Ph%C3%B9%20M%E1%BB%B9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-tom-ram-dac-san-phu-my",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132227,7 +132227,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20H%C3%A0ng%20Khay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-mam-tom-hang-khay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132326,7 +132326,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Nh%C3%A0%20An%20-%20B%C3%A1nh%20Canh%20T%C3%B4m%2C%20C%C6%A1m%20S%C6%B0%E1%BB%9Dn%20%26%20C%C6%A1m%20Heo%20Quay",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-nha-an-banh-canh-tom-com-suon-com-heo-quay",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132425,7 +132425,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%C4%90%E1%BA%ADu%20Th%E1%BB%8B%20M%E1%BA%B9t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-dau-thi-met",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132521,7 +132521,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-ha-noi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132617,7 +132617,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ri%C3%AAu%20Th%E1%BB%8Bnh%20-%20B%C3%BAn%20Ri%C3%AAu%20-%20Nguy%E1%BB%85n%20M%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-rieu-thinh-bun-rieu-nguyen-man",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132714,7 +132714,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Ph%C3%BA%20T%C3%A0i%20-%201153%20H%C3%B9ng%20V%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-phu-tai-1153-hung-vuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132813,7 +132813,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bazan%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%20-%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bazan-coffee-ca-phe-nguyen-tat-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -132909,7 +132909,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=SV%20-%20Ph%E1%BB%9F%20Tr%E1%BB%99n%20-%2031%20Nguy%E1%BB%85n%20%C4%90%C3%ACnh%20Th%E1%BB%A5",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sv-pho-tron-31-nguyen-dinh-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133005,7 +133005,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Aroma%20Coffee%20-%2036%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/aroma-coffee-36-truong-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133102,7 +133102,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20T%C6%B0%20%C4%90%C3%A0o%20-%2021%20Ng%E1%BB%8Dc%20H%C3%A2n%20C%C3%B4ng%20Ch%C3%BAa",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-tu-dao-21-ngoc-han-cong-chua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133200,7 +133200,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20Tr%E1%BB%8Dng%20-%20B%C3%9AN%20CH%E1%BA%A2%2C%20B%C3%9AN%20%C4%90%E1%BA%ACU%20%26%20B%C3%9AN%20NEM%20CUA%20B%E1%BB%82%20-%2095%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-trong-bun-cha-bun-dau-bun-nem-cua-be-95-nguyen-thi-minh-khai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133298,7 +133298,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20A%20S%C3%A1ng%20-%20C%C6%A1m%20G%C3%A0%2C%20H%E1%BB%A7%20Ti%E1%BA%BFu%20%26%20M%C3%AC%20-%20Nguy%E1%BB%85n%20L%C6%B0%C6%A1ng%20B%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-a-sang-com-ga-hu-tieu-mi-nguyen-luong-bang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133397,7 +133397,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C3%94ng%20M%E1%BA%ADp%202%20-%20Tr%E1%BA%A7n%20B%C3%ACnh%20Tr%E1%BB%8Dng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-ong-map-2-tran-binh-trong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133493,7 +133493,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Trung%20Hoa%20Qu%C3%A1n%20-%20H%E1%BB%A7%20Ti%E1%BA%BFu%20%26%20M%C3%AC%20Ho%C3%A0nh%20Th%C3%A1nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/trung-hoa-quan-hu-tieu-mi-hoanh-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133590,7 +133590,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=NT%20Food%20%26%20Drink%20-%20Take%20A%20Way%20-%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nt-food-drink-take-a-way-bach-dang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133686,7 +133686,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ch%E1%BA%A3%20Nem%20-%20B%C3%BAn%20Ch%E1%BA%A3%20H%C3%A0%20N%E1%BB%99i%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-cha-nem-bun-cha-ha-noi-tran-thi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133783,7 +133783,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%20A%20King",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-trai-cay-a-king",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133880,7 +133880,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Soda%20Qu%C3%A1n%20-%20Ch%E1%BA%BF%20Lan%20Vi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/soda-quan-che-lan-vien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -133978,7 +133978,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-banh-cuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134075,7 +134075,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%26%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134173,7 +134173,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A0%20S%C3%A2m%20-%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ba-sam-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134270,7 +134270,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20G%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-gao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134367,7 +134367,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Qu%C3%BD%20N%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-quy-nu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134464,7 +134464,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A0%20O%20-%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ba-o-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134561,7 +134561,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134657,7 +134657,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%C3%A0%20-%20B%C3%A1nh%20Canh%20%26%20M%C3%AC%20Qu%E1%BA%A3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ha-banh-canh-mi-quang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134754,7 +134754,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20Ri%C3%AAu%2C%20B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20-%2007%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-rieu-banh-canh-banh-cuon-07-nguyen-tat-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134852,7 +134852,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -134950,7 +134950,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20T%C3%B4m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-tom",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135048,7 +135048,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20G%E1%BA%A1o%20-%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-gao-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135145,7 +135145,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Qu%C3%AD%20N%E1%BB%AF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-qui-nu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135242,7 +135242,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20G%E1%BA%A1o%20%26%20Ch%E1%BA%A3%20Cu%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-gao-cha-cuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135339,7 +135339,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20H%E1%BA%B9%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20Ninh%20Ho%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-he-banh-cuon-ninh-hoa",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135436,7 +135436,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Gh%E1%BA%B9%20-%2021%20Duy%20T%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-ghe-21-duy-tan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135534,7 +135534,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hi%E1%BA%BFu%20H%E1%BA%A1nh%20-%20B%C3%BAn%20Ri%C3%AAu%20Cua%20%26%20B%C3%A1nh%20Canh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hieu-hanh-bun-rieu-cua-banh-canh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135632,7 +135632,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ba%CC%81nh%20Canh%20Ghe%CC%A3%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-ghe-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135728,7 +135728,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Sen",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-sen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135825,7 +135825,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20B%C3%A0%20Nga",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-ba-nga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -135922,7 +135922,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20-%20B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-banh-canh-banh-cuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136019,7 +136019,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=O%20T%C3%AA%20-%20%20B%C3%A1nh%20Canh%20G%E1%BA%A1o%20T%C3%B4m%20Ch%E1%BA%A3",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/o-te-banh-canh-gao-tom-cha",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136117,7 +136117,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20G%E1%BA%A1o%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20Minh%20Khai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-gao-nguyen-thi-minh-khai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136214,7 +136214,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=O%20Hu%E1%BB%87",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/o-hue",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136309,7 +136309,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20Online",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-banh-cuon-online",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136406,7 +136406,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%A3o%20T%C3%ADch%20-%20Ba%CC%81nh%20Canh%20C%C3%A1%20L%C3%B3c",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lao-tich-banh-canh-ca-loc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136502,7 +136502,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Vua%20Ph%E1%BB%9F%20B%C3%B2%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vua-pho-bo-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136600,7 +136600,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%A1t%20%C4%90%C3%A1%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bat-da-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136698,7 +136698,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20B%C3%BAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bun",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136795,7 +136795,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20V%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-van",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -136892,7 +136892,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Nh%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-nhan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137079,7 +137079,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%201989%20Quy%20Nh%C6%A1n%20-%20%EB%B2%A0%ED%8A%B8%EB%82%A8%20%EC%8C%80%EA%B5%AD%EC%88%98",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-1989-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137178,7 +137178,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20%26%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-cha-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137275,7 +137275,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20A%20C%C6%B0%E1%BB%9Dng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-a-cuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137372,7 +137372,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20Mi%E1%BA%BFn%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-mien-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137469,7 +137469,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20-%20Ph%E1%BB%9F%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137566,7 +137566,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20Ph%E1%BB%9F%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-pho-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137664,7 +137664,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Duy%C3%AAn%20-%20Qu%C3%A1n%20Ph%E1%BB%9F",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/duyen-quan-pho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137761,7 +137761,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%C3%A1i%20H%C3%A0%20-%20Ph%E1%BB%9F%20B%C3%B2%20Gi%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tai-ha-pho-bo-gio",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137858,7 +137858,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20T%C3%A1i%20N%E1%BA%A1m%20B%C3%B2%20Vi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-tai-nam-bo-vien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -137955,7 +137955,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Thanh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138052,7 +138052,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20H%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-huong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138149,7 +138149,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20%26%20Ph%E1%BB%9F%20Gi%C3%B2%20-%20T%C3%B4%20Hi%E1%BA%BFn%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-pho-gio-to-hien-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138246,7 +138246,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20Duy%20Nam",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-duy-nam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138343,7 +138343,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20C%C3%B4%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-co-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138440,7 +138440,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20S%C3%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-sang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138537,7 +138537,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20B%C3%A1t%20%C4%90%C3%A0n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-bat-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138634,7 +138634,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20H%C3%A0%20N%E1%BB%99i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-ha-noi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138731,7 +138731,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20T%C3%A2m%20-%20B%C3%BAn%20%26%20Ph%E1%BB%9F",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-tam-bun-pho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138828,7 +138828,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20Nhung%20-%20B%C3%BAn%20Gi%C3%B2%20%26%20Ph%E1%BB%9F",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-nhung-bun-gio-pho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -138925,7 +138925,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20B%C3%B2%20B%C3%A1t%20%C4%90%C3%A0n%20H%C3%A0%20N%E1%BB%99i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-bo-bat-dan-ha-noi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139022,7 +139022,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139118,7 +139118,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20X%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-xuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139214,7 +139214,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20M%C3%AC%20Ho%C3%A0nh%20Th%C3%A1nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-mi-hoanh-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139311,7 +139311,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%A7%20Ti%E1%BA%BFu%20%C4%90%C3%AAm%20-%20B%C3%A1nh%20Canh%2C%20M%C3%AC%20%26%20Nui%20-%2001%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hu-tieu-dem-banh-canh-mi-nui-01-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139409,7 +139409,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%20-%2017%20Ng%C3%B4%20V%C4%83n%20S%E1%BB%9F",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-binh-dinh-17-ngo-van-so",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139505,7 +139505,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%A8m%20Th%E1%BB%B1c%20Chay%20C%C3%A1t%20T%C6%B0%E1%BB%9Dng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/am-thuc-chay-cat-tuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139603,7 +139603,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%81I%20TI%E1%BB%86M%20CHAY%20-%2020%20Tr%E1%BA%A7n%20%C4%90%C4%83ng%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cai-tiem-chay-20-tran-dang-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139700,7 +139700,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20Quang",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-quang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139797,7 +139797,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%2092",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-92",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139894,7 +139894,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20C%C3%B4%20Thu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-co-thu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -139991,7 +139991,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Qu%E1%BA%A3ng%20Th%C3%A1i%20B%C3%ACnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-quang-thai-binh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140089,7 +140089,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%BAn%20%26%20M%C3%AC%20Qu%E1%BA%A3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bun-mi-quang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140185,7 +140185,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20X%E1%BB%A9%20Qu%E1%BA%A3ng%20-%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-xu-quang-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140282,7 +140282,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%E1%BB%8Fi%20B%C3%B2%20Kh%C3%B4",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/goi-bo-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140378,7 +140378,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20Kh%C3%B4%20Tu%E1%BA%A5n%20T%C3%BA",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-kho-tuan-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140476,7 +140476,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nem%20Ch%E1%BA%A3%20Thanh%20Hu%E1%BB%87%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n%20-%2024%20V%C3%B5%20Lai",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nem-cha-thanh-hue-dac-san-quy-nhon-24-vo-lai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140573,7 +140573,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%C3%A1%20L%E1%BA%A5u%20-%20Duy%20T%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pha-lau-duy-tan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140669,7 +140669,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%2014%20-%20%C4%90i%E1%BB%83m%20T%C3%A2m%20%26%20Cafe",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-14-diem-tam-cafe",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140765,7 +140765,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kaka%20-%20Cafe%20%26%20%C4%90i%E1%BB%83m%20T%C3%A2m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kaka-cafe-diem-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140862,7 +140862,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%A3o%20%C4%82n%20V%E1%BA%B7t%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dao-an-vat-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -140959,7 +140959,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%C6%B0%E1%BB%9Bng%2040%20-%2019%20Ph%E1%BA%A1m%20Ng%C5%A9%20L%C3%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nuong-40-19-pham-ngu-lao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141056,7 +141056,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20B%C3%A0%20Ch%C3%AD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-ba-chi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141154,7 +141154,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20H%C3%A0%20Thanh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-ha-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141253,7 +141253,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20T%C3%A2m%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-tam-banh-hoi-chao-long",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141351,7 +141351,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Gi%C3%BAp%20-%20B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-giup-banh-hoi-chao-long",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141449,7 +141449,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%C3%AAm%20T%C3%A2m%20S%C3%A1ng%20-%20Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-chao-long-banh-hoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141546,7 +141546,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20Ho%C3%A0ng%20Hoa%20Th%C3%A1m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-hoang-hoa-tham",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141645,7 +141645,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20Ch%C3%A1o%20L%C3%B2ng%20-%20H%C3%A0n%20M%E1%BA%B7c%20T%E1%BB%AD",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-han-mac-tu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141745,7 +141745,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20H%E1%BB%8Fi%20%26%20Ch%C3%A1o%20L%C3%B2ng%20-%20Thanh%20Ni%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-hoi-chao-long-thanh-nien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141842,7 +141842,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BA%BEch%20Xanh%20Quy%20Nh%C6%A1n%20-%20L%C3%B4%2003%20Tr%C6%B0%C6%A1ng%20V%C4%83n%20C%E1%BB%A7a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ech-xanh-quy-nhon-lo-03-truong-van-cua",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -141937,7 +141937,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Mi%20Na%20Quy%20Nh%C6%A1n%20-%20213%20L%C3%AA%20Thanh%20Ngh%E1%BB%8B",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-mi-na-quy-nhon-213-le-thanh-nghi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142034,7 +142034,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20%E1%BA%BEch%20Sa%20T%E1%BA%BF%20-%20Nguy%E1%BB%85n%20T%E1%BA%A5t%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-ech-sa-te-nguyen-tat-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142133,7 +142133,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20-%20Ph%C3%B3%20%C4%90%E1%BB%A9c%20Ch%C3%ADnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-pho-duc-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142230,7 +142230,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Tr%C3%A0%20B%C3%AD%20%C4%90ao%20-%20S%E1%BB%AFa%20D%E1%BB%ABa%20-%2039A%20B%C3%A0%20Tri%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tra-bi-dao-sua-dua-39a-ba-trieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142326,7 +142326,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BA%BFp%20B%C3%A9%20Bo%20-%20S%C3%BAp%20%26%20%C4%82n%20V%E1%BA%B7t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bep-be-bo-sup-an-vat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142422,7 +142422,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%E1%BA%B7c%20Khu%20Nh%E1%BA%ADu%20-%20B%C3%B9i%20H%E1%BB%AFu%20Ngh%C4%A9a",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dac-khu-nhau-bui-huu-nghia",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142521,7 +142521,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%E1%BA%ADu%205%20H%C6%B0%C6%A1ng%20-%20Th%E1%BB%A9c%20%C4%82n%20-%203%20T%E1%BB%91%20H%E1%BB%AFu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nhau-5-huong-thuc-an-3-to-huu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142622,7 +142622,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A0%20H%C6%B0%E1%BB%9Dng%20-%20Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ba-huong-chao-long-banh-hoi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142722,7 +142722,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=KuBo%20Qu%C3%A1n%20-%20S%C6%B0%E1%BB%9Dn%20B%C3%B2%20S%E1%BB%91t%20%E1%BB%9At%20Hi%E1%BB%83m%20-%20Qu%E1%BB%91c%20L%E1%BB%99%201D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kubo-quan-suon-bo-sot-ot-hiem-quoc-lo-1d",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142823,7 +142823,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%AA%20La%20Qu%C3%A1n%20-%20Khoai%20Lang%20X%E1%BB%91c%20Mu%E1%BB%91i%20-%20L%C3%AA%20%C4%90%E1%BB%A9c%20Th%E1%BB%8D",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/le-la-quan-khoai-lang-xoc-muoi-le-duc-tho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -142921,7 +142921,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%E1%BB%AFa%20D%E1%BB%ABa%20Nh%C3%A0%20NY%20-%2039A%20B%C3%A0%20Tri%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sua-dua-nha-ny-39a-ba-trieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143019,7 +143019,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Ngh%C3%AAu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-ngheu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143117,7 +143117,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20M%C4%83m%20M%C4%83m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-mam-mam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143214,7 +143214,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20226%20-%20C%C6%A1m%20Ph%E1%BB%9F%20Ch%C3%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-226-com-pho-chao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143313,7 +143313,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20%C4%82n%20B%C3%A0%20H%E1%BA%A3o%20-%2097%20Hu%E1%BB%B3nh%20V%C4%83n%20Th%E1%BB%91ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-an-ba-hao-97-huynh-van-thong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143410,7 +143410,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20%26%20Ch%C3%A1o%20B%C3%B2%20-%20M%C3%AC%20X%C3%A0o%20H%C6%B0%C6%A1ng%20Tr%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chao-bo-mi-xao-huong-tra",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143507,7 +143507,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20S%C6%B0%E1%BB%9Dn%20-%2022%20L%C3%BD%20Th%C6%B0%E1%BB%9Dng%20Ki%E1%BB%87t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-suon-22-ly-thuong-kiet",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143604,7 +143604,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20V%E1%BB%8Bt%20Ti%E1%BA%BFt%20Canh%20-%20L%C3%AA%20L%E1%BB%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-vit-tiet-canh-le-loi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143702,7 +143702,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90%C3%A0i%20Trang%20-%20Ch%C3%A1o%20B%C3%B2%20%26%20N%E1%BB%99m%20G%C3%A2n%20B%C3%B2",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/dai-trang-chao-bo-nom-gan-bo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143799,7 +143799,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20V%E1%BB%8Bt%20%20-%20G%E1%BB%8Fi%20V%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-vit-goi-vit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143896,7 +143896,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20G%C3%A0%20%26%20V%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-ga-vit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -143993,7 +143993,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Bin%20Bin%20-%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-bin-bin-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144090,7 +144090,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20L%E1%BA%A9u%20B%C3%B2%2079%20-%20606%20T%C3%A2y%20S%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-lau-bo-79-606-tay-son",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144186,7 +144186,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=John%20Coffee%20-%2059%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/john-coffee-59-truong-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144283,7 +144283,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Lan%20Anh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-lan-anh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144381,7 +144381,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20-%20G%E1%BB%8Fi%20V%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-goi-vit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144484,7 +144484,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20L%C3%B2ng%20%26%20B%C3%A1nh%20H%E1%BB%8Fi%20-%20H%E1%BA%A3i%20Th%C6%B0%E1%BB%A3ng%20L%C3%A3n%20%C3%94ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-long-banh-hoi-hai-thuong-lan-ong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144581,7 +144581,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Minh%20H%E1%BA%A3i%20-%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-minh-hai-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144679,7 +144679,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20N%C6%B0%E1%BB%9Bng%20Ch%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nuong-chao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144775,7 +144775,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Bibo%203%20-%20Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bibo-3-chao-dinh-duong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144874,7 +144874,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Ch%C3%A1o%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-chao-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -144971,7 +144971,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=S%C3%BAp%20Cua%20Panda",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sup-cua-panda",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145067,7 +145067,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=T%E1%BA%A3n%20%C4%90%C3%A0%20-%20S%C3%BAp%20L%C6%B0%C6%A1n%20%26%20Mi%E1%BA%BFn%20L%C6%B0%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tan-da-sup-luon-mien-luon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145163,7 +145163,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Th%E1%BA%ADp%20C%E1%BA%A9m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-thap-cam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145261,7 +145261,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=2%20G%E1%BA%A5u%20Food%20%26%20Drink%20-%20S%C3%BAp%20Cua%2C%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20-%20%C4%90%E1%BA%B7ng%20Xu%C3%A2n%20Phong",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/2-gau-food-drink-sup-cua-tra-trai-cay-dang-xuan-phong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145360,7 +145360,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ikigai%20Sushi%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ikigai-sushi-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145462,7 +145462,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hoa%20Fast%20Food",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hoa-fast-food",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145557,7 +145557,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20Khuya%2012h%20-%20Ch%C3%A1o%20S%C6%B0%E1%BB%9Dn%20%26%20B%C3%BAn%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-khuya-12h-chao-suon-bun-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145655,7 +145655,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Mami%20Thai%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mami-thai-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145752,7 +145752,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20D%E1%BB%ABa%20C%C3%A1%20Kho",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dua-ca-kho",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145849,7 +145849,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Quy%20Nh%C6%A1n%20-%20Mai%20H%E1%BA%AFc%20%C4%90%E1%BA%BF",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-quy-nhon-mai-hac-de",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -145948,7 +145948,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Chi%C3%AAn%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-chien-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146047,7 +146047,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%2086%20-%20C%C6%A1m%20G%C3%A0%20Da%20Gi%C3%B2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-86-com-ga-da-gion",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146145,7 +146145,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C6%B0%20%C3%9D%20-%20Qu%C3%A1n%20C%C6%A1m%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhu-y-quan-com-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146242,7 +146242,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Dung",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-dung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146340,7 +146340,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20X%E1%BB%91i%20M%E1%BB%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-xoi-mo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146437,7 +146437,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%20Thanh%20Th%E1%BB%A7y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-thanh-thuy",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146535,7 +146535,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%E1%BB%91n%20M%E1%BA%ABn%20-%20G%C3%A0%20Ch%E1%BB%89%20%26%20C%C6%A1m%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bon-man-ga-chi-com-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146637,7 +146637,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Nh%C3%A0%20Th%E1%BA%A3o%20Th%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-nha-thao-thao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146735,7 +146735,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Th%E1%BA%A3o%20My%20-%20C%C6%A1m%20G%C3%A0%20X%E1%BB%91i%20M%E1%BB%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thao-my-com-ga-xoi-mo",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146832,7 +146832,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Healthy%20Food%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/healthy-food-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -146928,7 +146928,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20G%C3%A0%2094",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ga-94",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147025,7 +147025,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20S%C3%A0i%20G%C3%B2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-sai-gon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147124,7 +147124,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20S%C3%A1u%20T%E1%BA%A5n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-sau-tan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147228,7 +147228,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=G%C3%A0%20Ch%E1%BB%89%20Nh%C6%B0%20Qu%E1%BB%B3nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/ga-chi-nhu-quynh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147330,7 +147330,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kim%20H%E1%BB%93ng%20-%20C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kim-hong-com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147518,7 +147518,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=4%20M%C3%B9a%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20G%C3%A0%20N%C3%BAi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/4-mua-dac-san-ga-nui",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147621,7 +147621,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-thit-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147719,7 +147719,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147816,7 +147816,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -147911,7 +147911,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%C3%A2%CC%81m%20Sa%CC%80i%20Go%CC%80n%20Express",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-sai-gon-express",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148009,7 +148009,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20T%C3%A1m%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20G%C3%A0%20N%C6%B0%E1%BB%9Bng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-tam-dac-san-ga-nuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148105,7 +148105,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Quy%C3%AAn%20Quy%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-quyen-quyen",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148205,7 +148205,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1n%20Nh%C3%A0%208%20Lang",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/con-nha-8-lang",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148306,7 +148306,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20Nh%C3%A0%20Ch%C3%A2u%20-%20Menu%20Eat%20Clean%20-%2073%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-nha-chau-menu-eat-clean-73-nguyen-cong-tru",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148402,7 +148402,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Thi%E1%BB%87n%20Nh%C3%A2n%20-%20C%C6%A1m%20T%E1%BA%A5m%20-%2070%20L%C3%BD%20Th%C3%A1i%20T%E1%BB%95",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-thien-nhan-com-tam-70-ly-thai-to",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148499,7 +148499,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%E1%BB%99c%20%C4%90%E1%BB%A9c%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20%C4%90%E1%BB%93ng%20Qu%C3%AA%20-%20C%C6%A1m%20G%C3%A0%2C%20L%E1%BA%A9u%20B%C3%B2%20-%20533%20%C4%90%C3%A0o%20T%E1%BA%A5n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/moc-duc-hai-san-dong-que-com-ga-lau-bo-533-dao-tan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148598,7 +148598,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20%C3%94ng%20M%E1%BA%ADp%20-%20C%C6%A1m%20T%E1%BA%A5m%20-%20483%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-ong-map-com-tam-483-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148696,7 +148696,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20C%C6%A1m%20Anh%20%C4%90%E1%BA%A7u%20B%E1%BA%BFp%20-%20C%C6%A1m%2C%20N%C6%B0%E1%BB%9Bng%20%26%20L%E1%BA%A9u%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-com-anh-dau-bep-com-nuong-lau-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148797,7 +148797,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%E1%BB%90c%20%C4%90%E1%BB%A3i%20T%C3%BD%202%20-%20Phan%20B%C3%A1%20V%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/oc-doi-ty-2-phan-ba-vanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148895,7 +148895,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Bao%20Ghi%E1%BB%81n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-bao-ghien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -148993,7 +148993,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20H%C6%B0ng%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-hung-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149090,7 +149090,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20S%C6%B0%E1%BB%9Dn%20%26%20C%C6%A1m%20T%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-suon-com-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149188,7 +149188,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%2085",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-85",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149286,7 +149286,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149383,7 +149383,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ph%E1%BB%9F%20%26%20C%C6%A1m%20T%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/pho-com-tam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149482,7 +149482,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20C%C3%B4%20%C3%9At",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-co-ut",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149579,7 +149579,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Nguy%C3%AAn%20Quy%20Nh%C6%A1n%20-%20T%C3%B4%20Hi%E1%BA%BFn%20Th%C3%A0nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-nguyen-quy-nhon-to-hien-thanh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149678,7 +149678,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20B%E1%BA%A3o%20Ng%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-bao-ngoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149775,7 +149775,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Ghi%E1%BB%81n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-ghien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149872,7 +149872,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20X%E1%BB%A9%20N%E1%BA%ABu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-xu-nau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -149969,7 +149969,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BA%A5m%20Ch%E1%BB%8B%20C%C3%A1m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tam-chi-cam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150066,7 +150066,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20-%20C%C6%A1m%20T%E1%BA%A5m%20%26%20C%C6%A1m%20Chi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-com-tam-com-chien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150164,7 +150164,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Lu%20%C4%90an%20T%C3%A2m%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-lu-dan-tam-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150262,7 +150262,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82N%20V%E1%BA%B6T%20MILK",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-vat-milk",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150358,7 +150358,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-tran-thi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150454,7 +150454,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Tr%C6%B0a%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-trua-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150550,7 +150550,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20Ch%C6%B0%C6%A1ng%20D%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-chuong-duong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150646,7 +150646,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20L%C3%AA%20Thanh%20Ngh%E1%BB%8B",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-le-thanh-nghi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150742,7 +150742,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20219",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-219",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150838,7 +150838,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20T%E1%BB%B1%20Ch%E1%BB%8Dn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-tu-chon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -150934,7 +150934,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20B%C3%ACnh%20D%C3%A2n%20-%20Khu%20V%E1%BB%B1c%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-binh-dan-khu-vuc-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151031,7 +151031,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C6%A1m%20Th%E1%BA%ADp%20C%E1%BA%A9m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/com-thap-cam",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151127,7 +151127,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20C%C6%A1m%20Tr%E1%BA%A1ng%20Qu%E1%BB%B3nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-com-trang-quynh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151223,7 +151223,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%20%C4%82n%20Hu%E1%BA%BF%20-%20%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20%26%20C%C6%A1m%20Tr%C6%B0a%20Chi%E1%BB%81u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-an-hue-diem-tam-sang-com-trua-chieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151319,7 +151319,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%90i%E1%BB%83m%20T%C3%A2m%20S%C3%A1ng%20%26%20C%C6%A1m%20B%C3%ACnh%20D%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/diem-tam-sang-com-binh-dan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151418,7 +151418,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151517,7 +151517,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%E1%BB%B3%20MADAM%20CHI%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-my-madam-chi-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151615,7 +151615,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20Quy%20Nh%C6%A1n%20-%20150C%20Thanh%20Ni%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-quy-nhon-150c-thanh-nien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151713,7 +151713,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Burger%20Vi%E1%BB%87t%20Quy%20Nh%C6%A1n%20-%20Hamburger%2C%20M%C3%AC%20%C3%9D%20%26%20Tacos%20-%20Chi%20Nh%C3%A1nh%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/burger-viet-quy-nhon-hamburger-mi-y-tacos-chi-nhanh-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151812,7 +151812,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%81NH%20M%C3%8C%20PH%C3%9AC%20KI%E1%BA%BEN%20-%20QUY%20NH%C6%A0N",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-phuc-kien-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -151912,7 +151912,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20C%C3%B4%20Ba%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-co-ba-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152011,7 +152011,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1%20Quy%20Nh%C6%A1n%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cha-ca-quy-nhon-ha-huy-tap",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152203,7 +152203,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Duy%C3%AAn%20-%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/duyen-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152302,7 +152302,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Su%20Su",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-su-su",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152400,7 +152400,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20T%E1%BB%A9%20H%E1%BA%A3i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-tu-hai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152498,7 +152498,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20369",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-369",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152597,7 +152597,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Thanh%20Th%E1%BB%A7y%20-%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-thuy-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152696,7 +152696,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ng%E1%BB%8Dc%20Nga",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-ngoc-nga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152794,7 +152794,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Thanh%20Th%E1%BA%A3o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-thanh-thao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152892,7 +152892,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Th%E1%BB%8Bnh%20Ph%C3%A1t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-thinh-phat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152991,7 +152991,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20X%E1%BB%A9%20N%E1%BA%ABu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-xu-nau",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153089,7 +153089,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=L%C3%B2%20B%C3%A1nh%20M%C3%AC%20An%20An",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/lo-banh-mi-an-an",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153188,7 +153188,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ng%E1%BB%8Dc%20H%C3%A0%204",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-ngoc-ha-4",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153286,7 +153286,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Win%20-%20B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A3%20C%C3%A1",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/win-banh-mi-cha-ca",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153384,7 +153384,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20H%E1%BB%93ng%20S%C3%A2m%202",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-hong-sam-2",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153482,7 +153482,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Teo%20-%20B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-teo-banh-mi-cham",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153581,7 +153581,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Th%E1%BB%95%20Nh%C4%A9%20K%E1%BB%B3",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-tho-nhi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153678,7 +153678,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20-%20%C4%90%C6%B0%E1%BB%9Dng%2031%20Th%C3%A1ng%203",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-duong-31-thang-3",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153775,7 +153775,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%C4%90%C3%AAm%20Quy%20Nh%C6%A1n%20-%20Th%C3%A0nh%20Th%C3%A1i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-dem-quy-nhon-thanh-thai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153874,7 +153874,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=V%E1%BB%8B%20Nh%C3%A0%20-%20X%C3%B4i%20%26%20G%C3%A0%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/vi-nha-xoi-ga-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -153972,7 +153972,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%C4%90%E1%BA%ADu%20%26%20X%C3%B4i%20Th%E1%BB%8Bt%20-%20Tr%C6%B0%E1%BB%9Dng%20Chinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-dau-xoi-thit-truong-chinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154070,7 +154070,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%26%20B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A5m",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-banh-mi-cham",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154169,7 +154169,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20X%C3%A9o%20Quy%20Nh%C6%A1n%20-%20Ng%C3%B4%20M%C3%A2y",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-xeo-quy-nhon-ngo-may",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154267,7 +154267,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20G%C3%A0%20%26%20X%C3%B4i%20S%C6%B0%E1%BB%9Dn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-ga-xoi-suon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154364,7 +154364,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%C4%90%E1%BA%ADu%20%26%20X%C3%B4i%20Th%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-dau-xoi-thit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154552,7 +154552,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20S%C6%B0%E1%BB%9Dn%20%26%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-suon-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154650,7 +154650,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Chi%C3%AAn%20C%C3%B4%20H%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-chien-co-ha",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154748,7 +154748,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20B%C3%A0%20Gi%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-ba-gia",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154846,7 +154846,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hi%E1%BA%BFu%20-%20X%C3%B4i%20%26%20B%C3%A1nh%20M%C3%AC",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hieu-xoi-banh-mi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -154944,7 +154944,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20C%C3%A2y%20Me",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-cay-me",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155041,7 +155041,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Ba%20Ch%E1%BB%89%20-%20%E1%BB%B6%20Lan",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-ba-chi-y-lan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155138,7 +155138,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20B%E1%BA%AFp%20-%20%C4%90%E1%BA%ADu%20Xanh%20%26%20Th%E1%BB%8Bt",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-bap-dau-xanh-thit",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155236,7 +155236,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20%26%20B%C3%A1nh%20M%C3%AC%20-%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-banh-mi-nguyen-cong-tru",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155334,7 +155334,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20Chi%C3%AAn%20-%20Ho%C3%A0ng%20Di%E1%BB%87u",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-chien-hoang-dieu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155431,7 +155431,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=X%C3%B4i%20L%C4%83ng%20%C3%94ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/xoi-lang-ong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155529,7 +155529,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20X%C3%B4i%20C%C3%B4%20Ti%E1%BB%81n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-xoi-co-tien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155629,7 +155629,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20Ch%E1%BA%A5m%20-%20X%C3%B4i%20G%C3%A0",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-cham-xoi-ga",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155728,7 +155728,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20M%C3%AC%20%26%20X%C3%B4i%20G%C3%A0%20-%20Nguy%E1%BB%85n%20C%C3%B4ng%20Tr%E1%BB%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-mi-xoi-ga-nguyen-cong-tru",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -155826,7 +155826,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BA%BFn%20L%E1%BB%A3i%20-%20B%C3%A1nh%20%C4%90%C3%BAc%20Th%E1%BB%8Bt%20B%C4%83m%20%26%20X%C3%B4i%20Chi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tien-loi-banh-duc-thit-bam-xoi-chien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156016,7 +156016,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20%26%20B%C3%BAn%20G%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-bun-gan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156116,7 +156116,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%202H",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-2h",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156214,7 +156214,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20-%2035B%20V%C3%B5%20V%C4%83n%20D%C5%A9ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-35b-vo-van-dung",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156312,7 +156312,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%20%26%20M%C3%AC%20Cay%20%C4%90%E1%BB%87%20Nh%E1%BA%A5t%20-%20L%E1%BA%A1c%20Long%20Qu%C3%A2n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-mi-cay-de-nhat-lac-long-quan",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156414,7 +156414,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Lan%20-%20Ph%E1%BB%9F%20%26%20B%C3%B2%20N%C3%A9",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-lan-pho-bo-ne",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156515,7 +156515,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%B2%20N%C3%A9%2C%20B%C3%B2%20S%E1%BB%91t%20Me%20%26%20M%C3%AC%20X%C3%A0o%20B%C3%B2%20-%2023%20Tr%E1%BA%A7n%20Th%E1%BB%8B%20K%E1%BB%B7",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/bo-ne-bo-sot-me-mi-xao-bo-23-tran-thi-ky",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156614,7 +156614,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Nh%C6%B0%20%C3%9D%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nhu-y-banh-cuon-nong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156713,7 +156713,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Tuy%E1%BA%BFt%20-%20Nem%20Ch%E1%BA%A3%20N%C6%B0%E1%BB%9Bng%20%26%20B%C3%A1nh%20Cu%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-tuyet-nem-cha-nuong-banh-cuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156809,7 +156809,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-nong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -156905,7 +156905,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng%20S%C3%A2m%20Ph%C6%B0%C6%A1ng",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-nong-sam-phuong",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157001,7 +157001,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh%20Gia%20Truy%E1%BB%81n%20-%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-binh-dinh-gia-truyen-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157098,7 +157098,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20T%C3%A2y%20S%C6%A1n%20C%C3%B4%20Ba",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-tay-son-co-ba",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157195,7 +157195,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Cu%E1%BB%91n%20T%C3%A2y%20S%C6%A1n%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%ACnh%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-cuon-tay-son-dac-san-binh-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157291,7 +157291,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ti%E1%BB%87m%20Nh%C3%A0%20D%C6%B0%C6%A1ng%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20T%C3%A2y%20S%C6%A1n%20%26%20B%C3%BAn%20Kh%C3%B4%20-%201095%20Tr%E1%BA%A7n%20H%C6%B0ng%20%C4%90%E1%BA%A1o",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/tiem-nha-duong-banh-cuon-tay-son-bun-kho-1095-tran-hung-dao",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157389,7 +157389,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20-%20Ng%C3%B4%20Tr%E1%BB%8Dng%20Thi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-banh-cuon-ngo-trong-thien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157486,7 +157486,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=C%C3%B4%20Li%C3%AAn%20-%20Ch%C3%A1o%20B%C3%B2%20%26%20B%C3%A1nh%20Cu%E1%BB%91n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/co-lien-chao-bo-banh-cuon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157584,7 +157584,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Canh%20Cua%20%26%20Cu%E1%BB%91n%20Ch%E1%BA%A3%20C%C3%A1%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-canh-cua-cuon-cha-ca-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157682,7 +157682,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Hai%20Mi%E1%BB%81n%20Qu%C3%A1n%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20T%C3%A2y%20S%C6%A1n%20%26%20B%C3%A1nh%20%C6%AF%E1%BB%9Bt%20H%C3%A0%20T%C4%A9nh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hai-mien-quan-banh-cuon-tay-son-banh-uot-ha-tinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157779,7 +157779,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Qu%C3%A1n%2020%20-%20B%C3%BAn%20-%20B%C3%A1nh%20Canh%20%26%20B%C3%A1nh%20Cu%E1%BB%91n%20Ch%E1%BA%A3%20C%C3%A1%20Th%E1%BB%8Bt%20Xi%C3%AAn",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/quan-20-bun-banh-canh-banh-cuon-cha-ca-thit-xien",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157876,7 +157876,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20Tr%C3%A1ng%20Th%E1%BB%8Bt%20Heo%20Nh%E1%BA%A5t",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-trang-thit-heo-nhat",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -157972,7 +157972,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sushi%20S%E1%BB%AD%20Quy%20Nh%C6%A1n%20-%20Nguy%E1%BB%85n%20Th%E1%BB%8B%20%C4%90%E1%BB%8Bnh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sushi-su-quy-nhon-nguyen-thi-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158069,7 +158069,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%C3%A1o%20Dinh%20D%C6%B0%E1%BB%A1ng%20Sushi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/chao-dinh-duong-sushi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158165,7 +158165,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Sushi%20Coffee",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/sushi-coffee",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158261,7 +158261,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=N%E1%BA%A5m%20Sushi%20-%20Sinh%20T%E1%BB%91%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/nam-sushi-sinh-to-nuoc-ep",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158359,7 +158359,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Minchu",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-minchu",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158459,7 +158459,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20Hachi",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-hachi",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158561,7 +158561,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=H%E1%BB%93ng%20Anh%20-%20Coffee%20%26%20M%E1%BB%B3%20Cay%20Chu%E1%BA%A9n%20V%E1%BB%8B%20H%C3%A0n%20Qu%E1%BB%91c%207%20C%E1%BA%A5p%20%C4%90%E1%BB%99%20-%20Ch%E1%BB%A3%20Dinh",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/hong-anh-coffee-my-cay-chuan-vi-han-quoc-7-cap-do-cho-dinh",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158662,7 +158662,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=%C4%82n%20%C4%90%C3%AAm%20%C4%90%C6%B0%E1%BB%9Dng%20Lu%E1%BB%93ng%20-%20M%C3%AC%20Cay%20%26%20M%C3%AC%20Tr%E1%BB%99n%20-%20108/16%20Nguy%E1%BB%85n%20Th%C3%A1i%20H%E1%BB%8Dc",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/an-dem-duong-luong-mi-cay-mi-tron-10816-nguyen-thai-hoc",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158764,7 +158764,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=M%C3%AC%20Cay%20H%C3%A0n%20Qu%E1%BB%91c%20Lava",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/mi-cay-han-quoc-lava",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -158956,7 +158956,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Ch%E1%BA%A3%20Ram%20T%C3%B4m%20O%20Trang%20-%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20Quy%20Nh%C6%A1n",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/cha-ram-tom-o-trang-dac-san-quy-nhon",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -159054,7 +159054,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=Kim%20C%C6%B0%C6%A1ng%20-%20Food%20%26%20Drink",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/kim-cuong-food-drink",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -159152,7 +159152,7 @@ const APP_DATA = {
               }
           ],
           "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=B%C3%A1nh%20C%C4%83n%20C%C3%A1%20Ng%E1%BB%AB%2C%20B%C3%A1nh%20X%C3%A8o%20%26%20B%C3%BAn%20C%C3%A1%20Ng%E1%BB%AB%20-%20C%C3%B4%20Ph%C6%B0%E1%BB%A3ng%20-%2016%20L%C3%AA%20L%E1%BB%A3i%20N%E1%BB%91i%20D%C3%A0i",
+          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/banh-can-ca-ngu-banh-xeo-bun-ca-ngu-co-phuong-16-le-loi-noi-dai",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,

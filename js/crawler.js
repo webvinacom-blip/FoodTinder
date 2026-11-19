@@ -543,7 +543,7 @@ class CrawlerManager {
         ],
         deliveryPlatform: "Tại chỗ & Mang về",
         hasShopeeDelivery: false,
-        deliverySearchUrl: `https://shopeefood.vn/${citySlug}/danh-sach-dia-diem-phuc-vu-giao-hang?q=${encodeURIComponent(parsedRest)}`,
+        deliverySearchUrl: `https://shopeefood.vn/${citySlug}`,
       });
     });
 
