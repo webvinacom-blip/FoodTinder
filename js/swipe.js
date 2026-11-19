@@ -668,7 +668,7 @@ class TinderSwipeManager {
       btn.className = "w-16 h-16 rounded-full bg-gradient-to-tr from-[#EE4D2D] to-orange-500 text-white shadow-xl shadow-orange-400/80 flex items-center justify-center hover:scale-110 active:scale-95 transition cursor-pointer group shrink-0";
       const svg = btn.querySelector('svg');
       if (svg) {
-        svg.className = "w-10 h-10 group-hover:scale-110 transition-transform drop-shadow-sm";
+        svg.setAttribute('class', "w-10 h-10 group-hover:scale-110 transition-transform drop-shadow-sm");
       }
     } else {
       btn.disabled = true;
@@ -677,7 +677,7 @@ class TinderSwipeManager {
       btn.className = "w-16 h-16 rounded-full bg-stone-100 border border-stone-300 text-stone-400 opacity-50 shadow-none flex items-center justify-center cursor-not-allowed pointer-events-none select-none filter grayscale shrink-0";
       const svg = btn.querySelector('svg');
       if (svg) {
-        svg.className = "w-10 h-10 drop-shadow-none filter grayscale opacity-40";
+        svg.setAttribute('class', "w-10 h-10 drop-shadow-none filter grayscale opacity-40");
       }
     }
   }
