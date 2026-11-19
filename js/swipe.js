@@ -21,6 +21,17 @@ class TinderSwipeManager {
     this.nopeBadge = null;
   }
 
+  isFoodValidForSwipe(food) {
+    if (!food) return false;
+    if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
+    if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+    if (food.isPermanentlyClosed || food.isClosedPermanently || food.isClosed === true) return false;
+    const op = String(food.operatingStatus || '').toLowerCase();
+    if (op === 'permanently_closed' || op === 'closed_permanently' || op === 'closed' || op === 'inactive' || op === 'paused') return false;
+    const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true };
+    return Boolean(status && status.isOpen);
+  }
+
   getContainer() {
     if (!this.container || !document.body.contains(this.container)) {
       this.container = document.getElementById(this.containerId || 'swipe-deck-container');
@@ -30,16 +41,14 @@ class TinderSwipeManager {
 
   loadCards(foods) {
     const list = Array.isArray(foods) && foods.length > 0 ? foods : ((window.APP_DATA && window.APP_DATA.foods) || []);
-    // 1. Lọc bỏ quán đóng cửa vĩnh viễn, quán ảo, vi phạm chế độ ăn nghiêm ngặt
+    // 1. Lọc bỏ quán đã đóng cửa, quán ảo, vi phạm chất lượng hoặc chế độ ăn kiêng
     let validFoods = list.filter(food => {
-      if (!food) return false;
-      if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
-      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+      if (!this.isFoodValidForSwipe(food)) return false;
       if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
       return true;
     });
 
-    // Fallback nếu bộ lọc quá ngặt nghèo khiến danh sách rỗng: nạp lại quán chất lượng của thành phố hiện tại
+    // Fallback nếu bộ lọc quá ngặt nghèo khiến danh sách rỗng: nạp lại toàn bộ quán đang mở cửa của thành phố hiện tại
     if (validFoods.length === 0) {
       const curCityId = (window.APP_DATA?.currentCity?.cityId || 'quynhon').toLowerCase();
       const curCityName = (window.APP_DATA?.currentCity?.name || 'Quy Nhơn').toLowerCase();
@@ -57,25 +66,11 @@ class TinderSwipeManager {
         return false;
       });
       const pool = cityFoods.length > 0 ? cityFoods : allFoods;
-      validFoods = pool.filter(food => {
-        if (!food) return false;
-        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
-        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
-        return true;
-      });
+      validFoods = pool.filter(food => this.isFoodValidForSwipe(food));
     }
 
-    // 2. Sắp xếp ưu tiên: Quán đang mở cửa lên đầu deck; Trong cùng nhóm, xếp theo điểm Chuẩn Gu cao nhất
+    // 2. Sắp xếp ưu tiên theo điểm Chuẩn Gu cao nhất
     validFoods.sort((a, b) => {
-      const statusA = window.getRestaurantStatus ? window.getRestaurantStatus(a) : { isOpen: true };
-      const statusB = window.getRestaurantStatus ? window.getRestaurantStatus(b) : { isOpen: true };
-      const openA = Boolean(statusA && statusA.isOpen);
-      const openB = Boolean(statusB && statusB.isOpen);
-
-      if (openA !== openB) {
-        return openA ? -1 : 1; // Quán đang mở cửa lên trước
-      }
-
       const scoreB = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
         ? window.tasteManager.calculateMatchScore(b)
         : 75;
@@ -114,18 +109,10 @@ class TinderSwipeManager {
     if (!container) return;
     container.innerHTML = '';
 
-    // Bỏ qua các quán đã đóng cửa vĩnh viễn hoặc vi phạm chất lượng nếu còn sót trong deck
+    // Bỏ qua các quán đã đóng cửa hoặc vi phạm chất lượng nếu còn sót trong deck
     while (this.currentIndex < this.deck.length) {
       const currentFood = this.deck[this.currentIndex];
-      if (currentFood) {
-        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(currentFood)) {
-          this.currentIndex++;
-          continue;
-        }
-        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(currentFood)) {
-          this.currentIndex++;
-          continue;
-        }
+      if (currentFood && this.isFoodValidForSwipe(currentFood)) {
         break;
       }
       this.currentIndex++;
@@ -136,17 +123,13 @@ class TinderSwipeManager {
       return;
     }
 
-    // Render tối đa 3 thẻ trong ngăn xếp (Card Stack)
+    // Render tối đa 3 thẻ trong ngăn xếp (Card Stack) - Chỉ hiển thị quán đang mở cửa
     const visibleCards = [];
     let lookAheadIdx = this.currentIndex;
     while (lookAheadIdx < this.deck.length && visibleCards.length < 3) {
       const food = this.deck[lookAheadIdx];
-      if (food) {
-        const isClosedPerm = typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food);
-        const isValid = typeof window.isValidQualityFood === 'function' ? window.isValidQualityFood(food) : true;
-        if (!isClosedPerm && isValid) {
-          visibleCards.push(food);
-        }
+      if (food && this.isFoodValidForSwipe(food)) {
+        visibleCards.push(food);
       }
       lookAheadIdx++;
     }
@@ -562,6 +545,7 @@ class TinderSwipeManager {
       }
       this.currentIndex++;
       this.isAnimating = false;
+      this.refillDeckIfNeeded();
       this.render();
     }, 280);
   }
@@ -599,28 +583,25 @@ class TinderSwipeManager {
       }
       this.currentIndex++;
       this.isAnimating = false;
-      
-      // Nếu số thẻ còn lại dưới 3, nạp thêm thẻ mới chưa từng quẹt trong phiên này vào cuối deck
-      if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
-        const freshDeck = window.app.getFoodsForCurrentMood();
-        if (freshDeck && freshDeck.length > 0) {
-          const swipedIds = new Set(this.history.map(h => h.food.id));
-          const currentDeckIds = new Set(this.deck.map(f => f.id));
-          const newAdditions = freshDeck
-            .filter(f => !currentDeckIds.has(f.id) && !swipedIds.has(f.id))
-            .filter(f => {
-              if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
-              if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
-              return true;
-            });
-          if (newAdditions.length > 0) {
-            this.deck = this.deck.concat(newAdditions);
-          }
-        }
-      }
-
+      this.refillDeckIfNeeded();
       this.render();
     }, 280);
+  }
+
+  refillDeckIfNeeded() {
+    if (!this.deck || (this.deck.length - this.currentIndex) >= 3 || !window.app) return;
+    const freshDeck = typeof window.app.getFoodsForCurrentMood === 'function' ? window.app.getFoodsForCurrentMood() : [];
+    if (!freshDeck || freshDeck.length === 0) return;
+
+    const swipedIds = new Set(this.history.map(h => h.food.id));
+    const currentDeckIds = new Set(this.deck.map(f => f.id));
+    const newAdditions = freshDeck
+      .filter(f => !currentDeckIds.has(f.id) && !swipedIds.has(f.id))
+      .filter(f => this.isFoodValidForSwipe(f));
+
+    if (newAdditions.length > 0) {
+      this.deck = this.deck.concat(newAdditions);
+    }
   }
 
   superLike(food) {
@@ -645,27 +626,7 @@ class TinderSwipeManager {
       }
       this.currentIndex++;
       this.isAnimating = false;
-
-      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ phù hợp
-      if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
-        const freshDeck = window.app.getFoodsForCurrentMood();
-        if (freshDeck && freshDeck.length > 0) {
-          const remaining = this.deck.slice(this.currentIndex);
-          const remainingIds = new Set(remaining.map(f => f.id));
-          const newAdditions = freshDeck
-            .filter(f => !remainingIds.has(f.id))
-            .filter(f => {
-              if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
-              if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
-              return true;
-            });
-          if (newAdditions.length > 0) {
-            this.deck = remaining.concat(newAdditions);
-            this.currentIndex = 0;
-          }
-        }
-      }
-
+      this.refillDeckIfNeeded();
       this.render();
       if (targetFood) {
         window.app.showMatchModal(targetFood, true);
