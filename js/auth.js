@@ -325,7 +325,8 @@ class AuthManager {
       { id: 'seafood', label: 'Hải Sản & Ốc Tươi', emoji: '🦀', desc: 'Đậm đà hương vị biển' },
       { id: 'hotpot_bbq', label: 'Lẩu & Nướng BBQ', emoji: '🍲', desc: 'Tụ tập xì xèo ấm cúng' },
       { id: 'sweet_tea', label: 'Trà Sữa & Cà Phê', emoji: '🧋', desc: 'Giải khát, đồ ngọt' },
-      { id: 'healthy', label: 'Đồ Chay & Healthy', emoji: '🥗', desc: 'Thanh đạm, Eat Clean' }
+      { id: 'healthy', label: 'Đồ Chay & Healthy', emoji: '🥗', desc: 'Thanh đạm, Eat Clean' },
+      { id: 'fastfood', label: 'Món Tây & Fast Food', emoji: '🍔', desc: 'Burger, gà rán, pizza tiện lợi' }
     ],
     flavors: [
       { id: 'spicy', label: 'Cay nồng / Siêu cay', emoji: '🌶️🔥', desc: 'Thích ăn cay đậm vị' },
@@ -337,16 +338,42 @@ class AuthManager {
       { id: 'crispy_rich', label: 'Đậm đà giòn rụm', emoji: '🥓', desc: 'Chiên giòn, nướng thơm' },
       { id: 'sour_fresh', label: 'Chua ngọt thanh mát', emoji: '🍋', desc: 'Kích thích vị giác' }
     ],
+    mealTimes: [
+      { id: 'breakfast', label: 'Điểm tâm / Sáng', emoji: '🌅', desc: 'Bún phở, bánh mì, bánh hỏi, cà phê' },
+      { id: 'lunch', label: 'Cơm trưa / Ăn no', emoji: '☀️', desc: 'Cơm tấm, cơm văn phòng, bún đậu' },
+      { id: 'afternoon', label: 'Bữa xế & Trà chiều', emoji: '🌆', desc: 'Trà sữa, ăn vặt, chè, bánh xèo' },
+      { id: 'dinner', label: 'Bữa tối & Tụ tập', emoji: '🌙', desc: 'Lẩu nướng, hải sản, quán sum vầy' },
+      { id: 'late_night', label: 'Cú đêm & Ăn khuya', emoji: '🦉', desc: 'Cháo đêm, ốc, quán mở sau 22h' }
+    ],
+    atmospheres: [
+      { id: 'delivery_fast', label: 'Giao tận nơi (ShopeeFood)', emoji: '🛵', desc: 'Ship tận cửa, nhanh chóng tiện lợi' },
+      { id: 'street_outdoor', label: 'Vỉa hè & Thoáng mát', emoji: '🏖️', desc: 'Bình dân, phong cách đường phố gần gũi' },
+      { id: 'air_conditioned', label: 'Máy lạnh & Yên tĩnh', emoji: '❄️', desc: 'Mát rượi, lịch sự, không khói bụi' },
+      { id: 'scenic_view', label: 'View biển & Check-in', emoji: '🌊', desc: 'Ngắm biển Quy Nhơn, góc sống ảo chill' },
+      { id: 'gather_cheers', label: 'Nhậu nhẹt & Xôm tụ', emoji: '🍻', desc: 'Bia bọt, xì xèo lẩu nướng, rôm rả bạn bè' }
+    ],
+    cuisineStyles: [
+      { id: 'local_specialty', label: 'Đặc sản bản địa', emoji: '🇻🇳', desc: 'Bánh hỏi lòng heo, nem chả, bún chả cá' },
+      { id: 'asian', label: 'Ẩm thực Á Đông', emoji: '🍱', desc: 'Món Hàn, Nhật, Thái, Dimsum' },
+      { id: 'western_fastfood', label: 'Món Tây & Fast Food', emoji: '🍕', desc: 'Pizza, pasta, burger, gà rán giòn' },
+      { id: 'traditional_family', label: 'Cơm nhà & Thuần Việt', emoji: '🍲', desc: 'Đậm đà hương vị gia đình ấm cúng' }
+    ],
     diets: [
       { id: 'normal', label: 'Ăn tự do', emoji: '😋', desc: 'Món gì cũng mê' },
       { id: 'vegetarian', label: 'Ăn chay / Bán chay', emoji: '🥬', desc: 'Ưu tiên rau củ, nấm' },
       { id: 'eatclean', label: 'Eat Clean / Giữ dáng', emoji: '🥑', desc: 'Ít đường, calo vừa' },
-      { id: 'no_seafood', label: 'Không ăn hải sản', emoji: '🚫', desc: 'Dị ứng / kiêng tôm cá' }
+      { id: 'no_seafood', label: 'Không ăn hải sản', emoji: '🚫', desc: 'Dị ứng / kiêng tôm cá' },
+      { id: 'no_pork', label: 'Kiêng thịt heo / Halal', emoji: '🥩', desc: 'Chỉ ăn gà, bò, cá, rau củ' }
     ],
     budgets: [
       { id: 'budget_low', label: '< 35.000đ', emoji: '🪙', desc: 'Bình dân, học sinh SV' },
       { id: 'budget_mid', label: '35k - 70.000đ', emoji: '💵', desc: 'Mức phổ biến vừa túi' },
       { id: 'budget_high', label: '> 70.000đ', emoji: '💎', desc: 'Thoải mái, sang xịn' }
+    ],
+    companions: [
+      { id: 'solo', label: 'Đi một mình', emoji: '👤', desc: 'Nhanh gọn, tiện lợi, tự do' },
+      { id: 'date_couple', label: 'Hẹn hò 2 người', emoji: '👫', desc: 'Ấm cúng, không gian lãng mạn nhẹ nhàng' },
+      { id: 'group_family', label: 'Bạn bè & Gia đình', emoji: '👨‍👩‍👧‍👦', desc: 'Bàn đông, nhiều món chia sẻ rôm rả' }
     ]
   };
 
@@ -354,8 +381,12 @@ class AuthManager {
     return {
       categories: ['noodles', 'streetfood'],
       flavors: ['mild_spicy', 'crispy_rich'],
+      mealTimes: ['breakfast', 'lunch'],
+      atmospheres: ['street_outdoor'],
+      cuisineStyles: ['local_specialty', 'traditional_family'],
       diets: ['normal'],
-      budgets: ['budget_low', 'budget_mid']
+      budgets: ['budget_low', 'budget_mid'],
+      companions: ['solo', 'group_family']
     };
   }
 
@@ -373,12 +404,16 @@ class AuthManager {
       // Normalize array fields
       if (!Array.isArray(prefs.categories) || prefs.categories.length === 0) prefs.categories = ['noodles', 'streetfood'];
       if (!Array.isArray(prefs.flavors) || prefs.flavors.length === 0) prefs.flavors = ['mild_spicy', 'crispy_rich'];
+      if (!Array.isArray(prefs.mealTimes) || prefs.mealTimes.length === 0) prefs.mealTimes = ['breakfast', 'lunch'];
+      if (!Array.isArray(prefs.atmospheres) || prefs.atmospheres.length === 0) prefs.atmospheres = ['street_outdoor'];
+      if (!Array.isArray(prefs.cuisineStyles) || prefs.cuisineStyles.length === 0) prefs.cuisineStyles = ['local_specialty', 'traditional_family'];
       if (!Array.isArray(prefs.diets) || prefs.diets.length === 0) {
         prefs.diets = prefs.diet ? [prefs.diet] : ['normal'];
       }
       if (!Array.isArray(prefs.budgets) || prefs.budgets.length === 0) {
         prefs.budgets = prefs.budget ? [prefs.budget] : ['budget_mid'];
       }
+      if (!Array.isArray(prefs.companions) || prefs.companions.length === 0) prefs.companions = ['solo', 'group_family'];
       return prefs;
     } catch (e) {
       return this.getDefaultTastePreferences();
@@ -483,7 +518,84 @@ class AuthManager {
       }).join('');
     }
 
-    // 3. Chế độ ăn uống (Chọn nhiều)
+    // 3. Thời điểm & Bữa ăn (Chọn nhiều)
+    const mealTimeContainer = document.getElementById('onboarding-mealtimes-container');
+    if (mealTimeContainer && q.mealTimes) {
+      mealTimeContainer.innerHTML = q.mealTimes.map(m => {
+        const isSelected = (this.tempTastePrefs.mealTimes || []).includes(m.id);
+        return `
+          <button type="button" onclick="window.authManager.toggleTasteMealTime('${m.id}')"
+            class="p-2.5 rounded-xl border text-left transition flex flex-col justify-between cursor-pointer select-none active:scale-98 ${
+              isSelected 
+                ? 'bg-gradient-to-br from-amber-50 to-orange-50 border-amber-400 shadow-xs ring-2 ring-amber-300/60' 
+                : 'bg-white border-stone-200 hover:border-stone-300 hover:bg-stone-50/80 text-stone-700'
+            }">
+            <div class="flex items-center justify-between w-full">
+              <span class="text-xl">${m.emoji}</span>
+              <span class="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${
+                isSelected ? 'bg-amber-500 text-white' : 'border border-stone-300 text-transparent'
+              }">✓</span>
+            </div>
+            <div class="mt-1.5">
+              <div class="text-xs font-bold ${isSelected ? 'text-amber-900' : 'text-stone-800'}">${m.label}</div>
+              <div class="text-[10px] text-stone-400 truncate">${m.desc}</div>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 4. Không gian & Hình thức ăn uống (Chọn nhiều)
+    const atmoContainer = document.getElementById('onboarding-atmospheres-container');
+    if (atmoContainer && q.atmospheres) {
+      atmoContainer.innerHTML = q.atmospheres.map(a => {
+        const isSelected = (this.tempTastePrefs.atmospheres || []).includes(a.id);
+        return `
+          <button type="button" onclick="window.authManager.toggleTasteAtmosphere('${a.id}')"
+            class="p-2.5 rounded-xl border text-left transition flex items-center gap-2.5 cursor-pointer select-none active:scale-98 ${
+              isSelected 
+                ? 'bg-gradient-to-br from-sky-50 to-blue-50 border-sky-400 shadow-xs ring-2 ring-sky-300/60' 
+                : 'bg-white border-stone-200 hover:border-stone-300 hover:bg-stone-50/80 text-stone-700'
+            }">
+            <span class="text-2xl shrink-0">${a.emoji}</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-bold ${isSelected ? 'text-sky-900' : 'text-stone-800'}">${a.label}</div>
+              <div class="text-[10px] text-stone-400 truncate">${a.desc}</div>
+            </div>
+            <span class="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
+              isSelected ? 'bg-sky-500 text-white' : 'border border-stone-300 text-transparent'
+            }">✓</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 5. Phong cách & Xu hướng ẩm thực (Chọn nhiều)
+    const cuisineContainer = document.getElementById('onboarding-cuisines-container');
+    if (cuisineContainer && q.cuisineStyles) {
+      cuisineContainer.innerHTML = q.cuisineStyles.map(c => {
+        const isSelected = (this.tempTastePrefs.cuisineStyles || []).includes(c.id);
+        return `
+          <button type="button" onclick="window.authManager.toggleTasteCuisineStyle('${c.id}')"
+            class="p-2.5 rounded-xl border text-left transition flex items-center gap-2.5 cursor-pointer select-none active:scale-98 ${
+              isSelected 
+                ? 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-400 shadow-xs ring-2 ring-purple-300/60' 
+                : 'bg-white border-stone-200 hover:border-stone-300 hover:bg-stone-50/80 text-stone-700'
+            }">
+            <span class="text-2xl shrink-0">${c.emoji}</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-xs font-bold ${isSelected ? 'text-purple-900' : 'text-stone-800'}">${c.label}</div>
+              <div class="text-[10px] text-stone-400 truncate">${c.desc}</div>
+            </div>
+            <span class="w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 ${
+              isSelected ? 'bg-purple-500 text-white' : 'border border-stone-300 text-transparent'
+            }">✓</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 6. Chế độ ăn uống (Chọn nhiều)
     const dietContainer = document.getElementById('onboarding-diet-container');
     if (dietContainer) {
       const selectedDiets = Array.isArray(this.tempTastePrefs.diets) 
@@ -511,7 +623,7 @@ class AuthManager {
       }).join('');
     }
 
-    // 4. Ngân sách trung bình (Chọn nhiều)
+    // 7. Ngân sách trung bình (Chọn nhiều)
     const budgetContainer = document.getElementById('onboarding-budget-container');
     if (budgetContainer) {
       const selectedBudgets = Array.isArray(this.tempTastePrefs.budgets) 
@@ -531,6 +643,30 @@ class AuthManager {
             <div class="text-[9.5px] text-stone-400 mt-0.5 truncate">${b.desc}</div>
             <span class="w-4 h-4 rounded-full mt-1 flex items-center justify-center text-[10px] font-bold shrink-0 ${
               isSelected ? 'bg-amber-500 text-white' : 'border border-stone-300 text-transparent'
+            }">✓</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // 8. Bạn thường đi ăn cùng ai? (Chọn nhiều)
+    const companionContainer = document.getElementById('onboarding-companions-container');
+    if (companionContainer && q.companions) {
+      const selectedComps = Array.isArray(this.tempTastePrefs.companions) ? this.tempTastePrefs.companions : ['solo', 'group_family'];
+      companionContainer.innerHTML = q.companions.map(cp => {
+        const isSelected = selectedComps.includes(cp.id);
+        return `
+          <button type="button" onclick="window.authManager.toggleTasteCompanion('${cp.id}')"
+            class="p-2.5 rounded-xl border text-center transition flex flex-col items-center justify-between cursor-pointer select-none active:scale-98 ${
+              isSelected 
+                ? 'bg-gradient-to-br from-rose-50 to-pink-50 border-rose-400 shadow-xs ring-2 ring-rose-300/60' 
+                : 'bg-white border-stone-200 hover:border-stone-300 hover:bg-stone-50/80 text-stone-700'
+            }">
+            <span class="text-xl mb-1">${cp.emoji}</span>
+            <div class="text-xs font-bold ${isSelected ? 'text-rose-900' : 'text-stone-800'}">${cp.label}</div>
+            <div class="text-[9.5px] text-stone-400 mt-0.5 truncate">${cp.desc}</div>
+            <span class="w-4 h-4 rounded-full mt-1 flex items-center justify-center text-[10px] font-bold shrink-0 ${
+              isSelected ? 'bg-rose-500 text-white' : 'border border-stone-300 text-transparent'
             }">✓</span>
           </button>
         `;
@@ -579,6 +715,82 @@ class AuthManager {
     } else {
       this.tempTastePrefs.flavors.push(flavorId);
     }
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    this.renderTasteOnboarding();
+  }
+
+  toggleTasteMealTime(mealTimeId) {
+    if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
+    if (!Array.isArray(this.tempTastePrefs.mealTimes)) this.tempTastePrefs.mealTimes = ['breakfast', 'lunch'];
+
+    const idx = this.tempTastePrefs.mealTimes.indexOf(mealTimeId);
+    if (idx >= 0) {
+      if (this.tempTastePrefs.mealTimes.length > 1) {
+        this.tempTastePrefs.mealTimes.splice(idx, 1);
+      } else {
+        this.showToast('Vui lòng chọn ít nhất 1 bữa ăn yêu thích!');
+      }
+    } else {
+      this.tempTastePrefs.mealTimes.push(mealTimeId);
+    }
+
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    this.renderTasteOnboarding();
+  }
+
+  toggleTasteAtmosphere(atmoId) {
+    if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
+    if (!Array.isArray(this.tempTastePrefs.atmospheres)) this.tempTastePrefs.atmospheres = ['street_outdoor'];
+
+    const idx = this.tempTastePrefs.atmospheres.indexOf(atmoId);
+    if (idx >= 0) {
+      if (this.tempTastePrefs.atmospheres.length > 1) {
+        this.tempTastePrefs.atmospheres.splice(idx, 1);
+      } else {
+        this.showToast('Vui lòng chọn ít nhất 1 không gian yêu thích!');
+      }
+    } else {
+      this.tempTastePrefs.atmospheres.push(atmoId);
+    }
+
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    this.renderTasteOnboarding();
+  }
+
+  toggleTasteCuisineStyle(cuisineId) {
+    if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
+    if (!Array.isArray(this.tempTastePrefs.cuisineStyles)) this.tempTastePrefs.cuisineStyles = ['local_specialty', 'traditional_family'];
+
+    const idx = this.tempTastePrefs.cuisineStyles.indexOf(cuisineId);
+    if (idx >= 0) {
+      if (this.tempTastePrefs.cuisineStyles.length > 1) {
+        this.tempTastePrefs.cuisineStyles.splice(idx, 1);
+      } else {
+        this.showToast('Vui lòng chọn ít nhất 1 phong cách ẩm thực!');
+      }
+    } else {
+      this.tempTastePrefs.cuisineStyles.push(cuisineId);
+    }
+
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+    this.renderTasteOnboarding();
+  }
+
+  toggleTasteCompanion(companionId) {
+    if (!this.tempTastePrefs) this.tempTastePrefs = this.getDefaultTastePreferences();
+    if (!Array.isArray(this.tempTastePrefs.companions)) this.tempTastePrefs.companions = ['solo', 'group_family'];
+
+    const idx = this.tempTastePrefs.companions.indexOf(companionId);
+    if (idx >= 0) {
+      if (this.tempTastePrefs.companions.length > 1) {
+        this.tempTastePrefs.companions.splice(idx, 1);
+      } else {
+        this.showToast('Vui lòng chọn ít nhất 1 đối tượng đi cùng!');
+      }
+    } else {
+      this.tempTastePrefs.companions.push(companionId);
+    }
+
     if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
     this.renderTasteOnboarding();
   }

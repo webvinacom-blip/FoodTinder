@@ -91,6 +91,13 @@ class TasteManager {
       if (isSpicy) return false;
     }
 
+    // 4. Kiêng thịt heo (no_pork)
+    if (diets.includes('no_pork')) {
+      const isPork = /heo|lợn|sườn heo|ba chỉ|xá xíu|giò heo|chả lụa|nem chua|thịt kho tàu|lòng heo/i.test(food.name || '') ||
+        (Array.isArray(food.tags) && food.tags.some(t => /heo|lợn|ba_chỉ|xá_xíu/i.test(t)));
+      if (isPork) return false;
+    }
+
     return true;
   }
 
@@ -251,9 +258,12 @@ class TasteManager {
     this.saveProfile();
   }
 
-  // Calculate Match Percentage (65% to 99%)
+  // Calculate Match Percentage (60% to 99%)
   calculateMatchScore(food, currentMoodId = '') {
     if (!food) return 70;
+    if (typeof window.classifyFood === 'function') {
+      window.classifyFood(food);
+    }
     let score = 65;
 
     // 1. User Onboarding Taste Preferences Bonus & Checks
@@ -264,6 +274,13 @@ class TasteManager {
       // Kiêng hải sản
       if (diets.includes('no_seafood')) {
         if (this.isFoodSeafood(food)) return 30;
+      }
+
+      // Kiêng thịt heo
+      if (diets.includes('no_pork')) {
+        const isPork = /heo|lợn|sườn heo|ba chỉ|xá xíu|giò heo|chả lụa|nem chua|thịt kho tàu|lòng heo/i.test(food.name || '') ||
+          (Array.isArray(food.tags) && food.tags.some(t => /heo|lợn|ba_chỉ|xá_xíu/i.test(t)));
+        if (isPork) return 30;
       }
 
       // Ăn chay
@@ -284,7 +301,7 @@ class TasteManager {
       }
 
       // Nhóm món ăn yêu thích (+14 điểm)
-      if (Array.isArray(prefs.categories)) {
+      if (Array.isArray(prefs.categories) && prefs.categories.length > 0) {
         const cat = food.category;
         const foodName = (food.name || '').toLowerCase();
         let catMatch = false;
@@ -294,8 +311,9 @@ class TasteManager {
         if (prefs.categories.includes('streetfood') && (cat === 'streetfood' || /bánh xèo|bánh hỏi|ăn vặt|nem/i.test(foodName))) catMatch = true;
         if (prefs.categories.includes('seafood') && (cat === 'seafood' || /hải sản|ốc|tôm|cua|mực/i.test(foodName))) catMatch = true;
         if (prefs.categories.includes('hotpot_bbq') && (cat === 'hotpot' || cat === 'bbq' || /lẩu|nướng|bbq/i.test(foodName))) catMatch = true;
-        if (prefs.categories.includes('sweet_tea') && (cat === 'cafe' || cat === 'drink' || /trà sữa|cà phê|kem|chè/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('sweet_tea') && (cat === 'cafe' || cat === 'drink' || cat === 'boba' || /trà sữa|cà phê|kem|chè/i.test(foodName))) catMatch = true;
         if (prefs.categories.includes('healthy') && (cat === 'healthy' || /chay|clean|salad/i.test(foodName))) catMatch = true;
+        if (prefs.categories.includes('fastfood') && (/gà rán|burger|pizza|mì ý|fast food/i.test(foodName) || (food.cuisineStyles || []).includes('western_fastfood'))) catMatch = true;
 
         if (catMatch) {
           score += 14;
@@ -303,7 +321,7 @@ class TasteManager {
       }
 
       // Khẩu vị đặc trưng (+8 điểm)
-      if (Array.isArray(prefs.flavors)) {
+      if (Array.isArray(prefs.flavors) && prefs.flavors.length > 0) {
         const foodName = (food.name || '').toLowerCase();
         const tags = Array.isArray(food.tags) ? food.tags.join(' ').toLowerCase() : '';
 
@@ -325,6 +343,54 @@ class TasteManager {
         if (prefs.flavors.includes('crispy_rich') && (tags.includes('giòn') || tags.includes('đậm') || /chiên|nướng|ram/i.test(foodName))) score += 7;
         // Chua ngọt thanh mát
         if (prefs.flavors.includes('sour_fresh') && (/chua|me|chanh|gỏi|nộm/i.test(foodName) || tags.includes('chua'))) score += 7;
+      }
+
+      // Bữa ăn & Thời điểm (mealTimes) (+10 điểm)
+      if (Array.isArray(prefs.mealTimes) && prefs.mealTimes.length > 0) {
+        const foodMealTimes = Array.isArray(food.mealTimes) ? food.mealTimes : [];
+        const hasMealMatch = prefs.mealTimes.some(m => foodMealTimes.includes(m));
+        if (hasMealMatch) {
+          score += 10;
+          // Thưởng thêm nếu thời gian thực hiện tại khớp với bữa ăn đó
+          const curHour = new Date().getHours();
+          let currentRealTime = '';
+          if (curHour >= 5 && curHour < 10) currentRealTime = 'breakfast';
+          else if (curHour >= 11 && curHour < 14) currentRealTime = 'lunch';
+          else if (curHour >= 14 && curHour < 17) currentRealTime = 'afternoon';
+          else if (curHour >= 17 && curHour < 21) currentRealTime = 'dinner';
+          else if (curHour >= 21 || curHour < 4) currentRealTime = 'late_night';
+          
+          if (currentRealTime && prefs.mealTimes.includes(currentRealTime) && foodMealTimes.includes(currentRealTime)) {
+            score += 4;
+          }
+        }
+      }
+
+      // Không gian & Hình thức ăn uống (atmospheres) (+8 điểm)
+      if (Array.isArray(prefs.atmospheres) && prefs.atmospheres.length > 0) {
+        const foodAtmospheres = Array.isArray(food.atmospheres) ? food.atmospheres : [];
+        const hasAtmoMatch = prefs.atmospheres.some(a => foodAtmospheres.includes(a));
+        if (hasAtmoMatch) {
+          score += 8;
+        }
+      }
+
+      // Phong cách & Nguồn gốc ẩm thực (cuisineStyles) (+8 điểm)
+      if (Array.isArray(prefs.cuisineStyles) && prefs.cuisineStyles.length > 0) {
+        const foodCuisines = Array.isArray(food.cuisineStyles) ? food.cuisineStyles : [];
+        const hasCuisineMatch = prefs.cuisineStyles.some(c => foodCuisines.includes(c));
+        if (hasCuisineMatch) {
+          score += 8;
+        }
+      }
+
+      // Đối tượng đi cùng (companions) (+6 điểm)
+      if (Array.isArray(prefs.companions) && prefs.companions.length > 0) {
+        const foodCompanions = Array.isArray(food.companions) ? food.companions : [];
+        const hasCompanionMatch = prefs.companions.some(cp => foodCompanions.includes(cp));
+        if (hasCompanionMatch) {
+          score += 6;
+        }
       }
 
       // Ngân sách trung bình (+6 điểm cho bất kỳ mức nào được chọn)
@@ -393,12 +459,61 @@ class TasteManager {
     if (prefs) {
       const foodName = (food.name || '').toLowerCase();
       const diets = Array.isArray(prefs.diets) ? prefs.diets : (prefs.diet ? [prefs.diet] : []);
+      const foodAtmo = Array.isArray(food.atmospheres) ? food.atmospheres : [];
+      const foodCuisines = Array.isArray(food.cuisineStyles) ? food.cuisineStyles : [];
+      const foodMeals = Array.isArray(food.mealTimes) ? food.mealTimes : [];
+
+      // 1. Chế độ ăn uống
       if (diets.includes('vegetarian') && (food.category === 'vegetarian' || food.category === 'healthy' || /chay|nấm/.test(foodName))) {
         return "Chuẩn theo chế độ ăn chay thanh đạm của bạn";
       }
       if (diets.includes('eatclean') && (food.category === 'healthy' || /clean|salad/.test(foodName))) {
         return "Chuẩn chế độ Eat Clean giữ dáng thanh lành";
       }
+
+      // 2. Không gian & hình thức ưu tiên
+      if (prefs.atmospheres?.includes('scenic_view') && foodAtmo.includes('scenic_view')) {
+        return "View biển Quy Nhơn cực chill ngắm hoàng hôn";
+      }
+      if (prefs.atmospheres?.includes('delivery_fast') && foodAtmo.includes('delivery_fast')) {
+        return "Giao tận nơi nhanh chóng qua ShopeeFood";
+      }
+      if (prefs.atmospheres?.includes('air_conditioned') && foodAtmo.includes('air_conditioned')) {
+        return "Không gian máy lạnh mát mẻ & yên tĩnh";
+      }
+      if (prefs.atmospheres?.includes('gather_cheers') && foodAtmo.includes('gather_cheers')) {
+        return "Quán nhậu & tụ tập bạn bè xôm tụ rôm rả";
+      }
+
+      // 3. Phong cách ẩm thực
+      if (prefs.cuisineStyles?.includes('local_specialty') && foodCuisines.includes('local_specialty')) {
+        return "Đặc sản bản địa trứ danh chuẩn vị truyền thống";
+      }
+      if (prefs.cuisineStyles?.includes('asian') && foodCuisines.includes('asian')) {
+        return "Chuẩn ẩm thực Á Đông (Hàn - Nhật - Thái) bạn mê";
+      }
+      if (prefs.cuisineStyles?.includes('western_fastfood') && foodCuisines.includes('western_fastfood')) {
+        return "Món Tây & Fast Food tiện lợi ngon miệng";
+      }
+
+      // 4. Bữa ăn & Thời điểm
+      if (prefs.mealTimes?.includes('late_night') && foodMeals.includes('late_night')) {
+        return "Cú đêm mở muộn chuẩn gu ăn khuya sau 22h";
+      }
+      if (prefs.mealTimes?.includes('breakfast') && foodMeals.includes('breakfast')) {
+        return "Điểm tâm sáng ấm bụng đúng sở thích của bạn";
+      }
+      if (prefs.mealTimes?.includes('afternoon') && foodMeals.includes('afternoon')) {
+        return "Bữa xế trà chiều giải nhiệt lai rai cực đã";
+      }
+      if (prefs.mealTimes?.includes('dinner') && foodMeals.includes('dinner')) {
+        return "Bữa tối sum vầy ấm cúng chuẩn vị yêu thích";
+      }
+      if (prefs.mealTimes?.includes('lunch') && foodMeals.includes('lunch')) {
+        return "Cơm trưa no nê chuẩn khẩu vị bạn đã chọn";
+      }
+
+      // 5. Nhóm món ăn yêu thích
       if (prefs.categories?.includes('noodles') && (food.category === 'noodles' || /phở|bún|mì|bánh canh/.test(foodName))) {
         return "Chuẩn gu món sợi & bún phở bạn đã chọn";
       }
@@ -411,6 +526,8 @@ class TasteManager {
       if (prefs.categories?.includes('streetfood') && (food.category === 'streetfood' || /bánh xèo|ăn vặt/.test(foodName))) {
         return "Chuẩn gu ăn vặt & ẩm thực đường phố của bạn";
       }
+
+      // 6. Khẩu vị
       if (prefs.flavors?.includes('spicy') && (/cay/.test(foodName) || food.tags?.some(t => /cay/.test(t)))) {
         return "Đậm vị cay nồng chuẩn khẩu vị yêu thích của bạn";
       }
@@ -422,6 +539,14 @@ class TasteManager {
       }
       if (prefs.flavors?.includes('sour_fresh') && (/chua|me|gỏi/.test(foodName) || food.tags?.some(t => /chua/.test(t)))) {
         return "Vị chua ngọt thanh mát kích thích vị giác của bạn";
+      }
+
+      // 7. Bạn đồng hành
+      if (prefs.companions?.includes('date_couple') && (food.companions || []).includes('date_couple')) {
+        return "Không gian hẹn hò 2 người lãng mạn ấm cúng";
+      }
+      if (prefs.companions?.includes('group_family') && (food.companions || []).includes('group_family')) {
+        return "Không gian rộng rãi lý tưởng cho nhóm & gia đình";
       }
     }
 

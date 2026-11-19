@@ -74,13 +74,16 @@ class FoodDataLoader {
     }
   }
 
-  // Làm sạch danh sách: loại bỏ quán đóng cửa vĩnh viễn, quán bar/club không ẩm thực, quán ảo
+  // Làm sạch danh sách: loại bỏ quán đóng cửa vĩnh viễn, quán bar/club không ẩm thực, quán ảo và tự động phân loại
   sanitizeFoods(foods) {
     if (!Array.isArray(foods)) return [];
     return foods.filter(f => {
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
       if (typeof window.isFakeDummyFood === 'function' && window.isFakeDummyFood(f)) return false;
+      if (typeof window.classifyFood === 'function') {
+        window.classifyFood(f);
+      }
       return true;
     });
   }

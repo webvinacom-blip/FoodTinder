@@ -1072,6 +1072,113 @@ function hasShopeeDelivery(food) {
   return false;
 }
 
+// ══════════════════════════════════════════════════════════════════════
+// BỘ PHÂN LOẠI MÓN ĂN THÔNG MINH (SMART FOOD CLASSIFICATION ENGINE)
+// Phân loại toàn diện theo bữa ăn, không gian, phong cách ẩm thực, đối tượng
+// ══════════════════════════════════════════════════════════════════════
+function classifyFood(f) {
+  if (!f) return f;
+  if (Array.isArray(f.mealTimes) && Array.isArray(f.atmospheres) && Array.isArray(f.cuisineStyles) && Array.isArray(f.companions)) {
+    return f;
+  }
+
+  const name = String(f.name || "").toLowerCase();
+  const rest = String(f.restaurant || "").toLowerCase();
+  const addr = String(f.address || "").toLowerCase();
+  const cat = String(f.category || "").toLowerCase();
+  const tags = Array.isArray(f.tags) ? f.tags.map(t => String(t).toLowerCase()) : [];
+  const tagStr = tags.join(" ");
+  const op = String(f.openTime || "");
+  const combined = `${name} ${rest} ${addr} ${cat} ${tagStr}`;
+
+  const mealTimes = new Set();
+  const atmospheres = new Set();
+  const cuisineStyles = new Set();
+  const companions = new Set();
+
+  const isBbqHotpotSeafood = cat === 'hotpot' || cat === 'bbq' || cat === 'seafood' || /lẩu|nướng|hải sản|ốc|nhậu|bia|beer/i.test(combined);
+
+  // 1. Thời điểm & Bữa ăn (mealTimes)
+  if (!isBbqHotpotSeafood && (cat === 'noodles' || /phở|bún|bánh mì|xôi|bánh hỏi|cháo|hủ tiếu|điểm tâm|cà phê|cafe|bánh bao|bánh cuốn|mì quảng/i.test(combined))) {
+    mealTimes.add('breakfast');
+  }
+  if (cat === 'rice' || cat === 'noodles' || cat === 'healthy' || /cơm|bún|phở|mì|suất|trưa|bún đậu|bún chả/i.test(combined)) {
+    mealTimes.add('lunch');
+  }
+  if (cat === 'cafe' || cat === 'drink' || cat === 'boba' || cat === 'streetfood' || /trà sữa|chè|ăn vặt|bánh tráng|cà phê|nước ép|sinh tố|kem|bánh ngọt|bánh xèo/i.test(combined)) {
+    mealTimes.add('afternoon');
+  }
+  if (isBbqHotpotSeafood || cat === 'rice' || /lẩu|nướng|hải sản|ốc|quán nhậu|cơm niêu|nhà hàng|tối/i.test(combined)) {
+    mealTimes.add('dinner');
+  }
+  if (/2[3-4]:\d\d|0[0-4]:\d\d/.test(op) || /đêm|khuya|cháo đêm|ốc đêm|mì cay|quán nhậu|pub|beer|bar|xuyên đêm/i.test(combined)) {
+    mealTimes.add('late_night');
+  }
+  if (mealTimes.size === 0) {
+    mealTimes.add('lunch');
+    mealTimes.add('dinner');
+  }
+
+  // 2. Không gian & Hình thức (atmospheres)
+  if (f.hasShopeeDelivery === true || f.deliveryPlatform === 'ShopeeFood' || hasShopeeDelivery(f)) {
+    atmospheres.add('delivery_fast');
+  }
+  if (/xuân diệu|an dương vương|hàn mặc tử|ghềnh ráng|biển|view|rooftop|surf bar|hoàng hoa thám|bờ kè/i.test(combined)) {
+    atmospheres.add('scenic_view');
+  }
+  if (cat === 'cafe' || cat === 'drink' || cat === 'boba' || /máy lạnh|lịch sự|tiệm|nhà hàng|pizza|lotteria|jollibee|highlands|phúc long/i.test(combined)) {
+    atmospheres.add('air_conditioned');
+  }
+  if (cat === 'streetfood' || /vỉa hè|bình dân|đường phố|bánh xèo|xiên que|nem nướng|chè|hẻm/i.test(combined) || (f.priceMax && f.priceMax <= 40000)) {
+    atmospheres.add('street_outdoor');
+  }
+  if (isBbqHotpotSeafood || /nhậu|beer|bia|quán ốc|lai rai|xôm|tụ tập|nướng|lẩu/i.test(combined)) {
+    atmospheres.add('gather_cheers');
+  }
+  if (atmospheres.size === 0) {
+    atmospheres.add('street_outdoor');
+  }
+
+  // 3. Phong cách & Xu hướng ẩm thực (cuisineStyles)
+  if (/bánh hỏi|cháo lòng|bún chả cá|chả ram|bánh xèo|bún sứa|cá tà ma|nem chợ huyện|tré|gà chỉ|cua huỳnh đế|chim mía|đặc sản|quy nhơn|bình định/i.test(combined) || f.isSpecialty) {
+    cuisineStyles.add('local_specialty');
+  }
+  if (/hàn quốc|korea|tokbokki|kimbap|mì cay|nhật bản|japan|sushi|sashimi|thái lan|thai|tomyum|dimsum|sủi cảo|há cảo|bánh xèo nhật/i.test(combined)) {
+    cuisineStyles.add('asian');
+  }
+  if (/pizza|burger|gà rán|pasta|mì ý|steak|bò bít tết|kfc|lotteria|jollibee|mcdonald|texas chicken/i.test(combined)) {
+    cuisineStyles.add('western_fastfood');
+  }
+  if (cat === 'rice' || cat === 'noodles' || cat === 'healthy' || /cơm niêu|cơm nhà|canh chua|cá kho|bún riêu|phở bắc|truyền thống|phở|bún bò|bún thịt nướng/i.test(combined)) {
+    cuisineStyles.add('traditional_family');
+  }
+  if (cuisineStyles.size === 0) {
+    cuisineStyles.add('traditional_family');
+  }
+
+  // 4. Đối tượng đi cùng (companions)
+  if (cat === 'noodles' || cat === 'rice' || cat === 'streetfood' || /bánh mì|cơm hộp|cơm tấm|phở|1 người|suất ăn|ly trà/i.test(combined)) {
+    companions.add('solo');
+  }
+  if (cat === 'cafe' || cat === 'drink' || cat === 'boba' || atmospheres.has('scenic_view') || (atmospheres.has('air_conditioned') && !isBbqHotpotSeafood)) {
+    companions.add('date_couple');
+  }
+  if (isBbqHotpotSeafood || atmospheres.has('gather_cheers') || /lẩu|nướng|nhà hàng|mâm|set|nhiều người|gia đình/i.test(combined)) {
+    companions.add('group_family');
+  }
+  if (companions.size === 0) {
+    companions.add('solo');
+    companions.add('group_family');
+  }
+
+  f.mealTimes = Array.from(mealTimes);
+  f.atmospheres = Array.from(atmospheres);
+  f.cuisineStyles = Array.from(cuisineStyles);
+  f.companions = Array.from(companions);
+
+  return f;
+}
+
 if (typeof window !== "undefined") {
   window.PERMANENTLY_CLOSED_BLACKLIST = PERMANENTLY_CLOSED_BLACKLIST;
   window.PERMANENTLY_CLOSED_KEYWORDS = PERMANENTLY_CLOSED_KEYWORDS;
@@ -1083,6 +1190,7 @@ if (typeof window !== "undefined") {
   window.isValidQualityFood = isValidQualityFood;
   window.VERIFIED_SHOPEE_BRANDS = VERIFIED_SHOPEE_BRANDS;
   window.hasShopeeDelivery = hasShopeeDelivery;
+  window.classifyFood = classifyFood;
 }
 
 const APP_DATA = {
@@ -128396,7 +128504,7 @@ const APP_DATA = {
 };
 
 
-// Đảm bảo tất cả quán ăn đều có giờ đóng/mở cửa chuẩn xác, không bao giờ bị undefined
+// Đảm bảo tất cả quán ăn đều có giờ đóng/mở cửa chuẩn xác và phân loại đầy đủ
 if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods)) {
   APP_DATA.foods.forEach(f => {
     if (!f.openTime) {
@@ -128409,6 +128517,9 @@ if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods)) {
       } else {
         f.openTime = '07:00 - 22:30';
       }
+    }
+    if (typeof classifyFood === 'function') {
+      classifyFood(f);
     }
   });
 }
