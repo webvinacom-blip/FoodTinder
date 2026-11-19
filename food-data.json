@@ -4690,7 +4690,7 @@
     "reviewCount": 1,
     "likesCount": 23,
     "commentsCount": 5,
-    "openTime": "07:00 - 22:30",
+    "openTime": "05:00 - 10:00, 16:00 - 21:30",
     "category": "streetfood",
     "source": "ShopeeFood",
     "sourceIcon": "🛍️",
@@ -16969,7 +16969,7 @@
     "moodIds": [
       "craving"
     ],
-    "openTime": "07:00 - 22:30",
+    "openTime": "05:00 - 10:00, 16:00 - 21:30",
     "hasShopeeDelivery": true,
     "deliveryPlatform": "ShopeeFood",
     "mealTimes": [

@@ -344,7 +344,8 @@ class TinderSwipeManager {
             </div>
 
             <!-- Hàng 6: Mã giảm giá ShopeeFood (Đặt tại vùng trống giữa số người quay lại và button Rủ đi ăn) -->
-            ${hasShopee ? `
+            ${hasShopee ? (
+              status.isOpen ? `
               <div class="pt-0.5">
                 <div class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-orange-50/95 via-amber-50/70 to-rose-50/80 border border-orange-200/90 flex items-center justify-between gap-2 shadow-2xs hover:border-orange-300 transition">
                   <div class="flex items-center gap-2 min-w-0 flex-1 cursor-pointer" 
@@ -373,7 +374,26 @@ class TinderSwipeManager {
                   </button>
                 </div>
               </div>
-            ` : `
+              ` : `
+              <div class="pt-0.5">
+                <div class="px-2.5 py-1.5 rounded-xl bg-stone-100/90 border border-stone-200/90 flex items-center justify-between gap-2 shadow-2xs select-none">
+                  <div class="flex items-center gap-2 min-w-0 flex-1 opacity-70">
+                    <div class="w-6 h-6 rounded-lg bg-stone-200 border border-stone-300 flex items-center justify-center shrink-0 p-0.5 filter grayscale opacity-60">
+                      ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : '🛍️'}
+                    </div>
+                    <div class="min-w-0 flex-1 leading-tight">
+                      <div class="flex items-center gap-1.5 flex-nowrap overflow-hidden">
+                        <span class="text-[9.5px] font-bold text-stone-600 bg-stone-200 px-1.5 py-0.2 rounded font-mono tracking-wider shrink-0 uppercase">TẠM NGHỈ</span>
+                        <span class="text-[11px] font-bold text-stone-600 truncate">${status.detailText || 'Ngoài giờ phục vụ'}</span>
+                      </div>
+                      <p class="text-[9px] text-stone-400 truncate mt-0.5">ShopeeFood tạm đóng • Mở lại theo ca của quán</p>
+                    </div>
+                  </div>
+                  <span class="px-2 py-0.8 bg-stone-200 text-stone-500 text-[9.5px] font-bold rounded-lg shrink-0">Đã đóng</span>
+                </div>
+              </div>
+              `
+            ) : `
               <div class="pt-0.5">
                 <div class="px-2.5 py-1.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between gap-2 shadow-2xs">
                   <div class="flex items-center gap-2 min-w-0 flex-1">
@@ -675,8 +695,9 @@ class TinderSwipeManager {
     if (!btn) return;
 
     const hasShopee = food ? (window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) : false;
+    const status = food && window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, detailText: '' };
 
-    if (hasShopee) {
+    if (hasShopee && status.isOpen) {
       btn.disabled = false;
       btn.removeAttribute('disabled');
       btn.title = "Đặt giao hàng ShopeeFood cho món này";
@@ -688,7 +709,9 @@ class TinderSwipeManager {
     } else {
       btn.disabled = true;
       btn.setAttribute('disabled', 'true');
-      btn.title = "Quán phục vụ trực tiếp tại chỗ, không có giao hàng ShopeeFood";
+      btn.title = hasShopee
+        ? `Quán hiện đang ngoài giờ phục vụ (${status.detailText || 'Tạm đóng cửa'})`
+        : "Quán phục vụ trực tiếp tại chỗ, không có giao hàng ShopeeFood";
       btn.className = "w-16 h-16 rounded-full bg-stone-100 border border-stone-300 text-stone-400 opacity-50 shadow-none flex items-center justify-center cursor-not-allowed pointer-events-none select-none filter grayscale shrink-0";
       const svg = btn.querySelector('svg');
       if (svg) {
@@ -706,6 +729,15 @@ class TinderSwipeManager {
       if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
       if (window.app && typeof window.app.showToast === 'function') {
         window.app.showToast(`📍 Quán ${currentFood.restaurant} chỉ phục vụ tại chỗ, không có trên ShopeeFood!`);
+      }
+      return;
+    }
+
+    const status = window.getRestaurantStatus ? window.getRestaurantStatus(currentFood) : { isOpen: true, detailText: '' };
+    if (!status.isOpen) {
+      if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`🌙 Quán ${currentFood.restaurant} hiện đang ngoài giờ phục vụ (${status.detailText})!`);
       }
       return;
     }

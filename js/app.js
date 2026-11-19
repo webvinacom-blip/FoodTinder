@@ -474,7 +474,7 @@ class FoodApp {
 
   buildFoodCardHtml(food, status, isLiked) {
     if (!status) {
-      status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
     }
     if (typeof isLiked === 'undefined') {
       isLiked = Array.isArray(this.likedFoods) && this.likedFoods.some(f => (f && f.id ? f.id === food.id : f === food.id));
@@ -2518,13 +2518,13 @@ class FoodApp {
     if (!container) return;
     const sorted = [...APP_DATA.foods]
       .filter(f => {
-        const st = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
+        const st = window.getRestaurantStatus ? window.getRestaurantStatus(f) : { isOpen: true };
         return Boolean(st && st.isOpen);
       })
       .sort((a, b) => a.distance - b.distance)
       .slice(0, 4);
     container.innerHTML = sorted.map(food => {
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
     const isLiked = this.likedFoods.some(f => f.id === food.id);
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
@@ -2597,7 +2597,7 @@ class FoodApp {
     }
 
     container.innerHTML = foods.map(food => {
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
       const isLiked = this.likedFoods.some(f => f.id === food.id);
       const isWillReturn = this.isFoodWillReturn(food.id);
       const willReturnCount = this.getWillReturnCount(food.id);
@@ -3058,7 +3058,7 @@ class FoodApp {
     container.innerHTML = `
       <div class="p-4 space-y-3">
         ${this.likedFoods.map(food => {
-          const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+          const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
     const isLiked = this.likedFoods.some(f => f.id === food.id);
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
@@ -3121,7 +3121,7 @@ class FoodApp {
     const content = document.getElementById('food-detail-content');
     if (!modal || !content) return;
 
-    const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
     const isLiked = this.likedFoods.some(f => f.id === food.id);
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
@@ -3930,7 +3930,7 @@ class FoodApp {
       return;
     }
 
-    const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+    const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
     const isLiked = this.likedFoods.some(f => f.id === food.id);
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
@@ -3979,8 +3979,8 @@ class FoodApp {
               </div>
               <div class="flex items-center justify-between mt-1">
                 <span class="text-xs font-black text-rose-600">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ')}</span>
-                <span class="text-[9.5px] font-bold ${status.isOpen ? 'text-emerald-600' : 'text-stone-400'}">
-                  ${status.isOpen ? '🟢 Đang nhận đơn giao' : '🌙 Quán đã đóng'}
+                <span class="text-[9.5px] font-bold ${status.isOpen ? 'text-emerald-600' : 'text-rose-500'}">
+                  ${status.isOpen ? '🟢 Đang nhận đơn giao' : `🌙 ${status.detailText || 'Quán đã đóng'}`}
                 </span>
               </div>
             </div>
@@ -4019,12 +4019,21 @@ class FoodApp {
 
         <!-- Sticky Bottom Action Footer -->
         <div class="p-4 bg-white border-t border-stone-100 shrink-0">
+          ${status.isOpen ? `
           <button onclick="window.app.redirectToShopeeFood('${deliveryUrl}', '${food.name.replace(/'/g, "\\'")}', '${food.restaurant.replace(/'/g, "\\'")}')" 
             class="w-full py-3.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-2xl font-black text-sm shadow-xl shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer">
             ${window.getShopeeIcon ? window.getShopeeIcon(24, 'shrink-0') : ''}
             <span>MỞ QUÁN TRÊN SHOPEEFOOD ĐẶT HÀNG</span>
             <span>↗</span>
           </button>
+          ` : `
+          <button disabled
+            class="w-full py-3.5 bg-stone-100 border border-stone-200 text-stone-400 rounded-2xl font-bold text-sm shadow-none flex items-center justify-center gap-2 cursor-not-allowed opacity-80 select-none filter grayscale"
+            title="Quán hiện đang ngoài giờ phục vụ (${status.detailText})">
+            ${window.getShopeeIcon ? window.getShopeeIcon(24, 'shrink-0 filter grayscale opacity-40') : ''}
+            <span>QUÁN ĐANG TẠM NGHỈ • ${status.detailText ? status.detailText.toUpperCase() : 'NGOÀI GIỜ PHỤC VỤ'}</span>
+          </button>
+          `}
         </div>
       </div>
     `;

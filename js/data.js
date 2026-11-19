@@ -434,9 +434,35 @@ function getRestaurantStatus(input, now = new Date()) {
     };
   }
 
-  // Parse "HH:mm - HH:mm"
-  const parts = openTimeString.split('-').map(s => s.trim());
-  if (parts.length < 2) {
+  const parseMinutes = (timeStr) => {
+    if (!timeStr) return null;
+    const match = String(timeStr).match(/(\d{1,2}):(\d{2})/);
+    if (!match) return null;
+    return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
+  };
+
+  // Tách các ca hoạt động (hỗ trợ nhiều ca phân tách bởi dấu phẩy, chấm phẩy, |, hoặc 'và')
+  // Ví dụ: "05:00 - 10:00, 16:00 - 21:30"
+  const rawIntervals = openTimeString.split(/[,;&|]|\bvà\b/i).map(s => s.trim()).filter(Boolean);
+  const intervals = [];
+
+  for (const raw of rawIntervals) {
+    const parts = raw.split('-').map(s => s.trim());
+    if (parts.length >= 2) {
+      const openMinutes = parseMinutes(parts[0]);
+      const closeMinutes = parseMinutes(parts[1]);
+      if (openMinutes !== null && closeMinutes !== null) {
+        intervals.push({
+          openMinutes,
+          closeMinutes,
+          openStr: parts[0],
+          closeStr: parts[1]
+        });
+      }
+    }
+  }
+
+  if (intervals.length === 0) {
     return {
       isOpen: true,
       openTime: openTimeString,
@@ -448,52 +474,54 @@ function getRestaurantStatus(input, now = new Date()) {
     };
   }
 
-  const parseMinutes = (timeStr) => {
-    const match = timeStr.match(/(\d{1,2}):(\d{2})/);
-    if (!match) return null;
-    return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
-  };
-
-  const openMinutes = parseMinutes(parts[0]);
-  const closeMinutes = parseMinutes(parts[1]);
-
-  if (openMinutes === null || closeMinutes === null) {
-    return {
-      isOpen: true,
-      openTime: openTimeString,
-      openStr: parts[0],
-      closeStr: parts[1],
-      statusText: "Đang mở cửa",
-      detailText: openTimeString,
-      fullText: `Đang mở cửa • ${openTimeString}`
-    };
-  }
-
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
-  let isOpen = false;
 
-  if (closeMinutes > openMinutes) {
-    // Normal same-day operating hours, e.g. 07:00 to 22:00
-    isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
-  } else {
-    // Overnight operating hours, e.g. 18:00 to 02:00
-    isOpen = currentMinutes >= openMinutes || currentMinutes < closeMinutes;
+  // 1. Kiểm tra xem hiện tại có nằm trong ca mở cửa nào không
+  for (const inv of intervals) {
+    let inside = false;
+    if (inv.closeMinutes > inv.openMinutes) {
+      inside = currentMinutes >= inv.openMinutes && currentMinutes < inv.closeMinutes;
+    } else {
+      // Ca đêm qua ngày hôm sau: ví dụ 17:00 - 02:00
+      inside = currentMinutes >= inv.openMinutes || currentMinutes < inv.closeMinutes;
+    }
+
+    if (inside) {
+      return {
+        isOpen: true,
+        openTime: openTimeString,
+        openStr: inv.openStr,
+        closeStr: inv.closeStr,
+        statusText: "Đang mở cửa",
+        detailText: `Đóng lúc ${inv.closeStr}`,
+        fullText: `Đang mở cửa • Đóng lúc ${inv.closeStr}`
+      };
+    }
   }
 
-  const openStr = parts[0];
-  const closeStr = parts[1];
-
-  const statusText = isOpen ? "Đang mở cửa" : "Đã đóng cửa";
-  const detailText = isOpen ? `Đóng lúc ${closeStr}` : `Mở lúc ${openStr}`;
+  // 2. Không nằm trong ca nào -> Đã đóng cửa
+  // Tìm ca tiếp theo trong ngày
+  const upcoming = intervals.filter(inv => inv.openMinutes > currentMinutes).sort((a, b) => a.openMinutes - b.openMinutes);
+  let nextOpenStr = "";
+  let nextOpenTime = "";
+  if (upcoming.length > 0) {
+    nextOpenStr = `Mở lại lúc ${upcoming[0].openStr}`;
+    nextOpenTime = upcoming[0].openStr;
+  } else {
+    // Sáng mai mở ca đầu tiên
+    const sortedAll = [...intervals].sort((a, b) => a.openMinutes - b.openMinutes);
+    nextOpenStr = `Mở lúc ${sortedAll[0].openStr}`;
+    nextOpenTime = sortedAll[0].openStr;
+  }
 
   return {
-    isOpen,
+    isOpen: false,
     openTime: openTimeString,
-    openStr,
-    closeStr,
-    statusText,
-    detailText,
-    fullText: `${statusText} • ${detailText}`
+    openStr: nextOpenTime,
+    closeStr: intervals[intervals.length - 1].closeStr,
+    statusText: "Đã đóng cửa",
+    detailText: nextOpenStr,
+    fullText: `Đã đóng cửa • ${nextOpenStr}`
   };
 }
 
@@ -9963,7 +9991,7 @@ const APP_DATA = {
           "reviewCount": 1,
           "likesCount": 23,
           "commentsCount": 5,
-          "openTime": "07:00 - 22:30",
+          "openTime": "05:00 - 10:00, 16:00 - 21:30",
           "category": "streetfood",
           "source": "ShopeeFood",
           "sourceIcon": "🛍️",
@@ -22242,7 +22270,7 @@ const APP_DATA = {
           "moodIds": [
               "craving"
           ],
-          "openTime": "07:00 - 22:30",
+          "openTime": "05:00 - 10:00, 16:00 - 21:30",
           "hasShopeeDelivery": true,
           "deliveryPlatform": "ShopeeFood",
           "mealTimes": [
