@@ -3916,11 +3916,17 @@ class FoodApp {
       window.authManager.trackStat('shopeeOrders', 1);
     }
 
+    const deliveryUrl = (food.deliveryUrl && food.deliveryUrl.startsWith('http') && !food.deliveryUrl.includes('danh-sach-dia-diem'))
+      ? food.deliveryUrl
+      : ((food.deliverySearchUrl && !food.deliverySearchUrl.includes('danh-sach-dia-diem'))
+          ? food.deliverySearchUrl
+          : 'https://shopeefood.vn/binh-dinh');
+
     const modal = document.getElementById('delivery-modal');
     const content = document.getElementById('delivery-modal-content');
     if (!modal || !content) {
       // Direct open fallback
-      this.redirectToShopeeFood(food.deliveryUrl || food.deliverySearchUrl, food.name, food.restaurant);
+      this.redirectToShopeeFood(deliveryUrl, food.name, food.restaurant);
       return;
     }
 
@@ -3929,7 +3935,6 @@ class FoodApp {
     const isWillReturn = this.isFoodWillReturn(food.id);
     const willReturnCount = this.getWillReturnCount(food.id);
     const promoCode = food.deliveryPromoCode || "SHOPEE25K";
-    const deliveryUrl = (food.deliveryUrl && food.isShopeeVerified) ? food.deliveryUrl : (food.deliverySearchUrl || `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(food.restaurant || food.name)}`);
 
     content.innerHTML = `
       <div class="relative bg-white max-h-[85vh] flex flex-col">
@@ -4044,9 +4049,9 @@ class FoodApp {
     this.showToast(`🛵 Đang mở ShopeeFood đặt món: ${dishName}!`);
 
     let targetUrl = url;
-    // Đảm bảo không bao giờ mở trang 404 "Bài viết không tồn tại"
-    if (!targetUrl || (targetUrl.includes('/binh-dinh/') && !targetUrl.includes('danh-sach-dia-diem-phuc-vu-giao-hang') && !targetUrl.includes('?q='))) {
-      targetUrl = `https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-phuc-vu-giao-hang-tai-quy-nhon?q=${encodeURIComponent(restaurant || dishName)}`;
+    // Đảm bảo không mở trang lỗi 404 danh-sach-dia-diem
+    if (!targetUrl || targetUrl.includes('danh-sach-dia-diem')) {
+      targetUrl = 'https://shopeefood.vn/binh-dinh';
     }
     window.open(targetUrl, '_blank');
   }

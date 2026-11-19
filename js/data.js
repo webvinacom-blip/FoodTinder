@@ -22243,8 +22243,8 @@ const APP_DATA = {
               "craving"
           ],
           "openTime": "07:00 - 22:30",
-          "hasShopeeDelivery": false,
-          "deliveryPlatform": "Tại chỗ & Mang về",
+          "hasShopeeDelivery": true,
+          "deliveryPlatform": "ShopeeFood",
           "mealTimes": [
               "afternoon",
               "late_night"
@@ -22257,7 +22257,10 @@ const APP_DATA = {
           ],
           "companions": [
               "solo"
-          ]
+          ],
+          "deliveryUrl": "https://shopeefood.vn/binh-dinh/pha-lau-ong-hieu-nguyen-cong-tru",
+          "deliveryPromo": "Mã SHOPEE25K giảm 25.000đ",
+          "deliveryPromoCode": "SHOPEE25K"
       },
       {
           "id": 763622,
