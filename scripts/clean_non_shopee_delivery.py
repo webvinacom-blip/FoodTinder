@@ -14,6 +14,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FOOD_DATA_PATH = os.path.join(BASE_DIR, "food-data.json")
 DATA_JS_PATH = os.path.join(BASE_DIR, "js", "data.js")
 
+VERIFIED_SHOPEE_BRANDS = [
+  'kfc', 'jollibee', 'lotteria', 'pizza hut', 'the pizza company', 'chicken plus',
+  'five star', 'gà rán fkt', 'fkt', 'gà rán chicky', 'chicky',
+  'bobapop', 'gong cha', 'phúc long', 'phuc long', 'tocotoco', 'ding tea',
+  'mixue', 'highlands coffee', 'highlands', 'the coffee house', 'pozaa tea', 'heekcaa',
+  'mì cay sasin', 'mi cay sasin', 'mì cay seoul', 'mi cay seoul', 'chè liên'
+]
+
 def is_non_shopee_venue(f):
     name = (f.get('name', '') + ' ' + f.get('restaurant', '')).lower()
     addr = f.get('address', '').lower()
@@ -34,16 +42,21 @@ def is_non_shopee_venue(f):
         return True, 'Gà chỉ ăn tại chỗ'
         
     # 3. Hải sản bè, ven biển, resort, tiệc cưới
-    if re.search(r'\b(resort|tiệc cưới|hội nghị|tiệc hội|cù lao xanh|hòn khô|kỳ co|eo gió|bờ kè|hải sản ven biển|hải sản tươi sống)\b', full_text):
+    if re.search(r'\b(resort|tiệc cưới|hội nghị|tiệc hội|cù lao xanh|hòn khô|kỳ co|eo gió|bè nổi|hải sản ven biển|hải sản tươi sống)\b', full_text):
         if any(k in name for k in ['nhà hàng hải sản', 'hải sản tươi sống', 'hải sản ven biển', 'bờ biển', 'bờ kè', 'tiệc cưới', 'resort', 'surf bar', 'cù lao xanh', 'hòn khô']):
             return True, 'Hải sản ven biển / Resort'
             
-    # 4. Quán vỉa hè 0 review không tên tuổi / xe đẩy (nước mía, bánh ram, cháo lòng vỉa hè)
-    rev = f.get('reviewCount', 0)
-    rating = f.get('rating', 0)
-    if rev == 0 or rating == 0:
-        if re.search(r'\b(cháo lòng|bánh hỏi cháo lòng|nước mía|bánh ram|xe đẩy|vỉa hè|bánh mì vỉa hè|phở vỉa hè)\b', full_text):
-            return True, 'Vỉa hè 0 review'
+    # 4. Quán không có thông tin rating & review (chưa từng hoạt động trên ShopeeFood / vỉa hè Foody)
+    is_brand = any(b in full_text for b in VERIFIED_SHOPEE_BRANDS)
+    raw_rating = f.get('rating', 0)
+    try:
+        rating = float(raw_rating)
+    except:
+        rating = 0.0
+    reviews = int(f.get('reviewCount', 0) or f.get('totalReviews', 0) or 0)
+    
+    if not is_brand and not f.get('isShopeeVerified') and rating <= 0 and reviews <= 0:
+        return True, 'Không có thông tin đánh giá ShopeeFood'
 
     return False, 'Hợp lệ'
 
@@ -87,21 +100,26 @@ def main():
             js_content = f.read()
 
         start_marker = "  foods: ["
-        end_marker = "\n  ]\n};"
+        end_marker = "\n};\n\n\n// Đảm bảo tất cả quán ăn đều có giờ đóng/mở"
         start_idx = js_content.find(start_marker)
         end_idx = js_content.find(end_marker, start_idx)
 
         if start_idx != -1 and end_idx != -1:
-            foods_json_str = json.dumps(foods, ensure_ascii=False, indent=6)
-            # Trim the outer brackets of formatted json
-            trimmed_json = foods_json_str.strip()
-            if trimmed_json.startswith("[") and trimmed_json.endswith("]"):
-                trimmed_json = trimmed_json[1:-1].strip()
-            new_section = f"  foods: [\n      {trimmed_json}\n  ]\n}};"
-            new_content = js_content[:start_idx] + new_section + js_content[end_idx + len(end_marker):]
+            foods_json_str = json.dumps(foods, ensure_ascii=False, indent=4)
+            # Indent each line with 2 spaces
+            indented_lines = []
+            for line in foods_json_str.split("\n"):
+                if line.strip():
+                    indented_lines.append("  " + line)
+                else:
+                    indented_lines.append("")
+            new_section = "  foods: " + "\n".join(indented_lines).strip()
+            new_content = js_content[:start_idx] + new_section + js_content[end_idx:]
             with open(DATA_JS_PATH, "w", encoding="utf-8") as f:
                 f.write(new_content)
             print("✅ Successfully updated js/data.js with cleaned dataset")
+        else:
+            print(f"❌ Could not find markers in js/data.js (start_idx={start_idx}, end_idx={end_idx})")
 
 if __name__ == "__main__":
     main()
