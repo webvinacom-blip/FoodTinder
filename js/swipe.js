@@ -89,6 +89,19 @@ class TinderSwipeManager {
     this.currentIndex = 0;
     this.isAnimating = false;
     this.isDragging = false;
+
+    // Lookahead Prefetching: Tải trước trạng thái RTDB (0 read Firestore) cho 8 quán đầu tiên
+    if (typeof window !== 'undefined' && window.shopStatusCacheManager && Array.isArray(validFoods) && validFoods.length > 0) {
+      const topBatch = validFoods.slice(0, 8);
+      const cityId = topBatch[0]?.cityId || window.APP_DATA?.currentCity?.cityId || 'quynhon';
+      const shopIds = topBatch.map(f => f.id).filter(Boolean);
+      window.shopStatusCacheManager.prefetchBatch(cityId, shopIds).then(() => {
+        if (this.deck && this.deck[this.currentIndex]) {
+          this.updateShopeeButtonState(this.deck[this.currentIndex]);
+        }
+      }).catch(() => {});
+    }
+
     this.render();
   }
 
@@ -145,6 +158,16 @@ class TinderSwipeManager {
 
     // Cập nhật trạng thái nút ShopeeFood theo món trên cùng (Top card)
     this.updateShopeeButtonState(visibleCards[0]);
+
+    // Lookahead Prefetching: Tải trước trạng thái RTDB cho 5 quán tiếp theo trong ngăn xếp
+    if (typeof window !== 'undefined' && window.shopStatusCacheManager && this.deck) {
+      const nextBatch = this.deck.slice(this.currentIndex + 1, this.currentIndex + 6);
+      if (nextBatch.length > 0) {
+        const cityId = nextBatch[0]?.cityId || window.APP_DATA?.currentCity?.cityId || 'quynhon';
+        const nextIds = nextBatch.map(f => f.id).filter(Boolean);
+        window.shopStatusCacheManager.prefetchBatch(cityId, nextIds).catch(() => {});
+      }
+    }
 
     visibleCards.reverse().forEach((food, reverseIdx) => {
       const actualIdx = visibleCards.length - 1 - reverseIdx;

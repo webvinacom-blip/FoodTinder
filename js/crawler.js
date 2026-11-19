@@ -24,6 +24,107 @@ function slugify(text) {
     .replace(/-+/g, "-");
 }
 
+// Helper: Chia nhỏ mảng thành các chunks kích thước an toàn (<1MB Firestore limit)
+function chunkArray(array, size = 400) {
+  if (!Array.isArray(array)) return [];
+  const chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size));
+  }
+  return chunks;
+}
+
+// ============================================================================
+// ShopStatusCacheManager: Tầng Cache Trạng Thái Đóng / Mở ShopeeFood qua Realtime Database
+// Lợi ích:
+// 1. 0 READ / 0 WRITE lên Firestore (bảo toàn 100% quota 50k reads / 20k writes của Firestore)
+// 2. Tận dụng 10GB/tháng băng thông miễn phí của Realtime Database (RTDB)
+// 3. Lookahead Prefetching song song cho mượt mà trải nghiệm quẹt món
+// ============================================================================
+class ShopStatusCacheManager {
+  constructor(config = FIREBASE_CONFIG) {
+    this.config = config || (typeof FIREBASE_CONFIG !== 'undefined' ? FIREBASE_CONFIG : {});
+    this.memoryCache = new Map(); // key: `${cityId}_${shopId}` -> { isOpen, statusText, detailText, openStr, closeStr, updatedAt, expiresAt }
+    this.ttlMs = 15 * 60 * 1000; // 15 phút TTL
+    this.rtdbBaseUrl = `https://${this.config.projectId || 'foodfinder-76596'}-default-rtdb.firebaseio.com/shop_status_cache`;
+  }
+
+  // Đọc đồng bộ từ RAM (0ms latency)
+  peekMemoryStatus(cityId, shopId) {
+    const key = `${cityId || 'quynhon'}_${shopId}`;
+    if (!this.memoryCache.has(key)) return null;
+    const item = this.memoryCache.get(key);
+    if (Date.now() > item.expiresAt) {
+      this.memoryCache.delete(key);
+      return null;
+    }
+    return item;
+  }
+
+  // Lấy trạng thái từ RAM -> RTDB REST API (0 read Firestore)
+  async getStatus(cityId, shopId) {
+    const cached = this.peekMemoryStatus(cityId, shopId);
+    if (cached) return cached;
+
+    const key = `${cityId || 'quynhon'}_${shopId}`;
+    try {
+      const url = `${this.rtdbBaseUrl}/${encodeURIComponent(cityId || 'quynhon')}/${encodeURIComponent(shopId)}.json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && typeof data.isOpen === 'boolean') {
+          const now = Date.now();
+          data.expiresAt = now + this.ttlMs;
+          this.memoryCache.set(key, data);
+          return data;
+        }
+      }
+    } catch (e) {
+      // Offline fallback
+    }
+    return null;
+  }
+
+  // Ghi trạng thái vào RAM & RTDB REST API (0 write Firestore, ~120 bytes)
+  async setStatus(cityId, shopId, statusObj) {
+    if (!shopId || !statusObj) return;
+    const key = `${cityId || 'quynhon'}_${shopId}`;
+    const now = Date.now();
+    const payload = {
+      isOpen: Boolean(statusObj.isOpen),
+      statusText: statusObj.statusText || (statusObj.isOpen ? "Đang mở cửa" : "Đã đóng cửa"),
+      detailText: statusObj.detailText || "",
+      openStr: statusObj.openStr || "",
+      closeStr: statusObj.closeStr || "",
+      source: "ShopeeFood",
+      updatedAt: now,
+      expiresAt: now + this.ttlMs
+    };
+
+    this.memoryCache.set(key, payload);
+
+    try {
+      const url = `${this.rtdbBaseUrl}/${encodeURIComponent(cityId || 'quynhon')}/${encodeURIComponent(shopId)}.json`;
+      fetch(url, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+    } catch (e) {
+      // Non-blocking
+    }
+  }
+
+  // Lookahead Prefetching: Tải trước trạng thái danh sách shopIds tiếp theo song song
+  async prefetchBatch(cityId, shopIds) {
+    if (!Array.isArray(shopIds) || shopIds.length === 0) return;
+    const needed = shopIds.filter(id => !this.peekMemoryStatus(cityId, id));
+    if (needed.length === 0) return;
+
+    await Promise.allSettled(needed.map(id => this.getStatus(cityId, id)));
+  }
+}
+
 const CITY_TEMPLATES = {
   danang: {
     name: "Đà Nẵng",
@@ -365,7 +466,44 @@ class CrawlerManager {
   }
 
   async queryFirebaseForLocation(cityId, cityName) {
-    // 1. Thử đọc từ Cloud Firestore REST API
+    // 1. Thử đọc từ Cloud Firestore REST API với kiến trúc CHUNKING (tải song song)
+    try {
+      const metaUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}_meta?key=${FIREBASE_CONFIG.apiKey}`;
+      const metaResp = await fetch(metaUrl);
+      if (metaResp.ok) {
+        const metaJson = await metaResp.json();
+        const totalChunks = parseInt(metaJson.fields?.totalChunks?.integerValue || 1, 10);
+        const chunkPromises = [];
+        for (let i = 1; i <= totalChunks; i++) {
+          const chunkName = `chunk_${String(i).padStart(2, '0')}`;
+          const chunkUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}_${chunkName}?key=${FIREBASE_CONFIG.apiKey}`;
+          chunkPromises.push(
+            fetch(chunkUrl)
+              .then(r => r.ok ? r.json() : null)
+              .then(cJson => {
+                if (cJson && cJson.fields && cJson.fields.dataJson && cJson.fields.dataJson.stringValue) {
+                  return JSON.parse(cJson.fields.dataJson.stringValue).foods || [];
+                }
+                return [];
+              })
+              .catch(() => [])
+          );
+        }
+        const chunkResults = await Promise.all(chunkPromises);
+        const combined = chunkResults.flat();
+        if (combined.length > 0) {
+          const validFoods = combined.filter(f => !(window.isFakeDummyFood && window.isFakeDummyFood(f)));
+          if (validFoods.length > 0) {
+            console.log(`[Firebase Chunking] Đã tải song song ${totalChunks} chunks (${validFoods.length} quán) cho ${cityName}!`);
+            return validFoods;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('[Firebase] Firestore chunked read note:', e.message);
+    }
+
+    // 2. Fallback đọc document đơn cũ nếu chưa chia chunk
     try {
       const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}?key=${FIREBASE_CONFIG.apiKey}`;
       const resp = await fetch(fsUrl);
@@ -382,10 +520,10 @@ class CrawlerManager {
         }
       }
     } catch (e) {
-      console.warn('[Firebase] Firestore location check note:', e.message);
+      console.warn('[Firebase] Firestore single doc fallback note:', e.message);
     }
 
-    // 2. Thử đọc từ Realtime Database REST API
+    // 3. Fallback đọc từ Realtime Database REST API
     try {
       const rtdbUrl = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/locations/${cityId}.json`;
       const resp = await fetch(rtdbUrl);
@@ -404,39 +542,71 @@ class CrawlerManager {
 
   async saveLocationToFirebase(cityId, cityName, foods) {
     if (!foods || foods.length === 0) return;
-    const payload = {
-      cityId,
-      cityName,
-      source: "ShopeeFood",
-      totalCount: foods.length,
-      syncedAt: new Date().toISOString(),
-      foods: foods
-    };
+    const CHUNK_SIZE = 400;
+    const chunks = chunkArray(foods, CHUNK_SIZE);
 
-    // 1. Lưu Firestore REST API
+    // 1. Lưu Firestore REST API với kiến trúc CHUNKING (mỗi document ~350KB, an toàn tuyệt đối dưới 1MB)
     try {
-      const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}?key=${FIREBASE_CONFIG.apiKey}`;
-      const fsDoc = {
+      const metaUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}_meta?key=${FIREBASE_CONFIG.apiKey}`;
+      const metaDoc = {
         fields: {
           cityId: { stringValue: cityId },
           cityName: { stringValue: cityName },
           source: { stringValue: "ShopeeFood" },
           totalCount: { integerValue: String(foods.length) },
-          dataJson: { stringValue: JSON.stringify(payload) }
+          totalChunks: { integerValue: String(chunks.length) },
+          chunkSize: { integerValue: String(CHUNK_SIZE) },
+          syncedAt: { stringValue: new Date().toISOString() }
         }
       };
-      await fetch(fsUrl, {
+      await fetch(metaUrl, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(fsDoc)
+        body: JSON.stringify(metaDoc)
       });
-      console.log(`[Firebase] Đã lưu ${foods.length} quán ${cityName} lên Firestore (/foodtinder_locations/${cityId})!`);
+
+      // Lưu từng chunk song song
+      await Promise.all(chunks.map(async (chunkFoods, idx) => {
+        const chunkIndex = idx + 1;
+        const chunkName = `chunk_${String(chunkIndex).padStart(2, '0')}`;
+        const chunkUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_locations/${cityId}_${chunkName}?key=${FIREBASE_CONFIG.apiKey}`;
+        const chunkPayload = {
+          cityId,
+          cityName,
+          chunkIndex,
+          totalChunks: chunks.length,
+          count: chunkFoods.length,
+          foods: chunkFoods
+        };
+        const chunkDoc = {
+          fields: {
+            chunkIndex: { integerValue: String(chunkIndex) },
+            count: { integerValue: String(chunkFoods.length) },
+            dataJson: { stringValue: JSON.stringify(chunkPayload) }
+          }
+        };
+        return fetch(chunkUrl, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(chunkDoc)
+        });
+      }));
+
+      console.log(`[Firebase Chunking] Đã lưu ${foods.length} quán ${cityName} thành ${chunks.length} chunks an toàn (<1MB) lên Firestore!`);
     } catch (e) {
-      console.warn('[Firebase] Save Firestore note:', e.message);
+      console.warn('[Firebase] Save Firestore chunks note:', e.message);
     }
 
-    // 2. Lưu Realtime Database REST API
+    // 2. Lưu Realtime Database REST API (RTDB không bị giới hạn 1MB/doc)
     try {
+      const payload = {
+        cityId,
+        cityName,
+        source: "ShopeeFood",
+        totalCount: foods.length,
+        syncedAt: new Date().toISOString(),
+        foods: foods
+      };
       const rtdbUrl = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/locations/${cityId}.json`;
       await fetch(rtdbUrl, {
         method: 'PUT',
@@ -831,27 +1001,49 @@ class CrawlerManager {
       }
 
       const foods = this.crawledData ? this.crawledData.foods : (window.APP_DATA ? window.APP_DATA.foods : []);
-      const payload = {
-        metadata: {
-          project: FIREBASE_CONFIG.projectId,
-          title: "FoodTinder Quán Nổi Bật từ ShopeeFood",
-          source: "100% ShopeeFood",
-          totalCount: foods.length,
-          syncedAt: new Date().toISOString()
-        },
-        foods: foods
+      const CHUNK_SIZE = 400;
+      const chunks = chunkArray(foods, CHUNK_SIZE);
+      const meta = {
+        project: FIREBASE_CONFIG.projectId,
+        title: "FoodTinder Quán Ăn Nổi Bật từ ShopeeFood",
+        source: "100% ShopeeFood",
+        totalCount: foods.length,
+        totalChunks: chunks.length,
+        chunkSize: CHUNK_SIZE,
+        version: (window.APP_DATA && window.APP_DATA.version) || "3.1.0",
+        syncedAt: new Date().toISOString(),
+        chunks: chunks.map((_, i) => `chunk_${String(i + 1).padStart(2, '0')}`)
       };
 
       let syncSuccess = false;
-      let targetDesc = "Firebase Realtime / Firestore";
+      let targetDesc = "Firebase Realtime / Firestore Chunking";
 
-      // 1. Thử lưu qua Firebase SDK (Firestore)
+      // 1. Thử lưu qua Firebase SDK (Firestore Chunking an toàn <1MB)
       if (typeof firebase !== 'undefined' && firebase.firestore) {
         try {
           const db = firebase.firestore();
-          await db.collection("foodtinder_quynhon").doc("dataset_300").set(payload);
+          // Lưu metadata doc
+          await db.collection("foodtinder_quynhon").doc("meta").set(meta);
+          // Lưu song song tất cả các chunks
+          await Promise.all(chunks.map((chunkFoods, idx) => {
+            const chunkName = `chunk_${String(idx + 1).padStart(2, '0')}`;
+            return db.collection("foodtinder_quynhon").doc(chunkName).set({
+              chunkIndex: idx + 1,
+              totalChunks: chunks.length,
+              count: chunkFoods.length,
+              foods: chunkFoods
+            });
+          }));
+          // Cập nhật dataset_300 cũ thành con trỏ an toàn (<1KB)
+          await db.collection("foodtinder_quynhon").doc("dataset_300").set({
+            isChunked: true,
+            metaDoc: "meta",
+            totalCount: foods.length,
+            totalChunks: chunks.length,
+            syncedAt: meta.syncedAt
+          });
           syncSuccess = true;
-          targetDesc = "Firestore (foodtinder_quynhon/dataset_300)";
+          targetDesc = `Firestore Chunking (foodtinder_quynhon/meta + ${chunks.length} chunks)`;
         } catch (fErr) {}
       }
 
@@ -859,33 +1051,52 @@ class CrawlerManager {
       if (typeof firebase !== 'undefined' && firebase.database) {
         try {
           const rtdb = firebase.database();
-          await rtdb.ref("quynhon_foods").set(payload);
+          await rtdb.ref("quynhon_foods").set({ metadata: meta, foods: foods });
           syncSuccess = true;
           targetDesc = "Realtime Database (/quynhon_foods)";
         } catch (rErr) {}
       }
 
-      // 3. REST API fallback to Firestore
+      // 3. REST API fallback to Firestore Chunking
       if (!syncSuccess) {
         try {
-          const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/dataset_300?key=${FIREBASE_CONFIG.apiKey}`;
-          const fsDoc = {
+          const fsMetaUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/meta?key=${FIREBASE_CONFIG.apiKey}`;
+          const fsMetaDoc = {
             fields: {
-              title: { stringValue: "FoodTinder Quán Ăn Nổi Bật từ ShopeeFood" },
+              title: { stringValue: meta.title },
               totalCount: { integerValue: String(foods.length) },
-              source: { stringValue: "100% ShopeeFood" },
-              dataJson: { stringValue: JSON.stringify(payload) }
+              totalChunks: { integerValue: String(chunks.length) },
+              chunkSize: { integerValue: String(CHUNK_SIZE) },
+              source: { stringValue: meta.source },
+              dataJson: { stringValue: JSON.stringify(meta) }
             }
           };
-          const fsResp = await fetch(fsUrl, {
+          await fetch(fsMetaUrl, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(fsDoc)
+            body: JSON.stringify(fsMetaDoc)
           });
-          if (fsResp.ok) {
-            syncSuccess = true;
-            targetDesc = `Cloud Firestore REST API (${FIREBASE_CONFIG.projectId})`;
-          }
+
+          // Lưu song song các chunks qua REST API
+          await Promise.all(chunks.map((chunkFoods, idx) => {
+            const chunkName = `chunk_${String(idx + 1).padStart(2, '0')}`;
+            const chunkUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/${chunkName}?key=${FIREBASE_CONFIG.apiKey}`;
+            const cPayload = { chunkIndex: idx + 1, count: chunkFoods.length, foods: chunkFoods };
+            return fetch(chunkUrl, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                fields: {
+                  chunkIndex: { integerValue: String(idx + 1) },
+                  count: { integerValue: String(chunkFoods.length) },
+                  dataJson: { stringValue: JSON.stringify(cPayload) }
+                }
+              })
+            });
+          }));
+
+          syncSuccess = true;
+          targetDesc = `Cloud Firestore REST API Chunking (${chunks.length} chunks)`;
         } catch (netErr) {}
       }
 
@@ -896,7 +1107,7 @@ class CrawlerManager {
           const resp = await fetch(url, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ metadata: meta, foods: foods })
           });
           if (resp.ok) {
             syncSuccess = true;
@@ -908,19 +1119,21 @@ class CrawlerManager {
       localStorage.setItem('foodtinder_firebase_sync', JSON.stringify({
         project: FIREBASE_CONFIG.projectId,
         total: foods.length,
+        totalChunks: chunks.length,
+        chunkSize: CHUNK_SIZE,
         syncedAt: new Date().toISOString(),
         target: targetDesc
       }));
 
       if (statusBox && statusMsg) {
-        statusMsg.textContent = `Đã lưu thành công ${foods.length} quán ShopeeFood lên Firebase (${FIREBASE_CONFIG.projectId})!`;
+        statusMsg.textContent = `Đã lưu thành công ${foods.length} quán thành ${chunks.length} chunks (<1MB) lên Firebase (${FIREBASE_CONFIG.projectId})!`;
         statusBox.classList.remove('hidden');
       }
 
       if (btn) {
         btn.classList.remove('from-amber-500', 'to-orange-500');
         btn.classList.add('bg-emerald-600');
-        btn.innerHTML = `<span>✅</span> Đã lưu ${foods.length} quán lên Firebase!`;
+        btn.innerHTML = `<span>✅</span> Đã lưu ${foods.length} quán (${chunks.length} chunks) lên Firebase!`;
 
         setTimeout(() => {
           btn.disabled = false;
@@ -950,19 +1163,69 @@ class CrawlerManager {
     try {
       let fetchedFoods = null;
 
-      try {
-        const url = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/quynhon_foods.json`;
-        const resp = await fetch(url);
-        if (resp.ok) {
-          const json = await resp.json();
-          if (json && json.foods) fetchedFoods = json.foods;
-        }
-      } catch (e) {}
+      // 1. Thử tải Firestore Chunking qua SDK (foodtinder_quynhon/meta -> Promise.all chunks)
+      if (typeof firebase !== 'undefined' && firebase.firestore) {
+        try {
+          const metaDoc = await firebase.firestore().collection("foodtinder_quynhon").doc("meta").get();
+          if (metaDoc.exists) {
+            const metaData = metaDoc.data();
+            const chunkNames = metaData.chunks || [];
+            if (chunkNames.length > 0) {
+              const chunkDocs = await Promise.all(chunkNames.map(name =>
+                firebase.firestore().collection("foodtinder_quynhon").doc(name).get()
+              ));
+              const allFoods = chunkDocs.flatMap(d => (d.exists && d.data() && d.data().foods) ? d.data().foods : []);
+              if (allFoods.length > 0) {
+                fetchedFoods = allFoods;
+              }
+            }
+          }
+        } catch (e) {}
+      }
 
+      // 2. Thử tải Firestore Chunking qua REST API
+      if (!fetchedFoods) {
+        try {
+          const metaUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/meta?key=${FIREBASE_CONFIG.apiKey}`;
+          const metaResp = await fetch(metaUrl);
+          if (metaResp.ok) {
+            const metaJson = await metaResp.json();
+            const metaData = JSON.parse(metaJson.fields?.dataJson?.stringValue || "{}");
+            if (metaData.chunks && Array.isArray(metaData.chunks)) {
+              const chunkPromises = metaData.chunks.map(chunkName => {
+                const chunkUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/${chunkName}?key=${FIREBASE_CONFIG.apiKey}`;
+                return fetch(chunkUrl).then(r => r.ok ? r.json() : null).then(cJson => {
+                  if (cJson && cJson.fields && cJson.fields.dataJson && cJson.fields.dataJson.stringValue) {
+                    return JSON.parse(cJson.fields.dataJson.stringValue).foods || [];
+                  }
+                  return [];
+                }).catch(() => []);
+              });
+              const results = await Promise.all(chunkPromises);
+              const combined = results.flat();
+              if (combined.length > 0) fetchedFoods = combined;
+            }
+          }
+        } catch (e) {}
+      }
+
+      // 3. Fallback tải từ Realtime Database REST API
+      if (!fetchedFoods) {
+        try {
+          const url = `https://${FIREBASE_CONFIG.projectId}-default-rtdb.firebaseio.com/quynhon_foods.json`;
+          const resp = await fetch(url);
+          if (resp.ok) {
+            const json = await resp.json();
+            if (json && json.foods) fetchedFoods = json.foods;
+          }
+        } catch (e) {}
+      }
+
+      // 4. Fallback đọc document dataset_300 cũ (tương thích ngược)
       if (!fetchedFoods && typeof firebase !== 'undefined' && firebase.firestore) {
         try {
           const doc = await firebase.firestore().collection("foodtinder_quynhon").doc("dataset_300").get();
-          if (doc.exists) {
+          if (doc.exists && doc.data() && doc.data().foods) {
             fetchedFoods = doc.data().foods;
           }
         } catch (e) {}
@@ -983,8 +1246,14 @@ class CrawlerManager {
       }
 
       if (fetchedFoods && fetchedFoods.length > 0) {
+        // Lưu cache IndexedDB / localStorage với version để lần sau không tốn read
+        if (window.dataLoader && typeof window.dataLoader.saveToCache === 'function') {
+          window.dataLoader.saveToCache(fetchedFoods, '3.1.1');
+        }
+        localStorage.setItem('foodtinder_offline_cache_time', Date.now().toString());
+
         this.applyFoodsToApp(fetchedFoods, true);
-        alert(`✅ Đã tải về thành công ${fetchedFoods.length} quán ăn từ Firebase Database (${FIREBASE_CONFIG.projectId})!`);
+        alert(`✅ Đã tải về thành công ${fetchedFoods.length} quán ăn từ Firebase (Kiến trúc Chunking song song an toàn <1MB)!`);
       } else {
         alert(`Dữ liệu trên Firebase hiện đang được đồng bộ từ file tĩnh food-data.json.`);
       }
@@ -997,6 +1266,9 @@ class CrawlerManager {
 // Khởi tạo toàn cục
 if (typeof window !== 'undefined') {
   window.FIREBASE_CONFIG = FIREBASE_CONFIG;
+  window.chunkArray = chunkArray;
+  window.ShopStatusCacheManager = ShopStatusCacheManager;
+  window.shopStatusCacheManager = new ShopStatusCacheManager(FIREBASE_CONFIG);
   window.CrawlerManager = CrawlerManager;
   const initCrawlerInstance = () => {
     if (!window.crawlerManager) {

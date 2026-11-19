@@ -358,6 +358,24 @@ function getRestaurantStatus(input, now = new Date()) {
     openTimeString = String(input || "");
   }
 
+  // 0. Kiểm tra nhanh từ Realtime Database Cache Layer (0 read Firestore, RAM synchronous peek)
+  if (food && food.id && typeof window !== 'undefined' && window.shopStatusCacheManager) {
+    const rtdbCache = window.shopStatusCacheManager.peekMemoryStatus(food.cityId || 'quynhon', food.id);
+    if (rtdbCache && typeof rtdbCache.isOpen === 'boolean') {
+      return {
+        isOpen: rtdbCache.isOpen,
+        isPermanentlyClosed: false,
+        openTime: openTimeString,
+        openStr: rtdbCache.openStr || "",
+        closeStr: rtdbCache.closeStr || "",
+        statusText: rtdbCache.statusText || (rtdbCache.isOpen ? "Đang mở cửa" : "Đã đóng cửa"),
+        detailText: rtdbCache.detailText || (rtdbCache.isOpen ? "Mở cửa đón khách" : "Ngoài giờ phục vụ"),
+        fullText: `${rtdbCache.statusText || (rtdbCache.isOpen ? "Đang mở cửa" : "Đã đóng cửa")}${rtdbCache.detailText ? ' • ' + rtdbCache.detailText : ''}`,
+        source: "RTDB_Cache"
+      };
+    }
+  }
+
   // 1. Kiểm tra trực tiếp xem quán đã đóng cửa vĩnh viễn / giải thể / ngừng kinh doanh trên ShopeeFood
   if (food) {
     if (typeof isPermanentlyClosedRestaurant === 'function' && isPermanentlyClosedRestaurant(food)) {
