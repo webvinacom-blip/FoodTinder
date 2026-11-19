@@ -1107,10 +1107,25 @@ const VERIFIED_SHOPEE_BRANDS = [
 
 function hasShopeeDelivery(food) {
   if (!food) return false;
-  if (food.hasShopeeDelivery === true || food.deliveryPlatform === "ShopeeFood" || food.isShopeeVerified === true) return true;
-  if (food.deliveryUrl && String(food.deliveryUrl).includes("shopeefood.vn/")) return true;
-  if (food.deliveryPlatform && food.deliveryPlatform !== "ShopeeFood" && food.hasShopeeDelivery === false) return false;
-  if (food.hasShopeeDelivery === false && !food.deliveryUrl) return false;
+
+  // 1. Nếu quán được đánh dấu rõ ràng là KHÔNG có giao hàng ShopeeFood
+  if (food.hasShopeeDelivery === false || food.noShopeeDelivery === true) return false;
+
+  // 2. Kiểm tra bộ nhớ RAM từ Realtime Database Cache layer
+  if (food.id && typeof window !== 'undefined' && window.shopStatusCacheManager) {
+    const rtdbCache = window.shopStatusCacheManager.peekMemoryStatus(food.cityId || 'quynhon', food.id);
+    if (rtdbCache && rtdbCache.hasShopeeDelivery === false) return false;
+  }
+
+  // 3. Nếu không có URL ShopeeFood hoặc URL rỗng
+  const deliveryUrl = String(food.deliveryUrl || "");
+  if (!deliveryUrl || !deliveryUrl.includes("shopeefood.vn/")) {
+    return false;
+  }
+
+  // 4. Kiểm tra hợp lệ ShopeeFood
+  if (food.hasShopeeDelivery === true || food.isShopeeVerified === true) return true;
+  if (food.deliveryPlatform === "ShopeeFood" && deliveryUrl.startsWith("http")) return true;
 
   const restName = String(food.restaurant || food.name || "").toLowerCase();
   const isChain = VERIFIED_SHOPEE_BRANDS.some(b => restName.includes(b));
@@ -152642,8 +152657,8 @@ const APP_DATA = {
                   "highlight": false
               }
           ],
-          "deliveryPlatform": "ShopeeFood",
-          "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-thuy-banh-mi",
+          "deliveryPlatform": "",
+          "deliverySearchUrl": "",
           "gmapsVerified": false,
           "priceMin": 25000,
           "priceMax": 65000,
@@ -152651,7 +152666,7 @@ const APP_DATA = {
               "crunchy",
               "hot_soup"
           ],
-          "hasShopeeDelivery": true,
+          "hasShopeeDelivery": false,
           "mealTimes": [
               "afternoon",
               "breakfast",
@@ -152666,12 +152681,12 @@ const APP_DATA = {
           "companions": [
               "solo"
           ],
-          "deliveryUrl": "https://shopeefood.vn/binh-dinh/thanh-thuy-banh-mi",
-          "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-          "deliveryFee": "18.000đ (Áp mã Freeship)",
-          "deliveryFeeVal": 18000,
-          "deliveryTime": "25 - 40 phút",
-          "deliveryRating": "Quán mới mở ⭐"
+          "deliveryUrl": "",
+          "deliveryPromo": "",
+          "deliveryFee": "",
+          "deliveryFeeVal": 0,
+          "deliveryTime": "",
+          "deliveryRating": ""
       },
       {
           "id": 686814,

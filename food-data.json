@@ -147323,8 +147323,8 @@
         "highlight": false
       }
     ],
-    "deliveryPlatform": "ShopeeFood",
-    "deliverySearchUrl": "https://shopeefood.vn/binh-dinh/thanh-thuy-banh-mi",
+    "deliveryPlatform": "",
+    "deliverySearchUrl": "",
     "gmapsVerified": false,
     "priceMin": 25000,
     "priceMax": 65000,
@@ -147332,7 +147332,7 @@
       "crunchy",
       "hot_soup"
     ],
-    "hasShopeeDelivery": true,
+    "hasShopeeDelivery": false,
     "mealTimes": [
       "afternoon",
       "breakfast",
@@ -147347,12 +147347,12 @@
     "companions": [
       "solo"
     ],
-    "deliveryUrl": "https://shopeefood.vn/binh-dinh/thanh-thuy-banh-mi",
-    "deliveryPromo": "Mã SHOPEE20K giảm 20.000đ",
-    "deliveryFee": "18.000đ (Áp mã Freeship)",
-    "deliveryFeeVal": 18000,
-    "deliveryTime": "25 - 40 phút",
-    "deliveryRating": "Quán mới mở ⭐"
+    "deliveryUrl": "",
+    "deliveryPromo": "",
+    "deliveryFee": "",
+    "deliveryFeeVal": 0,
+    "deliveryTime": "",
+    "deliveryRating": ""
   },
   {
     "id": 686814,

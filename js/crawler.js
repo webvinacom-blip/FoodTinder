@@ -1248,7 +1248,7 @@ class CrawlerManager {
       if (fetchedFoods && fetchedFoods.length > 0) {
         // Lưu cache IndexedDB / localStorage với version để lần sau không tốn read
         if (window.dataLoader && typeof window.dataLoader.saveToCache === 'function') {
-          window.dataLoader.saveToCache(fetchedFoods, '3.1.1');
+          window.dataLoader.saveToCache(fetchedFoods, '3.1.2');
         }
         localStorage.setItem('foodtinder_offline_cache_time', Date.now().toString());
 
