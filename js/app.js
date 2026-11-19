@@ -1389,18 +1389,21 @@ class FoodApp {
     // Lọc theo điều kiện tâm trạng thông minh
     let matchedMood = pool.filter(food => this.doesFoodMatchMood(food, moodId));
 
-    // Lọc bỏ quán đã đóng cửa: nếu quán đã đóng cửa thì không gợi ý nữa
-    matchedMood = matchedMood.filter(food => {
+    // Lọc bỏ quán đóng cửa vĩnh viễn, quán ảo, hoặc vi phạm nghiêm ngặt chế độ ăn
+    const qualityFoods = matchedMood.filter(food => {
       if (!food) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
       if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
-      return Boolean(status && status.isOpen);
+      return true;
     });
 
-    // Fallback Logic: Khi kết quả trả về < 5 món, tự động nới lỏng để luồng quẹt thẻ không bị đứt đoạn
-    if (matchedMood.length < 5) {
+    if (qualityFoods.length > 0) {
+      matchedMood = qualityFoods;
+    }
+
+    // Fallback Logic: Khi kết quả trả về < 10 món, tự động nới lỏng để luồng quẹt thẻ luôn mượt mà
+    if (matchedMood.length < 10) {
       const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
       const weights = matrix[moodId] || {};
       const matchedIds = new Set(matchedMood.map(f => f.id));
@@ -1408,15 +1411,14 @@ class FoodApp {
         if (!f || matchedIds.has(f.id)) return false;
         if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
         if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
-        const status = window.getRestaurantStatus ? window.getRestaurantStatus(f, now) : { isOpen: true };
-        return Boolean(status && status.isOpen);
+        return true;
       });
       candidates.sort((a, b) => {
         const scoreA = (a.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
         const scoreB = (b.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
         return scoreB - scoreA;
       });
-      matchedMood = matchedMood.concat(candidates.slice(0, 10 - matchedMood.length));
+      matchedMood = matchedMood.concat(candidates.slice(0, 20 - matchedMood.length));
     }
 
     const scored = matchedMood.map(food => {
@@ -1424,8 +1426,8 @@ class FoodApp {
       const fusionScore = this.calculateContextualFusionScore(food, moodId, weather, now);
       const dist = (typeof food.distance === 'number') ? food.distance : 10;
       const proximity = Math.max(0, (10 - dist) * 2);
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
-      const openBonus = status.isOpen ? 100 : 0;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+      const openBonus = status.isOpen ? 120 : 0; // Ưu tiên quán đang mở cửa lên hàng đầu
       const tasteBonus = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
         ? (window.tasteManager.calculateMatchScore(food, moodId) * 0.6)
         : 40;
@@ -2822,7 +2824,7 @@ class FoodApp {
         window.swipeManager = new TinderSwipeManager('swipe-deck-container');
       }
       if (window.swipeManager) {
-        if (!window.swipeManager.deck || window.swipeManager.deck.length === 0) {
+        if (!window.swipeManager.deck || window.swipeManager.deck.length === 0 || window.swipeManager.currentIndex >= window.swipeManager.deck.length) {
           const foods = this.getFoodsForCurrentMood();
           window.swipeManager.loadCards(foods.length > 0 ? foods : (APP_DATA.foods || []));
         } else {

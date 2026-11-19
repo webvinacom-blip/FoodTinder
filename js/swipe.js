@@ -2,8 +2,9 @@
 
 class TinderSwipeManager {
   constructor(containerId, options = {}) {
+    this.containerId = typeof containerId === 'string' ? containerId.replace(/^#/, '') : 'swipe-deck-container';
     this.container = typeof containerId === 'string'
-      ? (document.getElementById(containerId.replace(/^#/, '')) || document.querySelector(containerId))
+      ? (document.getElementById(this.containerId) || document.querySelector(containerId))
       : containerId;
     this.options = options;
     this.deck = [];
@@ -20,28 +21,55 @@ class TinderSwipeManager {
     this.nopeBadge = null;
   }
 
+  getContainer() {
+    if (!this.container || !document.body.contains(this.container)) {
+      this.container = document.getElementById(this.containerId || 'swipe-deck-container');
+    }
+    return this.container;
+  }
+
   loadCards(foods) {
-    const list = Array.isArray(foods) ? foods : [];
-    // Nếu quán đã đóng cửa hoặc ngừng kinh doanh hoặc vi phạm chế độ ăn thì tuyệt đối không hiện ở thẻ quẹt
-    const openFoods = list.filter(food => {
+    const list = Array.isArray(foods) && foods.length > 0 ? foods : ((window.APP_DATA && window.APP_DATA.foods) || []);
+    // 1. Lọc bỏ quán đóng cửa vĩnh viễn, quán ảo, vi phạm chế độ ăn nghiêm ngặt
+    let validFoods = list.filter(food => {
       if (!food) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
       if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true };
-      return Boolean(status && status.isOpen);
+      return true;
     });
 
-    // Sắp xếp ưu tiên các món có Match Score cao theo Gu khẩu vị lên đầu deck quẹt thẻ
-    if (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function') {
-      openFoods.sort((a, b) => {
-        const scoreB = window.tasteManager.calculateMatchScore(b);
-        const scoreA = window.tasteManager.calculateMatchScore(a);
-        return scoreB - scoreA;
+    // Fallback nếu bộ lọc quá ngặt nghèo khiến danh sách rỗng: nạp lại quán chất lượng của thành phố
+    if (validFoods.length === 0) {
+      validFoods = ((window.APP_DATA && window.APP_DATA.foods) || []).filter(food => {
+        if (!food) return false;
+        if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
+        return true;
       });
     }
 
-    this.deck = openFoods;
+    // 2. Sắp xếp ưu tiên: Quán đang mở cửa lên đầu deck; Trong cùng nhóm, xếp theo điểm Chuẩn Gu cao nhất
+    validFoods.sort((a, b) => {
+      const statusA = window.getRestaurantStatus ? window.getRestaurantStatus(a) : { isOpen: true };
+      const statusB = window.getRestaurantStatus ? window.getRestaurantStatus(b) : { isOpen: true };
+      const openA = Boolean(statusA && statusA.isOpen);
+      const openB = Boolean(statusB && statusB.isOpen);
+
+      if (openA !== openB) {
+        return openA ? -1 : 1; // Quán đang mở cửa lên trước
+      }
+
+      const scoreB = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
+        ? window.tasteManager.calculateMatchScore(b)
+        : 75;
+      const scoreA = (window.tasteManager && typeof window.tasteManager.calculateMatchScore === 'function')
+        ? window.tasteManager.calculateMatchScore(a)
+        : 75;
+      return scoreB - scoreA;
+    });
+
+    this.deck = validFoods;
     this.currentIndex = 0;
     this.isAnimating = false;
     this.isDragging = false;
@@ -53,10 +81,11 @@ class TinderSwipeManager {
   }
 
   render() {
-    if (!this.container) return;
-    this.container.innerHTML = '';
+    const container = this.getContainer();
+    if (!container) return;
+    container.innerHTML = '';
 
-    // Bỏ qua các quán đã đóng cửa nếu còn tồn tại trong deck
+    // Bỏ qua các quán đã đóng cửa vĩnh viễn hoặc vi phạm chất lượng nếu còn sót trong deck
     while (this.currentIndex < this.deck.length) {
       const currentFood = this.deck[this.currentIndex];
       if (currentFood) {
@@ -68,8 +97,7 @@ class TinderSwipeManager {
           this.currentIndex++;
           continue;
         }
-        const status = window.getRestaurantStatus ? window.getRestaurantStatus(currentFood) : { isOpen: true };
-        if (status && status.isOpen) break;
+        break;
       }
       this.currentIndex++;
     }
@@ -79,14 +107,17 @@ class TinderSwipeManager {
       return;
     }
 
-    // Render up to 3 cards in the stack (chỉ các quán đang mở cửa)
+    // Render tối đa 3 thẻ trong ngăn xếp (Card Stack)
     const visibleCards = [];
     let lookAheadIdx = this.currentIndex;
     while (lookAheadIdx < this.deck.length && visibleCards.length < 3) {
       const food = this.deck[lookAheadIdx];
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true };
-      if (status && status.isOpen) {
-        visibleCards.push(food);
+      if (food) {
+        const isClosedPerm = typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food);
+        const isValid = typeof window.isValidQualityFood === 'function' ? window.isValidQualityFood(food) : true;
+        if (!isClosedPerm && isValid) {
+          visibleCards.push(food);
+        }
       }
       lookAheadIdx++;
     }
@@ -102,7 +133,7 @@ class TinderSwipeManager {
     visibleCards.reverse().forEach((food, reverseIdx) => {
       const actualIdx = visibleCards.length - 1 - reverseIdx;
       const isTop = actualIdx === 0;
-      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
       const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
       const willReturnCount = (window.app && typeof window.app.getWillReturnCount === 'function')
         ? window.app.getWillReturnCount(food.id)
@@ -510,7 +541,7 @@ class TinderSwipeManager {
       this.currentIndex++;
       this.isAnimating = false;
       
-      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác (chỉ nạp quán đang mở)
+      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đã điều chỉnh trọng số vị giác
       if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
         const freshDeck = window.app.getFoodsForCurrentMood();
         if (freshDeck && freshDeck.length > 0) {
@@ -519,8 +550,9 @@ class TinderSwipeManager {
           const newAdditions = freshDeck
             .filter(f => !remainingIds.has(f.id))
             .filter(f => {
-              const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
-              return Boolean(status && status.isOpen);
+              if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+              if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+              return true;
             });
           if (newAdditions.length > 0) {
             this.deck = remaining.concat(newAdditions);
@@ -556,7 +588,7 @@ class TinderSwipeManager {
       this.currentIndex++;
       this.isAnimating = false;
 
-      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ đang mở cửa
+      // Nếu số thẻ còn lại dưới 3, tự động nạp thêm thẻ phù hợp
       if (this.deck && (this.deck.length - this.currentIndex) < 3 && window.app) {
         const freshDeck = window.app.getFoodsForCurrentMood();
         if (freshDeck && freshDeck.length > 0) {
@@ -565,8 +597,9 @@ class TinderSwipeManager {
           const newAdditions = freshDeck
             .filter(f => !remainingIds.has(f.id))
             .filter(f => {
-              const status = window.getRestaurantStatus ? window.getRestaurantStatus(f.openTime) : { isOpen: true };
-              return Boolean(status && status.isOpen);
+              if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
+              if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+              return true;
             });
           if (newAdditions.length > 0) {
             this.deck = remaining.concat(newAdditions);
@@ -669,20 +702,22 @@ class TinderSwipeManager {
 
   renderEmptyState() {
     this.updateShopeeButtonState(null);
-    this.container.innerHTML = `
+    const container = this.getContainer();
+    if (!container) return;
+    container.innerHTML = `
       <div class="h-full w-full flex flex-col items-center justify-center p-6 text-center bg-white rounded-[28px] border border-[#F0E6DD] shadow-sm">
         <div class="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-3xl mb-4 animate-bounce">
           🎉
         </div>
-        <h4 class="font-bold text-stone-800 text-lg">Bạn đã khám phá hết quán đang mở!</h4>
+        <h4 class="font-bold text-stone-800 text-lg">Bạn đã khám phá hết danh sách gợi ý!</h4>
         <p class="text-xs text-stone-500 mt-2 max-w-xs leading-relaxed">
-          Đã duyệt toàn bộ quán đang mở cửa phù hợp với bạn. Hãy thử đổi tâm trạng hoặc ghé lại vào khung giờ khác nhé!
+          Đã duyệt toàn bộ quán ăn phù hợp với Gu và tâm trạng hiện tại. Bạn có thể bấm quẹt lại từ đầu hoặc đổi tâm trạng mới nhé!
         </p>
         <div class="flex gap-2 mt-5">
-          <button onclick="window.swipeManager.reloadDeck()" class="px-5 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-full font-semibold text-xs shadow-md shadow-rose-200 hover:opacity-95 transition cursor-pointer">
+          <button onclick="window.swipeManager && window.swipeManager.reloadDeck()" class="px-5 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-full font-semibold text-xs shadow-md shadow-rose-200 hover:opacity-95 transition cursor-pointer">
             🔄 Quẹt lại từ đầu
           </button>
-          <button onclick="window.app.switchTab('liked')" class="px-4 py-2.5 bg-stone-100 text-stone-700 rounded-full font-semibold text-xs hover:bg-stone-200 transition cursor-pointer">
+          <button onclick="window.app && window.app.switchTab('liked')" class="px-4 py-2.5 bg-stone-100 text-stone-700 rounded-full font-semibold text-xs hover:bg-stone-200 transition cursor-pointer">
             ❤️ Xem đã thích
           </button>
         </div>
