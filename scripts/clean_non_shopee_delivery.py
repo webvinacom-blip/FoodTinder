@@ -20,6 +20,10 @@ def is_non_shopee_venue(f):
     cat = (f.get('category', '')).lower()
     full_text = f"{name} {addr} {cat}"
     
+    # 0. Buffet, lẩu băng chuyền, lẩu nướng tại bàn (Kichi, Manwah, Dookki, v.v.)
+    if re.search(r'\b(kichi|manwah|dookki|sumo bbq|king bbq|gogi|sukishi|lẩu băng chuyền|lau bang chuyen|buffet|vé buffet|suất buffet)\b', full_text):
+        return True, 'Buffet/Lẩu băng chuyền'
+
     # 1. Bar, pub, club, lounge, karaoke, bia hơi, quán nhậu
     if re.search(r'\b(quán nhậu|quan nhau|bia hơi|bia tươi|craft beer|beer club|bar &|pub &|\bbar\b|\bpub\b|\bclub\b|\blounge\b|\bkaraoke\b|\bbida\b|\bbilliards\b|\bmassage\b|\bspa\b)\b', full_text):
         if any(k in name for k in ['surf bar', 'karaoke', 'bar', 'pub', 'nhậu', 'beer']):
