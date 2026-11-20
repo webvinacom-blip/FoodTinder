@@ -1684,6 +1684,17 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     ADMIN LINK IMPORTER MODAL (NẠP LINK SHOPEE HÀNG LOẠT)
+══════════════════════════════════════════ -->
+<div id="grocery-importer-modal" class="modal-backdrop hidden" style="align-items:center; justify-content:center; padding:16px; z-index:220;" onclick="if(event.target === this) window.groceryManager.closeImporterModal()">
+  <div class="modal-sheet w-full max-w-4xl bg-white rounded-[24px] sm:rounded-[28px] overflow-hidden shadow-2xl border border-stone-200 flex flex-col max-h-[90vh]">
+    <div id="grocery-importer-modal-content" class="flex flex-col h-full overflow-hidden min-h-0">
+      <!-- Dynamic content rendered by GroceryManager -->
+    </div>
+  </div>
+</div>
+
 <!-- Toast -->
 <div id="app-toast" style="opacity:0;translate:0 -8px;position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:999;pointer-events:none;transition:opacity .3s,translate .3s;">
   <div class="bg-stone-900/90 backdrop-blur-md text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-stone-700">
@@ -1713,7 +1724,7 @@
 <script src="js/chat.js?v=3.3.1"></script>
 <script src="js/auth.js?v=3.3.1"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
-<script src="js/grocery.js?v=3.3.2"></script>
+<script src="js/grocery.js?v=3.3.3"></script>
 <script src="js/app.js?v=3.3.1"></script>
 
 <script>

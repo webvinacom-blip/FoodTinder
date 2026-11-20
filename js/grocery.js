@@ -2,6 +2,7 @@
 // FOODTINDER - KỆ GỢI Ý ĐỒ ĂN VẶT SHOPEE THEO CẢM XÚC (3 CỘT AFFILIATE)
 // Mô hình: Gợi ý theo ngữ cảnh tâm trạng -> Tín hiệu chốt đơn Shopee Mall / Yêu thích+
 // Thuật toán: 30% Hoa hồng cao nhất (sortType: 5) + 70% Bán chạy nhất (sortType: 2)
+// Admin Link Importer: Nạp link Shopee hàng loạt, tự bóc tên, tự phân nhóm & lưu Firestore
 // ══════════════════════════════════════════════════════════════════════
 
 // ── 1. CÁC NHÓM CẢM XÚC ĂN VẶT (CỘT TRÁI) ──
@@ -156,9 +157,8 @@ const GROCERY_COMBOS = [
 ];
 
 // ── 5. KỆ HÀNG ĂN VẶT & MÓN NGON SHOPEE (KHU VỰC 2 CỘT GIỮA) ──
-// Gắn sẵn các chỉ số Affiliate: commissionRate (cho sortType: 5) & soldCountRaw (cho sortType: 2)
 const GROCERY_ITEMS = [
-  // 🥜 BÁNH MỨT & HẠT NGON (MỚI THAY THẾ CHO GIẢI NHIỆT / TRÀ CHIỀU)
+  // 🥜 BÁNH MỨT & HẠT NGON
   {
     id: 'snack_hatdieu',
     name: 'Hạt điều rang củi Bình Phước vỏ lụa loại A cồ cùi giòn béo hũ 500g',
@@ -564,8 +564,12 @@ class GroceryManager {
   constructor() {
     this.currentNeedFilter = 'all';
     this.currentSubTag = 'all';
-    this.wishlist = []; // Danh sách món đã lưu: [{ id, name, price, image, shopeeUrl, badge, badgeType, rating, soldCount }]
+    this.wishlist = []; // Danh sách món đã lưu
+    this.importerTab = 'products'; // 'products' hoặc 'shops'
+    this.previewProducts = [];
+    this.previewShops = [];
     this.loadWishlist();
+    this.loadCustomLocalData();
   }
 
   init() {
@@ -576,9 +580,35 @@ class GroceryManager {
     this.fetchFromFirestore();
   }
 
+  // ── LOCAL STORAGE FALLBACK ──
+  loadCustomLocalData() {
+    try {
+      const savedItems = localStorage.getItem('foodtinder_custom_grocery_items_v1');
+      if (savedItems) {
+        const parsed = JSON.parse(savedItems);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          window.GROCERY_ITEMS = parsed;
+        }
+      }
+      const savedShops = localStorage.getItem('foodtinder_custom_grocery_shops_v1');
+      if (savedShops) {
+        const parsedShops = JSON.parse(savedShops);
+        if (Array.isArray(parsedShops) && parsedShops.length > 0) {
+          window.SHOPEE_TOP_SHOPS = parsedShops;
+        }
+      }
+    } catch (e) {}
+  }
+
+  saveCustomLocalData() {
+    try {
+      localStorage.setItem('foodtinder_custom_grocery_items_v1', JSON.stringify(window.GROCERY_ITEMS || GROCERY_ITEMS));
+      localStorage.setItem('foodtinder_custom_grocery_shops_v1', JSON.stringify(window.SHOPEE_TOP_SHOPS || SHOPEE_TOP_SHOPS));
+    } catch (e) {}
+  }
+
   // ── KIỂM TRA NHÃN THEO MÙA (TỪ GIỮA THÁNG 12 ĐẾN HẾT THÁNG 1 ÂM LỊCH) ──
   isTetSeason() {
-    // Cho phép force kiểm tra qua URL (?season=tet) hoặc cờ toàn cục window.FORCE_TET_SEASON
     if (typeof window !== 'undefined') {
       if (window.FORCE_TET_SEASON === true) return true;
       try {
@@ -589,7 +619,6 @@ class GroceryManager {
 
     try {
       const now = new Date();
-      // Chuẩn hóa tính lịch âm Việt Nam/Á Đông qua Intl API
       const formatter = new Intl.DateTimeFormat('vi-VN-u-ca-chinese', {
         day: 'numeric',
         month: 'numeric'
@@ -601,13 +630,11 @@ class GroceryManager {
         if (p.type === 'month') lunarMonth = parseInt(p.value, 10);
         if (p.type === 'day') lunarDay = parseInt(p.value, 10);
       }
-      // Từ giữa tháng 12 (ngày 15 tháng Chạp) đến hết tháng 1 âm lịch (tháng Giêng)
       if (lunarMonth === 12 && lunarDay >= 15) return true;
       if (lunarMonth === 1) return true;
     } catch (err) {
-      // Fallback lịch dương tương đương nếu trình duyệt không hỗ trợ u-ca-chinese
       const now = new Date();
-      const m = now.getMonth() + 1; // 1 - 12
+      const m = now.getMonth() + 1;
       const d = now.getDate();
       if ((m === 1 && d >= 10) || m === 2 || (m === 3 && d <= 5)) {
         return true;
@@ -616,27 +643,21 @@ class GroceryManager {
     return false;
   }
 
-  // ── THUẬT TOÁN ƯU TIÊN AFFILIATE: 30% HOA HỒNG CAO NHẤT (sortType: 5) + 70% BÁN CHẠY NHẤT (sortType: 2) ──
+  // ── THUẬT TOÁN ƯU TIÊN AFFILIATE: 30% HOA HỒNG CAO (sortType: 5) + 70% BÁN CHẠY (sortType: 2) ──
   rankAffiliateItems(items) {
     if (!items || items.length <= 1) return items;
 
-    // Nhân bản mảng để không làm đột biến dữ liệu gốc
     const pool = [...items];
-
-    // 1. Tính toán số lượng 30% sản phẩm đầu tiên (tối thiểu 1 sản phẩm)
     const topCount = Math.max(1, Math.round(pool.length * 0.3));
 
-    // 2. Sắp xếp toàn bộ theo Hoa hồng cao nhất (sortType: 5)
     pool.sort((a, b) => (b.commissionRate || 0) - (a.commissionRate || 0));
 
-    // Lấy 30% sản phẩm hoa hồng cao nhất
     const highCommissionItems = pool.slice(0, topCount).map(item => ({
       ...item,
       sortType: 5,
       affiliateTag: '⚡ Hoa hồng cao'
     }));
 
-    // 3. 70% còn lại sắp xếp theo Bán chạy nhất (sortType: 2, soldCountRaw giảm dần)
     const remainingItems = pool.slice(topCount);
     remainingItems.sort((a, b) => (b.soldCountRaw || 0) - (a.soldCountRaw || 0));
     const bestSellerItems = remainingItems.map(item => ({
@@ -645,7 +666,6 @@ class GroceryManager {
       affiliateTag: '🔥 Bán chạy'
     }));
 
-    // Kết hợp theo thứ tự ưu tiên chuẩn
     return [...highCommissionItems, ...bestSellerItems];
   }
 
@@ -742,7 +762,686 @@ class GroceryManager {
     this.renderMiddleView();
   }
 
-  // ── 1. CỘT TRÁI: NHU CẦU ĂN VẶT & HỎI AI 🤖 (KÈM NHÃN THEO MÙA 🧧 SẮM TẾT) ──
+  // ══════════════════════════════════════════════════════════════════════
+  // ── ADMIN LINK IMPORTER (NẠP LINK SHOPEE HÀNG LOẠT & TỰ ĐỘNG PHÂN NHÓM) ──
+  // ══════════════════════════════════════════════════════════════════════
+
+  openImporterModal(tab = 'products') {
+    window.soundFX && window.soundFX.playPop();
+    this.importerTab = tab;
+    const modal = document.getElementById('grocery-importer-modal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    this.renderImporterModalContent();
+  }
+
+  closeImporterModal() {
+    window.soundFX && window.soundFX.playPop();
+    const modal = document.getElementById('grocery-importer-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  setImporterTab(tab) {
+    window.soundFX && window.soundFX.playPop();
+    this.importerTab = tab;
+    this.renderImporterModalContent();
+  }
+
+  fillSampleLinks() {
+    window.soundFX && window.soundFX.playPop();
+    const textarea = document.getElementById('importer-links-input');
+    if (!textarea) return;
+
+    if (this.importerTab === 'products') {
+      textarea.value = [
+        'https://shopee.vn/Bap-rang-bo-pho-mai-caramel-Uncle-Jax-150g-i.123456.789012',
+        'https://shopee.vn/Hat-dieu-rang-cui-Binh-Phuoc-vo-lua-500g-i.222.333',
+        'https://shopee.vn/Set-Hop-Qua-Tet-An-Khang-6-Mon-Bieu-Tang-i.777.888',
+        'https://shopee.vn/Kho-ga-la-chanh-cay-gion-hu-500g-i.999.111',
+        'https://shopee.vn/Mi-ly-omachi-bo-ham-xot-ca-chua-i.333.444'
+      ].join('\n');
+    } else {
+      textarea.value = [
+        'https://shopee.vn/tiemanvatbebu',
+        'https://shopee.vn/dac_san_xu_nau_thao_nguyen',
+        'https://shopee.vn/snackhouse_official'
+      ].join('\n');
+    }
+  }
+
+  clearImporterInput() {
+    window.soundFX && window.soundFX.playPop();
+    const textarea = document.getElementById('importer-links-input');
+    if (textarea) textarea.value = '';
+    if (this.importerTab === 'products') {
+      this.previewProducts = [];
+    } else {
+      this.previewShops = [];
+    }
+    this.renderImporterModalContent();
+  }
+
+  // Tự động trích xuất tên từ slug Shopee URL
+  cleanSlugToName(url) {
+    try {
+      let slug = '';
+      const matchProduct = url.match(/shopee\.vn\/([^?#]+?)-i\.\d+\.\d+/);
+      if (matchProduct && matchProduct[1]) {
+        slug = matchProduct[1];
+      } else {
+        const matchGeneral = url.match(/shopee\.vn\/([^?#]+)/);
+        if (matchGeneral && matchGeneral[1]) {
+          slug = matchGeneral[1];
+        }
+      }
+
+      slug = slug.replace(/^\/+|\/+$/g, '');
+      if (slug.startsWith('product/')) {
+        const parts = slug.split('/');
+        return `Sản phẩm Shopee #${parts[parts.length - 1] || 'Mới'}`;
+      }
+
+      if (slug) {
+        slug = decodeURIComponent(slug);
+        const words = slug.split(/[-_+.]+/).filter(Boolean);
+        if (words.length > 0) {
+          return words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        }
+      }
+    } catch (e) {}
+    return 'Sản phẩm Shopee';
+  }
+
+  // Tự động phân loại danh mục (Category) và Sub-tag từ tiêu đề
+  classifyItem(title) {
+    const t = (title || '').toLowerCase();
+    let category = 'sweets_nuts';
+    let subTag = 'bakery_tea';
+
+    // 1. Phân loại Category
+    if (/hat|dieu|macca|hanh nhan|mut|say|danisa|tra|tet|banh mut|sua|o long/i.test(t)) {
+      category = 'sweets_nuts';
+    } else if (/bap rang|popcorn|snack|lays|khoai tay|rong bien|keo|burger|trolli/i.test(t)) {
+      category = 'movie';
+    } else if (/mi|omachi|xuc xich|banh mi|trung|chao|pho|cuu doi/i.test(t)) {
+      category = 'hunger';
+    } else if (/kho ga|muc rim|dau phong|kho bo|nhau|lai rai|da ca|sa te/i.test(t)) {
+      category = 'drinking';
+    } else if (/nem|tre|banh it|banh trang dua|dac san|quy nhon|binh dinh|xu nau/i.test(t)) {
+      category = 'specialty';
+    }
+
+    // 2. Phân loại SubTag
+    if (/hat|dieu|macca|hanh nhan|dau phong|oc cho|de/i.test(t)) {
+      subTag = 'nuts';
+    } else if (/mut|say|xoai|kho ga|muc|kho bo|trai cay/i.test(t)) {
+      subTag = 'dried_fruits';
+    } else if (/hop qua|set|combo|bieu|tet|nem|tre/i.test(t)) {
+      subTag = 'gift_box';
+    } else {
+      subTag = 'bakery_tea';
+    }
+
+    return { category, subTag };
+  }
+
+  // Gợi ý ảnh đẹp tương ứng theo category/subtag
+  suggestImageForClass(category, subTag) {
+    if (subTag === 'nuts') return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80';
+    if (subTag === 'dried_fruits') return 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=500&q=80';
+    if (subTag === 'gift_box') return 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=80';
+    if (category === 'movie') return 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=500&q=80';
+    if (category === 'hunger') return 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80';
+    if (category === 'drinking') return 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80';
+    if (category === 'specialty') return 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80';
+    return 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=500&q=80';
+  }
+
+  // Parse links từ textarea
+  parseInputLinks() {
+    window.soundFX && window.soundFX.playPop();
+    const textarea = document.getElementById('importer-links-input');
+    if (!textarea || !textarea.value.trim()) {
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast('Vui lòng dán ít nhất 1 link Shopee để phân tích!');
+      }
+      return;
+    }
+
+    const rawText = textarea.value.trim();
+    // Tách theo dòng hoặc khoảng trắng
+    const lines = rawText.split(/[\r\n]+/).map(l => l.trim()).filter(Boolean);
+
+    if (this.importerTab === 'products') {
+      const parsed = [];
+      lines.forEach((line, idx) => {
+        // Tìm URL
+        let url = line;
+        const matchUrl = line.match(/(https?:\/\/[^\s]+)/);
+        if (matchUrl) url = matchUrl[1];
+        else if (line.includes('shopee.vn')) url = `https://${line.replace(/^https?:\/\//, '')}`;
+
+        const name = this.cleanSlugToName(url);
+        const { category, subTag } = this.classifyItem(name);
+        const image = this.suggestImageForClass(category, subTag);
+
+        parsed.push({
+          id: `preview_prod_${Date.now()}_${idx}`,
+          name: name,
+          shopeeUrl: url,
+          category: category,
+          subTag: subTag,
+          badge: 'Shopee Mall',
+          badgeType: 'mall',
+          price: '65.000đ',
+          originalPrice: '85.000đ',
+          discount: '-20%',
+          image: image,
+          rating: '5.0',
+          soldCount: 'Đã bán 12,5k',
+          soldCountRaw: 12500,
+          commissionRate: 15.0
+        });
+      });
+
+      this.previewProducts = parsed;
+    } else {
+      // Tab Shops
+      const parsedShops = [];
+      lines.forEach((line, idx) => {
+        let url = line;
+        const matchUrl = line.match(/(https?:\/\/[^\s]+)/);
+        if (matchUrl) url = matchUrl[1];
+        else if (line.includes('shopee.vn')) url = `https://${line.replace(/^https?:\/\//, '')}`;
+
+        let shopSlug = '';
+        const matchSlug = url.match(/shopee\.vn\/(?:shop\/)?([^?#]+)/);
+        if (matchSlug && matchSlug[1]) shopSlug = matchSlug[1].replace(/^\/+|\/+$/g, '');
+
+        let shopName = 'Shop Ăn Vặt Uy Tín';
+        if (shopSlug) {
+          const words = decodeURIComponent(shopSlug).split(/[-_+.]+/).filter(Boolean);
+          if (words.length > 0) {
+            shopName = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          }
+        }
+
+        parsedShops.push({
+          id: `preview_shop_${Date.now()}_${idx}`,
+          name: shopName,
+          badge: 'Shopee Mall',
+          badgeType: 'mall',
+          avatar: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=120&q=80',
+          rating: '4.9 ⭐',
+          followers: '150k+ người theo dõi',
+          highlight: 'Đồ ăn vặt nội địa, bánh mứt Tết & đặc sản uy tín',
+          url: url
+        });
+      });
+
+      this.previewShops = parsedShops;
+    }
+
+    this.renderImporterModalContent();
+    if (window.app && typeof window.app.showToast === 'function') {
+      window.app.showToast(`⚡ Đã phân tích và tự phân nhóm xong!`);
+    }
+  }
+
+  // Quản lý các dòng trong bảng preview
+  updatePreviewProduct(idx, field, value) {
+    if (this.previewProducts[idx]) {
+      this.previewProducts[idx][field] = value;
+      if (field === 'badge') {
+        this.previewProducts[idx].badgeType = value === 'Shopee Mall' ? 'mall' : 'favorite';
+      }
+      this.renderImporterModalFooter();
+    }
+  }
+
+  removePreviewProduct(idx) {
+    window.soundFX && window.soundFX.playPop();
+    this.previewProducts.splice(idx, 1);
+    this.renderImporterModalContent();
+  }
+
+  addBlankPreviewProduct() {
+    window.soundFX && window.soundFX.playPop();
+    this.previewProducts.push({
+      id: `preview_prod_${Date.now()}_${this.previewProducts.length}`,
+      name: 'Món ăn vặt mới',
+      shopeeUrl: 'https://shopee.vn',
+      category: 'sweets_nuts',
+      subTag: 'nuts',
+      badge: 'Shopee Mall',
+      badgeType: 'mall',
+      price: '50.000đ',
+      originalPrice: '65.000đ',
+      discount: '-20%',
+      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80',
+      rating: '5.0',
+      soldCount: 'Đã bán 10k+',
+      soldCountRaw: 10000,
+      commissionRate: 15.0
+    });
+    this.renderImporterModalContent();
+  }
+
+  updatePreviewShop(idx, field, value) {
+    if (this.previewShops[idx]) {
+      this.previewShops[idx][field] = value;
+      if (field === 'badge') {
+        this.previewShops[idx].badgeType = value === 'Shopee Mall' ? 'mall' : 'favorite';
+      }
+      this.renderImporterModalFooter();
+    }
+  }
+
+  removePreviewShop(idx) {
+    window.soundFX && window.soundFX.playPop();
+    this.previewShops.splice(idx, 1);
+    this.renderImporterModalContent();
+  }
+
+  addBlankPreviewShop() {
+    window.soundFX && window.soundFX.playPop();
+    this.previewShops.push({
+      id: `preview_shop_${Date.now()}_${this.previewShops.length}`,
+      name: 'Tiệm Ăn Vặt Mới',
+      badge: 'Shopee Mall',
+      badgeType: 'mall',
+      avatar: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=120&q=80',
+      rating: '4.9 ⭐',
+      followers: '50k+ người theo dõi',
+      highlight: 'Chuyên đặc sản và đồ ăn vặt đóng gói chất lượng cao',
+      url: 'https://shopee.vn'
+    });
+    this.renderImporterModalContent();
+  }
+
+  // ── LƯU TẤT CẢ LÊN FIREBASE CLOUD FIRESTORE (foodtinder_quynhon/grocery_curated) ──
+  async saveAllToFirebase() {
+    window.soundFX && window.soundFX.playPop();
+
+    const saveBtn = document.getElementById('importer-save-btn');
+    if (saveBtn) {
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = `<span>⏳ Đang lưu Firebase...</span>`;
+    }
+
+    try {
+      if (this.importerTab === 'products') {
+        if (!this.previewProducts || this.previewProducts.length === 0) return;
+
+        const newItems = this.previewProducts.map((p, i) => ({
+          id: `snack_custom_${Date.now()}_${i}`,
+          name: p.name.trim() || 'Sản phẩm Shopee',
+          category: p.category || 'sweets_nuts',
+          subTag: p.subTag || 'nuts',
+          badge: p.badge || 'Shopee Mall',
+          badgeType: p.badge === 'Shopee Mall' ? 'mall' : 'favorite',
+          rating: p.rating || '5.0',
+          soldCount: p.soldCount || 'Đã bán 10k+',
+          soldCountRaw: p.soldCountRaw || 10000,
+          commissionRate: parseFloat(p.commissionRate) || 15.0,
+          price: p.price || '65.000đ',
+          originalPrice: p.originalPrice || '85.000đ',
+          discount: p.discount || '-20%',
+          image: p.image || 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80',
+          shopeeUrl: p.shopeeUrl || 'https://shopee.vn'
+        }));
+
+        // Chèn vào đầu danh sách
+        window.GROCERY_ITEMS = [...newItems, ...(window.GROCERY_ITEMS || GROCERY_ITEMS)];
+        this.previewProducts = [];
+      } else {
+        if (!this.previewShops || this.previewShops.length === 0) return;
+
+        const newShops = this.previewShops.map((s, i) => ({
+          id: `shop_custom_${Date.now()}_${i}`,
+          name: s.name.trim() || 'Shop Ăn Vặt Shopee',
+          badge: s.badge || 'Shopee Mall',
+          badgeType: s.badge === 'Shopee Mall' ? 'mall' : 'favorite',
+          avatar: s.avatar || 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=120&q=80',
+          rating: s.rating || '4.9 ⭐',
+          followers: s.followers || '100k+ người theo dõi',
+          highlight: s.highlight || 'Đồ ăn vặt ngon & đặc sản uy tín',
+          url: s.url || 'https://shopee.vn'
+        }));
+
+        window.SHOPEE_TOP_SHOPS = [...newShops, ...(window.SHOPEE_TOP_SHOPS || SHOPEE_TOP_SHOPS)];
+        this.previewShops = [];
+      }
+
+      // Lưu LocalStorage dự phòng
+      this.saveCustomLocalData();
+
+      // Đồng bộ trực tiếp lên Cloud Firestore
+      await this.syncToFirestore();
+
+      // Render lại giao diện ngay tức thì
+      this.renderMiddleView();
+      this.renderRightSidebar();
+
+      this.closeImporterModal();
+
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`🎉 Đã lưu thành công lên Firebase & cập nhật giao diện!`);
+      }
+    } catch (err) {
+      console.error('Lỗi khi lưu lên Firebase:', err);
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`Đã lưu cục bộ: ${err.message}`);
+      }
+      this.renderMiddleView();
+      this.renderRightSidebar();
+      this.closeImporterModal();
+    }
+  }
+
+  // Render Footer của Modal
+  renderImporterModalFooter() {
+    const footerContainer = document.getElementById('importer-footer-container');
+    if (!footerContainer) return;
+
+    const count = this.importerTab === 'products' ? this.previewProducts.length : this.previewShops.length;
+    const label = this.importerTab === 'products' ? 'sản phẩm' : 'shop ăn vặt';
+
+    footerContainer.innerHTML = `
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black ${
+          count > 0 ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-stone-100 text-stone-500'
+        }">
+          <span>${count > 0 ? '✅' : '⚪'}</span>
+          <span>Đã sẵn sàng: <strong>${count} ${label}</strong></span>
+        </span>
+        <span class="text-[11px] text-stone-400 hidden sm:inline">• Lưu trực tiếp vào Cloud Firestore</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.groceryManager.closeImporterModal()"
+          class="px-3.5 py-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-xl font-bold text-xs transition cursor-pointer">
+          Đóng
+        </button>
+        <button id="importer-save-btn" onclick="window.groceryManager.saveAllToFirebase()"
+          ${count === 0 ? 'disabled' : ''}
+          class="px-5 py-2 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl font-black text-xs sm:text-sm shadow-md shadow-orange-300 transition active:scale-95 flex items-center gap-1.5 cursor-pointer">
+          <span>💾 Lưu tất cả lên Firebase</span>
+        </button>
+      </div>
+    `;
+  }
+
+  // Render toàn bộ giao diện Modal Admin Link Importer
+  renderImporterModalContent() {
+    const container = document.getElementById('grocery-importer-modal-content');
+    if (!container) return;
+
+    const isProducts = this.importerTab === 'products';
+    const previewList = isProducts ? this.previewProducts : this.previewShops;
+
+    container.innerHTML = `
+      <!-- ════════ PHẦN ĐẦU (HEADER & TABS) ════════ -->
+      <div class="bg-gradient-to-r from-[#EE4D2D] via-orange-500 to-rose-600 text-white p-4 sm:p-5 relative shrink-0">
+        <button onclick="window.groceryManager.closeImporterModal()"
+          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/20 hover:bg-black/35 text-white flex items-center justify-center transition text-sm cursor-pointer"
+          title="Đóng popup">
+          ✕
+        </button>
+
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl shadow-inner shrink-0">
+            📥
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-black text-base sm:text-lg text-white leading-tight">Nạp Link Shopee (Admin Importer)</h3>
+              <span class="px-2 py-0.5 rounded-full bg-white/20 text-[10px] font-black uppercase tracking-wider">Admin Tool</span>
+            </div>
+            <p class="text-xs text-orange-100 mt-0.5">Tự động tách tên từ URL, phân nhóm và bảng xem trước cho phép chỉnh sửa trước khi lưu Firestore</p>
+          </div>
+        </div>
+
+        <!-- 2 Tab Chuyển Đổi: Nạp Sản Phẩm & Nạp Shop -->
+        <div class="flex items-center gap-2 mt-4 pt-3 border-t border-white/20">
+          <button onclick="window.groceryManager.setImporterTab('products')"
+            class="px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all cursor-pointer flex items-center gap-1.5 ${
+              isProducts
+                ? 'bg-white text-[#EE4D2D] shadow-md ring-2 ring-white/60'
+                : 'bg-black/15 text-white/90 hover:bg-black/25'
+            }">
+            <span>📦</span>
+            <span>Nạp Sản Phẩm (Hàng loạt)</span>
+            ${this.previewProducts.length > 0 ? `<span class="px-1.5 py-0.2 rounded-full bg-[#EE4D2D] text-white text-[9.5px]">${this.previewProducts.length}</span>` : ''}
+          </button>
+
+          <button onclick="window.groceryManager.setImporterTab('shops')"
+            class="px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all cursor-pointer flex items-center gap-1.5 ${
+              !isProducts
+                ? 'bg-white text-[#EE4D2D] shadow-md ring-2 ring-white/60'
+                : 'bg-black/15 text-white/90 hover:bg-black/25'
+            }">
+            <span>🏪</span>
+            <span>Nạp Shop Ăn Vặt</span>
+            ${this.previewShops.length > 0 ? `<span class="px-1.5 py-0.2 rounded-full bg-[#EE4D2D] text-white text-[9.5px]">${this.previewShops.length}</span>` : ''}
+          </button>
+        </div>
+      </div>
+
+      <!-- ════════ KHU VỰC NHẬP LIỆU (INPUT AREA) ════════ -->
+      <div class="p-4 sm:p-5 border-b border-stone-200 bg-stone-50/70 shrink-0 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <label class="text-xs font-black text-stone-800 flex items-center gap-1.5">
+            <span>🔗</span>
+            <span>${isProducts ? 'Dán danh sách Link Sản Phẩm Shopee:' : 'Dán danh sách Link Shop Shopee:'}</span>
+            <span class="text-[10.5px] text-stone-400 font-normal">(Mỗi dòng 1 link hoặc phân tách bằng khoảng trắng)</span>
+          </label>
+          <div class="flex items-center gap-2">
+            <button onclick="window.groceryManager.fillSampleLinks()" class="text-[11px] font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 px-2 py-0.5 rounded-lg transition cursor-pointer">
+              📋 Thử link mẫu
+            </button>
+            <button onclick="window.groceryManager.clearImporterInput()" class="text-[11px] font-bold text-stone-400 hover:text-stone-700 transition cursor-pointer">
+              🧹 Xoá
+            </button>
+          </div>
+        </div>
+
+        <textarea id="importer-links-input" rows="3"
+          class="w-full rounded-2xl border border-stone-300 p-3 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-[#EE4D2D] focus:border-transparent outline-none bg-white shadow-2xs resize-none"
+          placeholder="${
+            isProducts
+              ? 'Dán một hoặc nhiều link sản phẩm Shopee tại đây...\nVí dụ:\nhttps://shopee.vn/Bap-rang-bo-pho-mai-caramel-Uncle-Jax-150g-i.123456.789012\nhttps://shopee.vn/Hat-dieu-rang-cui-Binh-Phuoc-vo-lua-500g-i.222.333'
+              : 'Dán một hoặc nhiều link Shop Shopee tại đây...\nVí dụ:\nhttps://shopee.vn/tiemanvatbebu\nhttps://shopee.vn/dac_san_xu_nau_thao_nguyen'
+          }"></textarea>
+
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] text-stone-500">
+            💡 Tự động bóc tách slug tiêu đề tiếng Việt, tự chọn category theo từ khóa và tạo link preview.
+          </span>
+          <button onclick="window.groceryManager.parseInputLinks()"
+            class="px-5 py-2.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl font-black text-xs sm:text-sm shadow-md shadow-orange-300 flex items-center justify-center gap-2 transition active:scale-98 cursor-pointer shrink-0">
+            <span>⚡</span>
+            <span>Phân tích & Tự phân nhóm</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ════════ BẢNG XEM TRƯỚC & CHỈNH SỬA (PREVIEW TABLE) ════════ -->
+      <div class="p-4 sm:p-5 overflow-y-auto flex-1 min-h-[220px] max-h-[44vh] space-y-3 bg-white">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black text-stone-800 uppercase tracking-wider">
+              Bảng Xem Trước & Chỉnh Sửa (${previewList.length} mục)
+            </span>
+            <span class="text-[10px] text-stone-400">• Chỉnh sửa trực tiếp từng trường bên dưới</span>
+          </div>
+          <button onclick="${isProducts ? 'window.groceryManager.addBlankPreviewProduct()' : 'window.groceryManager.addBlankPreviewShop()'}"
+            class="text-[11px] font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2.5 py-1 rounded-xl transition cursor-pointer flex items-center gap-1">
+            <span>+ Thêm dòng</span>
+          </button>
+        </div>
+
+        ${previewList.length === 0 ? `
+          <div class="py-12 flex flex-col items-center justify-center text-center p-6 border-2 border-dashed border-stone-200 rounded-2xl text-stone-400 space-y-2">
+            <span class="text-4xl opacity-40">${isProducts ? '📦' : '🏪'}</span>
+            <p class="text-xs font-bold text-stone-700">Chưa có liên kết nào được phân tích</p>
+            <p class="text-[11px] max-w-sm">
+              Hãy dán các link Shopee vào ô nhập bên trên rồi bấm nút <strong class="text-[#EE4D2D]">"Phân tích & Tự phân nhóm"</strong> hoặc bấm <strong class="text-amber-700">"Thử link mẫu"</strong> để xem thử nhé!
+            </p>
+          </div>
+        ` : `
+          <!-- Danh Sách Bảng Preview -->
+          <div class="space-y-3">
+            ${isProducts ? previewList.map((item, idx) => `
+              <div class="p-3 bg-stone-50/80 hover:bg-orange-50/30 rounded-2xl border border-stone-200/90 transition space-y-2.5">
+                <div class="flex items-start justify-between gap-3">
+                  <!-- Ảnh đại diện -->
+                  <div class="w-14 h-14 rounded-xl overflow-hidden bg-stone-200 shrink-0 border border-stone-200 relative group">
+                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" />
+                  </div>
+
+                  <!-- Tên & Link Shopee -->
+                  <div class="flex-1 min-w-0 space-y-1.5">
+                    <div>
+                      <label class="text-[10px] font-bold text-stone-400 uppercase">Tên hiển thị sản phẩm:</label>
+                      <input type="text" value="${item.name}"
+                        oninput="window.groceryManager.updatePreviewProduct(${idx}, 'name', this.value)"
+                        class="w-full text-xs font-bold text-stone-900 border border-stone-300 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none" />
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="text" value="${item.image}"
+                        oninput="window.groceryManager.updatePreviewProduct(${idx}, 'image', this.value)"
+                        placeholder="Link ảnh URL..."
+                        class="flex-1 text-[10.5px] text-stone-500 border border-stone-200 rounded-lg px-2 py-0.5 bg-white font-mono truncate" />
+                      <a href="${item.shopeeUrl}" target="_blank" rel="noopener noreferrer"
+                        class="text-[10.5px] text-[#EE4D2D] hover:underline font-bold shrink-0 flex items-center gap-0.5">
+                        <span>Mở Link Shopee ↗</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Nút Xoá Dòng -->
+                  <button onclick="window.groceryManager.removePreviewProduct(${idx})"
+                    class="w-7 h-7 rounded-xl bg-stone-100 hover:bg-rose-100 text-stone-400 hover:text-rose-600 flex items-center justify-center transition text-xs cursor-pointer shrink-0"
+                    title="Xoá dòng này">
+                    ✕
+                  </button>
+                </div>
+
+                <!-- Các Cột Chọn Dropdown & Giá -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-stone-200/60 text-xs">
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Giá tham khảo:</label>
+                    <input type="text" value="${item.price}"
+                      oninput="window.groceryManager.updatePreviewProduct(${idx}, 'price', this.value)"
+                      class="w-full text-xs font-extrabold text-rose-600 border border-stone-200 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none" />
+                  </div>
+
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Nhóm Cảm Xúc:</label>
+                    <select onchange="window.groceryManager.updatePreviewProduct(${idx}, 'category', this.value)"
+                      class="w-full text-xs font-bold text-stone-800 border border-stone-200 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none">
+                      ${GROCERY_NEEDS.filter(n => n.id !== 'all').map(n => `
+                        <option value="${n.id}" ${n.id === item.category ? 'selected' : ''}>${n.emoji} ${n.label}</option>
+                      `).join('')}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Lọc Nhanh (Sub-Tag):</label>
+                    <select onchange="window.groceryManager.updatePreviewProduct(${idx}, 'subTag', this.value)"
+                      class="w-full text-xs font-bold text-stone-800 border border-stone-200 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none">
+                      ${GROCERY_SUB_TAGS.filter(t => t.id !== 'all').map(t => `
+                        <option value="${t.id}" ${t.id === item.subTag ? 'selected' : ''}>${t.emoji} ${t.label}</option>
+                      `).join('')}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Huy Hiệu Shopee:</label>
+                    <select onchange="window.groceryManager.updatePreviewProduct(${idx}, 'badge', this.value)"
+                      class="w-full text-xs font-bold text-stone-800 border border-stone-200 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none">
+                      <option value="Shopee Mall" ${item.badge === 'Shopee Mall' ? 'selected' : ''}>Shopee Mall</option>
+                      <option value="Yêu thích+" ${item.badge === 'Yêu thích+' ? 'selected' : ''}>Yêu thích+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            `).join('') : previewList.map((shop, idx) => `
+              <div class="p-3 bg-stone-50/80 hover:bg-orange-50/30 rounded-2xl border border-stone-200/90 transition space-y-2.5">
+                <div class="flex items-start justify-between gap-3">
+                  <!-- Avatar -->
+                  <div class="w-12 h-12 rounded-full overflow-hidden bg-stone-200 shrink-0 border border-stone-200">
+                    <img src="${shop.avatar}" alt="${shop.name}" class="w-full h-full object-cover" />
+                  </div>
+
+                  <!-- Tên & Thông tin Shop -->
+                  <div class="flex-1 min-w-0 space-y-1.5">
+                    <div>
+                      <label class="text-[10px] font-bold text-stone-400 uppercase">Tên Shop:</label>
+                      <input type="text" value="${shop.name}"
+                        oninput="window.groceryManager.updatePreviewShop(${idx}, 'name', this.value)"
+                        class="w-full text-xs font-bold text-stone-900 border border-stone-300 rounded-lg px-2 py-1 bg-white focus:ring-1 focus:ring-[#EE4D2D] outline-none" />
+                    </div>
+                    <div>
+                      <label class="text-[10px] font-bold text-stone-400 uppercase">Link Shop URL:</label>
+                      <input type="text" value="${shop.url}"
+                        oninput="window.groceryManager.updatePreviewShop(${idx}, 'url', this.value)"
+                        class="w-full text-[11px] font-mono text-stone-600 border border-stone-200 rounded-lg px-2 py-0.5 bg-white truncate" />
+                    </div>
+                  </div>
+
+                  <button onclick="window.groceryManager.removePreviewShop(${idx})"
+                    class="w-7 h-7 rounded-xl bg-stone-100 hover:bg-rose-100 text-stone-400 hover:text-rose-600 flex items-center justify-center transition text-xs cursor-pointer shrink-0"
+                    title="Xoá shop này">
+                    ✕
+                  </button>
+                </div>
+
+                <!-- Thống kê & Nổi bật -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 border-t border-stone-200/60 text-xs">
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Huy hiệu:</label>
+                    <select onchange="window.groceryManager.updatePreviewShop(${idx}, 'badge', this.value)"
+                      class="w-full text-xs font-bold text-stone-800 border border-stone-200 rounded-lg px-2 py-1 bg-white">
+                      <option value="Shopee Mall" ${shop.badge === 'Shopee Mall' ? 'selected' : ''}>Shopee Mall</option>
+                      <option value="Yêu thích+" ${shop.badge === 'Yêu thích+' ? 'selected' : ''}>Yêu thích+</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Đánh giá & Người theo dõi:</label>
+                    <input type="text" value="${shop.followers}"
+                      oninput="window.groceryManager.updatePreviewShop(${idx}, 'followers', this.value)"
+                      class="w-full text-xs text-stone-700 border border-stone-200 rounded-lg px-2 py-1 bg-white" />
+                  </div>
+                  <div>
+                    <label class="text-[9.5px] font-bold text-stone-400 uppercase block mb-0.5">Đặc trưng nổi bật:</label>
+                    <input type="text" value="${shop.highlight}"
+                      oninput="window.groceryManager.updatePreviewShop(${idx}, 'highlight', this.value)"
+                      class="w-full text-xs text-stone-700 border border-stone-200 rounded-lg px-2 py-1 bg-white" />
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `}
+      </div>
+
+      <!-- ════════ THANH HÀNH ĐỘNG DƯỚI CÙNG (FOOTER) ════════ -->
+      <div id="importer-footer-container" class="p-3.5 sm:p-4 bg-stone-50 border-t border-stone-200 flex items-center justify-between gap-3 shrink-0">
+        <!-- Rendered by renderImporterModalFooter() -->
+      </div>
+    `;
+
+    this.renderImporterModalFooter();
+  }
+
+  // ── 1. CỘT TRÁI: NHU CẦU ĂN VẶT & HỎI AI 🤖 (KÈM NÚT NẠP LINK SHOPEE) ──
   renderNeedsSelector() {
     const container = document.getElementById('mood-selector-container');
     if (!container) return;
@@ -755,9 +1454,18 @@ class GroceryManager {
           <span class="text-xs">🍿</span>
           <span class="text-[11px] font-extrabold text-stone-700 uppercase tracking-wider">Cảm xúc ăn vặt</span>
         </div>
-        <button onclick="window.groceryManager.askAI()" class="text-[11px] font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded-full transition shadow-xs" title="Hỏi AI gợi ý đồ ăn vặt Shopee chuẩn gu">
-          <span>Hỏi AI</span> <span>🤖</span>
-        </button>
+        <div class="flex items-center gap-1">
+          <button onclick="window.groceryManager.openImporterModal('products')"
+            class="text-[10px] font-extrabold text-[#EE4D2D] hover:text-orange-700 flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200/80 px-2 py-0.5 rounded-full transition shadow-xs cursor-pointer"
+            title="Nạp Link Shopee (Admin Importer)">
+            <span>📥 Nạp Link</span>
+          </button>
+          <button onclick="window.groceryManager.askAI()"
+            class="text-[10px] font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded-full transition shadow-xs cursor-pointer"
+            title="Hỏi AI gợi ý đồ ăn vặt Shopee chuẩn gu">
+            <span>Hỏi AI</span> <span>🤖</span>
+          </button>
+        </div>
       </div>
 
       <!-- Need Selector List -->
@@ -798,7 +1506,6 @@ class GroceryManager {
     const container = document.getElementById('grocery-content-container');
     if (!container) return;
 
-    // 1. Lọc combos theo need và sub-tag
     let filteredCombos = (window.GROCERY_COMBOS || GROCERY_COMBOS);
     if (this.currentNeedFilter !== 'all') {
       filteredCombos = filteredCombos.filter(c => c.category === this.currentNeedFilter);
@@ -807,7 +1514,6 @@ class GroceryManager {
       filteredCombos = filteredCombos.filter(c => c.subTag === this.currentSubTag);
     }
 
-    // 2. Lọc items theo need và sub-tag
     let baseItems = (window.GROCERY_ITEMS || GROCERY_ITEMS);
     if (this.currentNeedFilter !== 'all') {
       baseItems = baseItems.filter(i => i.category === this.currentNeedFilter);
@@ -816,7 +1522,6 @@ class GroceryManager {
       baseItems = baseItems.filter(i => i.subTag === this.currentSubTag);
     }
 
-    // 3. Áp dụng thuật toán ưu tiên Affiliate: 30% sortType: 5 (Hoa hồng cao) + 70% sortType: 2 (Bán chạy nhất)
     const rankedItems = this.rankAffiliateItems(baseItems);
 
     const activeNeedObj = GROCERY_NEEDS.find(n => n.id === this.currentNeedFilter) || GROCERY_NEEDS[0];
@@ -837,7 +1542,7 @@ class GroceryManager {
             Chọn món ăn vặt theo tâm trạng hôm nay từ các <strong>Shop Yêu Thích+</strong> & <strong>Shopee Mall</strong> uy tín nhất với hàng chục ngàn lượt mua.
           </p>
 
-          <!-- Banner Voucher Shopee Thông Minh (Không lo mã hết hạn) -->
+          <!-- Banner Voucher Shopee Thông Minh & Nút Nạp Link -->
           <div class="mt-4 flex items-center gap-2.5 flex-wrap">
             <a href="https://shopee.vn/m/ma-giam-gia" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 bg-white text-[#EE4D2D] hover:bg-orange-50 px-4 py-2.5 rounded-2xl font-black text-xs sm:text-sm shadow-md transition active:scale-98 cursor-pointer">
@@ -845,14 +1550,16 @@ class GroceryManager {
               <span>Lấy mã Freeship & Voucher Shopee hôm nay tại đây</span>
               <span class="text-xs">↗</span>
             </a>
-            <span class="text-[10.5px] text-white/80 font-medium">
-              💡 Bấm lấy mã trước để tự động áp dụng khi thanh toán trên Shopee
-            </span>
+            <button onclick="window.groceryManager.openImporterModal('products')"
+              class="inline-flex items-center gap-1.5 bg-black/25 hover:bg-black/40 text-white px-3 py-2 rounded-2xl font-bold text-xs backdrop-blur-xs transition active:scale-95 cursor-pointer border border-white/20">
+              <span>📥</span>
+              <span>Nạp link sản phẩm</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- ════════ THANH LỌC NHANH (SUB-TAGS) Ở ĐẦU CỘT GIỮA (REQUIREMENT 2) ════════ -->
+      <!-- ════════ THANH LỌC NHANH (SUB-TAGS) Ở ĐẦU CỘT GIỮA ════════ -->
       <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-stone-200/90 p-3 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <div class="flex items-center gap-2">
           <span class="text-sm">⚡</span>
@@ -875,6 +1582,12 @@ class GroceryManager {
               </button>
             `;
           }).join('')}
+
+          <button onclick="window.groceryManager.openImporterModal('products')"
+            class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-black bg-orange-50 hover:bg-orange-100 text-[#EE4D2D] border border-orange-200 transition-all active:scale-95 cursor-pointer whitespace-nowrap shadow-2xs"
+            title="Nạp Link Sản Phẩm / Shop hàng loạt">
+            <span>📥 Nạp Link</span>
+          </button>
         </div>
       </div>
 
@@ -891,34 +1604,28 @@ class GroceryManager {
             </div>
           </div>
 
-          <!-- Horizontal Combo Cards Slider (3 Cột thoáng) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             ${filteredCombos.map(combo => {
               const isSaved = this.isWishlisted(combo.id);
               return `
                 <div class="bg-white rounded-2xl border border-stone-200/90 shadow-xs hover:shadow-md transition-all overflow-hidden flex flex-col justify-between group">
-                  <!-- Top Image & Badges -->
                   <div class="relative h-40 w-full overflow-hidden bg-stone-100">
                     <img src="${combo.image}" alt="${combo.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     
-                    <!-- Shopee Badge: Mall / Yêu thích+ -->
                     <span class="absolute top-2.5 left-2.5 ${combo.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[9.5px] font-black px-2 py-0.5 rounded-md shadow-xs">
                       ${combo.badge}
                     </span>
 
-                    <!-- Discount Pill -->
                     <span class="absolute top-2.5 right-11 bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full shadow-xs">
                       ${combo.discount}
                     </span>
 
-                    <!-- Wishlist Heart Button -->
                     <button onclick="window.groceryManager.toggleWishlist(${JSON.stringify(combo).replace(/"/g, '&quot;')})"
                       class="w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-600 flex items-center justify-center absolute top-2 right-2 shadow-xs transition active:scale-90 cursor-pointer"
                       title="${isSaved ? 'Bỏ lưu' : 'Lưu để mua sau'}">
                       <span class="${isSaved ? 'text-rose-500 text-sm' : 'text-stone-400 text-xs'}">${isSaved ? '❤️' : '🤍'}</span>
                     </button>
 
-                    <!-- Sold Count Banner on image bottom -->
                     <div class="absolute bottom-2 left-2 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-xs flex items-center gap-1">
                       <span class="text-amber-400">⭐ ${combo.rating}</span>
                       <span>•</span>
@@ -926,7 +1633,6 @@ class GroceryManager {
                     </div>
                   </div>
 
-                  <!-- Body Info -->
                   <div class="p-3.5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
                       <h4 class="font-black text-xs sm:text-sm text-stone-900 group-hover:text-[#EE4D2D] transition leading-snug">
@@ -986,47 +1692,45 @@ class GroceryManager {
           </div>
         </div>
 
-        <!-- Empty State nếu không có món nào khớp subTag -->
         ${rankedItems.length === 0 ? `
           <div class="py-12 bg-white rounded-2xl border border-dashed border-stone-300 text-center space-y-2 p-6">
             <span class="text-4xl">🥜</span>
             <h4 class="font-extrabold text-sm text-stone-800">Không tìm thấy món ăn vặt phù hợp</h4>
-            <p class="text-xs text-stone-500 max-w-sm mx-auto">Hãy thử chọn lại "Tất cả" trên thanh lọc nhanh để xem toàn bộ món ngon nhé!</p>
-            <button onclick="window.groceryManager.setSubTag('all')" class="mt-2 px-4 py-1.5 bg-stone-900 text-white rounded-xl text-xs font-bold transition">
-              Xem tất cả
-            </button>
+            <p class="text-xs text-stone-500 max-w-sm mx-auto">Hãy thử chọn lại "Tất cả" trên thanh lọc nhanh hoặc bấm "Nạp link" để thêm món mới nhé!</p>
+            <div class="pt-2 flex items-center justify-center gap-2">
+              <button onclick="window.groceryManager.setSubTag('all')" class="px-4 py-1.5 bg-stone-900 text-white rounded-xl text-xs font-bold transition cursor-pointer">
+                Xem tất cả
+              </button>
+              <button onclick="window.groceryManager.openImporterModal('products')" class="px-4 py-1.5 bg-[#EE4D2D] text-white rounded-xl text-xs font-bold transition cursor-pointer">
+                📥 Nạp thêm món
+              </button>
+            </div>
           </div>
         ` : `
-          <!-- Grid 3 Cột Thoáng với thuật toán 30% Hoa hồng cao (sort:5) + 70% Bán chạy (sort:2) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4.5">
             ${rankedItems.map(item => {
               const isSaved = this.isWishlisted(item.id);
               return `
                 <div class="bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-md transition-all p-3 flex flex-col justify-between group">
-                  <!-- Image Container with Shopee Signals -->
                   <div class="relative w-full h-44 rounded-xl overflow-hidden bg-stone-100 mb-2.5">
                     <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     
-                    <!-- Shopee Mall / Yêu thích+ Badge (Top-left) -->
                     <span class="absolute top-2 left-2 ${item.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[9.5px] font-black px-2 py-0.5 rounded shadow-xs tracking-tight">
                       ${item.badge}
                     </span>
 
-                    <!-- Wishlist Heart Icon (Top-right) -->
                     <button onclick="window.groceryManager.toggleWishlist(${JSON.stringify(item).replace(/"/g, '&quot;')})"
                       class="w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-600 flex items-center justify-center absolute top-2 right-2 shadow-xs transition active:scale-90 cursor-pointer"
                       title="${isSaved ? 'Bỏ lưu' : 'Lưu để mua sau'}">
                       <span class="${isSaved ? 'text-rose-500 text-sm' : 'text-stone-400 text-xs'}">${isSaved ? '❤️' : '🤍'}</span>
                     </button>
 
-                    <!-- Sold Count + Rating Badge (Bottom-left) -->
                     <div class="absolute bottom-2 left-2 bg-black/65 text-white text-[9.5px] font-extrabold px-2 py-0.5 rounded-full backdrop-blur-xs flex items-center gap-1">
                       <span class="text-amber-400">⭐ ${item.rating}</span>
                       <span>•</span>
                       <span>${item.soldCount}</span>
                     </div>
 
-                    <!-- Discount Badge (Top-right cạnh tim) -->
                     ${item.discount ? `
                       <span class="absolute top-2.5 right-10 bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full shadow-xs">
                         ${item.discount}
@@ -1034,7 +1738,6 @@ class GroceryManager {
                     ` : ''}
                   </div>
 
-                  <!-- Product Info & CTA -->
                   <div class="flex-1 flex flex-col justify-between space-y-2.5">
                     <div>
                       <h5 class="font-extrabold text-xs sm:text-[13px] text-stone-900 leading-snug line-clamp-2 group-hover:text-[#EE4D2D] transition">
@@ -1072,10 +1775,11 @@ class GroceryManager {
     const container = document.getElementById('grocery-cart-sidebar');
     if (!container) return;
 
+    const shopsList = window.SHOPEE_TOP_SHOPS || SHOPEE_TOP_SHOPS;
+
     container.innerHTML = `
       <!-- ════════ KHỐI 1: ĐÃ LƯU ĐỂ MUA SAU (WISHLIST) ════════ -->
       <div class="flex-1 flex flex-col min-h-0 border-b border-stone-200">
-        <!-- Wishlist Header -->
         <div class="p-3.5 border-b border-stone-100 flex items-center justify-between shrink-0 bg-stone-50/70">
           <div class="flex items-center gap-2">
             <span class="text-base text-rose-500">❤️</span>
@@ -1096,7 +1800,6 @@ class GroceryManager {
           ` : ''}
         </div>
 
-        <!-- Wishlist Items List (Scrollable) -->
         <div class="flex-1 overflow-y-auto p-3 space-y-2 scrollbar-none">
           ${this.wishlist.length === 0 ? `
             <div class="py-8 flex flex-col items-center justify-center text-center px-4 space-y-2 text-stone-400">
@@ -1131,18 +1834,22 @@ class GroceryManager {
         </div>
       </div>
 
-      <!-- ════════ KHỐI 2: TOP SHOP ĂN VẶT UY TÍN TRÊN SHOPEE (TỶ LỆ CHỐT ĐƠN CAO) ════════ -->
+      <!-- ════════ KHỐI 2: TOP SHOP ĂN VẶT UY TÍN TRÊN SHOPEE (CÓ NÚT + NẠP SHOP) ════════ -->
       <div class="shrink-0 p-3.5 bg-gradient-to-b from-stone-50/50 to-orange-50/40 space-y-2.5">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-1.5">
             <span class="text-sm">⭐</span>
             <h4 class="font-black text-xs text-stone-900">Top Shop Ăn Vặt Shopee</h4>
           </div>
-          <span class="text-[9.5px] text-stone-400 font-semibold">Ghé shop mua gom Freeship</span>
+          <button onclick="window.groceryManager.openImporterModal('shops')"
+            class="text-[9.5px] font-extrabold text-[#EE4D2D] hover:underline flex items-center gap-0.5 cursor-pointer"
+            title="Nạp thêm shop mới">
+            <span>+ Nạp Shop</span>
+          </button>
         </div>
 
         <div class="space-y-2">
-          ${SHOPEE_TOP_SHOPS.map(shop => `
+          ${shopsList.map(shop => `
             <div class="p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs hover:shadow-xs transition space-y-1.5">
               <div class="flex items-center justify-between gap-1.5">
                 <div class="flex items-center gap-2 min-w-0">
@@ -1216,7 +1923,7 @@ class GroceryManager {
       const payload = {
         combos: window.GROCERY_COMBOS || GROCERY_COMBOS,
         items: window.GROCERY_ITEMS || GROCERY_ITEMS,
-        topShops: SHOPEE_TOP_SHOPS,
+        topShops: window.SHOPEE_TOP_SHOPS || SHOPEE_TOP_SHOPS,
         updatedAt: new Date().toISOString()
       };
       if (typeof firebase !== 'undefined' && firebase.firestore) {
@@ -1240,8 +1947,13 @@ class GroceryManager {
       window.GROCERY_ITEMS = data.items;
       hasChanges = true;
     }
+    if (Array.isArray(data.topShops) && data.topShops.length > 0) {
+      window.SHOPEE_TOP_SHOPS = data.topShops;
+      hasChanges = true;
+    }
     if (hasChanges) {
       this.renderMiddleView();
+      this.renderRightSidebar();
     }
   }
 }
