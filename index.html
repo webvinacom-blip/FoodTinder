@@ -124,12 +124,12 @@
 
     /* Tab pills in topbar */
     #topbar .nav-pills {
-      display:flex; gap:4px; flex:1; justify-content:center;
+      display:flex; gap:3px; flex:1; justify-content:center;
     }
     #topbar .nav-pills button {
-      display:flex; align-items:center; gap:6px;
-      padding:7px 14px; border-radius:999px; border:none; cursor:pointer;
-      font-size:12px; font-weight:600; font-family:inherit;
+      display:flex; align-items:center; gap:4px;
+      padding:6px 10px; border-radius:999px; border:none; cursor:pointer;
+      font-size:11.5px; font-weight:700; font-family:inherit;
       background:transparent; color:#747D8C;
       white-space:nowrap;
       transition: all .2s;
@@ -140,7 +140,7 @@
       color:#fff;
       box-shadow: 0 3px 10px rgba(255,71,87,.30);
     }
-    #topbar .nav-pills button i { width:14px; height:14px; }
+    #topbar .nav-pills button i { width:13.5px; height:13.5px; }
 
     /* Right controls */
     #topbar .topbar-right {
@@ -168,9 +168,9 @@
       overflow: hidden;
     }
 
-    /* Left sidebar */
+    /* Left sidebar (Thu gọn còn 260px cố định) */
     #sidebar {
-      width: 300px;
+      width: 260px;
       background: #fff;
       border-right: 1px solid #E8E0D8;
       display: flex;
@@ -395,10 +395,9 @@
   <!-- ── LEFT SIDEBAR ── -->
   <aside id="sidebar">
 
-    <!-- User & Location -->
+    <!-- Vị trí (Đưa lên đầu kèm nút Đổi nhỏ) -->
     <div class="sidebar-section">
-      <div id="header-greeting"></div>
-      <div id="header-location" class="mt-2"></div>
+      <div id="header-location"></div>
     </div>
 
     <!-- Mood Selector -->
@@ -432,87 +431,61 @@
 
     <!-- ══ VIEW: HOME (KHÁM PHÁ + CHUẨN GU SEGMENTED CONTROL) ══ -->
     <div id="view-home" class="tab-view active scroll-y">
-      <div class="p-4 sm:p-6 max-w-5xl mx-auto w-full space-y-6 pb-8">
+      <div class="p-3.5 sm:p-5 max-w-6xl mx-auto w-full space-y-3 pb-8">
 
-        <!-- Segmented Control: Chuẩn Gu vs Khám Phá Tất Cả -->
-        <div class="bg-stone-100 p-1 rounded-2xl flex items-center border border-stone-200/90 shadow-2xs max-w-md">
-          <button id="home-subtab-taste" onclick="window.app.switchHomeSubTab('taste')"
-            class="flex-1 py-2 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600">
-            <span>✨ Chuẩn Gu của bạn</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-          </button>
-          <button id="home-subtab-explore" onclick="window.app.switchHomeSubTab('explore')"
-            class="flex-1 py-2 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900">
-            <span>🌍 Khám phá tất cả</span>
-          </button>
+        <!-- ── HÀNG 1: COMPACT ACTION BAR (TAB CHUYỂN ĐỔI + BỘ LỌC NHANH NẰM CÙNG 1 HÀNG) ── -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-white p-2.5 rounded-2xl border border-stone-200/90 shadow-2xs">
+          <!-- Bên trái: [✨ Chuẩn Gu của bạn] | [🌍 Khám phá tất cả] -->
+          <div class="bg-stone-100 p-1 rounded-xl flex items-center border border-stone-200/80 shadow-2xs w-full sm:w-auto">
+            <button id="home-subtab-taste" onclick="window.app.switchHomeSubTab('taste')"
+              class="flex-1 sm:flex-initial py-1.5 px-3.5 rounded-lg font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600 whitespace-nowrap">
+              <span>✨ Chuẩn Gu của bạn</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+            </button>
+            <button id="home-subtab-explore" onclick="window.app.switchHomeSubTab('explore')"
+              class="flex-1 sm:flex-initial py-1.5 px-3.5 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900 whitespace-nowrap">
+              <span>🌍 Khám phá tất cả</span>
+            </button>
+          </div>
+
+          <!-- Bên phải: [🍲 Lọc đặc sản] • [✨ Chỉnh Gu] • [Sắp xếp: Hợp Gu nhất ▾] -->
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap shrink-0">
+            <button id="taste-specialty-toggle-btn" onclick="window.tasteManager.toggleSpecialtyFilter()"
+              class="px-3 py-1.5 bg-stone-50 hover:bg-amber-50 text-stone-700 hover:text-amber-800 border border-stone-200 rounded-xl text-xs font-bold transition shadow-2xs flex items-center gap-1.5 cursor-pointer"
+              title="Lọc chỉ hiển thị các quán đặc sản địa phương">
+              <span>🍲 Lọc đặc sản</span>
+            </button>
+            <button onclick="window.authManager && window.authManager.openTasteOnboardingModal ? window.authManager.openTasteOnboardingModal() : window.tasteManager.openTasteProfileModal()"
+              class="px-3 py-1.5 bg-stone-50 hover:bg-rose-50 text-rose-600 hover:text-rose-700 border border-rose-200 rounded-xl text-xs font-bold transition shadow-2xs flex items-center gap-1.5 cursor-pointer"
+              title="Tùy chỉnh khẩu vị cá nhân">
+              <span>✨ Chỉnh Gu</span>
+            </button>
+            <div class="relative inline-flex items-center">
+              <select id="taste-sort-select" onchange="window.tasteManager && window.tasteManager.changeSortOrder(this.value)"
+                class="appearance-none bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-700 text-xs font-bold rounded-xl px-2.5 py-1.5 pr-6 focus:outline-none focus:ring-1 focus:ring-rose-400 shadow-2xs cursor-pointer">
+                <option value="match_desc" selected>Sắp xếp: Hợp Gu nhất ▾</option>
+                <option value="distance_asc">Sắp xếp: Gần tôi nhất ▾</option>
+                <option value="rating_desc">Sắp xếp: Đánh giá cao nhất ▾</option>
+              </select>
+              <span class="absolute right-2 pointer-events-none text-[9px] text-stone-400">▾</span>
+            </div>
+          </div>
         </div>
 
         <!-- ── SUBSECTION 1: ✨ CHUẨN GU CỦA BẠN (MẶC ĐỊNH HIỂN THỊ TRƯỚC) ── -->
-        <div id="home-taste-section" class="space-y-6">
-          <!-- Welcome Banner for Chuẩn Gu -->
-          <div class="rounded-2xl bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 p-5 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
-            <div>
-              <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-black uppercase tracking-wider mb-1.5 backdrop-blur-sm">
-                <span>🤖 Trí Tuệ Nhân Tạo AI</span>
-              </div>
-              <h2 class="text-xl font-extrabold leading-tight">Gợi Ý Món Ăn Chuẩn Gu 🎯</h2>
-              <p class="text-xs text-rose-100 mt-1">Học theo sở thích quẹt thẻ để đề xuất món ăn và quán ngon hợp khẩu vị bạn nhất tại Quy Nhơn!</p>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
-              <button onclick="window.authManager && window.authManager.openTasteOnboardingModal ? window.authManager.openTasteOnboardingModal() : window.tasteManager.openTasteProfileModal()" class="bg-white hover:bg-stone-50 text-rose-600 font-extrabold rounded-xl px-4 py-2 text-xs flex items-center gap-1.5 shadow transition cursor-pointer">
-                <span>✨ Gu của bạn</span>
-                <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-              </button>
-              <button onclick="window.app.openCityModal()" class="bg-white/20 hover:bg-white/30 text-white border border-white/30 rounded-xl px-3.5 py-2 text-xs font-bold transition cursor-pointer">
-                📍 Đổi vị trí
-              </button>
-            </div>
+        <div id="home-taste-section" class="space-y-3">
+          <!-- HÀNG 2: DÒNG TRẠNG THÁI GỌN 1 DÒNG (THAY CHO CẢ BANNER ĐỎ VÀ TIÊU ĐỀ PHỤ) -->
+          <div id="taste-summary-text" class="text-xs sm:text-sm font-bold text-stone-800 px-1 py-0.5">
+            🎯 Tìm thấy quán chuẩn Gu tại Quy Nhơn (đang mở cửa)
           </div>
 
-          <!-- Taste & Location Recommendations Card -->
-          <div class="bg-gradient-to-br from-amber-50/70 via-rose-50/40 to-white border border-rose-200/80 rounded-3xl p-5 shadow-sm space-y-3">
-            <div class="space-y-2">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-rose-500 text-white shadow-xs">AI Gợi Ý Theo Vị Trí & Gu</span>
-                    <span class="text-xs text-stone-500 font-medium">Học theo sở thích quẹt thẻ</span>
-                  </div>
-                  <h3 class="font-black text-base sm:text-lg text-stone-900 mt-1 flex items-center flex-wrap gap-1.5">
-                    <span>🎯 Gợi ý chuẩn Gu tại</span>
-                    <span id="taste-city-name" class="text-rose-600 underline decoration-rose-300 decoration-wavy">Quy Nhơn</span>
-                  </h3>
-                </div>
+          <!-- HÀNG 3: DANH SÁCH QUÁN ĂN (LƯỚI 3 CỘT THOÁNG) -->
+          <div id="location-taste-recommendations" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-4.5 gap-[18px] pt-1">
+            <!-- Cards rendered dynamically by TasteManager -->
+          </div>
 
-                <div class="flex items-center gap-2 shrink-0">
-                  <button id="taste-specialty-toggle-btn" onclick="window.tasteManager.toggleSpecialtyFilter()"
-                    class="px-3.5 py-2 bg-white hover:bg-amber-50 text-stone-700 hover:text-amber-700 border border-stone-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer"
-                    title="Lọc chỉ hiển thị các quán đặc sản địa phương">
-                    <span>🍲 Lọc đặc sản</span>
-                  </button>
-                  <button onclick="window.authManager && window.authManager.openTasteOnboardingModal ? window.authManager.openTasteOnboardingModal() : window.tasteManager.openTasteProfileModal()"
-                    class="px-3.5 py-2 bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
-                    <span>✨ Gu của bạn</span>
-                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                  </button>
-                  <button onclick="window.app.openCityModal()"
-                    class="px-3.5 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
-                    <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Đổi Tỉnh/Thành</span>
-                  </button>
-                </div>
-              </div>
-
-              <div id="taste-summary-text" class="text-xs text-stone-600 font-medium">Sắp xếp các quán ngon được AI chấm điểm cao nhất dựa trên khẩu vị bạn đã quẹt thích.</div>
-            </div>
-
-            <div id="location-taste-recommendations" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 pt-1">
-              <!-- Cards rendered dynamically by TasteManager -->
-            </div>
-
-            <div id="taste-load-more-container" class="mt-4">
-              <!-- Rendered dynamically by TasteManager -->
-            </div>
+          <div id="taste-load-more-container" class="mt-4">
+            <!-- Rendered dynamically by TasteManager -->
           </div>
         </div>
 
@@ -1717,7 +1690,7 @@
 <script src="js/crawler.js?v=3.3.1"></script>
 <script src="js/data.js?v=3.3.1"></script>
 <script src="js/audio.js?v=3.3.1"></script>
-<script src="js/taste.js?v=3.3.1"></script>
+<script src="js/taste.js?v=3.3.5"></script>
 <script src="js/swipe.js?v=3.3.1"></script>
 <script src="js/map.js?v=3.3.1"></script>
 <script src="js/reels.js?v=3.3.1"></script>
@@ -1725,7 +1698,7 @@
 <script src="js/auth.js?v=3.3.1"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.3"></script>
-<script src="js/app.js?v=3.3.1"></script>
+<script src="js/app.js?v=3.3.5"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

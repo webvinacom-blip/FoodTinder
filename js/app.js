@@ -1466,30 +1466,34 @@ class FoodApp {
       window.authManager.syncUI();
     }
 
-    // Sidebar location
+    // Sidebar location (Đưa khối Vị trí lên đầu kèm nút Đổi nhỏ ngay bên cạnh)
     const locationEl = document.getElementById('header-location');
     if (locationEl) {
       const isLocating = !city.address || city.address.includes('Đang xác định');
       locationEl.innerHTML = `
-        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-xl px-3 py-2 transition relative" title="${city.address} (Tự động cập nhật theo GPS của bạn)">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] text-stone-400 block font-medium">Bạn đang ở:</span>
-            ${isLocating ? `
-              <span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
-                <span>Đang định vị...</span>
-              </span>
-            ` : `
-              <span class="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded-md">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                <span>Vị trí trực tiếp</span>
-              </span>
-            `}
+        <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-2xl p-2.5 sm:p-3 transition relative" title="${city.address} (Tự động cập nhật theo GPS của bạn)">
+          <div class="flex items-center justify-between gap-1.5">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="text-[10px] text-stone-400 block font-bold uppercase tracking-wider">Bạn đang ở:</span>
+              ${isLocating ? `
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-1.5 py-0.2 rounded-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                  <span>Định vị...</span>
+                </span>
+              ` : `
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.2 rounded-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span>Vị trí trực tiếp</span>
+                </span>
+              `}
+            </div>
+            <button onclick="window.app.openCityModal()" class="text-[10.5px] font-extrabold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-lg transition shadow-2xs shrink-0 cursor-pointer" title="Đổi tỉnh thành / vị trí">
+              Đổi
+            </button>
           </div>
-          <span class="text-xs font-bold text-stone-800 flex items-center justify-between gap-1 mt-0.5">
-            <span class="truncate" id="user-current-address-label" title="${city.address}">${city.address}</span>
-            <span class="text-rose-500 shrink-0">📍</span>
-          </span>
+          <div class="font-extrabold text-xs text-stone-900 truncate mt-1 leading-tight" id="user-current-address-label" title="${city.address}">
+            📍 ${city.address || city.name}
+          </div>
         </div>
       `;
     }
@@ -2884,10 +2888,10 @@ class FoodApp {
 
     if (subTab === 'taste') {
       if (btnTaste) {
-        btnTaste.className = 'flex-1 py-2 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600';
+        btnTaste.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600 whitespace-nowrap';
       }
       if (btnExplore) {
-        btnExplore.className = 'flex-1 py-2 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900';
+        btnExplore.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900 whitespace-nowrap';
       }
       if (secTaste) secTaste.classList.remove('hidden');
       if (secExplore) secExplore.classList.add('hidden');
@@ -2897,10 +2901,10 @@ class FoodApp {
       }
     } else {
       if (btnTaste) {
-        btnTaste.className = 'flex-1 py-2 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900';
+        btnTaste.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900 whitespace-nowrap';
       }
       if (btnExplore) {
-        btnExplore.className = 'flex-1 py-2 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-amber-600';
+        btnExplore.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-amber-600 whitespace-nowrap';
       }
       if (secTaste) secTaste.classList.add('hidden');
       if (secExplore) secExplore.classList.remove('hidden');
