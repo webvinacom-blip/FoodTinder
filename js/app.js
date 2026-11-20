@@ -2788,6 +2788,12 @@ class FoodApp {
     window.soundFX && window.soundFX.playPop();
     this.currentTab = tabName;
 
+    const targetEl = document.getElementById('view-' + tabName);
+    if (targetEl && !targetEl.classList.contains('active') && typeof window.switchTab === 'function') {
+      window.switchTab(tabName);
+      return;
+    }
+
     // Handle view-specific initializations
     if (tabName === 'home') {
       setTimeout(() => {
@@ -3630,7 +3636,12 @@ class FoodApp {
     this.showToast(`🎉 Đã gửi thẻ rủ đi ăn cho ${target.name}!`);
 
     // Chuyển sang tab chat và mở bạn bè đó
-    this.switchTab('chat');
+    if (typeof window.switchTab === 'function') {
+      window.switchTab('chat');
+    } else if (typeof this.switchTab === 'function') {
+      this.switchTab('chat');
+    }
+
     if (window.chatManager) {
       window.chatManager.selectChatTarget(targetId);
     }

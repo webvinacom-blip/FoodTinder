@@ -491,9 +491,34 @@ class FoodChatManager {
     if (window.lucide) window.lucide.createIcons();
   }
 
+  showMobileChatWindow() {
+    const sidebar = document.getElementById('chat-friends-sidebar');
+    const activeWindow = document.getElementById('chat-active-window');
+    if (sidebar) {
+      sidebar.classList.add('hidden');
+    }
+    if (activeWindow) {
+      activeWindow.classList.remove('hidden');
+    }
+  }
+
+  backToFriendsList() {
+    window.soundFX && window.soundFX.playPop();
+    const sidebar = document.getElementById('chat-friends-sidebar');
+    const activeWindow = document.getElementById('chat-active-window');
+    if (sidebar) {
+      sidebar.classList.remove('hidden');
+    }
+    if (activeWindow) {
+      activeWindow.classList.add('hidden');
+    }
+    this.renderFriendsSidebar(false);
+  }
+
   selectChatTarget(targetId) {
     window.soundFX && window.soundFX.playPop();
     this.currentChatTarget = targetId;
+    this.showMobileChatWindow();
     this.renderFriendsSidebar(false);
     this.renderActiveChatWindow();
   }
@@ -521,17 +546,20 @@ class FoodChatManager {
   renderAIChatWindow(container) {
     container.innerHTML = `
       <!-- AI Header -->
-      <div class="px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-amber-400 flex items-center justify-center text-white text-lg shadow-sm">
+      <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
+        <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
+          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách tin nhắn">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          </button>
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-amber-400 flex items-center justify-center text-white text-lg shadow-sm shrink-0">
             🔥
           </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <h4 class="font-extrabold text-sm text-stone-900 leading-tight">FoodTinder AI</h4>
-              <span class="bg-rose-500 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider">Trợ lý</span>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5 truncate">
+              <h4 class="font-extrabold text-sm text-stone-900 leading-tight truncate">FoodTinder AI</h4>
+              <span class="bg-rose-500 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">Trợ lý</span>
             </div>
-            <p class="text-[11px] text-stone-500 font-medium">(Trợ lý Ăn uống theo cảm xúc & thời tiết)</p>
+            <p class="text-[11px] text-stone-500 font-medium truncate">(Trợ lý Ăn uống theo cảm xúc & thời tiết)</p>
           </div>
         </div>
         <div class="flex items-center gap-1.5 text-stone-500">
@@ -727,8 +755,9 @@ class FoodChatManager {
 
   /* ── 2. RENDER DIRECT FRIEND CHAT WINDOW ── */
   renderFriendChatWindow(container, friendId) {
-    const friend = (APP_DATA.myFriends || []).find(f => f.id === friendId) || 
-                   (APP_DATA.nearbyFriends || []).find(f => f.id === friendId);
+    const targetId = Number(friendId) || friendId;
+    const friend = (APP_DATA.myFriends || []).find(f => f.id === targetId || f.id == targetId) || 
+                   (APP_DATA.nearbyFriends || []).find(f => f.id === targetId || f.id == targetId);
     if (!friend) {
       this.currentChatTarget = 'ai';
       this.renderAIChatWindow(container);
@@ -740,19 +769,22 @@ class FoodChatManager {
 
     container.innerHTML = `
       <!-- Friend Header -->
-      <div class="px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
-        <div class="flex items-center gap-3">
-          <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-rose-300 shadow-xs">
+      <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
+        <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
+          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách bạn bè">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          </button>
+          <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-rose-300 shadow-xs shrink-0">
             <img src="${friend.avatar}" alt="${friend.name}" class="w-full h-full object-cover" />
             <span class="absolute bottom-0 right-0 w-2.5 h-2.5 ${friend.status === 'Online' ? 'bg-emerald-500' : 'bg-stone-300'} rounded-full border border-white"></span>
           </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <h4 class="font-extrabold text-sm text-stone-900 leading-tight">${friend.name}</h4>
-              ${friend.age ? `<span class="text-[11px] text-stone-500 font-semibold">${friend.age}t</span>` : ''}
-              ${friend.relation ? `<span class="text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.2 rounded-full">${friend.relation}</span>` : ''}
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5 truncate">
+              <h4 class="font-extrabold text-sm text-stone-900 leading-tight truncate">${friend.name}</h4>
+              ${friend.age ? `<span class="text-[11px] text-stone-500 font-semibold shrink-0">${friend.age}t</span>` : ''}
+              ${friend.relation ? `<span class="text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.2 rounded-full shrink-0">${friend.relation}</span>` : ''}
             </div>
-            <p class="text-[11px] text-emerald-600 font-medium">${subTitle}</p>
+            <p class="text-[11px] text-emerald-600 font-medium truncate">${subTitle}</p>
           </div>
         </div>
         <div class="flex items-center gap-2">
@@ -809,14 +841,17 @@ class FoodChatManager {
 
     container.innerHTML = `
       <!-- Group Header -->
-      <div class="px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl overflow-hidden border border-amber-300">
+      <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
+        <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
+          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách nhóm">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          </button>
+          <div class="w-10 h-10 rounded-2xl overflow-hidden border border-amber-300 shrink-0">
             <img src="${group.avatar}" alt="${group.name}" class="w-full h-full object-cover" />
           </div>
-          <div>
-            <h4 class="font-extrabold text-sm text-stone-900 leading-tight">${group.name}</h4>
-            <p class="text-[11px] text-stone-500 font-medium">${group.membersCount} thành viên • Đang hẹn ăn lẩu</p>
+          <div class="min-w-0">
+            <h4 class="font-extrabold text-sm text-stone-900 leading-tight truncate">${group.name}</h4>
+            <p class="text-[11px] text-stone-500 font-medium truncate">${group.membersCount} thành viên • Đang hẹn ăn lẩu</p>
           </div>
         </div>
         <button onclick="window.app.showToast('Đã gửi thông báo hẹn giờ ăn cho cả nhóm! ⏰')" 
