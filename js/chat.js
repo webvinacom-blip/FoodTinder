@@ -201,6 +201,14 @@ class FoodChatManager {
     this.initDefaultAIMessages();
     this.renderFriendsSidebar();
     this.renderActiveChatWindow();
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        const sidebar = document.getElementById('chat-friends-sidebar');
+        const activeWindow = document.getElementById('chat-active-window');
+        if (sidebar) sidebar.classList.remove('hidden');
+        if (activeWindow) activeWindow.classList.remove('hidden');
+      }
+    });
   }
 
   initDefaultFriends() {
@@ -492,25 +500,26 @@ class FoodChatManager {
   }
 
   showMobileChatWindow() {
-    const sidebar = document.getElementById('chat-friends-sidebar');
-    const activeWindow = document.getElementById('chat-active-window');
-    if (sidebar) {
-      sidebar.classList.add('hidden');
-    }
-    if (activeWindow) {
-      activeWindow.classList.remove('hidden');
+    if (window.innerWidth < 768) {
+      const sidebar = document.getElementById('chat-friends-sidebar');
+      const activeWindow = document.getElementById('chat-active-window');
+      if (sidebar) sidebar.classList.add('hidden');
+      if (activeWindow) activeWindow.classList.remove('hidden');
     }
   }
 
   backToFriendsList() {
     window.soundFX && window.soundFX.playPop();
-    const sidebar = document.getElementById('chat-friends-sidebar');
-    const activeWindow = document.getElementById('chat-active-window');
-    if (sidebar) {
-      sidebar.classList.remove('hidden');
-    }
-    if (activeWindow) {
-      activeWindow.classList.add('hidden');
+    if (window.innerWidth < 768) {
+      const sidebar = document.getElementById('chat-friends-sidebar');
+      const activeWindow = document.getElementById('chat-active-window');
+      if (sidebar) sidebar.classList.remove('hidden');
+      if (activeWindow) activeWindow.classList.add('hidden');
+    } else {
+      const sidebar = document.getElementById('chat-friends-sidebar');
+      const activeWindow = document.getElementById('chat-active-window');
+      if (sidebar) sidebar.classList.remove('hidden');
+      if (activeWindow) activeWindow.classList.remove('hidden');
     }
     this.renderFriendsSidebar(false);
   }
@@ -518,7 +527,17 @@ class FoodChatManager {
   selectChatTarget(targetId) {
     window.soundFX && window.soundFX.playPop();
     this.currentChatTarget = targetId;
-    this.showMobileChatWindow();
+    if (window.innerWidth < 768) {
+      this.showMobileChatWindow();
+    } else {
+      const sidebar = document.getElementById('chat-friends-sidebar');
+      const activeWindow = document.getElementById('chat-active-window');
+      if (sidebar) sidebar.classList.remove('hidden');
+      if (activeWindow) {
+        activeWindow.classList.remove('hidden');
+        activeWindow.style.display = 'flex';
+      }
+    }
     this.renderFriendsSidebar(false);
     this.renderActiveChatWindow();
   }
@@ -530,6 +549,11 @@ class FoodChatManager {
   renderActiveChatWindow() {
     const windowEl = document.getElementById('chat-active-window');
     if (!windowEl) return;
+
+    if (window.innerWidth >= 768) {
+      windowEl.classList.remove('hidden');
+      windowEl.style.display = 'flex';
+    }
 
     if (this.currentChatTarget === 'ai') {
       this.renderAIChatWindow(windowEl);
@@ -576,12 +600,12 @@ class FoodChatManager {
       </div>
 
       <!-- Messages Stream -->
-      <div id="ai-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none" style="max-width:760px; align-self:center; width:100%;">
+      <div id="ai-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none w-full max-w-3xl mx-auto">
         ${this.renderAIMessageStreamHtml()}
       </div>
 
       <!-- Quick prompts -->
-      <div class="px-5 py-2 flex gap-2 overflow-x-auto scrollbar-none border-t border-stone-200/60 bg-white/80 text-xs shrink-0" style="max-width:760px; align-self:center; width:100%;">
+      <div class="px-5 py-2 flex gap-2 overflow-x-auto scrollbar-none border-t border-stone-200/60 bg-white/80 text-xs shrink-0 w-full max-w-3xl mx-auto">
         <button onclick="window.chatManager.handleUserSubmit('Có ai ở gần muốn đi ăn lẩu không AI ơi?')" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-full whitespace-nowrap font-bold">👥 Tìm bạn ăn lẩu</button>
         <button onclick="window.chatManager.handleUserSubmit('Trời mưa Quy Nhơn nên ăn gì cho ấm?')" class="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 rounded-full whitespace-nowrap text-stone-700 font-medium">🌧️ Mưa ăn gì?</button>
         <button onclick="window.chatManager.handleUserSubmit('Tìm quán nướng bò xì xèo gần đây')" class="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 rounded-full whitespace-nowrap text-stone-700 font-medium">🥩 Quán nướng xì xèo</button>
@@ -590,7 +614,7 @@ class FoodChatManager {
       </div>
 
       <!-- AI Chat Input Bar -->
-      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-3 shrink-0" style="max-width:760px; align-self:center; width:100%;">
+      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-3 shrink-0 w-full max-w-3xl mx-auto">
         <input type="text" id="ai-chat-input"
           placeholder="Nhắn cho trợ lý (VD: Có ai ở gần muốn đi ăn lẩu không?)..."
           class="flex-1 bg-stone-100 focus:bg-white text-sm px-4 py-2.5 rounded-full border border-stone-200 focus:border-rose-400 focus:outline-none transition"
@@ -792,14 +816,14 @@ class FoodChatManager {
             <i data-lucide="phone" class="w-4 h-4"></i>
           </button>
           <button onclick="window.chatManager.sendFoodInviteToFriend(${friend.id})" 
-            class="px-3.5 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-xs rounded-xl shadow-xs hover:opacity-95 transition flex items-center gap-1">
+            class="px-2.5 sm:px-3.5 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-xs rounded-xl shadow-xs hover:opacity-95 transition flex items-center gap-1 whitespace-nowrap shrink-0">
             <span>Rủ đi ăn</span> <span>🍲</span>
           </button>
         </div>
       </div>
 
       <!-- Messages Stream -->
-      <div id="friend-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none" style="max-width:760px; align-self:center; width:100%;">
+      <div id="friend-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none w-full max-w-3xl mx-auto">
         <div class="flex justify-center">
           <span class="bg-stone-200/70 text-stone-600 text-[10px] font-semibold px-3 py-0.5 rounded-full">Hôm nay</span>
         </div>
@@ -808,7 +832,7 @@ class FoodChatManager {
       </div>
 
       <!-- Quick eatery sharing bar -->
-      <div class="px-4 py-2 bg-white/90 border-t border-stone-100 flex items-center gap-2 overflow-x-auto scrollbar-none text-xs shrink-0" style="max-width:760px; align-self:center; width:100%;">
+      <div class="px-4 py-2 bg-white/90 border-t border-stone-100 flex items-center gap-2 overflow-x-auto scrollbar-none text-xs shrink-0 w-full max-w-3xl mx-auto">
         <span class="text-[10px] text-stone-400 font-bold shrink-0">Gửi quán:</span>
         <button onclick="window.chatManager.sendFoodDirectly(${friend.id}, 1)" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 rounded-full text-stone-700 text-[11px] font-semibold whitespace-nowrap">🍲 Lẩu Thái Cô Vy</button>
         <button onclick="window.chatManager.sendFoodDirectly(${friend.id}, 2)" class="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 rounded-full text-stone-700 text-[11px] font-semibold whitespace-nowrap">🥩 Bò Nướng Gia Bảo</button>
@@ -816,7 +840,7 @@ class FoodChatManager {
       </div>
 
       <!-- Friend Message Input Bar -->
-      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-2 shrink-0" style="max-width:760px; align-self:center; width:100%;">
+      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-2 shrink-0 w-full max-w-3xl mx-auto">
         <input type="text" id="friend-chat-input" 
           placeholder="Nhắn tin cho ${friend.name}..."
           class="flex-1 bg-stone-100 text-xs px-4 py-2.5 rounded-full border border-stone-200 focus:outline-none focus:bg-white focus:border-rose-400 transition"
@@ -861,12 +885,12 @@ class FoodChatManager {
       </div>
 
       <!-- Messages Stream -->
-      <div id="group-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none" style="max-width:760px; align-self:center; width:100%;">
+      <div id="group-messages-stream" class="flex-1 overflow-y-auto p-5 space-y-3.5 scrollbar-none w-full max-w-3xl mx-auto">
         ${group.messages.map(m => this.renderMessageBubble(m, true, group.id, group.avatar)).join('')}
       </div>
 
       <!-- Group Input Bar -->
-      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-2 shrink-0" style="max-width:760px; align-self:center; width:100%;">
+      <div class="p-3.5 bg-white border-t border-stone-200 flex items-center gap-2 shrink-0 w-full max-w-3xl mx-auto">
         <input type="text" id="group-chat-input" 
           placeholder="Nhắn tin vào nhóm..."
           class="flex-1 bg-stone-100 text-xs px-4 py-2.5 rounded-full border border-stone-200 focus:outline-none focus:bg-white focus:border-rose-400"

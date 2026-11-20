@@ -761,15 +761,24 @@ class FoodApp {
     window.APP_DATA = APP_DATA;
 
     // Áp dụng thuật toán tính khoảng cách thực tế (Haversine)
-    const userLoc = APP_DATA.homeLocation || { lat: 13.7735, lng: 109.2365 };
+    const qnCenter = { lat: 13.7765, lng: 109.2235 };
+    const userLoc = APP_DATA.homeLocation || qnCenter;
     const calcDistFn = window.calculateDistanceKm || APP_DATA.calculateDistanceKm;
     const formatDistFn = window.formatDistanceText || APP_DATA.formatDistanceText;
+    const distToQuyNhon = calcDistFn ? calcDistFn(userLoc.lat, userLoc.lng, qnCenter.lat, qnCenter.lng) : 0;
+    const isFarFromQuyNhon = distToQuyNhon > 45 || (APP_DATA.currentCity && APP_DATA.currentCity.cityId !== 'quynhon');
+
     if (calcDistFn && formatDistFn) {
       APP_DATA.foods.forEach(f => {
         if (f.latitude === undefined && f.lat !== undefined) f.latitude = Number(f.lat);
         if (f.longitude === undefined && f.lng !== undefined) f.longitude = Number(f.lng);
         if (f.lat && f.lng) {
-          const realDist = calcDistFn(userLoc.lat, userLoc.lng, f.lat, f.lng);
+          // Nếu ở tỉnh khác xa Quy Nhơn, tính khoảng cách quán Quy Nhơn từ trung tâm Quy Nhơn
+          // để tránh hiện khoảng cách 409km vô lý trên thẻ giao hàng
+          const isQuyNhonFood = (f.cityId === 'quynhon' || !f.cityId || (f.address && f.address.toLowerCase().includes('quy nhơn')));
+          const originLat = (isFarFromQuyNhon && isQuyNhonFood) ? qnCenter.lat : userLoc.lat;
+          const originLng = (isFarFromQuyNhon && isQuyNhonFood) ? qnCenter.lng : userLoc.lng;
+          const realDist = calcDistFn(originLat, originLng, f.lat, f.lng);
           f.distance = Number(realDist.toFixed(1));
           f.distanceText = formatDistFn(realDist);
         }
@@ -950,12 +959,23 @@ class FoodApp {
     // Cập nhật khoảng cách thực tế (Haversine) cho toàn bộ quán ăn theo GPS người dùng
     const calcDistFn = window.calculateDistanceKm || (window.APP_DATA && window.APP_DATA.calculateDistanceKm);
     const formatDistFn = window.formatDistanceText || (window.APP_DATA && window.APP_DATA.formatDistanceText);
+    const qnCenter = { lat: 13.7765, lng: 109.2235 };
+    const distToQuyNhon = calcDistFn ? calcDistFn(lat, lng, qnCenter.lat, qnCenter.lng) : 0;
+    const isFarFromQuyNhon = distToQuyNhon > 45 || resolvedCityId !== 'quynhon';
+    APP_DATA.isDemoLocation = isFarFromQuyNhon;
+    APP_DATA.detectedCityName = cityName || resolvedCityName;
+
     if (calcDistFn && formatDistFn && Array.isArray(APP_DATA.foods)) {
       APP_DATA.foods.forEach(f => {
         const fLat = Number(f.lat !== undefined ? f.lat : f.latitude);
         const fLng = Number(f.lng !== undefined ? f.lng : f.longitude);
         if (!isNaN(fLat) && !isNaN(fLng)) {
-          const d = calcDistFn(lat, lng, fLat, fLng);
+          // Nếu ở tỉnh khác xa Quy Nhơn, tính khoảng cách quán Quy Nhơn từ trung tâm Quy Nhơn
+          // để tránh hiện khoảng cách 409km vô lý trên thẻ giao hàng
+          const isQuyNhonFood = (f.cityId === 'quynhon' || !f.cityId || (f.address && f.address.toLowerCase().includes('quy nhơn')));
+          const originLat = (isFarFromQuyNhon && isQuyNhonFood) ? qnCenter.lat : lat;
+          const originLng = (isFarFromQuyNhon && isQuyNhonFood) ? qnCenter.lng : lng;
+          const d = calcDistFn(originLat, originLng, fLat, fLng);
           f.distance = Number(d.toFixed(1));
           f.distanceText = formatDistFn(d);
         }
@@ -1498,8 +1518,33 @@ class FoodApp {
           <div class="font-extrabold text-xs text-stone-900 truncate mt-1 leading-tight" id="user-current-address-label" title="${city.address}">
             📍 ${city.address || city.name}
           </div>
+          ${(APP_DATA.isDemoLocation || city.cityId !== 'quynhon') ? `
+            <div class="mt-2 pt-2 border-t border-[#FFD8C2]/80 flex items-center justify-between text-[10.5px]">
+              <span class="text-amber-800 font-bold inline-flex items-center gap-1">
+                <span>📍</span>
+                <span>Đang hiển thị dữ liệu gợi ý tại Quy Nhơn</span>
+              </span>
+              <button onclick="window.app.switchLocationToQuyNhon()" class="text-rose-600 hover:text-rose-700 font-extrabold underline cursor-pointer">
+                Về Quy Nhơn
+              </button>
+            </div>
+          ` : ''}
         </div>
       `;
+    }
+
+    // Cập nhật banner thông báo vị trí ngoài Quy Nhơn ở đầu feed
+    const demoBanner = document.getElementById('home-demo-banner');
+    if (demoBanner) {
+      if (APP_DATA.isDemoLocation || city.cityId !== 'quynhon') {
+        demoBanner.classList.remove('hidden');
+        demoBanner.classList.add('flex');
+        const detectedCityEl = document.getElementById('demo-detected-city');
+        if (detectedCityEl) detectedCityEl.textContent = city.name || 'ngoài Quy Nhơn';
+      } else {
+        demoBanner.classList.add('hidden');
+        demoBanner.classList.remove('flex');
+      }
     }
 
     // Topbar weather chip (Rút gọn thành: temp, bỏ city.name vì đã có ở cột trái, tránh bẻ dòng)
@@ -4417,6 +4462,11 @@ class FoodApp {
   closeMatchModal() {
     const modal = document.getElementById('match-modal');
     if (modal) modal.classList.add('hidden');
+  }
+
+  switchLocationToQuyNhon() {
+    this.selectCityAndWeather('Quy Nhơn', 'Quy Nhơn, P. Quy Nhơn Nam', '27°C', 'Mát mẻ', '⛅', 13.7765, 109.2235, 'quynhon');
+    this.showToast('📍 Đã chuyển về vị trí trung tâm TP. Quy Nhơn!');
   }
 
   openCityModal() {

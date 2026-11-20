@@ -86,7 +86,7 @@ const GROCERY_COMBOS = [
     price: '189.000đ',
     originalPrice: '250.000đ',
     discount: '-24%',
-    image: 'https://images.unsplash.com/photo-1543157148-f819d16ae75b?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=500&q=80',
     desc: 'Hạt điều rang củi Bình Phước vỏ lụa 500g + Hạnh nhân rang bơ Mỹ + Mứt dừa non Bến Tre + Trà lài thượng hạng',
     shopeeUrl: 'https://shopee.vn/search?keyword=hop+qua+hat+dinh+duong+tet'
   },
@@ -173,7 +173,7 @@ const GROCERY_ITEMS = [
     price: '115.000đ',
     originalPrice: '145.000đ',
     discount: '-21%',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1536591375315-1b83681e3be1?auto=format&fit=crop&w=500&q=80',
     shopeeUrl: 'https://shopee.vn/search?keyword=hat+dieu+rang+cui+binh+phuoc'
   },
   {
@@ -580,14 +580,27 @@ class GroceryManager {
     this.fetchFromFirestore();
   }
 
-  // ── LOCAL STORAGE FALLBACK ──
+  // ── LOCAL STORAGE FALLBACK & CLEANUP ──
+  filterCleanItems(items) {
+    if (!Array.isArray(items)) return [];
+    return items.filter(item => {
+      const url = item.shopeeUrl || '';
+      if (url.includes('.222.333') || url.includes('.777.888') || url.includes('.999.111') || url.includes('.333.444') || url.includes('.123456.')) {
+        return false;
+      }
+      return true;
+    });
+  }
+
   loadCustomLocalData() {
     try {
       const savedItems = localStorage.getItem('foodtinder_custom_grocery_items_v1');
       if (savedItems) {
         const parsed = JSON.parse(savedItems);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          window.GROCERY_ITEMS = parsed;
+          const cleaned = this.filterCleanItems(parsed);
+          window.GROCERY_ITEMS = cleaned;
+          localStorage.setItem('foodtinder_custom_grocery_items_v1', JSON.stringify(cleaned));
         }
       }
       const savedShops = localStorage.getItem('foodtinder_custom_grocery_shops_v1');
@@ -799,11 +812,11 @@ class GroceryManager {
 
     if (this.importerTab === 'products') {
       textarea.value = [
-        'https://shopee.vn/Bap-rang-bo-pho-mai-caramel-Uncle-Jax-150g-i.123456.789012',
-        'https://shopee.vn/Hat-dieu-rang-cui-Binh-Phuoc-vo-lua-500g-i.222.333',
-        'https://shopee.vn/Set-Hop-Qua-Tet-An-Khang-6-Mon-Bieu-Tang-i.777.888',
-        'https://shopee.vn/Kho-ga-la-chanh-cay-gion-hu-500g-i.999.111',
-        'https://shopee.vn/Mi-ly-omachi-bo-ham-xot-ca-chua-i.333.444'
+        'https://shopee.vn/Bap-rang-bo-khong-lo-Uncle-Jax-My-150g-i.48922114.7891234567',
+        'https://shopee.vn/Hat-dieu-rang-muoi-A-Co-Binh-Phuoc-hop-500g-i.67891234.1234567890',
+        'https://shopee.vn/Set-qua-Tet-hat-dinh-duong-thuong-hang-An-Khang-i.89123456.2345678901',
+        'https://shopee.vn/Kho-ga-la-chanh-loai-1-thom-ngon-hu-500g-i.12349876.3456789012',
+        'https://shopee.vn/Thung-30-ly-Mi-Omachi-Xot-Bo-Ham-68g-i.56781234.4567890123'
       ].join('\n');
     } else {
       textarea.value = [
@@ -892,9 +905,9 @@ class GroceryManager {
 
   // Gợi ý ảnh đẹp tương ứng theo category/subtag
   suggestImageForClass(category, subTag) {
-    if (subTag === 'nuts') return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80';
+    if (subTag === 'nuts') return 'https://images.unsplash.com/photo-1536591375315-1b83681e3be1?auto=format&fit=crop&w=500&q=80';
     if (subTag === 'dried_fruits') return 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=500&q=80';
-    if (subTag === 'gift_box') return 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=80';
+    if (subTag === 'gift_box') return 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=500&q=80';
     if (category === 'movie') return 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=500&q=80';
     if (category === 'hunger') return 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80';
     if (category === 'drinking') return 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80';
@@ -1255,7 +1268,7 @@ class GroceryManager {
           class="w-full rounded-2xl border border-stone-300 p-3 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-[#EE4D2D] focus:border-transparent outline-none bg-white shadow-2xs resize-none"
           placeholder="${
             isProducts
-              ? 'Dán một hoặc nhiều link sản phẩm Shopee tại đây...\nVí dụ:\nhttps://shopee.vn/Bap-rang-bo-pho-mai-caramel-Uncle-Jax-150g-i.123456.789012\nhttps://shopee.vn/Hat-dieu-rang-cui-Binh-Phuoc-vo-lua-500g-i.222.333'
+              ? 'Dán một hoặc nhiều link sản phẩm Shopee tại đây...\nVí dụ:\nhttps://shopee.vn/Bap-rang-bo-khong-lo-Uncle-Jax-My-150g-i.48922114.7891234567\nhttps://shopee.vn/Hat-dieu-rang-muoi-A-Co-Binh-Phuoc-hop-500g-i.67891234.1234567890'
               : 'Dán một hoặc nhiều link Shop Shopee tại đây...\nVí dụ:\nhttps://shopee.vn/tiemanvatbebu\nhttps://shopee.vn/dac_san_xu_nau_thao_nguyen'
           }"></textarea>
 
@@ -1643,15 +1656,16 @@ class GroceryManager {
                       </p>
                     </div>
 
-                    <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2">
-                      <div>
+                    <div class="pt-2.5 border-t border-stone-100 flex flex-col gap-2">
+                      <div class="flex items-baseline justify-between">
                         <div class="flex items-baseline gap-1.5">
                           <span class="font-black text-sm sm:text-base text-rose-600">${combo.price}</span>
                           <span class="text-[10px] text-stone-400 line-through">${combo.originalPrice}</span>
                         </div>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">Tiết kiệm ${combo.discount || '20%'}</span>
                       </div>
                       <a href="${combo.shopeeUrl}" target="_blank" rel="noopener noreferrer"
-                        class="px-3.5 py-2 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer">
+                        class="w-full py-2 px-3 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer">
                         <span>Mua trên Shopee</span>
                         <span>↗</span>
                       </a>
@@ -1745,15 +1759,16 @@ class GroceryManager {
                       </h5>
                     </div>
 
-                    <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2">
-                      <div>
+                    <div class="pt-2 border-t border-stone-100 flex flex-col gap-2">
+                      <div class="flex items-baseline justify-between">
                         <div class="flex items-baseline gap-1.5">
                           <span class="font-black text-sm sm:text-base text-rose-600">${item.price}</span>
                           ${item.originalPrice ? `<span class="text-[10px] text-stone-400 line-through">${item.originalPrice}</span>` : ''}
                         </div>
+                        <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/80">Freeship Xtra</span>
                       </div>
                       <a href="${item.shopeeUrl}" target="_blank" rel="noopener noreferrer"
-                        class="px-3 py-1.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer">
+                        class="w-full py-2 px-3 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer">
                         <span>Mua trên Shopee</span>
                         <span>↗</span>
                       </a>

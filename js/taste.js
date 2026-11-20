@@ -1181,11 +1181,17 @@ class TasteManager {
         ? `<span class="inline-flex items-center gap-1 font-extrabold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-lg border border-amber-300 text-xs shadow-2xs shrink-0">🍲 Đang lọc: Đặc sản</span>`
         : '';
 
+      const isDemo = (window.APP_DATA && window.APP_DATA.isDemoLocation) || currentCity.cityId !== 'quynhon';
+      const demoBadge = isDemo
+        ? `<span class="inline-flex items-center gap-1 font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/90 text-[11px] shadow-2xs shrink-0">📍 Đang hiển thị dữ liệu gợi ý tại Quy Nhơn <button onclick="window.app.switchLocationToQuyNhon()" class="text-rose-600 hover:text-rose-700 underline font-extrabold ml-0.5 cursor-pointer">Đổi vị trí</button></span>`
+        : '';
+
       if (totalCount > 0) {
         summaryTextEl.innerHTML = `
           <div class="flex items-center gap-2 flex-wrap text-xs sm:text-sm font-bold text-stone-800">
             ${filterBadge}
-            <span>🎯 Tìm thấy <strong class="text-rose-600 font-black">${totalCount}</strong> quán ${this.onlySpecialties ? 'đặc sản ' : ''}chuẩn Gu tại <strong class="text-stone-900">${currentCity.name}</strong> <span class="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full text-[11px] sm:text-xs inline-flex items-center gap-1">🟢 Đang mở cửa</span></span>
+            <span>🎯 Tìm thấy <strong class="text-rose-600 font-black">${totalCount}</strong> quán ${this.onlySpecialties ? 'đặc sản ' : ''}chuẩn Gu ${isDemo ? '' : `tại <strong class="text-stone-900">${currentCity.name}</strong> `}<span class="text-emerald-700 font-bold bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-full text-[11px] sm:text-xs inline-flex items-center gap-1">🟢 Đang mở cửa</span></span>
+            ${demoBadge}
           </div>
         `;
       } else {

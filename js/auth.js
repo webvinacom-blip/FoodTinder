@@ -1896,13 +1896,13 @@ class AuthManager {
       if (user) {
         topbarAuthContainer.innerHTML = `
           <button onclick="window.authManager.openProfileModal()" 
-            class="flex items-center gap-1.5 p-1 pr-2.5 rounded-full bg-stone-50 hover:bg-stone-100 border border-stone-200 transition cursor-pointer shadow-2xs active:scale-95 group" 
+            class="flex items-center gap-1.5 p-1 pr-1.5 sm:pr-2.5 rounded-full bg-stone-50 hover:bg-stone-100 border border-stone-200 transition cursor-pointer shadow-2xs active:scale-95 group" 
             title="Tài khoản: ${user.name} • Danh hiệu: ${currentTitle.icon} ${currentTitle.name} (Bấm để xem)">
             <div class="relative shrink-0 flex items-center justify-center">
               <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-6 h-6 rounded-full object-cover border border-orange-300 shrink-0" />
               <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-white shadow-2xs border border-stone-200 flex items-center justify-center text-[8.5px] leading-none" title="${currentTitle.name}">${currentTitle.icon}</span>
             </div>
-            <span class="text-xs font-bold text-stone-800 max-w-[85px] sm:max-w-[120px] truncate group-hover:text-rose-600 transition">${user.name}</span>
+            <span class="text-xs font-bold text-stone-800 hidden sm:inline max-w-[120px] truncate group-hover:text-rose-600 transition">${user.name}</span>
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
           </button>
         `;
