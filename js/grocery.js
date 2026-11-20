@@ -1,368 +1,530 @@
 // ══════════════════════════════════════════════════════════════════════
-// FOODTINDER GROCERY & CONVENIENCE MART ENGINE (TAB TẠP HOÁ 3 CỘT)
+// FOODTINDER - KỆ GỢI Ý ĐỒ ĂN VẶT SHOPEE THEO CẢM XÚC (3 CỘT AFFILIATE)
+// Mô hình: Gợi ý theo ngữ cảnh tâm trạng -> Tín hiệu chốt đơn Shopee Mall / Yêu thích+
 // ══════════════════════════════════════════════════════════════════════
 
 const GROCERY_NEEDS = [
-  { id: 'all', label: 'Tất cả nhu cầu', emoji: '✨', desc: 'Toàn bộ combo & sản phẩm' },
-  { id: 'movie', label: 'Cày phim / Ăn vặt', emoji: '🍿', desc: 'Snack khoai tây, bắp rang, nước ngọt' },
+  { id: 'all', label: 'Tất cả ăn vặt', emoji: '✨', desc: 'Toàn bộ set hot trend & món ngon' },
+  { id: 'movie', label: 'Cày phim / Ăn vặt', emoji: '🍿', desc: 'Bắp rang bơ, snack khoai tây, rong biển' },
   { id: 'hunger', label: 'Cứu đói 5 phút', emoji: '🍜', desc: 'Mì ly, xúc xích tiệt trùng, bánh mì tươi' },
-  { id: 'drinking', label: 'Nhậu tại gia', emoji: '🍻', desc: 'Khô gà lá chanh, mực rim, đậu phộng, bia' },
-  { id: 'refresh', label: 'Giải khát 27°C', emoji: '🧊', desc: 'Nước ép, trái cây gọt sẵn, kem ốc quế' },
-  { id: 'specialty', label: 'Đặc sản Quy Nhơn', emoji: '🎁', desc: 'Nem chả Chợ Huyện, bánh ít, tré mang về' }
+  { id: 'drinking', label: 'Nhậu tại gia', emoji: '🍻', desc: 'Khô gà lá chanh, mực rim me, đậu phộng' },
+  { id: 'refresh', label: 'Giải nhiệt / Trà chiều', emoji: '🧊', desc: 'Trà đào, nước dừa tươi, thạch củ năng' },
+  { id: 'specialty', label: 'Đặc sản làm quà', emoji: '🎁', desc: 'Nem chua Chợ Huyện, bánh ít lá gai, tré' }
 ];
 
-const GROCERY_STORES = [
-  { id: 'winmart_ngomay', name: 'WinMart+ Ngô Mây', address: '68 Ngô Mây, P. Ngô Mây', distance: 'Cách bạn 650m', rating: '4.8 ⭐', type: 'Siêu thị mini' },
-  { id: 'bhx_nth', name: 'Bách Hoá Xanh Nguyễn Thái Học', address: '182 Nguyễn Thái Học, P. Ngô Mây', distance: 'Cách bạn 1.1km', rating: '4.7 ⭐', type: 'Bách hoá thực phẩm' },
-  { id: 'coop_leduan', name: 'Co.op Food Lê Duẩn', address: '45 Lê Duẩn, P. Lý Thường Kiệt', distance: 'Cách bạn 1.4km', rating: '4.8 ⭐', type: 'Siêu thị mini' },
-  { id: 'circlek_xuandieu', name: 'Circle K Xuân Diệu', address: '210 Xuân Diệu, P. Trần Phú', distance: 'Cách bạn 800m', rating: '4.9 ⭐', type: 'Cửa hàng 24/7' },
-  { id: 'dacsan_thanhliem', name: 'Đặc Sản Thanh Liêm Quy Nhơn', address: '128 Chương Dương, P. Nguyễn Văn Cừ', distance: 'Cách bạn 1.2km', rating: '4.9 ⭐', type: 'Tiệm đặc sản xứ Nẫu' },
-  { id: 'tre_batam', name: 'Tiệm Tré Nem Bà Tám', address: '03 Phan Bội Châu, P. Lê Lợi', distance: 'Cách bạn 1.5km', rating: '4.9 ⭐', type: 'Đặc sản truyền thống' }
-];
-
-const GROCERY_COMBOS = [
+// ── TOP SHOP ĂN VẶT & ĐẶC SẢN UY TÍN TRÊN SHOPEE (CỘT PHẢI) ──
+const SHOPEE_TOP_SHOPS = [
   {
-    id: 'combo_movie',
-    name: 'Combo Mưa Rào Cày Phim',
-    category: 'movie',
-    price: '89.000đ',
-    priceNum: 89000,
-    originalPrice: '115.000đ',
-    discount: '-22%',
-    image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?auto=format&fit=crop&w=500&q=80',
-    store: 'WinMart+ Ngô Mây',
-    distance: 'Cách bạn 650m',
-    desc: '1 Bắp rang bơ phô mai lớn + 2 Snack Lay’s Tự Nhiên + 2 Lon Coca-Cola 320ml ướp lạnh',
-    items: ['Bắp rang bơ phô mai WinMart', '2x Snack Lay’s Tự Nhiên', '2x Coca-Cola ướp lạnh'],
-    badge: '🔥 Bán chạy nhất'
+    id: 'shop_bebu',
+    name: 'Tiệm Ăn Vặt Bé Bự',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    avatar: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=120&q=80',
+    rating: '4.9 ⭐',
+    followers: '320k+ người theo dõi',
+    highlight: 'Bánh tráng phơi sương, khô gà bơ tỏi, bim bim khổng lồ',
+    url: 'https://shopee.vn/search?keyword=tiem+an+vat+be+bu'
   },
   {
-    id: 'combo_hunger',
-    name: 'Combo Cứu Đói 5 Phút',
-    category: 'hunger',
-    price: '45.000đ',
-    priceNum: 45000,
-    originalPrice: '58.000đ',
-    discount: '-22%',
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=500&q=80',
-    store: 'Circle K Xuân Diệu',
-    distance: 'Cách bạn 800m',
-    desc: '1 Mì Ly Omachi Xốt Bò Hầm + 2 Xúc xích CP tiệt trùng + 1 Bánh mì tươi bơ sữa Kinh Đô',
-    items: ['Mì Ly Omachi Bò Hầm', '2x Xúc xích CP', 'Bánh mì tươi Kinh Đô'],
-    badge: '⚡ Cứu đói đêm'
+    id: 'shop_thaonguyen',
+    name: 'Đặc Sản Xứ Nẫu Thảo Nguyên',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    avatar: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=120&q=80',
+    rating: '4.9 ⭐',
+    followers: '68k+ người theo dõi',
+    highlight: 'Nem chua Chợ Huyện, tré rơm Quy Nhơn, mực rim me',
+    url: 'https://shopee.vn/search?keyword=dac+san+quy+nhon+thao+nguyen'
   },
   {
-    id: 'combo_drinking',
-    name: 'Combo Nhậu Tại Gia Chém Gió',
-    category: 'drinking',
-    price: '135.000đ',
-    priceNum: 135000,
-    originalPrice: '175.000đ',
-    discount: '-23%',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80',
-    store: 'Bách Hoá Xanh Nguyễn Thái Học',
-    distance: 'Cách bạn 1.1km',
-    desc: '1 Hũ Khô gà lá chanh cay giòn 200g + 1 Hũ Mực rim me Quy Nhơn 150g + 1 Đậu phộng Tân Tân + 2 Lon Tiger Crystal',
-    items: ['Khô gà lá chanh 200g', 'Mực rim me 150g', 'Đậu phộng tỏi ớt', '2x Bia Tiger Crystal'],
-    badge: '🍻 Hợp cạ cạ cứng'
+    id: 'shop_curua',
+    name: 'Bách Hoá Ăn Vặt Cụ Rùa',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    avatar: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=120&q=80',
+    rating: '4.8 ⭐',
+    followers: '145k+ người theo dõi',
+    highlight: 'Đồ ăn vặt nội địa, que cay, bánh ngọt sốt phô mai',
+    url: 'https://shopee.vn/search?keyword=bach+hoa+an+vat+cu+rua'
   },
   {
-    id: 'combo_refresh',
-    name: 'Combo Giải Nhiệt 27°C',
-    category: 'refresh',
-    price: '68.000đ',
-    priceNum: 68000,
-    originalPrice: '85.000đ',
-    discount: '-20%',
-    image: 'https://images.unsplash.com/photo-1619895092538-128341789043?auto=format&fit=crop&w=500&q=80',
-    store: 'Co.op Food Lê Duẩn',
-    distance: 'Cách bạn 1.4km',
-    desc: '1 Hộp Trái cây cắt sẵn (Xoài, ổi, mận kèm muối tôm) + 1 Chai Nước ép Ổi Hồng 350ml + 1 Kem Ốc Quế socola',
-    items: ['Trái cây gọt sẵn muối tôm', 'Nước ép Ổi Hồng 350ml', 'Kem Ốc Quế socola'],
-    badge: '🧊 Thanh mát giải nhiệt'
-  },
-  {
-    id: 'combo_specialty',
-    name: 'Combo Đặc Sản Nẫu Làm Quà',
-    category: 'specialty',
-    price: '175.000đ',
-    priceNum: 175000,
-    originalPrice: '210.000đ',
-    discount: '-17%',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80',
-    store: 'Đặc Sản Thanh Liêm Quy Nhơn',
-    distance: 'Cách bạn 1.2km',
-    desc: '10 Chiếc Nem chua Chợ Huyện đóng hộp + 1 Cây Tré rơm Quy Nhơn loại 1 + 1 Hộp Bánh ít lá gai xứ Nẫu',
-    items: ['10x Nem chua Chợ Huyện', 'Tré rơm rơm Quy Nhơn', 'Bánh ít lá gai (5 cái)'],
-    badge: '🎁 Quà quê chuẩn vị'
+    id: 'shop_snackhouse',
+    name: 'Snack House Official Store',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    avatar: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=120&q=80',
+    rating: '5.0 ⭐',
+    followers: '510k+ người theo dõi',
+    highlight: 'Hạt điều rang muối, khoai tây sấy giòn, khô bò miếng',
+    url: 'https://shopee.vn/search?keyword=snack+house+official'
   }
 ];
 
+// ── SET ĂN VẶT SHOPEE HOT TREND THEO CẢM XÚC (KHU VỰC 1 CỘT GIỮA) ──
+const GROCERY_COMBOS = [
+  {
+    id: 'set_movie',
+    name: 'Set Cày Phim Thâu Đêm 4 Món Hot Trend',
+    category: 'movie',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: '18,4k đã bán',
+    price: '89.000đ',
+    originalPrice: '125.000đ',
+    discount: '-28%',
+    image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?auto=format&fit=crop&w=500&q=80',
+    desc: 'Bắp rang bơ caramel Mỹ + Snack khoai tây Lay’s + Rong biển Tao Kae Noi + Kẹo dẻo chua ngọt',
+    shopeeUrl: 'https://shopee.vn/search?keyword=combo+an+vat+cay+phim'
+  },
+  {
+    id: 'set_hunger',
+    name: 'Set Cứu Đói Nhanh 5 Phút Đêm Khuya',
+    category: 'hunger',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: '24,1k đã bán',
+    price: '49.000đ',
+    originalPrice: '68.000đ',
+    discount: '-27%',
+    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=500&q=80',
+    desc: 'Mì Ly Omachi Bò Hầm xốt đậm vị + 2 Cây xúc xích CP tiệt trùng + Bánh mì tươi Kinh Đô bơ sữa',
+    shopeeUrl: 'https://shopee.vn/search?keyword=combo+mi+ly+xuc+xich'
+  },
+  {
+    id: 'set_drinking',
+    name: 'Set Nhậu Lai Rai Cạ Cứng Chuẩn Vị',
+    category: 'drinking',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '5.0',
+    soldCount: '35,7k đã bán',
+    price: '139.000đ',
+    originalPrice: '185.000đ',
+    discount: '-24%',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80',
+    desc: 'Khô gà lá chanh cay giòn hũ lớn 300g + Mực cán rim me Quy Nhơn 200g + Đậu phộng da cá tỏi ớt',
+    shopeeUrl: 'https://shopee.vn/search?keyword=combo+kho+ga+muc+rim+me'
+  },
+  {
+    id: 'set_refresh',
+    name: 'Set Giải Nhiệt & Trà Chiều Thanh Mát',
+    category: 'refresh',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.8',
+    soldCount: '12,8k đã bán',
+    price: '69.000đ',
+    originalPrice: '95.000đ',
+    discount: '-27%',
+    image: 'https://images.unsplash.com/photo-1619895092538-128341789043?auto=format&fit=crop&w=500&q=80',
+    desc: 'Trà đào túi lọc Cozy cao cấp + Thạch củ năng dừa xiêm + Trái cây sấy dẻo ngũ vị thanh ngọt',
+    shopeeUrl: 'https://shopee.vn/search?keyword=set+tra+chieu+an+vat'
+  },
+  {
+    id: 'set_specialty',
+    name: 'Set Đặc Sản Xứ Nẫu Làm Quà Biếu',
+    category: 'specialty',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.9',
+    soldCount: '9,6k đã bán',
+    price: '179.000đ',
+    originalPrice: '220.000đ',
+    discount: '-18%',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80',
+    desc: '10 Chiếc Nem chua Chợ Huyện lá ổi đóng hộp + 1 Cây Tré rơm Quy Nhơn loại 1 + 1 Hộp Bánh ít lá gai',
+    shopeeUrl: 'https://shopee.vn/search?keyword=dac+san+quy+nhon+nem+tre'
+  }
+];
+
+// ── KỆ HÀNG ĂN VẶT & MÓN NGON SHOPEE THEO CẢM XÚC (KHU VỰC 2 CỘT GIỮA) ──
 const GROCERY_ITEMS = [
   // 🍿 CÀY PHIM / ĂN VẶT
   {
-    id: 'item_popcorn',
-    name: 'Bắp rang bơ phô mai khổng lồ WinMart',
+    id: 'snack_popcorn',
+    name: 'Bắp rang bơ phô mai caramel khổng lồ Uncle Jax 150g',
     category: 'movie',
-    price: '25.000đ',
-    priceNum: 25000,
-    store: 'WinMart+ Ngô Mây',
-    distance: '650m',
-    image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Giảm 10k đơn 50k'
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '5.0',
+    soldCount: 'Đã bán 48,2k',
+    price: '39.000đ',
+    originalPrice: '52.000đ',
+    discount: '-25%',
+    image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=bap+rang+bo+pho+mai+uncle+jax'
   },
   {
-    id: 'item_lays',
-    name: 'Snack khoai tây Lay’s vị Tự Nhiên 95g',
+    id: 'snack_lays',
+    name: 'Snack khoai tây Lay’s Stax lon 160g vị Tự Nhiên thơm giòn',
     category: 'movie',
-    price: '22.000đ',
-    priceNum: 22000,
-    store: 'WinMart+ Ngô Mây',
-    distance: '650m',
-    image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Mua 2 giảm 5k'
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 120,5k',
+    price: '32.000đ',
+    originalPrice: '40.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=snack+lays+stax'
   },
   {
-    id: 'item_coke',
-    name: 'Coca-Cola Sleek 320ml ướp lạnh',
+    id: 'snack_taokaenoi',
+    name: 'Rong biển sấy giòn Tao Kae Noi vị cay Big Sheet lốc 12 gói',
     category: 'movie',
-    price: '11.000đ',
-    priceNum: 11000,
-    store: 'Circle K Xuân Diệu',
-    distance: '800m',
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Freeship 15k'
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 86,4k',
+    price: '45.000đ',
+    originalPrice: '58.000đ',
+    discount: '-22%',
+    image: 'https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=rong+bien+tao+kae+noi'
   },
   {
-    id: 'item_taokaenoi',
-    name: 'Rong biển sấy giòn Tao Kae Noi vị cay',
+    id: 'snack_trolli',
+    name: 'Kẹo dẻo Hamburger Trolli Mini Burger Đức nhập khẩu',
     category: 'movie',
-    price: '19.000đ',
-    priceNum: 19000,
-    store: 'Bách Hoá Xanh Nguyễn Thái Học',
-    distance: '1.1km',
-    image: 'https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Hot deal 15k'
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.8',
+    soldCount: 'Đã bán 19,4k',
+    price: '24.000đ',
+    originalPrice: '29.000đ',
+    discount: '-17%',
+    image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=keo+deo+trolli+burger'
   },
 
   // 🍜 CỨU ĐÓI 5 PHÚT
   {
-    id: 'item_omachi',
-    name: 'Mì Ly Omachi Bò Hầm Xốt Cà Chua 68g',
+    id: 'snack_omachi',
+    name: 'Mì Ly Omachi Bò Hầm Xốt Cà Chua 68g thịt thật đậm đà',
     category: 'hunger',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 85,2k',
     price: '16.000đ',
-    priceNum: 16000,
-    store: 'Circle K Xuân Diệu',
-    distance: '800m',
-    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Nóng hổi 10 phút'
+    originalPrice: '20.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=mi+ly+omachi+bo+ham'
   },
   {
-    id: 'item_sausage',
-    name: 'Xúc xích tiệt trùng Vissan gói 5 cây',
+    id: 'snack_sausage',
+    name: 'Xúc xích tiệt trùng Vissan / CP gói 5 cây thịt heo tươi ngon',
     category: 'hunger',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 64,1k',
     price: '24.000đ',
-    priceNum: 24000,
-    store: 'WinMart+ Ngô Mây',
-    distance: '650m',
-    image: 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Kèm mì cực ngon'
+    originalPrice: '29.000đ',
+    discount: '-17%',
+    image: 'https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=xuc+xich+tiet+trung'
   },
   {
-    id: 'item_bread',
-    name: 'Bánh mì tươi chà bông Kinh Đô',
+    id: 'snack_bread',
+    name: 'Bánh mì hoa cúc Harrys Brioche Pháp 515g xé sợi thơm bơ',
     category: 'hunger',
-    price: '15.000đ',
-    priceNum: 15000,
-    store: 'Co.op Food Lê Duẩn',
-    distance: '1.4km',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Tiện lợi ăn liền'
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 42,9k',
+    price: '85.000đ',
+    originalPrice: '105.000đ',
+    discount: '-19%',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=banh+mi+hoa+cuc+harrys'
   },
   {
-    id: 'item_egg',
-    name: 'Trứng gà lòng đào luộc sẵn bóc vỏ (2 quả)',
+    id: 'snack_egg',
+    name: 'Trứng gà lòng đào ngâm tương Hàn Quốc hộp 4 quả thơm bùi',
     category: 'hunger',
-    price: '16.000đ',
-    priceNum: 16000,
-    store: 'Circle K Xuân Diệu',
-    distance: '800m',
-    image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Thơm béo dinh dưỡng'
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.8',
+    soldCount: 'Đã bán 15,6k',
+    price: '38.000đ',
+    originalPrice: '45.000đ',
+    discount: '-15%',
+    image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=trung+long+dao+ngam+tuong'
   },
 
   // 🍻 NHẬU TẠI GIA
   {
-    id: 'item_khoga',
-    name: 'Khô gà lá chanh cay giòn hũ 200g',
+    id: 'snack_khoga',
+    name: 'Khô gà lá chanh cay giòn loại đặc biệt hũ pet 500g',
     category: 'drinking',
-    price: '48.000đ',
-    priceNum: 48000,
-    store: 'Bách Hoá Xanh Nguyễn Thái Học',
-    distance: '1.1km',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Cay tê đầu lưỡi'
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 142k',
+    price: '75.000đ',
+    originalPrice: '99.000đ',
+    discount: '-24%',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=kho+ga+la+chanh+500g'
   },
   {
-    id: 'item_mucrim',
-    name: 'Mực rim me chua cay Quy Nhơn hũ 150g',
+    id: 'snack_mucrim',
+    name: 'Mực rim me chua cay sa tế Quy Nhơn chuẩn vị xứ Nẫu hũ 250g',
     category: 'drinking',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '5.0',
+    soldCount: 'Đã bán 31,5k',
+    price: '79.000đ',
+    originalPrice: '98.000đ',
+    discount: '-19%',
+    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=muc+rim+me+quy+nhon'
+  },
+  {
+    id: 'snack_dauphong',
+    name: 'Đậu phộng da cá vị tỏi ớt Tân Tân hũ 200g giòn rụm bùi béo',
+    category: 'drinking',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 58,4k',
+    price: '28.000đ',
+    originalPrice: '35.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1536594098072-05354aae3c9a?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=dau+phong+da+ca+tan+tan'
+  },
+  {
+    id: 'snack_khobo',
+    name: 'Khô bò miếng sốt bơ tỏi mềm ngọt cay tê hũ 300g',
+    category: 'drinking',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 78,9k',
+    price: '115.000đ',
+    originalPrice: '149.000đ',
+    discount: '-23%',
+    image: 'https://images.unsplash.com/photo-1608270114092-93e1ea6652c7?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=kho+bo+mieng+so+bo+toi'
+  },
+
+  // 🧊 GIẢI NHIỆT / TRÀ CHIỀU
+  {
+    id: 'snack_tradao',
+    name: 'Trà đào cam sả Cozy hộp 25 túi lọc hương thơm thanh mát',
+    category: 'refresh',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 95,2k',
+    price: '36.000đ',
+    originalPrice: '45.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=tra+dao+cozy'
+  },
+  {
+    id: 'snack_thachdua',
+    name: 'Thạch dừa xiêm Á Châu giòn sần sật túi lớn 1kg nấu chè',
+    category: 'refresh',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 52,3k',
+    price: '32.000đ',
+    originalPrice: '40.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=thach+dua+xiem+1kg'
+  },
+  {
+    id: 'snack_cocoxim',
+    name: 'Nước dừa tươi nguyên chất Cocoxim lốc 6 hộp 330ml',
+    category: 'refresh',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 41,6k',
+    price: '118.000đ',
+    originalPrice: '144.000đ',
+    discount: '-18%',
+    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=nuoc+dua+cocoxim'
+  },
+  {
+    id: 'snack_hatchia',
+    name: 'Hạt chia Organic Black Chia Seeds Úc gói 500g giải nhiệt',
+    category: 'refresh',
+    badge: 'Shopee Mall',
+    badgeType: 'mall',
+    rating: '4.9',
+    soldCount: 'Đã bán 67,8k',
     price: '65.000đ',
-    priceNum: 65000,
-    store: 'Đặc Sản Thanh Liêm Quy Nhơn',
-    distance: '1.2km',
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Đặc sản nhậu bén'
-  },
-  {
-    id: 'item_dauphong',
-    name: 'Đậu phộng da cá tỏi ớt Tân Tân gói 150g',
-    category: 'drinking',
-    price: '18.000đ',
-    priceNum: 18000,
-    store: 'WinMart+ Ngô Mây',
-    distance: '650m',
-    image: 'https://images.unsplash.com/photo-1536594098072-05354aae3c9a?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Giòn rụm bùi bùi'
-  },
-  {
-    id: 'item_tiger',
-    name: 'Bia Tiger Crystal lon cao 330ml ướp lạnh',
-    category: 'drinking',
-    price: '18.000đ',
-    priceNum: 18000,
-    store: 'Circle K Xuân Diệu',
-    distance: '800m',
-    image: 'https://images.unsplash.com/photo-1608270114092-93e1ea6652c7?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Lạnh ngắt sảng khoái'
+    originalPrice: '92.000đ',
+    discount: '-29%',
+    image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=hat+chia+organic'
   },
 
-  // 🧊 GIẢI KHÁT 27°C
+  // 🎁 ĐẶC SẢN LÀM QUÀ
   {
-    id: 'item_traicay',
-    name: 'Hộp trái cây cắt sẵn 3 vị (Ổi, xoài, mận muối ớt)',
-    category: 'refresh',
-    price: '35.000đ',
-    priceNum: 35000,
-    store: 'Co.op Food Lê Duẩn',
-    distance: '1.4km',
-    image: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Tươi giòn trong ngày'
-  },
-  {
-    id: 'item_nuocep',
-    name: 'Nước ép Ổi Hồng Vfresh nguyên chất 1L',
-    category: 'refresh',
-    price: '42.000đ',
-    priceNum: 42000,
-    store: 'WinMart+ Ngô Mây',
-    distance: '650m',
-    image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Giàu Vitamin C'
-  },
-  {
-    id: 'item_kem',
-    name: 'Kem Ốc Quế Cornetto Dâu Socola Merino',
-    category: 'refresh',
-    price: '18.000đ',
-    priceNum: 18000,
-    store: 'Circle K Xuân Diệu',
-    distance: '800m',
-    image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Mát lạnh ngọt ngào'
-  },
-  {
-    id: 'item_cocoxim',
-    name: 'Nước dừa tươi nguyên chất Cocoxim 330ml',
-    category: 'refresh',
-    price: '20.000đ',
-    priceNum: 20000,
-    store: 'Bách Hoá Xanh Nguyễn Thái Học',
-    distance: '1.1km',
-    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Thanh lọc cơ thể'
-  },
-
-  // 🎁 ĐẶC SẢN QUY NHƠN
-  {
-    id: 'item_nemchua',
-    name: 'Nem chua Chợ Huyện lá ổi đóng hộp (10 chiếc)',
+    id: 'snack_nemchua',
+    name: 'Nem chua Chợ Huyện lá ổi Bình Định hộp 10 chiếc chuẩn vị',
     category: 'specialty',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.9',
+    soldCount: 'Đã bán 28,4k',
+    price: '65.000đ',
+    originalPrice: '78.000đ',
+    discount: '-17%',
+    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=nem+chua+cho+huyen+binh+dinh'
+  },
+  {
+    id: 'snack_tre',
+    name: 'Tré rơm rơm Quy Nhơn loại 1 cây bọc rơm gia truyền',
+    category: 'specialty',
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '5.0',
+    soldCount: 'Đã bán 19,2k',
     price: '55.000đ',
-    priceNum: 55000,
-    store: 'Đặc Sản Thanh Liêm Quy Nhơn',
-    distance: '1.2km',
-    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Đặc sản chính gốc'
+    originalPrice: '65.000đ',
+    discount: '-15%',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=tre+rom+quy+nhon'
   },
   {
-    id: 'item_tre',
-    name: 'Tré rơm rơm Quy Nhơn loại 1 cây bọc rơm',
+    id: 'snack_banhit',
+    name: 'Bánh ít lá gai nhân dừa bánh dẻo xứ Nẫu hộp 10 cái',
     category: 'specialty',
-    price: '45.000đ',
-    priceNum: 45000,
-    store: 'Tiệm Tré Nem Bà Tám',
-    distance: '1.5km',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Hương vị gia truyền'
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.9',
+    soldCount: 'Đã bán 22,8k',
+    price: '75.000đ',
+    originalPrice: '90.000đ',
+    discount: '-17%',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=banh+it+la+gai+binh+dinh'
   },
   {
-    id: 'item_banhit',
-    name: 'Bánh ít lá gai nhân dừa bánh dẻo (hộp 5 cái)',
+    id: 'snack_banhtrangdua',
+    name: 'Bánh tráng nước dừa Tam Quan nướng than xấp 10 bánh',
     category: 'specialty',
-    price: '40.000đ',
-    priceNum: 40000,
-    store: 'Đặc Sản Thanh Liêm Quy Nhơn',
-    distance: '1.2km',
-    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Dẻo thơm ngọt bùi'
-  },
-  {
-    id: 'item_banhtrangdua',
-    name: 'Bánh tráng nước dừa Tam Quan (gói 5 bánh)',
-    category: 'specialty',
-    price: '35.000đ',
-    priceNum: 35000,
-    store: 'Đặc Sản Thanh Liêm Quy Nhơn',
-    distance: '1.2km',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80',
-    voucher: 'Nướng than thơm lừng'
+    badge: 'Yêu thích+',
+    badgeType: 'favorite',
+    rating: '4.9',
+    soldCount: 'Đã bán 14,7k',
+    price: '68.000đ',
+    originalPrice: '85.000đ',
+    discount: '-20%',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80',
+    shopeeUrl: 'https://shopee.vn/search?keyword=banh+trang+nuoc+dua+tam+quan'
   }
 ];
 
 class GroceryManager {
   constructor() {
     this.currentNeedFilter = 'all';
-    this.cart = []; // [{ id, name, price, priceNum, store, image, quantity, isCombo }]
-    this.appliedVoucher = { code: 'FREESHIPMART', discount: 15000, minOrder: 99000, desc: 'Freeship đơn từ 99k' };
-    this.loadCart();
+    this.wishlist = []; // Danh sách món đã lưu: [{ id, name, price, image, shopeeUrl, badge, badgeType, rating, soldCount }]
+    this.loadWishlist();
   }
 
   init() {
-    this.loadCart();
+    this.loadWishlist();
     this.renderNeedsSelector();
     this.renderMiddleView();
-    this.renderCartSidebar();
+    this.renderRightSidebar();
     this.fetchFromFirestore();
   }
 
-  loadCart() {
+  // ── QUẢN LÝ DANH SÁCH LƯU MUA SAU (WISHLIST) ──
+  loadWishlist() {
     try {
-      const saved = localStorage.getItem('foodtinder_grocery_cart_v1');
+      const saved = localStorage.getItem('foodtinder_shopee_wishlist_v1');
       if (saved) {
-        this.cart = JSON.parse(saved);
+        this.wishlist = JSON.parse(saved);
       }
     } catch (e) {
-      this.cart = [];
+      this.wishlist = [];
     }
+    this.updateWishlistBadge();
   }
 
-  saveCart() {
+  saveWishlist() {
     try {
-      localStorage.setItem('foodtinder_grocery_cart_v1', JSON.stringify(this.cart));
+      localStorage.setItem('foodtinder_shopee_wishlist_v1', JSON.stringify(this.wishlist));
     } catch (e) {}
-    this.updateCartBadge();
-    this.renderCartSidebar();
+    this.updateWishlistBadge();
+    this.renderRightSidebar();
+  }
+
+  isWishlisted(id) {
+    return this.wishlist.some(item => item.id === id);
+  }
+
+  toggleWishlist(item) {
+    window.soundFX && window.soundFX.playPop();
+    const idx = this.wishlist.findIndex(w => w.id === item.id);
+    if (idx !== -1) {
+      this.wishlist.splice(idx, 1);
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`Đã bỏ lưu "${item.name}"`);
+      }
+    } else {
+      this.wishlist.unshift({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        shopeeUrl: item.shopeeUrl,
+        badge: item.badge,
+        badgeType: item.badgeType,
+        rating: item.rating,
+        soldCount: item.soldCount
+      });
+      if (window.app && typeof window.app.showToast === 'function') {
+        window.app.showToast(`❤️ Đã lưu món vào danh sách mua sau!`);
+      }
+    }
+    this.saveWishlist();
+    this.renderMiddleView();
+  }
+
+  removeFromWishlist(id) {
+    window.soundFX && window.soundFX.playPop();
+    this.wishlist = this.wishlist.filter(w => w.id !== id);
+    this.saveWishlist();
+    this.renderMiddleView();
+  }
+
+  clearWishlist() {
+    if (this.wishlist.length === 0) return;
+    window.soundFX && window.soundFX.playPop();
+    this.wishlist = [];
+    this.saveWishlist();
+    this.renderMiddleView();
+  }
+
+  updateWishlistBadge() {
+    const badge = document.getElementById('grocery-cart-badge');
+    if (badge) {
+      if (this.wishlist.length > 0) {
+        badge.textContent = `❤️ ${this.wishlist.length}`;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
   }
 
   setNeed(needId) {
@@ -372,76 +534,7 @@ class GroceryManager {
     this.renderMiddleView();
   }
 
-  addToCart(item, isCombo = false) {
-    window.soundFX && window.soundFX.playPop();
-    const existing = this.cart.find(c => c.id === item.id);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      this.cart.push({
-        id: item.id,
-        name: item.name,
-        price: item.price,
-        priceNum: item.priceNum,
-        store: item.store || 'ShopeeFood Mart',
-        image: item.image,
-        quantity: 1,
-        isCombo: Boolean(isCombo)
-      });
-    }
-    this.saveCart();
-
-    if (window.app && typeof window.app.showToast === 'function') {
-      window.app.showToast(`🛒 Đã thêm "${item.name}" vào giỏ tạp hoá!`);
-    }
-  }
-
-  updateQuantity(itemId, delta) {
-    window.soundFX && window.soundFX.playPop();
-    const idx = this.cart.findIndex(c => c.id === itemId);
-    if (idx === -1) return;
-    this.cart[idx].quantity += delta;
-    if (this.cart[idx].quantity <= 0) {
-      this.cart.splice(idx, 1);
-    }
-    this.saveCart();
-  }
-
-  removeFromCart(itemId) {
-    window.soundFX && window.soundFX.playPop();
-    this.cart = this.cart.filter(c => c.id !== itemId);
-    this.saveCart();
-  }
-
-  clearCart() {
-    if (this.cart.length === 0) return;
-    window.soundFX && window.soundFX.playPop();
-    this.cart = [];
-    this.saveCart();
-  }
-
-  getCartSubtotal() {
-    return this.cart.reduce((sum, item) => sum + (item.priceNum * item.quantity), 0);
-  }
-
-  getCartTotalCount() {
-    return this.cart.reduce((sum, item) => sum + item.quantity, 0);
-  }
-
-  updateCartBadge() {
-    const badge = document.getElementById('grocery-cart-badge');
-    const count = this.getCartTotalCount();
-    if (badge) {
-      if (count > 0) {
-        badge.textContent = count;
-        badge.classList.remove('hidden');
-      } else {
-        badge.classList.add('hidden');
-      }
-    }
-  }
-
-  // ── 1. RENDER NHU CẦU TẠP HOÁ TRÊN CỘT TRÁI (#mood-selector-container) ──
+  // ── 1. CỘT TRÁI: NHU CẦU ĂN VẶT & HỎI AI 🤖 (GỠ BỎ HOÀN TOÀN MẸO GHÉP ĐƠN) ──
   renderNeedsSelector() {
     const container = document.getElementById('mood-selector-container');
     if (!container) return;
@@ -449,10 +542,10 @@ class GroceryManager {
     container.innerHTML = `
       <div class="flex items-center justify-between mb-2.5 px-0.5">
         <div class="flex items-center gap-1.5">
-          <span class="text-xs">🛒</span>
-          <span class="text-[11px] font-extrabold text-stone-700 uppercase tracking-wider">Nhu cầu tạp hoá</span>
+          <span class="text-xs">🍿</span>
+          <span class="text-[11px] font-extrabold text-stone-700 uppercase tracking-wider">Cảm xúc ăn vặt</span>
         </div>
-        <button onclick="window.groceryManager.askAI()" class="text-[11px] font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded-full transition shadow-xs" title="Hỏi AI gợi ý giỏ hàng tạp hoá">
+        <button onclick="window.groceryManager.askAI()" class="text-[11px] font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded-full transition shadow-xs" title="Hỏi AI gợi ý đồ ăn vặt Shopee chuẩn gu">
           <span>Hỏi AI</span> <span>🤖</span>
         </button>
       </div>
@@ -478,129 +571,142 @@ class GroceryManager {
           `;
         }).join('')}
       </div>
-
-      <!-- Quick Tips Box -->
-      <div class="mt-3 p-2.5 bg-orange-50/80 rounded-xl border border-orange-200/70 text-[10.5px] text-orange-900 leading-relaxed">
-        <span class="font-extrabold">💡 Mẹo ghép đơn:</span> Thêm từ <strong>99.000đ</strong> để nhận voucher <strong>Freeship</strong> từ ShopeeFood Mart Quy Nhơn!
-      </div>
     `;
   }
 
-  // ── 2. RENDER CỘT GIỮA: COMBO + KỆ MÓN LẺ + VOUCHER MART ──
+  // ── 2. CỘT GIỮA: KỆ GỢI Ý ĐỒ ĂN VẶT SHOPEE THEO CẢM XÚC (LƯỚI 3 CỘT THOÁNG) ──
   renderMiddleView() {
     const container = document.getElementById('grocery-content-container');
     if (!container) return;
 
-    // Filter combos & items
+    // Lọc sets & items theo category
     const filteredCombos = this.currentNeedFilter === 'all'
-      ? GROCERY_COMBOS
-      : GROCERY_COMBOS.filter(c => c.category === this.currentNeedFilter);
+      ? (window.GROCERY_COMBOS || GROCERY_COMBOS)
+      : (window.GROCERY_COMBOS || GROCERY_COMBOS).filter(c => c.category === this.currentNeedFilter);
 
     const filteredItems = this.currentNeedFilter === 'all'
-      ? GROCERY_ITEMS
-      : GROCERY_ITEMS.filter(i => i.category === this.currentNeedFilter);
+      ? (window.GROCERY_ITEMS || GROCERY_ITEMS)
+      : (window.GROCERY_ITEMS || GROCERY_ITEMS).filter(i => i.category === this.currentNeedFilter);
 
     const activeNeedObj = GROCERY_NEEDS.find(n => n.id === this.currentNeedFilter) || GROCERY_NEEDS[0];
 
     container.innerHTML = `
-      <!-- Welcome Grocery Banner -->
-      <div class="rounded-3xl bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 p-5 sm:p-6 text-white shadow-md relative overflow-hidden">
-        <div class="absolute -right-6 -bottom-8 text-8xl opacity-15 pointer-events-none select-none">🛒</div>
-        <div class="relative z-10 max-w-xl">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[10.5px] font-black uppercase tracking-wider mb-2 backdrop-blur-xs">
-            <span>🛵 ShopeeFood Mart Quy Nhơn</span>
+      <!-- Welcome Snack Banner (Shopee Vouchers thông minh, không lo hết hạn) -->
+      <div class="rounded-3xl bg-gradient-to-r from-orange-500 via-[#EE4D2D] to-rose-600 p-5 sm:p-6 text-white shadow-md relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-8 text-8xl opacity-15 pointer-events-none select-none">🍿</div>
+        <div class="relative z-10 max-w-2xl">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-[10.5px] font-black uppercase tracking-wider mb-2.5 backdrop-blur-xs">
+            <span>✨ Shopee Food & Snack Picks</span>
             <span>•</span>
-            <span>Giao siêu tốc 15–25p</span>
+            <span>Gợi Ý Theo Cảm Xúc</span>
           </div>
-          <h2 class="text-xl sm:text-2xl font-black leading-tight">Đi Chợ Tạp Hoá & Siêu Thị Tiện Lợi</h2>
+          <h2 class="text-xl sm:text-2xl font-black leading-tight">Thiên Đường Đồ Ăn Vặt & Đặc Sản Shopee</h2>
           <p class="text-xs sm:text-sm text-white/95 mt-1 leading-relaxed">
-            Chọn nhanh Combo theo tâm trạng hoặc nhặt lẻ từ WinMart+, Bách Hoá Xanh & Tiệm đặc sản gần bạn nhất.
+            Chọn món ăn vặt theo tâm trạng hôm nay từ các <strong>Shop Yêu Thích+</strong> & <strong>Shopee Mall</strong> uy tín nhất với hàng chục ngàn lượt mua.
           </p>
 
-          <!-- ShopeeFood Mart Voucher Strip -->
-          <div class="mt-3.5 flex items-center gap-2 flex-wrap">
-            <div class="inline-flex items-center gap-1.5 bg-white/95 text-stone-900 px-3 py-1.5 rounded-xl text-xs font-black shadow-xs">
-              <span class="text-rose-500">🎟️</span>
-              <span class="font-mono text-rose-600">FREESHIPMART</span>
-              <span class="text-[10.5px] font-semibold text-stone-500">• Giảm 15k ship đơn 99k</span>
-            </div>
-            <div class="inline-flex items-center gap-1.5 bg-white/95 text-stone-900 px-3 py-1.5 rounded-xl text-xs font-black shadow-xs">
-              <span class="text-amber-500">⚡</span>
-              <span class="font-mono text-amber-700">MART25K</span>
-              <span class="text-[10.5px] font-semibold text-stone-500">• Giảm 25k đơn 120k</span>
-            </div>
+          <!-- Banner Voucher Shopee Thông Minh (Requirement 3: không lo mã hết hạn) -->
+          <div class="mt-4 flex items-center gap-2.5 flex-wrap">
+            <a href="https://shopee.vn/m/ma-giam-gia" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white text-[#EE4D2D] hover:bg-orange-50 px-4 py-2.5 rounded-2xl font-black text-xs sm:text-sm shadow-md transition active:scale-98 cursor-pointer">
+              <span class="text-base">🎟️</span>
+              <span>Lấy mã Freeship & Voucher Shopee hôm nay tại đây</span>
+              <span class="text-xs">↗</span>
+            </a>
+            <span class="text-[10.5px] text-white/80 font-medium">
+              💡 Bấm lấy mã trước để tự động áp dụng khi thanh toán trên Shopee
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- ════════ KHU VỰC 1: COMBO THEO TÂM TRẠNG / THỜI TIẾT ════════ -->
+      <!-- ════════ KHU VỰC 1: SET ĂN VẶT SHOPEE HOT TREND (LƯỚI 3 CỘT) ════════ -->
       <div class="space-y-3">
         <div class="flex items-center justify-between">
           <div>
             <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-2">
-              <span>🎯 Combo Tiện Lợi Chọn 1 Lần</span>
-              <span class="text-[10px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full uppercase">Tiết kiệm 20%</span>
+              <span>🎯 Set Ăn Vặt Hot Trend Shopee</span>
+              <span class="text-[10px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full uppercase">Tiết kiệm 25%</span>
             </h3>
-            <p class="text-xs text-stone-500 mt-0.5">Lên sẵn đồ ăn vặt & nước uống theo cảm xúc, bấm chọn trọn gói ngay</p>
+            <p class="text-xs text-stone-500 mt-0.5">Tuyển tập combo món ăn vặt bán chạy nhất, mở link Shopee chốt đơn ngay</p>
           </div>
         </div>
 
-        <!-- Horizontal Combo Cards Slider -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-          ${filteredCombos.map(combo => `
-            <div class="bg-white rounded-2xl border border-stone-200/90 shadow-xs hover:shadow-md transition-all overflow-hidden flex flex-col justify-between group">
-              <!-- Top Image & Badge -->
-              <div class="relative h-36 w-full overflow-hidden bg-stone-100">
-                <img src="${combo.image}" alt="${combo.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                <span class="absolute top-2.5 left-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white text-[9.5px] font-black px-2 py-0.5 rounded-full shadow-xs">
-                  ${combo.badge}
-                </span>
-                <span class="absolute top-2.5 right-2.5 bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full shadow-xs">
-                  ${combo.discount}
-                </span>
-                <span class="absolute bottom-2 left-2 bg-black/60 text-white text-[9.5px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-xs">
-                  📍 ${combo.store}
-                </span>
-              </div>
+        <!-- Horizontal Combo Cards Slider (3 Cột thoáng) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          ${filteredCombos.map(combo => {
+            const isSaved = this.isWishlisted(combo.id);
+            return `
+              <div class="bg-white rounded-2xl border border-stone-200/90 shadow-xs hover:shadow-md transition-all overflow-hidden flex flex-col justify-between group">
+                <!-- Top Image & Badges -->
+                <div class="relative h-40 w-full overflow-hidden bg-stone-100">
+                  <img src="${combo.image}" alt="${combo.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  
+                  <!-- Shopee Badge: Mall / Yêu thích+ -->
+                  <span class="absolute top-2.5 left-2.5 ${combo.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[9.5px] font-black px-2 py-0.5 rounded-md shadow-xs">
+                    ${combo.badge}
+                  </span>
 
-              <!-- Body Info -->
-              <div class="p-3.5 flex-1 flex flex-col justify-between space-y-2.5">
-                <div>
-                  <h4 class="font-black text-xs sm:text-sm text-stone-900 group-hover:text-amber-600 transition leading-snug">
-                    ${combo.name}
-                  </h4>
-                  <p class="text-[11px] text-stone-500 mt-1 line-clamp-2 leading-relaxed">
-                    ${combo.desc}
-                  </p>
-                </div>
+                  <!-- Discount Pill -->
+                  <span class="absolute top-2.5 right-11 bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full shadow-xs">
+                    ${combo.discount}
+                  </span>
 
-                <div class="pt-2 border-t border-stone-100 flex items-center justify-between">
-                  <div>
-                    <div class="flex items-baseline gap-1.5">
-                      <span class="font-black text-sm sm:text-base text-rose-600">${combo.price}</span>
-                      <span class="text-[10px] text-stone-400 line-through">${combo.originalPrice}</span>
-                    </div>
-                  </div>
-                  <button onclick="window.groceryManager.addToCart(${JSON.stringify(combo).replace(/"/g, '&quot;')}, true)"
-                    class="px-3.5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer">
-                    <span>+ Thêm combo</span>
+                  <!-- Wishlist Heart Button -->
+                  <button onclick="window.groceryManager.toggleWishlist(${JSON.stringify(combo).replace(/"/g, '&quot;')})"
+                    class="w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-600 flex items-center justify-center absolute top-2 right-2 shadow-xs transition active:scale-90 cursor-pointer"
+                    title="${isSaved ? 'Bỏ lưu' : 'Lưu để mua sau'}">
+                    <span class="${isSaved ? 'text-rose-500 text-sm' : 'text-stone-400 text-xs'}">${isSaved ? '❤️' : '🤍'}</span>
                   </button>
+
+                  <!-- Sold Count Banner on image bottom -->
+                  <div class="absolute bottom-2 left-2 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-xs flex items-center gap-1">
+                    <span class="text-amber-400">⭐ ${combo.rating}</span>
+                    <span>•</span>
+                    <span>${combo.soldCount}</span>
+                  </div>
+                </div>
+
+                <!-- Body Info -->
+                <div class="p-3.5 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h4 class="font-black text-xs sm:text-sm text-stone-900 group-hover:text-[#EE4D2D] transition leading-snug">
+                      ${combo.name}
+                    </h4>
+                    <p class="text-[11px] text-stone-500 mt-1 line-clamp-2 leading-relaxed">
+                      ${combo.desc}
+                    </p>
+                  </div>
+
+                  <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2">
+                    <div>
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="font-black text-sm sm:text-base text-rose-600">${combo.price}</span>
+                        <span class="text-[10px] text-stone-400 line-through">${combo.originalPrice}</span>
+                      </div>
+                    </div>
+                    <a href="${combo.shopeeUrl}" target="_blank" rel="noopener noreferrer"
+                      class="px-3.5 py-2 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer">
+                      <span>Mua trên Shopee</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
       </div>
 
-      <!-- ════════ KHU VỰC 2: LƯỚI MÓN LẺ (GRID 2-3 CỘT) ════════ -->
-      <div class="space-y-3 pt-2">
+      <!-- ════════ KHU VỰC 2: KỆ ĂN VẶT & MÓN NGON SHOPEE (3 CỘT THOÁNG) ════════ -->
+      <div class="space-y-3 pt-3">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-2">
-              <span>🧺 Kệ Hàng Siêu Thị & Tiệm Tiện Lợi</span>
-              <span class="text-xs text-stone-400 font-semibold">(${filteredItems.length} sản phẩm)</span>
+              <span>🧺 Kệ Ăn Vặt & Món Ngon Shopee</span>
+              <span class="text-xs text-stone-400 font-semibold">(${filteredItems.length} món gợi ý)</span>
             </h3>
-            <p class="text-xs text-stone-500 mt-0.5">Đang lọc theo: <strong class="text-amber-700">${activeNeedObj.label}</strong></p>
+            <p class="text-xs text-stone-500 mt-0.5">Lọc theo cảm xúc: <strong class="text-amber-700">${activeNeedObj.label}</strong></p>
           </div>
 
           <div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none text-[11px]">
@@ -617,38 +723,61 @@ class GroceryManager {
           </div>
         </div>
 
-        <!-- Grid 2-3 Columns -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          ${filteredItems.map(item => `
-            <div class="bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-md transition-all p-3 flex flex-col justify-between group">
-              <div class="relative w-full h-32 rounded-xl overflow-hidden bg-stone-100 mb-2.5">
-                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                <span class="absolute bottom-1.5 left-1.5 bg-black/60 text-white text-[9px] font-bold px-1.5 py-0.2 rounded-full backdrop-blur-xs">
-                  ${item.distance}
-                </span>
-              </div>
-
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <span class="text-[9.5px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.2 rounded truncate block w-fit mb-1">
-                    🏪 ${item.store}
+        <!-- Grid 3 Cột Thoáng (Requirement 2: Bỏ khoảng cách, thay bằng tín hiệu chốt đơn Shopee) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4.5">
+          ${filteredItems.map(item => {
+            const isSaved = this.isWishlisted(item.id);
+            return `
+              <div class="bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-md transition-all p-3 flex flex-col justify-between group">
+                <!-- Image Container with Shopee Signals -->
+                <div class="relative w-full h-44 rounded-xl overflow-hidden bg-stone-100 mb-2.5">
+                  <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  
+                  <!-- Shopee Mall / Yêu thích+ Badge (Top-left) -->
+                  <span class="absolute top-2 left-2 ${item.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[9.5px] font-black px-2 py-0.5 rounded shadow-xs tracking-tight">
+                    ${item.badge}
                   </span>
-                  <h5 class="font-extrabold text-xs text-stone-900 leading-snug line-clamp-2 group-hover:text-amber-600 transition">
-                    ${item.name}
-                  </h5>
+
+                  <!-- Wishlist Heart Icon (Top-right) -->
+                  <button onclick="window.groceryManager.toggleWishlist(${JSON.stringify(item).replace(/"/g, '&quot;')})"
+                    class="w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-600 flex items-center justify-center absolute top-2 right-2 shadow-xs transition active:scale-90 cursor-pointer"
+                    title="${isSaved ? 'Bỏ lưu' : 'Lưu để mua sau'}">
+                    <span class="${isSaved ? 'text-rose-500 text-sm' : 'text-stone-400 text-xs'}">${isSaved ? '❤️' : '🤍'}</span>
+                  </button>
+
+                  <!-- Sold Count + Rating Badge (Bottom-left) -->
+                  <div class="absolute bottom-2 left-2 bg-black/65 text-white text-[9.5px] font-extrabold px-2 py-0.5 rounded-full backdrop-blur-xs flex items-center gap-1">
+                    <span class="text-amber-400">⭐ ${item.rating}</span>
+                    <span>•</span>
+                    <span>${item.soldCount}</span>
+                  </div>
                 </div>
 
-                <div class="pt-2 mt-2 border-t border-stone-100 flex items-center justify-between">
-                  <span class="font-black text-xs sm:text-sm text-rose-600">${item.price}</span>
-                  <button onclick="window.groceryManager.addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')}, false)"
-                    class="px-2.5 py-1.5 bg-rose-50 hover:bg-rose-500 hover:text-white text-rose-600 font-extrabold text-[11px] rounded-xl transition active:scale-95 flex items-center gap-1 cursor-pointer"
-                    title="Thêm vào giỏ">
-                    <span>+ Thêm</span>
-                  </button>
+                <!-- Product Info & CTA -->
+                <div class="flex-1 flex flex-col justify-between space-y-2.5">
+                  <div>
+                    <h5 class="font-extrabold text-xs sm:text-[13px] text-stone-900 leading-snug line-clamp-2 group-hover:text-[#EE4D2D] transition">
+                      ${item.name}
+                    </h5>
+                  </div>
+
+                  <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2">
+                    <div>
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="font-black text-sm sm:text-base text-rose-600">${item.price}</span>
+                        ${item.originalPrice ? `<span class="text-[10px] text-stone-400 line-through">${item.originalPrice}</span>` : ''}
+                      </div>
+                    </div>
+                    <a href="${item.shopeeUrl}" target="_blank" rel="noopener noreferrer"
+                      class="px-3 py-1.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-xs transition active:scale-95 flex items-center gap-1 cursor-pointer">
+                      <span>Mua trên Shopee</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
       </div>
     `;
@@ -656,207 +785,116 @@ class GroceryManager {
     if (window.lucide) window.lucide.createIcons();
   }
 
-  // ── 3. RENDER CỘT PHẢI: 🛒 GIỎ TẠP HOÁ / GHÉP ĐƠN ──
-  renderCartSidebar() {
+  // ── 3. CỘT PHẢI: ❤️ ĐÃ LƯU ĐỂ MUA SAU (WISHLIST) & 🏪 TOP SHOP UY TÍN (REQUIREMENT 4) ──
+  renderRightSidebar() {
     const container = document.getElementById('grocery-cart-sidebar');
     if (!container) return;
 
-    const subtotal = this.getCartSubtotal();
-    const count = this.getCartTotalCount();
-    const shippingFee = subtotal >= 99000 ? 0 : (subtotal > 0 ? 15000 : 0);
-    const voucherDiscount = (subtotal >= this.appliedVoucher.minOrder && subtotal > 0) ? this.appliedVoucher.discount : 0;
-    const finalTotal = Math.max(0, subtotal + shippingFee - voucherDiscount);
-
     container.innerHTML = `
-      <!-- Cart Header -->
-      <div class="p-4 border-b border-stone-100 flex items-center justify-between shrink-0 bg-stone-50/50">
-        <div class="flex items-center gap-2">
-          <span class="text-lg">🛒</span>
-          <div>
-            <h4 class="font-extrabold text-xs text-stone-900">Giỏ tạp hoá / Ghép đơn</h4>
-            <p class="text-[10px] text-stone-400 font-medium">ShopeeFood Mart Quy Nhơn</p>
-          </div>
-        </div>
-        ${this.cart.length > 0 ? `
-          <button onclick="window.groceryManager.clearCart()" class="text-[10.5px] text-stone-400 hover:text-rose-500 font-bold transition cursor-pointer">
-            Xoá hết
-          </button>
-        ` : ''}
-      </div>
-
-      <!-- Cart Items List (Scrollable) -->
-      <div class="flex-1 overflow-y-auto p-3 space-y-2.5 scrollbar-none">
-        ${this.cart.length === 0 ? `
-          <div class="py-12 flex flex-col items-center justify-center text-center px-4 space-y-2 text-stone-400">
-            <span class="text-4xl opacity-40">🛍️</span>
-            <p class="text-xs font-semibold text-stone-600">Giỏ tạp hoá chưa có món nào</p>
-            <p class="text-[10.5px] leading-relaxed">Chọn các Combo hoặc nhặt lẻ từ kệ hàng bên trái để ghép đơn freeship nhé!</p>
-          </div>
-        ` : this.cart.map(item => `
-          <div class="flex items-center gap-2.5 p-2 bg-stone-50/80 rounded-xl border border-stone-200/70">
-            <div class="w-11 h-11 rounded-lg overflow-hidden bg-stone-200 shrink-0">
-              <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" />
-            </div>
-            <div class="min-w-0 flex-1">
-              <h6 class="font-bold text-[11.5px] text-stone-900 truncate leading-tight">${item.name}</h6>
-              <div class="flex items-center justify-between mt-1">
-                <span class="text-[11px] font-black text-rose-600">${item.price}</span>
-                <span class="text-[9.5px] text-stone-400">${item.store}</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 shrink-0 bg-white border border-stone-200 rounded-lg p-0.5 shadow-2xs">
-              <button onclick="window.groceryManager.updateQuantity('${item.id}', -1)"
-                class="w-5 h-5 rounded flex items-center justify-center text-stone-600 hover:bg-stone-100 font-black text-xs transition active:scale-95 cursor-pointer">
-                -
-              </button>
-              <span class="text-xs font-extrabold px-1 text-stone-900">${item.quantity}</span>
-              <button onclick="window.groceryManager.updateQuantity('${item.id}', 1)"
-                class="w-5 h-5 rounded flex items-center justify-center text-stone-600 hover:bg-stone-100 font-black text-xs transition active:scale-95 cursor-pointer">
-                +
-              </button>
+      <!-- ════════ KHỐI 1: ĐÃ LƯU ĐỂ MUA SAU (WISHLIST) ════════ -->
+      <div class="flex-1 flex flex-col min-h-0 border-b border-stone-200">
+        <!-- Wishlist Header -->
+        <div class="p-3.5 border-b border-stone-100 flex items-center justify-between shrink-0 bg-stone-50/70">
+          <div class="flex items-center gap-2">
+            <span class="text-base text-rose-500">❤️</span>
+            <div>
+              <h4 class="font-black text-xs text-stone-900">Đã lưu để mua sau</h4>
+              <p class="text-[9.5px] text-stone-400 font-medium">Bấm tim trên thẻ món để lưu lại</p>
             </div>
           </div>
-        `).join('')}
-      </div>
-
-      <!-- Cart Summary & Actions Footer -->
-      ${this.cart.length > 0 ? `
-        <div class="p-3.5 border-t border-stone-200 bg-white space-y-2.5 shrink-0 shadow-lg">
-          <!-- Price Calculation -->
-          <div class="space-y-1 text-xs">
-            <div class="flex justify-between text-stone-500">
-              <span>Tạm tính (${count} món):</span>
-              <span class="font-bold text-stone-800">${subtotal.toLocaleString('vi-VN')}đ</span>
-            </div>
-            <div class="flex justify-between text-stone-500">
-              <span>Phí giao hàng:</span>
-              <span class="font-bold ${shippingFee === 0 ? 'text-emerald-600' : 'text-stone-800'}">
-                ${shippingFee === 0 ? 'Freeship 🎉' : '15.000đ'}
+          ${this.wishlist.length > 0 ? `
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-black text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded-full">
+                ${this.wishlist.length} món
               </span>
+              <button onclick="window.groceryManager.clearWishlist()" class="text-[10px] text-stone-400 hover:text-rose-500 font-bold transition cursor-pointer" title="Xoá tất cả món đã lưu">
+                Xoá
+              </button>
             </div>
-            ${voucherDiscount > 0 ? `
-              <div class="flex justify-between text-rose-600 font-bold">
-                <span>Voucher ShopeeFood Mart:</span>
-                <span>-${voucherDiscount.toLocaleString('vi-VN')}đ</span>
-              </div>
-            ` : ''}
-            <div class="flex justify-between text-sm font-black text-stone-900 pt-1.5 border-t border-stone-100">
-              <span>Tổng thanh toán:</span>
-              <span class="text-base text-rose-600">${finalTotal.toLocaleString('vi-VN')}đ</span>
-            </div>
-          </div>
-
-          <!-- 2 Main Action Buttons -->
-          <div class="space-y-1.5 pt-1">
-            <button onclick="window.groceryManager.checkoutShopeeMart()"
-              class="w-full py-2.5 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl font-black text-xs shadow-md shadow-orange-300 flex items-center justify-center gap-1.5 transition active:scale-98 cursor-pointer">
-              <span>🛵 Đặt ngay trên ShopeeFood Mart</span>
-              <span>↗</span>
-            </button>
-            <button onclick="window.groceryManager.shareCartToFriends()"
-              class="w-full py-2 bg-gradient-to-r from-rose-50 to-amber-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition active:scale-98 cursor-pointer">
-              <span>🤝 Rủ ghép đơn Freeship</span>
-            </button>
-          </div>
+          ` : ''}
         </div>
-      ` : ''}
+
+        <!-- Wishlist Items List (Scrollable) -->
+        <div class="flex-1 overflow-y-auto p-3 space-y-2 scrollbar-none">
+          ${this.wishlist.length === 0 ? `
+            <div class="py-8 flex flex-col items-center justify-center text-center px-4 space-y-2 text-stone-400">
+              <span class="text-3xl opacity-35">🤍</span>
+              <p class="text-xs font-bold text-stone-600">Chưa có món nào được lưu</p>
+              <p class="text-[10px] leading-relaxed max-w-[200px]">
+                Lướt thấy món ăn vặt ngon, bấm biểu tượng trái tim ❤️ trên ảnh để gom lại đây và ghé mua sau nhé!
+              </p>
+            </div>
+          ` : this.wishlist.map(item => `
+            <div class="flex items-center gap-2 p-2 bg-stone-50/90 hover:bg-orange-50/50 rounded-xl border border-stone-200/80 transition">
+              <div class="w-11 h-11 rounded-lg overflow-hidden bg-stone-200 shrink-0">
+                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" />
+              </div>
+              <div class="min-w-0 flex-1">
+                <h6 class="font-bold text-[11px] text-stone-900 truncate leading-tight">${item.name}</h6>
+                <div class="flex items-center justify-between mt-1">
+                  <span class="text-[11px] font-black text-rose-600">${item.price}</span>
+                  <a href="${item.shopeeUrl}" target="_blank" rel="noopener noreferrer"
+                    class="text-[9.5px] font-extrabold text-[#EE4D2D] hover:underline flex items-center gap-0.5">
+                    <span>Mua ↗</span>
+                  </a>
+                </div>
+              </div>
+              <button onclick="window.groceryManager.removeFromWishlist('${item.id}')"
+                class="w-5 h-5 rounded flex items-center justify-center text-stone-300 hover:text-rose-500 text-xs transition cursor-pointer"
+                title="Bỏ lưu">
+                ✕
+              </button>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- ════════ KHỐI 2: TOP SHOP ĂN VẶT UY TÍN TRÊN SHOPEE (TỶ LỆ CHỐT ĐƠN CAO) ════════ -->
+      <div class="shrink-0 p-3.5 bg-gradient-to-b from-stone-50/50 to-orange-50/40 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm">⭐</span>
+            <h4 class="font-black text-xs text-stone-900">Top Shop Ăn Vặt Shopee</h4>
+          </div>
+          <span class="text-[9.5px] text-stone-400 font-semibold">Ghé shop mua gom Freeship</span>
+        </div>
+
+        <div class="space-y-2">
+          ${SHOPEE_TOP_SHOPS.map(shop => `
+            <div class="p-2.5 bg-white rounded-xl border border-stone-200/90 shadow-2xs hover:shadow-xs transition space-y-1.5">
+              <div class="flex items-center justify-between gap-1.5">
+                <div class="flex items-center gap-2 min-w-0">
+                  <img src="${shop.avatar}" alt="${shop.name}" class="w-7 h-7 rounded-full object-cover shrink-0 border border-stone-100" />
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-1">
+                      <span class="font-extrabold text-[11px] text-stone-900 truncate">${shop.name}</span>
+                      <span class="${shop.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[7.5px] font-black px-1 rounded-2xs shrink-0">
+                        ${shop.badge}
+                      </span>
+                    </div>
+                    <div class="text-[9.5px] text-stone-400 font-medium">
+                      <span>${shop.rating}</span> • <span>${shop.followers}</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="${shop.url}" target="_blank" rel="noopener noreferrer"
+                  class="px-2 py-1 bg-orange-50 hover:bg-[#EE4D2D] text-[#EE4D2D] hover:text-white rounded-lg text-[9.5px] font-black transition shrink-0">
+                  Ghé Shop ↗
+                </a>
+              </div>
+              <p class="text-[9.5px] text-stone-500 line-clamp-1 italic">
+                ${shop.highlight}
+              </p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
     `;
 
-    this.updateCartBadge();
+    this.updateWishlistBadge();
   }
 
-  // ── ĐẶT NGAY TRÊN SHOPEEFOOD MART ──
-  checkoutShopeeMart() {
-    window.soundFX && window.soundFX.playPop();
-    const count = this.getCartTotalCount();
-    const total = this.getCartSubtotal();
-    
-    // Tìm cửa hàng đại diện
-    const firstStore = this.cart[0]?.store || 'ShopeeFood Mart';
-    let martUrl = 'https://shopeefood.vn/binh-dinh/danh-sach-dia-diem-sieu-thi';
-    if (firstStore.includes('WinMart')) martUrl = 'https://shopeefood.vn/binh-dinh/winmart-ngo-may';
-    else if (firstStore.includes('Bách Hoá Xanh')) martUrl = 'https://shopeefood.vn/binh-dinh/bach-hoa-xanh-nguyen-thai-hoc';
-    else if (firstStore.includes('Thanh Liêm')) martUrl = 'https://shopeefood.vn/binh-dinh/dac-san-thanh-liem';
-
-    if (window.app && typeof window.app.showToast === 'function') {
-      window.app.showToast(`🛵 Đang mở ShopeeFood Mart (${count} món • ${total.toLocaleString('vi-VN')}đ)...`);
-    }
-
-    setTimeout(() => {
-      window.open(martUrl, '_blank');
-    }, 400);
-  }
-
-  // ── RỦ GHÉP ĐƠN FREESHIP SANG TAB TIN NHẮN ──
-  shareCartToFriends() {
-    window.soundFX && window.soundFX.playMatch();
-    const itemsList = this.cart.map(c => `${c.quantity}x ${c.name} (${c.price})`).join(', ');
-    const total = this.getCartSubtotal();
-
-    // Tìm người bạn thân đầu tiên (Hoàng Yến - Yến Ốc)
-    const myFriends = (window.APP_DATA && window.APP_DATA.myFriends) || [];
-    const friend = myFriends[0] || { id: 101, name: 'Hoàng Yến (Yến Ốc)' };
-
-    const groceryCardMsg = {
-      sender: 'you',
-      cardType: 'invite_card',
-      food: {
-        id: 999999,
-        name: 'Giỏ Ghép Đơn Tạp Hoá & Siêu Thị',
-        restaurant: 'ShopeeFood Mart Quy Nhơn',
-        image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=500&q=80',
-        address: 'Giao nhanh 15–20 phút tại Quy Nhơn',
-        distanceText: 'Cách bạn 650m',
-        priceRange: `${total.toLocaleString('vi-VN')}đ`,
-        rating: 4.9
-      },
-      text: `Ê mình đang gom đơn ShopeeFood Mart gồm: ${itemsList}. Bạn có muốn ghép chung món gì để lấy mã Freeship 15k không nè? 🛒✨`,
-      time: 'Vừa xong'
-    };
-
-    if (friend.messages) {
-      friend.messages.push(groceryCardMsg);
-    }
-    if (window.chatManager && typeof window.chatManager.saveFriendsData === 'function') {
-      window.chatManager.saveFriendsData();
-    }
-
-    if (window.app && typeof window.app.showToast === 'function') {
-      window.app.showToast(`🤝 Đã gửi danh sách ghép đơn cho ${friend.name}!`);
-    }
-
-    // Chuyển sang tab chat và mở bạn bè đó
-    if (typeof window.switchTab === 'function') {
-      window.switchTab('chat');
-    } else if (window.app && typeof window.app.switchTab === 'function') {
-      window.app.switchTab('chat');
-    }
-
-    if (window.chatManager) {
-      window.chatManager.selectChatTarget(friend.id);
-    }
-
-    // Auto reply sau 1.5s
-    setTimeout(() => {
-      window.soundFX && window.soundFX.playPop();
-      if (friend.messages) {
-        friend.messages.push({
-          sender: 'them',
-          text: `Ui hay quá đúng lúc tui đang thèm snack với nước ngọt cày phim! Đợi xíu tui gửi món ghép chung lấy Freeship nha! 🍿🧋✨`,
-          time: 'Vừa xong'
-        });
-      }
-      if (window.chatManager) {
-        window.chatManager.saveFriendsData();
-        window.chatManager.renderFriendsSidebar(false);
-        if (window.chatManager.currentChatTarget === friend.id) {
-          window.chatManager.renderActiveChatWindow();
-        }
-      }
-    }, 1500);
-  }
-
-  // ── HỎI AI GỢI Ý GIỎ HÀNG TẠP HOÁ ──
+  // ── HỎI AI GỢI Ý MÓN ĂN VẶT SHOPEE ──
   askAI() {
     window.soundFX && window.soundFX.playPop();
     if (typeof window.switchTab === 'function') {
@@ -867,43 +905,26 @@ class GroceryManager {
 
     if (window.chatManager) {
       window.chatManager.selectChatTarget('ai');
-      window.chatManager.handleUserSubmit('Gợi ý cho mình 1 giỏ hàng ăn vặt và đồ uống cày phim tiết kiệm nhất tại ShopeeFood Mart Quy Nhơn với AI ơi!');
+      window.chatManager.handleUserSubmit('Gợi ý cho mình các món ăn vặt Shopee hot trend ngon nhất để cày phim hoặc nhậu tại gia với AI ơi!');
     }
   }
 
-  // ── 5. KIẾN TRÚC DỮ LIỆU CLOUD FIRESTORE (foodtinder_quynhon/grocery_curated - 1 READ DUY NHẤT) ──
+  // ── KIẾN TRÚC DỮ LIỆU CLOUD FIRESTORE (foodtinder_quynhon/grocery_curated - 1 READ DUY NHẤT) ──
   async fetchFromFirestore() {
     try {
-      // 1. Thử qua Firebase SDK (tiết kiệm chi phí: đúng 1 Read duy nhất cho cả document)
       if (typeof firebase !== 'undefined' && firebase.firestore) {
         const doc = await firebase.firestore().collection('foodtinder_quynhon').doc('grocery_curated').get();
         if (doc && doc.exists) {
           const data = doc.data();
           if (data) {
             this.applyRemoteData(data);
-            console.log('🛒 [Grocery Firestore] Đã nạp thành công grocery_curated (1 Read Firestore)!');
+            console.log('🛒 [Shopee Snacks Firestore] Đã nạp thành công grocery_curated (1 Read Firestore)!');
             return true;
           }
         }
       }
-
-      // 2. Thử qua Cloud Firestore REST API nếu SDK chưa sẵn sàng
-      const FIREBASE_CONFIG = window.FIREBASE_CONFIG || {
-        projectId: "foodtinder-quynhon",
-        apiKey: ""
-      };
-      if (FIREBASE_CONFIG.projectId && FIREBASE_CONFIG.apiKey) {
-        const fsUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/foodtinder_quynhon/grocery_curated?key=${FIREBASE_CONFIG.apiKey}`;
-        const res = await fetch(fsUrl);
-        if (res.ok) {
-          const docData = await res.json();
-          if (docData && docData.fields) {
-            console.log('🛒 [Grocery Firestore REST] Đã kết nối doc grocery_curated qua REST API');
-          }
-        }
-      }
     } catch (err) {
-      console.warn('🛒 [Grocery Firestore] Sử dụng dữ liệu curated nội bộ tích hợp:', err.message);
+      console.warn('🛒 [Shopee Snacks Firestore] Sử dụng dữ liệu curated tích hợp sẵn:', err.message);
     }
     return false;
   }
@@ -912,17 +933,17 @@ class GroceryManager {
     try {
       const payload = {
         combos: window.GROCERY_COMBOS || GROCERY_COMBOS,
-        stores: window.GROCERY_STORES || GROCERY_STORES,
         items: window.GROCERY_ITEMS || GROCERY_ITEMS,
+        topShops: SHOPEE_TOP_SHOPS,
         updatedAt: new Date().toISOString()
       };
       if (typeof firebase !== 'undefined' && firebase.firestore) {
         await firebase.firestore().collection('foodtinder_quynhon').doc('grocery_curated').set(payload, { merge: true });
-        console.log('🛒 [Grocery Firestore] Đã đồng bộ document foodtinder_quynhon/grocery_curated lên Cloud Firestore!');
+        console.log('🛒 [Shopee Snacks Firestore] Đã đồng bộ grocery_curated lên Cloud Firestore!');
         return true;
       }
     } catch (err) {
-      console.warn('🛒 [Grocery Firestore Sync Error]:', err.message);
+      console.warn('🛒 [Shopee Snacks Firestore Sync Error]:', err.message);
     }
     return false;
   }
@@ -931,10 +952,6 @@ class GroceryManager {
     let hasChanges = false;
     if (Array.isArray(data.combos) && data.combos.length > 0) {
       window.GROCERY_COMBOS = data.combos;
-      hasChanges = true;
-    }
-    if (Array.isArray(data.stores) && data.stores.length > 0) {
-      window.GROCERY_STORES = data.stores;
       hasChanges = true;
     }
     if (Array.isArray(data.items) && data.items.length > 0) {
@@ -952,6 +969,7 @@ if (typeof window !== 'undefined') {
   window.GROCERY_NEEDS = GROCERY_NEEDS;
   window.GROCERY_COMBOS = GROCERY_COMBOS;
   window.GROCERY_ITEMS = GROCERY_ITEMS;
+  window.SHOPEE_TOP_SHOPS = SHOPEE_TOP_SHOPS;
   window.GroceryManager = GroceryManager;
   window.groceryManager = new GroceryManager();
 }
