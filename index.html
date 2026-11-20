@@ -424,7 +424,7 @@
         </div>
         <div class="flex justify-between">
           <span>Lần quẹt hôm nay</span>
-          <span class="font-bold text-amber-500">0</span>
+          <span id="stat-swipes" class="font-bold text-amber-500">0</span>
         </div>
         <div class="flex justify-between">
           <span>Khoảng cách gần nhất</span>
@@ -539,6 +539,11 @@
                 <span>Tìm kiếm</span>
               </button>
             </form>
+
+            <!-- Dải Category Chips trượt ngang nhanh ngay dưới ô tìm kiếm -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none -mx-1 px-1" id="quick-category-chips">
+              <!-- Rendered by window.app -->
+            </div>
           </div>
 
           <!-- GỢI Ý MÓN PHÙ HỢP TÂM TRẠNG & BỘ LỌC ĐA NĂNG -->
@@ -576,10 +581,6 @@
                   <span id="filter-btn-count" class="hidden w-4 h-4 rounded-full bg-white text-rose-600 text-[10px] font-black flex items-center justify-center">0</span>
                 </button>
               </div>
-            </div>
-
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none" id="quick-category-chips">
-              <!-- Rendered by window.app -->
             </div>
 
             <div id="featured-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
@@ -961,6 +962,53 @@
         <span>Chỉ đường đến quán</span>
       </button>
       <button onclick="window.app.closeMatchModal()" class="w-full py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-xs cursor-pointer">🃏 Tiếp tục quẹt món</button>
+    </div>
+  </div>
+</div>
+
+<!-- Match Trio / Chốt Kèo 3 Quán Modal -->
+<div id="match-trio-modal" class="modal-backdrop hidden" style="align-items:center; justify-content:center; padding:16px;" onclick="if(event.target === this) window.swipeManager && window.swipeManager.closeMatchTrioModal()">
+  <div class="modal-sheet w-full max-w-md translate-y-full bg-white rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-2xl border border-rose-200 flex flex-col max-h-[90vh] text-center relative select-none" onclick="event.stopPropagation()">
+    <!-- Top Close Button -->
+    <button onclick="window.swipeManager && window.swipeManager.closeMatchTrioModal()" class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 font-bold text-xs flex items-center justify-center transition cursor-pointer z-10" title="Đóng">✕</button>
+
+    <!-- Header Gradient Banner -->
+    <div class="bg-gradient-to-r from-rose-500 via-rose-600 to-amber-500 p-6 text-white text-center relative overflow-hidden shrink-0">
+      <div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl mx-auto mb-2.5 shadow-md shadow-rose-900/20 animate-bounce">
+        🎉
+      </div>
+      <span class="inline-block bg-white/25 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider mb-1">
+        Match Kèo Ăn Uống!
+      </span>
+      <h3 class="font-black text-lg sm:text-xl text-white leading-tight">
+        Bạn đã có 3 quán ưng ý hôm nay!
+      </h3>
+      <p class="text-xs text-rose-100 mt-1">
+        Cùng gu với nhau rồi, chốt kèo ăn uống hoặc đặt giao tận nơi ngay thôi! 🍲
+      </p>
+    </div>
+
+    <!-- 3 Matched Foods List -->
+    <div id="match-trio-items-list" class="p-4 overflow-y-auto space-y-2.5 flex-1 scrollbar-none text-left bg-stone-50/50">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Action Buttons Footer -->
+    <div class="p-4 bg-white border-t border-stone-200 space-y-2 shrink-0">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <button id="match-trio-shopee-btn"
+          class="w-full py-2.5 px-3 bg-gradient-to-r from-[#EE4D2D] to-orange-500 hover:from-[#D73211] hover:to-orange-600 text-white rounded-xl text-xs font-black shadow-md shadow-orange-300 transition active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+          <span>🛵 Đặt ShopeeFood</span>
+        </button>
+        <button id="match-trio-zalo-btn"
+          class="w-full py-2.5 px-3 bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white rounded-xl text-xs font-black shadow-md shadow-sky-200 transition active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+          <span>💬 Gửi bạn bè qua Zalo</span>
+        </button>
+      </div>
+      <button onclick="window.swipeManager && window.swipeManager.closeMatchTrioModal()"
+        class="w-full py-2 bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-xl text-xs font-bold transition cursor-pointer">
+        🃏 Tiếp tục quẹt thêm món
+      </button>
     </div>
   </div>
 </div>
@@ -1713,14 +1761,14 @@
 <script src="js/data.js?v=3.3.1"></script>
 <script src="js/audio.js?v=3.3.1"></script>
 <script src="js/taste.js?v=3.3.9"></script>
-<script src="js/swipe.js?v=3.3.1"></script>
+<script src="js/swipe.js?v=3.3.11"></script>
 <script src="js/map.js?v=3.3.1"></script>
 <script src="js/reels.js?v=3.3.1"></script>
 <script src="js/chat.js?v=3.3.9"></script>
-<script src="js/auth.js?v=3.3.9"></script>
+<script src="js/auth.js?v=3.3.11"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.9"></script>
+<script src="js/app.js?v=3.3.11"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

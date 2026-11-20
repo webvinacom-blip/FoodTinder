@@ -923,6 +923,11 @@ class AuthManager {
     } catch (e) {}
   }
 
+  getStat(key) {
+    if (!this.userStats) this.userStats = this.loadUserStats();
+    return this.userStats ? (this.userStats[key] || 0) : 0;
+  }
+
   // Cập nhật thống kê hoạt động (quẹt thẻ, xem map, xem reel, share...)
   trackStat(key, amount = 1) {
     if (!this.userStats) this.userStats = this.loadUserStats();
@@ -936,6 +941,9 @@ class AuthManager {
     }
     this.syncUI();
     this.updateProfileModalBadge();
+    if (window.app && typeof window.app.updateBentoStats === 'function') {
+      window.app.updateBentoStats();
+    }
   }
 
   // Kiểm tra tiến độ của một nhiệm vụ đơn lẻ

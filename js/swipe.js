@@ -525,10 +525,16 @@ class TinderSwipeManager {
     setTimeout(() => {
       if (targetFood) {
         this.history.push({ action: 'like', food: targetFood });
+        if (!this.sessionLikes) this.sessionLikes = [];
+        this.sessionLikes.push(targetFood);
+
         if (window.app) {
           window.app.addLikedFood(targetFood);
           if (typeof window.app.recordSwipeLike === 'function') {
             window.app.recordSwipeLike(targetFood);
+          }
+          if (typeof window.app.updateBentoStats === 'function') {
+            window.app.updateBentoStats();
           }
         }
         if (window.authManager && typeof window.authManager.trackStat === 'function') {
@@ -542,6 +548,13 @@ class TinderSwipeManager {
             category: targetFood.category,
             restaurant: targetFood.restaurant
           });
+        }
+
+        // Cơ chế Match Kèo / Chốt Quán: khi thích từ 3 món trở lên
+        if (this.sessionLikes.length === 3 || (this.sessionLikes.length > 3 && this.sessionLikes.length % 5 === 0)) {
+          setTimeout(() => {
+            this.showMatchTrioModal(this.sessionLikes.slice(-3));
+          }, 350);
         }
       }
       this.currentIndex++;
@@ -571,6 +584,9 @@ class TinderSwipeManager {
         }
         if (window.authManager && typeof window.authManager.trackStat === 'function') {
           window.authManager.trackStat('swipes', 1);
+        }
+        if (window.app && typeof window.app.updateBentoStats === 'function') {
+          window.app.updateBentoStats();
         }
         if (window.userActionBatcher) {
           window.userActionBatcher.recordAction({
@@ -755,6 +771,78 @@ class TinderSwipeManager {
         </div>
       </div>
     `;
+  }
+
+  /* ══ MATCH KÈO / CHỐT QUÁN KHI THÍCH TỪ 3 MÓN ══ */
+  showMatchTrioModal(foods) {
+    if (!Array.isArray(foods) || foods.length === 0) return;
+    window.soundFX && window.soundFX.playMatch();
+    if (window.confetti) {
+      window.confetti({
+        particleCount: 100,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    const modal = document.getElementById('match-trio-modal');
+    const listEl = document.getElementById('match-trio-items-list');
+    const shopeeBtn = document.getElementById('match-trio-shopee-btn');
+    const zaloBtn = document.getElementById('match-trio-zalo-btn');
+    if (!modal) return;
+
+    const topFood = foods[foods.length - 1]; // Món thích gần nhất
+
+    if (listEl) {
+      listEl.innerHTML = foods.map(food => `
+        <div class="flex items-center gap-3 p-2.5 rounded-2xl border border-stone-200 bg-white shadow-2xs hover:border-rose-300 transition">
+          <div class="w-12 h-12 rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
+            <img src="${food.image}" alt="${food.name}" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <h5 class="font-extrabold text-xs text-stone-900 truncate">${food.name}</h5>
+            <p class="text-[11px] text-rose-600 font-semibold truncate mt-0.5">${food.restaurant}</p>
+            <div class="flex items-center gap-2 text-[10px] text-stone-400 mt-0.5">
+              <span>⭐ ${food.rating || 4.8}</span>
+              <span>•</span>
+              <span>📍 ${food.distanceText || 'Quy Nhơn'}</span>
+              <span>•</span>
+              <span class="text-stone-700 font-bold">${food.priceRange || ''}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    if (shopeeBtn) {
+      shopeeBtn.onclick = () => {
+        this.closeMatchTrioModal();
+        if (window.app) {
+          window.app.openShopeeFoodDelivery(topFood.id);
+        }
+      };
+    }
+
+    if (zaloBtn) {
+      zaloBtn.onclick = () => {
+        this.closeMatchTrioModal();
+        if (window.app) {
+          window.app.shareInviteExternally(topFood.id);
+        }
+      };
+    }
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.querySelector('.modal-sheet')?.classList.remove('translate-y-full');
+    }, 10);
+  }
+
+  closeMatchTrioModal() {
+    const modal = document.getElementById('match-trio-modal');
+    if (!modal) return;
+    modal.querySelector('.modal-sheet')?.classList.add('translate-y-full');
+    setTimeout(() => modal.classList.add('hidden'), 250);
   }
 }
 

@@ -4,6 +4,16 @@
 // FILTER METADATA & HELPER FUNCTIONS FOR MOOD & FOOD DISCOVERY
 // ═══════════════════════════════════════════════════════════════════
 
+const QUICK_HOME_CATEGORIES = [
+  { id: 'all', label: 'Tất cả', emoji: '✨' },
+  { id: 'noodles', label: 'Bún/Phở/Mì', emoji: '🍜' },
+  { id: 'rice', label: 'Cơm', emoji: '🍚' },
+  { id: 'hotpot_bbq', label: 'Lẩu & Nướng', emoji: '🍲' },
+  { id: 'snack_boba', label: 'Trà sữa & Ăn vặt', emoji: '🧋' },
+  { id: 'seafood', label: 'Hải sản', emoji: '🦐' },
+  { id: 'vegetarian', label: 'Đồ chay', emoji: '🥗' }
+];
+
 const FILTER_CATEGORIES = [
   { id: 'hotpot', label: '🍲 Lẩu các loại', short: '🍲 Lẩu', keywords: ['lẩu', 'hotpot'] },
   { id: 'bbq', label: '🥩 Nướng BBQ & Xiên', short: '🥩 Nướng', keywords: ['nướng', 'bbq', 'xiên'] },
@@ -50,6 +60,12 @@ function isFoodVegetarian(food) {
 
 function matchFoodCategory(food, catId) {
   if (catId === 'vegetarian') return isFoodVegetarian(food);
+  if (catId === 'hotpot_bbq') {
+    return matchFoodCategory(food, 'hotpot') || matchFoodCategory(food, 'bbq') || /lẩu|nướng|bbq|xiên/.test(`${food.name} ${food.restaurant || ''} ${(food.tags || []).join(' ')}`.toLowerCase());
+  }
+  if (catId === 'snack_boba') {
+    return matchFoodCategory(food, 'drinks') || matchFoodCategory(food, 'snack') || /trà sữa|ăn vặt|cà phê|cafe|boba|chè|kem|tàu hũ/.test(`${food.name} ${food.restaurant || ''} ${(food.tags || []).join(' ')}`.toLowerCase());
+  }
   const cat = FILTER_CATEGORIES.find(c => c.id === catId);
   if (!cat) return false;
   if (food.category === catId) return true;
@@ -1866,22 +1882,23 @@ class FoodApp {
       };
     }
 
-    const isAll = this.moodFilter.selectedCategories.length === 0;
+    const isAll = !this.moodFilter.selectedCategories || this.moodFilter.selectedCategories.length === 0;
 
-    let html = `
-      <button onclick="window.app.toggleQuickCategory('all')"
-        class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition shadow-xs shrink-0 cursor-pointer flex items-center gap-1 ${isAll ? 'bg-rose-500 text-white shadow-rose-200' : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200'}">
-        <span>✨ Tất cả</span>
-      </button>
-    `;
+    const html = QUICK_HOME_CATEGORIES.map(cat => {
+      const isSelected = cat.id === 'all' 
+        ? isAll 
+        : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
 
-    html += FILTER_CATEGORIES.map(cat => {
-      const isSelected = this.moodFilter.selectedCategories.includes(cat.id);
       return `
-        <button onclick="window.app.toggleQuickCategory('${cat.id}')"
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition shadow-xs shrink-0 cursor-pointer flex items-center gap-1 ${isSelected ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white shadow-rose-200 ring-2 ring-rose-200 font-extrabold' : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200'}">
-          <span>${cat.short}</span>
-          ${isSelected ? '<span class="text-[10px] font-black">✓</span>' : ''}
+        <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
+          class="home-cat-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 ${
+            isSelected 
+              ? 'bg-white text-stone-900 shadow-md ring-2 ring-white/50 font-black' 
+              : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-xs font-semibold border border-white/25'
+          }">
+          <span>${cat.emoji}</span>
+          <span>${cat.label}</span>
+          ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
         </button>
       `;
     }).join('');
@@ -2263,6 +2280,7 @@ class FoodApp {
 
   renderBentoAndFeed() {
     this.ensureMoodFilter();
+    this.renderQuickCategoryChips();
     const container = document.getElementById('featured-card-container');
     if (!container) return;
 
@@ -2580,10 +2598,17 @@ class FoodApp {
     const labelEl  = document.getElementById('bento-mood-label');
     const likedEl  = document.getElementById('bento-liked-count');
     const statEl   = document.getElementById('stat-liked');
+    const statSwipesEl = document.getElementById('stat-swipes');
     if (emojiEl)  emojiEl.textContent  = moodObj.emoji;
     if (labelEl)  labelEl.textContent  = moodObj.label;
     if (likedEl)  likedEl.textContent  = this.likedFoods.length;
     if (statEl)   statEl.textContent   = this.likedFoods.length;
+    if (statSwipesEl) {
+      const todaySwipes = (window.authManager && typeof window.authManager.getStat === 'function')
+        ? window.authManager.getStat('swipes')
+        : (this.swipeCount || 0);
+      statSwipesEl.textContent = todaySwipes;
+    }
   }
 
   renderNearbyGrid() {
