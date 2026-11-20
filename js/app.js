@@ -2807,7 +2807,7 @@ class FoodApp {
 
     // Handle view-specific initializations
     if (tabName === 'home') {
-      const initialSubTab = this.currentHomeSubTab || 'taste';
+      const initialSubTab = this.currentHomeSubTab || 'explore';
       this.switchHomeSubTab(initialSubTab);
 
       setTimeout(() => {
@@ -2877,7 +2877,7 @@ class FoodApp {
     }
   }
 
-  switchHomeSubTab(subTab = 'taste') {
+  switchHomeSubTab(subTab = 'explore') {
     window.soundFX && window.soundFX.playPop();
     this.currentHomeSubTab = subTab;
 
@@ -2904,10 +2904,14 @@ class FoodApp {
         btnTaste.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900 whitespace-nowrap';
       }
       if (btnExplore) {
-        btnExplore.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-amber-600 whitespace-nowrap';
+        btnExplore.className = 'flex-1 sm:flex-initial py-1.5 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600 whitespace-nowrap';
       }
       if (secTaste) secTaste.classList.add('hidden');
       if (secExplore) secExplore.classList.remove('hidden');
+
+      if (typeof this.renderBentoAndFeed === 'function') {
+        this.renderBentoAndFeed();
+      }
     }
 
     if (window.lucide) window.lucide.createIcons();

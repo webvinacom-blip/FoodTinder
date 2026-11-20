@@ -20,6 +20,9 @@ class TasteManager {
   }
 
   changeSortOrder(order) {
+    if (window.app && window.app.currentHomeSubTab !== 'taste' && typeof window.app.switchHomeSubTab === 'function') {
+      window.app.switchHomeSubTab('taste');
+    }
     this.sortOrder = order;
     this.renderLocationRecommendations();
   }
@@ -141,6 +144,9 @@ class TasteManager {
   }
 
   toggleSpecialtyFilter() {
+    if (window.app && window.app.currentHomeSubTab !== 'taste' && typeof window.app.switchHomeSubTab === 'function') {
+      window.app.switchHomeSubTab('taste');
+    }
     this.visibleLimit = 40;
     this.onlySpecialties = !this.onlySpecialties;
     if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
