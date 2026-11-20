@@ -1494,11 +1494,11 @@ class FoodApp {
       `;
     }
 
-    // Topbar weather chip
+    // Topbar weather chip (Rút gọn thành: temp, bỏ city.name vì đã có ở cột trái, tránh bẻ dòng)
     const topbarIcon = document.getElementById('topbar-weather-icon');
     const topbarText = document.getElementById('topbar-weather-text');
     if (topbarIcon) topbarIcon.textContent = weather.icon;
-    if (topbarText) topbarText.textContent = `${city.name} ${weather.temp}`;
+    if (topbarText) topbarText.textContent = `${weather.temp}`;
 
     // Welcome banner subtitle (tự động điều chỉnh linh hoạt theo thời tiết & tâm trạng)
     const wSub = document.getElementById('welcome-subtitle');
@@ -1585,6 +1585,13 @@ class FoodApp {
   }
 
   renderMoodSelector() {
+    if (this.currentTab === 'grocery') {
+      if (window.groceryManager && typeof window.groceryManager.renderNeedsSelector === 'function') {
+        window.groceryManager.renderNeedsSelector();
+        return;
+      }
+    }
+
     const container = document.getElementById('mood-selector-container');
     if (!container) return;
 
@@ -2796,13 +2803,22 @@ class FoodApp {
 
     // Handle view-specific initializations
     if (tabName === 'home') {
+      const initialSubTab = this.currentHomeSubTab || 'taste';
+      this.switchHomeSubTab(initialSubTab);
+
       setTimeout(() => {
         if (this.miniMapInstance) {
           this.miniMapInstance.invalidateSize();
         }
       }, 150);
     }
+    if (tabName === 'grocery') {
+      if (window.groceryManager) {
+        window.groceryManager.init();
+      }
+    }
     if (tabName === 'taste') {
+      this.switchHomeSubTab('taste');
       if (window.tasteManager && typeof window.tasteManager.renderLocationRecommendations === 'function') {
         window.tasteManager.renderLocationRecommendations();
       }
@@ -2855,6 +2871,42 @@ class FoodApp {
         window.chatManager.renderActiveChatWindow();
       }
     }
+  }
+
+  switchHomeSubTab(subTab = 'taste') {
+    window.soundFX && window.soundFX.playPop();
+    this.currentHomeSubTab = subTab;
+
+    const btnTaste = document.getElementById('home-subtab-taste');
+    const btnExplore = document.getElementById('home-subtab-explore');
+    const secTaste = document.getElementById('home-taste-section');
+    const secExplore = document.getElementById('home-explore-section');
+
+    if (subTab === 'taste') {
+      if (btnTaste) {
+        btnTaste.className = 'flex-1 py-2 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-rose-600';
+      }
+      if (btnExplore) {
+        btnExplore.className = 'flex-1 py-2 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900';
+      }
+      if (secTaste) secTaste.classList.remove('hidden');
+      if (secExplore) secExplore.classList.add('hidden');
+
+      if (window.tasteManager && typeof window.tasteManager.renderLocationRecommendations === 'function') {
+        window.tasteManager.renderLocationRecommendations();
+      }
+    } else {
+      if (btnTaste) {
+        btnTaste.className = 'flex-1 py-2 px-3.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-stone-600 hover:text-stone-900';
+      }
+      if (btnExplore) {
+        btnExplore.className = 'flex-1 py-2 px-3.5 rounded-xl font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs bg-white text-amber-600';
+      }
+      if (secTaste) secTaste.classList.add('hidden');
+      if (secExplore) secExplore.classList.remove('hidden');
+    }
+
+    if (window.lucide) window.lucide.createIcons();
   }
 
   addLikedFood(food) {

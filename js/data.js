@@ -8493,7 +8493,7 @@ const APP_DATA = {
           "reviewCount": 20,
           "likesCount": 145,
           "commentsCount": 5,
-          "openTime": "06:30 - 22:00",
+          "openTime": "14:00 - 22:00",
           "category": "cafe",
           "source": "ShopeeFood",
           "sourceIcon": "🛍️",
