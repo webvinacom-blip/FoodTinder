@@ -377,7 +377,7 @@ class FoodApp {
       selectedCategories: [],
       maxRadius: 0,
       selectedArea: 'all',
-      openOnly: false,
+      openOnly: true,
       shopeeOnly: false,
       highRatingOnly: false,
       priceTier: 'all'
@@ -391,7 +391,7 @@ class FoodApp {
         selectedCategories: [],
         maxRadius: 0,
         selectedArea: 'all',
-        openOnly: false,
+        openOnly: true,
         shopeeOnly: false,
         highRatingOnly: false,
         priceTier: 'all'
@@ -1389,12 +1389,14 @@ class FoodApp {
     // Lọc theo điều kiện tâm trạng thông minh
     let matchedMood = pool.filter(food => this.doesFoodMatchMood(food, moodId));
 
-    // Lọc bỏ quán đóng cửa vĩnh viễn, quán ảo, hoặc vi phạm nghiêm ngặt chế độ ăn
+    // Lọc bỏ quán đóng cửa vĩnh viễn, quán ảo, vi phạm nghiêm ngặt chế độ ăn, hoặc quán chưa mở cửa
     const qualityFoods = matchedMood.filter(food => {
       if (!food) return false;
       if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(food)) return false;
       if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) return false;
       if (window.tasteManager && typeof window.tasteManager.isFoodAllowedByPreferences === 'function' && !window.tasteManager.isFoodAllowedByPreferences(food)) return false;
+      const status = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+      if (!status || !status.isOpen) return false;
       return true;
     });
 
@@ -1402,7 +1404,7 @@ class FoodApp {
       matchedMood = qualityFoods;
     }
 
-    // Fallback Logic: Khi kết quả trả về < 10 món, tự động nới lỏng để luồng quẹt thẻ luôn mượt mà
+    // Fallback Logic: Khi kết quả trả về < 10 món, tự động nới lỏng để luồng quẹt thẻ luôn mượt mà (vẫn chỉ giữ quán đang mở)
     if (matchedMood.length < 10) {
       const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
       const weights = matrix[moodId] || {};
@@ -1411,6 +1413,8 @@ class FoodApp {
         if (!f || matchedIds.has(f.id)) return false;
         if (typeof window.isPermanentlyClosedRestaurant === 'function' && window.isPermanentlyClosedRestaurant(f)) return false;
         if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+        const status = window.getRestaurantStatus ? window.getRestaurantStatus(f, now) : { isOpen: true };
+        if (!status || !status.isOpen) return false;
         return true;
       });
       candidates.sort((a, b) => {
@@ -1810,7 +1814,7 @@ class FoodApp {
         selectedCategories: [],
         maxRadius: 0,
         selectedArea: 'all',
-        openOnly: false,
+        openOnly: true,
         shopeeOnly: false,
         highRatingOnly: false,
         priceTier: 'all'
@@ -1843,7 +1847,7 @@ class FoodApp {
   toggleQuickCategory(catId) {
     window.soundFX && window.soundFX.playPop();
     if (!this.moodFilter) {
-      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: false, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
     if (catId === 'all') {
       this.moodFilter.selectedCategories = [];
@@ -1865,7 +1869,7 @@ class FoodApp {
     if (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.length > 0) count += this.moodFilter.selectedCategories.length;
     if (this.moodFilter.maxRadius > 0) count++;
     if (this.moodFilter.selectedArea && this.moodFilter.selectedArea !== 'all') count++;
-    if (this.moodFilter.openOnly) count++;
+    // openOnly là tiêu chuẩn mặc định nên không tính vào số lượng tùy chỉnh
     if (this.moodFilter.shopeeOnly) count++;
     if (this.moodFilter.highRatingOnly) count++;
     if (this.moodFilter.priceTier && this.moodFilter.priceTier !== 'all') count++;
@@ -1878,14 +1882,14 @@ class FoodApp {
       window.authManager.trackStat('moodExplored', 1);
     }
     if (!this.moodFilter) {
-      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: false, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
     this.tempMoodFilter = {
       moodId: this.moodFilter.moodId || this.currentMood,
       selectedCategories: [...(this.moodFilter.selectedCategories || [])],
       maxRadius: this.moodFilter.maxRadius || 0,
       selectedArea: this.moodFilter.selectedArea || 'all',
-      openOnly: Boolean(this.moodFilter.openOnly),
+      openOnly: typeof this.moodFilter.openOnly === 'boolean' ? this.moodFilter.openOnly : true,
       shopeeOnly: Boolean(this.moodFilter.shopeeOnly),
       highRatingOnly: Boolean(this.moodFilter.highRatingOnly),
       priceTier: this.moodFilter.priceTier || 'all'
@@ -2115,6 +2119,10 @@ class FoodApp {
   countMatchingFoods(filterState) {
     const now = new Date();
     return (APP_DATA.foods || []).filter(food => {
+      // Ẩn quán chưa mở cửa
+      const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+      if (!st || !st.isOpen) return false;
+
       if (filterState.selectedCategories && filterState.selectedCategories.length > 0) {
         if (!matchCategories(food, filterState.selectedCategories)) return false;
       }
@@ -2123,10 +2131,6 @@ class FoodApp {
       }
       if (filterState.selectedArea && !matchFoodArea(food, filterState.selectedArea)) {
         return false;
-      }
-      if (filterState.openOnly) {
-        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
-        if (!st.isOpen) return false;
       }
       if (filterState.shopeeOnly) {
         const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
@@ -2202,7 +2206,7 @@ class FoodApp {
       selectedCategories: [],
       maxRadius: 0,
       selectedArea: 'all',
-      openOnly: false,
+      openOnly: true,
       shopeeOnly: false,
       highRatingOnly: false,
       priceTier: 'all'
@@ -2313,6 +2317,12 @@ class FoodApp {
         return false;
       }
 
+      // Quán chưa mở cửa thì ẩn đi, khi nào mở cửa hãy hiện lên
+      const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+      if (!st || !st.isOpen) {
+        return false;
+      }
+
       // 0. Khớp từ khóa tìm kiếm
       if (hasSearch) {
         const nameMatch = (food.name || '').toLowerCase().includes(q);
@@ -2342,29 +2352,23 @@ class FoodApp {
         return false;
       }
 
-      // 4. Quán đang mở cửa
-      if (this.moodFilter?.openOnly) {
-        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food.openTime, now) : { isOpen: true };
-        if (!st.isOpen) return false;
-      }
-
-      // 5. Có trên ShopeeFood
+      // 4. Có trên ShopeeFood
       if (this.moodFilter?.shopeeOnly) {
         const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
         if (!hasShopee) return false;
       }
 
-      // 6. Đánh giá cao
+      // 5. Đánh giá cao
       if (this.moodFilter?.highRatingOnly) {
         if ((food.rating || 0) < 4.5) return false;
       }
 
-      // 7. Khoảng giá
+      // 6. Khoảng giá
       if (this.moodFilter?.priceTier && !matchFoodPrice(food, this.moodFilter.priceTier)) {
         return false;
       }
 
-      // 8. Ràng buộc thông minh theo tâm trạng:
+      // 7. Ràng buộc thông minh theo tâm trạng:
       // Khi người dùng gõ tìm kiếm cụ thể (hasSearch), ưu tiên từ khóa tìm kiếm hơn tâm trạng
       if (!hasSearch && activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
         return false;
@@ -2373,7 +2377,7 @@ class FoodApp {
       return true;
     });
 
-    // 5. Fallback Logic: Khi kết quả trả về < 5 món, tự động nới lỏng bộ lọc để luồng không bị đứt đoạn
+    // 5. Fallback Logic: Khi kết quả trả về < 5 món, tự động nới lỏng bộ lọc để luồng không bị đứt đoạn (vẫn chỉ giữ quán đang mở cửa)
     let isRelaxedFallback = false;
     let fallbackNotice = "";
 
@@ -2383,8 +2387,15 @@ class FoodApp {
       const moodLabel = currentMoodObj ? currentMoodObj.label.toLowerCase() : 'tâm trạng';
       fallbackNotice = `Quanh đây đang hiếm món ${moodLabel}, FoodTinder mở rộng tìm kiếm thêm một chút cho bạn nhé!`;
 
-      // Mở rộng bán kính quét ra toàn bộ địa bàn thành phố
+      // Mở rộng bán kính quét ra toàn bộ địa bàn thành phố (vẫn đảm bảo quán đang mở cửa)
       const relaxedList = baseFoods.filter(food => {
+        if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) {
+          return false;
+        }
+        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+        if (!st || !st.isOpen) {
+          return false;
+        }
         if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
           return false;
         }
@@ -2395,12 +2406,18 @@ class FoodApp {
         filteredFoods = relaxedList;
       }
 
-      // Nếu vẫn < 5 món (ví dụ chọn các tiêu chí quá đặc thù), mở rộng các món có thuộc tính vị giác tương đồng
+      // Nếu vẫn < 5 món (ví dụ chọn các tiêu chí quá đặc thù), mở rộng các món có thuộc tính vị giác tương đồng (vẫn chỉ lấy quán đang mở cửa)
       if (filteredFoods.length < 5) {
         const matrix = window.MOOD_ATTRIBUTE_MATRIX || {};
         const weights = matrix[activeMoodId] || {};
         const existingIds = new Set(filteredFoods.map(f => f.id));
-        const extraCandidates = baseFoods.filter(f => !existingIds.has(f.id));
+        const extraCandidates = baseFoods.filter(f => {
+          if (!f || existingIds.has(f.id)) return false;
+          if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(f)) return false;
+          const st = window.getRestaurantStatus ? window.getRestaurantStatus(f, now) : { isOpen: true };
+          if (!st || !st.isOpen) return false;
+          return true;
+        });
         extraCandidates.sort((a, b) => {
           const scoreA = (a.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
           const scoreB = (b.attributes || []).reduce((sum, at) => sum + (weights[at] || 0), 0);
