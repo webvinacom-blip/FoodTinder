@@ -788,7 +788,7 @@ class TinderSwipeManager {
     const modal = document.getElementById('match-trio-modal');
     const listEl = document.getElementById('match-trio-items-list');
     const shopeeBtn = document.getElementById('match-trio-shopee-btn');
-    const zaloBtn = document.getElementById('match-trio-zalo-btn');
+    const inviteBtn = document.getElementById('match-trio-invite-btn') || document.getElementById('match-trio-zalo-btn');
     if (!modal) return;
 
     const topFood = foods[foods.length - 1]; // Món thích gần nhất
@@ -810,11 +810,19 @@ class TinderSwipeManager {
               <span class="text-stone-700 font-bold">${food.priceRange || ''}</span>
             </div>
           </div>
+          <button onclick="event.stopPropagation(); window.swipeManager && window.swipeManager.closeMatchTrioModal(); window.app && window.app.openInviteFriendsModal(${food.id})"
+            class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-[10.5px] shrink-0 shadow-xs hover:opacity-95 transition cursor-pointer flex items-center gap-1 active:scale-95"
+            title="Rủ bạn bè đi ăn quán này">
+            <span>Rủ đi ăn</span>
+            <span>🍲</span>
+          </button>
         </div>
       `).join('');
     }
 
     if (shopeeBtn) {
+      const shopeeIcon = (window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : '');
+      shopeeBtn.innerHTML = `${shopeeIcon}<span>Đặt ShopeeFood</span>`;
       shopeeBtn.onclick = () => {
         this.closeMatchTrioModal();
         if (window.app) {
@@ -823,10 +831,13 @@ class TinderSwipeManager {
       };
     }
 
-    if (zaloBtn) {
-      zaloBtn.onclick = () => {
+    if (inviteBtn) {
+      inviteBtn.innerHTML = `<span>Rủ đi ăn</span><span>🍲</span>`;
+      inviteBtn.onclick = () => {
         this.closeMatchTrioModal();
-        if (window.app) {
+        if (window.app && typeof window.app.openInviteFriendsModal === 'function') {
+          window.app.openInviteFriendsModal(topFood.id);
+        } else if (window.app && typeof window.app.shareInviteExternally === 'function') {
           window.app.shareInviteExternally(topFood.id);
         }
       };
