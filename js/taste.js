@@ -1253,7 +1253,7 @@ class TasteManager {
               </div>
 
               <!-- Phần thông tin (Tối đa 3 dòng gọn gàng) -->
-              <div class="p-3.5 pb-2 space-y-1.5">
+              <div class="p-3 sm:p-3.5 pb-2 space-y-1.5">
                 <!-- Dòng 1: Tên quán (1 dòng, cắt ...) -->
                 <h5 class="font-black text-sm text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer leading-tight" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
                   ${food.restaurant}
@@ -1288,21 +1288,21 @@ class TasteManager {
             </div>
 
             <!-- Phần đáy thẻ (Footer — 1 hàng duy nhất, không vỡ dòng) -->
-            <div class="px-3.5 pb-3.5 pt-1 space-y-2 border-t border-stone-100/80">
+            <div class="px-3 sm:px-3.5 pb-3 sm:pb-3.5 pt-1 space-y-1.5 sm:space-y-2 border-t border-stone-100/80">
               <!-- Dòng nhỏ phía trên: 😋 28 khách sẽ quay lại -->
               <button onclick="event.stopPropagation();window.app.toggleWillReturn(${food.id})"
                 data-will-return-btn="${food.id}"
                 class="w-full py-1 px-2 ${isWillReturn ? 'bg-amber-500 text-white shadow-xs' : 'bg-amber-50/70 hover:bg-amber-100/70 text-amber-900 border border-amber-200/60'} rounded-lg flex items-center justify-center gap-1.5 text-xs font-bold transition active:scale-95 cursor-pointer">
                 <span class="text-sm leading-none shrink-0 inline-block">😋</span>
-                <span class="text-[10.5px] font-extrabold whitespace-nowrap"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách sẽ quay lại</span>
+                <span class="text-[10px] sm:text-[10.5px] font-extrabold whitespace-nowrap truncate"><span data-will-return-count="${food.id}">${willReturnCount}</span> khách sẽ quay lại</span>
               </button>
 
               <!-- Thanh nút bấm: [ ❤️ ] [ 📍 ] [ 🧡 Đặt ShopeeFood ] (flex-1 whitespace-nowrap) -->
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1 sm:gap-1.5">
                 <!-- 1. Yêu thích (Chỉ icon) -->
                 <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
                   data-like-btn="${food.id}"
-                  class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
+                  class="w-8 sm:w-8.5 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
                   title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
                   <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -1311,7 +1311,7 @@ class TasteManager {
 
                 <!-- 2. Bản đồ (Chỉ icon) -->
                 <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-                  class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
+                  class="w-8 sm:w-8.5 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
                   title="Xem trên bản đồ">
                   <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
@@ -1324,22 +1324,22 @@ class TasteManager {
                 ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
                   status.isOpen ? `
                   <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-                    class="flex-1 h-8 px-2 whitespace-nowrap bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-black shadow-xs flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+                    class="flex-1 h-8 px-1.5 sm:px-2 whitespace-nowrap bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[10.5px] sm:text-[11px] font-black shadow-xs flex items-center justify-center gap-1 sm:gap-1.5 transition active:scale-95 cursor-pointer"
                     title="Đặt món qua ShopeeFood">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(17, 'shrink-0') : ''}
+                    ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0') : ''}
                     <span>Đặt ShopeeFood</span>
                   </button>
                   ` : `
                   <button disabled
-                    class="flex-1 h-8 px-2 whitespace-nowrap bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
+                    class="flex-1 h-8 px-1.5 sm:px-2 whitespace-nowrap bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[10.5px] sm:text-[11px] font-semibold flex items-center justify-center gap-1 sm:gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
                     title="Quán hiện đã đóng cửa">
-                    ${window.getShopeeIcon ? window.getShopeeIcon(17, 'shrink-0 filter grayscale opacity-50') : ''}
+                    ${window.getShopeeIcon ? window.getShopeeIcon(16, 'shrink-0 filter grayscale opacity-50') : ''}
                     <span>ShopeeFood</span>
                   </button>
                   `
                 ) : `
                 <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-                  class="flex-1 h-8 px-2 whitespace-nowrap bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
+                  class="flex-1 h-8 px-1.5 sm:px-2 whitespace-nowrap bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[10.5px] sm:text-[11px] font-bold flex items-center justify-center gap-1 sm:gap-1.5 transition active:scale-95 cursor-pointer"
                   title="Đến quán thưởng thức trực tiếp">
                   <span>Xem đường đi</span>
                 </button>
