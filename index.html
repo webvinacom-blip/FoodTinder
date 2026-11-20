@@ -775,8 +775,14 @@
     <div id="view-liked" class="tab-view scroll-y">
       <div class="p-6 max-w-4xl mx-auto w-full">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="font-extrabold text-lg text-stone-900">Món ăn đã thích ❤️</h3>
-          <span class="text-xs text-stone-400">Lưu để thưởng thức sau</span>
+          <h3 class="font-extrabold text-lg text-stone-900 flex items-center gap-2">
+            <span>Món ăn đã thích</span>
+            <span>❤️</span>
+          </h3>
+          <div class="flex items-center gap-2">
+            <span id="liked-items-count" class="text-xs text-rose-600 font-extrabold bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200 shadow-2xs">0 món</span>
+            <span class="text-xs text-stone-400 hidden sm:inline">Lưu để thưởng thức sau</span>
+          </div>
         </div>
         <div id="liked-list-container"></div>
       </div>
@@ -1769,14 +1775,14 @@
 <script src="js/data.js?v=3.3.1"></script>
 <script src="js/audio.js?v=3.3.1"></script>
 <script src="js/taste.js?v=3.3.9"></script>
-<script src="js/swipe.js?v=3.3.12"></script>
+<script src="js/swipe.js?v=3.3.13"></script>
 <script src="js/map.js?v=3.3.1"></script>
 <script src="js/reels.js?v=3.3.1"></script>
 <script src="js/chat.js?v=3.3.9"></script>
-<script src="js/auth.js?v=3.3.11"></script>
+<script src="js/auth.js?v=3.3.13"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.11"></script>
+<script src="js/app.js?v=3.3.13"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

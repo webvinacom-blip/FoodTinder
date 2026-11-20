@@ -633,13 +633,25 @@ class FoodApp {
       }
     } catch (e) {}
 
-    // Load liked from localStorage if available
-    try {
-      const saved = localStorage.getItem('foodtinder_liked');
-      if (saved) {
-        this.likedFoods = JSON.parse(saved);
-      }
-    } catch (e) {}
+    // Load liked from localStorage if available (V2 Schema with V1 Fallback)
+    this.likedFoods = this.loadLikedFoodsFromStorage();
+
+    // Cross-tab storage synchronization listener
+    if (typeof window !== 'undefined' && !this._hasStorageListener) {
+      this._hasStorageListener = true;
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'foodtinder_wishlist_v2' || e.key === 'foodtinder_liked' || e.key === 'foodtinder_swipe_history_v2' || e.key === 'foodtinder_user_stats') {
+          this.likedFoods = this.loadLikedFoodsFromStorage();
+          if (window.swipeManager && typeof window.swipeManager.loadSwipeHistory === 'function') {
+            window.swipeManager.loadSwipeHistory();
+          }
+          this.syncWishlistAndProfileStats();
+          if (this.currentTab === 'liked') {
+            this.renderLikedView();
+          }
+        }
+      });
+    }
 
     // Load will_return from localStorage
     try {
@@ -678,14 +690,11 @@ class FoodApp {
     // Initialize components
     this.renderHeader();
     this.renderMoodSelector();
-    this.renderHeader();
     this.renderBentoAndFeed();
     this.renderFoodGrid();
-    this.updateBentoStats();
     this.renderMiniMap();
     this.renderNearbyGrid();
-    this.renderFoodGrid();
-    this.updateBentoStats();
+    this.syncWishlistAndProfileStats();
 
     // Init Swipe Manager
     if (!window.swipeManager && typeof TinderSwipeManager !== 'undefined') {
@@ -2596,19 +2605,9 @@ class FoodApp {
     const moodObj = APP_DATA.moods.find(m => m.id === this.currentMood) || APP_DATA.moods[1];
     const emojiEl  = document.getElementById('bento-mood-emoji');
     const labelEl  = document.getElementById('bento-mood-label');
-    const likedEl  = document.getElementById('bento-liked-count');
-    const statEl   = document.getElementById('stat-liked');
-    const statSwipesEl = document.getElementById('stat-swipes');
-    if (emojiEl)  emojiEl.textContent  = moodObj.emoji;
-    if (labelEl)  labelEl.textContent  = moodObj.label;
-    if (likedEl)  likedEl.textContent  = this.likedFoods.length;
-    if (statEl)   statEl.textContent   = this.likedFoods.length;
-    if (statSwipesEl) {
-      const todaySwipes = (window.authManager && typeof window.authManager.getStat === 'function')
-        ? window.authManager.getStat('swipes')
-        : (this.swipeCount || 0);
-      statSwipesEl.textContent = todaySwipes;
-    }
+    if (emojiEl && moodObj) emojiEl.textContent = moodObj.emoji;
+    if (labelEl && moodObj) labelEl.textContent = moodObj.label;
+    this.syncWishlistAndProfileStats();
   }
 
   renderNearbyGrid() {
@@ -3004,17 +3003,121 @@ class FoodApp {
     if (window.lucide) window.lucide.createIcons();
   }
 
+  // ═══════════════════════════════════════════════════════════════════
+  // WISHLIST & PROFILE STATS SYNCHRONIZER (LOCALSTORAGE V2 STANDARD)
+  // ═══════════════════════════════════════════════════════════════════
+  loadLikedFoodsFromStorage() {
+    try {
+      // 1. Thử đọc cấu trúc chuẩn v2
+      const v2Data = localStorage.getItem('foodtinder_wishlist_v2');
+      if (v2Data) {
+        const parsed = JSON.parse(v2Data);
+        if (parsed && Array.isArray(parsed.items)) {
+          return parsed.items;
+        }
+      }
+      // 2. Fallback sang v1
+      const v1Data = localStorage.getItem('foodtinder_liked');
+      if (v1Data) {
+        const parsed = JSON.parse(v1Data);
+        if (Array.isArray(parsed)) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('loadLikedFoodsFromStorage error:', e);
+    }
+    return [];
+  }
+
+  saveLikedFoodsToStorage() {
+    try {
+      const payload = {
+        version: 2,
+        updatedAt: Date.now(),
+        count: Array.isArray(this.likedFoods) ? this.likedFoods.length : 0,
+        items: this.likedFoods || []
+      };
+      localStorage.setItem('foodtinder_wishlist_v2', JSON.stringify(payload));
+      // Tương thích ngược với foodtinder_liked (v1)
+      localStorage.setItem('foodtinder_liked', JSON.stringify(this.likedFoods || []));
+    } catch (e) {
+      console.warn('saveLikedFoodsToStorage error:', e);
+    }
+  }
+
+  syncWishlistAndProfileStats() {
+    const count = Array.isArray(this.likedFoods) ? this.likedFoods.length : 0;
+
+    // 1. Header Heart Badge
+    const badge = document.getElementById('liked-badge');
+    if (badge) {
+      badge.textContent = count;
+      if (count > 0) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // 2. Sidebar Quick Stats (Món đã thích & Lần quẹt hôm nay)
+    const statLikedEl = document.getElementById('stat-liked');
+    if (statLikedEl) {
+      statLikedEl.textContent = count;
+    }
+
+    const statSwipesEl = document.getElementById('stat-swipes');
+    if (statSwipesEl) {
+      let todaySwipes = 0;
+      if (window.swipeManager && typeof window.swipeManager.getTodaySwipesCount === 'function') {
+        todaySwipes = window.swipeManager.getTodaySwipesCount();
+      } else if (window.authManager && typeof window.authManager.getStat === 'function') {
+        todaySwipes = window.authManager.getStat('swipes');
+      } else {
+        todaySwipes = this.swipeCount || 0;
+      }
+      statSwipesEl.textContent = todaySwipes;
+    }
+
+    // 3. Bento / Feed Stats
+    const bentoLikedEl = document.getElementById('bento-liked-count');
+    if (bentoLikedEl) {
+      bentoLikedEl.textContent = count;
+    }
+
+    // 4. Modal Profile & Badge
+    const profileLikedEl = document.getElementById('profile-modal-liked-count');
+    if (profileLikedEl) {
+      profileLikedEl.textContent = `${count} món`;
+    }
+
+    // 5. Tab Liked Header Count
+    const likedItemsCountEl = document.getElementById('liked-items-count');
+    if (likedItemsCountEl) {
+      likedItemsCountEl.textContent = `${count} món`;
+    }
+
+    // 6. Cập nhật sidebar mini panel quẹt
+    this.updateSwipeLikedPanel();
+
+    // 7. Đồng bộ danh hiệu
+    if (window.authManager) {
+      if (typeof window.authManager.syncUI === 'function') {
+        window.authManager.syncUI();
+      }
+      if (typeof window.authManager.updateProfileModalBadge === 'function') {
+        window.authManager.updateProfileModalBadge();
+      }
+    }
+  }
+
   addLikedFood(food) {
     if (!food) return;
     if (!this.likedFoods.some(f => f.id === food.id)) {
       this.likedFoods.unshift(food);
-      try {
-        localStorage.setItem('foodtinder_liked', JSON.stringify(this.likedFoods));
-      } catch (e) {}
+      this.saveLikedFoodsToStorage();
       this.showToast(`Đã thêm "${food.name}" vào Yêu Thích! ❤️`);
-      this.updateLikedBadge();
-      this.updateBentoStats();
-      this.updateSwipeLikedPanel(food);
+      this.syncWishlistAndProfileStats();
 
       // Update AI Taste Learning Engine & refresh recommendations
       if (window.tasteManager) {
@@ -3030,10 +3133,8 @@ class FoodApp {
 
   removeLikedFood(foodId) {
     this.likedFoods = this.likedFoods.filter(f => f.id !== foodId);
-    try {
-      localStorage.setItem('foodtinder_liked', JSON.stringify(this.likedFoods));
-    } catch (e) {}
-    this.updateLikedBadge();
+    this.saveLikedFoodsToStorage();
+    this.syncWishlistAndProfileStats();
     if (this.currentTab === 'liked') {
       this.renderLikedView();
     }
@@ -3134,33 +3235,7 @@ class FoodApp {
   }
 
   updateLikedBadge() {
-    const badge = document.getElementById('liked-badge');
-    if (badge) {
-      if (this.likedFoods.length > 0) {
-        badge.textContent = this.likedFoods.length;
-        badge.classList.remove('hidden');
-      } else {
-        badge.classList.add('hidden');
-      }
-    }
-    // Update bento stats panel
-    this.updateBentoStats();
-    // Update swipe sidebar panel
-    this.updateSwipeLikedPanel();
-
-    // Cập nhật danh hiệu và icon avatar nếu có thay đổi
-    if (window.authManager) {
-      if (typeof window.authManager.syncUI === 'function') {
-        window.authManager.syncUI();
-      }
-      if (typeof window.authManager.updateProfileModalBadge === 'function') {
-        window.authManager.updateProfileModalBadge();
-      }
-      const titlesModal = document.getElementById('titles-modal');
-      if (titlesModal && !titlesModal.classList.contains('hidden') && typeof window.authManager.renderTitlesList === 'function') {
-        window.authManager.renderTitlesList();
-      }
-    }
+    this.syncWishlistAndProfileStats();
   }
 
   updateSwipeLikedPanel(newFood) {

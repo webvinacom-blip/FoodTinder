@@ -19,6 +19,88 @@ class TinderSwipeManager {
     this.activeCard = null;
     this.likeBadge = null;
     this.nopeBadge = null;
+    this.storageKey = 'foodtinder_swipe_history_v2';
+    this.loadSwipeHistory();
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // LOCALSTORAGE V2: SWIPE HISTORY & DAILY COUNTER STANDARDIZATION
+  // ═══════════════════════════════════════════════════════════════════
+  loadSwipeHistory() {
+    const todayStr = new Date().toISOString().slice(0, 10);
+    try {
+      const dataStr = localStorage.getItem(this.storageKey);
+      if (dataStr) {
+        const parsed = JSON.parse(dataStr);
+        if (parsed) {
+          this.totalSwipes = typeof parsed.totalSwipes === 'number' ? parsed.totalSwipes : 0;
+          if (parsed.date === todayStr) {
+            this.todaySwipes = typeof parsed.todaySwipes === 'number' ? parsed.todaySwipes : 0;
+            this.history = Array.isArray(parsed.history) ? parsed.history : [];
+            this.sessionLikes = Array.isArray(parsed.sessionLikes) ? parsed.sessionLikes : [];
+            return;
+          } else {
+            // Sang ngày mới: reset số lượt quẹt hôm nay về 0
+            this.todaySwipes = 0;
+            this.history = [];
+            this.sessionLikes = [];
+            this.saveSwipeHistory();
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('loadSwipeHistory error:', e);
+    }
+
+    // Khởi tạo từ authManager nếu có
+    const fallbackCount = (window.authManager && typeof window.authManager.getStat === 'function')
+      ? window.authManager.getStat('swipes')
+      : 0;
+    this.todaySwipes = fallbackCount;
+    this.totalSwipes = fallbackCount;
+    this.saveSwipeHistory();
+  }
+
+  saveSwipeHistory() {
+    const todayStr = new Date().toISOString().slice(0, 10);
+    try {
+      const payload = {
+        version: 2,
+        date: todayStr,
+        todaySwipes: this.todaySwipes || 0,
+        totalSwipes: this.totalSwipes || 0,
+        history: (this.history || []).slice(-100),
+        sessionLikes: (this.sessionLikes || []).slice(-20),
+        updatedAt: Date.now()
+      };
+      localStorage.setItem(this.storageKey, JSON.stringify(payload));
+    } catch (e) {
+      console.warn('saveSwipeHistory error:', e);
+    }
+  }
+
+  getTodaySwipesCount() {
+    if (this.todaySwipes === undefined) {
+      this.loadSwipeHistory();
+    }
+    return this.todaySwipes || 0;
+  }
+
+  recordSwipeEvent(action, targetFood) {
+    if (this.todaySwipes === undefined) {
+      this.loadSwipeHistory();
+    }
+    this.todaySwipes = (this.todaySwipes || 0) + 1;
+    this.totalSwipes = (this.totalSwipes || 0) + 1;
+    this.saveSwipeHistory();
+
+    if (window.authManager && typeof window.authManager.trackStat === 'function') {
+      window.authManager.trackStat('swipes', 1);
+    }
+    if (window.app && typeof window.app.syncWishlistAndProfileStats === 'function') {
+      window.app.syncWishlistAndProfileStats();
+    }
   }
 
   isFoodValidForSwipe(food) {
@@ -533,13 +615,8 @@ class TinderSwipeManager {
           if (typeof window.app.recordSwipeLike === 'function') {
             window.app.recordSwipeLike(targetFood);
           }
-          if (typeof window.app.updateBentoStats === 'function') {
-            window.app.updateBentoStats();
-          }
         }
-        if (window.authManager && typeof window.authManager.trackStat === 'function') {
-          window.authManager.trackStat('swipes', 1);
-        }
+        this.recordSwipeEvent('like', targetFood);
         if (window.userActionBatcher) {
           window.userActionBatcher.recordAction({
             type: 'swipe_liked',
@@ -582,12 +659,7 @@ class TinderSwipeManager {
         if (window.app && typeof window.app.recordSwipeSkip === 'function') {
           window.app.recordSwipeSkip(targetFood);
         }
-        if (window.authManager && typeof window.authManager.trackStat === 'function') {
-          window.authManager.trackStat('swipes', 1);
-        }
-        if (window.app && typeof window.app.updateBentoStats === 'function') {
-          window.app.updateBentoStats();
-        }
+        this.recordSwipeEvent('skip', targetFood);
         if (window.userActionBatcher) {
           window.userActionBatcher.recordAction({
             type: 'swipe_skipped',
@@ -640,6 +712,7 @@ class TinderSwipeManager {
             window.app.recordSwipeLike(targetFood);
           }
         }
+        this.recordSwipeEvent('superlike', targetFood);
       }
       this.currentIndex++;
       this.isAnimating = false;
@@ -659,6 +732,12 @@ class TinderSwipeManager {
       const last = this.history.pop();
       if (last && (last.action === 'like' || last.action === 'superlike')) {
         window.app.removeLikedFood(last.food.id);
+      }
+      if (this.todaySwipes > 0) this.todaySwipes--;
+      if (this.totalSwipes > 0) this.totalSwipes--;
+      this.saveSwipeHistory();
+      if (window.app && typeof window.app.syncWishlistAndProfileStats === 'function') {
+        window.app.syncWishlistAndProfileStats();
       }
       this.render();
       if (window.app && typeof window.app.showToast === 'function') {

@@ -924,6 +924,9 @@ class AuthManager {
   }
 
   getStat(key) {
+    if (key === 'swipes' && window.swipeManager && typeof window.swipeManager.getTodaySwipesCount === 'function') {
+      return window.swipeManager.getTodaySwipesCount();
+    }
     if (!this.userStats) this.userStats = this.loadUserStats();
     return this.userStats ? (this.userStats[key] || 0) : 0;
   }
