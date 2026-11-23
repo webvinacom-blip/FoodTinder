@@ -28,7 +28,7 @@
   <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=2.9.2" />
+  <link rel="stylesheet" href="css/style.css?v=3.3.17" />
 
   <style>
     /* ── Complete scrollbar elimination for modal & chips ── */
@@ -1136,8 +1136,8 @@
       <button onclick="window.app.closeMoodFilterModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 flex items-center justify-center transition cursor-pointer text-sm font-bold">✕</button>
     </div>
 
-    <!-- Scrollable content -->
-    <div class="flex-1 overflow-y-auto pr-1 py-3 space-y-4 text-xs overscroll-contain">
+    <!-- Scrollable content (Ẩn scrollbar hoàn toàn khi vuốt) -->
+    <div id="modal-filter-scroll-container" class="flex-1 overflow-y-auto py-3 space-y-4 text-xs overscroll-contain scrollbar-none no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
       <!-- 1. Chọn / Sửa Tâm trạng -->
       <div>
         <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
@@ -1175,39 +1175,6 @@
           <span class="text-[10px] text-stone-400 font-normal">(Tự động tối ưu mức giá & không gian)</span>
         </label>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="modal-companion-options"></div>
-      </div>
-
-      <!-- 5. Bộ lọc thông minh nâng cao -->
-      <div>
-        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
-          <span>✨ Tiêu chí bổ sung</span>
-        </label>
-        <div class="space-y-2">
-          <!-- Toggle: Đang mở cửa -->
-          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
-            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>Chỉ hiển thị quán đang mở cửa</span>
-            </span>
-            <input type="checkbox" id="filter-open-only" checked onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
-          </label>
-
-          <!-- Toggle: Có ShopeeFood -->
-          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
-            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
-              <span>🛵 Có đặt giao tận nơi (ShopeeFood)</span>
-            </span>
-            <input type="checkbox" id="filter-shopee-only" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
-          </label>
-
-          <!-- Toggle: Đánh giá cao -->
-          <label class="flex items-center justify-between p-2.5 bg-stone-50 hover:bg-stone-100 rounded-xl cursor-pointer border border-stone-200">
-            <span class="flex items-center gap-2 font-bold text-stone-800 text-xs">
-              <span>⭐ Quán điểm cao (Từ 4.5 sao trở lên)</span>
-            </span>
-            <input type="checkbox" id="filter-high-rating" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
-          </label>
-        </div>
       </div>
     </div>
 
@@ -1784,7 +1751,7 @@
 <script src="js/auth.js?v=3.3.13"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.16"></script>
+<script src="js/app.js?v=3.3.17"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──

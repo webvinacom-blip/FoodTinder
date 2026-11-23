@@ -2037,9 +2037,6 @@ class FoodApp {
     if (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.length > 0) count += this.moodFilter.selectedCategories.length;
     if (this.moodFilter.maxRadius > 0) count++;
     if (this.moodFilter.companion && this.moodFilter.companion !== 'all') count++;
-    // openOnly là tiêu chuẩn mặc định nên không tính vào số lượng tùy chỉnh
-    if (this.moodFilter.shopeeOnly) count++;
-    if (this.moodFilter.highRatingOnly) count++;
     return count;
   }
 
@@ -2220,16 +2217,6 @@ class FoodApp {
       }).join('');
     }
 
-    // 5. Checkboxes
-    const openCheck = document.getElementById('filter-open-only');
-    if (openCheck) openCheck.checked = Boolean(this.tempMoodFilter.openOnly);
-
-    const shopeeCheck = document.getElementById('filter-shopee-only');
-    if (shopeeCheck) shopeeCheck.checked = Boolean(this.tempMoodFilter.shopeeOnly);
-
-    const ratingCheck = document.getElementById('filter-high-rating');
-    if (ratingCheck) ratingCheck.checked = Boolean(this.tempMoodFilter.highRatingOnly);
-
     this.updateModalApplyCount();
   }
 
@@ -2275,15 +2262,10 @@ class FoodApp {
   }
 
   syncModalCheckboxes() {
-    if (!this.tempMoodFilter) return;
-    const openCheck = document.getElementById('filter-open-only');
-    if (openCheck) this.tempMoodFilter.openOnly = openCheck.checked;
-
-    const shopeeCheck = document.getElementById('filter-shopee-only');
-    if (shopeeCheck) this.tempMoodFilter.shopeeOnly = shopeeCheck.checked;
-
-    const ratingCheck = document.getElementById('filter-high-rating');
-    if (ratingCheck) this.tempMoodFilter.highRatingOnly = ratingCheck.checked;
+    // Tiêu chí bổ sung đã gỡ khỏi modal, openOnly luôn giữ true mặc định
+    if (this.tempMoodFilter) {
+      this.tempMoodFilter.openOnly = true;
+    }
   }
 
   countMatchingFoods(filterState) {
