@@ -15,26 +15,26 @@ const QUICK_HOME_CATEGORIES = [
 ];
 
 const FILTER_CATEGORIES = [
-  { id: 'hotpot', label: '🍲 Lẩu các loại', short: '🍲 Lẩu', keywords: ['lẩu', 'hotpot'] },
-  { id: 'bbq', label: '🥩 Nướng BBQ & Xiên', short: '🥩 Nướng', keywords: ['nướng', 'bbq', 'xiên'] },
-  { id: 'vegetarian', label: '🥗 Đồ chay / Healthy', short: '🥗 Đồ chay', keywords: ['chay', 'vegan', 'thuần chay', 'quán chay', 'ẩm thực chay', 'cơm chay', 'lẩu chay', 'bún chay'] },
+  { id: 'hotpot', label: '🍲 Lẩu', short: '🍲 Lẩu', keywords: ['lẩu', 'hotpot'] },
+  { id: 'bbq', label: '🥩 Nướng BBQ', short: '🥩 Nướng', keywords: ['nướng', 'bbq', 'xiên'] },
+  { id: 'vegetarian', label: '🥗 Đồ chay', short: '🥗 Đồ chay', keywords: ['chay', 'vegan', 'thuần chay', 'quán chay', 'ẩm thực chay', 'cơm chay', 'lẩu chay', 'bún chay'] },
   { id: 'chicken', label: '🍗 Món Gà', short: '🍗 Món Gà', keywords: ['gà', 'gà chỉ', 'cánh gà'] },
   { id: 'beef', label: '🥩 Món Bò', short: '🥩 Món Bò', keywords: ['bò', 'bít tết', 'bò né'] },
   { id: 'seafood', label: '🦐 Hải sản & Ốc', short: '🦐 Hải sản', keywords: ['hải sản', 'tôm', 'cua', 'ghẹ', 'mực', 'ốc', 'cá', 'hàu'] },
   { id: 'noodles', label: '🍜 Bún / Phở / Mì', short: '🍜 Bún / Phở', keywords: ['bún', 'phở', 'mì', 'bánh canh', 'hủ tiếu', 'miến'] },
-  { id: 'rice', label: '🍚 Cơm niêu / Cơm gà', short: '🍚 Cơm', keywords: ['cơm', 'xôi', 'niêu'] },
+  { id: 'rice', label: '🍚 Cơm', short: '🍚 Cơm', keywords: ['cơm', 'xôi', 'niêu'] },
   { id: 'specialty', label: '🥞 Bánh đặc sản', short: '🥞 Bánh đặc sản', keywords: ['bánh hỏi', 'bánh xèo', 'bánh bèo', 'bánh căn', 'bánh cuốn', 'nem'] },
   { id: 'drinks', label: '🧋 Trà sữa & Cafe', short: '🧋 Trà sữa / Cafe', keywords: ['trà', 'cà phê', 'cafe', 'nước ép', 'sinh tố', 'chè', 'kem'] },
-  { id: 'snack', label: '🍢 Ăn vặt đường phố', short: '🍢 Ăn vặt', keywords: ['bánh tráng', 'ăn vặt', 'chả ram', 'tàu hũ', 'khoai'] }
+  { id: 'snack', label: '🍢 Ăn vặt', short: '🍢 Ăn vặt', keywords: ['bánh tráng', 'ăn vặt', 'chả ram', 'tàu hũ', 'khoai'] }
 ];
 
 const FILTER_AREAS = [
   { id: 'all', label: 'Toàn TP. Quy Nhơn', keywords: [] },
-  { id: 'center', label: 'Trung tâm (Ngô Mây, Nguyễn Huệ)', keywords: ['ngô mây', 'nguyễn huệ', 'tăng bạt hổ', 'lê lợi', 'trần phú', 'hai bà trưng'] },
-  { id: 'beach', label: 'Ven biển (Xuân Diệu, An Dương Vương)', keywords: ['xuân diệu', 'an dương vương', 'view biển', 'bờ biển', 'biển'] },
-  { id: 'gachi', label: 'Khu Gà Chỉ (Ghềnh Ráng / QL1D)', keywords: ['ghềnh ráng', 'phạm thị đào', 'ql1d', 'gà chỉ', 'bông hồng'] },
-  { id: 'dongda', label: 'Đống Đa & Trần Hưng Đạo', keywords: ['đống đa', 'trần hưng đạo', 'hải thượng lãn ông', 'bạch đằng'] },
-  { id: 'nhonly', label: 'Nhơn Lý / Eo Gió / Kỳ Co', keywords: ['nhơn lý', 'eo gió', 'kỳ co', 'flc'] }
+  { id: 'center', label: 'Trung tâm', keywords: ['ngô mây', 'nguyễn huệ', 'tăng bạt hổ', 'lê lợi', 'trần phú', 'hai bà trưng'] },
+  { id: 'beach', label: 'Ven biển', keywords: ['xuân diệu', 'an dương vương', 'view biển', 'bờ biển', 'biển'] },
+  { id: 'gachi', label: 'Khu Gà Chỉ', keywords: ['ghềnh ráng', 'phạm thị đào', 'ql1d', 'gà chỉ', 'bông hồng'] },
+  { id: 'dongda', label: 'Đống Đa', keywords: ['đống đa', 'trần hưng đạo', 'hải thượng lãn ông', 'bạch đằng'] },
+  { id: 'nhonly', label: 'Nhơn Lý / Kỳ Co', keywords: ['nhơn lý', 'eo gió', 'kỳ co', 'flc'] }
 ];
 
 const FILTER_RADII = [
@@ -46,10 +46,10 @@ const FILTER_RADII = [
 ];
 
 const FILTER_PRICES = [
-  { id: 'all', label: 'Mọi mức giá' },
-  { id: 'cheap', label: 'Bình dân (< 40k)' },
-  { id: 'medium', label: 'Vừa túi (40k - 100k)' },
-  { id: 'high', label: 'Thư thả (> 100k)' }
+  { id: 'all', label: 'Tất cả' },
+  { id: 'cheap', label: '< 40k' },
+  { id: 'medium', label: '40k – 100k' },
+  { id: 'high', label: '> 100k' }
 ];
 
 function isFoodVegetarian(food) {
@@ -2188,37 +2188,107 @@ class FoodApp {
   }
 
   countMatchingFoods(filterState) {
+    if (!filterState) return 0;
     const now = new Date();
-    return (APP_DATA.foods || []).filter(food => {
-      // Ẩn quán chưa mở cửa
-      const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
-      if (!st || !st.isOpen) return false;
+    const activeMoodId = filterState.moodId;
 
+    // Lọc theo thành phố nếu có
+    const curCityId = APP_DATA?.currentCity?.cityId;
+    const curCityName = APP_DATA?.currentCity?.name;
+    let baseFoods = APP_DATA?.foods || [];
+    if (curCityId || curCityName) {
+      const cityFoods = baseFoods.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
+      if (cityFoods.length > 0) {
+        baseFoods = cityFoods;
+      }
+    }
+
+    return baseFoods.filter(food => {
+      // Màng lọc chất lượng dữ liệu: loại bỏ quán thiếu ảnh, rating < 4.0, quán đóng cửa / địa chỉ ảo
+      if (typeof window.isValidQualityFood === 'function' && !window.isValidQualityFood(food)) {
+        return false;
+      }
+
+      // Quán chưa mở cửa thì ẩn đi
+      if (filterState.openOnly !== false) {
+        const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
+        if (!st || !st.isOpen) return false;
+      }
+
+      // 1. Loại món
       if (filterState.selectedCategories && filterState.selectedCategories.length > 0) {
         if (!matchCategories(food, filterState.selectedCategories)) return false;
       }
+
+      // 2. Bán kính quét
       if (filterState.maxRadius && filterState.maxRadius > 0) {
         if ((food.distance || 0) > filterState.maxRadius) return false;
       }
-      if (filterState.selectedArea && !matchFoodArea(food, filterState.selectedArea)) {
+
+      // 3. Khu vực
+      if (filterState.selectedArea && filterState.selectedArea !== 'all' && !matchFoodArea(food, filterState.selectedArea)) {
         return false;
       }
+
+      // 4. ShopeeFood
       if (filterState.shopeeOnly) {
         const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
         if (!hasShopee) return false;
       }
+
+      // 5. Đánh giá cao
       if (filterState.highRatingOnly) {
         if ((food.rating || 0) < 4.5) return false;
       }
-      if (filterState.priceTier && !matchFoodPrice(food, filterState.priceTier)) {
+
+      // 6. Khoảng giá
+      if (filterState.priceTier && filterState.priceTier !== 'all' && !matchFoodPrice(food, filterState.priceTier)) {
         return false;
       }
+
+      // 7. Khớp tâm trạng nếu có
+      if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
+        return false;
+      }
+
       return true;
     }).length;
   }
 
   updateModalApplyCount() {
     this.syncModalCheckboxes();
+    const count = this.countMatchingFoods(this.tempMoodFilter);
+
+    const btn = document.getElementById('btn-apply-mood-filter');
+    const textEl = document.getElementById('btn-apply-mood-filter-text');
+    const hintEl = document.getElementById('modal-filter-zero-hint');
+
+    if (count > 0) {
+      if (btn) {
+        btn.disabled = false;
+        btn.classList.remove('opacity-40', 'cursor-not-allowed', 'pointer-events-none', 'grayscale', 'shadow-none');
+        btn.classList.add('cursor-pointer', 'shadow-md', 'shadow-rose-200');
+      }
+      if (textEl) {
+        textEl.textContent = `Xem ${count} quán phù hợp`;
+      }
+      if (hintEl) {
+        hintEl.classList.add('hidden');
+      }
+    } else {
+      if (btn) {
+        btn.disabled = true;
+        btn.classList.add('opacity-40', 'cursor-not-allowed', 'pointer-events-none', 'grayscale', 'shadow-none');
+        btn.classList.remove('cursor-pointer', 'shadow-md', 'shadow-rose-200');
+      }
+      if (textEl) {
+        textEl.textContent = `Xem 0 quán phù hợp`;
+      }
+      if (hintEl) {
+        hintEl.classList.remove('hidden');
+        hintEl.textContent = 'Không có quán khớp — thử nới bán kính hoặc bỏ bớt tiêu chí';
+      }
+    }
   }
 
   applyMoodFilters() {
@@ -2282,6 +2352,19 @@ class FoodApp {
       highRatingOnly: false,
       priceTier: 'all'
     };
+    if (this.tempMoodFilter) {
+      this.tempMoodFilter = {
+        moodId: this.currentMood,
+        selectedCategories: [],
+        maxRadius: 0,
+        selectedArea: 'all',
+        openOnly: true,
+        shopeeOnly: false,
+        highRatingOnly: false,
+        priceTier: 'all'
+      };
+      this.renderMoodFilterModal();
+    }
     this.renderQuickCategoryChips();
     this.renderBentoAndFeed();
     this.showToast('Đã đặt lại bộ lọc!');

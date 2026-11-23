@@ -1215,13 +1215,18 @@
     </div>
 
     <!-- Footer actions -->
-    <div class="pt-3 border-t border-stone-100 flex items-center gap-2 shrink-0">
-      <button onclick="window.app.resetMoodFilters()" class="py-2.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl transition cursor-pointer text-xs">
-        Đặt lại
-      </button>
-      <button onclick="window.app.applyMoodFilters()" class="flex-1 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold rounded-xl transition shadow-md shadow-rose-200 cursor-pointer text-xs flex items-center justify-center gap-1.5">
-        <span>Áp dụng bộ lọc</span>
-      </button>
+    <div class="pt-3 border-t border-stone-100 flex flex-col gap-1.5 shrink-0">
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="window.app.resetMoodFilters()" class="py-2.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl transition cursor-pointer text-xs shrink-0">
+          Đặt lại
+        </button>
+        <button type="button" id="btn-apply-mood-filter" onclick="window.app.applyMoodFilters()" class="flex-1 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold rounded-xl transition shadow-md shadow-rose-200 cursor-pointer text-xs flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <span id="btn-apply-mood-filter-text">Xem quán phù hợp</span>
+        </button>
+      </div>
+      <p id="modal-filter-zero-hint" class="hidden text-[11px] text-amber-800 bg-amber-50 border border-amber-200/90 rounded-xl px-2.5 py-1.5 text-center font-medium leading-tight">
+        Không có quán khớp — thử nới bán kính hoặc bỏ bớt tiêu chí
+      </p>
     </div>
   </div>
 </div>
@@ -1782,7 +1787,7 @@
 <script src="js/auth.js?v=3.3.13"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.13"></script>
+<script src="js/app.js?v=3.3.14"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──
