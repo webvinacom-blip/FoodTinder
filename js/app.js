@@ -477,6 +477,8 @@ class FoodApp {
     this.currentMood = (typeof APP_DATA !== 'undefined' && APP_DATA.currentMoodId) ? APP_DATA.currentMoodId : 'rainy_hotpot';
     this.isPhoneFrame = true;
     this.searchQuery = '';
+    this.feedLimit = 24;
+    this.feedBatchSize = 24;
     this.moodFilter = {
       moodId: this.currentMood,
       selectedCategories: [],
@@ -537,6 +539,7 @@ class FoodApp {
     // Nếu người dùng xóa trắng ô nhập khi đang có kết quả tìm kiếm thì tự động trả về gợi ý ban đầu
     if (text.length === 0 && this.searchQuery) {
       this.searchQuery = '';
+      this.feedLimit = 24;
       this.renderBentoAndFeed();
     }
   }
@@ -557,6 +560,7 @@ class FoodApp {
     }
 
     this.searchQuery = trimmed;
+    this.feedLimit = 24;
     this.renderBentoAndFeed();
 
     // Cuộn nhẹ tới danh sách kết quả món ăn
@@ -570,6 +574,7 @@ class FoodApp {
 
   clearHomeSearch() {
     this.searchQuery = '';
+    this.feedLimit = 24;
     const input = document.getElementById('home-food-search');
     if (input) {
       input.value = '';
@@ -2008,6 +2013,7 @@ class FoodApp {
 
   toggleQuickCategory(catId) {
     window.soundFX && window.soundFX.playPop();
+    this.feedLimit = 24;
     if (!this.moodFilter) {
       this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
@@ -2404,6 +2410,7 @@ class FoodApp {
       }
     }
 
+    this.feedLimit = 24;
     this.closeMoodFilterModal();
     this.renderQuickCategoryChips();
     this.renderBentoAndFeed();
@@ -2427,6 +2434,7 @@ class FoodApp {
   resetMoodFilters() {
     window.soundFX && window.soundFX.playPop();
     this.searchQuery = '';
+    this.feedLimit = 24;
     const sInput = document.getElementById('home-food-search');
     if (sInput) sInput.value = '';
     const clearBtn = document.getElementById('home-search-clear-btn');
@@ -2678,19 +2686,22 @@ class FoodApp {
             const c = FILTER_CATEGORIES.find(x => x.id === cId);
             return c ? c.short : cId;
           }).join(', ');
-          descEl.textContent = `Đang lọc: ${catNames}`;
+          descEl.textContent = `Đang lọc: ${catNames} (${filteredFoods.length} quán phù hợp)`;
+        } else if (this.moodFilter?.companion && this.moodFilter.companion !== 'all') {
+          const comp = FILTER_COMPANIONS.find(c => c.id === this.moodFilter.companion);
+          descEl.textContent = `Đang lọc: ${comp?.label || ''} (${filteredFoods.length} quán phù hợp)`;
         } else {
           const currentMoodObj = APP_DATA.moods?.find(m => m.id === activeMoodId);
           if (currentMoodObj) {
             if (activeMoodId === 'zen') {
-              descEl.textContent = `Gợi ý theo tâm trạng: 🪷 Thanh tịnh — Tuyển chọn các quán chay thanh tịnh, lẩu nấm & cơm chay an lạc`;
+              descEl.textContent = `Gợi ý theo tâm trạng: 🪷 Thanh tịnh (${filteredFoods.length} quán phù hợp) — Tuyển chọn các quán chay thanh tịnh, lẩu nấm & cơm chay an lạc`;
             } else if (activeMoodId === 'stress') {
-              descEl.textContent = `Gợi ý theo tâm trạng: 🤯 Xả stress — Món cay endorphin & đồ giòn rụm nhai xả stress`;
+              descEl.textContent = `Gợi ý theo tâm trạng: 🤯 Xả stress (${filteredFoods.length} quán phù hợp) — Món cay endorphin & đồ giòn rụm nhai xả stress`;
             } else {
-              descEl.textContent = `Gợi ý theo tâm trạng: ${currentMoodObj.emoji} ${currentMoodObj.label} — ${currentMoodObj.desc}`;
+              descEl.textContent = `Gợi ý theo tâm trạng: ${currentMoodObj.emoji} ${currentMoodObj.label} (${filteredFoods.length} quán phù hợp) — ${currentMoodObj.desc}`;
             }
           } else {
-            descEl.textContent = `Tự động quét quán mở cửa theo thời tiết & giờ thực tế`;
+            descEl.textContent = `Tự động quét ${filteredFoods.length} quán mở cửa theo thời tiết & giờ thực tế`;
           }
         }
       }
@@ -2723,10 +2734,14 @@ class FoodApp {
     });
 
     scoredFoods.sort((a, b) => (b.score - a.score) || ((a.food.distance || 0) - (b.food.distance || 0)));
-    const displayLimit = hasSearch ? 48 : 24;
-    const topFoods = scoredFoods.slice(0, displayLimit);
+    const totalCount = scoredFoods.length;
+    const currentLimit = this.feedLimit || 24;
+    const topFoods = scoredFoods.slice(0, currentLimit);
+    const hasMore = totalCount > topFoods.length;
 
     if (topFoods.length === 0) {
+      const moreContainer = document.getElementById('feed-load-more-container');
+      if (moreContainer) moreContainer.innerHTML = '';
       if (hasSearch) {
         container.innerHTML = `
           <div class="col-span-full py-12 px-4 text-center bg-white rounded-3xl border border-stone-200 shadow-sm">
@@ -2765,10 +2780,50 @@ class FoodApp {
 
     container.innerHTML = fallbackBannerHtml + topFoods.map(({ food, status }) => this.buildFoodCardHtml(food, status)).join('');
 
+    // Render nút Xem thêm / Load more mỗi lần load thêm 24 quán
+    const moreContainer = document.getElementById('feed-load-more-container');
+    if (moreContainer) {
+      if (hasMore) {
+        const remaining = totalCount - topFoods.length;
+        const nextBatch = Math.min(this.feedBatchSize || 24, remaining);
+        moreContainer.innerHTML = `
+          <div class="p-3.5 bg-gradient-to-r from-amber-50/90 via-orange-50/80 to-rose-50/90 border border-amber-200/90 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+            <div class="flex items-center gap-2.5">
+              <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-amber-500 text-white flex items-center justify-center text-lg shrink-0 shadow-sm">🍲</span>
+              <div>
+                <p class="text-xs font-bold text-stone-800">
+                  Đang hiển thị <b>${topFoods.length} / ${totalCount} quán</b> phù hợp
+                </p>
+                <p class="text-[11px] text-stone-500">Còn lại ${remaining} quán ngon đang mở cửa phù hợp với lựa chọn của bạn.</p>
+              </div>
+            </div>
+            <button type="button" onclick="window.app.loadMoreFoods()"
+              class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-black shadow-md shadow-rose-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer shrink-0">
+              <span>Xem thêm ${nextBatch} quán nữa</span>
+              <span class="text-xs font-black">↓</span>
+            </button>
+          </div>
+        `;
+      } else if (totalCount > 24) {
+        moreContainer.innerHTML = `
+          <div class="p-3 bg-stone-50 border border-stone-200 rounded-2xl flex items-center justify-center gap-2 text-xs font-bold text-stone-500 shadow-2xs">
+            <span>🎉 Đã hiển thị toàn bộ ${totalCount} quán ăn phù hợp.</span>
+          </div>
+        `;
+      } else {
+        moreContainer.innerHTML = '';
+      }
+    }
+
     if (window.lucide) window.lucide.createIcons();
     this.updateBentoStats();
   }
 
+  loadMoreFoods() {
+    window.soundFX && window.soundFX.playPop();
+    this.feedLimit = (this.feedLimit || 24) + (this.feedBatchSize || 24);
+    this.renderBentoAndFeed();
+  }
 
   updateBentoStats() {
     const moodObj = APP_DATA.moods.find(m => m.id === this.currentMood) || APP_DATA.moods[1];
@@ -2997,6 +3052,7 @@ class FoodApp {
     window.soundFX && window.soundFX.playPop();
     this.currentMood = moodId;
     APP_DATA.currentMoodId = moodId;
+    this.feedLimit = 24;
     if (this.moodFilter) {
       this.moodFilter.moodId = moodId;
     }
