@@ -2055,10 +2055,10 @@ class FoodApp {
         const isSel = this.tempMoodFilter.moodId === m.id;
         return `
           <button type="button" onclick="window.app.modalSelectMood('${m.id}')"
-            class="p-2 rounded-xl text-left transition flex items-center gap-2 cursor-pointer border ${isSel ? 'bg-rose-50 border-rose-400 ring-2 ring-rose-200' : 'bg-white hover:bg-stone-50 border-stone-200'}">
-            <span class="text-lg">${m.emoji}</span>
-            <div class="truncate">
-              <div class="text-xs font-bold text-stone-800 leading-tight">${m.label}</div>
+            class="p-1.5 rounded-xl text-left transition flex items-center gap-1.5 cursor-pointer border ${isSel ? 'bg-rose-50 border-rose-400 ring-2 ring-rose-200' : 'bg-white hover:bg-stone-50 border-stone-200'}">
+            <span class="text-base shrink-0">${m.emoji}</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-[11px] font-bold text-stone-800 leading-tight truncate">${m.label}</div>
             </div>
           </button>
         `;
