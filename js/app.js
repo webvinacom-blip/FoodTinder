@@ -52,6 +52,40 @@ const FILTER_PRICES = [
   { id: 'high', label: '> 100k' }
 ];
 
+const FILTER_COMPANIONS = [
+  {
+    id: 'all',
+    icon: '✨',
+    label: 'Tất cả đối tượng',
+    desc: 'Không giới hạn không gian hay ngân sách',
+    fullWidth: true
+  },
+  {
+    id: 'solo',
+    icon: '🧍',
+    label: 'Ăn một mình',
+    desc: 'Nhanh gọn, phần 1 người, giá bình dân'
+  },
+  {
+    id: 'date',
+    icon: '💑',
+    label: 'Hẹn hò / 2 người',
+    desc: 'Không gian đẹp, món chill, điểm cao (≥ 4.5★)'
+  },
+  {
+    id: 'friends',
+    icon: '👯',
+    label: 'Tụ tập nhóm bạn',
+    desc: 'Lẩu, nướng, hải sản, ăn vặt chia đĩa'
+  },
+  {
+    id: 'family',
+    icon: '👨‍👩‍👧‍👦',
+    label: 'Đi cùng gia đình',
+    desc: 'Rộng rãi, cơm niêu, món truyền thống'
+  }
+];
+
 function isFoodVegetarian(food) {
   if (food.category === 'vegetarian') return true;
   const text = `${food.name} ${food.restaurant || ''} ${(food.tags || []).join(' ')}`.toLowerCase();
@@ -104,6 +138,61 @@ function matchFoodPrice(food, tierId) {
   if (tierId === 'cheap') return minPrice < 40000;
   if (tierId === 'medium') return minPrice >= 40000 && minPrice <= 100000;
   if (tierId === 'high') return minPrice > 100000;
+  return true;
+}
+
+function matchFoodCompanion(food, compId) {
+  if (!compId || compId === 'all') return true;
+
+  const comps = Array.isArray(food.companions) ? food.companions : [];
+  const cat = (food.category || '').toLowerCase();
+  const name = (food.name || '').toLowerCase();
+  const rest = (food.restaurant || '').toLowerCase();
+  const tags = (food.tags || []).map(t => String(t).toLowerCase());
+  const desc = (food.desc || '').toLowerCase();
+  const text = `${name} ${rest} ${tags.join(' ')} ${desc}`;
+  const rating = food.rating || 4.0;
+
+  // parse price
+  const pStr = food.priceRange || '';
+  const match = pStr.replace(/\./g, '').match(/(\d+)/);
+  const minPrice = match ? parseInt(match[1], 10) : 50000;
+
+  if (compId === 'solo') {
+    // 🧍 Ăn một mình: Ưu tiên quán phục vụ nhanh, phần ăn 1 người, giá bình dân.
+    // Loại trừ nồi lẩu lớn, tiệc nướng đắt tiền > 120k
+    if (minPrice > 120000) return false;
+    if (comps.includes('solo')) return true;
+    if (['noodle', 'rice', 'snack', 'drinks', 'vegetarian'].includes(cat)) return true;
+    if (/bún|phở|mì|miến|cơm|bánh mì|xôi|ăn vặt|chè|cà phê|cafe|trà sữa/.test(text)) return true;
+    return minPrice <= 45000;
+  }
+
+  if (compId === 'date') {
+    // 💑 Hẹn hò / 2 người: Ưu tiên không gian đẹp, đánh giá cao (≥ 4.5★), món chill.
+    if (comps.includes('date_couple')) return true;
+    const hasChill = /chill|hẹn hò|lãng mạn|view|ấm cúng|không gian đẹp|cafe|cà phê|trà sữa|bistro|steak|pasta|sushi|kichi/.test(text);
+    if (rating >= 4.5 && (hasChill || ['drinks', 'hotpot', 'bbq'].includes(cat))) return true;
+    if (rating >= 4.4 && /view biển|chill|lãng mạn|hẹn hò|ấm cúng/.test(text)) return true;
+    return false;
+  }
+
+  if (compId === 'friends') {
+    // 👯 Tụ tập nhóm bạn: Ưu tiên lẩu, nướng, hải sản, ăn vặt chia đĩa.
+    if (['hotpot', 'bbq', 'seafood', 'snack', 'drinks'].includes(cat)) return true;
+    if (/lẩu|nướng|bbq|xiên|hải sản|ốc|ăn vặt|trà sữa|nhậu|tụ tập|bia|chân gà|nem nướng/.test(text)) return true;
+    if (comps.includes('group_family') && minPrice <= 150000) return true;
+    return false;
+  }
+
+  if (compId === 'family') {
+    // 👨‍👩‍👧‍👦 Đi cùng gia đình: Ưu tiên quán rộng rãi, cơm niêu, món truyền thống.
+    if (comps.includes('group_family')) return true;
+    if (['rice', 'hotpot', 'seafood', 'specialty'].includes(cat)) return true;
+    if (/cơm niêu|cơm gia đình|cơm gà|gia đình|gà chỉ|hải sản|bánh xèo|bánh hỏi|rộng rãi|truyền thống|đặc sản/.test(text)) return true;
+    return false;
+  }
+
   return true;
 }
 
@@ -392,6 +481,7 @@ class FoodApp {
       moodId: this.currentMood,
       selectedCategories: [],
       maxRadius: 0,
+      companion: 'all',
       selectedArea: 'all',
       openOnly: true,
       shopeeOnly: false,
@@ -406,6 +496,7 @@ class FoodApp {
         moodId: this.currentMood || (typeof APP_DATA !== 'undefined' && APP_DATA.currentMoodId) || 'rainy_hotpot',
         selectedCategories: [],
         maxRadius: 0,
+        companion: 'all',
         selectedArea: 'all',
         openOnly: true,
         shopeeOnly: false,
@@ -1939,11 +2030,10 @@ class FoodApp {
     let count = 0;
     if (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.length > 0) count += this.moodFilter.selectedCategories.length;
     if (this.moodFilter.maxRadius > 0) count++;
-    if (this.moodFilter.selectedArea && this.moodFilter.selectedArea !== 'all') count++;
+    if (this.moodFilter.companion && this.moodFilter.companion !== 'all') count++;
     // openOnly là tiêu chuẩn mặc định nên không tính vào số lượng tùy chỉnh
     if (this.moodFilter.shopeeOnly) count++;
     if (this.moodFilter.highRatingOnly) count++;
-    if (this.moodFilter.priceTier && this.moodFilter.priceTier !== 'all') count++;
     return count;
   }
 
@@ -1953,12 +2043,13 @@ class FoodApp {
       window.authManager.trackStat('moodExplored', 1);
     }
     if (!this.moodFilter) {
-      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, companion: 'all', selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
     this.tempMoodFilter = {
       moodId: this.moodFilter.moodId || this.currentMood,
       selectedCategories: [...(this.moodFilter.selectedCategories || [])],
       maxRadius: this.moodFilter.maxRadius || 0,
+      companion: this.moodFilter.companion || 'all',
       selectedArea: this.moodFilter.selectedArea || 'all',
       openOnly: typeof this.moodFilter.openOnly === 'boolean' ? this.moodFilter.openOnly : true,
       shopeeOnly: Boolean(this.moodFilter.shopeeOnly),
@@ -2099,15 +2190,25 @@ class FoodApp {
       }
     }
 
-    // 4. Area options
-    const areaContainer = document.getElementById('modal-area-options');
-    if (areaContainer) {
-      areaContainer.innerHTML = FILTER_AREAS.map(a => {
-        const isSel = this.tempMoodFilter.selectedArea === a.id;
+    // 4. Đi ăn cùng ai? (Companion options)
+    const compContainer = document.getElementById('modal-companion-options');
+    if (compContainer) {
+      compContainer.innerHTML = FILTER_COMPANIONS.map(c => {
+        const isSel = (this.tempMoodFilter.companion || 'all') === c.id;
+        const colSpan = c.fullWidth ? 'sm:col-span-2' : '';
         return `
-          <button type="button" onclick="window.app.modalSelectArea('${a.id}')"
-            class="p-2 rounded-xl text-xs font-bold transition text-left cursor-pointer border truncate ${isSel ? 'bg-amber-500 text-white border-amber-500 shadow-sm' : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'}">
-            ${a.label}
+          <button type="button" onclick="window.app.modalSelectCompanion('${c.id}')"
+            class="p-2.5 rounded-2xl text-left transition flex items-center justify-between gap-2.5 cursor-pointer border ${colSpan} ${isSel ? 'bg-gradient-to-r from-rose-50 to-amber-50 border-rose-400 ring-2 ring-rose-200 shadow-xs' : 'bg-white hover:bg-stone-50 border-stone-200'}">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <span class="text-xl shrink-0">${c.icon}</span>
+              <div class="min-w-0">
+                <div class="text-xs font-black ${isSel ? 'text-rose-700' : 'text-stone-800'} leading-tight">${c.label}</div>
+                <div class="text-[10.5px] text-stone-500 leading-tight mt-0.5 line-clamp-1">${c.desc}</div>
+              </div>
+            </div>
+            <span class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-xs font-black transition ${isSel ? 'bg-rose-500 text-white shadow-xs' : 'bg-stone-100 text-stone-300'}">
+              ${isSel ? '✓' : ''}
+            </span>
           </button>
         `;
       }).join('');
@@ -2123,21 +2224,13 @@ class FoodApp {
     const ratingCheck = document.getElementById('filter-high-rating');
     if (ratingCheck) ratingCheck.checked = Boolean(this.tempMoodFilter.highRatingOnly);
 
-    // 6. Price options
-    const priceContainer = document.getElementById('modal-price-options');
-    if (priceContainer) {
-      priceContainer.innerHTML = FILTER_PRICES.map(p => {
-        const isSel = this.tempMoodFilter.priceTier === p.id;
-        return `
-          <button type="button" onclick="window.app.modalSelectPrice('${p.id}')"
-            class="py-2 px-2.5 rounded-xl text-xs font-bold transition cursor-pointer text-center border truncate ${isSel ? 'bg-rose-500 text-white border-rose-500 shadow-sm' : 'bg-white hover:bg-stone-50 text-stone-700 border-stone-200'}">
-            ${p.label}
-          </button>
-        `;
-      }).join('');
-    }
-
     this.updateModalApplyCount();
+  }
+
+  modalSelectCompanion(compId) {
+    if (!this.tempMoodFilter) return;
+    this.tempMoodFilter.companion = compId;
+    this.renderMoodFilterModal();
   }
 
   modalSelectMood(moodId) {
@@ -2225,8 +2318,8 @@ class FoodApp {
         if ((food.distance || 0) > filterState.maxRadius) return false;
       }
 
-      // 3. Khu vực
-      if (filterState.selectedArea && filterState.selectedArea !== 'all' && !matchFoodArea(food, filterState.selectedArea)) {
+      // 3. Đi ăn cùng ai? (Companion)
+      if (filterState.companion && filterState.companion !== 'all' && !matchFoodCompanion(food, filterState.companion)) {
         return false;
       }
 
@@ -2241,12 +2334,7 @@ class FoodApp {
         if ((food.rating || 0) < 4.5) return false;
       }
 
-      // 6. Khoảng giá
-      if (filterState.priceTier && filterState.priceTier !== 'all' && !matchFoodPrice(food, filterState.priceTier)) {
-        return false;
-      }
-
-      // 7. Khớp tâm trạng nếu có
+      // 6. Khớp tâm trạng nếu có
       if (activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
         return false;
       }
@@ -2298,11 +2386,12 @@ class FoodApp {
       moodId: this.tempMoodFilter.moodId,
       selectedCategories: [...this.tempMoodFilter.selectedCategories],
       maxRadius: this.tempMoodFilter.maxRadius,
-      selectedArea: this.tempMoodFilter.selectedArea,
+      companion: this.tempMoodFilter.companion || 'all',
+      selectedArea: this.tempMoodFilter.selectedArea || 'all',
       openOnly: this.tempMoodFilter.openOnly,
       shopeeOnly: this.tempMoodFilter.shopeeOnly,
       highRatingOnly: this.tempMoodFilter.highRatingOnly,
-      priceTier: this.tempMoodFilter.priceTier
+      priceTier: this.tempMoodFilter.priceTier || 'all'
     };
 
     // If mood changed in modal, update app currentMood
@@ -2346,6 +2435,7 @@ class FoodApp {
       moodId: this.currentMood,
       selectedCategories: [],
       maxRadius: 0,
+      companion: 'all',
       selectedArea: 'all',
       openOnly: true,
       shopeeOnly: false,
@@ -2357,6 +2447,7 @@ class FoodApp {
         moodId: this.currentMood,
         selectedCategories: [],
         maxRadius: 0,
+        companion: 'all',
         selectedArea: 'all',
         openOnly: true,
         shopeeOnly: false,
@@ -2502,8 +2593,8 @@ class FoodApp {
         if ((food.distance || 0) > this.moodFilter.maxRadius) return false;
       }
 
-      // 3. Khu vực (Area)
-      if (this.moodFilter?.selectedArea && !matchFoodArea(food, this.moodFilter.selectedArea)) {
+      // 3. Đi ăn cùng ai? (Companion filter)
+      if (this.moodFilter?.companion && !matchFoodCompanion(food, this.moodFilter.companion)) {
         return false;
       }
 
@@ -2518,12 +2609,7 @@ class FoodApp {
         if ((food.rating || 0) < 4.5) return false;
       }
 
-      // 6. Khoảng giá
-      if (this.moodFilter?.priceTier && !matchFoodPrice(food, this.moodFilter.priceTier)) {
-        return false;
-      }
-
-      // 7. Ràng buộc thông minh theo tâm trạng:
+      // 6. Ràng buộc thông minh theo tâm trạng:
       // Khi người dùng gõ tìm kiếm cụ thể (hasSearch), ưu tiên từ khóa tìm kiếm hơn tâm trạng
       if (!hasSearch && activeMoodId && !this.doesFoodMatchMood(food, activeMoodId)) {
         return false;

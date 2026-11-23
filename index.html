@@ -1164,12 +1164,13 @@
         <div class="grid grid-cols-3 sm:grid-cols-5 gap-1.5" id="modal-radius-options"></div>
       </div>
 
-      <!-- 4. Khu vực / Phường tại Quy Nhơn -->
+      <!-- 4. Đi ăn cùng ai? (Tối ưu mức giá & không gian) -->
       <div>
         <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
-          <span>🏙️ Khu vực tại TP. Quy Nhơn</span>
+          <span>👥 Đi ăn cùng ai?</span>
+          <span class="text-[10px] text-stone-400 font-normal">(Tự động tối ưu mức giá & không gian)</span>
         </label>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5" id="modal-area-options"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="modal-companion-options"></div>
       </div>
 
       <!-- 5. Bộ lọc thông minh nâng cao -->
@@ -1203,14 +1204,6 @@
             <input type="checkbox" id="filter-high-rating" onchange="window.app.updateModalApplyCount()" class="w-4 h-4 accent-rose-500 cursor-pointer" />
           </label>
         </div>
-      </div>
-
-      <!-- 6. Khoảng giá -->
-      <div>
-        <label class="font-extrabold text-stone-800 text-xs mb-2 flex items-center gap-1.5">
-          <span>💰 Mức giá mong muốn</span>
-        </label>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5" id="modal-price-options"></div>
       </div>
     </div>
 
@@ -1787,7 +1780,7 @@
 <script src="js/auth.js?v=3.3.13"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.14"></script>
+<script src="js/app.js?v=3.3.15"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──
