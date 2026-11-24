@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#FF5722" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="FoodTinder" />
+  <meta name="apple-mobile-web-app-title" content="FoodFinder" />
   <link rel="manifest" href="manifest.json" />
-  <title>FoodTinder – Khám Phá Ẩm Thực Theo Cảm Xúc & Thời Tiết</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF3366'/%3E%3Cstop offset='50%25' stop-color='%23FF5E36'/%3E%3Cstop offset='100%25' stop-color='%23FFA033'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5 4C16 3.5 15.3 3.8 15.1 4.4C14.5 7.8 12.2 9.9 10.4 11.8C8.2 14.1 6.5 17 6.5 20.3C6.5 25.3 10.6 29.3 15.6 29.3C20.6 29.3 24.6 25.3 24.6 20.3C24.6 15.1 21.3 11.4 19.5 8.9C18.9 8 18.4 7.2 18.1 6.5C17.6 5.5 16.9 4.5 16.5 4Z' fill='white'/%3E%3Cpath d='M15.6 12V18M13.6 12V14.8C13.6 15.8 14.4 16.6 15.6 16.6C16.8 16.6 17.6 15.8 17.6 14.8V12M15.6 18V23.5' stroke='%23FF5722' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <title>FoodFinder – Khám Phá Ẩm Thực Theo Cảm Xúc & Thời Tiết</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,7 +33,7 @@
   <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=3.4.4" />
+  <link rel="stylesheet" href="css/style.css?v=3.5.0" />
 
   <style>
     /* ── Complete scrollbar elimination for modal & chips ── */
@@ -343,32 +343,54 @@
 <div id="mobile-app-shell" class="flex flex-col h-[100dvh] w-full overflow-hidden">
 
   <!-- ══════════════════════════════════════════
-       TOP HEADER (Desktop & Mobile Responsive)
+       TOP HEADER (FoodFinder - Mobile & Desktop Responsive)
+       Thứ tự: [Icon + FoodFinder] → [Vị trí] → [Thời tiết] → [Nav Pills (Desktop)] → (đẩy phải) [❤️ Tim] → [Avatar]
   ══════════════════════════════════════════ -->
-  <header id="topbar" class="h-[52px] md:h-[56px] bg-white/95 backdrop-blur-md border-b border-stone-200/90 px-3 md:px-5 flex items-center justify-between z-50 shrink-0 sticky top-0 w-full shadow-2xs select-none">
-    <!-- Bên trái (Mobile): Nút vị trí hiện tại -->
-    <button onclick="window.app.openCityModal()" class="flex md:hidden items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-stone-100/90 hover:bg-stone-200 text-stone-800 text-xs font-bold transition shadow-2xs cursor-pointer max-w-[135px] sm:max-w-[170px] shrink-0" title="Đổi vị trí / xem thời tiết">
-      <span class="text-rose-500 text-sm">📍</span>
-      <span id="topbar-location-name" class="truncate font-black text-xs text-stone-900">Quy Nhơn</span>
-      <span class="text-stone-400 text-[10px]">▾</span>
-    </button>
-
-    <!-- Bên trái (Desktop): Logo FoodTinder -->
-    <div class="logo hidden md:flex items-center gap-2.5 cursor-pointer select-none" onclick="switchTab('home')" title="FoodTinder - Khám phá ẩm thực">
-      <div class="logo-icon w-[38px] h-[38px] rounded-xl bg-gradient-to-tr from-[#FF3366] via-[#FF5E36] to-[#FFA033] flex items-center justify-center shadow-md shadow-rose-500/25 shrink-0">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4 1.8C12 1.4 11.4 1.6 11.3 2.1C10.8 5 8.8 6.8 7.2 8.4C5.4 10.3 4 12.7 4 15.5C4 19.64 7.36 23 11.5 23C15.64 23 19 19.64 19 15.5C19 11.2 16.3 8.1 14.8 6C14.3 5.3 13.9 4.6 13.6 4C13.2 3.2 12.7 2.3 12.4 1.8Z" fill="#FFFFFF"/>
-          <path d="M11.5 8.5V13.5M9.8 8.5V10.8C9.8 11.7 10.5 12.3 11.5 12.3C12.5 12.3 13.2 11.7 13.2 10.8V8.5M11.5 13.5V18" stroke="#FF5722" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <header id="topbar" class="h-14 bg-white/95 backdrop-blur-md border-b border-stone-200/90 px-3 md:px-5 flex items-center justify-between gap-1.5 md:gap-3 z-50 shrink-0 sticky top-0 w-full shadow-2xs select-none">
+    
+    <!-- 1. [Icon + FoodFinder] (Hiển thị cả Mobile & Desktop) -->
+    <div class="logo flex items-center gap-1.5 sm:gap-2 cursor-pointer select-none shrink-0" onclick="switchTab('home')" title="FoodFinder - Khám phá ẩm thực">
+      <div class="logo-icon w-7 h-7 md:w-8 md:h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-xs shrink-0">
+        <svg class="w-full h-full" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ff-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF4B2B"/>
+              <stop offset="100%" stop-color="#FF8C00"/>
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="12" fill="url(#ff-logo-grad)"/>
+          <path d="M24 6C16.82 6 11 11.82 11 19C11 27.8 22.8 39.8 23.3 40.3C23.7 40.7 24.3 40.7 24.7 40.3C25.2 39.8 37 27.8 37 19C37 11.82 31.18 6 24 6Z" fill="#FFFFFF"/>
+          <path d="M19 12V15.5C19 16.3 19.6 17 20.4 17.1V24H21.6V17.1C22.4 17 23 16.3 23 15.5V12H22V15H21.5V12H20.5V15H20V12H19Z" fill="url(#ff-logo-grad)"/>
+          <path d="M26.5 12C25.1 12 24 13.3 24 15C24 16.4 24.9 17.5 25.9 17.8V24H27.1V17.8C28.1 17.5 29 16.4 29 15C29 13.3 27.9 12 26.5 12Z" fill="url(#ff-logo-grad)"/>
         </svg>
       </div>
-      <div class="logo-text">
-        <h1 class="text-base font-extrabold text-stone-900 leading-tight">Food<span class="brand-gradient text-rose-500">Tinder</span></h1>
-        <p class="text-[10px] text-stone-400 font-medium">Ẩm thực theo cảm xúc & thời tiết</p>
+      <div class="flex flex-col">
+        <span class="text-[15px] md:text-base font-black tracking-tight text-stone-900 leading-none whitespace-nowrap shrink-0">
+          Food<span class="text-[#FF5722]">Finder</span>
+        </span>
+        <span class="text-[9.5px] text-stone-400 font-medium hidden md:inline mt-0.5 leading-none">Ẩm thực theo cảm xúc & thời tiết</span>
       </div>
     </div>
 
-    <!-- Ở giữa (Desktop): 5 Tab Điều Hướng Chuẩn -->
-    <div class="nav-pills hidden md:flex items-center gap-1 bg-stone-100 p-1 rounded-full border border-stone-200/80">
+    <!-- 2. [Vị trí: 📍 P. Quy Nhơn ▾] -->
+    <button onclick="window.app.openCityModal()" 
+      class="flex items-center gap-1 px-2 py-1 md:px-2.5 md:py-1.5 rounded-full bg-stone-100/90 hover:bg-stone-200 text-stone-800 text-xs font-bold transition shadow-2xs cursor-pointer max-w-[105px] md:max-w-[150px] shrink min-w-0" 
+      title="Đổi vị trí / xem thời tiết">
+      <span class="text-rose-500 text-xs shrink-0">📍</span>
+      <span id="topbar-location-name" class="truncate font-black text-xs text-stone-900">Quy Nhơn</span>
+      <span class="text-stone-400 text-[9px] shrink-0">▾</span>
+    </button>
+
+    <!-- 3. [Thời tiết: 🌤️ 28°C] -->
+    <div class="weather-chip flex items-center gap-1 px-2 py-1 md:px-2.5 md:py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 border border-amber-200/80 text-amber-900 text-xs font-bold transition cursor-pointer whitespace-nowrap shrink-0" 
+      onclick="window.app.openCityModal()" 
+      title="Xem thời tiết & đổi vị trí">
+      <span id="topbar-weather-icon" class="text-xs">⛅</span>
+      <span id="topbar-weather-text" class="text-xs font-extrabold">26°C</span>
+    </div>
+
+    <!-- 4. Ở giữa (Desktop): 5 Tab Điều Hướng Chuẩn -->
+    <div class="nav-pills hidden md:flex items-center gap-1 bg-stone-100 p-1 rounded-full border border-stone-200/80 mx-auto">
       <button class="active px-3 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-1.5" onclick="switchTab('home')" id="pill-home">
         <i data-lucide="compass" class="w-4 h-4"></i> Khám phá
       </button>
@@ -387,17 +409,15 @@
       </button>
     </div>
 
-    <!-- Bên phải: Thời tiết gọn + Nút Tim đã thích + Avatar người dùng -->
-    <div class="topbar-right flex items-center gap-1 sm:gap-2 shrink-0">
-      <div class="weather-chip flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 border border-amber-200/80 text-amber-900 text-xs font-bold transition cursor-pointer" onclick="window.app.openCityModal()" title="Xem thời tiết & đổi vị trí">
-        <span id="topbar-weather-icon">⛅</span>
-        <span id="topbar-weather-text">26°C</span>
-      </div>
-      <div class="liked-btn relative w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 border border-rose-200/80 flex items-center justify-center cursor-pointer transition" onclick="switchTab('liked')" title="Món đã thích">
+    <!-- 5. Bên phải: (đẩy sang phải) [❤️ Tim] → [Avatar] -->
+    <div class="topbar-right flex items-center gap-1.5 sm:gap-2 shrink-0 ml-auto md:ml-0">
+      <div class="liked-btn relative w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 border border-rose-200/80 flex items-center justify-center cursor-pointer transition shrink-0" 
+        onclick="switchTab('liked')" 
+        title="Món đã thích">
         <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
         <span id="liked-badge" class="hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
       </div>
-      <!-- Auth Button / User Profile Pill -->
+      <!-- Auth Button / User Profile Pill (32x32px trên mobile) -->
       <div id="topbar-auth-container" class="flex items-center shrink-0"></div>
     </div>
   </header>
@@ -492,7 +512,7 @@
           <div class="flex items-center gap-2 min-w-0">
             <span class="text-base shrink-0">📍</span>
             <span class="truncate">
-              Bạn đang ở <strong id="demo-detected-city" class="text-stone-900 font-bold">Đông Hà</strong>. FoodTinder <strong>đang hiển thị dữ liệu gợi ý tại Quy Nhơn</strong>.
+              Bạn đang ở <strong id="demo-detected-city" class="text-stone-900 font-bold">Đông Hà</strong>. FoodFinder <strong>đang hiển thị dữ liệu gợi ý tại Quy Nhơn</strong>.
             </span>
           </div>
           <button onclick="window.app.switchLocationToQuyNhon()" class="px-2.5 py-1 bg-white hover:bg-amber-100 text-rose-600 font-extrabold rounded-lg border border-amber-200 shadow-2xs transition whitespace-nowrap cursor-pointer shrink-0">
@@ -900,7 +920,7 @@
         <span class="text-xl">🎭</span>
         <div>
           <h3 class="font-black text-base text-stone-900 leading-tight">Tâm Trạng & Cảm Xúc Hôm Nay</h3>
-          <p class="text-xs text-stone-500">Chọn tâm trạng để FoodTinder gợi ý món ăn chuẩn gu</p>
+          <p class="text-xs text-stone-500">Chọn tâm trạng để FoodFinder gợi ý món ăn chuẩn gu</p>
         </div>
       </div>
       <button onclick="window.app.closeMoodBottomSheet()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center text-sm font-bold transition cursor-pointer">
@@ -1226,7 +1246,7 @@
         </button>
 
         <button id="gmaps-modal-inapp-btn"
-          class="py-2 px-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200/80 rounded-xl font-bold text-[11px] transition cursor-pointer flex flex-col items-center justify-center gap-0.5" title="Xem vị trí ngay trên bản đồ FoodTinder">
+          class="py-2 px-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200/80 rounded-xl font-bold text-[11px] transition cursor-pointer flex flex-col items-center justify-center gap-0.5" title="Xem vị trí ngay trên bản đồ FoodFinder">
           <span>🗺️ Bản đồ App</span>
         </button>
       </div>
@@ -1330,7 +1350,7 @@
             🔥
           </div>
           <div>
-            <h3 class="font-black text-base tracking-wide">Đăng Nhập FoodTinder</h3>
+            <h3 class="font-black text-base tracking-wide">Đăng Nhập FoodFinder</h3>
             <p class="text-xs text-rose-100">Đăng nhập nhanh với Google, Facebook, Apple</p>
           </div>
         </div>
@@ -1441,7 +1461,7 @@
             class="w-full text-[11px] font-mono text-stone-600 bg-transparent border-b border-stone-200 focus:border-rose-500 outline-none pb-0.5" />
         </div>
       </div>
-      <p class="text-[10px] text-stone-400">Ứng dụng FoodTinder sẽ nhận thông tin tên và ảnh đại diện công khai từ tài khoản của bạn.</p>
+      <p class="text-[10px] text-stone-400">Ứng dụng FoodFinder sẽ nhận thông tin tên và ảnh đại diện công khai từ tài khoản của bạn.</p>
     </div>
 
     <!-- Actions -->
@@ -1655,7 +1675,7 @@
         <div>
           <span class="text-[10px] uppercase font-black tracking-widest text-orange-200 block">Khảo sát khẩu vị cá nhân</span>
           <h3 class="font-black text-lg text-white leading-tight">Thiết Lập Gu Ẩm Thực Của Bạn</h3>
-          <p class="text-xs text-rose-100 mt-0.5">Giúp FoodTinder gợi ý đúng 100% món ngon hợp khẩu vị bạn nhất!</p>
+          <p class="text-xs text-rose-100 mt-0.5">Giúp FoodFinder gợi ý đúng 100% món ngon hợp khẩu vị bạn nhất!</p>
         </div>
       </div>
     </div>
@@ -1807,7 +1827,7 @@
         <div>
           <span class="text-[10px] uppercase font-black tracking-widest text-amber-200 block">Khám phá ẩm thực theo cảm xúc</span>
           <h3 class="font-black text-lg sm:text-xl text-white leading-tight">Hôm Nay Bạn Cảm Thấy Thế Nào?</h3>
-          <p class="text-xs text-rose-100 mt-0.5">Chọn tâm trạng để FoodTinder gợi ý đúng món ngon chạm đúng cảm xúc của bạn!</p>
+          <p class="text-xs text-rose-100 mt-0.5">Chọn tâm trạng để FoodFinder gợi ý đúng món ngon chạm đúng cảm xúc của bạn!</p>
         </div>
       </div>
     </div>

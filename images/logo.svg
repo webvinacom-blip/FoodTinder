@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ff-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4B2B"/>
+      <stop offset="100%" stop-color="#FF8C00"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#ff-logo-grad)"/>
+  <!-- Map Pin Body (White) -->
+  <path d="M24 6C16.82 6 11 11.82 11 19C11 27.8 22.8 39.8 23.3 40.3C23.7 40.7 24.3 40.7 24.7 40.3C25.2 39.8 37 27.8 37 19C37 11.82 31.18 6 24 6Z" fill="#FFFFFF"/>
+  <!-- Fork (Left) -->
+  <path d="M19 12V15.5C19 16.3 19.6 17 20.4 17.1V24H21.6V17.1C22.4 17 23 16.3 23 15.5V12H22V15H21.5V12H20.5V15H20V12H19Z" fill="url(#ff-logo-grad)"/>
+  <!-- Spoon (Right) -->
+  <path d="M26.5 12C25.1 12 24 13.3 24 15C24 16.4 24.9 17.5 25.9 17.8V24H27.1V17.8C28.1 17.5 29 16.4 29 15C29 13.3 27.9 12 26.5 12Z" fill="url(#ff-logo-grad)"/>
+</svg>

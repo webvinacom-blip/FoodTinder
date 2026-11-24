@@ -2822,7 +2822,7 @@ class FoodApp {
       isRelaxedFallback = true;
       const currentMoodObj = APP_DATA.moods?.find(m => m.id === activeMoodId);
       const moodLabel = currentMoodObj ? currentMoodObj.label.toLowerCase() : 'tâm trạng';
-      fallbackNotice = `Quanh đây đang hiếm món ${moodLabel}, FoodTinder mở rộng tìm kiếm thêm một chút cho bạn nhé!`;
+      fallbackNotice = `Quanh đây đang hiếm món ${moodLabel}, FoodFinder mở rộng tìm kiếm thêm một chút cho bạn nhé!`;
 
       // Mở rộng bán kính quét ra toàn bộ địa bàn thành phố (vẫn đảm bảo quán đang mở cửa)
       const relaxedList = baseFoods.filter(food => {
@@ -4187,7 +4187,7 @@ class FoodApp {
             <div class="flex items-center justify-between">
               <span class="text-[11px] font-black text-stone-900 uppercase tracking-wide flex items-center gap-1.5">
                 <span>👥</span>
-                <span>Bạn bè trong FoodTinder</span>
+                <span>Bạn bè trong FoodFinder</span>
               </span>
             </div>
 
@@ -5166,7 +5166,7 @@ class FoodApp {
         <div class="h-full flex flex-col items-center justify-center py-8 text-center text-stone-400 text-xs">
           <p class="text-3xl mb-2">🔍</p>
           <span class="font-bold text-stone-700 mb-1">Không tìm thấy địa điểm có sẵn cho "${keyword}"</span>
-          <span class="text-stone-400 text-[11px] max-w-xs mb-3">Bạn có muốn FoodTinder gợi ý các quán đặc sản theo Gu tại khu vực này?</span>
+          <span class="text-stone-400 text-[11px] max-w-xs mb-3">Bạn có muốn FoodFinder gợi ý các quán đặc sản theo Gu tại khu vực này?</span>
           <button onclick="window.app.selectDynamicDistrict('${safeKw}')" 
             class="px-4 py-2 bg-gradient-to-r from-rose-500 to-amber-500 text-white rounded-xl text-xs font-bold shadow-md hover:scale-105 transition flex items-center gap-1.5">
             <span>✨ Khám phá quán ăn tại "${keyword}"</span>

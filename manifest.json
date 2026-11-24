@@ -1,7 +1,7 @@
 {
-  "name": "FoodTinder – Ẩm Thực Theo Cảm Xúc & Thời Tiết",
-  "short_name": "FoodTinder",
-  "description": "Khám phá ẩm thực Quy Nhơn thông minh theo tâm trạng, thời tiết và khẩu vị",
+  "name": "FoodFinder – Khám Phá Ẩm Thực Theo Cảm Xúc & Thời Tiết",
+  "short_name": "FoodFinder",
+  "description": "Khám phá ẩm thực thông minh theo tâm trạng, thời tiết và khẩu vị",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -9,13 +9,13 @@
   "theme_color": "#FF5722",
   "icons": [
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='48' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF3366'/%3E%3Cstop offset='50%25' stop-color='%23FF5E36'/%3E%3Cstop offset='100%25' stop-color='%23FFA033'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M99 24C96 21 91.8 22.8 90.6 26.4C87 46.8 73.2 59.4 62.4 70.8C49.2 84.6 39 102 39 121.8C39 151.8 63.6 175.8 93.6 175.8C123.6 175.8 147.6 151.8 147.6 121.8C147.6 90.6 127.8 68.4 117 53.4C113.4 48 110.4 43.2 108.6 39C105.6 33 101.4 27 99 24Z' fill='white'/%3E%3Cpath d='M93.6 72V108M81.6 72V88.8C81.6 94.8 86.4 99.6 93.6 99.6C100.8 99.6 105.6 94.8 105.6 88.8V72M93.6 108V141' stroke='%23FF5722' stroke-width='9.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+      "src": "images/logo.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='128' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF3366'/%3E%3Cstop offset='50%25' stop-color='%23FF5E36'/%3E%3Cstop offset='100%25' stop-color='%23FFA033'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M264 64C256 56 244.8 60.8 241.6 70.4C232 124.8 195.2 158.4 166.4 188.8C131.2 225.6 104 272 104 324.8C104 404.8 169.6 468.8 249.6 468.8C329.6 468.8 393.6 404.8 393.6 324.8C393.6 241.6 340.8 182.4 312 142.4C302.4 128 294.4 115.2 289.6 104C281.6 88 270.4 72 264 64Z' fill='white'/%3E%3Cpath d='M249.6 192V288M217.6 192V236.8C217.6 252.8 230.4 265.6 249.6 265.6C268.8 265.6 281.6 252.8 281.6 236.8V192M249.6 288V376' stroke='%23FF5722' stroke-width='25.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+      "src": "images/logo.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

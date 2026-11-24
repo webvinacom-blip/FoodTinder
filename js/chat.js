@@ -110,7 +110,7 @@ const DEFAULT_NEARBY_FRIENDS = [
     phone: "0988 123 789",
     unread: 1,
     messages: [
-      { sender: "them", text: "Chào bạn nha! Thấy bạn trên FoodTinder ở gần khu Ngô Mây. Mình đang thèm lẩu chua cay quá, bạn có biết quán nào ngon gần đây không kết nối đi chung nhé! 👋🍲", time: "Vừa xong" }
+      { sender: "them", text: "Chào bạn nha! Thấy bạn trên FoodFinder ở gần khu Ngô Mây. Mình đang thèm lẩu chua cay quá, bạn có biết quán nào ngon gần đây không kết nối đi chung nhé! 👋🍲", time: "Vừa xong" }
     ]
   },
   {
@@ -362,7 +362,7 @@ class FoodChatManager {
             </div>
             <div class="min-w-0">
               <div class="flex items-center gap-1.5">
-                <h5 class="font-bold text-xs text-stone-900 truncate">FoodTinder AI</h5>
+                <h5 class="font-bold text-xs text-stone-900 truncate">FoodFinder AI</h5>
                 <span class="bg-rose-500 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider">AI</span>
               </div>
               <p class="text-[11px] text-stone-500 truncate mt-0.5">Trợ lý ăn uống theo cảm xúc & thời tiết</p>
@@ -569,7 +569,7 @@ class FoodChatManager {
           </div>
           <div class="min-w-0">
             <div class="flex items-center gap-1.5 truncate">
-              <h4 class="font-extrabold text-sm text-stone-900 leading-tight truncate">FoodTinder AI</h4>
+              <h4 class="font-extrabold text-sm text-stone-900 leading-tight truncate">FoodFinder AI</h4>
               <span class="bg-rose-500 text-white text-[9px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">Trợ lý</span>
             </div>
             <p class="text-[11px] text-stone-500 font-medium truncate">(Trợ lý Ăn uống theo cảm xúc & thời tiết)</p>
@@ -1125,12 +1125,12 @@ class FoodChatManager {
 
   startAICall() {
     window.soundFX && window.soundFX.playMatch();
-    window.app.showToast("📞 Đang kết nối cuộc gọi thoại với FoodTinder AI...");
+    window.app.showToast("📞 Đang kết nối cuộc gọi thoại với FoodFinder AI...");
   }
 
   showAIInfo() {
     window.soundFX && window.soundFX.playPop();
-    window.app.showToast("ℹ️ FoodTinder AI: Trợ lý ẩm thực kết nối bạn bè & món ngon theo cảm xúc!");
+    window.app.showToast("ℹ️ FoodFinder AI: Trợ lý ẩm thực kết nối bạn bè & món ngon theo cảm xúc!");
   }
 
   /* ══════════════════════════════════════════
@@ -1186,7 +1186,7 @@ class FoodChatManager {
       unread: 0,
       time: "Vừa xong",
       messages: [
-        { sender: "them", text: `Chào bạn nha! Mình là ${name}, rất vui được kết nối trên FoodTinder! Hôm nào đi ăn lẩu/nướng cùng nha! ✨🍲`, time: "Vừa xong" }
+        { sender: "them", text: `Chào bạn nha! Mình là ${name}, rất vui được kết nối trên FoodFinder! Hôm nào đi ăn lẩu/nướng cùng nha! ✨🍲`, time: "Vừa xong" }
       ]
     };
 

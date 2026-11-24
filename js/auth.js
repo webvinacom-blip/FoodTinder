@@ -87,7 +87,7 @@ class AuthManager {
         {
           id: 'snack_friend',
           title: 'Giao lưu kết bạn',
-          desc: 'Kết bạn mới trên FoodTinder với 2 người bạn',
+          desc: 'Kết bạn mới trên FoodFinder với 2 người bạn',
           type: 'friendsAdded',
           target: 2,
           icon: '🤝'
@@ -1907,24 +1907,24 @@ class AuthManager {
       if (user) {
         topbarAuthContainer.innerHTML = `
           <button onclick="window.authManager.openProfileModal()" 
-            class="flex items-center gap-1.5 p-1 pr-1.5 sm:pr-2.5 rounded-full bg-stone-50 hover:bg-stone-100 border border-stone-200 transition cursor-pointer shadow-2xs active:scale-95 group" 
+            class="w-8 h-8 sm:w-auto flex items-center justify-center sm:justify-start gap-1.5 p-0.5 sm:p-1 sm:pr-2.5 rounded-full bg-stone-50 hover:bg-stone-100 border border-stone-200 transition cursor-pointer shadow-2xs active:scale-95 group shrink-0" 
             title="Tài khoản: ${user.name} • Danh hiệu: ${currentTitle.icon} ${currentTitle.name} (Bấm để xem)">
             <div class="relative shrink-0 flex items-center justify-center">
               <img src="${user.avatar || this.defaultAvatars[0]}" alt="${user.name}" class="w-6 h-6 rounded-full object-cover border border-orange-300 shrink-0" />
               <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-white shadow-2xs border border-stone-200 flex items-center justify-center text-[8.5px] leading-none" title="${currentTitle.name}">${currentTitle.icon}</span>
             </div>
             <span class="text-xs font-bold text-stone-800 hidden sm:inline max-w-[120px] truncate group-hover:text-rose-600 transition">${user.name}</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 hidden sm:inline-block"></span>
           </button>
         `;
       } else {
         const saved = this.getPrimarySavedAccount();
         topbarAuthContainer.innerHTML = `
           <button onclick="window.authManager.openLoginModal()" 
-            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-95 text-white font-extrabold text-xs shadow-xs transition flex items-center gap-1.5 cursor-pointer shrink-0"
-            title="Đăng nhập bằng Social hoặc Khuôn mặt/Vân tay">
+            class="w-8 h-8 sm:w-auto sm:px-3 sm:py-1.5 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-95 text-white font-extrabold text-xs shadow-xs transition flex items-center justify-center sm:gap-1.5 cursor-pointer shrink-0"
+            title="Đăng nhập tài khoản">
             ${saved ? `
-              <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 3H5a2 2 0 0 0-2 2v2"></path>
                 <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
                 <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
@@ -1933,13 +1933,13 @@ class AuthManager {
                 <path d="M15 10h.01"></path>
                 <path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path>
               </svg>
-              <span>👆 Quét vân tay (${saved.name.split(' ').pop()})</span>
+              <span class="hidden sm:inline">👆 Quét vân tay (${saved.name.split(' ').pop()})</span>
             ` : `
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-              <span>Đăng nhập</span>
+              <span class="hidden sm:inline">Đăng nhập</span>
             `}
           </button>
         `;
