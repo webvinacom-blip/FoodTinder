@@ -531,6 +531,7 @@ class TinderSwipeManager {
   }
 
   attachCardGestures(cardEl, food) {
+    cardEl.style.touchAction = 'none';
     let activePointerId = null;
 
     const onPointerMove = (e) => {

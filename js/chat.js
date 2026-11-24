@@ -500,26 +500,25 @@ class FoodChatManager {
   }
 
   showMobileChatWindow() {
-    if (window.innerWidth < 768) {
-      const sidebar = document.getElementById('chat-friends-sidebar');
-      const activeWindow = document.getElementById('chat-active-window');
-      if (sidebar) sidebar.classList.add('hidden');
-      if (activeWindow) activeWindow.classList.remove('hidden');
+    this.isChatWindowOpen = true;
+    const sidebar = document.getElementById('chat-friends-sidebar');
+    const activeWindow = document.getElementById('chat-active-window');
+    if (sidebar) sidebar.classList.add('hidden');
+    if (activeWindow) {
+      activeWindow.classList.remove('hidden');
+      activeWindow.style.display = 'flex';
     }
   }
 
   backToFriendsList() {
     window.soundFX && window.soundFX.playPop();
-    if (window.innerWidth < 768) {
-      const sidebar = document.getElementById('chat-friends-sidebar');
-      const activeWindow = document.getElementById('chat-active-window');
-      if (sidebar) sidebar.classList.remove('hidden');
-      if (activeWindow) activeWindow.classList.add('hidden');
-    } else {
-      const sidebar = document.getElementById('chat-friends-sidebar');
-      const activeWindow = document.getElementById('chat-active-window');
-      if (sidebar) sidebar.classList.remove('hidden');
-      if (activeWindow) activeWindow.classList.remove('hidden');
+    this.isChatWindowOpen = false;
+    const sidebar = document.getElementById('chat-friends-sidebar');
+    const activeWindow = document.getElementById('chat-active-window');
+    if (sidebar) sidebar.classList.remove('hidden');
+    if (activeWindow) {
+      activeWindow.classList.add('hidden');
+      activeWindow.style.display = 'none';
     }
     this.renderFriendsSidebar(false);
   }
@@ -527,17 +526,7 @@ class FoodChatManager {
   selectChatTarget(targetId) {
     window.soundFX && window.soundFX.playPop();
     this.currentChatTarget = targetId;
-    if (window.innerWidth < 768) {
-      this.showMobileChatWindow();
-    } else {
-      const sidebar = document.getElementById('chat-friends-sidebar');
-      const activeWindow = document.getElementById('chat-active-window');
-      if (sidebar) sidebar.classList.remove('hidden');
-      if (activeWindow) {
-        activeWindow.classList.remove('hidden');
-        activeWindow.style.display = 'flex';
-      }
-    }
+    this.showMobileChatWindow();
     this.renderFriendsSidebar(false);
     this.renderActiveChatWindow();
   }
@@ -572,7 +561,7 @@ class FoodChatManager {
       <!-- AI Header -->
       <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
         <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
-          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách tin nhắn">
+          <button onclick="window.chatManager.backToFriendsList()" class="p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách tin nhắn">
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
           </button>
           <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-amber-400 flex items-center justify-center text-white text-lg shadow-sm shrink-0">
@@ -795,7 +784,7 @@ class FoodChatManager {
       <!-- Friend Header -->
       <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
         <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
-          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách bạn bè">
+          <button onclick="window.chatManager.backToFriendsList()" class="p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách bạn bè">
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
           </button>
           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-rose-300 shadow-xs shrink-0">
@@ -867,7 +856,7 @@ class FoodChatManager {
       <!-- Group Header -->
       <div class="px-4 md:px-5 py-3 bg-white border-b border-stone-200/90 flex items-center justify-between shrink-0 shadow-xs">
         <div class="flex items-center gap-2.5 md:gap-3 min-w-0">
-          <button onclick="window.chatManager.backToFriendsList()" class="md:hidden p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách nhóm">
+          <button onclick="window.chatManager.backToFriendsList()" class="p-2 -ml-2 mr-0.5 hover:bg-stone-100 rounded-full text-stone-600 transition flex items-center justify-center shrink-0 cursor-pointer" title="Quay lại danh sách nhóm">
             <i data-lucide="arrow-left" class="w-5 h-5"></i>
           </button>
           <div class="w-10 h-10 rounded-2xl overflow-hidden border border-amber-300 shrink-0">

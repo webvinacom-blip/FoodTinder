@@ -595,121 +595,99 @@ class FoodApp {
     const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
 
     return `
-      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:-translate-y-0.5 ${!status.isOpen ? 'is-closed' : ''}">
-        <!-- Card Image & Status Badges -->
-        <div class="cursor-pointer" onclick="window.app.showFoodDetail(${food.id})">
-          <div class="relative w-full aspect-[4/3] bg-stone-100 overflow-hidden">
-            <img src="${food.image}"
-                 alt="${food.name}"
-                 loading="lazy"
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!status.isOpen ? 'is-closed-img grayscale' : ''}"
-                 data-name="${(food.name || '').replace(/"/g, '&quot;')}"
-                 data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
-                 data-category="${food.category || ''}"
-                 onerror="window.handleFoodImageError ? window.handleFoodImageError(this, '${(food.name || '').replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}') : (this.onerror=null, this.src='images/tra_sua_nuong_may_may.jpg')" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20 pointer-events-none"></div>
+      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-md transition-all duration-200 p-2.5 flex gap-3 shadow-2xs cursor-pointer ${!status.isOpen ? 'is-closed opacity-85' : ''}" onclick="window.app.showFoodDetail(${food.id})">
+        <!-- Cột trái: Ảnh vuông bo góc kèm badge điểm số -->
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-xl overflow-hidden bg-stone-100">
+          <img src="${food.image}"
+               alt="${food.name}"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${!status.isOpen ? 'is-closed-img grayscale' : ''}"
+               data-name="${(food.name || '').replace(/"/g, '&quot;')}"
+               data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+               data-category="${food.category || ''}"
+               onerror="window.handleFoodImageError ? window.handleFoodImageError(this, '${(food.name || '').replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}') : (this.onerror=null, this.src='images/tra_sua_nuong_may_may.jpg')" />
+          
+          <!-- Badge điểm đánh giá ở góc ảnh -->
+          <span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-stone-900/85 backdrop-blur-xs text-amber-300 text-[10px] font-black flex items-center gap-0.5 shadow-xs">
+            <span>★</span>
+            <span>${food.rating || 4.5}</span>
+          </span>
 
-            <!-- Top floating badges -->
-            <div class="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
-              <!-- Open / Closed Badge -->
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs flex items-center gap-1 backdrop-blur-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-800/90 text-stone-300'}">
-                <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
-                <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
-              </span>
-
-              <!-- Rating badge -->
-              <span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-stone-900/80 backdrop-blur-md text-amber-300 flex items-center gap-0.5 shadow-xs">
-                <span>★</span>
-                <span>${food.rating || 4.5}</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card Body -->
-          <div class="p-3 space-y-1.5">
-            <div>
-              <h5 class="font-extrabold text-xs text-stone-900 group-hover:text-rose-600 transition truncate cursor-pointer" onclick="window.app.showFoodDetail(${food.id})" title="${food.restaurant}">
-                ${food.restaurant}
-              </h5>
-              <div class="flex items-center justify-between gap-1 mt-0.5">
-                <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
-                  📍 ${food.address || food.district || 'TP. Quy Nhơn'}
-                </p>
-                <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-                  class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
-                  title="Xem quán trên bản đồ">
-                  <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                    <line x1="9" y1="3" x2="9" y2="18"></line>
-                    <line x1="15" y1="6" x2="15" y2="21"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <!-- Operating Hours & Status -->
-            <div class="flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
-              <span>🕒 ${food.openTime || '07:00 - 22:30'}</span>
-              <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText || (status.isOpen ? 'Đang mở cửa' : 'Đã đóng cửa')})</span>
-            </div>
-
-            <div class="flex items-center justify-between text-[11px] pt-1">
-              <span class="font-bold text-rose-600">${priceText}</span>
-              <span class="text-stone-400 flex items-center gap-0.5 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem vị trí quán trên bản đồ">
-                <svg class="w-3 h-3 inline text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                ${distText}
-              </span>
-            </div>
-          </div>
+          ${!status.isOpen ? `
+            <span class="absolute bottom-1 left-1 right-1 text-center py-0.5 rounded-md bg-stone-900/90 text-stone-300 text-[9px] font-bold">
+              Đóng cửa
+            </span>
+          ` : ''}
         </div>
 
-        <!-- Bottom Actions: 1. Thích, 2. Bản đồ, 3. Đặt ShopeeFood -->
-        <div class="p-3.5 pt-0 flex items-center gap-1.5">
-          <!-- 1. Yêu thích (Chỉ icon) -->
-          <button onclick="event.stopPropagation();window.app.toggleLikedFood(${food.id})"
-            data-like-btn="${food.id}"
-            class="w-9 h-8 ${isLiked ? 'bg-rose-500 text-white shadow-xs' : 'bg-rose-50 hover:bg-rose-100 text-rose-600'} rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer border border-rose-100 active:scale-95"
-            title="${isLiked ? 'Đã yêu thích (Bấm để bỏ)' : 'Yêu thích món này'}">
-            <svg class="w-4 h-4 ${isLiked ? 'fill-white text-white' : 'text-rose-500'}" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-            </svg>
-          </button>
+        <!-- Cột phải: 4 dòng thông tin rõ ràng -->
+        <div class="flex-1 min-w-0 flex flex-col justify-between">
+          <!-- Dòng 1: Tên quán -->
+          <div>
+            <h5 class="font-black text-sm text-stone-900 group-hover:text-rose-600 transition truncate leading-snug" title="${food.restaurant}">
+              ${food.restaurant}
+            </h5>
+            
+            <!-- Dòng 2: Địa chỉ ngắn gọn kèm khoảng cách -->
+            <div class="flex items-center gap-1 text-[11px] text-stone-500 truncate mt-0.5">
+              <span class="truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
+              ${distText ? `<span class="shrink-0 text-stone-400 font-medium">• ${distText}</span>` : ''}
+            </div>
+          </div>
 
-          <!-- 2. Bản đồ (Chỉ icon) -->
-          <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-            class="w-9 h-8 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/80 rounded-xl transition flex items-center justify-center shrink-0 cursor-pointer active:scale-95"
-            title="Xem trên bản đồ">
-            <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-              <line x1="9" y1="3" x2="9" y2="18"></line>
-              <line x1="15" y1="6" x2="15" y2="21"></line>
-            </svg>
-          </button>
+          <!-- Dòng 3: Trạng thái hoạt động + Khoảng giá -->
+          <div class="flex items-center justify-between text-[11px] my-1">
+            <span class="inline-flex items-center gap-1 font-bold ${status.isOpen ? 'text-emerald-600' : 'text-stone-400'}">
+              <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-stone-300'}"></span>
+              <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
+            </span>
+            <span class="font-extrabold text-rose-600 text-xs">${priceText}</span>
+          </div>
 
-          <!-- 3. Đặt ShopeeFood (chỉ hiện khi quán có trên ShopeeFood) -->
-          ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
-            status.isOpen ? `
-            <button onclick="event.stopPropagation();window.app.openShopeeFoodDelivery(${food.id})"
-              class="flex-1 h-8 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-[11px] font-extrabold shadow-sm shadow-orange-300/80 flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
-              title="Đặt món qua ShopeeFood">
-              ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0') : ''}
-              <span>ShopeeFood</span>
+          <!-- Dòng 4: Hàng nút bấm hành động -->
+          <div class="flex items-center gap-1.5 mt-0.5" onclick="event.stopPropagation()">
+            <!-- [❤️ Thả tim] -->
+            <button onclick="window.app.toggleLikedFood(${food.id})"
+              data-like-btn="${food.id}"
+              class="w-8 h-8 rounded-xl border ${isLiked ? 'border-rose-400 bg-rose-50 text-rose-600' : 'border-stone-200 bg-white text-stone-400 hover:text-rose-500'} flex items-center justify-center transition active:scale-95 cursor-pointer shrink-0"
+              title="${isLiked ? 'Bỏ thích món này' : 'Yêu thích món này'}">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </button>
-            ` : `
-            <button disabled
-              class="flex-1 h-8 bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-[11px] font-semibold flex items-center justify-center gap-1.5 cursor-not-allowed opacity-60 pointer-events-none select-none"
-              title="Quán hiện đã đóng cửa">
-              ${window.getShopeeIcon ? window.getShopeeIcon(18, 'shrink-0 filter grayscale opacity-50') : ''}
-              <span>ShopeeFood</span>
+
+            <!-- [🗺️ Chỉ đường] -->
+            <button onclick="window.app.openMapWithFood(${food.id})"
+              class="w-8 h-8 rounded-xl border border-stone-200 bg-white text-stone-600 hover:text-amber-600 hover:border-amber-300 flex items-center justify-center transition active:scale-95 cursor-pointer shrink-0"
+              title="Xem vị trí trên bản đồ">
+              <svg class="w-4 h-4 text-stone-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                <line x1="9" y1="3" x2="9" y2="18"></line>
+                <line x1="15" y1="6" x2="15" y2="21"></line>
+              </svg>
             </button>
-            `
-          ) : `
-          <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
-            class="flex-1 h-8 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer"
-            title="Đến quán thưởng thức trực tiếp">
-            <span>Xem đường đi</span>
-          </button>
-          `}
+
+            <!-- [🛵 ShopeeFood] nút cam nổi bật full-width còn lại -->
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
+              status.isOpen ? `
+              <button onclick="window.app.openShopeeFoodDelivery(${food.id})"
+                class="flex-1 h-8 px-2 rounded-xl bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white font-extrabold text-[11px] flex items-center justify-center gap-1.5 transition shadow-2xs active:scale-95 cursor-pointer whitespace-nowrap"
+                title="Đặt ShopeeFood giao siêu tốc">
+                ${window.getShopeeIcon ? window.getShopeeIcon(17, 'shrink-0') : '🛵'}
+                <span>ShopeeFood</span>
+              </button>
+              ` : `
+              <button disabled
+                class="flex-1 h-8 px-2 rounded-xl bg-stone-100 border border-stone-200 text-stone-400 font-semibold text-[11px] flex items-center justify-center gap-1 cursor-not-allowed opacity-60 pointer-events-none select-none">
+                <span>Đã đóng cửa</span>
+              </button>
+              `
+            ) : `
+            <button onclick="window.app.openMapWithFood(${food.id})"
+              class="flex-1 h-8 px-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[11px] flex items-center justify-center gap-1 transition active:scale-95 cursor-pointer"
+              title="Đến quán thưởng thức trực tiếp">
+              <span>Chỉ đường</span>
+            </button>
+            `}
+          </div>
         </div>
       </div>
     `;
@@ -1587,6 +1565,30 @@ class FoodApp {
     const city = APP_DATA.currentCity;
     const weather = city.weather;
 
+    // Top Header Mobile-First Sync (Vị trí & Thời tiết)
+    const topbarLoc = document.getElementById('topbar-location-name');
+    if (topbarLoc) {
+      let locName = city.name || 'Quy Nhơn';
+      if (city.address && !city.address.includes('Đang xác định')) {
+        const parts = city.address.split(',');
+        locName = parts[0].trim();
+      }
+      topbarLoc.textContent = locName;
+      if (topbarLoc.parentElement) {
+        topbarLoc.parentElement.title = city.address || city.name;
+      }
+    }
+
+    const weatherIconEl = document.getElementById('topbar-weather-icon');
+    const weatherTextEl = document.getElementById('topbar-weather-text');
+    if (weatherIconEl) weatherIconEl.textContent = weather.icon || '⛅';
+    if (weatherTextEl) weatherTextEl.textContent = `${weather.temp || '26°C'}`;
+
+    const welcomeSub = document.getElementById('welcome-subtitle');
+    if (welcomeSub) {
+      welcomeSub.textContent = `${city.name} ${weather.temp} ${weather.icon} • Hôm nay ăn gì?`;
+    }
+
     // Sidebar greeting
     const greetingEl = document.getElementById('header-greeting');
     if (greetingEl) {
@@ -1967,6 +1969,125 @@ class FoodApp {
   }
 
   // ═══════════════════════════════════════════════════════════════════
+  // QUICK MOOD CHIPS & MOOD BOTTOM SHEET CONTROLLER
+  // ═══════════════════════════════════════════════════════════════════
+
+  renderQuickMoodChips() {
+    const container = document.getElementById('quick-mood-chips');
+    if (!container) return;
+
+    const currentMoodId = this.currentMood;
+    const isAll = !currentMoodId || currentMoodId === 'all';
+
+    // 6 tâm trạng phổ biến nhất đưa lên thanh cuộn ngang
+    const quickMoods = (APP_DATA.moods || []).slice(0, 6);
+
+    let html = `
+      <button type="button" onclick="window.app.setMood('all')"
+        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
+          isAll
+            ? 'bg-rose-600 text-white shadow-xs font-black'
+            : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
+        }">
+        <span>🔥</span>
+        <span>Tất cả</span>
+      </button>
+    `;
+
+    html += quickMoods.map(m => {
+      const isSelected = m.id === currentMoodId;
+      return `
+        <button type="button" onclick="window.app.setMood('${m.id}')"
+          class="quick-mood-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
+            isSelected
+              ? 'bg-rose-600 text-white shadow-xs font-black'
+              : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
+          }">
+          <span>${m.emoji}</span>
+          <span>${m.label}</span>
+        </button>
+      `;
+    }).join('');
+
+    // Nút mở Bottom Sheet: [🎭 + Tất cả]
+    html += `
+      <button type="button" onclick="window.app.openMoodBottomSheet()"
+        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 bg-gradient-to-r from-rose-50 to-amber-50 hover:from-rose-100 hover:to-amber-100 text-rose-600 border border-rose-200/90 shadow-2xs">
+        <span>🎭</span>
+        <span>+ Tất cả</span>
+      </button>
+    `;
+
+    container.innerHTML = html;
+  }
+
+  renderMoodBottomSheetGrid() {
+    const grid = document.getElementById('mood-bottom-sheet-grid');
+    if (!grid) return;
+
+    const currentMoodId = this.currentMood;
+    const moods = APP_DATA.moods || [];
+
+    grid.innerHTML = moods.map(m => {
+      const isSelected = m.id === currentMoodId;
+      return `
+        <button type="button" onclick="window.app.selectMoodFromBottomSheet('${m.id}')"
+          class="p-2.5 rounded-2xl border text-left transition flex flex-col justify-between active:scale-95 cursor-pointer ${
+            isSelected
+              ? 'bg-rose-50 border-rose-500 shadow-sm ring-1 ring-rose-400'
+              : 'bg-stone-50/80 hover:bg-stone-100 border-stone-200'
+          }">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-2xl">${m.emoji}</span>
+            ${isSelected ? '<span class="w-2 h-2 rounded-full bg-rose-500"></span>' : ''}
+          </div>
+          <div>
+            <div class="font-black text-xs text-stone-900 leading-tight ${isSelected ? 'text-rose-600' : ''}">
+              ${m.label}
+            </div>
+            <div class="text-[9.5px] text-stone-500 line-clamp-2 mt-0.5 leading-snug">
+              ${m.desc || ''}
+            </div>
+          </div>
+        </button>
+      `;
+    }).join('');
+  }
+
+  openMoodBottomSheet() {
+    const modal = document.getElementById('mood-bottom-sheet');
+    if (!modal) return;
+    this.renderMoodBottomSheetGrid();
+    modal.classList.remove('hidden');
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) {
+      sheet.classList.add('translate-y-full');
+      requestAnimationFrame(() => sheet.classList.remove('translate-y-full'));
+    }
+    if (window.soundFX && window.soundFX.playPop) window.soundFX.playPop();
+  }
+
+  closeMoodBottomSheet() {
+    const modal = document.getElementById('mood-bottom-sheet');
+    if (!modal) return;
+    const sheet = modal.querySelector('.modal-sheet');
+    if (sheet) {
+      sheet.classList.add('translate-y-full');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        sheet.classList.remove('translate-y-full');
+      }, 250);
+    } else {
+      modal.classList.add('hidden');
+    }
+  }
+
+  selectMoodFromBottomSheet(moodId) {
+    this.setMood(moodId);
+    this.closeMoodBottomSheet();
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
   // QUICK CATEGORY CHIPS BAR & CUSTOM FILTER MODAL
   // ═══════════════════════════════════════════════════════════════════
 
@@ -1996,10 +2117,10 @@ class FoodApp {
 
       return `
         <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
-          class="home-cat-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 ${
+          class="home-cat-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
             isSelected 
-              ? 'bg-white text-stone-900 shadow-md ring-2 ring-white/50 font-black' 
-              : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-xs font-semibold border border-white/25'
+              ? 'bg-stone-900 text-white shadow-xs font-black' 
+              : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
           }">
           <span>${cat.emoji}</span>
           <span>${cat.label}</span>
@@ -2453,6 +2574,7 @@ class FoodApp {
 
   renderBentoAndFeed() {
     this.ensureMoodFilter();
+    this.renderQuickMoodChips();
     this.renderQuickCategoryChips();
     const container = document.getElementById('featured-card-container');
     if (!container) return;

@@ -1721,12 +1721,12 @@ class GroceryManager {
             </div>
           </div>
         ` : `
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4.5">
+          <div class="grid grid-cols-2 gap-2.5 sm:gap-3.5">
             ${rankedItems.map(item => {
               const isSaved = this.isWishlisted(item.id);
               return `
-                <div class="bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-md transition-all p-3 flex flex-col justify-between group">
-                  <div class="relative w-full h-44 rounded-xl overflow-hidden bg-stone-100 mb-2.5">
+                <div class="bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-md transition-all p-2.5 sm:p-3 flex flex-col justify-between group">
+                  <div class="relative w-full h-32 sm:h-40 rounded-xl overflow-hidden bg-stone-100 mb-2">
                     <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     
                     <span class="absolute top-2 left-2 ${item.badgeType === 'mall' ? 'bg-[#EE4D2D]' : 'bg-[#F53D2D]'} text-white text-[9.5px] font-black px-2 py-0.5 rounded shadow-xs tracking-tight">

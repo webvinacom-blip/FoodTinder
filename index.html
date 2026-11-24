@@ -2,8 +2,13 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#FF5722" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FoodTinder" />
+  <link rel="manifest" href="manifest.json" />
   <title>FoodTinder – Khám Phá Ẩm Thực Theo Cảm Xúc & Thời Tiết</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF3366'/%3E%3Cstop offset='50%25' stop-color='%23FF5E36'/%3E%3Cstop offset='100%25' stop-color='%23FFA033'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5 4C16 3.5 15.3 3.8 15.1 4.4C14.5 7.8 12.2 9.9 10.4 11.8C8.2 14.1 6.5 17 6.5 20.3C6.5 25.3 10.6 29.3 15.6 29.3C20.6 29.3 24.6 25.3 24.6 20.3C24.6 15.1 21.3 11.4 19.5 8.9C18.9 8 18.4 7.2 18.1 6.5C17.6 5.5 16.9 4.5 16.5 4Z' fill='white'/%3E%3Cpath d='M15.6 12V18M13.6 12V14.8C13.6 15.8 14.4 16.6 15.6 16.6C16.8 16.6 17.6 15.8 17.6 14.8V12M15.6 18V23.5' stroke='%23FF5722' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
@@ -28,7 +33,7 @@
   <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=3.3.17" />
+  <link rel="stylesheet" href="css/style.css?v=3.4.0" />
 
   <style>
     /* ── Complete scrollbar elimination for modal & chips ── */
@@ -333,68 +338,35 @@
 <body>
 
 <!-- ══════════════════════════════════════════
-     TOP NAVIGATION BAR
+     MOBILE-FIRST APP SHELL
 ══════════════════════════════════════════ -->
-<div id="topbar">
-  <!-- Logo -->
-  <div class="logo" onclick="switchTab('home')" title="FoodTinder - Khám phá ẩm thực">
-    <div class="logo-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Flame body -->
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4 1.8C12 1.4 11.4 1.6 11.3 2.1C10.8 5 8.8 6.8 7.2 8.4C5.4 10.3 4 12.7 4 15.5C4 19.64 7.36 23 11.5 23C15.64 23 19 19.64 19 15.5C19 11.2 16.3 8.1 14.8 6C14.3 5.3 13.9 4.6 13.6 4C13.2 3.2 12.7 2.3 12.4 1.8Z" fill="#FFFFFF"/>
-        <!-- Fork cut-out silhouette inside the flame -->
-        <path d="M11.5 8.5V13.5M9.8 8.5V10.8C9.8 11.7 10.5 12.3 11.5 12.3C12.5 12.3 13.2 11.7 13.2 10.8V8.5M11.5 13.5V18" stroke="#FF5722" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div class="logo-text">
-      <h1>Food<span class="brand-gradient">Tinder</span></h1>
-      <p>Ẩm thực theo cảm xúc & thời tiết</p>
-    </div>
-  </div>
+<div id="mobile-app-shell">
 
-  <!-- Center nav pills (5 Tab chuẩn) -->
-  <div class="nav-pills">
-    <button class="active" onclick="switchTab('home')" id="pill-home">
-      <i data-lucide="compass"></i> Khám phá
+  <!-- ══════════════════════════════════════════
+       TOP HEADER (52px cố định)
+  ══════════════════════════════════════════ -->
+  <header id="topbar" class="h-[52px] bg-white/95 backdrop-blur-md border-b border-stone-200/90 px-3 flex items-center justify-between z-50 shrink-0 sticky top-0 w-full shadow-2xs select-none">
+    <!-- Bên trái: Nút vị trí hiện tại -->
+    <button onclick="window.app.openCityModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100/90 hover:bg-stone-200 text-stone-800 text-xs font-bold transition shadow-2xs cursor-pointer max-w-[170px]" title="Đổi vị trí / xem thời tiết">
+      <span class="text-rose-500 text-sm">📍</span>
+      <span id="topbar-location-name" class="truncate font-black text-xs text-stone-900">Quy Nhơn</span>
+      <span class="text-stone-400 text-[10px]">▾</span>
     </button>
-    <button onclick="switchTab('swipe')" id="pill-swipe">
-      <i data-lucide="layers"></i> Quẹt món
-    </button>
-    <button onclick="switchTab('grocery')" id="pill-grocery" class="relative">
-      <i data-lucide="shopping-bag"></i> <span>Tạp hoá</span>
-      <span id="grocery-cart-badge" class="hidden px-1.5 py-0.2 bg-rose-500 text-white rounded-full text-[9px] font-extrabold shadow-xs"></span>
-    </button>
-    <button onclick="switchTab('reels')" id="pill-reels">
-      <i data-lucide="play-square"></i> Video Reels
-    </button>
-    <button onclick="switchTab('chat')" id="pill-chat">
-      <i data-lucide="message-circle"></i> Tin nhắn
-    </button>
-  </div>
 
-  <!-- Right: weather + liked shortcut -->
-  <div class="topbar-right flex items-center gap-2">
-    <!-- Nút Cào Dữ Liệu 300 Quán Quy Nhơn (đã ẩn theo yêu cầu) -->
-    <button onclick="window.crawlerManager && window.crawlerManager.openModal()"
-      class="hidden px-3 py-1.5 bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 hover:opacity-95 text-white font-extrabold text-xs rounded-full shadow-sm hover:shadow transition items-center gap-1.5 cursor-pointer shrink-0"
-      title="Cào dữ liệu 300 Quán nổi bật tại Quy Nhơn từ ShopeeFood & GrabFood">
-      <span class="animate-pulse">⚡</span>
-      <span class="hidden sm:inline">Cào 300 Quán Quy Nhơn</span>
-      <span id="crawler-count-badge" class="bg-white/25 text-[10px] px-1.5 py-0.2 rounded-full font-black">300</span>
-    </button>
-    <div class="weather-chip" onclick="window.app.openCityModal()" title="Xem thời tiết & đổi vị trí">
-      <span id="topbar-weather-icon">⛅</span>
-      <span id="topbar-weather-text">27°C</span>
-      <i data-lucide="chevron-down" style="width:12px;height:12px;"></i>
+    <!-- Bên phải: Thời tiết gọn + Nút Tim đã thích + Avatar người dùng -->
+    <div class="topbar-right flex items-center gap-1.5 sm:gap-2">
+      <div class="weather-chip flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 border border-amber-200/80 text-amber-900 text-xs font-bold transition cursor-pointer" onclick="window.app.openCityModal()" title="Xem thời tiết & đổi vị trí">
+        <span id="topbar-weather-icon">⛅</span>
+        <span id="topbar-weather-text">26°C</span>
+      </div>
+      <div class="liked-btn relative w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 border border-rose-200/80 flex items-center justify-center cursor-pointer transition" onclick="switchTab('liked')" title="Món đã thích">
+        <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
+        <span id="liked-badge" class="hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+      </div>
+      <!-- Auth Button / User Profile Pill -->
+      <div id="topbar-auth-container" class="flex items-center shrink-0"></div>
     </div>
-    <div class="liked-btn" onclick="switchTab('liked')" title="Món đã thích">
-      <i data-lucide="heart" style="width:16px;height:16px;color:#FF4757;"></i>
-      <span id="liked-badge" class="hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-    </div>
-    <!-- Auth Button / User Profile Pill -->
-    <div id="topbar-auth-container" class="flex items-center shrink-0"></div>
-  </div>
-</div>
+  </header>
 
 <!-- ══════════════════════════════════════════
      MAIN LAYOUT
@@ -495,16 +467,23 @@
         </div>
 
         <!-- ── SUBSECTION 1: 🌍 KHÁM PHÁ TẤT CẢ (XU HƯỚNG, QUÁN MỚI, QUÁN GẦN NHẤT) ── -->
-        <div id="home-explore-section" class="space-y-6">
-          <!-- Welcome banner with Search -->
-          <div class="rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 p-5 sm:p-6 text-white shadow-md flex flex-col gap-3.5">
-            <div>
-              <h2 class="text-xl font-extrabold leading-tight">Chào Bạn! <span class="animate-wave inline-block">👋</span></h2>
-              <p id="welcome-subtitle" class="text-sm text-rose-100 mt-1">Quy Nhơn đang nhiều mây 26°C ⛅ — tiết trời mát mẻ dễ chịu, hôm nay bạn thèm ăn món gì nào?</p>
+        <div id="home-explore-section" class="space-y-4">
+          <!-- Compact 1-line Welcome Header -->
+          <div class="rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 px-3.5 py-2 text-white shadow-2xs flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="text-base animate-wave">👋</span>
+              <span class="font-black text-xs truncate">Chào bạn!</span>
+              <span id="welcome-subtitle" class="text-[11px] text-rose-100 truncate font-medium">Quy Nhơn 26°C ⛅ • Hôm nay ăn gì?</span>
             </div>
+            <button onclick="window.app.openMoodBottomSheet()" class="px-2.5 py-1 rounded-lg bg-white/20 hover:bg-white/30 text-white text-[10.5px] font-black whitespace-nowrap transition cursor-pointer shrink-0">
+              🎭 Tâm trạng
+            </button>
+          </div>
 
+          <!-- Sticky Search & Filter Container (sticky dưới topbar 52px) -->
+          <div class="sticky top-[52px] z-30 bg-[#FAF4EE]/95 backdrop-blur-md pt-1 pb-1 space-y-1.5 -mx-1 px-1">
             <!-- Search Form -->
-            <form onsubmit="event.preventDefault(); window.app.submitHomeSearch();" autocomplete="off" class="w-full max-w-2xl flex items-center gap-2">
+            <form onsubmit="event.preventDefault(); window.app.submitHomeSearch();" autocomplete="off" class="w-full flex items-center gap-1.5">
               <div class="relative flex-1 flex items-center">
                 <input type="text"
                   id="home-food-search"
@@ -516,78 +495,81 @@
                   inputmode="search"
                   placeholder="Tìm tên quán, món ăn, địa chỉ..."
                   oninput="window.app.handleHomeSearch(this.value)"
-                  class="w-full pl-10 pr-9 py-2.5 bg-white text-stone-900 placeholder:text-stone-400 text-xs sm:text-sm font-semibold rounded-xl shadow-sm border border-white/60 focus:outline-none focus:ring-2 focus:ring-amber-300 transition" />
-                <svg class="w-4 h-4 text-rose-500 absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
+                  class="w-full pl-9 pr-8 py-2 bg-white text-stone-900 placeholder:text-stone-400 text-xs font-semibold rounded-xl border border-stone-200/90 shadow-2xs focus:outline-none focus:ring-1 focus:ring-rose-400" />
+                <svg class="w-4 h-4 text-stone-400 absolute left-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <button id="home-search-clear-btn"
                   type="button"
                   onclick="window.app.clearHomeSearch()"
-                  class="hidden absolute right-2.5 p-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                  class="hidden absolute right-2 p-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer"
                   title="Xóa tìm kiếm">
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
               </div>
 
               <button type="submit"
-                class="px-4 sm:px-5 py-2.5 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-stone-950 font-black text-xs sm:text-sm rounded-xl shadow-md transition flex items-center justify-center gap-1.5 shrink-0 cursor-pointer border border-amber-200">
-                <svg class="w-4 h-4 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                class="px-3.5 py-2 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-stone-950 font-black text-xs rounded-xl shadow-2xs transition flex items-center justify-center gap-1 shrink-0 cursor-pointer border border-amber-200">
+                <svg class="w-3.5 h-3.5 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <span>Tìm kiếm</span>
+                <span>Tìm</span>
               </button>
             </form>
 
-            <!-- Dải Category Chips trượt ngang nhanh ngay dưới ô tìm kiếm -->
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none -mx-1 px-1" id="quick-category-chips">
+            <!-- Dải Chip Tâm trạng cuộn ngang 1 dòng -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none whitespace-nowrap" id="quick-mood-chips">
+              <!-- Rendered dynamically by window.app -->
+            </div>
+
+            <!-- Dải Category Chips trượt ngang nhanh (1 dòng) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none whitespace-nowrap" id="quick-category-chips">
               <!-- Rendered by window.app -->
             </div>
           </div>
 
           <!-- GỢI Ý MÓN PHÙ HỢP TÂM TRẠNG & BỘ LỌC ĐA NĂNG -->
-          <div class="space-y-3.5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-              <div>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <h3 class="font-black text-base sm:text-lg text-stone-900 flex items-center gap-1.5 flex-wrap">
-                    <span id="mood-section-base-title">🔥 Gợi ý món phù hợp tâm trạng</span>
-                    <span id="mood-section-search-subtitle" class="hidden text-rose-600 font-extrabold flex items-center gap-1">
-                      <span>- Kết quả tìm kiếm:</span>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <h3 class="font-black text-sm sm:text-base text-stone-900 flex items-center gap-1.5">
+                    <span id="mood-section-base-title">🔥 Gợi ý món phù hợp</span>
+                    <span id="mood-section-search-subtitle" class="hidden text-rose-600 font-extrabold flex items-center gap-1 text-xs">
+                      <span>- Tìm:</span>
                       <span id="mood-section-search-query" class="underline decoration-rose-300 decoration-wavy"></span>
                     </span>
                   </h3>
-                  <span id="active-filter-indicator" class="hidden text-[10.5px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs">
-                    <span>🎯 Đang lọc</span>
-                    <span id="active-filter-count" class="w-4 h-4 rounded-full bg-rose-600 text-white text-[9px] flex items-center justify-center font-black">1</span>
+                  <span id="active-filter-indicator" class="hidden text-[10px] bg-rose-100 text-rose-700 font-black px-1.5 py-0.2 rounded-full flex items-center gap-1">
+                    <span>🎯 Lọc</span>
+                    <span id="active-filter-count" class="w-3.5 h-3.5 rounded-full bg-rose-600 text-white text-[8.5px] flex items-center justify-center font-black">1</span>
                   </span>
                 </div>
-                <p class="text-xs text-stone-500 mt-0.5" id="mood-filter-status-desc">
+                <p class="text-[11px] text-stone-500 mt-0.5 truncate" id="mood-filter-status-desc">
                   Tự động quét quán mở cửa theo thời tiết & giờ thực tế
                 </p>
               </div>
 
-              <div class="flex items-center gap-2 shrink-0">
-                <button onclick="window.app.clearHomeSearch()" id="btn-clear-search-in-mood" class="hidden px-2.5 py-1.5 text-xs text-stone-600 hover:text-rose-600 hover:bg-rose-50 font-bold rounded-xl transition cursor-pointer border border-stone-200">
-                  ✕ Đóng tìm kiếm
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button onclick="window.app.clearHomeSearch()" id="btn-clear-search-in-mood" class="hidden px-2 py-1 text-xs text-stone-600 hover:text-rose-600 font-bold rounded-lg transition cursor-pointer border border-stone-200">
+                  ✕ Đóng tìm
                 </button>
-                <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden px-2.5 py-1.5 text-xs text-rose-600 hover:text-rose-700 hover:bg-rose-50 font-bold rounded-xl transition cursor-pointer">
-                  ✕ Xóa lọc
+                <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden px-2 py-1 text-xs text-rose-600 hover:bg-rose-50 font-bold rounded-lg transition cursor-pointer">
+                  ✕ Xóa
                 </button>
-                <button onclick="window.app.openMoodFilterModal()" class="px-3.5 py-2 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-extrabold transition shadow-xs flex items-center gap-1.5 cursor-pointer">
+                <button onclick="window.app.openMoodFilterModal()" class="px-2.5 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-black transition shadow-2xs flex items-center gap-1 cursor-pointer">
                   <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-                  <span>Tùy chỉnh lọc</span>
+                  <span>Bộ lọc</span>
                   <span id="filter-btn-count" class="hidden w-4 h-4 rounded-full bg-white text-rose-600 text-[10px] font-black flex items-center justify-center">0</span>
                 </button>
               </div>
             </div>
 
-            <div id="featured-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+            <!-- Horizontal Food Cards in Single Column List -->
+            <div id="featured-card-container" class="space-y-2.5 flex flex-col">
               <!-- Cards rendered dynamically -->
             </div>
 
-            <div id="feed-load-more-container" class="mt-4">
+            <div id="feed-load-more-container" class="mt-3">
               <!-- Rendered dynamically by FoodApp -->
             </div>
           </div>
@@ -799,6 +781,41 @@
 <!-- ══════════════════════════════════════════
      MODALS
 ══════════════════════════════════════════ -->
+
+<!-- Mood Bottom Sheet Modal (Trượt lên từ đáy màn hình) -->
+<div id="mood-bottom-sheet" class="modal-backdrop hidden" onclick="if(event.target === this) window.app.closeMoodBottomSheet()">
+  <div class="modal-sheet w-full max-w-lg translate-y-full bg-white rounded-t-[32px] p-4 sm:p-5 shadow-2xl border-t border-stone-200 flex flex-col max-h-[85vh]">
+    <!-- Drag Handle Bar -->
+    <div class="w-12 h-1.5 bg-stone-300 rounded-full mx-auto mb-3 cursor-pointer shrink-0" onclick="window.app.closeMoodBottomSheet()"></div>
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between pb-3 border-b border-stone-100 shrink-0">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🎭</span>
+        <div>
+          <h3 class="font-black text-base text-stone-900 leading-tight">Tâm Trạng & Cảm Xúc Hôm Nay</h3>
+          <p class="text-xs text-stone-500">Chọn tâm trạng để FoodTinder gợi ý món ăn chuẩn gu</p>
+        </div>
+      </div>
+      <button onclick="window.app.closeMoodBottomSheet()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center text-sm font-bold transition cursor-pointer">
+        ✕
+      </button>
+    </div>
+
+    <!-- Moods Grid -->
+    <div id="mood-bottom-sheet-grid" class="grid grid-cols-3 gap-2.5 py-4 overflow-y-auto scrollbar-none flex-1">
+      <!-- Generated dynamically by app.js -->
+    </div>
+
+    <!-- Footer: Hỏi AI 🤖 -->
+    <div class="pt-3 border-t border-stone-100 shrink-0">
+      <button onclick="window.app.closeMoodBottomSheet(); window.app.openAiMoodModal ? window.app.openAiMoodModal() : switchTab('chat');" 
+        class="w-full py-3 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 active:scale-95 text-white font-black text-xs sm:text-sm rounded-2xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+        <span>🤖 Chưa biết ăn gì? Hỏi trợ lý AI gợi ý ngay</span>
+      </button>
+    </div>
+  </div>
+</div>
 
 <!-- Food Detail Modal -->
 <div id="food-detail-modal" class="modal-backdrop hidden" style="align-items:center; justify-content:center; padding:16px;" onclick="if(event.target === this) window.app.closeFoodDetail()">
@@ -1751,7 +1768,7 @@
 <script src="js/auth.js?v=3.3.13"></script>
 <script src="js/data-loader.js?v=3.3.1"></script>
 <script src="js/grocery.js?v=3.3.9"></script>
-<script src="js/app.js?v=3.3.17"></script>
+<script src="js/app.js?v=3.4.0"></script>
 
 <script>
 // ── Tab switcher for web-app layout ──
@@ -1817,13 +1834,14 @@ function switchTab(tabName) {
       window.chatManager.currentChatTarget = 'ai';
     }
     window.chatManager.renderActiveChatWindow();
-    if (window.innerWidth >= 768) {
-      const sidebar = document.getElementById('chat-friends-sidebar');
-      const activeWindow = document.getElementById('chat-active-window');
-      if (sidebar) sidebar.classList.remove('hidden');
+    const sidebar = document.getElementById('chat-friends-sidebar');
+    const activeWindow = document.getElementById('chat-active-window');
+    // Luồng mobile-first: ưu tiên hiển thị danh sách hội thoại nếu chưa chọn chat cụ thể
+    if (sidebar && !window.chatManager.isChatWindowOpen) {
+      sidebar.classList.remove('hidden');
       if (activeWindow) {
-        activeWindow.classList.remove('hidden');
-        activeWindow.style.display = 'flex';
+        activeWindow.classList.add('hidden');
+        activeWindow.style.display = 'none';
       }
     }
   }
@@ -1857,30 +1875,33 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ══════════════════════════════════════════
-     MOBILE BOTTOM NAVIGATION BAR (< 768px)
+     BOTTOM NAVIGATION BAR (5 TAB CHUẨN PWA)
 ══════════════════════════════════════════ -->
-<nav id="mobile-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200/90 py-1.5 px-1.5 flex items-center justify-around md:hidden shadow-lg select-none">
-  <button onclick="switchTab('home')" id="mobile-tab-home" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1 text-rose-600 font-black transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
+<nav id="mobile-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200/90 py-1 px-1.5 flex items-center justify-around shadow-lg select-none">
+  <button onclick="switchTab('home')" id="mobile-tab-home" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-rose-600 font-black transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
     <i data-lucide="compass" class="w-5 h-5"></i>
     <span>Khám phá</span>
   </button>
-  <button onclick="switchTab('swipe')" id="mobile-tab-swipe" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
+  <button onclick="switchTab('swipe')" id="mobile-tab-swipe" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
     <i data-lucide="layers" class="w-5 h-5"></i>
     <span>Quẹt món</span>
   </button>
-  <button onclick="switchTab('grocery')" id="mobile-tab-grocery" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
+  <button onclick="switchTab('grocery')" id="mobile-tab-grocery" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer relative">
     <i data-lucide="shopping-bag" class="w-5 h-5"></i>
     <span>Tạp hoá</span>
+    <span id="grocery-cart-badge" class="hidden absolute top-1 right-2 px-1 py-0.2 bg-rose-500 text-white rounded-full text-[8.5px] font-black"></span>
   </button>
-  <button onclick="switchTab('reels')" id="mobile-tab-reels" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
+  <button onclick="switchTab('reels')" id="mobile-tab-reels" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
     <i data-lucide="play-square" class="w-5 h-5"></i>
     <span>Reels</span>
   </button>
-  <button onclick="switchTab('chat')" id="mobile-tab-chat" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
+  <button onclick="switchTab('chat')" id="mobile-tab-chat" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-stone-500 font-medium transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
     <i data-lucide="message-circle" class="w-5 h-5"></i>
     <span>Tin nhắn</span>
   </button>
 </nav>
+
+</div><!-- end mobile-app-shell -->
 
 </body>
 </html>
