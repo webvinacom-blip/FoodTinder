@@ -3815,7 +3815,11 @@ class FoodApp {
               <button type="button" onclick="window.app.openMapWithFood(${food.id})" 
                 class="${hasShopee ? 'flex-1' : 'w-full'} py-2 px-3 bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200/90 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer whitespace-nowrap"
                 title="Chỉ đường trên bản đồ">
-                <span class="text-xs">🗺️</span>
+                <svg class="w-3.5 h-3.5 text-stone-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                  <line x1="9" y1="3" x2="9" y2="18"></line>
+                  <line x1="15" y1="6" x2="15" y2="21"></line>
+                </svg>
                 <span>Bản đồ</span>
               </button>
 
