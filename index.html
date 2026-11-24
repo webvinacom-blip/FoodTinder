@@ -57,7 +57,7 @@
     }
 
     /* ── Web-app global reset ── */
-    html, body { height: 100%; margin: 0; overflow: hidden; }
+    html, body { height: 100dvh; margin: 0; overflow: hidden; overscroll-behavior-y: none; }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -331,16 +331,16 @@
       #topbar .topbar-right { min-width: auto; gap: 6px !important; }
       #topbar .weather-chip { padding: 4px 8px !important; font-size: 11px !important; }
       #topbar .liked-btn { width: 32px; height: 32px; }
-      #app-layout { padding-bottom: 60px; }
+      #app-layout { padding-bottom: 0; }
     }
   </style>
 </head>
 <body>
 
 <!-- ══════════════════════════════════════════
-     MOBILE-FIRST APP SHELL
+     MOBILE-FIRST APP SHELL (100dvh Flexbox)
 ══════════════════════════════════════════ -->
-<div id="mobile-app-shell">
+<div id="mobile-app-shell" class="flex flex-col h-[100dvh] w-full overflow-hidden">
 
   <!-- ══════════════════════════════════════════
        TOP HEADER (52px cố định)
@@ -412,10 +412,10 @@
 
     <!-- ══ VIEW: HOME (KHÁM PHÁ + CHUẨN GU SEGMENTED CONTROL) ══ -->
     <div id="view-home" class="tab-view active scroll-y">
-      <div class="p-3.5 sm:p-5 max-w-7xl mx-auto w-full space-y-3 pb-8">
+      <div class="p-2.5 sm:p-4 max-w-7xl mx-auto w-full space-y-2.5 pb-2">
 
-        <!-- ── HÀNG 1: COMPACT ACTION BAR (TAB CHUYỂN ĐỔI + BỘ LỌC NHANH NẰM CÙNG 1 HÀNG) ── -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-white p-2.5 rounded-2xl border border-stone-200/90 shadow-2xs">
+        <!-- ── HÀNG 1: COMPACT ACTION BAR (Desktop only, mobile ẩn để tối ưu không gian) ── -->
+        <div class="hidden sm:flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-white p-2.5 rounded-2xl border border-stone-200/90 shadow-2xs">
           <!-- Bên trái: [🌍 Khám phá tất cả] | [✨ Chuẩn Gu của bạn] -->
           <div class="bg-stone-100 p-1 rounded-xl flex items-center border border-stone-200/80 shadow-2xs w-full sm:w-auto">
             <button id="home-subtab-explore" onclick="window.app.switchHomeSubTab('explore')"
@@ -467,9 +467,9 @@
         </div>
 
         <!-- ── SUBSECTION 1: 🌍 KHÁM PHÁ TẤT CẢ (XU HƯỚNG, QUÁN MỚI, QUÁN GẦN NHẤT) ── -->
-        <div id="home-explore-section" class="space-y-4">
-          <!-- Compact 1-line Welcome Header -->
-          <div class="rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 px-3.5 py-2 text-white shadow-2xs flex items-center justify-between gap-2">
+        <div id="home-explore-section" class="space-y-2">
+          <!-- Compact 1-line Welcome Header: Ẩn trên mobile để giải phóng tối đa không gian hiển thị món -->
+          <div class="hidden sm:flex rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 px-3.5 py-2 text-white shadow-2xs items-center justify-between gap-2">
             <div class="flex items-center gap-1.5 min-w-0">
               <span class="text-base animate-wave">👋</span>
               <span class="font-black text-xs truncate">Chào bạn!</span>
@@ -480,11 +480,11 @@
             </button>
           </div>
 
-          <!-- Sticky Search & Filter Container (sticky dưới topbar 52px) -->
-          <div class="sticky top-[52px] z-30 bg-[#FAF4EE]/95 backdrop-blur-md pt-1 pb-1 space-y-1.5 -mx-1 px-1">
-            <!-- Search Form -->
-            <form onsubmit="event.preventDefault(); window.app.submitHomeSearch();" autocomplete="off" class="w-full flex items-center gap-1.5">
-              <div class="relative flex-1 flex items-center">
+          <!-- Sticky Search & Filter Container (Dính cố định ngay đỉnh danh sách khi cuộn) -->
+          <div class="sticky top-0 z-30 bg-[#FAF4EE]/95 backdrop-blur-md pt-1 pb-1.5 flex items-center gap-2 -mx-1 px-1">
+            <!-- Search Form (Không cần nút Tìm, lọc trực tiếp khi gõ hoặc Enter) -->
+            <form onsubmit="event.preventDefault(); window.app.submitHomeSearch();" autocomplete="off" class="flex-1 flex items-center min-w-0">
+              <div class="relative w-full flex items-center">
                 <input type="text"
                   id="home-food-search"
                   name="food_search_query"
@@ -493,83 +493,81 @@
                   autocapitalize="off"
                   spellcheck="false"
                   inputmode="search"
-                  placeholder="Tìm tên quán, món ăn, địa chỉ..."
+                  placeholder="Tìm quán, món ngon, địa chỉ..."
                   oninput="window.app.handleHomeSearch(this.value)"
-                  class="w-full pl-9 pr-8 py-2 bg-white text-stone-900 placeholder:text-stone-400 text-xs font-semibold rounded-xl border border-stone-200/90 shadow-2xs focus:outline-none focus:ring-1 focus:ring-rose-400" />
-                <svg class="w-4 h-4 text-stone-400 absolute left-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  class="w-full pl-8 pr-7 py-2 bg-white text-stone-900 placeholder:text-stone-400 text-xs font-semibold rounded-xl border border-stone-200/90 shadow-2xs focus:outline-none focus:ring-1 focus:ring-rose-400" />
+                <svg class="w-3.5 h-3.5 text-stone-400 absolute left-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <button id="home-search-clear-btn"
                   type="button"
                   onclick="window.app.clearHomeSearch()"
-                  class="hidden absolute right-2 p-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                  class="hidden absolute right-2 p-0.5 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer"
                   title="Xóa tìm kiếm">
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
               </div>
-
-              <button type="submit"
-                class="px-3.5 py-2 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-stone-950 font-black text-xs rounded-xl shadow-2xs transition flex items-center justify-center gap-1 shrink-0 cursor-pointer border border-amber-200">
-                <svg class="w-3.5 h-3.5 text-stone-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <span>Tìm</span>
-              </button>
             </form>
 
-            <!-- Dải Chip Tâm trạng cuộn ngang 1 dòng -->
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none whitespace-nowrap" id="quick-mood-chips">
-              <!-- Rendered dynamically by window.app -->
-            </div>
-
-            <!-- Dải Category Chips trượt ngang nhanh (1 dòng) -->
-            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none whitespace-nowrap" id="quick-category-chips">
-              <!-- Rendered by window.app -->
-            </div>
+            <!-- Nút Bộ lọc (Cùng hàng bên phải ô tìm kiếm) -->
+            <button type="button" onclick="window.app.openMoodFilterModal()"
+              class="h-[34px] px-3 bg-white hover:bg-rose-50 text-stone-700 hover:text-rose-600 rounded-xl text-xs font-bold transition border border-stone-200/90 shadow-2xs flex items-center gap-1.5 shrink-0 cursor-pointer active:scale-95">
+              <svg class="w-3.5 h-3.5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+              <span>Bộ lọc</span>
+              <span id="filter-btn-count" class="hidden px-1.5 py-0.2 rounded-full bg-rose-500 text-white text-[9.5px] font-black">0</span>
+            </button>
           </div>
 
+          <!-- Dải Chip Cuộn Ngang Duy Nhất (Tâm trạng + Loại món - cuộn trôi theo nội dung) -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-none select-none whitespace-nowrap" id="quick-category-chips">
+            <!-- Rendered dynamically by window.app.renderCombinedQuickChips() -->
+          </div>
+          <!-- Hidden legacy container to prevent any null reference -->
+          <div id="quick-mood-chips" class="hidden"></div>
+
           <!-- GỢI Ý MÓN PHÙ HỢP TÂM TRẠNG & BỘ LỌC ĐA NĂNG -->
-          <div class="space-y-3">
-            <div class="flex items-center justify-between gap-2">
-              <div class="min-w-0">
-                <div class="flex items-center gap-1.5 flex-wrap">
-                  <h3 class="font-black text-sm sm:text-base text-stone-900 flex items-center gap-1.5">
-                    <span id="mood-section-base-title">🔥 Gợi ý món phù hợp</span>
-                    <span id="mood-section-search-subtitle" class="hidden text-rose-600 font-extrabold flex items-center gap-1 text-xs">
-                      <span>- Tìm:</span>
-                      <span id="mood-section-search-query" class="underline decoration-rose-300 decoration-wavy"></span>
-                    </span>
-                  </h3>
-                  <span id="active-filter-indicator" class="hidden text-[10px] bg-rose-100 text-rose-700 font-black px-1.5 py-0.2 rounded-full flex items-center gap-1">
-                    <span>🎯 Lọc</span>
-                    <span id="active-filter-count" class="w-3.5 h-3.5 rounded-full bg-rose-600 text-white text-[8.5px] flex items-center justify-center font-black">1</span>
-                  </span>
-                </div>
-                <p class="text-[11px] text-stone-500 mt-0.5 truncate" id="mood-filter-status-desc">
-                  Tự động quét quán mở cửa theo thời tiết & giờ thực tế
-                </p>
+          <div class="space-y-2">
+            <!-- Dòng tiêu đề danh sách quán rút gọn 1 dòng (cuộn trôi theo danh sách) -->
+            <div class="flex items-center justify-between px-0.5 pt-0.5 text-xs">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <span class="text-rose-500 font-black">🔥</span>
+                <span id="mood-section-base-title" class="font-black text-stone-900 text-xs truncate">41 quán hợp gu</span>
+                <span id="active-filter-indicator" class="hidden text-[10px] bg-rose-100 text-rose-700 font-black px-1.5 py-0.2 rounded-full flex items-center gap-1">
+                  <span>Lọc</span>
+                  <span id="active-filter-count" class="w-3.5 h-3.5 rounded-full bg-rose-600 text-white text-[8.5px] flex items-center justify-center font-black">1</span>
+                </span>
+                <span id="mood-section-search-subtitle" class="hidden text-rose-600 font-extrabold flex items-center gap-1 text-[11px] truncate">
+                  <span>-</span>
+                  <span id="mood-section-search-query" class="underline decoration-rose-300"></span>
+                </span>
               </div>
 
-              <div class="flex items-center gap-1.5 shrink-0">
-                <button onclick="window.app.clearHomeSearch()" id="btn-clear-search-in-mood" class="hidden px-2 py-1 text-xs text-stone-600 hover:text-rose-600 font-bold rounded-lg transition cursor-pointer border border-stone-200">
-                  ✕ Đóng tìm
-                </button>
-                <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden px-2 py-1 text-xs text-rose-600 hover:bg-rose-50 font-bold rounded-lg transition cursor-pointer">
+              <div class="flex items-center gap-1 shrink-0">
+                <div class="relative inline-flex items-center">
+                  <select id="feed-sort-select" onchange="window.app.changeFeedSortOrder(this.value)"
+                    class="appearance-none bg-stone-100/90 hover:bg-stone-200/90 text-stone-700 font-bold text-[11px] py-1 pl-2 pr-5 rounded-lg border border-stone-200/80 focus:outline-none cursor-pointer">
+                    <option value="score_desc" selected>Hợp gu nhất ▾</option>
+                    <option value="distance_asc">Gần tôi nhất ▾</option>
+                    <option value="rating_desc">Đánh giá cao ▾</option>
+                  </select>
+                  <span class="absolute right-1.5 pointer-events-none text-[8px] text-stone-400">▾</span>
+                </div>
+                <button onclick="window.app.resetMoodFilters()" id="btn-reset-filters" class="hidden text-[11px] text-rose-600 hover:underline font-bold px-1 cursor-pointer">
                   ✕ Xóa
                 </button>
-                <button onclick="window.app.openMoodFilterModal()" class="px-2.5 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-xl text-xs font-black transition shadow-2xs flex items-center gap-1 cursor-pointer">
-                  <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-                  <span>Bộ lọc</span>
-                  <span id="filter-btn-count" class="hidden w-4 h-4 rounded-full bg-white text-rose-600 text-[10px] font-black flex items-center justify-center">0</span>
+                <button onclick="window.app.clearHomeSearch()" id="btn-clear-search-in-mood" class="hidden text-[11px] text-stone-500 hover:underline font-bold px-1 cursor-pointer">
+                  ✕
                 </button>
               </div>
             </div>
+
+            <!-- Hidden element for compatibility with any existing JS -->
+            <p id="mood-filter-status-desc" class="hidden"></p>
 
             <!-- Horizontal Food Cards in Single Column List -->
             <div id="featured-card-container" class="space-y-2.5 flex flex-col">
               <!-- Cards rendered dynamically -->
             </div>
 
-            <div id="feed-load-more-container" class="mt-3">
+            <div id="feed-load-more-container" class="mt-2.5">
               <!-- Rendered dynamically by FoodApp -->
             </div>
           </div>
@@ -1875,9 +1873,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ══════════════════════════════════════════
-     BOTTOM NAVIGATION BAR (5 TAB CHUẨN PWA)
+     BOTTOM NAVIGATION BAR (5 TAB CHUẨN PWA - Shrink-0 trong luồng Flexbox)
 ══════════════════════════════════════════ -->
-<nav id="mobile-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200/90 py-1 px-1.5 flex items-center justify-around shadow-lg select-none">
+<nav id="mobile-bottom-bar" class="shrink-0 w-full relative z-40 bg-white/95 backdrop-blur-md border-t border-stone-200/90 py-1 px-1.5 flex items-center justify-around shadow-lg select-none">
   <button onclick="switchTab('home')" id="mobile-tab-home" class="mobile-tab-btn flex flex-col items-center justify-center flex-1 py-1.5 text-rose-600 font-black transition text-[10px] gap-0.5 active:scale-95 cursor-pointer">
     <i data-lucide="compass" class="w-5 h-5"></i>
     <span>Khám phá</span>

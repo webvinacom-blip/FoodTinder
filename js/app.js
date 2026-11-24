@@ -1972,53 +1972,70 @@ class FoodApp {
   // QUICK MOOD CHIPS & MOOD BOTTOM SHEET CONTROLLER
   // ═══════════════════════════════════════════════════════════════════
 
-  renderQuickMoodChips() {
-    const container = document.getElementById('quick-mood-chips');
+  renderCombinedQuickChips() {
+    const container = document.getElementById('quick-category-chips');
     if (!container) return;
 
-    const currentMoodId = this.currentMood;
-    const isAll = !currentMoodId || currentMoodId === 'all';
+    if (!this.moodFilter) {
+      this.moodFilter = {
+        moodId: this.currentMood,
+        selectedCategories: [],
+        maxRadius: 0,
+        companion: 'all',
+        selectedArea: 'all',
+        openOnly: true,
+        shopeeOnly: false,
+        highRatingOnly: false,
+        priceTier: 'all'
+      };
+    }
 
-    // 6 tâm trạng phổ biến nhất đưa lên thanh cuộn ngang
-    const quickMoods = (APP_DATA.moods || []).slice(0, 6);
+    const currentMoodId = this.currentMood;
+    const moodObj = (APP_DATA.moods || []).find(m => m.id === currentMoodId) || { id: 'hungry', emoji: '😋', label: 'Thèm ăn ngon' };
+    const isAll = !this.moodFilter.selectedCategories || this.moodFilter.selectedCategories.length === 0;
 
     let html = `
-      <button type="button" onclick="window.app.setMood('all')"
-        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
-          isAll
-            ? 'bg-rose-600 text-white shadow-xs font-black'
-            : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
-        }">
-        <span>🔥</span>
-        <span>Tất cả</span>
+      <!-- Chip 1: Tâm trạng hiện tại (bấm mở Bottom Sheet) -->
+      <button type="button" onclick="window.app.openMoodBottomSheet()"
+        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200/90 shadow-2xs">
+        <span class="text-sm">${moodObj.emoji}</span>
+        <span>${moodObj.label}</span>
+        <span class="text-[9px] opacity-70">▾</span>
+      </button>
+
+      <!-- Chip Chuẩn Gu (Chuyển nhanh sang tab Chuẩn Gu) -->
+      <button type="button" onclick="window.app.switchHomeSubTab('taste')"
+        class="home-taste-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 bg-white hover:bg-rose-50 text-stone-700 hover:text-rose-600 border border-stone-200/90 shadow-2xs">
+        <span>✨</span>
+        <span>Chuẩn Gu</span>
       </button>
     `;
 
-    html += quickMoods.map(m => {
-      const isSelected = m.id === currentMoodId;
+    // Chip loại món (Tất cả, Bún/Phở/Mì, Cơm, Lẩu & Nướng...)
+    html += QUICK_HOME_CATEGORIES.map(cat => {
+      const isSelected = cat.id === 'all' 
+        ? isAll 
+        : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
+
       return `
-        <button type="button" onclick="window.app.setMood('${m.id}')"
-          class="quick-mood-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
-            isSelected
-              ? 'bg-rose-600 text-white shadow-xs font-black'
+        <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
+          class="home-cat-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
+            isSelected 
+              ? 'bg-stone-900 text-white shadow-xs font-black' 
               : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
           }">
-          <span>${m.emoji}</span>
-          <span>${m.label}</span>
+          <span>${cat.emoji}</span>
+          <span>${cat.label}</span>
+          ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
         </button>
       `;
     }).join('');
 
-    // Nút mở Bottom Sheet: [🎭 + Tất cả]
-    html += `
-      <button type="button" onclick="window.app.openMoodBottomSheet()"
-        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 bg-gradient-to-r from-rose-50 to-amber-50 hover:from-rose-100 hover:to-amber-100 text-rose-600 border border-rose-200/90 shadow-2xs">
-        <span>🎭</span>
-        <span>+ Tất cả</span>
-      </button>
-    `;
-
     container.innerHTML = html;
+  }
+
+  renderQuickMoodChips() {
+    this.renderCombinedQuickChips();
   }
 
   renderMoodBottomSheetGrid() {
@@ -2092,51 +2109,14 @@ class FoodApp {
   // ═══════════════════════════════════════════════════════════════════
 
   renderQuickCategoryChips() {
-    const container = document.getElementById('quick-category-chips');
-    if (!container) return;
-
-    if (!this.moodFilter) {
-      this.moodFilter = {
-        moodId: this.currentMood,
-        selectedCategories: [],
-        maxRadius: 0,
-        selectedArea: 'all',
-        openOnly: true,
-        shopeeOnly: false,
-        highRatingOnly: false,
-        priceTier: 'all'
-      };
-    }
-
-    const isAll = !this.moodFilter.selectedCategories || this.moodFilter.selectedCategories.length === 0;
-
-    const html = QUICK_HOME_CATEGORIES.map(cat => {
-      const isSelected = cat.id === 'all' 
-        ? isAll 
-        : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
-
-      return `
-        <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
-          class="home-cat-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
-            isSelected 
-              ? 'bg-stone-900 text-white shadow-xs font-black' 
-              : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
-          }">
-          <span>${cat.emoji}</span>
-          <span>${cat.label}</span>
-          ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
-        </button>
-      `;
-    }).join('');
-
-    container.innerHTML = html;
+    this.renderCombinedQuickChips();
   }
 
   toggleQuickCategory(catId) {
     window.soundFX && window.soundFX.playPop();
     this.feedLimit = 24;
     if (!this.moodFilter) {
-      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
+      this.moodFilter = { moodId: this.currentMood, selectedCategories: [], maxRadius: 0, companion: 'all', selectedArea: 'all', openOnly: true, shopeeOnly: false, highRatingOnly: false, priceTier: 'all' };
     }
     if (catId === 'all') {
       this.moodFilter.selectedCategories = [];
@@ -2148,7 +2128,7 @@ class FoodApp {
         this.moodFilter.selectedCategories = [catId];
       }
     }
-    this.renderQuickCategoryChips();
+    this.renderCombinedQuickChips();
     this.renderBentoAndFeed();
   }
 
@@ -2837,11 +2817,31 @@ class FoodApp {
       return { food, score, status };
     });
 
-    scoredFoods.sort((a, b) => (b.score - a.score) || ((a.food.distance || 0) - (b.food.distance || 0)));
+    if (this.feedSortOrder === 'distance_asc') {
+      scoredFoods.sort((a, b) => ((a.food.distance || 0) - (b.food.distance || 0)) || (b.score - a.score));
+    } else if (this.feedSortOrder === 'rating_desc') {
+      scoredFoods.sort((a, b) => ((b.food.rating || 0) - (a.food.rating || 0)) || (b.score - a.score));
+    } else {
+      scoredFoods.sort((a, b) => (b.score - a.score) || ((a.food.distance || 0) - (b.food.distance || 0)));
+    }
     const totalCount = scoredFoods.length;
     const currentLimit = this.feedLimit || 24;
     const topFoods = scoredFoods.slice(0, currentLimit);
     const hasMore = totalCount > topFoods.length;
+
+    // Cập nhật tiêu đề rút gọn 1 dòng: 🔥 XX quán hợp gu
+    const baseTitleEl = document.getElementById('mood-section-base-title');
+    if (baseTitleEl) {
+      if (hasSearch) {
+        baseTitleEl.textContent = `${totalCount} quán tìm thấy`;
+      } else {
+        baseTitleEl.textContent = `${totalCount} quán hợp gu`;
+      }
+    }
+    const sortSelect = document.getElementById('feed-sort-select');
+    if (sortSelect && this.feedSortOrder) {
+      sortSelect.value = this.feedSortOrder;
+    }
 
     if (topFoods.length === 0) {
       const moreContainer = document.getElementById('feed-load-more-container');
@@ -2936,6 +2936,12 @@ class FoodApp {
     if (emojiEl && moodObj) emojiEl.textContent = moodObj.emoji;
     if (labelEl && moodObj) labelEl.textContent = moodObj.label;
     this.syncWishlistAndProfileStats();
+  }
+
+  changeFeedSortOrder(sortOrder) {
+    window.soundFX && window.soundFX.playPop();
+    this.feedSortOrder = sortOrder;
+    this.renderBentoAndFeed();
   }
 
   renderNearbyGrid() {
