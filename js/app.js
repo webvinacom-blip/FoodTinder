@@ -3707,17 +3707,31 @@ class FoodApp {
     const container = document.getElementById('liked-list-container');
     if (!container) return;
 
-    if (this.likedFoods.length === 0) {
+    // Merge với APP_DATA.foods nếu có để luôn có dữ liệu quán mới nhất
+    const foods = (this.likedFoods || []).map(item => {
+      if (typeof item === 'object' && item !== null && item.id) {
+        const found = (APP_DATA?.foods || []).find(f => f.id === item.id);
+        return found ? { ...item, ...found } : item;
+      }
+      return (APP_DATA?.foods || []).find(f => f.id === item);
+    }).filter(Boolean);
+
+    const countEl = document.getElementById('liked-items-count');
+    if (countEl) {
+      countEl.textContent = `${foods.length} món`;
+    }
+
+    if (foods.length === 0) {
       container.innerHTML = `
-        <div class="h-80 flex flex-col items-center justify-center text-center p-6">
+        <div class="h-80 flex flex-col items-center justify-center text-center p-6 bg-white rounded-3xl border border-stone-200/90 shadow-2xs">
           <div class="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center text-3xl mb-3">
             💔
           </div>
           <h4 class="font-bold text-stone-800 text-sm">Chưa có món nào được thích</h4>
-          <p class="text-xs text-stone-400 mt-1 max-w-xs">
-            Hãy quẹt phải các món bạn yêu thích ở mục "Quẹt Món" hoặc nhấn tim khi lướt Reels nhé!
+          <p class="text-xs text-stone-400 mt-1 max-w-xs leading-relaxed">
+            Hãy quẹt phải các món bạn yêu thích ở mục "Quẹt Món" hoặc nhấn tim khi lướt Khám phá nhé!
           </p>
-          <button onclick="window.app.switchTab('swipe')" class="mt-4 px-4 py-2 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-semibold text-xs rounded-full shadow-md">
+          <button onclick="window.app.switchTab('swipe')" class="mt-4 px-5 py-2.5 bg-gradient-to-r from-rose-500 to-amber-500 text-white font-extrabold text-xs rounded-full shadow-md shadow-rose-200 transition active:scale-95 cursor-pointer">
             🃏 Bắt đầu quẹt món
           </button>
         </div>
@@ -3726,51 +3740,103 @@ class FoodApp {
     }
 
     container.innerHTML = `
-      <div class="p-4 space-y-3">
-        ${this.likedFoods.map(food => {
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
+        ${foods.map(food => {
           const status = window.getRestaurantStatus ? window.getRestaurantStatus(food) : { isOpen: true, statusText: "Đang mở cửa", detailText: "08:00 - 22:00" };
-    const isLiked = this.likedFoods.some(f => f.id === food.id);
-    const isWillReturn = this.isFoodWillReturn(food.id);
-    const willReturnCount = this.getWillReturnCount(food.id);
+          const hasShopee = window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true);
+          
+          // Khoảng cách: Bỏ chữ "Cách bạn", giữ [Khoảng cách]km
+          let rawDist = (food.distanceText || (typeof food.distance === 'number' ? `${food.distance} km` : '')).replace(/^cách bạn\s*/i, '').trim();
+          if (rawDist && !rawDist.endsWith('km') && !rawDist.endsWith('m')) rawDist += 'km';
+          const distText = rawDist;
+
+          // Giờ mở cửa: Rút gọn còn 🕒 07:30 - 22:00 (bỏ phần mở ngoặc)
+          const openTimeShort = (food.openTime || (status && status.openTime) || '07:00 - 22:00').split('(')[0].trim();
+
+          // Giá tiền: 1 dòng duy nhất whitespace-nowrap
+          const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
+
           return `
-          <div class="bg-white rounded-2xl border border-stone-200 p-3 shadow-xs flex items-center gap-3 hover:shadow-md transition ${status.isOpen ? '' : 'is-closed'}">
-            <div class="relative w-20 h-20 shrink-0">
-              <img src="${food.image}" alt="${food.name}"
-                data-name="${food.name.replace(/"/g, '&quot;')}"
-                data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
-                data-category="${food.category || ''}"
-                onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${food.name.replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
-                class="w-full h-full rounded-xl object-cover cursor-pointer ${status.isOpen ? '' : 'is-closed-img grayscale'}" onclick="window.app.showFoodDetail(${food.id})" />
-              <span class="absolute bottom-1 left-1 ${status.isOpen ? 'bg-emerald-600/90 text-white' : 'bg-stone-900/90 text-stone-200'} text-[7.5px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-sm">
-                <span class="w-1 h-1 rounded-full ${status.isOpen ? 'bg-emerald-200' : 'bg-rose-500'}"></span>
-                ${status.statusText}
-              </span>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h5 class="font-bold text-xs text-stone-900 truncate" title="${food.restaurant}">${food.restaurant}</h5>
-              <p class="text-[11px] text-stone-500 truncate mt-0.5" title="${food.address || ''}">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</p>
-              <p class="text-[10px] mt-1 ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-400'}">
-                🕒 ${food.openTime} <span class="${status.isOpen ? 'text-stone-400' : 'text-rose-500 font-bold'}">(${status.detailText})</span>
-              </p>
-              <div class="flex items-center gap-2 mt-1 text-[10px] text-stone-400">
-                <span class="text-rose-500 font-bold">${window.formatPriceRange ? window.formatPriceRange(food.priceRange) : food.priceRange}</span>
-                <span>•</span>
-                <span>${food.distanceText}</span>
+          <div onclick="window.app.showFoodDetail(${food.id})" 
+            class="relative bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition cursor-pointer flex flex-col gap-2.5 group ${!status.isOpen ? 'is-closed opacity-90' : ''}">
+            
+            <!-- Nút xóa (✕): Góc trên bên phải của thẻ, nút tròn nhỏ, màu xám nhạt, hover đổi đỏ -->
+            <button type="button" onclick="event.stopPropagation(); window.app.removeLikedFood(${food.id})" 
+              class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-stone-100 hover:bg-rose-50 text-stone-400 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition shadow-2xs cursor-pointer z-10" 
+              title="Xóa khỏi danh sách đã thích">
+              ✕
+            </button>
+
+            <!-- TẦNG 1: Ảnh vuông bên trái + Thông tin 4 dòng bên phải -->
+            <div class="flex items-center gap-3">
+              <!-- Ảnh vuông bo góc kèm badge trạng thái ở góc dưới ảnh -->
+              <div class="relative w-20 h-20 sm:w-22 sm:h-22 shrink-0 rounded-xl overflow-hidden bg-stone-100">
+                <img src="${food.image}" alt="${food.name}"
+                  data-name="${(food.name || '').replace(/"/g, '&quot;')}"
+                  data-restaurant="${(food.restaurant || '').replace(/"/g, '&quot;')}"
+                  data-category="${food.category || ''}"
+                  onerror="window.handleFoodImageError && window.handleFoodImageError(this, '${(food.name || '').replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}')"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${status.isOpen ? '' : 'is-closed-img grayscale'}" />
+                
+                <span class="absolute bottom-1 left-1 right-1 text-center py-0.5 rounded-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-900/90 text-stone-300'} text-[8px] font-bold flex items-center justify-center gap-0.5 shadow-sm backdrop-blur-xs">
+                  <span class="w-1 h-1 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
+                  <span>${status.isOpen ? 'Đang mở cửa' : 'Đã đóng cửa'}</span>
+                </span>
+              </div>
+
+              <!-- Thông tin bên phải: chia đúng 4 dòng rõ ràng, không bị vỡ dòng -->
+              <div class="flex-1 min-w-0 pr-6 space-y-0.5">
+                <!-- 1. Tên quán (1 dòng in đậm truncate) -->
+                <h5 class="font-black text-sm text-stone-900 truncate leading-snug group-hover:text-rose-600 transition" title="${food.restaurant}">
+                  ${food.restaurant}
+                </h5>
+
+                <!-- 2. Vị trí (1 dòng duy nhất): [Địa chỉ] • [Khoảng cách]km -->
+                <div class="flex items-center gap-1 text-[11px] text-stone-500 truncate">
+                  <span class="truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
+                  ${distText ? `<span class="shrink-0 text-stone-400 font-medium">• ${distText}</span>` : ''}
+                </div>
+
+                <!-- 3. Giờ mở cửa (1 dòng): Rút gọn còn 🕒 07:30 - 22:00 -->
+                <div class="text-[10.5px] text-stone-500 truncate flex items-center gap-1">
+                  <span>🕒 ${openTimeShort}</span>
+                </div>
+
+                <!-- 4. Giá tiền (1 dòng duy nhất): whitespace-nowrap -->
+                <div class="pt-0.5 flex items-center">
+                  <span class="text-xs font-extrabold text-rose-600 whitespace-nowrap leading-none">${priceText}</span>
+                </div>
               </div>
             </div>
-            <div class="flex flex-col gap-1.5 shrink-0">
-              <button onclick="window.app.openMapWithFood(${food.id})" class="px-2.5 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200/70 rounded-lg text-xs font-bold flex items-center justify-center gap-1 transition" title="Chỉ đường trên bản đồ">
-                <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
-                  <line x1="9" y1="3" x2="9" y2="18"></line>
-                  <line x1="15" y1="6" x2="15" y2="21"></line>
-                </svg>
+
+            <!-- TẦNG 2: Thanh nút hành động dưới đáy thẻ -->
+            <div class="border-t border-gray-100 pt-2.5 flex items-center gap-2" onclick="event.stopPropagation()">
+              <!-- Nút Bản đồ -->
+              <button type="button" onclick="window.app.openMapWithFood(${food.id})" 
+                class="${hasShopee ? 'flex-1' : 'w-full'} py-2 px-3 bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200/90 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer whitespace-nowrap"
+                title="Chỉ đường trên bản đồ">
+                <span class="text-xs">🗺️</span>
                 <span>Bản đồ</span>
               </button>
-              <button onclick="window.app.removeLikedFood(${food.id})" class="p-2 bg-stone-100 text-stone-400 hover:text-rose-500 rounded-lg text-xs transition" title="Xóa">
-                ✕
-              </button>
+
+              <!-- Nút Đặt ShopeeFood (hiển thị có điều kiện) -->
+              ${hasShopee ? (
+                status.isOpen ? `
+                <button type="button" onclick="window.app.openShopeeFoodDelivery(${food.id})" 
+                  class="flex-1 py-2 px-3 bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white rounded-xl text-xs font-black shadow-xs flex items-center justify-center gap-1.5 transition active:scale-95 cursor-pointer whitespace-nowrap"
+                  title="Đặt ShopeeFood giao siêu tốc">
+                  ${window.getShopeeIcon ? window.getShopeeIcon(15, 'shrink-0') : '🛵'}
+                  <span>ShopeeFood</span>
+                </button>
+                ` : `
+                <button type="button" disabled 
+                  class="flex-1 py-2 px-3 bg-stone-100 border border-stone-200 text-stone-400 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 cursor-not-allowed opacity-60 pointer-events-none select-none whitespace-nowrap">
+                  <span>Đã đóng cửa</span>
+                </button>
+                `
+              ) : ''}
             </div>
+
           </div>
           `;
         }).join('')}
