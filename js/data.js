@@ -1318,8 +1318,11 @@ const APP_DATA = {
   currentCity: {
     cityId: "quynhon",
     name: "Quy Nhơn",
+    cityName: "TP. Quy Nhơn",
     province: "Bình Định",
-    address: "Đang xác định vị trí...",
+    road: "16 Nguyễn Công Trứ",
+    ward: "P. Lê Hồng Phong",
+    address: "16 Nguyễn Công Trứ, P. Lê Hồng Phong, TP. Quy Nhơn",
     lat: 13.7735,
     lng: 109.2365,
     weather: {

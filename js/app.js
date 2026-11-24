@@ -209,7 +209,49 @@ function matchFoodCompanion(food, compId) {
 async function getUserLocationAndWeather(opts = {}) {
   // 1. Reverse Geocoding: Tọa độ -> Tên đường, Phường/Xã, Quận/Huyện, Tỉnh/Thành phố chi tiết
   const reverseGeocode = async (lat, lng) => {
-    // Ưu tiên 1: BigDataCloud Reverse Geocoding (Rất nhanh, miễn phí, hỗ trợ tiếng Việt chi tiết, không bị chặn CORS)
+    // Ưu tiên 1: OpenStreetMap Nominatim (Lấy chi tiết Số nhà / Tên đường, Phường/Xã, Thành phố)
+    try {
+      const controller = new AbortController();
+      const toId = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=vi&addressdetails=1&zoom=18`, {
+        signal: controller.signal
+      });
+      clearTimeout(toId);
+      if (res.ok) {
+        const d = await res.json();
+        const a = d.address || {};
+        const houseNum = a.house_number || '';
+        const rawRoad = a.road || a.pedestrian || a.street || a.path || '';
+        let road = (houseNum && rawRoad) ? `${houseNum} ${rawRoad}` : rawRoad;
+        let ward = a.suburb || a.quarter || a.neighbourhood || a.city_district || a.subdistrict || '';
+        let city = a.city || a.town || a.county || a.state || '';
+
+        if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã') && !ward.toLowerCase().startsWith('thị trấn')) {
+          ward = `P. ${ward}`;
+        }
+        if (city && !city.toLowerCase().startsWith('tp.') && !city.toLowerCase().startsWith('thành phố') && !city.toLowerCase().startsWith('tỉnh')) {
+          city = `TP. ${city}`;
+        }
+
+        const parts = [];
+        if (road) parts.push(road);
+        if (ward && !parts.includes(ward)) parts.push(ward);
+        if (city && !parts.some(p => p.toLowerCase().includes(city.toLowerCase()))) parts.push(city);
+
+        if (parts.length > 0) {
+          return {
+            address: parts.join(', '),
+            cityName: city || 'TP. Quy Nhơn',
+            ward: ward,
+            road: road
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('Nominatim reverse geocode error:', e);
+    }
+
+    // Ưu tiên 2: BigDataCloud Reverse Geocoding (Dự phòng nhanh, không bị chặn CORS)
     try {
       const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=vi`);
       if (res.ok) {
@@ -246,6 +288,9 @@ async function getUserLocationAndWeather(opts = {}) {
         if (ward && !ward.toLowerCase().startsWith('phường') && !ward.toLowerCase().startsWith('p.') && !ward.toLowerCase().startsWith('xã') && !ward.toLowerCase().startsWith('thị trấn')) {
           ward = `P. ${ward}`;
         }
+        if (city && !city.toLowerCase().startsWith('tp.') && !city.toLowerCase().startsWith('thành phố') && !city.toLowerCase().startsWith('tỉnh')) {
+          city = `TP. ${city}`;
+        }
 
         const parts = [];
         if (road) parts.push(road);
@@ -256,7 +301,7 @@ async function getUserLocationAndWeather(opts = {}) {
         if (parts.length > 0) {
           return {
             address: parts.join(', '),
-            cityName: city || district || 'Việt Nam',
+            cityName: city || district || 'TP. Quy Nhơn',
             ward: ward,
             district: district,
             road: road
@@ -266,37 +311,6 @@ async function getUserLocationAndWeather(opts = {}) {
     } catch (e) {
       console.warn('BigDataCloud reverse geocode error:', e);
     }
-
-    // Ưu tiên 2: OpenStreetMap Nominatim với timeout 3s
-    try {
-      const controller = new AbortController();
-      const toId = setTimeout(() => controller.abort(), 3000);
-      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=vi&addressdetails=1&zoom=18`, {
-        signal: controller.signal
-      });
-      clearTimeout(toId);
-      if (res.ok) {
-        const d = await res.json();
-        const a = d.address || {};
-        const houseNum = a.house_number || '';
-        const road = a.road || a.pedestrian || a.street || a.path || '';
-        let ward = a.suburb || a.quarter || a.neighbourhood || a.city_district || a.subdistrict || '';
-        let city = a.city || a.town || a.county || a.state || '';
-        let streetPart = (houseNum && road) ? `${houseNum} ${road}` : road;
-        let parts = [];
-        if (streetPart) parts.push(streetPart);
-        if (ward) parts.push(ward.startsWith('P.') ? ward : `P. ${ward}`);
-        if (city) parts.push(city);
-        if (parts.length > 0) {
-          return {
-            address: parts.join(', '),
-            cityName: city || 'Việt Nam',
-            ward: ward,
-            road: streetPart
-          };
-        }
-      }
-    } catch (e) {}
 
     // Ưu tiên 3: Dò tìm quán ăn gần nhất nếu ở gần database
     if (typeof APP_DATA !== 'undefined' && Array.isArray(APP_DATA.foods) && APP_DATA.foods.length > 0) {
@@ -845,6 +859,7 @@ class FoodApp {
     // Initialize components
     this.renderHeader();
     this.renderMoodSelector();
+    this.renderSidebarOverview();
     this.renderBentoAndFeed();
     this.renderFoodGrid();
     this.renderMiniMap();
@@ -1046,7 +1061,10 @@ class FoodApp {
       cityId: resolvedCityId,
       name: resolvedCityName,
       province: resolvedProvince,
-      address: address || 'Vị trí hiện tại',
+      address: address || '16 Nguyễn Công Trứ, P. Lê Hồng Phong, TP. Quy Nhơn',
+      road: result.road || (address ? address.split(',')[0].trim() : '16 Nguyễn Công Trứ'),
+      ward: result.ward || 'P. Lê Hồng Phong',
+      cityName: result.cityName || (resolvedCityName ? `TP. ${resolvedCityName}` : 'TP. Quy Nhơn'),
       lat: Number(lat),
       lng: Number(lng),
       weather: weather || {
@@ -1698,20 +1716,31 @@ class FoodApp {
     const locationEl = document.getElementById('header-location');
     if (locationEl) {
       const isLocating = !city.address || city.address.includes('Đang xác định');
+      const roadText = city.road || (city.address ? city.address.split(',')[0].trim() : '16 Nguyễn Công Trứ');
+      let subText = '';
+      if (city.ward && (city.cityName || city.name)) {
+        const cName = city.cityName || `TP. ${city.name}`;
+        subText = `${city.ward}, ${cName.startsWith('TP.') ? cName : `TP. ${cName}`}`;
+      } else if (city.address && city.address.includes(',')) {
+        subText = city.address.split(',').slice(1).join(', ').trim();
+      } else {
+        subText = 'P. Lê Hồng Phong, TP. Quy Nhơn';
+      }
+
       locationEl.innerHTML = `
         <div class="bg-[#FFF2EA] hover:bg-[#FFE6D9] border border-[#FFD8C2] rounded-2xl p-2.5 sm:p-3 transition relative" title="${city.address} (Tự động cập nhật theo GPS của bạn)">
           <div class="flex items-center justify-between gap-1.5">
             <div class="flex items-center gap-1.5 min-w-0">
-              <span class="text-[10px] text-stone-400 block font-bold uppercase tracking-wider">Bạn đang ở:</span>
+              <span class="text-[10px] text-stone-500 block font-bold uppercase tracking-wider">Bạn đang ở:</span>
               ${isLocating ? `
-                <span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-1.5 py-0.2 rounded-md">
+                <span class="inline-flex items-center gap-1 text-[9.5px] font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-1.5 py-0.5 rounded-md">
                   <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
                   <span>Định vị...</span>
                 </span>
               ` : `
-                <span class="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.2 rounded-md">
+                <span class="inline-flex items-center gap-1 text-[9.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded-md">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  <span>Vị trí trực tiếp</span>
+                  <span>● Trực tiếp</span>
                 </span>
               `}
             </div>
@@ -1719,8 +1748,9 @@ class FoodApp {
               Đổi
             </button>
           </div>
-          <div class="font-extrabold text-xs text-stone-900 truncate mt-1 leading-tight" id="user-current-address-label" title="${city.address}">
-            📍 ${city.address || city.name}
+          <div class="mt-1.5 leading-tight" id="user-current-address-label" title="${city.address}">
+            <div class="text-sm font-bold text-gray-900 line-clamp-1">📍 ${roadText}</div>
+            <div class="text-xs text-gray-500 line-clamp-1 mt-0.5 pl-4">${subText}</div>
           </div>
           ${(APP_DATA.isDemoLocation || city.cityId !== 'quynhon') ? `
             <div class="mt-2 pt-2 border-t border-[#FFD8C2]/80 flex items-center justify-between text-[10.5px]">
@@ -1852,15 +1882,8 @@ class FoodApp {
     const container = document.getElementById('mood-selector-container');
     if (!container) return;
 
-    if (this.isMoodsExpanded === undefined) {
-      this.isMoodsExpanded = false;
-    }
-
-    const INITIAL_COUNT = 6;
-    const moodsToShow = this.isMoodsExpanded 
-      ? APP_DATA.moods 
-      : APP_DATA.moods.slice(0, INITIAL_COUNT);
-    const hasMore = APP_DATA.moods.length > INITIAL_COUNT;
+    // Luôn hiển thị mặc định toàn bộ 18 lựa chọn tâm trạng (grid 3 cột)
+    const moodsToShow = APP_DATA.moods || [];
 
     container.innerHTML = `
       <div class="flex items-center justify-between mb-2.5 px-0.5">
@@ -1868,18 +1891,18 @@ class FoodApp {
           <span class="text-xs">✨</span>
           <span class="text-[11px] font-extrabold text-stone-700 uppercase tracking-wider">Tâm trạng hôm nay</span>
         </div>
-        <button onclick="window.app.switchTab('chat')" class="text-[11px] font-bold text-rose-500 hover:text-rose-600 flex items-center gap-1 bg-rose-50 hover:bg-rose-100 px-2 py-0.5 rounded-full transition shadow-xs" title="Chat với AI gợi ý món">
+        <button onclick="window.app.switchTab('chat')" class="text-[11px] font-bold text-rose-500 hover:text-rose-600 flex items-center gap-1 bg-rose-50 hover:bg-rose-100 px-2 py-0.5 rounded-full transition shadow-xs cursor-pointer" title="Chat với AI gợi ý món">
           <span>Hỏi AI</span> <span>🤖</span>
         </button>
       </div>
 
-      <!-- 3-column Grid for moods: clean, responsive, no horizontal scroll bugs -->
+      <!-- 3-column Grid for all 18 moods: py-2 px-1 rounded-xl, text-[11px] leading-tight no truncate -->
       <div class="grid grid-cols-3 gap-2">
         ${moodsToShow.map(m => {
           const isSelected = m.id === this.currentMood;
           return `
             <button onclick="window.app.setMood('${m.id}')" 
-              class="mood-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border transition-all duration-200 ${
+              class="mood-btn flex flex-col items-center justify-center py-2 px-1 rounded-xl border transition-all duration-200 cursor-pointer ${
                 isSelected 
                   ? 'bg-white border-[#FF6584] shadow-md shadow-rose-200/60 ring-2 ring-[#FF6584]/25 scale-[1.02]' 
                   : 'bg-white/80 border-stone-200/80 hover:bg-white hover:border-stone-300 hover:shadow-xs'
@@ -1888,28 +1911,124 @@ class FoodApp {
               <span class="text-xl mb-0.5 filter drop-shadow-xs transition-transform duration-200 ${isSelected ? 'scale-110' : ''}">
                 ${m.emoji}
               </span>
-              <span class="text-[10px] font-bold leading-tight text-center truncate w-full px-0.5 ${isSelected ? 'text-[#FF4757]' : 'text-stone-700'}">
+              <span class="text-[11px] font-bold leading-tight text-center px-0.5 w-full ${isSelected ? 'text-[#FF4757]' : 'text-stone-700'}">
                 ${m.label}
               </span>
             </button>
           `;
         }).join('')}
       </div>
-
-      <!-- Toggle More/Less Button -->
-      ${hasMore ? `
-        <button onclick="window.app.toggleMoodsExpand()" 
-          class="w-full mt-2.5 py-1.5 px-3 bg-stone-100/80 hover:bg-rose-50 hover:text-rose-600 text-stone-600 rounded-xl text-[10.5px] font-bold flex items-center justify-center gap-1.5 transition-all border border-stone-200/60">
-          <span>${this.isMoodsExpanded ? 'Thu gọn ▴' : `Xem thêm (+${APP_DATA.moods.length - INITIAL_COUNT} tâm trạng khác) ▾`}</span>
-        </button>
-      ` : ''}
     `;
   }
 
   toggleMoodsExpand() {
-    window.soundFX && window.soundFX.playPop();
-    this.isMoodsExpanded = !this.isMoodsExpanded;
+    // Deprecated: 18 moods are now always shown
     this.renderMoodSelector();
+  }
+
+  renderSidebarOverview() {
+    const container = document.getElementById('sidebar-overview-container');
+    if (!container) return;
+
+    const curCityId = APP_DATA?.currentCity?.cityId;
+    const curCityName = APP_DATA?.currentCity?.name;
+    let baseFoods = APP_DATA?.foods || [];
+    if (curCityId || curCityName) {
+      const cityFoods = baseFoods.filter(f => (curCityId && f.cityId === curCityId) || (curCityName && f.cityName && f.cityName.toLowerCase().includes(curCityName.toLowerCase())));
+      if (cityFoods.length > 0) {
+        baseFoods = cityFoods;
+      }
+    }
+
+    const validFoods = baseFoods.filter(f => typeof window.isValidQualityFood !== 'function' || window.isValidQualityFood(f));
+    const now = new Date();
+
+    const openCount = validFoods.filter(f => {
+      const st = window.getRestaurantStatus ? window.getRestaurantStatus(f, now) : { isOpen: true };
+      return st && st.isOpen;
+    }).length;
+
+    const shopeeCount = validFoods.filter(f => {
+      return window.hasShopeeDelivery ? window.hasShopeeDelivery(f) : (f.hasShopeeDelivery === true);
+    }).length;
+
+    const highRatingCount = validFoods.filter(f => (f.rating || 0) >= 4.5).length;
+
+    const isOpenOnly = this.moodFilter?.openOnly !== false;
+    const isShopeeOnly = Boolean(this.moodFilter?.shopeeOnly);
+    const isHighRatingOnly = Boolean(this.moodFilter?.highRatingOnly);
+
+    container.innerHTML = `
+      <div class="space-y-1.5">
+        <!-- 1. Quán đang mở -->
+        <button onclick="window.app.toggleOverviewFilter('openOnly')" 
+          class="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition border cursor-pointer ${
+            isOpenOnly 
+              ? 'bg-orange-50/90 border-orange-300 text-orange-950 font-bold shadow-2xs' 
+              : 'bg-white/80 border-stone-200/80 text-stone-700 hover:bg-orange-50/60 hover:border-orange-200'
+          }" title="Bấm để ${isOpenOnly ? 'bỏ lọc (hiện cả quán đang đóng cửa)' : 'chỉ lọc quán đang mở cửa'}">
+          <span class="flex items-center gap-1.5 min-w-0">
+            <span class="text-xs">🟢</span>
+            <span class="truncate">Quán đang mở:</span>
+          </span>
+          <span class="shrink-0 font-bold ${isOpenOnly ? 'text-orange-900' : 'text-stone-600'}">${openCount} quán</span>
+        </button>
+
+        <!-- 2. Có ShopeeFood -->
+        <button onclick="window.app.toggleOverviewFilter('shopeeOnly')" 
+          class="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition border cursor-pointer ${
+            isShopeeOnly 
+              ? 'bg-orange-50/90 border-orange-300 text-orange-950 font-bold shadow-2xs' 
+              : 'bg-white/80 border-stone-200/80 text-stone-700 hover:bg-orange-50/60 hover:border-orange-200'
+          }" title="Bấm để ${isShopeeOnly ? 'bỏ lọc ShopeeFood' : 'chỉ lọc quán có đặt hàng online'}">
+          <span class="flex items-center gap-1.5 min-w-0">
+            <span class="text-xs">🛵</span>
+            <span class="truncate">Có ShopeeFood:</span>
+          </span>
+          <span class="shrink-0 font-bold ${isShopeeOnly ? 'text-orange-900' : 'text-stone-600'}">${shopeeCount} quán</span>
+        </button>
+
+        <!-- 3. Quán đỉnh (>= 4.5*) -->
+        <button onclick="window.app.toggleOverviewFilter('highRatingOnly')" 
+          class="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition border cursor-pointer ${
+            isHighRatingOnly 
+              ? 'bg-orange-50/90 border-orange-300 text-orange-950 font-bold shadow-2xs' 
+              : 'bg-white/80 border-stone-200/80 text-stone-700 hover:bg-orange-50/60 hover:border-orange-200'
+          }" title="Bấm để ${isHighRatingOnly ? 'bỏ lọc quán đỉnh' : 'chỉ lọc quán có rating ≥ 4.5★'}">
+          <span class="flex items-center gap-1.5 min-w-0">
+            <span class="text-xs">⭐</span>
+            <span class="truncate">Quán đỉnh (≥ 4.5★):</span>
+          </span>
+          <span class="shrink-0 font-bold ${isHighRatingOnly ? 'text-orange-900' : 'text-stone-600'}">${highRatingCount} quán</span>
+        </button>
+      </div>
+    `;
+  }
+
+  toggleOverviewFilter(key) {
+    window.soundFX && window.soundFX.playPop();
+    if (!this.moodFilter) {
+      this.moodFilter = {
+        moodId: this.currentMood,
+        selectedCategories: [],
+        maxRadius: 0,
+        companion: 'all',
+        selectedArea: 'all',
+        openOnly: true,
+        shopeeOnly: false,
+        highRatingOnly: false,
+        priceTier: 'all'
+      };
+    }
+    if (key === 'openOnly') {
+      this.moodFilter.openOnly = this.moodFilter.openOnly === false ? true : false;
+    } else if (key === 'shopeeOnly') {
+      this.moodFilter.shopeeOnly = !this.moodFilter.shopeeOnly;
+    } else if (key === 'highRatingOnly') {
+      this.moodFilter.highRatingOnly = !this.moodFilter.highRatingOnly;
+    }
+    this.renderSidebarOverview();
+    this.renderBentoAndFeed();
   }
 
   renderMiniMap() {
@@ -2665,6 +2784,7 @@ class FoodApp {
     this.ensureMoodFilter();
     this.renderQuickMoodChips();
     this.renderQuickCategoryChips();
+    this.renderSidebarOverview();
     const container = document.getElementById('featured-card-container');
     if (!container) return;
 
@@ -2759,10 +2879,12 @@ class FoodApp {
         return false;
       }
 
-      // Quán chưa mở cửa thì ẩn đi, khi nào mở cửa hãy hiện lên
+      // Quán chưa mở cửa: nếu đang bật lọc quán đang mở thì ẩn đi
       const st = window.getRestaurantStatus ? window.getRestaurantStatus(food, now) : { isOpen: true };
-      if (!st || !st.isOpen) {
-        return false;
+      if (this.moodFilter?.openOnly !== false) {
+        if (!st || !st.isOpen) {
+          return false;
+        }
       }
 
       // 0. Khớp từ khóa tìm kiếm

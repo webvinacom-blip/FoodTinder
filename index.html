@@ -33,7 +33,7 @@
   <link  rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=3.5.1" />
+  <link rel="stylesheet" href="css/style.css?v=3.5.2" />
 
   <style>
     /* ── Complete scrollbar elimination for modal & chips ── */
@@ -440,22 +440,17 @@
       <div id="mood-selector-container"></div>
     </div>
 
-    <!-- Quick Stats -->
+    <!-- Quick Overview Filters -->
     <div class="sidebar-section">
-      <h4>Thống kê của bạn</h4>
-      <div id="sidebar-stats" class="space-y-2 text-xs text-stone-600">
-        <div class="flex justify-between">
-          <span>Món đã thích</span>
-          <span id="stat-liked" class="font-bold text-rose-500">0</span>
-        </div>
-        <div class="flex justify-between">
-          <span>Lần quẹt hôm nay</span>
-          <span id="stat-swipes" class="font-bold text-amber-500">0</span>
-        </div>
-        <div class="flex justify-between">
-          <span>Khoảng cách gần nhất</span>
-          <span class="font-bold text-emerald-600">700m</span>
-        </div>
+      <div class="flex items-center justify-between mb-2 px-0.5">
+        <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wide flex items-center gap-1.5 m-0">
+          <span>🔥</span>
+          <span>Tổng quan quanh bạn</span>
+        </h4>
+        <span class="text-[10px] text-stone-400 font-medium">Bấm để lọc nhanh</span>
+      </div>
+      <div id="sidebar-overview-container">
+        <!-- Rendered dynamically by app.renderSidebarOverview() -->
       </div>
     </div>
 
