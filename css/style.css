@@ -272,3 +272,11 @@ html, body {
   -webkit-user-select: none !important;
   user-select: none !important;
 }
+
+/* Custom Select không bị lặp mũi tên chevron trên Safari/WebKit */
+#feed-sort-select, #taste-sort-select, select.appearance-none {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: none !important;
+}
