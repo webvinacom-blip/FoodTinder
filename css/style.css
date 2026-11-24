@@ -154,24 +154,21 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Ẩn triệt để sidebar cũ trên mọi kích thước màn hình */
-#sidebar {
-  display: none !important;
-}
+/* ══════════════════════════════════════════════════════════════════
+   RESPONSIVE SEPARATION: MOBILE APP (< 768px) vs DESKTOP WEB (>= 768px)
+══════════════════════════════════════════════════════════════════ */
 
-/* Khung App Shell Mobile-First chuẩn 100dvh Flexbox */
+/* Global Flexbox Shell */
 html, body {
-  height: 100dvh;
+  height: 100%;
   margin: 0;
   overflow: hidden;
-  overscroll-behavior-y: none;
+  background-color: #FAF4EE;
 }
 
 #mobile-app-shell {
   width: 100%;
-  height: 100dvh;
-  min-height: 100dvh;
-  max-height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -184,11 +181,13 @@ html, body {
   flex: 1 !important;
   min-height: 0 !important;
   overflow: hidden !important;
+  width: 100% !important;
   padding-bottom: 0 !important;
 }
 
 #content-panel {
   flex: 1 !important;
+  min-width: 0 !important;
   min-height: 0 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -215,41 +214,86 @@ html, body {
   -webkit-overflow-scrolling: touch !important;
 }
 
-@media (min-width: 768px) {
-  body {
-    background-color: #D2CBC3 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  #mobile-app-shell {
-    max-width: 480px;
+/* ── MOBILE VIEW (< 768px) ── */
+@media (max-width: 767px) {
+  html, body {
     height: 100dvh;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
-    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    overscroll-behavior-y: none;
   }
+
+  #mobile-app-shell {
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  /* Ẩn sidebar trên điện thoại */
+  #sidebar {
+    display: none !important;
+  }
+
+  /* Hiện Bottom Navigation Bar chuẩn Mobile-First */
   #mobile-bottom-bar {
-    max-width: 480px !important;
-    width: 100% !important;
+    display: flex !important;
+    flex-shrink: 0 !important;
     position: relative !important;
-    left: auto !important;
-    transform: none !important;
+    width: 100% !important;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom)) !important;
+    height: calc(3.75rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  .tab-view.scroll-y,
+  #content-panel,
+  #view-home > div,
+  #grocery-content-container,
+  #liked-list-container {
+    padding-bottom: 0.75rem;
   }
 }
 
-/* Bottom Navigation Bar chuẩn Mobile-First (Nằm trong luồng Flexbox, không dùng fixed) */
-#mobile-bottom-bar {
-  display: flex !important;
-  flex-shrink: 0 !important;
-  position: relative !important;
-  left: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  width: 100% !important;
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom)) !important;
-  height: calc(3.75rem + env(safe-area-inset-bottom)) !important;
+/* ── DESKTOP VIEW (>= 768px) ── */
+@media (min-width: 768px) {
+  body {
+    background-color: #FAF4EE !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  #mobile-app-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+
+  /* Khôi phục Sidebar trái trên Desktop */
+  #sidebar {
+    display: flex !important;
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+    background: #fff;
+    border-right: 1px solid #E8E0D8;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  #sidebar::-webkit-scrollbar { display: none; }
+
+  /* Ẩn hoàn toàn Bottom Navigation Bar trên Desktop */
+  #mobile-bottom-bar {
+    display: none !important;
+  }
+
+  #topbar {
+    height: 56px !important;
+    padding: 0 20px !important;
+  }
 }
 
 .mobile-tab-btn {

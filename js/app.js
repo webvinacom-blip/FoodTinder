@@ -527,14 +527,18 @@ class FoodApp {
 
   handleHomeSearch(val) {
     const text = (val || '').trim();
-    const clearBtn = document.getElementById('home-search-clear-btn');
-    if (clearBtn) {
-      if (text.length > 0) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-      }
-    }
+    this.searchQuery = text;
+
+    // Đồng bộ giá trị giữa ô tìm kiếm mobile và desktop
+    const mInput = document.getElementById('home-food-search');
+    const dInput = document.getElementById('home-food-search-desktop');
+    if (mInput && mInput.value !== val) mInput.value = val;
+    if (dInput && dInput.value !== val) dInput.value = val;
+
+    const mClear = document.getElementById('home-search-clear-btn');
+    const dClear = document.getElementById('home-search-clear-btn-desktop');
+    if (mClear) mClear.classList.toggle('hidden', !text);
+    if (dClear) dClear.classList.toggle('hidden', !text);
 
     // Nếu người dùng xóa trắng ô nhập khi đang có kết quả tìm kiếm thì tự động trả về gợi ý ban đầu
     if (text.length === 0 && this.searchQuery) {
@@ -544,8 +548,10 @@ class FoodApp {
     }
   }
 
-  submitHomeSearch() {
-    const input = document.getElementById('home-food-search');
+  submitHomeSearch(source = 'mobile') {
+    const input = source === 'desktop' 
+      ? document.getElementById('home-food-search-desktop')
+      : document.getElementById('home-food-search');
     const val = input ? input.value : this.searchQuery;
     const trimmed = (val || '').trim();
 
@@ -575,12 +581,16 @@ class FoodApp {
   clearHomeSearch() {
     this.searchQuery = '';
     this.feedLimit = 24;
-    const input = document.getElementById('home-food-search');
-    if (input) {
-      input.value = '';
-    }
-    const clearBtn = document.getElementById('home-search-clear-btn');
-    if (clearBtn) clearBtn.classList.add('hidden');
+    const mInput = document.getElementById('home-food-search');
+    const dInput = document.getElementById('home-food-search-desktop');
+    if (mInput) mInput.value = '';
+    if (dInput) dInput.value = '';
+
+    const mClear = document.getElementById('home-search-clear-btn');
+    const dClear = document.getElementById('home-search-clear-btn-desktop');
+    if (mClear) mClear.classList.add('hidden');
+    if (dClear) dClear.classList.add('hidden');
+
     this.renderBentoAndFeed();
   }
 
@@ -595,9 +605,9 @@ class FoodApp {
     const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
 
     return `
-      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-md transition-all duration-200 p-2.5 flex gap-3 shadow-2xs cursor-pointer ${!status.isOpen ? 'is-closed opacity-85' : ''}" onclick="window.app.showFoodDetail(${food.id})">
-        <!-- Cột trái: Ảnh vuông bo góc kèm badge điểm số -->
-        <div class="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-xl overflow-hidden bg-stone-100">
+      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 p-2.5 md:p-0 flex flex-row md:flex-col justify-between overflow-hidden shadow-2xs hover:-translate-y-0.5 cursor-pointer ${!status.isOpen ? 'is-closed opacity-85' : ''}" onclick="window.app.showFoodDetail(${food.id})">
+        <!-- Cột trái trên Mobile, Phần trên đỉnh trên Desktop: Ảnh quán -->
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-full md:h-auto md:aspect-[4/3] shrink-0 rounded-xl md:rounded-none overflow-hidden bg-stone-100">
           <img src="${food.image}"
                alt="${food.name}"
                loading="lazy"
@@ -607,36 +617,66 @@ class FoodApp {
                data-category="${food.category || ''}"
                onerror="window.handleFoodImageError ? window.handleFoodImageError(this, '${(food.name || '').replace(/'/g, "\\'")}', '${(food.restaurant || '').replace(/'/g, "\\'")}', '${food.category || ''}') : (this.onerror=null, this.src='images/tra_sua_nuong_may_may.jpg')" />
           
-          <!-- Badge điểm đánh giá ở góc ảnh -->
-          <span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-stone-900/85 backdrop-blur-xs text-amber-300 text-[10px] font-black flex items-center gap-0.5 shadow-xs">
+          <!-- Desktop Badges on Image -->
+          <div class="hidden md:flex absolute top-2 left-2 right-2 items-center justify-between pointer-events-none">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs flex items-center gap-1 backdrop-blur-md ${status.isOpen ? 'bg-emerald-600/95 text-white' : 'bg-stone-800/90 text-stone-300'}">
+              <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-white animate-pulse' : 'bg-rose-400'}"></span>
+              <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
+            </span>
+            <span class="px-1.5 py-0.5 rounded-full text-[10px] font-black bg-stone-900/80 backdrop-blur-md text-amber-300 flex items-center gap-0.5 shadow-xs">
+              <span>★</span>
+              <span>${food.rating || 4.5}</span>
+            </span>
+          </div>
+
+          <!-- Mobile Badges on Image -->
+          <span class="md:hidden absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-stone-900/85 backdrop-blur-xs text-amber-300 text-[10px] font-black flex items-center gap-0.5 shadow-xs">
             <span>★</span>
             <span>${food.rating || 4.5}</span>
           </span>
 
           ${!status.isOpen ? `
-            <span class="absolute bottom-1 left-1 right-1 text-center py-0.5 rounded-md bg-stone-900/90 text-stone-300 text-[9px] font-bold">
+            <span class="md:hidden absolute bottom-1 left-1 right-1 text-center py-0.5 rounded-md bg-stone-900/90 text-stone-300 text-[9px] font-bold">
               Đóng cửa
             </span>
           ` : ''}
         </div>
 
-        <!-- Cột phải: 4 dòng thông tin rõ ràng -->
-        <div class="flex-1 min-w-0 flex flex-col justify-between">
-          <!-- Dòng 1: Tên quán -->
+        <!-- Cột phải trên Mobile, Phần thân & nút trên Desktop -->
+        <div class="flex-1 min-w-0 flex flex-col justify-between md:p-3 md:space-y-1.5">
+          <!-- Tên quán & Địa chỉ -->
           <div>
-            <h5 class="font-black text-sm text-stone-900 group-hover:text-rose-600 transition truncate leading-snug" title="${food.restaurant}">
+            <h5 class="font-black text-sm md:text-xs text-stone-900 group-hover:text-rose-600 transition truncate leading-snug" title="${food.restaurant}">
               ${food.restaurant}
             </h5>
             
-            <!-- Dòng 2: Địa chỉ ngắn gọn kèm khoảng cách -->
-            <div class="flex items-center gap-1 text-[11px] text-stone-500 truncate mt-0.5">
+            <!-- Mobile: Địa chỉ ngắn gọn kèm khoảng cách -->
+            <div class="md:hidden flex items-center gap-1 text-[11px] text-stone-500 truncate mt-0.5">
               <span class="truncate">📍 ${food.address || food.district || 'TP. Quy Nhơn'}</span>
               ${distText ? `<span class="shrink-0 text-stone-400 font-medium">• ${distText}</span>` : ''}
             </div>
+
+            <!-- Desktop: Địa chỉ kèm nút map -->
+            <div class="hidden md:flex items-center justify-between gap-1 mt-0.5">
+              <p class="text-[11px] text-stone-500 truncate flex-1" title="${food.address || food.district || ''}">
+                📍 ${food.address || food.district || 'TP. Quy Nhơn'}
+              </p>
+              <button onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})"
+                class="inline-flex items-center justify-center w-6 h-6 text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 rounded-md transition cursor-pointer shrink-0"
+                title="Xem quán trên bản đồ">
+                <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+              </button>
+            </div>
           </div>
 
-          <!-- Dòng 3: Trạng thái hoạt động + Khoảng giá -->
-          <div class="flex items-center justify-between text-[11px] my-1">
+          <!-- Desktop: Giờ mở cửa -->
+          <div class="hidden md:flex items-center gap-1 text-[10.5px] ${status.isOpen ? 'text-emerald-700 font-semibold' : 'text-stone-500'}">
+            <span>🕒 ${food.openTime || '07:00 - 22:30'}</span>
+            <span class="${status.isOpen ? 'text-stone-400 font-normal' : 'text-rose-500 font-bold'}">(${status.detailText || (status.isOpen ? 'Đang mở cửa' : 'Đã đóng cửa')})</span>
+          </div>
+
+          <!-- Mobile: Trạng thái hoạt động + Khoảng giá -->
+          <div class="flex md:hidden items-center justify-between text-[11px] my-1">
             <span class="inline-flex items-center gap-1 font-bold ${status.isOpen ? 'text-emerald-600' : 'text-stone-400'}">
               <span class="w-1.5 h-1.5 rounded-full ${status.isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-stone-300'}"></span>
               <span>${status.isOpen ? 'Đang mở' : 'Đóng cửa'}</span>
@@ -644,8 +684,17 @@ class FoodApp {
             <span class="font-extrabold text-rose-600 text-xs">${priceText}</span>
           </div>
 
-          <!-- Dòng 4: Hàng nút bấm hành động -->
-          <div class="flex items-center gap-1.5 mt-0.5" onclick="event.stopPropagation()">
+          <!-- Desktop: Giá & Khoảng cách -->
+          <div class="hidden md:flex items-center justify-between text-[11px] pt-1">
+            <span class="font-bold text-rose-600">${priceText}</span>
+            <span class="text-stone-400 flex items-center gap-0.5 cursor-pointer hover:text-amber-600" onclick="event.stopPropagation();window.app.openMapWithFood(${food.id})" title="Xem vị trí quán trên bản đồ">
+              <svg class="w-3 h-3 inline text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              ${distText}
+            </span>
+          </div>
+
+          <!-- Mobile: Hàng 3 nút hành động -->
+          <div class="flex md:hidden items-center gap-1.5 mt-0.5" onclick="event.stopPropagation()">
             <!-- [❤️ Thả tim] -->
             <button onclick="window.app.toggleLikedFood(${food.id})"
               data-like-btn="${food.id}"
@@ -688,6 +737,38 @@ class FoodApp {
             </button>
             `}
           </div>
+
+          <!-- Desktop: Hàng nút bấm hành động (Like + ShopeeFood) -->
+          <div class="hidden md:flex items-center gap-1.5 pt-2 mt-auto" onclick="event.stopPropagation()">
+            <button onclick="window.app.toggleLikedFood(${food.id})"
+              data-like-btn="${food.id}"
+              class="w-8 h-8 rounded-xl border ${isLiked ? 'border-rose-400 bg-rose-50 text-rose-600' : 'border-stone-200 bg-white text-stone-400 hover:text-rose-500'} flex items-center justify-center transition active:scale-95 cursor-pointer shrink-0"
+              title="${isLiked ? 'Bỏ thích món này' : 'Yêu thích món này'}">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+
+            ${(window.hasShopeeDelivery ? window.hasShopeeDelivery(food) : (food.hasShopeeDelivery === true)) ? (
+              status.isOpen ? `
+              <button onclick="window.app.openShopeeFoodDelivery(${food.id})"
+                class="flex-1 h-8 px-2 rounded-xl bg-gradient-to-r from-orange-500 to-[#EE4D2D] hover:from-orange-600 hover:to-[#D73211] text-white font-extrabold text-xs flex items-center justify-center gap-1.5 transition shadow-sm active:scale-95 cursor-pointer whitespace-nowrap"
+                title="Đặt ShopeeFood giao siêu tốc">
+                ${window.getShopeeIcon ? window.getShopeeIcon(17, 'shrink-0') : '🛵'}
+                <span>ShopeeFood</span>
+              </button>
+              ` : `
+              <button disabled
+                class="flex-1 h-8 px-2 rounded-xl bg-stone-100 border border-stone-200 text-stone-400 font-semibold text-xs flex items-center justify-center gap-1 cursor-not-allowed opacity-60 pointer-events-none select-none">
+                <span>Đã đóng cửa</span>
+              </button>
+              `
+            ) : `
+            <button onclick="window.app.openMapWithFood(${food.id})"
+              class="flex-1 h-8 px-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs flex items-center justify-center gap-1 transition active:scale-95 cursor-pointer">
+              <span>Xem quán</span>
+            </button>
+            `}
+          </div>
+
         </div>
       </div>
     `;
@@ -1974,7 +2055,8 @@ class FoodApp {
 
   renderCombinedQuickChips() {
     const container = document.getElementById('quick-category-chips');
-    if (!container) return;
+    const desktopContainer = document.getElementById('quick-category-chips-desktop');
+    if (!container && !desktopContainer) return;
 
     if (!this.moodFilter) {
       this.moodFilter = {
@@ -1994,44 +2076,71 @@ class FoodApp {
     const moodObj = (APP_DATA.moods || []).find(m => m.id === currentMoodId) || { id: 'hungry', emoji: '😋', label: 'Thèm ăn ngon' };
     const isAll = !this.moodFilter.selectedCategories || this.moodFilter.selectedCategories.length === 0;
 
-    let html = `
-      <!-- Chip 1: Tâm trạng hiện tại (bấm mở Bottom Sheet) -->
-      <button type="button" onclick="window.app.openMoodBottomSheet()"
-        class="quick-mood-chip px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200/90 shadow-2xs">
-        <span class="text-sm">${moodObj.emoji}</span>
-        <span>${moodObj.label}</span>
-        <span class="text-[9px] opacity-70">▾</span>
-      </button>
+    // 1. Render Mobile Quick Chips Container
+    if (container) {
+      let html = `
+        <!-- Chip 1: Tâm trạng hiện tại (bấm mở Bottom Sheet) -->
+        <button type="button" onclick="window.app.openMoodBottomSheet()"
+          class="quick-mood-chip px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200/90 shadow-2xs">
+          <span class="text-sm">${moodObj.emoji}</span>
+          <span>${moodObj.label}</span>
+          <span class="text-[9px] opacity-70">▾</span>
+        </button>
 
-      <!-- Chip Chuẩn Gu (Chuyển nhanh sang tab Chuẩn Gu) -->
-      <button type="button" onclick="window.app.switchHomeSubTab('taste')"
-        class="home-taste-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 bg-white hover:bg-rose-50 text-stone-700 hover:text-rose-600 border border-stone-200/90 shadow-2xs">
-        <span>✨</span>
-        <span>Chuẩn Gu</span>
-      </button>
-    `;
-
-    // Chip loại món (Tất cả, Bún/Phở/Mì, Cơm, Lẩu & Nướng...)
-    html += QUICK_HOME_CATEGORIES.map(cat => {
-      const isSelected = cat.id === 'all' 
-        ? isAll 
-        : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
-
-      return `
-        <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
-          class="home-cat-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
-            isSelected 
-              ? 'bg-stone-900 text-white shadow-xs font-black' 
-              : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
-          }">
-          <span>${cat.emoji}</span>
-          <span>${cat.label}</span>
-          ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
+        <!-- Chip Chuẩn Gu (Chuyển nhanh sang tab Chuẩn Gu) -->
+        <button type="button" onclick="window.app.switchHomeSubTab('taste')"
+          class="home-taste-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 bg-white hover:bg-rose-50 text-stone-700 hover:text-rose-600 border border-stone-200/90 shadow-2xs">
+          <span>✨</span>
+          <span>Chuẩn Gu</span>
         </button>
       `;
-    }).join('');
 
-    container.innerHTML = html;
+      // Chip loại món (Tất cả, Bún/Phở/Mì, Cơm, Lẩu & Nướng...)
+      html += QUICK_HOME_CATEGORIES.map(cat => {
+        const isSelected = cat.id === 'all' 
+          ? isAll 
+          : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
+
+        return `
+          <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
+            class="home-cat-chip px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
+              isSelected 
+                ? 'bg-stone-900 text-white shadow-xs font-black' 
+                : 'bg-white hover:bg-stone-50 text-stone-700 border border-stone-200/90 shadow-2xs'
+            }">
+            <span>${cat.emoji}</span>
+            <span>${cat.label}</span>
+            ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
+          </button>
+        `;
+      }).join('');
+
+      container.innerHTML = html;
+    }
+
+    // 2. Render Desktop Quick Chips Container (inside Desktop Welcome Banner)
+    if (desktopContainer) {
+      const desktopHtml = QUICK_HOME_CATEGORIES.map(cat => {
+        const isSelected = cat.id === 'all' 
+          ? isAll 
+          : (this.moodFilter.selectedCategories && this.moodFilter.selectedCategories.includes(cat.id));
+
+        return `
+          <button type="button" onclick="window.app.toggleQuickCategory('${cat.id}')"
+            class="home-cat-chip px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer active:scale-95 flex items-center gap-1.5 shrink-0 ${
+              isSelected 
+                ? 'bg-stone-900 text-white shadow-xs font-black' 
+                : 'bg-white/90 hover:bg-white text-stone-800 shadow-2xs border border-white/50'
+            }">
+            <span>${cat.emoji}</span>
+            <span>${cat.label}</span>
+            ${isSelected && cat.id !== 'all' ? '<span class="text-[10px] font-black opacity-80">✓</span>' : ''}
+          </button>
+        `;
+      }).join('');
+
+      desktopContainer.innerHTML = desktopHtml;
+    }
   }
 
   renderQuickMoodChips() {
@@ -2563,57 +2672,52 @@ class FoodApp {
     const q = (this.searchQuery || '').trim().toLowerCase();
 
     // Cập nhật tiêu đề & nút đóng tìm kiếm khi đang search
-    const searchSubTitle = document.getElementById('mood-section-search-subtitle');
-    const searchQueryEl = document.getElementById('mood-section-search-query');
-    const clearSearchBtn = document.getElementById('btn-clear-search-in-mood');
-    if (searchSubTitle && searchQueryEl) {
-      if (hasSearch) {
-        searchSubTitle.classList.remove('hidden');
-        searchQueryEl.textContent = `"${this.searchQuery.trim()}"`;
-      } else {
-        searchSubTitle.classList.add('hidden');
-        searchQueryEl.textContent = '';
-      }
-    }
-    if (clearSearchBtn) {
-      if (hasSearch) {
-        clearSearchBtn.classList.remove('hidden');
-      } else {
-        clearSearchBtn.classList.add('hidden');
-      }
-    }
+    const searchSubTitles = [document.getElementById('mood-section-search-subtitle'), document.getElementById('mood-section-search-subtitle-desktop')].filter(Boolean);
+    const searchQueryEls = [document.getElementById('mood-section-search-query'), document.getElementById('mood-section-search-query-desktop')].filter(Boolean);
+    const clearSearchBtns = [document.getElementById('btn-clear-search-in-mood'), document.getElementById('btn-clear-search-in-mood-desktop')].filter(Boolean);
+    
+    searchSubTitles.forEach(el => {
+      if (hasSearch) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
+    searchQueryEls.forEach(el => {
+      el.textContent = hasSearch ? `"${this.searchQuery.trim()}"` : '';
+    });
+    clearSearchBtns.forEach(el => {
+      if (hasSearch) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
 
     // Update active filter badge & indicator in UI
     const activeCount = this.getActiveFiltersCount() + (hasSearch ? 1 : 0);
-    const indicatorEl = document.getElementById('active-filter-indicator');
-    const countBadgeEl = document.getElementById('active-filter-count');
-    const filterBtnCount = document.getElementById('filter-btn-count');
-    const resetBtn = document.getElementById('btn-reset-filters');
-    const descEl = document.getElementById('mood-filter-status-desc');
+    const indicatorEls = [document.getElementById('active-filter-indicator'), document.getElementById('active-filter-indicator-desktop')].filter(Boolean);
+    const countBadgeEls = [document.getElementById('active-filter-count'), document.getElementById('active-filter-count-desktop')].filter(Boolean);
+    const filterBtnCounts = [document.getElementById('filter-btn-count'), document.getElementById('filter-btn-count-desktop')].filter(Boolean);
+    const resetBtns = [document.getElementById('btn-reset-filters'), document.getElementById('btn-reset-filters-desktop')].filter(Boolean);
+    const descEls = [document.getElementById('mood-filter-status-desc'), document.getElementById('mood-filter-status-desc-desktop')].filter(Boolean);
 
-    if (indicatorEl && countBadgeEl) {
+    indicatorEls.forEach(el => {
+      if (activeCount > 0) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    });
+    countBadgeEls.forEach(el => {
+      el.textContent = activeCount;
+    });
+    filterBtnCounts.forEach(el => {
       if (activeCount > 0) {
-        indicatorEl.classList.remove('hidden');
-        countBadgeEl.textContent = activeCount;
+        el.textContent = activeCount;
+        el.classList.remove('hidden');
       } else {
-        indicatorEl.classList.add('hidden');
+        el.classList.add('hidden');
       }
-    }
-    if (filterBtnCount) {
-      if (activeCount > 0) {
-        filterBtnCount.textContent = activeCount;
-        filterBtnCount.classList.remove('hidden');
-      } else {
-        filterBtnCount.classList.add('hidden');
-      }
-    }
-    if (resetBtn) {
+    });
+    resetBtns.forEach(el => {
       if (this.getActiveFiltersCount() > 0) {
-        resetBtn.classList.remove('hidden');
+        el.classList.remove('hidden');
       } else {
-        resetBtn.classList.add('hidden');
+        el.classList.add('hidden');
       }
-    }
+    });
 
     // Lọc ngầm: Tính toán bữa ăn theo giờ thực tế (meal slot)
     const now = new Date();
@@ -2760,9 +2864,10 @@ class FoodApp {
       }
     }
 
-    if (descEl) {
+    if (descEls.length > 0) {
+      let descText = '';
       if (hasSearch) {
-        descEl.textContent = `Tìm thấy ${filteredFoods.length} quán ăn & món ngon phù hợp với từ khóa "${this.searchQuery}"`;
+        descText = `Tìm thấy ${filteredFoods.length} quán ăn & món ngon phù hợp với từ khóa "${this.searchQuery}"`;
       } else {
         const selectedCats = this.moodFilter?.selectedCategories || [];
         if (selectedCats.length > 0) {
@@ -2770,25 +2875,26 @@ class FoodApp {
             const c = FILTER_CATEGORIES.find(x => x.id === cId);
             return c ? c.short : cId;
           }).join(', ');
-          descEl.textContent = `Đang lọc: ${catNames} (${filteredFoods.length} quán phù hợp)`;
+          descText = `Đang lọc: ${catNames} (${filteredFoods.length} quán phù hợp)`;
         } else if (this.moodFilter?.companion && this.moodFilter.companion !== 'all') {
           const comp = FILTER_COMPANIONS.find(c => c.id === this.moodFilter.companion);
-          descEl.textContent = `Đang lọc: ${comp?.label || ''} (${filteredFoods.length} quán phù hợp)`;
+          descText = `Đang lọc: ${comp?.label || ''} (${filteredFoods.length} quán phù hợp)`;
         } else {
           const currentMoodObj = APP_DATA.moods?.find(m => m.id === activeMoodId);
           if (currentMoodObj) {
             if (activeMoodId === 'zen') {
-              descEl.textContent = `Gợi ý theo tâm trạng: 🪷 Thanh tịnh (${filteredFoods.length} quán phù hợp) — Tuyển chọn các quán chay thanh tịnh, lẩu nấm & cơm chay an lạc`;
+              descText = `Gợi ý theo tâm trạng: 🪷 Thanh tịnh (${filteredFoods.length} quán phù hợp) — Tuyển chọn các quán chay thanh tịnh, lẩu nấm & cơm chay an lạc`;
             } else if (activeMoodId === 'stress') {
-              descEl.textContent = `Gợi ý theo tâm trạng: 🤯 Xả stress (${filteredFoods.length} quán phù hợp) — Món cay endorphin & đồ giòn rụm nhai xả stress`;
+              descText = `Gợi ý theo tâm trạng: 🤯 Xả stress (${filteredFoods.length} quán phù hợp) — Món cay endorphin & đồ giòn rụm nhai xả stress`;
             } else {
-              descEl.textContent = `Gợi ý theo tâm trạng: ${currentMoodObj.emoji} ${currentMoodObj.label} (${filteredFoods.length} quán phù hợp) — ${currentMoodObj.desc}`;
+              descText = `Gợi ý theo tâm trạng: ${currentMoodObj.emoji} ${currentMoodObj.label} (${filteredFoods.length} quán phù hợp) — ${currentMoodObj.desc}`;
             }
           } else {
-            descEl.textContent = `Tự động quét ${filteredFoods.length} quán mở cửa theo thời tiết & giờ thực tế`;
+            descText = `Tự động quét ${filteredFoods.length} quán mở cửa theo thời tiết & giờ thực tế`;
           }
         }
       }
+      descEls.forEach(el => { el.textContent = descText; });
     }
 
     // Sắp xếp điểm số thông minh: Quán mở cửa -> Contextual Fusion (Tâm trạng x 2 + Thời tiết + Giờ) -> Tìm kiếm -> Khoảng cách -> Rating
@@ -2829,18 +2935,19 @@ class FoodApp {
     const topFoods = scoredFoods.slice(0, currentLimit);
     const hasMore = totalCount > topFoods.length;
 
-    // Cập nhật tiêu đề rút gọn 1 dòng: 🔥 XX quán hợp gu
-    const baseTitleEl = document.getElementById('mood-section-base-title');
-    if (baseTitleEl) {
-      if (hasSearch) {
-        baseTitleEl.textContent = `${totalCount} quán tìm thấy`;
+    // Cập nhật tiêu đề rút gọn 1 dòng (mobile) và tiêu đề section (desktop)
+    const baseTitleEls = [document.getElementById('mood-section-base-title'), document.getElementById('mood-section-base-title-desktop')].filter(Boolean);
+    const titleText = hasSearch ? `${totalCount} quán tìm thấy` : (document.getElementById('mood-section-base-title-desktop') ? `🔥 ${totalCount} quán hợp gu theo tâm trạng` : `${totalCount} quán hợp gu`);
+    baseTitleEls.forEach(el => {
+      if (el.id === 'mood-section-base-title') {
+        el.textContent = hasSearch ? `${totalCount} quán tìm thấy` : `${totalCount} quán hợp gu`;
       } else {
-        baseTitleEl.textContent = `${totalCount} quán hợp gu`;
+        el.textContent = hasSearch ? `🔍 ${totalCount} quán tìm thấy` : `🔥 ${totalCount} quán hợp gu theo tâm trạng`;
       }
-    }
-    const sortSelect = document.getElementById('feed-sort-select');
-    if (sortSelect && this.feedSortOrder) {
-      sortSelect.value = this.feedSortOrder;
+    });
+    const sortSelects = [document.getElementById('feed-sort-select'), document.getElementById('feed-sort-select-desktop')].filter(Boolean);
+    if (this.feedSortOrder) {
+      sortSelects.forEach(sel => { sel.value = this.feedSortOrder; });
     }
 
     if (topFoods.length === 0) {
