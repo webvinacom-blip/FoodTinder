@@ -605,9 +605,9 @@ class FoodApp {
     const priceText = window.formatPriceRange ? window.formatPriceRange(food.priceRange) : (food.priceRange || '35.000đ ~ 65.000đ');
 
     return `
-      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 p-2.5 md:p-0 flex flex-row md:flex-col justify-between overflow-hidden shadow-2xs hover:-translate-y-0.5 cursor-pointer ${!status.isOpen ? 'is-closed opacity-85' : ''}" onclick="window.app.showFoodDetail(${food.id})">
+      <div class="group bg-white rounded-2xl border border-stone-200/90 hover:border-amber-400/80 hover:shadow-lg transition-all duration-300 p-3 sm:p-3.5 md:p-0 flex flex-row md:flex-col gap-3.5 md:gap-0 justify-between overflow-hidden shadow-2xs hover:-translate-y-0.5 cursor-pointer ${!status.isOpen ? 'is-closed opacity-85' : ''}" onclick="window.app.showFoodDetail(${food.id})">
         <!-- Cột trái trên Mobile, Phần trên đỉnh trên Desktop: Ảnh quán -->
-        <div class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-full md:h-auto md:aspect-[4/3] shrink-0 rounded-xl md:rounded-none overflow-hidden bg-stone-100">
+        <div class="relative w-24 h-24 sm:w-26 sm:h-26 md:w-full md:h-auto md:aspect-[4/3] shrink-0 rounded-xl md:rounded-none overflow-hidden bg-stone-100">
           <img src="${food.image}"
                alt="${food.name}"
                loading="lazy"
